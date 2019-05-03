@@ -3,8 +3,6 @@ Une expression de fonction fléchée (arrow function en anglais) permet d’avoi
 
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/Fonctions_fl%C3%A9ch%C3%A9es
 
-
-
 */
 
 var a = [

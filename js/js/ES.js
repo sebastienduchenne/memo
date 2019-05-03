@@ -14,8 +14,6 @@ classe et héritage
 destructuring assignement
 promesse
 
-const tableau = [1, 2, 3, 4],
-      [premier, ,troisieme] = tableau;
 
 Les modules ES6 / ES2015 sont supportés nativement par :
 Chrome, > version 63.
@@ -26,6 +24,18 @@ Node.js, > 10.
 
 
 
+*/
+
+//template string
+let l = `je m’appelle ${prenom}`
+
+//destructuring assignement
+const tableau = [1, 2, 3, 4],
+      [premier, ,troisieme] = tableau;
+
+
+/*
+https://www.wanadev.fr/21-introduction-a-ecmascript-6-le-javascript-de-demain/
 https://web.developpez.com/tutoriels/fonctionnalite-javascript-es6/
 https://www.wanadev.fr/21-introduction-a-ecmascript-6-le-javascript-de-demain/
 https://fr.wikipedia.org/wiki/ECMAScript

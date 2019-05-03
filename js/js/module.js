@@ -1,5 +1,8 @@
 /*
 -un module peut regrouper plusieurs classes
+-2 standarts pour écrire des modules
+    CommonJS, implémentation : Node.js
+    AMD (Asynchronous Module Definition), implémentation : requireJS
 */
 
 //Parameters.js

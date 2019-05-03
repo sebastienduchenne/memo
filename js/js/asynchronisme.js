@@ -9,6 +9,10 @@ Le terme asynchrone fait référence au comportement de certains traitements dan
 -boucle des évènements = La boucle des événements a pour but de surveiller l'état de la pile d'exécution. Si cette dernière est vide d'instruction à exécuter, la boucle des événements déplacera la callback en attente dans la file vers la pile d'exécution, permettant à cette callback d'être ainsi exécutée.
 
 
+https://blog.oxiane.com/2018/01/29/lasynchrone-en-javascript/
+https://www.supinfo.com/articles/single/5640-programmation-asynchrone-javascript
 https://javascript.developpez.com/actu/102019/Apprendre-les-mecanismes-de-base-de-l-asynchrone-en-JavaScript-un-tutoriel-de-Yahiko/
+https://www.developpez.net/forums/blogs/676693-yahiko/b1546/bases-lasynchrone-javascript/
+
 
 */
