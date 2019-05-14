@@ -1,0 +1,61 @@
+Méthodes Agiles
+= un ensemble de pratique de gestion de projet qui reposent sur un cycle de développement itératif, incrémental et adaptatif et qui respectent le manifeste agile
+méthodes scrum et Extreme Programming
+bien adapté au développement d’un produit
+manifeste agile
+Epic = Big user story = une fonctionnalité entière qui regroupent plusieurs US
+User Story ou item
+    = récit utilisateur, phrase décrivant une fonctionnalité à développer
+    ‘’en tant que …, je souhaite …, afin de …’’ / ‘’Given … when … then …’’
+    critères d’acceptation, cad des éléments obligatoires pour valider que la fonctionnalité répond aux besoins. ‘’Etant donné … quand … alors …’’
+Gherkins = langage servant à écrire des tests fonctionnels, ‘’Given … when … then …’’
+planning poker = estimer la complexité des fonctionnalités à développer
+4 valeurs
+    Les Individus et leurs interactions plus que les processus et les outils
+    Des logiciels opérationnels plus qu'une documentation exhaustive
+    La collaboration avec les clients plus que la négociation contractuelle
+    L'adaptation au changement plus que le suivi d'un plan
+12 principes
+    Satisfaire le client en priorité
+    Accueillir favorablement les demandes de changement
+    Livrer le plus souvent possible des versions opérationnelles de l’application
+    Assurer une coopération permanente entre le client et l’équipe projet
+    Construire des projets autour d’individus motivés
+    Privilégier la conversation en face à face
+    Mesurer l’avancement du projet en termes de fonctionnalités de l’application
+    Faire avancer le projet à un rythme soutenable et constant
+    Porter une attention continue à l’excellence technique et à la conception
+    Faire simple
+    Responsabiliser les équipes
+    Ajuster à intervalles réguliers son comportement et ses processus pour être plus efficace
+ 
+ 
+Scrum
+framework implémentant la méthode agile
+répétition de courts cycles (qq semaines) de développement appelés sprint
+avantages
+    s’adapter rapidement à des changements de besoins
+    éviter l’effet tunnel des cycles en V
+    montrer le produit au client pour s’assurer qu’il correspond à ses attentes
+    amélioration continue de l’efficacité de l’équipe
+backlogs
+    product backlog = ensemble des US du projet
+    sprint backlog = ensemble des US embarqué pour un sprint
+cérémonies / meeting pour un sprint
+    Sprint Planning Meeting = définir le contenu du sprint backlog à partir du product backlog. Le PO doit venir avec son backlog affiné (Users Stories décrites) et priorisé, et on décide des US à embarquer
+    n Daily Scrum = tt les jours, chacun répond à 3 questions : fait la veille, à faire ojd, obstacles
+    n Backlog Refinement / backlog grooming = affiner le contenu des US
+    réunion d’arbitrage = revue des defect
+    Sprint Review meeting = montrer le travail réalisé au cours du sprint afin de le soumettre à la validation du Product Owner. La scrum team doit préparer une démonstration des User Story / Tâches réalisées au cours du sprint
+    Sprint Retrospective = bilan du sprint écoulé, ce qui a été et n’a pas été, à améliorer, idées d’amélioration, retour d’expérience
+rôles
+    scrum master (SM) = s’assure que Scrum est correctement appliqué, rôle de coach, aide l’équipe à avancer et à franchir les obstacles
+    product owner (PO) = porte la vision du produit à réaliser et travaille en interaction avec l’équipe de développement. Il s’agit généralement d’un expert du domaine métier du projet
+    équipe de dev = transforme les besoins en fonctionnalités utilisables
+ 
+ 
+
+
+Extreme Programming
+
+

@@ -1,3 +1,90 @@
 *** Avantages
 -les apps ont leur propre hote
 -lancer test d'intégration indépendamment
+
+----------------------------------------------------------
+
+
+. conteneur = image + stocke des paramètres d'exécutions, comme par exemple le mappage de port, les dossiers à partager.
+.dockerignore
+.montée en charge
+
+
+Défintion
+. outil qui fait de la conteneurisation = peut empaqueter une application et ses dépendances dans un conteneur isolé (une image docker), qui pourra être exécuté sur n'importe quel serveur
+. OS et librairies partagées
+. Un conteneur n'inclut pas d’OS, mais s'appuie sur les fonctionnalités de l’OS fournies par la machine hôte Linux
+Cgroups : groupes de controles, limitent l’accès aux ressources mémoire, CPU et E/S, ce qui empêche les besoins en ressources d’un processus d’affecter d’autres processus en cours d’exécution
+namespace : limitent un processus et ses processus fils à une section spécifique du système sous-jacent
+
+
+
+
+Cycle de vie d’un conteneur
+
+
+
+Avantages
+. accroît la flexibilité et la portabilité d'exécution d'une application, laquelle va pouvoir tourner de façon fiable et prédictible sur une grande variété de machines hôtes
+. les applications ayant des exigences différentes peuvent être exécutées indépendemment les unes des autres sans que l’overhead d’un système invité séparé doive être accepté
+. économe en ressources
+
+. Les conteneurs logiciels permettent aussi d’utiliser des applications sur plusieurs plateformes et dans différentes infrastructures sans avoir à les adapter spécifiquement aux configurations matérielles ou logicielles des différents systèmes hôtes.
+Docker utilise des images portables de logiciel de conteneurs. Les images de conteneurs contiennent des applications propres, y compris toutes les bibliothèques, les fichiers binaires et les fichiers de configuration nécessaires à l’exécution des processus d’application encapsulés et n’imposent donc que des exigences minimales au système hôte en question. Ceci permet de déplacer un conteneur d’application entre différents systèmes Linux, Windows ou MacOs sans configuration supplémentaire, à condition que la plateforme Docker ait été installée en tant que couche abstraite.
+
+
+Image docker
+
+
+Docker engine
+= moteur dockeur, application client-serveur. 3 composants :
+daemon docker : processus en arrière plan qui gère les images, les conteneurs et le réseau
+API-REST : interface pour communiquer avec le daemon
+terminal : programme client du point de vue de Docker qui intéragit avec le daemon via l’API-REST
+
+
+Docker hub
+= registre basé sur le Cloud pour les référentiels (dépôts) de logiciels
+
+
+Dockerfile
+= ensemble d’instructions et de métadonnées qui permet de construire une nouvelle image à partir d’une autre
+.peut être optimisé pour gagner du temps
+
+
+https://putaindecode.io/articles/les-dockerfiles/
+
+
+
+
+Plusieurs conteneurs
+
+.load balancing = répartition de la charge sur les différents noeuds
+.Single Point Of Failure = si le master tombe il sera automatiquement remplacé par un des noeuds qui deviendra le nouveau master
+.docker compose = lancer plusieurs conteneur à la suite, grâce à un fichier de déploiement au format YAML précisant tous les conteneurs et leurs options exécutable en une seule fois.
+.google cAdvisor : Fournit aux utilisateurs de conteneurs une bonne compréhension sur l'utilisation des ressources et des performances générales sur les conteneurs en cours d'utilisation. Il s'agit d'un processus daemon qui collecte, aggrege, opère et exporte les informations des conteneurs en cours.
+
+
+-> on déploie plusieurs conteneurs (BD+ log+ app+serveur)
+
+Vous avez surement plusieurs projets qui utilisent MySQL. Il est possible d’installer MySQL sur chacun de vos conteneurs, ou bien d’avoir un conteneur dédié. De cette manière, tous vos projets stockeront leurs données sur le même conteneur. Cela permet de rassembler un maximum de données, et de faciliter la gestion (un seul et même conteneur à lancer quel que soit le projet, à condition que la version de la BDD voulue soit similaire).
+
+
+Liens
+http://www.linux-alpes.org/xmedia/diapo_docker.pdf
+https://actu.alfa-safety.fr/devops/conteneur-docker-fonctionnement-et-avantages-pour-heberger-ses-applications/
+https://www.ovh.com/fr/blog/seance-rattrapage-docker/
+https://blog.ippon.fr/2014/10/20/docker-pour-les-nu-pour-les-debutants/
+https://www.imagescreations.fr/qu-est-ce-que-docker/
+https://xataz.developpez.com/tutoriels/utilisation-docker/
+https://apprendre-la-programmation.net/docker-for-developers/
+https://journaldunadminlinux.fr/tuto-docker-demarrer-avec-docker/
+https://docs.docker.com/get-started/
+https://docker-curriculum.com/
+https://www.tutorialspoint.com/docker/docker_file.htm
+https://www.ionos.fr/digitalguide/serveur/configuration/tutoriel-docker-installation-et-premiers-pas/
+https://dzone.com/articles/50-useful-docker-tutorials-for-it-professionals-fr
+https://github.com/docker/labs/tree/master/beginner/
+https://www.supinfo.com/articles/single/3980-deploiement-une-application-nodejs-avec-docker
+https://hub.docker.com/
+

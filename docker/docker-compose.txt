@@ -3,7 +3,6 @@ docker-compose.yml = un fichier texte simple vous permet de définir une applica
 
 *** 5 Commandes
 
-
 docker-compose up : démarre les services décrits dans le docker-compose.yml et ne rend pas la main
 docker-compose up -d : rend la main une fois que les services sont démarrés
 docker-compose up –build : reconstruit les services avant de les lancer
