@@ -1,0 +1,46 @@
+docker-compose.yml = un fichier texte simple vous permet de définir une application composée de plusieurs conteneurs Docker
+
+
+*** 5 Commandes
+
+docker-compose up
+docker-compose down
+docker-compose restart
+docker-compose exec
+docker-compose logs
+
+-docker-compose up : démarre les services décrits dans le docker-compose.yml et ne rend pas la main
+-docker-compose up -d : rend la main une fois que les services sont démarrés
+-docker-compose up –build : reconstruit les services avant de les lancer
+
+-docker-compose down : stoppe les services
+
+-docker-compose restart : redémarre l’ensemble des services
+-docker-compose restart nginx : redémarre un des services (ici nginx)
+
+-docker-compose exec rails bash : fournit une console bash au sein du conteneur rails
+-docker-compose exec rails bin/rails db:migrate : effectue un rails db:migrate au sein du conteneur rails
+
+-docker-compose logs : ensemble des logs des services depuis le dernier démarrage et rend la main
+-docker-compose logs -f : logs des services et continue de les « écouter » sans rendre la main
+-docker-compose logs -f rails : logs pour le conteneur rails uniquement
+
+
+*** Fichier yaml
+version
+services
+    xxx
+        image
+        environment : variables et valeurs
+        volumes
+        links
+        ports
+        env_file
+        depends_on : services dont il dépend
+        build
+            context
+            target
+
+
+*** inconvénients
+Par exemple, si le container Redis s’arrête, il faudrait arrêter le container de l’application puis relancer les deux containers.
