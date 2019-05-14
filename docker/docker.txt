@@ -1,0 +1,3 @@
+*** Avantages
+-les apps ont leur propre hote
+-lancer test d'intégration indépendamment

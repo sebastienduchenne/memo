@@ -1,0 +1,11 @@
+npm install --save
+npm install --save-dev
+
+nmap : trace réseau
+ifconfig
+htop : utilisation ressources
+/etc/hosts : résolution DNS
+systemctl
+/etc/systemd
+openvpn
+
