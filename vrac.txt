@@ -8,28 +8,20 @@ systemctl
 /etc/systemd
 openvpn
 sudo apt-get update
-
-
-
-cat
-mkdir
-rm
-touch
-ls
+iptable
 ll
-chmod
 
 
-Installer un paquet deb
+*** Installer un paquet deb
 sudo dpkg -i package_file.deb
 
 
 
-
-Objectifs
+*** Objectifs
 . Application events en nodejs et reactjs avec Docker
 
-VRAC
+
+*** VRAC
 . Session : moyen de stocker sur le serveur des informations sur un client. création d’un ID unique de session
 . version vanilla : version standard d'un programme informatique : ni patché, ni modifié
 . devops dev : IC
@@ -40,11 +32,18 @@ VRAC
 . ember : framework JS pour faire des appli web
 . backbone : framework JS pour faire des appli web
 . sudo apt-get update : mettre à jour l’index, les descriptions des paquets locaux de l’OS
+. htop : utilisation ressources
+pstree
+pstree -p | grep chrome
+pkill -e chrome
+pstree –up
+killall geckodriver-v0.24.0
+ps -ef
 
 https://vinceops.me/git-astuces-productivite-1/
 
 
-Intelligence artificielle
+*** Intelligence artificielle
 . darknet yolo
 . convolution
 . Réseau de neurones
@@ -52,23 +51,23 @@ Intelligence artificielle
 . machine learning
 
 
-si install java mais unable to locate package
+*** si install java mais unable to locate package
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update 
 sudo apt-get install openjdk-8-jdk
 java -version
 
 
-Framework
+***Framework
 = cadre de travail, apporte un outil qui encadre notre travail (création formulaire, tests...)
 impose un certain nombre de règles afin d’augmenter la productivité dans un travail de groupe et faire plus facilement de la maintenance
 
-Autres
+
+*** Autres
 le ~ devant une variable inverse tout les bits de valeurs
 
 
-
-Liens news
+*** Liens news
 https://dzone.com/
 https://www.itworld.com/news/
 https://www.computerworld.com/
