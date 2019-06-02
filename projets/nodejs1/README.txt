@@ -1,0 +1,10 @@
+
+allUsers : http://127.0.0.1:8082/listUsers
+
+
+
+
+https://www.frugalprototype.com/developpez-propre-api-node-js-express/
+https://www.tutorialspoint.com/nodejs/nodejs_restful_api.htm
+https://www.codementor.io/olatundegaruba/nodejs-restful-apis-in-10-minutes-q0sgsfhbd
+https://www.toptal.com/nodejs/secure-rest-api-in-nodejs
