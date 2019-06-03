@@ -7,18 +7,12 @@ htop : utilisation ressources
 systemctl
 /etc/systemd
 openvpn
-sudo apt-get update
 iptable
 ll
 
 
 *** Installer un paquet deb
 sudo dpkg -i package_file.deb
-
-
-
-*** Objectifs
-. Application events en nodejs et reactjs avec Docker
 
 
 *** VRAC
@@ -39,8 +33,7 @@ pkill -e chrome
 pstree –up
 killall geckodriver-v0.24.0
 ps -ef
-
-https://vinceops.me/git-astuces-productivite-1/
+. le ~ devant une variable inverse tout les bits de valeurs
 
 
 *** Intelligence artificielle
@@ -58,26 +51,16 @@ sudo apt-get install openjdk-8-jdk
 java -version
 
 
-***Framework
+*** Framework
 = cadre de travail, apporte un outil qui encadre notre travail (création formulaire, tests...)
 impose un certain nombre de règles afin d’augmenter la productivité dans un travail de groupe et faire plus facilement de la maintenance
-
-
-*** Autres
-le ~ devant une variable inverse tout les bits de valeurs
-
-
-*** Liens news
-https://dzone.com/
-https://www.itworld.com/news/
-https://www.computerworld.com/
-
 
 
 
 
 
 https://ignition-program.com/blog/guide-code-nouvelles-technologies-a-utiliser-2018/
+https://vinceops.me/git-astuces-productivite-1/
 
 
 

@@ -1,4 +1,3 @@
-
 = Gestionnaire de version (VCS) décentralisé
 -3 versions d’un même fichier :
     en local : projet
@@ -15,8 +14,7 @@ git init : création d’un .git contenant l’historique du projet et la config
 git ignore : mettre dans un fichier les fichiers à ignorer
 git clone : ramener le contenu du dépôt distant (master) sur sa machine
 git status : fichiers modifiés sur la branche active
-git add nomDossier : ajoute une référence au fichier nomFichier nouvellement créé dans
-le .git
+git add nomDossier : ajoute une référence au fichier nomFichier nouvellement créé dans le .git
 
 
 *** Gérer les branches
@@ -73,6 +71,7 @@ git stash apply = récupérer son travail sans supprimer la sauvegarde
 Projet inexistant : git init, git ignore
 Projet existant : git clone url, cd nomProjet
 
+
 *** Configurer git
 vim ~/gitconfig : éditer le fichier de configuration de git (alias, utilisateur, couleur)
 
@@ -93,6 +92,16 @@ Pull origin master ?
 Push origin « branche »
 Créer une pull request
 Accepter/refuser la PR
+
+Branche : 
+-master
+-develop
+-feature
+-fix
+-release
+
+
+
 
 
 

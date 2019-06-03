@@ -10,7 +10,15 @@ DOCKER
 -app
 
 
-localhost:3000
+*** lancement
+npm i
+node server.js
+
+URL :
+http://localhost:3000/listUsers
+
+
+***liens
 
 https://www.digitalocean.com/community/tutorials/containerizing-a-node-js-application-for-development-with-docker-compose
 https://medium.com/@deanslamajr/develop-that-nodejs-app-inside-a-docker-container-d7b93b8c89db
