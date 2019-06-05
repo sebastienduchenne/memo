@@ -4,6 +4,11 @@ var fs = require("fs");
 var hostname = 'localhost';
 var port = 3000;
 
+let events;
+fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+ events = data;
+});
+
 var app = express();
 /*
 var myRouter = express.Router();
@@ -22,19 +27,33 @@ myRouter.route('/events')
       res.json({message : "Suppression d'une piscine dans la liste", methode : req.method});
 });
 */
-app.get('/listUsers', function (req, res) {
-      fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
-         console.log( data );
-         res.end( data );
-      });
-})
+app.get('/events', function (req, res) {
+    console.log( "GET /events" );
+    res.end( events );
+});
 
-/*app.get('/listUsers', function (req, res) {
-      bd.get()
-})*/
+app.get('/events/:eventId', function (req, res) {
+    console.log( "GET /events/:eventId - id:"+req.params.eventId);
+    res.status(201).send( "ghlgfg" );
+});
 
-//app.use(myRouter);
+app.post('/events/:eventId', function (req, res) {
+    console.log( "POST /events/:eventId - id:"+req.params.userId );
 
+});
+
+app.patch('/events/:eventId', function (req, res) {
+    console.log( "PATCH /events/:eventId - id:"+req.params.userId );
+
+});
+
+app.delete('/events/:eventId', function (req, res) {
+    console.log( "DELETE /events/:eventId - id:"+req.params.userId );
+
+});
+
+
+//listen
 app.listen(port, hostname, function(){
       console.log("Mon serveur fonctionne sur http://"+ hostname +":"+port);
 });

@@ -18,13 +18,23 @@
                 document.getElementById("result").innerHTML = res;
             }
 
-            function listUsers(){
+function ggg ( data ) {
+  alert( data );
+}
+
+            function lisftUsers(){
                 $.ajax({
                     dataType: "json",
-                    url: "http://localhost:3000/listUsers",
-                    data: data,
-                    success: success
+                    type: "GET",
+                    url: "http://localhost:3000/events/5",
+                    success: ggg
                 });
+            }
+
+            function listUsers(){
+                $.get("http://localhost:3000/events/7",  function( data ) {
+                  alert(data);
+                }, "json" );
             }
 
             function getUser(){

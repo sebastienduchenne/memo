@@ -15,7 +15,7 @@ npm i
 node server.js
 
 URL :
-http://localhost:3000/listUsers
+http://localhost:3000/events
 
 
 ***liens
@@ -24,4 +24,9 @@ https://www.digitalocean.com/community/tutorials/containerizing-a-node-js-applic
 https://medium.com/@deanslamajr/develop-that-nodejs-app-inside-a-docker-container-d7b93b8c89db
 https://medium.com/@francoisromain/getting-started-with-docker-for-local-node-js-development-192ceca18781
 https://hackernoon.com/build-a-crud-api-with-mongodb-express-and-docker-70510c6f706b
+
+
+*** API REST
+https://www.toptal.com/nodejs/secure-rest-api-in-nodejs
+https://github.com/makinhs/rest-api-tutorial
 
