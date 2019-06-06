@@ -1,56 +1,42 @@
 var express = require('express');
 var fs = require("fs");
+const eventsController = require('./controller');
 
 var hostname = 'localhost';
 var port = 3000;
 
 let events;
 fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
- events = data;
+    events = data;
 });
 
 var app = express();
-/*
-var myRouter = express.Router();
 
-myRouter.route('/events')
-.get(function(req,res){
-	res.json({message : "Liste toutes les piscines de Lille Métropole", methode : req.method});
-})
-.post(function(req,res){
-      res.json({message : "Ajoute une nouvelle piscine à la liste", methode : req.method});
-})
-.put(function(req,res){
-      res.json({message : "Mise à jour des informations d'une piscine dans la liste", methode : req.method});
-})
-.delete(function(req,res){
-      res.json({message : "Suppression d'une piscine dans la liste", methode : req.method});
-});
-*/
 app.get('/events', function (req, res) {
     console.log( "GET /events" );
-    res.end( events );
+    eventsController.list(req, res)
 });
 
 app.get('/events/:eventId', function (req, res) {
     console.log( "GET /events/:eventId - id:"+req.params.eventId);
-    res.status(201).send( "ghlgfg" );
+    eventsController.getById(req, res)
 });
 
 app.post('/events/:eventId', function (req, res) {
     console.log( "POST /events/:eventId - id:"+req.params.userId );
-
+    eventsController.getById(req, res)
 });
 
 app.patch('/events/:eventId', function (req, res) {
     console.log( "PATCH /events/:eventId - id:"+req.params.userId );
-
+    eventsController.patchById(req, res)
 });
 
 app.delete('/events/:eventId', function (req, res) {
     console.log( "DELETE /events/:eventId - id:"+req.params.userId );
-
+    eventsController.removeById(req, res)
 });
+
 
 
 //listen
