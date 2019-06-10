@@ -6,11 +6,11 @@
     </head>
     <body>
 
-        <button type="button" onclick="listUsers()">listUsers</button>
-        <button type="button" onclick="getUser()">listUsers</button>
-        <button type="button" onclick="addUsers()">listUsers</button>
-        <button type="button" onclick="modifyUser(3)">listUsers</button>
-        <button type="button" onclick="deleteUser(3)">listUsers</button>
+        <button type="button" onclick="listEvents()">get all events</button>
+        <button type="button" onclick="getEvent()">get event</button>
+        <button type="button" onclick="addEvent()">add event</button>
+        <button type="button" onclick="updateEvent(3)">update event</button>
+        <button type="button" onclick="deleteEvent(3)">delete event</button>
         <div id="result"></div>
         
         <script>
@@ -18,58 +18,52 @@
                 document.getElementById("result").innerHTML = res;
             }
 
-function ggg ( result ) {
-  alert( result );
-}
-
-            function lisstUsers(){
+            function listEvents(){
                 $.ajax({
-                    dataType: "json",
+                    dataType: "html",
                     type: "GET",
-                    url: "http://localhost:3000/events/9",
-                    success: ggg
+                    url: "http://localhost:3000/events",
+                    success: function(result,data) { 
+                        $("#result").text(result)
+                    }
                 });
             }
 
-            function listUsers(){
-                $.get("http://localhost:3000/events/6",  function( result ) {
-                  alert("rt");
-                } );
-            }
-
-            function getUser(){
+            function getEvent(){
                 $.ajax({
-                    dataType: "json",
-                    url: "http://localhost:3000/getUser",
-                    data: data,
-                    success: success
+                    dataType: "html",
+                    type: "GET",
+                    url: "http://localhost:3000/events/2",
+                    success: function(result,data) { $("#result").text(result)}
                 });
             }
 
-            function addUser(){
+            function addEvent(){
                 $.ajax({
-                    dataType: "json",
-                    url: "http://localhost:3000/addUser",
-                    data: data,
-                    success: success
+                    dataType: "html",
+                    url: "http://localhost:3000/events",
+                    type: "POST",
+                    data: {title:"hgnvsdn"},
+                    success: function(result,data) { $("#result").text(result)}
                 });
             }
 
-            function modifyUser(){
+            function updateEvent(){
                 $.ajax({
-                    dataType: "json",
-                    url: "http://localhost:3000/addUser",
-                    data: data,
-                    success: success
+                    dataType: "html",
+                    type: "POST",
+                    url: "http://localhost:3000/events/2",
+                    data: {title:"titi"},
+                    success: function(result,data) { $("#result").text(result)}
                 });
             }
 
-            function deleteUser(){
+            function deleteEvent(){
                 $.ajax({
-                    dataType: "json",
-                    url: "http://localhost:3000/addUser",
-                    data: data,
-                    success: success
+                    dataType: "html",
+                    type: "DELETE",
+                    url: "http://localhost:3000/events/2",
+                    success: function(result,data) { $("#result").text(result)}
                 });
             }
         </script>

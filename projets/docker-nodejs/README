@@ -14,12 +14,19 @@ DOCKER
 npm i
 node server.js
 
+docker :
+
+production : docker-compose -f docker/docker-compose.yml up -d,
+build : docker-compose -f docker/docker-compose.yml build
+
+
 URL :
 http://localhost:3000/events
 
 
 ***liens
 
+https://docker-curriculum.com/
 https://www.digitalocean.com/community/tutorials/containerizing-a-node-js-application-for-development-with-docker-compose
 https://medium.com/@deanslamajr/develop-that-nodejs-app-inside-a-docker-container-d7b93b8c89db
 https://medium.com/@francoisromain/getting-started-with-docker-for-local-node-js-development-192ceca18781

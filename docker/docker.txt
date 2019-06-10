@@ -20,6 +20,11 @@ namespace : limitent un processus et ses processus fils à une section spécifiq
 - les applications ayant des exigences différentes peuvent être exécutées indépendemment les unes des autres sans que l’overhead d’un système invité séparé doive être accepté
 - économe en ressources
 
+The advantages of Docker are:
+- Apps always run in the same environment (local computer, live server).
+- Apps are sandboxed to keep them separate and avoid potential conflicts.
+- Apps are easy to share with all their dependencies.
+
 -les apps ont leur propre hote
 -lancer test d'intégration indépendamment
 
@@ -79,5 +84,5 @@ https://dzone.com/articles/50-useful-docker-tutorials-for-it-professionals-fr
 https://github.com/docker/labs/tree/master/beginner/
 https://www.supinfo.com/articles/single/3980-deploiement-une-application-nodejs-avec-docker
 https://hub.docker.com/
-
+https://www.guru99.com/docker-tutorial.html
 
