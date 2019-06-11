@@ -1,8 +1,8 @@
 var express = require('express');
 const eventsController = require('./controller');
 
-var hostname = 'localhost';
-var port = 3000;
+var hostname = '0.0.0.0';
+var port = 8081;
 
 var app = express();
 
@@ -11,6 +11,11 @@ app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
+
+app.get('/', function (req, res) {
+    console.log( "GET /" );
+    res.sendfile('index.html');
+});
 
 app.get('/events', function (req, res) {
     console.log( "GET /events" );
