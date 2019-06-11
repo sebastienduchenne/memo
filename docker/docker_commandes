@@ -1,14 +1,18 @@
-Dockerfile
-= fichier contenant des instructions pour créer une image
--> commande “docker build”
+docker build --name="name"
+docker run name
+docker images
+docker stop name
+docker rmi d4f
+docker container ls
 
 
-Commandes
+-----------------------------------------------------------------------------------
+
 docker build : Construire l’image à partir d’un dockerfile avec la commande
 docker run xxx : lancer le container xx
 
 déclarer puis lancer un container
- $ docker run debian:wheezy
+$ docker run debian:wheezy
 docker create puis docker start
 
 créer un container
@@ -94,13 +98,4 @@ docker update	Update configuration of one or more containers
 docker version	Show the Docker version information
 docker volume	Manage volumes
 docker wait	Block until one or more containers stop, then print their exit codes
-
-
-Docker-compose
-docker-compose up
-docker-compose ps
-docker-compose stop
-docker-compose down
-docker-compose 
-
 

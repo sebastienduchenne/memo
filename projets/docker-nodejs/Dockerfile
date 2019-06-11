@@ -1,7 +1,6 @@
 FROM node:10.12.0-alpine
 WORKDIR /home/nodejs/app
 RUN npm install
-ARG port=3000
-EXPOSE $port
-COPY . ./
+EXPOSE 3000
+COPY . .
 CMD node index.js

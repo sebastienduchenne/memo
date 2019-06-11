@@ -20,7 +20,6 @@ namespace : limitent un processus et ses processus fils à une section spécifiq
 - les applications ayant des exigences différentes peuvent être exécutées indépendemment les unes des autres sans que l’overhead d’un système invité séparé doive être accepté
 - économe en ressources
 
-The advantages of Docker are:
 - Apps always run in the same environment (local computer, live server).
 - Apps are sandboxed to keep them separate and avoid potential conflicts.
 - Apps are easy to share with all their dependencies.
@@ -28,7 +27,7 @@ The advantages of Docker are:
 -les apps ont leur propre hote
 -lancer test d'intégration indépendamment
 
-. Les conteneurs logiciels permettent aussi d’utiliser des applications sur plusieurs plateformes et dans différentes infrastructures sans avoir à les adapter spécifiquement aux configurations matérielles ou logicielles des différents systèmes hôtes.
+- Les conteneurs logiciels permettent aussi d’utiliser des applications sur plusieurs plateformes et dans différentes infrastructures sans avoir à les adapter spécifiquement aux configurations matérielles ou logicielles des différents systèmes hôtes.
 Docker utilise des images portables de logiciel de conteneurs. Les images de conteneurs contiennent des applications propres, y compris toutes les bibliothèques, les fichiers binaires et les fichiers de configuration nécessaires à l’exécution des processus d’application encapsulés et n’imposent donc que des exigences minimales au système hôte en question. Ceci permet de déplacer un conteneur d’application entre différents systèmes Linux, Windows ou MacOs sans configuration supplémentaire, à condition que la plateforme Docker ait été installée en tant que couche abstraite.
 
 
@@ -51,9 +50,6 @@ terminal : programme client du point de vue de Docker qui intéragit avec le dae
 .peut être optimisé pour gagner du temps
 
 
-https://putaindecode.io/articles/les-dockerfiles/
-
-
 *** Plusieurs conteneurs
 
 .load balancing = répartition de la charge sur les différents noeuds
@@ -62,7 +58,7 @@ https://putaindecode.io/articles/les-dockerfiles/
 .google cAdvisor : Fournit aux utilisateurs de conteneurs une bonne compréhension sur l'utilisation des ressources et des performances générales sur les conteneurs en cours d'utilisation. Il s'agit d'un processus daemon qui collecte, aggrege, opère et exporte les informations des conteneurs en cours.
 
 
--> on déploie plusieurs conteneurs (BD+ log+ app+serveur)
+-> on déploie plusieurs conteneurs (BD + log + app + serveur)
 
 Vous avez surement plusieurs projets qui utilisent MySQL. Il est possible d’installer MySQL sur chacun de vos conteneurs, ou bien d’avoir un conteneur dédié. De cette manière, tous vos projets stockeront leurs données sur le même conteneur. Cela permet de rassembler un maximum de données, et de faciliter la gestion (un seul et même conteneur à lancer quel que soit le projet, à condition que la version de la BDD voulue soit similaire).
 

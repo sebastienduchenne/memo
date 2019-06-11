@@ -18,8 +18,8 @@ STOPSIGNAL
 
 *** Remarques
 
-COPY se contente tout simplement de prendre un fichier (ou répertoire) du host et de le mettre dans le conteneur.
-ADD peut aussi faire la même chose, mais le src peut être une URL. Dans ce cas, docker se charge du téléchargement et de placer le fichier téléchargé dans dest. Si src est un fichier zippé et dest un répertoire docker dezzipe src (ADD file.zip /var/opt/). Un peu confus tout ça …
+COPY prend un fichier (ou répertoire) du host et de le mettre dans le conteneur.
+ADD fait la même chose, mais le src peut être une URL. Dans ce cas, docker se charge du téléchargement et de placer le fichier téléchargé dans dest. Si src est un fichier zippé et dest un répertoire docker dezzipe src (ADD file.zip /var/opt/)
 La documentation de Docker conseille d’utiliser COPY au profit de ADD, sauf pour des cas spécifiques.
 
 
