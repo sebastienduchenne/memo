@@ -2,7 +2,13 @@
 
 . permet de gérer toute la complexité en application et outils dans l'entreprise
 
-### avantages
+. c'est une culture, un état d'esprit qui implique tout le monde dans l'entreprise
+
+. le monde de l'informatique évolue de plus en plus vite, les exigences changent sans cesse, il faut développer de plus en plus rapidement, le modèle en cascade n'est plus adapté
+
+.collaboration étroite entre tout les acteurs du projet
+
+*** avantages
 -le gain de confiance
 -l'accélération des livraisons
 -la capacité à résoudre les tickets plus rapidement
@@ -16,7 +22,7 @@
 . Consignation et supervision
 
 
-### Modèle en cascade
+*** Modèle en cascade
 Traditionnellement, dans l'entreprise, l'équipe de développement des applications est chargée de collecter les exigences métier dont doit tenir compte un logiciel, puis d'en rédiger le code. L'équipe de développement teste son programme dans un environnement isolé à des fins d'assurance qualité. Ensuite, si les exigences sont satisfaites, elle met le code à la disposition des équipes opérationnelles pour exploitation.
 
 Ce paradigme pose un problème : lorsque les deux équipes travaillent séparément, le développement peut ne pas être au courant des obstacles opérationnels qui empêchent le programme de fonctionner comme attendu.
@@ -24,13 +30,13 @@ Ce paradigme pose un problème : lorsque les deux équipes travaillent séparém
 
 ------------------------------------------------------------------------------------------------------------
 
-### Missions du devops
+*** Missions du devops
 -Déploiement d’applications
 -Réalisation de phases de test, réalisées en amont du développement
 -Mise en place d’une surveillance de la qualité de la production
 
 
-### Qualités, compétences du devops
+*** Qualités, compétences du devops
 
 Des compétences techniques, tout d’abord, intrinsèquement liées au métier en lui-même. Il s’agit de tout ce qui concerne le développement et l’exploitation de logiciel ainsi que l’administration de systèmes et d’outils très spécifiques. Le DevOps doit ainsi voir des compétences en programmation (écriture et compréhension du code, connaissance des langages de programmation, développement de scripts et intégration) en déploiement d’infrastructures (mise en place de passerelles pour transférer des opérations ou des données) ainsi qu’en évaluation (capacité à évaluer le fonctionnement des applications, à procéder à des ajustements en termes de ressources et d’outils et à mesurer les performances des solutions mises en place).
 
@@ -42,17 +48,12 @@ Au-delà de ces compétences techniques, le DevOps doit aussi savoir faire preuv
 
 
 
-Liens
+*** Liens
 
 https://aws.amazon.com/fr/devops/what-is-devops/
 https://fr.wikipedia.org/wiki/Devops
 https://fr.atlassian.com/devops
 https://www.redhat.com/fr/topics/devops#
-
-
-
-
-
-
+https://www.combell.com/fr/blog/devops-pourquoi-si-important/
 
 

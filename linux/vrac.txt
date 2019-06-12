@@ -1,0 +1,8 @@
+. sudo apt-get update : mettre à jour l’index, les descriptions des paquets locaux de l’OS
+. htop : utilisation ressources
+
+
+*** Installer un paquet deb
+sudo dpkg -i package_file.deb
+
+

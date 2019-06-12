@@ -93,7 +93,7 @@ Push origin « branche »
 Créer une pull request
 Accepter/refuser la PR
 
-Branche : 
+Les différents types de branches : 
 -master
 -develop
 -feature

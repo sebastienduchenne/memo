@@ -21,6 +21,7 @@ décomposition / déstructuration d’un tableau
 prototype
 fonction constructeur
 IIFE = immediately invoked function expression
+'use strict' : mode strict, impose des contraintes de développement (pas de variables non déclarées, mots clé réservés)
 
 
 
@@ -31,5 +32,7 @@ https://openclassrooms.com/fr/courses/146276-tout-sur-le-javascript/142043-prese
 https://developer.mozilla.org/fr/docs/Apprendre/JavaScript/Building_blocks/Build_your_own_function
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Gestion_de_la_m%C3%A9moire#Références
 https://putaindecode.io/fr/articles/frontend/2015-etat-lieux-javascript-modulaire/
+https://www.w3schools.com/js
+
 
 */

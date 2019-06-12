@@ -1,3 +1,58 @@
+*** A chercher
+-javascript
+commonJS
+filtre et array
+use strict
+
+-nodejs
+exports
+package.json
+npm
+Polyfill
+
+-devops
+quid dev fullstack
+compo équipe
+cloudfoundry
+intégration cont
+dépl continue
+MS AZURE
+culture
+
+-docker
+dockerfile + ex
+docker compose
+image
+exemples d’usage
+
+-autres
+Nginx
+intégrateur
+blockchain
+reactjs
+react native
+vu.js
+backbone
+PaaS
+
+-----------------------------------------------------------
+
+*** VRAC
+. version vanilla : version standard d'un programme informatique : ni patché, ni modifié
+. devops dev : IC
+. devops ops : 
+. fournisseur cloud : AWS, 
+. PaaS : plateforme en tant que service contenant des applications
+. Nginx : logiciel de serveur web, asynchrone
+. ember : framework JS pour faire des appli web
+. backbone : framework JS pour faire des appli web
+pstree
+pstree -p | grep chrome
+pkill -e chrome
+pstree –up
+killall geckodriver-v0.24.0
+ps -ef
+. le ~ devant une variable inverse tout les bits de valeurs
 npm install --save
 npm install --save-dev
 nmap : trace réseau
@@ -9,31 +64,6 @@ systemctl
 openvpn
 iptable
 ll
-
-
-*** Installer un paquet deb
-sudo dpkg -i package_file.deb
-
-
-*** VRAC
-. Session : moyen de stocker sur le serveur des informations sur un client. création d’un ID unique de session
-. version vanilla : version standard d'un programme informatique : ni patché, ni modifié
-. devops dev : IC
-. devops ops : 
-. fournisseur cloud : AWS, 
-. PaaS : plateforme en tant que service contenant des applications
-. Nginx : logiciel de serveur web, asynchrone
-. ember : framework JS pour faire des appli web
-. backbone : framework JS pour faire des appli web
-. sudo apt-get update : mettre à jour l’index, les descriptions des paquets locaux de l’OS
-. htop : utilisation ressources
-pstree
-pstree -p | grep chrome
-pkill -e chrome
-pstree –up
-killall geckodriver-v0.24.0
-ps -ef
-. le ~ devant une variable inverse tout les bits de valeurs
 
 
 *** Intelligence artificielle
@@ -57,13 +87,8 @@ impose un certain nombre de règles afin d’augmenter la productivité dans un 
 
 
 
-
-
+*** Liens
 https://ignition-program.com/blog/guide-code-nouvelles-technologies-a-utiliser-2018/
 https://vinceops.me/git-astuces-productivite-1/
-
-
-
-
 
 

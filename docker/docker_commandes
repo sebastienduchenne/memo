@@ -1,10 +1,10 @@
 docker build --name="name"
-docker run name
+docker run -p 16260:8080 name
 docker images
 docker stop name
-docker rmi d4f
+docker rmi -f d4f
 docker container ls
-
+docker ps
 
 -----------------------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ créer un container
 $ docker create --tty --interactive --name="wonderful_mobidock" debian:7
 
 supprimer une image
-docker rmi d4f //(les 3 1er caractères de l'ID)
+docker rmi -f d4f //(les 3 1er caractères de l'ID)
 
 docker swarm = créer un cluster selon une architecture slave master
 docker swarm init

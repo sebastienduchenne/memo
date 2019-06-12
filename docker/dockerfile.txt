@@ -1,19 +1,42 @@
-FROM node:10.12.0-alpine : image source
-MAINTAINER <name> : auteur
-WORKDIR /home/nodejs/app : changer le répertoire courant de l'image, toutes les commandes qui suivront seront exécutées à partir de ce répertoire
-ENV NODE_ENV prod : set variable d’env
-COPY package*.json ./ : copier un fichier
-RUN <commande> : executer une commande dans l'image
+-FROM node:10.12.0-alpine
+image source
+
+-MAINTAINER <name>
+auteur
+
+-WORKDIR /home/nodejs/app
+changer le répertoire courant de l'image, toutes les commandes qui suivront seront exécutées à partir de ce répertoire
+
+-ENV NODE_ENV prod
+set variable d’env
+
+-COPY package*.json ./
+copier un fichier
+
+-RUN
+executer une commande dans l'image
+RUN <commande> : 
 RUN ["executable","param1","param2"]
-ARG port=80
-CMD instr : instruction qui doit s'exécuter au lancement du conteneur. un seul par dockerfile
-VOLUME : dossier à partager
-EXPOSE $port : port à partager
-LABEL : ajoute des paires clé-valeur
-ADD file dest : ajouter des fichiers locaux ou distants à l'intérieur de votre image, il est le plus souvent utilisé pour importer les sources de son projet ou des fichiers de configuration
-ENTRYPOINT
-USER
-STOPSIGNAL
+
+-ARG port=80
+
+-CMD instr : instruction qui doit s'exécuter au lancement du conteneur. un seul par dockerfile
+
+-VOLUME : dossier à partager
+
+-EXPOSE $port : port à partager
+
+-LABEL : ajoute des paires clé-valeur
+
+-ADD file dest
+ajouter des fichiers locaux ou distants à l'intérieur de votre image, il est le plus souvent utilisé pour importer les sources de son projet ou des fichiers de configuration
+
+-ENTRYPOINT
+
+-USER
+
+-STOPSIGNAL
+
 
 
 *** Remarques
