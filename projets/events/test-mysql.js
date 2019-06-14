@@ -11,7 +11,7 @@ con.connect(function(err) {
     console.log("Connected!");
 });
 
-const sql = "SELECT * FROM"
+const sql = "SELECT * FROM events"
 con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Result: " + result);

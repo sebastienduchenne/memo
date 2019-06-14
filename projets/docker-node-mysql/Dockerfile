@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:10.12.0-alpine
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -14,6 +14,5 @@ RUN npm install
 
 # Bundle app source
 COPY . .
-
-EXPOSE 8080
-CMD [ "npm", "start" ]
+EXPOSE 3000
+CMD node index.js

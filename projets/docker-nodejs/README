@@ -1,2 +1,0 @@
-docker build -t toto/node-web-app .
-docker run -p 49161:8081 -d toto/node-web-app

@@ -1,3 +1,36 @@
+étape 1
+-serveur simple : GET, POST, PATCH, DELETE
+-BD = fichier json
+-index.html avec bouton pour GET, POST, PATCH, DELETE
+
+étape 2
+-docker
+
+étape 3
+-BD = mysql
+-front avec liste events, add events
+-adapter serveur : MVC
+
+étape 4
+-docker compose
+
+étape 5
+-test
+
+étape 6
+-NGINX
+
+étape 7
+-docker
+
+étape 8
+-react.js
+
+étape 9
+-docker
+
+----------------------------------------------------------------
+
 API : nodejs
 BD : ?
 -mysql
@@ -14,19 +47,27 @@ DOCKER
 npm i
 node server.js
 
-docker :
+*** docker :
 
+-docker file
+docker build -t toto/titi
+docker run --name toto -p 8080:3000
+
+-docker-compose
 production : docker-compose -f docker/docker-compose.yml up -d,
 build : docker-compose -f docker/docker-compose.yml build
 
 
-URL :
-http://localhost:3000/events
+*** URL :
+http://localhost:8080/
 
 
 *** mysql
 -installer phpmyadmin
 -installer le module node mysql
+
+
+---------------------------------------------------------------------
 
 ***liens
 
