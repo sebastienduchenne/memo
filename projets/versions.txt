@@ -4,7 +4,7 @@
 -index.html avec bouton pour GET, POST, PATCH, DELETE
 
 ##### étape 2
--lancement dans docker
+-docker
 
 ##### étape 3
 -BD = mysql

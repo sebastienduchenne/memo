@@ -24,6 +24,10 @@ URL :
 http://localhost:3000/events
 
 
+*** mysql
+-installer phpmyadmin
+-installer le module node mysql
+
 ***liens
 
 https://docker-curriculum.com/
