@@ -1,37 +1,16 @@
-version: '1.0'
-
+version: '3.3'
 services:
-    mysql:
-        image: mysql/mysql-server:5.7
-        environment:
-            MYSQL_ROOT_PASSWORD: password
-        ports:
-            - "127.0.0.1:3306:3306"
-        volumes:
-            -   type: bind
-                source: ./docker_db
-                target: /docker-entrypoint-initdb.d
-        expose:
-            - "3306"
-        networks:
-            - app-network
-    myapp:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        command: npm index.js
-        depends_on:
-            - mysql
-        ports:
-            - "127.0.0.1:8080:3000"
-        expose:
-            - "3000"
-        links:
-            - mysql
-        networks:
-            - app-network
-        command: ["./wait-for-db.sh"]
+    app:
+        build: .
+        depends_on: 
+            - db
 
-networks:
-    app-network:
-        driver: bridge
+    db:
+        image: mysql/mysql-server:5.7
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_DATABASE=database
+            - MYSQL_USER=username
+            - MYSQL_PASSWORD=password
+            - MYSQL_ROOT_PASSWORD=password

@@ -1,9 +1,0 @@
-# Build step outputs
-build
-.happypack
-
-# Docker configuration
-Dockerfile
-
-# NPM dependencies
-node_modules
