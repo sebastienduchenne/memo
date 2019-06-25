@@ -33,6 +33,14 @@ http {              # http context
   }
 }
 
+----------------------------------------------------------
+
+*** directives
+
+http
+server
+
+----------------------------------------------------------
 
 *** signal
 While your nginx instance is running, you can manage it by sending signals:
