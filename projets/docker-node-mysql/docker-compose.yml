@@ -4,6 +4,8 @@ services:
         build: .
         depends_on: 
             - db
+        ports:
+            - "3306:3306"
 
     db:
         image: mysql/mysql-server:5.7
@@ -11,6 +13,6 @@ services:
             - "3306:3306"
         environment:
             - MYSQL_DATABASE=database
-            - MYSQL_USER=username
+            - MYSQL_USER=root
             - MYSQL_PASSWORD=password
             - MYSQL_ROOT_PASSWORD=password

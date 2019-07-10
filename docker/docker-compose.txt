@@ -23,26 +23,28 @@ docker-compose logs -f rails : logs pour le conteneur rails uniquement
 *** Fichier yaml
 version
 services
-    nom_service
-        image : nom de l'image de départ
-        environment : variables d'environement
-        volumes : share content between the local host and the container
-        working_dir : the directory where the command instruction is executed.
-        command : an instruction that start the application
-        links
-        ports
-        expose : expose a port from the container to a docker network
-        env_file
-        depends_on : services dont il dépend
-        restart : defines the restart policy (no, unless-stopped)
-        networks
-        container_name
-        build : defines the configuration options
-            context : This defines the build context for the image build — in this case, the current project directory
-            target
-            dockerfile : path vers dockerfile
-            args
-                port
+  nom_service
+    image : nom de l'image de départ
+    environment : variables d'environement
+    volumes : share content between the local host and the container
+    working_dir : the directory where the command instruction is executed.
+    command : an instruction that start the application
+    links
+    ports
+      published
+      target
+    expose : expose a port from the container to a docker network
+    env_file
+    depends_on : services dont il dépend
+    restart : defines the restart policy (no, unless-stopped)
+    networks
+    container_name
+    build : defines the configuration options
+      context : This defines the build context for the image build — in this case, the current project directory
+      target
+      dockerfile : path vers dockerfile
+      args
+        port
 
 networks:
   app-network:

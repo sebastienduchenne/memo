@@ -46,6 +46,7 @@ PaaS
 . Nginx : logiciel de serveur web, asynchrone
 . ember : framework JS pour faire des appli web
 . backbone : framework JS pour faire des appli web
+-algorithme hyperloglog
 pstree
 pstree -p | grep chrome
 pkill -e chrome
