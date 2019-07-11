@@ -2,7 +2,6 @@
 -javascript
 commonJS
 filtre et array
-use strict
 
 -nodejs
 exports
@@ -14,26 +13,26 @@ Polyfill
 quid dev fullstack
 compo équipe
 cloudfoundry
-intégration cont
-dépl continue
+intégration continue
+déploiement continue
 MS AZURE
 culture
 
 -docker
-dockerfile + ex
-docker compose
-image
-exemples d’usage
+
 
 -autres
+git
 Nginx
+redis
+elasticsearch
 intégrateur
-blockchain
 reactjs
 react native
 vu.js
 backbone
-PaaS
+PaaS = plateforme en tant que service contenant des applications
+python
 
 -----------------------------------------------------------
 
@@ -41,50 +40,93 @@ PaaS
 . version vanilla : version standard d'un programme informatique : ni patché, ni modifié
 . devops dev : IC
 . devops ops : 
-. fournisseur cloud : AWS, 
-. PaaS : plateforme en tant que service contenant des applications
-. Nginx : logiciel de serveur web, asynchrone
+. fournisseur cloud : AWS
 . ember : framework JS pour faire des appli web
 . backbone : framework JS pour faire des appli web
--algorithme hyperloglog
+-algorithme hyperloglog = probabiliste
+. le ~ devant une variable inverse tout les bits de valeurs
+-openvpn
+-MapReduce = patron d'architecture, inventé par Google, dans lequel sont effectués des calculs parallèles, et souvent distribués, de données très volumineuses (> 1 To)
+-Framework = cadre de travail, apporte un outil qui encadre notre travail (création formulaire, tests...), impose un certain nombre de règles afin d’augmenter la productivité dans un travail de groupe et faire plus facilement de la maintenance
+-Amazon S3 : 
+
+
+
+*** scala
+
+-exotique
+
+
+*** closure
+-fonctionnel
+-dialecte du Lisp
+
+-compliqué à lire
+
+
+*** blockchain 
+=technologie de stockage et de transmission d’informations, transparente, sécurisée, et fonctionnant sans organe central de contrôle
+-chaine de blocs
+-une blockchain constitue une base de données qui contient l’historique de tous les échanges effectués entre ses utilisateurs depuis sa création. Cette base de données est sécurisée et distribuée : elle est partagée par ses différents utilisateurs, sans intermédiaire, ce qui permet à chacun de vérifier la validité de la chaîne
+
+
+*** Hadoop
+=framework libre et open source écrit en Java destiné à faciliter la création d'applications distribuées (au niveau du stockage des données et de leur traitement) et échelonnables (scalables) permettant aux applications de travailler avec des milliers de nœuds et des pétaoctets de données
+-chaque nœud est constitué de machines standard regroupées en grappe
+
+
+*** noSLQ
+-ni schéma, ni structure de stockage donc pas de langage, donc il faut savoir ce que l'on cherche
+-non basé sur le relationnel
+-Not Only SQL
+-outils : redis, elasticsearch, mongodb, MemCached, Azure Cosmos DB, SimpleDB
+-gestion de documents
+    -traitement sur des colonnes
+    -techno : 
+-orienté colonne
+    -traitement sur des colonnes
+    -techno : BigTable, HBase, Spark SQL, Elasticsearch
+-base orienté graphe
+    -
+    -techno : Neo4j, OrientDB, FlockDB
+
+
+https://openclassrooms.com/fr/courses/4462426-maitrisez-les-bases-de-donnees-nosql/4462433-choisissez-votre-famille-nosql
+
+
+non whitelist de trust => suspicious
+rec
+
+
+
+
+*** système
+npm install --save
+npm install --save-dev
+htop : utilisation ressources
+/etc/systemd
 pstree
 pstree -p | grep chrome
 pkill -e chrome
 pstree –up
 killall geckodriver-v0.24.0
 ps -ef
-. le ~ devant une variable inverse tout les bits de valeurs
-npm install --save
-npm install --save-dev
-nmap : trace réseau
-ifconfig
-htop : utilisation ressources
-/etc/hosts : résolution DNS
-systemctl
-/etc/systemd
-openvpn
-iptable
 ll
 
 
-*** Intelligence artificielle
-. darknet yolo
-. convolution
-. Réseau de neurones
-. bot
-. machine learning
+*** réseau
+nmap : trace réseau
+ifconfig = configurer et d'afficher les informations des interfaces réseau IP
+/etc/hosts : résolution DNS
+systemctl
+iptable
 
 
-*** si install java mais unable to locate package
+*** installer java
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update 
 sudo apt-get install openjdk-8-jdk
 java -version
-
-
-*** Framework
-= cadre de travail, apporte un outil qui encadre notre travail (création formulaire, tests...)
-impose un certain nombre de règles afin d’augmenter la productivité dans un travail de groupe et faire plus facilement de la maintenance
 
 
 

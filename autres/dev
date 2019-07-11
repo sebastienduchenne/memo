@@ -1,37 +1,19 @@
 
+*** process
++apprendre techno
+    -sources : site de la techno, tuto, étudier exemples, vidéos
+    -fonctionnement, concepts utilisés, opportunités/possibilités, limites/inconvénients, popularité/avis
+    -sur le marché, concurrence
+    -performances
 
-*** conception projet
-- étapes
-- scénarios
++conception prog
+    -imaginer le parcours de l'utilisateur, les étapes
+    -schémas
 
++veille
+    -quoi : framework, techno, langage
 
-Apprendre une techno
-. comprendre fonctionnement
-. voir un exemple simple, le comprendre et le modifier à sa guise
-. écrire un résumé
-. vidéos
-. tuto
-. documentation officielle
-
-Nicolas Le Halper
-parfois erreur dans blog et stackoverflow même si pouce haut
-voir stackoverflow
-
-
-
-
-Comportement
-. engagement actif
-. alternance d’apprentissage et de test : permet de savoir quand on ne sait pas
-
-Quoi
-. structure projet
-. étapes, chemin, parcours
-. à quoi sert tel méthode, classe, algo
-. pour X il faut Y
-. conséquences
-. concept : principe, av, inc, utilité
-. pouvoir se réexpliquer les notions, résumer
-. définition, fonctionnement, intérêt, avantages et inconvénients
++pratiques
+    -SOLID, ACID, 
 
 

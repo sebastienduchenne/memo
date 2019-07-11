@@ -1,0 +1,28 @@
+-indentation
+-interprété
+-paradigme : impérative, orienté objet, fonctionnel
+-typage dynamique fort
+-ramasse-miette
+-utilisé dans le milieu scientifique
+-supporte l'héritage multiple
+-encapsulation limitée
+-créer du code complexe en peu de lignes
+-IDE : PyCharm, VS code, ...
+
+*** usages
+-web : avec le framework Django
+-système : tâches répétitives
+-app Java avec Jython
+-app bioinformatique : module biopython
+-jeux vidéos : pyGame
+
+
+
+
+
+
+*** liens
+https://openclassrooms.com/fr/courses/235344-apprenez-a-programmer-en-python/230659-decouvrez-python
+https://python-django.dev/
+http://biopython.org/DIST/docs/tutorial/Tutorial.html
+http://www.dailymotion.com/playlist/x22t3u_universal_avs_apprendre-le-python/
