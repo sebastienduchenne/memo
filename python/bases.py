@@ -1,22 +1,39 @@
 #commentaire
 
 '''
-toue est objet : une variable peut contenir une référence vers tous les éléments manipulés par le langage : nombres, méthodes, modules, etc
+tout est objet : une variable peut contenir une référence vers tous les éléments manipulés par le langage : nombres, méthodes, modules, etc
 
 '''
+#encodage UTF8, par défaut dans python 3
+# -*- coding: utf-8 -*-
+# coding: utf-8
+
+print("toto")
+
+
+#saisir
+age = input("Quel est votre age? : ")
+print("Vous avez %d ans" % age)
+
+
+#importer
+from func import *
+
 
 #types
 int i
 long l
 float f
 complex c
-
+str name1 = 'engel'  # str
+unicode name2 = u'engel' # unicode, préférable, par défaut dans python 3
+ 
 
 
 #boucle
 i = 0
 while i < 10:
-    print("Je ne dois pas poser une question sans lever la main")
+    print("titi")
     i = i +1
 
 v = "Bonjour toi"
@@ -28,6 +45,11 @@ for i in range(0,100):
     print(i)
 
 
+#module et package
+#-module = ensemble de fonctions
+#-package = ensemble de modules
+from package.module import fonction
+from package.module import *
 
 
 #classes

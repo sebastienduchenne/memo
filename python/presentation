@@ -8,6 +8,26 @@
 -encapsulation limitée
 -créer du code complexe en peu de lignes
 -IDE : PyCharm, VS code, ...
+-Black : formateur de python pour respecter certaines règles
+-PyPI = Python Package Index
+
+
+*** virtualenv
+=
+-travailler sur plusieurs projets à la fois nécessitant chacun des librairies de version différente
+
+
+*** pip
+= système de gestion de paquets
+-pip install django
+-pip install django==2.2
+-pip uninstall django
+-pip install django --upgrade
+-pip install django==2.1 --upgrade #downgrader
+-pip list --outdated #quels lib n'est plus à jour
+-pip freeze #lib installées et leur version
+
+
 
 *** usages
 -web : avec le framework Django
@@ -17,8 +37,22 @@
 -jeux vidéos : pyGame
 
 
+*** modules utiles
+random   : fonctions permettant de travailler avec des valeurs aléatoires
+math     : toutes les fonctions utiles pour les opérations mathématiques (cosinus,sinus,exp,etc.)
+sys      : fonctions systèmes
+os       : fonctions permettant d'interagir avec le système d'exploitation
+time     : fonctions permettant de travailler avec le temps
+calendar : fonctions de calendrier
+profile  : fonctions permettant d'analyser l'execution des fonctions
+urllib2  : fonctions permettant de récupérer des informations sur internet
+re       : fonctions permettant de travailler sur des expressions régulières
 
 
+*** extensions
+.py  -> script modifiable
+.pyc -> script compilé
+.pyw -> script executé sans lancement de terminal (sous windows)
 
 
 *** liens
