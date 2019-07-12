@@ -1,21 +1,21 @@
 /*
 -packager manager = 2 gestionnaires de package : npm et bower
 -attention aux dépendances circulaires
-esprima
-preset
-babeljs.io = module qui convertit tout syntaxe récente en ES5, conpréhensible par tous les navigateurs
-environnement bas niveau permettant d’exécuter du JS coté serveur
-utilise la VM V8 qui rend l’exécution du JS très rapide (JIT)
-JS est basé sur les évènements ce qui fait qu’il est plus rapide (peut exécuter plusieurs tâches en même temps)
+-esprima = parser
+-preset
+-utilise la VM V8 qui rend l’exécution du JS très rapide (JIT)
+-JS est basé sur les évènements ce qui fait qu’il est plus rapide (peut exécuter plusieurs tâches en même temps)
+-monothread
+
 requête non bloquante
 Télécharger un fichier
     Dès que c'est terminé, afficher le fichier
 Faire autre chose
 -> ici afficher le fichier est une fonction callback
 
-monothread
-NPM = gestionnaire de paquet
-* module de base : 
+
+*** Module
+* modules de base
 fs
 path : chemin
 url
@@ -29,8 +29,19 @@ stream
 console.dir() : afficher objet et tableau
 console.time() : démarrer un chrono, on l’arrète avec console.timeEnd()
 
-* Module
-express
+* modules complémentaires
+-express : serveur
+-fastify : serveur rapide
+-restify : serveur API REST
+-koa : asynchrone et rapide
+-hapi : plus structuré et plus complexe
+-helmet : sécuriser une app express
+-serve-static
+-babeljs.io = module qui convertit tout syntaxe récente en ES5, conpréhensible par tous les navigateurs
+environnement bas niveau permettant d’exécuter du JS coté serveur
+-meteor = framework pour faire des apps web moderne
+-backbone.js = framework
+-ember
 
 
 Module.exports
@@ -44,17 +55,20 @@ app.js
 const msg = require(message.js)
 console.log(msg) // Hello world
 
-Installation 
+*** Installation 
 globale : dans un seul endroit, avec -g
 locale : dans le dossier de travail
 préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X, si update => casse tout
 . invite de commande intéractive ou REPL
 
 
-* framework
-meteor
-backbone
-ember
+*** express
+-utilise http
+
+*branchement d'extension / middleware
+= traite la requête (parser, modifier la réponse)
+-avec app.use()
+-
 
 
 *** Liens
