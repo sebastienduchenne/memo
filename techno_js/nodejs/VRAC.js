@@ -14,47 +14,6 @@ Faire autre chose
 -> ici afficher le fichier est une fonction callback
 
 
-*** Module
-* modules de base
-fs
-path : chemin
-url
-event
-util
-http
-os
-child_process
-process
-stream
-console.dir() : afficher objet et tableau
-console.time() : démarrer un chrono, on l’arrète avec console.timeEnd()
-
-* modules complémentaires
--express : serveur
--fastify : serveur rapide
--restify : serveur API REST
--koa : asynchrone et rapide
--hapi : plus structuré et plus complexe
--helmet : sécuriser une app express
--serve-static
--babeljs.io = module qui convertit tout syntaxe récente en ES5, conpréhensible par tous les navigateurs
-environnement bas niveau permettant d’exécuter du JS coté serveur
--meteor = framework pour faire des apps web moderne
--backbone.js = framework
--ember
-
-
-Module.exports
-module : variable qui représente le module
-exports : objet
-
-Message.js
-module.exports = 'Hello world';
-
-app.js
-const msg = require(message.js)
-console.log(msg) // Hello world
-
 *** Installation 
 globale : dans un seul endroit, avec -g
 locale : dans le dossier de travail

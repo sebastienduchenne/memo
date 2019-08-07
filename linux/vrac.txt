@@ -5,4 +5,5 @@
 *** Installer un paquet deb
 sudo dpkg -i package_file.deb
 
-
+*** set PATH environment
+export PATH=$PATH:/place/with/the/file

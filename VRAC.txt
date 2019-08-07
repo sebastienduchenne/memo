@@ -11,12 +11,8 @@ Polyfill
 
 -devops
 quid dev fullstack
-compo équipe
 cloudfoundry
-intégration continue
-déploiement continue
 MS AZURE
-culture
 
 -docker
 
@@ -49,8 +45,20 @@ python
 -MapReduce = patron d'architecture, inventé par Google, dans lequel sont effectués des calculs parallèles, et souvent distribués, de données très volumineuses (> 1 To)
 -Framework = cadre de travail, apporte un outil qui encadre notre travail (création formulaire, tests...), impose un certain nombre de règles afin d’augmenter la productivité dans un travail de groupe et faire plus facilement de la maintenance
 -Amazon S3 : 
+-vector clock
+-cassandra
+-inline caching = technique d'optimisation
 
 
+***JIT
+= compilation à la volée, traduction de bytecode en code machine natif au moment de l'exécution
+-si il existe une version compilée d'un bout de code, elle sera appelée
+-lorsque le code est exécuté plusieurs fois, le profileur repère les bouts qui sont souvent exécutés (chauds) et les donne au compilateur pour qu'il créée une version optimisée du code qui sera ensuite stockée. A la prochaine exécution du code, c'est le code optimisé qui sera appelé
+-l'optimiser fait des hypothèses optimistes sur comment le code sera exécuté. Parfois, l'hypothèse d'optimisation est fausse et l'optimiser fait une désoptimisation
+-dans la JVM, chaque méthode est listée et est associée à un compteur qui est décrémenté à chaque appel, lorsque le compteur atteint 0, une compilation JIT est déclenchée pour la méthode
+-il faut trouver un compromis entre l'optimisation et l'interprétation
+
+https://www.ibm.com/support/knowledgecenter/fr/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_overview.html
 
 *** scala
 

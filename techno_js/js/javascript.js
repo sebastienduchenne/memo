@@ -6,4 +6,22 @@
 -le moteur de JS est monothread, il ne peut interpréter qu’une seule instruction à la fois
 -toutes les expressions sont de type référence = leur évaluation produit une référence vers une donnée. La référence se nomme le référent de l’expression et la donnée le référé de l’expression.
 
+
+*** moteur javascript V8
+-moteur qui trait le JS
+-utilisé par chromium, google chrome, opera et node.js
+-V8 compile du JS en langage machine (donc pas un interpréteur) et l'exécute immédiatement
+-2010 : version utilisant une nouvelle infrastructure de compilation nommée Crankshaft avec :
+    -le base compiler ("compilateur de base"), un JIT qui compile JavaScript vers du langage machine le plus vite possible sans même tenter d’optimiser le code lors de la compilation,
+    -le runtime profiler ("profileur d’exécution"), qui enregistre — entre autres — combien de temps est passé dans quelles parties du code et identifie le hot code ("code chaud"), c’est à dire le code qu’il vaudrait la peine d’optimiser en priorité, et
+    -l’optimizing compiler, un JIT qui tente d’optimiser le hot code précédemment identifié.
+->l’optimizing compiler fait des hypothèses optimistes. Si c'est faux, le base compiler compile, puis l’optimizing compiler optimisera avec de nouvelles données 
+-bailout = désistement
+-2015 : TurboFan est le nouveau compilateur
+-2016 : ajout de l'interpréteur Ignition
+
+
+https://zestedesavoir.com/articles/1652/quelques-rouages-dun-moteur-javascript/
+
+
 */
