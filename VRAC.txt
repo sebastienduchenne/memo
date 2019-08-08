@@ -60,6 +60,15 @@ python
 
 https://www.ibm.com/support/knowledgecenter/fr/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_overview.html
 
+
+*** garbage collector
+-mark and sweep
+
+
+
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Gestion_de_la_m%C3%A9moire
+
+
 *** scala
 
 -exotique

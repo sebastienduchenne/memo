@@ -7,10 +7,27 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Le_mod%C3%A8le_objet_
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes
 
 */
-function Employé () {
-    this.nom = "";
-    this.branche = "commun";
+function Employé (nom, age) {
+    this.nom = nom;
+    this.age = age;
+    this.salutation = function() {
+      alert('Bonjour ! Je m\'appelle ' + this.nom + '.');
+    };
 }
+
+//instanciation
+var emp1 = new Employé('Marc', 22);//1
+var emp2 = new Object();//2
+emp2.nom = "atta"
+var emp3 = new Object({//3
+  nom: 'titi',
+  age: 66,
+  salutation: function() {
+    alert('Bonjour ! Je m\'appelle ' + this.nom + '.');
+  }
+})
+var emp4 = Object.create(emp1);//4
+
 
 class Employé {//syntaxe avec EC6
     nom = "";
@@ -18,8 +35,6 @@ class Employé {//syntaxe avec EC6
 
     getNom(){return nom;}
 }
-
-var marc = new Travailleur;
 
 //syntaxe ES5?
 var Rectangle = class {

@@ -5,8 +5,15 @@
 -preset
 -utilise la VM V8 qui rend l’exécution du JS très rapide (JIT)
 -JS est basé sur les évènements ce qui fait qu’il est plus rapide (peut exécuter plusieurs tâches en même temps)
--monothread
+-utilise le mot-clé class comme sucre syntaxique pour déclarer des prototypes…
+-langage orienté-objet basé sur des prototypes
+-property access : les objets ont des références qui pointent vers elles, il existe différente stratégies d'accès à une propriété
+-les objets sont mutables : on peut donc augmenter les nouvelles instances en leur donnant de nouveaux champs et méthodes. Ces nouvelles instances peuvent à leur tour servir de prototypes pour de nouveaux objets. Nul besoin de classes pour créer des tas d’objets similaires. = le clonage
 
+
+
+
+*** callback
 requête non bloquante
 Télécharger un fichier
     Dès que c'est terminé, afficher le fichier
@@ -37,6 +44,10 @@ https://openclassrooms.com/fr/courses/1056721-des-applications-ultra-rapides-ave
 https://oncletom.io/node.js/#fnref1
 https://medium.mybridge.co/node-js-top-10-open-source-projects-for-the-past-month-v-mar-2018-6047fc05b1bb
 https://www.tutorialsteacher.com/nodejs/nodejs-tutorials
+
+https://developer.mozilla.org/fr/docs/Web/JavaScript
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide
+https://developer.mozilla.org/fr/docs/Apprendre/JavaScript
 
 * project
 https://github.com/Requarks/wiki
