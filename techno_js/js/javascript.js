@@ -8,6 +8,8 @@
 -toutes les expressions sont de type référence = leur évaluation produit une référence vers une donnée. La référence se nomme le référent de l’expression et la donnée le référé de l’expression.
 -gestion de la mémoire automatique, garbage collector
 
+-inversion de controle
+
 
 *** notions
 -callback
@@ -19,4 +21,8 @@
 -prototype
 -fonction fléchée
 -héritage et polymorphisme
+-itération
+-variables
+-default
+
 */

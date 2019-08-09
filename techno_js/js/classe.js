@@ -56,3 +56,25 @@ on peut ajouter des propriétés lors de l’exécution et on peut utiliser des 
 */
 
 marc.bonus = 3000;
+
+//héritage
+class Rectangle {
+  constructor(hauteur, largeur) {
+    this.name = 'Rectangle';
+    this.hauteur = hauteur;
+    this.largeur = largeur;
+  }
+  coucou(){
+    console.log('Coucou, je suis un ' + this.name + '.');
+  }
+  get aire() {
+    return this.hauteur * this.largeur;
+  }
+}
+
+class Carré extends Rectangle {
+  constructor(longueur) {
+    super(longueur, longueur);
+    this.name = 'Carré';
+  }
+}

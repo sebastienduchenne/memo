@@ -9,6 +9,10 @@ https://medium.com/@vincent.bocquet/var-let-const-en-js-quelles-diff%C3%A9rences
 
 */
 
+let x = 1; // déclarer une variable dont la portée est celle du bloc courant
+const c = 0; // déclarer une constante dont la portée est celle du bloc courant, comme let
+var v = 2; // déclarer une variable dont la portée est la fonction qui contient la déclaration ou le contexte global si la variable est déclarée en dehors de toute fonction
+
 // 1. Avec initialiseur
 
 alert(maVariable1); // erreur : accès impossible avant l'initialisation
