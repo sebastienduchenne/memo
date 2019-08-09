@@ -1,18 +1,24 @@
-. conteneur = image + stocke des paramètres d'exécutions, comme par exemple le mappage de port, les dossiers à partager.
 .dockerignore
 .montée en charge
+-swarm
+-kubernetes : déployer et de gérer des applications conteneurisées à l'échelle
+-la stack = ensemble de services reliés entre eux qui partagent des dépendances et qui peuvent être scalés
+-cluster
 
 
 *** Défintion
-. outil qui fait de la conteneurisation = peut empaqueter une application et ses dépendances dans un conteneur isolé (une image docker), qui pourra être exécuté sur n'importe quel serveur
-. OS et librairies partagées
-. Un conteneur n'inclut pas d’OS, mais s'appuie sur les fonctionnalités de l’OS fournies par la machine hôte Linux
-Cgroups : groupes de controles, limitent l’accès aux ressources mémoire, CPU et E/S, ce qui empêche les besoins en ressources d’un processus d’affecter d’autres processus en cours d’exécution
-namespace : limitent un processus et ses processus fils à une section spécifique du système sous-jacent
+- plate-forme logicielle qui vous permet de concevoir, tester et déployer des applications rapidement
+- fait de la conteneurisation = peut empaqueter une application et ses dépendances nécessaires à son fonctionnement dans une unité normalisée appelée conteneur (une image docker)
+- éléments : bibliothèques, outils système, code et environnement d'exécution
+- Un conteneur n'inclut pas d’OS, mais s'appuie sur les fonctionnalités de l’OS fournies par la machine hôte Linux :
+    -Cgroups : groupes de controles, limitent l’accès aux ressources mémoire, CPU et E/S, ce qui empêche les besoins en ressources d’un processus d’affecter d’autres processus en cours d’exécution
+    -namespace : limitent un processus et ses processus fils à une section spécifique du système sous-jacent
+- les VM virtualisent le matériel d'un serveur et les conteneurs virtualisent l'OS d'un serveur
 
 
-*** Cycle de vie d’un conteneur
-
+*** conteneur
+conteneur = image + stocke des paramètres d'exécutions, comme par exemple le mappage de port, les dossiers à partager.
+- a un cycle de vie
 
 
 *** Avantages
@@ -20,18 +26,22 @@ namespace : limitent un processus et ses processus fils à une section spécifiq
 - les applications ayant des exigences différentes peuvent être exécutées indépendemment les unes des autres sans que l’overhead d’un système invité séparé doive être accepté
 - économe en ressources
 
+
 - Apps always run in the same environment (local computer, live server).
 - Apps are sandboxed to keep them separate and avoid potential conflicts.
 - Apps are easy to share with all their dependencies.
 
+
 -les apps ont leur propre hote
 -lancer test d'intégration indépendamment
+
 
 - Les conteneurs logiciels permettent aussi d’utiliser des applications sur plusieurs plateformes et dans différentes infrastructures sans avoir à les adapter spécifiquement aux configurations matérielles ou logicielles des différents systèmes hôtes.
 Docker utilise des images portables de logiciel de conteneurs. Les images de conteneurs contiennent des applications propres, y compris toutes les bibliothèques, les fichiers binaires et les fichiers de configuration nécessaires à l’exécution des processus d’application encapsulés et n’imposent donc que des exigences minimales au système hôte en question. Ceci permet de déplacer un conteneur d’application entre différents systèmes Linux, Windows ou MacOs sans configuration supplémentaire, à condition que la plateforme Docker ait été installée en tant que couche abstraite.
 
 
 *** Image docker
+-chaque image est une superposition de couche. Cela permet de restaurer une version précédente
 
 
 *** Docker engine
@@ -64,7 +74,6 @@ Vous avez surement plusieurs projets qui utilisent MySQL. Il est possible d’in
 
 
 *** Liens
-http://www.linux-alpes.org/xmedia/diapo_docker.pdf
 https://actu.alfa-safety.fr/devops/conteneur-docker-fonctionnement-et-avantages-pour-heberger-ses-applications/
 https://www.ovh.com/fr/blog/seance-rattrapage-docker/
 https://blog.ippon.fr/2014/10/20/docker-pour-les-nu-pour-les-debutants/
@@ -79,6 +88,5 @@ https://www.ionos.fr/digitalguide/serveur/configuration/tutoriel-docker-installa
 https://dzone.com/articles/50-useful-docker-tutorials-for-it-professionals-fr
 https://github.com/docker/labs/tree/master/beginner/
 https://www.supinfo.com/articles/single/3980-deploiement-une-application-nodejs-avec-docker
-https://hub.docker.com/
 https://www.guru99.com/docker-tutorial.html
 
