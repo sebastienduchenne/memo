@@ -59,6 +59,15 @@ Docker utilise des images portables de logiciel de conteneurs. Les images de con
 .peut être optimisé pour gagner du temps
 
 
+*** réseaux
+$ docker network ls : lister réseaux
+$ docker network inspect bridge : info sur un réseau
+-3 réseaux par défaut après installation:
+    -bridge : où les conteneur sont lancés par défaut
+    -host
+    -none
+
+
 *** conteneur
 = instance d'une image et configuration du conteneur (mappage de port, dossiers à partager, ...)
 - a un cycle de vie
@@ -98,7 +107,7 @@ conteneur   conteneur
 
 
 -si plusieurs manager, un seul (le leader) gère la configuration du cluster et les autres (followers, status reachable) sont disponibles pour remplacer le leader en cas de défaillance
--docker-compose
+-docker-compose : définir et lancer plusieurs composants facilement
 
 * stratégies
 -noeud le plus vide : remplit les machines les moins utilisés
@@ -139,3 +148,10 @@ https://www.supinfo.com/articles/single/3980-deploiement-une-application-nodejs-
 https://www.guru99.com/docker-tutorial.html
 
 https://www.smartwavesa.com/blog-articles/les-tutos-docker-episode-2/
+
+
+-----------------------------------------------------------------------
+
+es : ip 0.0.0.0, port 9200
+ft : ip 0.0.0.0, port 5000
+

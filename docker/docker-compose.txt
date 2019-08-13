@@ -21,11 +21,11 @@ docker-compose logs -f rails : logs pour le conteneur rails uniquement
 
 
 *** Fichier yaml
-version
-services
+version : version de docker
+services : liste des services
   nom_service
     image : nom de l'image de départ
-    environment : variables d'environement
+    environment : variables d'environnement
     volumes : share content between the local host and the container
     working_dir : the directory where the command instruction is executed.
     command : an instruction that start the application
@@ -51,11 +51,11 @@ networks:
     driver: 
 
 volumes:
-  dbdata:
+  nom:
   node_modules:  
 
 
 
 
 *** inconvénients
-Soit 2 container A et B, si A s’arrête, il faudrait arrêter le container de l’application puis relancer les 2 containers.
+Soit 2 conteneurs A et B, si A s’arrête, il faudrait arrêter B puis relancer A et B
