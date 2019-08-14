@@ -1,0 +1,3 @@
+*supprimer un dossier et tout son contenu
+
+[sudo] rm -R dossier

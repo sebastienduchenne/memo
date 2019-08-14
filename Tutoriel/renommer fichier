@@ -1,0 +1,7 @@
+convert image.png -crop wxh+x+y copie.png
+
+
+w : largeur de l'image
+h : hauteur de l'image
+x : offset à partir de la gauche
+y : offset à partir du haut

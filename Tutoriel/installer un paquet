@@ -1,0 +1,10 @@
+# en ligne de commande
+sudo apt-get install <package>
+
+sudo apt-get update
+
+# extension paquet téléchargé
+
+.deb : double-click, le gestionnaire de paquets apparait : cliquer sur le bouton installer
+.jar
+.tar.gz
