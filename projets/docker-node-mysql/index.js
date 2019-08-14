@@ -3,8 +3,8 @@ var mysql = require('mysql');
 
 var con = mysql.createConnection({
   host: "localhost", //IP address of the MySQL container
-  user: "root",
-  password: "password",
+  user: "database",
+  password: "database",
   database: "events"
 });
 
@@ -23,9 +23,19 @@ con.query(sql, function (err, result) {
 });
 */
 
+const sql = "SELECT NOW();";
+let date = '';
+con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Result: " + result[0]);
+    date = result[0]
+});
+
+
+
 var server = http.createServer(function(req, res) {
     res.writeHead(200);
-    res.end('Hello World !');
+    res.end('Hello World !' + date);
 });
 
 server.listen(8080);

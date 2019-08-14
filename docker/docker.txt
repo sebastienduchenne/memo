@@ -90,20 +90,21 @@ $ docker network inspect bridge : info sur un réseau
 - un service lance une image
 
 
-*** mode swarm
-= cluster de différentes machines (appelé worker, ou node) qui vont fonctionner dans un schéma "master / worker"
+*** swarm
+= groupe de différentes machines (virtuelles ou physiques) qui lancent docker et qui forment un cluster et qui vont fonctionner dans un schéma "master / worker". 
+- Dans un swarm, les machines sont appelées worker ou node
 - Chaque service est susceptible d'avoir des besoins en ressources différents et peuvent croître à des rythmes différents. En séparant les services dans des conteneurs différents, nous pouvons composer chaque service en utilisant le type d'instance le plus approprié en fonction de différents besoins en ressources. 
-- un cluster a un ou plusieurs manager appelés orchestrateurs
+- un cluster a un ou plusieurs manager appelés orchestrateurs ou swarm manager
 - dans un cluster les conteneurs sont appelés services
 - utilisation d'un load balancing pour répartir la charge sur les différents noeuds
 - dans un cluster : le manager gère différents services/node, qui contiennent chacun un daemon gérant plusieurs conteneurs
-- un conteneur s'exécutant dans un service s'appelle une tache
+- un conteneur s'exécutant dans un service s'appelle une tache ou réplica
 
-       manager
-       /    \
-daemon      daemon
-conteneur   conteneur
-conteneur   conteneur
+CLI ----->     swarm manager                 |
+            /        |       \               |
+daemon node1   daemon node2   daemon node3   |--> un swarm
+conteneur      conteneur      conteneur      |
+conteneur      conteneur      conteneur      |
 
 
 -si plusieurs manager, un seul (le leader) gère la configuration du cluster et les autres (followers, status reachable) sont disponibles pour remplacer le leader en cas de défaillance
