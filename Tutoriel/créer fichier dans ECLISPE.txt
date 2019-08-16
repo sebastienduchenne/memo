@@ -1,0 +1,5 @@
+- File > New > Project
+- choisir Java Project / cliquer sur Next
+- nommer le projet / choix de sa destination / cliquer sur Finish
+- activer le nom du projet / créer une nouvelle classe
+- nommer la classe / cocher "public static void main(String[] args)" et "Inherited abstract methods" / cliquer sur Finish
