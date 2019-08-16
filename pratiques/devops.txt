@@ -50,9 +50,13 @@ Au-delà de ces compétences techniques, le DevOps doit aussi savoir faire preuv
 
 
 *** déf
-- intégration continue : création et test d'unités puis intégration du nouveau code dans le référentiel centralisé
-- livraison continue : déploiement du code dans un env de test
-- déploiement continue : déploiement en prod
+* intégration continue : ensemble de pratiques utilisé en génie logiciel consistant à vérifier, pour chaque modification de code source, que le résultat des modifications ne produit pas de régression dans l'application développée
+
+* livraison continue : 
+    -les équipes de développement produisent et testent le code dans des cycles courts, en s'appuyant sur l'automatisation
+    -raccourcir au maximum les boucles de rétroaction afin d'améliorer la qualité des logiciels
+
+* déploiement continue : déploiement en prod
 
 
 *** Liens
