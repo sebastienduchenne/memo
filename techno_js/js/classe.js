@@ -78,3 +78,7 @@ class Carré extends Rectangle {
     this.name = 'Carré';
   }
 }
+
+//---------------------------------------------------------
+
+//prototype

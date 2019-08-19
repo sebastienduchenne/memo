@@ -1,5 +1,4 @@
 /*
-une fonction est un objet stocké en mémoire
 = objet de 1ère classe : la fonction est un objet. Le nom de la fonction est une variable qui contient une référence vers la fonction stockée en mémoire. On peut donc : 
     -assigner une fonction à une variable
     -passer la fonction en paramètre d’une fonction (cad la référence, = callback)
@@ -9,7 +8,7 @@ une fonction est un objet stocké en mémoire
 -toute déclaration de fonction crée une fermeture (contrairement au constructeur function)
 -lors de l’appel d’une fonction, les arguments vont être mis dans les variables spécifiés dans la fonction. Si il y a plus d’argument lors de l’appel, ils ne peuvent pas être mis dans une variable et sont donc rejetés. Si il n’y en a pas assez, les variables non spécifiées sont mise en undefined. Les arguments facultatifs doivent donc être mis après ceux obligatoires.
 -Pour tester undefined : if(typeof nomVar === ‘undefined’) {}
--si paramètre passé à une fonction est un objet, c'est la référence qui est passée
+-si un paramètre passé à une fonction est un objet, c'est la référence qui est passée
 
 
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions
@@ -77,4 +76,11 @@ ajoute(2, 6);
 -En JavaScript, chaque fonction asynchrone est en fait un objet AsyncFunction.
 */
 
-var AsyncFunction = Object.getPrototypeOf(async function(){}).constructor // 
+var AsyncFunction = Object.getPrototypeOf(async function(){}).constructor
+
+//IIFE (immediately invoked function expression)
+//= fonction qui est exécutée dès qu'elle est définie
+var result = (function () { 
+    var name = "Barry"; 
+    return name; 
+})();

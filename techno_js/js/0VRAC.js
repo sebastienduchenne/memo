@@ -1,38 +1,55 @@
 /*
 
--transcompilateur = permet de convertir une version de ES en une plus ancienne (Babel.js)
-
-
-*** ECMAScript
--ECMAScript est un langage, une grammaire avec des fonctionnalités de base. Chaque environnement – les navigateurs web, Node – le comprend et lui ajoute de nouvelles expressions, contextuelles à cet environnement d’exécution. JavaScript est le grand ensemble des technologies qui reposent sur ECMAScript pour fonctionner.
--ECMAscript = ensemble de règles que doit respecter les langages de ce standard (JavaScript, JScript et ActionScript), et standardisées par Ecma International dans le cadre de la spécification ECMA-262
--API javascript : Node et les navigateurs ont chacun une API qui complète ECMA et qui différe entre elles
-    .nav : fetch(), querySelector(), addEventListener(), document, API DOM pour page web
-    .node : require()
-
+-les tableaux sont des objets qui utilisent des nombres pour accéder aux éléments alors que les autres objets utilisent des noms pour accéder aux membres
+-les éléments d'un tableau peuvent être différents et peuvent être des objets (objets, fonction)
+-passe par valeur, si object la valeur est une référence
+    -primitive (boolean, null, undefined, string, number) : variable originelle non modifiée
+    -objects (object, function, array) : objet modifié
+-le changement d'une valeur change non pas la value mais change le pointage vers une nouvelle valeur
 
 **** A chercher
-module
-classe
-import, require
-égalité ==, ===
-fonction anonyme, promise, callback, fonction fléchée, mapper
-décomposition / déstructuration d’un tableau
-prototype
-fonction constructeur
-IIFE = immediately invoked function expression
-'use strict' : mode strict, impose des contraintes de développement (pas de variables non déclarées, mots clé réservés)
+-module, classe, prototype
+-import, require
+-fonction promise, mapper
+-objet window
+-valeur référence
 
 
 
 **** Liens
+
+https://www.w3schools.com/js
+https://developer.mozilla.org/fr/docs/Web/JavaScript/
+
 
 https://jpvincent.developpez.com/tutoriels/javascript/usage-avance-fonctions-javascript/
 https://openclassrooms.com/fr/courses/146276-tout-sur-le-javascript/142043-presentation
 https://developer.mozilla.org/fr/docs/Apprendre/JavaScript/Building_blocks/Build_your_own_function
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Gestion_de_la_m%C3%A9moire#Références
 https://putaindecode.io/fr/articles/frontend/2015-etat-lieux-javascript-modulaire/
-https://www.w3schools.com/js
 
 
 */
+
+var x = 10;// Here x is 10
+{ 
+  var x = 2;  // Here x is 2
+}
+// Here x is 2
+
+//--------------------------
+
+var x = 10;// Here x is 10
+{ 
+  let x = 2;  // Here x is 2
+}
+// Here x is 10
+
+//--------------------------
+
+let name = 'Zell'
+
+function sayName (arg) {
+  name = arg // name change
+  console.log(name)
+}

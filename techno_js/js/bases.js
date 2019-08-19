@@ -1,10 +1,19 @@
+//types var, let, const
+let x = 1; // déclarer une variable dont la portée est celle du bloc courant, globale en dehors de tout fonction
+const c = 0; // déclarer une constante dont la portée est celle du bloc courant, comme let, globale en dehors de tout fonction. Const est un abus de langage car c'est la référence vers la valeur qui ne peut pas être changé et non la valeur, donc on peut ajouter un élément à un tableau const ou modifier une propriété d'un objet const
+var v = 2; // déclarer une variable dont la portée est la fonction qui contient la déclaration, qu’importe le bloc dans lequel elle se trouve, et global en dehors de toute fonction
+//types primitifs : number, string, boolean
 
-//types
-let x = 1; // déclarer une variable dont la portée est celle du bloc courant
-const c = 0; // déclarer une constante dont la portée est celle du bloc courant, comme let
-var v = 2; // déclarer une variable dont la portée est la fonction qui contient la déclaration ou le contexte global si la variable est déclarée en dehors de toute fonction
-let s = "s";//pas string
+//var et let : on peut aussi ne pas définir de valeur initiale, la variable aura donc une valeur undefined.
+//La déclaration sans instruction var (exemple : maVar = ‘test’) revient à écrire var maVar = ‘test’ dans un contexte global. La variable devient donc une propriété de l’objet global window
 
+
+//=== vs ==
+//== : une conversion est effectuée si nécessaire
+//=== : pas de conversion
+2 == "2" // true
+2 === "2" // false
+true == 1; //true, because 'true' is converted to 1 and then compared
 
 //typeof
 console.log(typeof 42);// expected output: "number"
@@ -106,37 +115,3 @@ catch(e) {
 //debugger
 debugger; // permet de démarrer un débogueur (s'il existe)
 
-
-/*
-***objet
-= collection de données apparentées et/ou de fonctionnalités
--aussi appelé tableau associatif
--objet littéral = on écrit littéralement le contenu de l'objet pour le créer
--objet instancié = créée depuis une classe
-
-Le nom de l'objet agit comme un espace de noms
-propriété et méthode sont des membres
-les propriétés sont encapsulés
-*/
-var personne = {
-    prenom: 'Martin',
-    interets: ['musique', 'skier'],
-    salutation: function() {
-      alert('Bonjour ! Je suis ' + this.prenom + '.');
-    }
-  };
-
-personne.prenom//Martin
-personne.salutation()//Bonjour ! Je suis Martin
-
-personne.prenom = 'Jean'//modification
-personne['nom'] = 'Durant'//ajout propriété avec crochet
-personne.age = 32 // ajout propriété avec point
-personne.auRevoir = function() { alert("Bye bye tout le monde !"); }//ajout méthode
-
-
-var monNomDeDonnee = 'hauteur'
-var maValeurDeDonnee = '1.75m'
-personne[monNomDeDonnee] = maValeurDeDonnee //Nous n'aurions pas pu construire ce membre avec la notation avec un point, car celle-ci n'accepte qu'un nom et pas une variable pointant vers un nom.
-
-delete personne.interets
