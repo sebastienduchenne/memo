@@ -1,61 +1,55 @@
 /*
-le type d'une classe est "fonction"
+-le type d'une classe est "fonction"
+-pas de hoisting pour les déclarations de classes
 
-https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/class
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Le_mod%C3%A8le_objet_JavaScript_en_d%C3%A9tails
-
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes
 
 */
-function Employé (nom, age) {
+
+//----------------- syntaxe avec ES6 (sucre syntaxique)
+class Employé {
+  age; //champs public
+  constructor(nom) {
     this.nom = nom;
-    this.age = age;
-    this.salutation = function() {
-      alert('Bonjour ! Je m\'appelle ' + this.nom + '.');
-    };
+    this.age = 22;
+  }
+
+  getNom() {return this.nom;}
+
+  static func(){
+    //...
+  }
 }
 
 //instanciation
 var emp1 = new Employé('Marc', 22);//1
 var emp2 = new Object();//2
 emp2.nom = "atta"
-var emp3 = new Object({//3
-  nom: 'titi',
-  age: 66,
-  salutation: function() {
-    alert('Bonjour ! Je m\'appelle ' + this.nom + '.');
-  }
-})
 var emp4 = Object.create(emp1);//4
+emp1.bonus = 3000; //on peut ajouter des propriétés lors de l’exécution et on peut utiliser des propriétés qui ne seraient pas définies par le constructeur.
 
 
-class Employé {//syntaxe avec EC6
-    nom = "";
-    branche = "commun";
-
-    getNom(){return nom;}
+//----------------- syntaxe ES5
+function Employé (nom, age) {
+  this.nom = nom;
+  this.age = age;
+  this.setNom(n);
 }
 
-//syntaxe ES5?
-var Rectangle = class {
-    constructor(height, width) {
-      this.height = height;
-      this.width = width;
-    }
-    area() {
-      return this.height * this.width;
-    }
+Employé.prototype.setNom = function(n){
+  this.nom = n
 }
-  
-var rect = new Rectangle(5,8);
-console.log(rect.area());// expected output: 40
 
+//----------------- expression de classe
+//nommée : la classe est visible dans elle-même
 
-/*
-on peut ajouter des propriétés lors de l’exécution et on peut utiliser des propriétés qui ne seraient pas définies par le constructeur.
-*/
+let User = class { // nommée : let User = class MyClass {
+  sayHi() {
+    alert("Hello");
+  }
+};
 
-marc.bonus = 3000;
 
 //héritage
 class Rectangle {
@@ -79,6 +73,3 @@ class Carré extends Rectangle {
   }
 }
 
-//---------------------------------------------------------
-
-//prototype

@@ -8,6 +8,31 @@ var v = 2; // déclarer une variable dont la portée est la fonction qui contien
 //La déclaration sans instruction var (exemple : maVar = ‘test’) revient à écrire var maVar = ‘test’ dans un contexte global. La variable devient donc une propriété de l’objet global window
 
 
+var x = 10;// Here x is 10
+{ 
+  var x = 2;  // Here x is 2
+}
+// Here x is 2
+
+//--------------------------
+
+var x = 10;// Here x is 10
+{ 
+  let x = 2;  // Here x is 2
+}
+// Here x is 10
+
+//--------------------------
+
+let name = 'Zell'
+
+function sayName (arg) {
+  name = arg // name change
+  console.log(name)
+}
+
+
+
 //=== vs ==
 //== : une conversion est effectuée si nécessaire
 //=== : pas de conversion

@@ -30,26 +30,3 @@ https://putaindecode.io/fr/articles/frontend/2015-etat-lieux-javascript-modulair
 
 
 */
-
-var x = 10;// Here x is 10
-{ 
-  var x = 2;  // Here x is 2
-}
-// Here x is 2
-
-//--------------------------
-
-var x = 10;// Here x is 10
-{ 
-  let x = 2;  // Here x is 2
-}
-// Here x is 10
-
-//--------------------------
-
-let name = 'Zell'
-
-function sayName (arg) {
-  name = arg // name change
-  console.log(name)
-}

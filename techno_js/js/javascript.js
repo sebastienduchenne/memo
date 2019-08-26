@@ -41,4 +41,35 @@
 -terminer les switch par default
 
 
+*** conventions
+-variable en camelCase
+-espace autour des opérateurs
+-indentation : 2 espaces
+-finir les instructions avec un ;
+-pas de , à la fin du dernier paramètre d'un objet
+-lignes de 80 caractères max, break la lignes si possible
+-utiliser le lower case pour les noms de fichiers car certains programmes sont case sensitive
+
+
+
 */
+
+return; //return undefined
+
+//concaténation et addition
+var x = 10 + 5;          // the result in x is 15
+var y = 10 + "5";        // the result in y is "105"
+
+//string sur plusieurs lignes
+var x =
+"Hello World!"; 
+
+var x = "Hello \
+World!"; 
+
+//ne jamais faire d'instruction return sur plusieurs lignes car ajout de ; automatiquement après return
+
+//si on utilise des index nommés pour un tableau, celui-ci sera transformé en un objet standart. Cela supprimera les méthodes et propriétés
+
+//check
+if (typeof myObj !== "undefined" && myObj !== null){}

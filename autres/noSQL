@@ -1,0 +1,17 @@
+-ni schéma, ni structure de stockage donc pas de langage, donc il faut savoir ce que l'on cherche
+-non basé sur le relationnel
+-Not Only SQL
+-outils : redis, elasticsearch, mongodb, MemCached, Azure Cosmos DB, SimpleDB
+-gestion de documents
+    -traitement sur des colonnes
+    -techno : 
+-orienté colonne
+    -traitement sur des colonnes
+    -techno : BigTable, HBase, Spark SQL, Elasticsearch
+-base orienté graphe
+    -
+    -techno : Neo4j, OrientDB, FlockDB
+
+
+https://openclassrooms.com/fr/courses/4462426-maitrisez-les-bases-de-donnees-nosql/4462433-choisissez-votre-famille-nosql
+

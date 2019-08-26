@@ -1,38 +1,3 @@
-*** A chercher
--javascript
-commonJS
-filtre et array
-
--nodejs
-exports
-package.json
-npm
-Polyfill
-
--devops
-quid dev fullstack
-cloudfoundry
-MS AZURE
-devops dev : IC
-devops ops : 
-
--docker
-
-
--autres
-git
-Nginx
-redis
-elasticsearch
-intégrateur
-reactjs
-react native
-vu.js
-backbone
-PaaS = plateforme en tant que service contenant des applications
-
------------------------------------------------------------
-
 *** VRAC
 . version vanilla : version standard d'un programme informatique : ni patché, ni modifié
 . fournisseur cloud : AWS
@@ -68,31 +33,6 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Gestion_de_la_m%C3%A9moire
 -dialecte du Lisp
 
 -compliqué à lire
-
-
-*** noSLQ
--ni schéma, ni structure de stockage donc pas de langage, donc il faut savoir ce que l'on cherche
--non basé sur le relationnel
--Not Only SQL
--outils : redis, elasticsearch, mongodb, MemCached, Azure Cosmos DB, SimpleDB
--gestion de documents
-    -traitement sur des colonnes
-    -techno : 
--orienté colonne
-    -traitement sur des colonnes
-    -techno : BigTable, HBase, Spark SQL, Elasticsearch
--base orienté graphe
-    -
-    -techno : Neo4j, OrientDB, FlockDB
-
-
-https://openclassrooms.com/fr/courses/4462426-maitrisez-les-bases-de-donnees-nosql/4462433-choisissez-votre-famille-nosql
-
-
-non whitelist de trust => suspicious
-rec
-
-
 
 
 *** système
