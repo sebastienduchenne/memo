@@ -1,4 +1,6 @@
 /*
+-Node.js est un environnement d’exécution JavaScript, un ensemble d'API et une VM. Le code est lu par le runtime, traduit en bytecode par la VM puis exécuté par le processeur
+
 -packager manager = 2 gestionnaires de package : npm et bower
 -attention aux dépendances circulaires
 -esprima = parser
@@ -12,13 +14,14 @@
 
 
 
+bower
+npm : gestionnaire de paquets officiel de Node.js
+express.js
 
-*** callback
-requête non bloquante
-Télécharger un fichier
-    Dès que c'est terminé, afficher le fichier
-Faire autre chose
--> ici afficher le fichier est une fonction callback
+
+
+
+
 
 
 *** Installation 
@@ -45,9 +48,6 @@ https://oncletom.io/node.js/#fnref1
 https://medium.mybridge.co/node-js-top-10-open-source-projects-for-the-past-month-v-mar-2018-6047fc05b1bb
 https://www.tutorialsteacher.com/nodejs/nodejs-tutorials
 
-https://developer.mozilla.org/fr/docs/Web/JavaScript
-https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide
-https://developer.mozilla.org/fr/docs/Apprendre/JavaScript
 
 * project
 https://github.com/Requarks/wiki

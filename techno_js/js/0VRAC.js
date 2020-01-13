@@ -1,4 +1,21 @@
 /*
+
+yarn
+PM2
+mocha
+bower
+grunt : outil permettant de créer des tâches automatisées en JavaScript
+jasmine : TU en js
+gulp : gestionnaire de taches
+meteor : framework pour faire du client-serveur avec du publish-subscribe, mongodb
+mojito : mocking
+knockout : librairie pour faire de l'UI avec le pattern MVVM
+backbone : librairie pour faire des single-page app
+electron : framework pour dev d'app desktop cross-plateform avec html, css et js
+ionic : framework pour dev d'app mobile cross-plateform avec html, css et js
+CoffeScript : langage qui se compile en JS, rajoute du sucre et des fonctionnalités
+
+
 -le changement d'une valeur change non pas la value mais change le pointage vers une nouvelle valeur
 -** : exponentiation ou puissance
 -x++ : renvoit la valeur avant puis fait l'incrémentation
