@@ -1,0 +1,92 @@
+>>> JS
+
+closure
+callback
+filter
+
+ES2015 :
+    module,
+    promise,
+    fonction fléchée,
+    generator,
+    let and const,
+    classe,
+    module,
+    string multiline,
+    paramètre default,
+    destructuration,
+    for...of,
+    map et set
+ES2016 :
+    array.prototype.includes,
+    opérateur d'exponentiation ** (puissance)
+ES2017 :
+    string padding,
+    object.values (objet en tableau)
+    object.entries (tableau avec for of)
+    object.getOwnPropertyDescrpitors() (avoir un descripteur de la propriété propre d'un objet)
+    async function et await
+ES2018 :
+    rest/spread (...args, )
+    async iteration,
+    promise.prototype.finally(),
+    regular expression improvements
+ES2019 :
+    object.fromEntries (transformer une liste de paires de clés/valeurs en un objet)
+    trimStart() and trimEnd() (retirer espace au début / à la fin)
+    flat() and flatMap(), (tableau)
+    Description property for Symbol objects,
+    Optional catch binding,
+    Function.toString(),
+    Well Formed JSON.Stringify(),
+    Array.Sort Stability
+    JSON Superset
+ES2020 :
+    Private Fields in Classes,
+    Dynamic Import,
+    BigInt,
+    Promise.allSettled,
+    globalThis,
+    Optional Chaining Operator ?,
+    Nullish Coalescing Operator ??
+
+
+>>> Nodejs
+package.json
+package-lock.json
+global
+dependencies and devDependencies
+event loop
+setImmediate()
+events:EventEmitter()
+process:nextTick()
+
+
+API
+    fs
+    globals
+    http
+    modules
+    path
+    process : nextTick()
+    console
+    url
+    events : on, eventEmitter, once
+
+
+modules
+    express
+    meteor
+    koa
+    next.js
+    micro
+    socket.io
+    os
+
+process
+    nextTick
+
+ES2019 :
+https://medium.com/@selvaganesh93/javascript-whats-new-in-ecmascript-2019-es2019-es10-35210c6e7f4b
+https://exploringjs.com/impatient-js/
+
