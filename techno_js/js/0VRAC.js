@@ -77,9 +77,7 @@ console.log(result);// affiche 2,4,6,8,10,12
 **** A chercher
 -module, classe, prototype
 -import, require
--fonction promise
 -mapper
--objet window
 -valeur référence
 -symbole
 

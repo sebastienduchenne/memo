@@ -11,23 +11,15 @@
 -langage orienté-objet basé sur des prototypes
 -property access : les objets ont des références qui pointent vers elles, il existe différente stratégies d'accès à une propriété
 -les objets sont mutables : on peut donc augmenter les nouvelles instances en leur donnant de nouveaux champs et méthodes. Ces nouvelles instances peuvent à leur tour servir de prototypes pour de nouveaux objets. Nul besoin de classes pour créer des tas d’objets similaires. = le clonage
+-bower
+-npm : gestionnaire de paquets officiel de Node.js
+-MEAN stack : mongo-db, express, angular, nodejs
 
 
-
-bower
-npm : gestionnaire de paquets officiel de Node.js
-express.js
-
-
-
-
-
-
-
-*** Installation 
+*** Installation
 globale : dans un seul endroit, avec -g
 locale : dans le dossier de travail
-préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X, si update => casse tout
+préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X, avec globale si update => casse tout
 . invite de commande intéractive ou REPL
 
 

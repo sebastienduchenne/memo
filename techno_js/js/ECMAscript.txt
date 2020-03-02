@@ -1,11 +1,35 @@
->>> JS
+>>> ECMAScript
+-ECMAScript est un langage, une grammaire avec des fonctionnalités de base. Chaque environnement – les navigateurs web, Node – le comprend et lui ajoute de nouvelles expressions, contextuelles à cet environnement d’exécution. JavaScript est le grand ensemble des technologies qui reposent sur ECMAScript pour fonctionner.
+-ECMAscript = ensemble de règles que doit respecter les langages de ce standard (JavaScript, JScript et ActionScript), et standardisées par Ecma International dans le cadre de la spécification ECMA-262
+-API javascript : Node et les navigateurs ont chacun une API qui complète ECMA et qui différe entre elles
+    .nav : fetch(), querySelector(), addEventListener(), document, API DOM pour page web
+    .node : require()
+-transcompilateur = permet de convertir une version de ES en une plus ancienne (ex : Babel.js)
+-call stack : pile d'appel de fonction
+-message queue : callback, une fois la call stack vide
+-job queue : promise
 
 closure
 callback
-filter
 
+ES2009 :
+    The "use strict" Directive
+    String.trim()
+    Array.isArray()
+    Array.forEach()
+    Array.map()
+    Array.filter()
+    Array.reduce()
+    Array.reduceRight()
+    Array.every()
+    Array.some()
+    Array.indexOf()
+    Array.lastIndexOf()
+    JSON.parse()
+    JSON.stringify()
+    Date.now()
 ES2015 :
-    module,
+    classe,
     promise,
     fonction fléchée,
     generator,
@@ -17,6 +41,8 @@ ES2015 :
     destructuration,
     for...of,
     map et set
+    Array.find()
+    Array.findIndex()
 ES2016 :
     array.prototype.includes,
     opérateur d'exponentiation ** (puissance)
@@ -51,40 +77,6 @@ ES2020 :
     Nullish Coalescing Operator ??
 
 
->>> Nodejs
-package.json
-package-lock.json
-global
-dependencies and devDependencies
-event loop
-setImmediate()
-events:EventEmitter()
-process:nextTick()
-
-
-API
-    fs
-    globals
-    http
-    modules
-    path
-    process : nextTick()
-    console
-    url
-    events : on, eventEmitter, once
-
-
-modules
-    express
-    meteor
-    koa
-    next.js
-    micro
-    socket.io
-    os
-
-process
-    nextTick
 
 ES2019 :
 https://medium.com/@selvaganesh93/javascript-whats-new-in-ecmascript-2019-es2019-es10-35210c6e7f4b

@@ -14,11 +14,6 @@
 
 
 *** notions
--callback
--closure
--promise
--map
--maps
 -moteur v8
 -prototype
 -fonction fléchée
@@ -62,10 +57,10 @@ var y = 10 + "5";        // the result in y is "105"
 
 //string sur plusieurs lignes
 var x =
-"Hello World!"; 
+"Hello World!";
 
 var x = "Hello \
-World!"; 
+World!";
 
 //ne jamais faire d'instruction return sur plusieurs lignes car ajout de ; automatiquement après return
 

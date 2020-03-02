@@ -1,0 +1,34 @@
+package.json
+package-lock.json
+global
+dependencies and devDependencies
+event loop
+setImmediate()
+events:EventEmitter()
+process:nextTick()
+
+
+API
+    fs
+    globals
+    http : créer un serveur
+    modules
+    path
+    process : nextTick()
+    console
+    url
+    events : on, eventEmitter, once
+
+
+modules
+    express : framework pour faire des appli web
+    meteor
+    koa
+    next.js
+    micro
+    socket.io
+    os
+    request : requêter un site
+
+process
+    nextTick
