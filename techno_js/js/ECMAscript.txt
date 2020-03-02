@@ -1,0 +1,84 @@
+>>> ECMAScript
+-ECMAScript est un langage, une grammaire avec des fonctionnalités de base. Chaque environnement – les navigateurs web, Node – le comprend et lui ajoute de nouvelles expressions, contextuelles à cet environnement d’exécution. JavaScript est le grand ensemble des technologies qui reposent sur ECMAScript pour fonctionner.
+-ECMAscript = ensemble de règles que doit respecter les langages de ce standard (JavaScript, JScript et ActionScript), et standardisées par Ecma International dans le cadre de la spécification ECMA-262
+-API javascript : Node et les navigateurs ont chacun une API qui complète ECMA et qui différe entre elles
+    .nav : fetch(), querySelector(), addEventListener(), document, API DOM pour page web
+    .node : require()
+-transcompilateur = permet de convertir une version de ES en une plus ancienne (ex : Babel.js)
+-call stack : pile d'appel de fonction
+-message queue : callback, une fois la call stack vide
+-job queue : promise
+
+closure
+callback
+
+ES2009 :
+    The "use strict" Directive
+    String.trim()
+    Array.isArray()
+    Array.forEach()
+    Array.map()
+    Array.filter()
+    Array.reduce()
+    Array.reduceRight()
+    Array.every()
+    Array.some()
+    Array.indexOf()
+    Array.lastIndexOf()
+    JSON.parse()
+    JSON.stringify()
+    Date.now()
+ES2015 :
+    classe,
+    promise,
+    fonction fléchée,
+    generator,
+    let and const,
+    classe,
+    module,
+    string multiline,
+    paramètre default,
+    destructuration,
+    for...of,
+    map et set
+    Array.find()
+    Array.findIndex()
+ES2016 :
+    array.prototype.includes,
+    opérateur d'exponentiation ** (puissance)
+ES2017 :
+    string padding,
+    object.values (objet en tableau)
+    object.entries (tableau avec for of)
+    object.getOwnPropertyDescrpitors() (avoir un descripteur de la propriété propre d'un objet)
+    async function et await
+ES2018 :
+    rest/spread (...args, )
+    async iteration,
+    promise.prototype.finally(),
+    regular expression improvements
+ES2019 :
+    object.fromEntries (transformer une liste de paires de clés/valeurs en un objet)
+    trimStart() and trimEnd() (retirer espace au début / à la fin)
+    flat() and flatMap(), (tableau)
+    Description property for Symbol objects,
+    Optional catch binding,
+    Function.toString(),
+    Well Formed JSON.Stringify(),
+    Array.Sort Stability
+    JSON Superset
+ES2020 :
+    Private Fields in Classes,
+    Dynamic Import,
+    BigInt,
+    Promise.allSettled,
+    globalThis,
+    Optional Chaining Operator ?,
+    Nullish Coalescing Operator ??
+
+
+
+ES2019 :
+https://medium.com/@selvaganesh93/javascript-whats-new-in-ecmascript-2019-es2019-es10-35210c6e7f4b
+https://exploringjs.com/impatient-js/
+

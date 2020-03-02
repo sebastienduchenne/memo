@@ -1,6 +1,6 @@
 FROM debian:wheezy
 
-MAINTAINER Baptiste Donaux <bdonaux@wanadev.fr>
+MAINTAINER Prénom Nom <mail@qqch.fr>
 
 RUN apt-get update \
     && apt-get install -y \

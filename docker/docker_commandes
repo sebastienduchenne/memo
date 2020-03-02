@@ -1,34 +1,25 @@
-Dockerfile
-= fichier contenant des instructions pour créer une image
--> commande “docker build”
+docker build --name="name"
+docker run -p 16260:8080 name
+docker images
+docker stop name
+docker rmi -f d4f
+docker container ls
+docker ps
 
-FROM img : image source
-MAINTAINER x <mail> : auteur
-RUN xx : instructions à exécuter
-COPY src dest : copier un fichier
-ENTRYPOINT file :
-WORKDIR dir : changer de dossier de travail
-EXPOSE port : port à partager
-ADD file dest : ajouter un fichier dans l’image
-ENV env=”xx” : set variable d’env
-LABEL x=y : paire clé-valeur
-STOPSIGNAL
-USER
-VOLUME dir : dossier à partage
-CMD instr : instruction à exécuter au lancement du conteneur
+-----------------------------------------------------------------------------------
 
-
-Commandes
 docker build : Construire l’image à partir d’un dockerfile avec la commande
 docker run xxx : lancer le container xx
 
 déclarer puis lancer un container
- $ docker run debian:wheezy
+$ docker run debian:wheezy
 docker create puis docker start
 
 créer un container
 $ docker create --tty --interactive --name="wonderful_mobidock" debian:7
 
+supprimer une image
+docker rmi -f d4f //(les 3 1er caractères de l'ID)
 
 docker swarm = créer un cluster selon une architecture slave master
 docker swarm init
@@ -107,13 +98,4 @@ docker update	Update configuration of one or more containers
 docker version	Show the Docker version information
 docker volume	Manage volumes
 docker wait	Block until one or more containers stop, then print their exit codes
-
-
-Docker-compose
-docker-compose up
-docker-compose ps
-docker-compose stop
-docker-compose down
-docker-compose 
-
 

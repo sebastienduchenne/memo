@@ -1,7 +1,0 @@
-.Serveur
-.NoSQL
-.Interface REST
-.Distribué
-.Utilise Lucene pour l'indexation et la recherche de données
-
-

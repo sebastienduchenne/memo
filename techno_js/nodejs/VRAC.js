@@ -1,60 +1,35 @@
 /*
+-Node.js est un environnement d’exécution JavaScript, un ensemble d'API et une VM. Le code est lu par le runtime, traduit en bytecode par la VM puis exécuté par le processeur
+
 -packager manager = 2 gestionnaires de package : npm et bower
 -attention aux dépendances circulaires
-esprima
-preset
-babeljs.io = module qui convertit tout syntaxe récente en ES5, conpréhensible par tous les navigateurs
-environnement bas niveau permettant d’exécuter du JS coté serveur
-utilise la VM V8 qui rend l’exécution du JS très rapide (JIT)
-JS est basé sur les évènements ce qui fait qu’il est plus rapide (peut exécuter plusieurs tâches en même temps)
-requête non bloquante
-Télécharger un fichier
-    Dès que c'est terminé, afficher le fichier
-Faire autre chose
--> ici afficher le fichier est une fonction callback
-
-monothread
-NPM = gestionnaire de paquet
-* module de base : 
-fs
-path : chemin
-url
-event
-util
-http
-os
-child_process
-process
-stream
-console.dir() : afficher objet et tableau
-console.time() : démarrer un chrono, on l’arrète avec console.timeEnd()
-
-* Module
-express
+-esprima = parser
+-preset
+-utilise la VM V8 qui rend l’exécution du JS très rapide (JIT)
+-JS est basé sur les évènements ce qui fait qu’il est plus rapide (peut exécuter plusieurs tâches en même temps)
+-utilise le mot-clé class comme sucre syntaxique pour déclarer des prototypes…
+-langage orienté-objet basé sur des prototypes
+-property access : les objets ont des références qui pointent vers elles, il existe différente stratégies d'accès à une propriété
+-les objets sont mutables : on peut donc augmenter les nouvelles instances en leur donnant de nouveaux champs et méthodes. Ces nouvelles instances peuvent à leur tour servir de prototypes pour de nouveaux objets. Nul besoin de classes pour créer des tas d’objets similaires. = le clonage
+-bower
+-npm : gestionnaire de paquets officiel de Node.js
+-MEAN stack : mongo-db, express, angular, nodejs
 
 
-Module.exports
-module : variable qui représente le module
-exports : objet
-
-Message.js
-module.exports = 'Hello world';
-
-app.js
-const msg = require(message.js)
-console.log(msg) // Hello world
-
-Installation 
+*** Installation
 globale : dans un seul endroit, avec -g
 locale : dans le dossier de travail
-préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X, si update => casse tout
+préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X, avec globale si update => casse tout
 . invite de commande intéractive ou REPL
 
 
-* framework
-meteor
-backbone
-ember
+*** express
+-utilise http
+
+*branchement d'extension / middleware
+= traite la requête (parser, modifier la réponse)
+-avec app.use()
+-
 
 
 *** Liens
@@ -64,6 +39,7 @@ https://openclassrooms.com/fr/courses/1056721-des-applications-ultra-rapides-ave
 https://oncletom.io/node.js/#fnref1
 https://medium.mybridge.co/node-js-top-10-open-source-projects-for-the-past-month-v-mar-2018-6047fc05b1bb
 https://www.tutorialsteacher.com/nodejs/nodejs-tutorials
+
 
 * project
 https://github.com/Requarks/wiki

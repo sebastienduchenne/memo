@@ -1,0 +1,13 @@
+{
+  "name": "my_package",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "mysql": "^2.17.1",
+    "http":"^0.11.1"
+  }
+}

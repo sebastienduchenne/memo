@@ -1,0 +1,95 @@
+étape 1
+-serveur simple : GET, POST, PATCH, DELETE
+-BD = fichier json
+-index.html avec bouton pour GET, POST, PATCH, DELETE
+
+étape 2
+-docker
+
+étape 3
+-BD = mysql
+-front avec liste events, add events
+-adapter serveur : MVC
+
+étape 4
+-docker compose
+
+étape 5
+-test
+
+étape 6
+-NGINX
+
+étape 7
+-docker
+
+étape 8
+-react.js
+
+étape 9
+-docker
+
+----------------------------------------------------------------
+
+API : nodejs
+BD : ?
+-mysql
+front : ?
+-index et js
+-reactjs
+
+DOCKER
+-bd
+-app
+
+
+*** lancement
+npm i
+node server.js
+
+*** docker :
+
+-docker file
+docker build -t toto/titi
+docker run --name toto -p 8080:3000
+
+-docker-compose
+production : docker-compose -f docker/docker-compose.yml up -d,
+build : docker-compose -f docker/docker-compose.yml build
+
+
+*** URL :
+http://localhost:8080/
+
+
+*** mysql
+-installer phpmyadmin
+-installer le module node mysql
+
+
+---------------------------------------------------------------------
+
+***liens
+
+https://docker-curriculum.com/
+https://www.digitalocean.com/community/tutorials/containerizing-a-node-js-application-for-development-with-docker-compose
+https://medium.com/@deanslamajr/develop-that-nodejs-app-inside-a-docker-container-d7b93b8c89db
+https://medium.com/@francoisromain/getting-started-with-docker-for-local-node-js-development-192ceca18781
+https://hackernoon.com/build-a-crud-api-with-mongodb-express-and-docker-70510c6f706b
+
+
+*** API REST
+https://www.toptal.com/nodejs/secure-rest-api-in-nodejs
+https://github.com/makinhs/rest-api-tutorial
+
+
+*** docker et nodejs
+https://nodejs.dev/
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction
+https://stackify.com/learn-nodejs-tutorials/
+https://www.javatpoint.com/nodejs-tutorial
+https://www.airpair.com/javascript/node-js-tutorial
+https://www.edureka.co/blog/nodejs-tutorial/
+https://www.sitepoint.com/learn/nodejs/nodejs-tutorials/
+https://code.visualstudio.com/docs/nodejs/nodejs-tutorial
+https://nodejs.org/de/docs/guides/nodejs-docker-webapp/

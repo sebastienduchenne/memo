@@ -1,0 +1,14 @@
+Cloud computing : exploiter les capacités de calcul de serveurs distants
+
+
+Services
+
+SaaS : 
+software as a service, application mise à disposition des utilisateurs
+
+PaaS : 
+plateform as a service, offre l'accès à une plateforme pouvant contenir des applications
+Ex: MS Azure, AWS, heroku, open shift, cloudfoundry
+
+IaaS : 
+infrastructure as a service, accès à un parc informatique virtualisé

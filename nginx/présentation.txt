@@ -1,0 +1,32 @@
+= serveur web asynchrone
+-faible utilisation de la mémoire
+-maintenant aussi utilisé comme reverse proxy, cache HTTP, et load balancer.
+-performant pour des sites gourmands en ressources
+-installé dans /etc/nginx
+-par défaut : /etc/nginx/sites-enabled
+
+
+
+*** création d'un nouveau fichier de config Nginx
+1.créer un nouveau fichier dans /etc/nginx/sites-available
+2.ajouter un lien symbolique dans /etc/nginx/sites-enabled grâce à la commande ln :
+    ln -s lien-fichier-original lien-fichier-symbolique
+
+
+
+*** Loadbalancing
+= gérer la charge
+-techniques:
+    .assigner un poids
+    .round robin = circularité
+
+
+
+
+
+*** Liens
+
+https://doc.ubuntu-fr.org/nginx
+http://nginx.org/en/docs/http/ngx_http_upstream_module.html
+https://blog.axopen.com/2014/08/nginx-tutorial/
+https://openclassrooms.com/fr/courses/4425101-deployez-une-application-django/4688553-utilisez-le-serveur-http-nginx

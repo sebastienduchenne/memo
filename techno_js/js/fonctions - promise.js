@@ -1,16 +1,16 @@
 /*
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise
-
+https://javascript.info/promise-basics
 https://stackoverflow.com/questions/3884281/what-does-the-function-then-mean-in-javascript
 https://blog.xebia.fr/2017/11/14/asyncawait-une-meilleure-facon-de-faire-de-lasynchronisme-en-javascript/
 https://javascript.developpez.com/actu/102019/Apprendre-les-mecanismes-de-base-de-l-asynchrone-en-JavaScript-un-tutoriel-de-Yahiko/
 https://javascript.developpez.com/actu/146280/Comprendre-les-Promises-en-JavaScript-TypeScript-article-de-yahiko/
 https://medium.com/codeshake/pour-les-jedis-javascript-%C3%A9pisode-i-au-coeur-des-fonctions-partie-1-8b2cd1cab002
+https://www.guru99.com/node-js-promise-generator-event.html
 
 
-
-promesse : objet qui représente une valeur qui n’est pas forcément disponible maintenant, mais qui le sera dans le futur (si tout va bien) ou pas (si l’exécution échoue). Le constructeur prend une fonction qui prend 2 paramètres pour la complétion ou l'échec. Une promesse a 4 états : 
+promesse : objet qui représente une valeur qui n’est pas forcément disponible maintenant, mais qui le sera dans le futur (si tout va bien) ou pas (si l’exécution échoue). Le constructeur prend une fonction qui prend 2 paramètres pour la complétion ou l'échec. Une promesse a 4 états :
 -pending
 -fulfilled
 -rejected
@@ -30,7 +30,7 @@ var promise = new Promise(function (resolve, reject) {
 
 /*
 *** constructeur
-prend en paramètre une fonction exécuteur qui prend 2 fonctions en paramètres : resolve et reject (fournit par l'implémentation de Promise). Cette fonction est exécutée avant que le constructeur Promise ait renvoyé l'objet créé. 
+prend en paramètre une fonction exécuteur qui prend 2 fonctions en paramètres : resolve et reject (fournit par l'implémentation de Promise). Cette fonction est exécutée avant que le constructeur Promise ait renvoyé l'objet créé.
 Resolve est une fonction qui correspond à celle envoyé dans p.then(res)
 Reject est une fonction qui correspond à celle envoyé dans p.then(res, rej)
 Donc si dans la promise on fait appel à reject alors on doit mettre les 2 paramètres res et rej dans then().
@@ -118,21 +118,22 @@ function getOTC() {
 //sans async-await
 it('should enter OTC', () => {
   const promiseOTC = new Promise(resolve => resolve(lost.getOTC())); //il faut créer une promise
-  promiseOTC.then((otc) => {
-    lost.enterOTC(otc);
-  });
+  promiseOTC.then(
+    otc => console.log(otc),
+    error => console.log(error)
+  );
 })
 
 //avec async-await
 it('should enter OTC', async () => { //async
   try {
-    const OTC = await lost.getOTC(); //OTC contient ce qui est renvoyé par resolve, et on s'arrête tant que OTC ne sera pas remplie 
+    const OTC = await lost.getOTC(); //OTC est une promesse, et on s'arrête qu'elle n'a pas été remplie
   } catch (error){
     console.log(error)
   } finally{
     //...
   }
-  
+
   lost.enterOTC(OTC);
 })
 

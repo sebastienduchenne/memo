@@ -1,0 +1,51 @@
+. Bibliothèque JavaScript, pas framework
+. Création d'applications web monopage
+. Gère l'interface, cad la vue de MVC
+. Création de composants réutilisables qui contiennent le HTML, le CSS et le JS
+. Travail sur un DOM virtuel pour rafraichir les éléments de la page qui ont changé, en JavaScript
+. approche composant : un élément de la page, état, données, actions. Indépendant
+. syntaxe JSX
+. Creat-React-App = outil pour faciliter le dev react en créant un squelette applicatif et masquant la complexité
+. séparation entre HTML, CSS, et JS
+. composition de composant
+. les données descendent, l’état remonte
+. dossier nodes_modules contient les dépendances
+. service worker
+. manifeste applicatif PWA
+. yarn est une alternative à npm
+. s’appui sur ES2015
+. déstructuration = aller chercher plusieurs propriétés dans un objet
+const { firstName, lastName, onClick } = this.props
+
+. export = rendre visible
+. import = importer
+. composant pur fonctionnel = renvoit toujours la même chose
+. React.createElement()
+. ReactDOM.render()
+. props = attributs d’un composant
+. expression JSX = contenu dynamique
+
+
+
+// Avec JSX
+<User first="John" last="Smith" />
+
+// sans JSX
+React.createElement(User, { first: 'John', last: 'Smith' })
+
+
+
+
+*** Liens
+https://openclassrooms.com/fr/courses/4664381-realisez-une-application-web-avec-react-js
+https://putaindecode.io/fr/articles/js/react/
+https://blog.ippon.fr/2016/04/19/comment-bien-debuter-en-reactjs/
+https://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm
+
+https://github.com/ahfarmer/calculator
+
+https://reactjs.org/community/examples.html
+https://dev.to/drminnaar/11-react-examples-2e6d
+
+https://jsfiddle.net/user/dashboard/fiddles/
+

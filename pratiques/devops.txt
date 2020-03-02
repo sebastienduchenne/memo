@@ -1,0 +1,70 @@
+- pratique visant à l'unification du développement logiciel (dev) et de l'administration des infrastructures informatiques (ops) / collaboration entre les 2 équipes
+- permet de gérer toute la complexité en application et outils dans l'entreprise
+- c'est une culture, une philosophie, un état d'esprit qui implique tout le monde dans l'entreprise
+- ensemble de pratique qui automatise le processus entre le dev et le déploiement
+- Lorsque la sécurité est au cœur de l’activité d’une équipe DevOps, on parle parfois de DevSecOps.
+- 2 équipes dev et ops ou tous les membres de l'équipe font les 2 taches
+
+
+*** Modèle en cascade
+Traditionnellement, dans l'entreprise, l'équipe de développement des applications est chargée de collecter les exigences métier dont doit tenir compte un logiciel, puis d'en rédiger le code. L'équipe de développement teste son programme dans un environnement isolé à des fins d'assurance qualité. Ensuite, si les exigences sont satisfaites, elle met le code à la disposition des équipes opérationnelles pour exploitation.
+
+Ce paradigme pose un problème : lorsque les deux équipes travaillent séparément, cad en silo, le développement peut ne pas être au courant des obstacles opérationnels qui empêchent le programme de fonctionner comme attendu.
+
+Le monde de l'informatique évolue de plus en plus vite, les exigences changent sans cesse, il faut développer de plus en plus rapidement, le modèle en cascade n'est plus adapté.
+
+
+*** avantages
+- le gain de confiance
+- l'accélération des livraisons pour répondre plus vite au besoin du client
+- mise à jour et innovation plus rapide
+- la capacité à résoudre les tickets plus rapidement
+- la gestion plus efficace des tâches non planifiées
+- plus de fiabilité
+
+
+*** bonnes pratiques
+- Intégration continue
+- livraison continue
+- microservices
+- Infrastructure en tant que code
+- Surveillance et journalisation
+- Communication et collaboration
+
+
+*** Missions du devops
+- Déploiement d’applications
+- Réalisation de phases de test, réalisées en amont du développement
+- Mise en place d’une surveillance de la qualité de la production
+
+
+*** Qualités, compétences du devops
+
+Des compétences techniques, tout d’abord, intrinsèquement liées au métier en lui-même. Il s’agit de tout ce qui concerne le développement et l’exploitation de logiciel ainsi que l’administration de systèmes et d’outils très spécifiques. Le DevOps doit ainsi avoir des compétences en programmation (écriture et compréhension du code, connaissance des langages de programmation, développement de scripts et intégration) en déploiement d’infrastructures (mise en place de passerelles pour transférer des opérations ou des données) ainsi qu’en évaluation (capacité à évaluer le fonctionnement des applications, à procéder à des ajustements en termes de ressources et d’outils et à mesurer les performances des solutions mises en place).
+
+Au-delà de ces compétences techniques, le DevOps doit aussi savoir faire preuve de compétences « humaines » :
+- Avoir un bon relationnel pour communiquer plus facilement avec les différentes personnes susceptibles d’être associées au projet
+- Être capable de gérer des équipes ayant des rôles complémentaires mais bien spécifiques
+- Savoir prendre du recul et comprendre le point de vue des autres pour mener à bien le projet dans les meilleures conditions et atteindre l’ensemble des objectifs fixés
+- Être capable de fédérer des profils hétérogènes, ayant des intérêts parfois très contradictoires, dans le but de produire une solution efficace et cohérente
+
+
+*** déf
+* intégration continue : ensemble de pratiques utilisé en génie logiciel consistant à vérifier, pour chaque modification de code source, que le résultat des modifications ne produit pas de régression dans l'application développée
+
+* livraison continue : 
+    -les équipes de développement produisent et testent le code dans des cycles courts, en s'appuyant sur l'automatisation
+    -raccourcir au maximum les boucles de rétroaction afin d'améliorer la qualité des logiciels
+
+* déploiement continue : déploiement en prod
+
+
+*** Liens
+
+https://aws.amazon.com/fr/devops/what-is-devops/
+https://fr.wikipedia.org/wiki/Devops
+https://fr.atlassian.com/devops
+https://www.redhat.com/fr/topics/devops#
+https://www.combell.com/fr/blog/devops-pourquoi-si-important/
+
+

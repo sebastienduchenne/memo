@@ -1,0 +1,12 @@
+services:
+  app:
+    build: 
+      context: ../
+      dockerfile: docker/dockerfile 
+      args:
+        port: ${PORT}
+    env_file:
+      - ../.env
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
