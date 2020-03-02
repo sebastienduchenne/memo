@@ -1,17 +1,16 @@
-Installation
-prérequis : nodejs et npm
-. npm install --global create-react-app
+>>> Installation
+-npm install --global create-react-app
 
 
-Commandes
+>>> Commandes
 create-react-app xx = créer un projet react xx
 npm start = lancer le projet, à exécuter à la racine
 npm build = 
-npm test = 
+npm test = lancer les tests xxx.test.js
 npm eject = 
 
-Méthodes
-. render : prends input et rend quoi afficher
+>>> Méthodes
+.render : prends input et rend quoi afficher
 .getInitialState : méthode permettant d’initialiser le “state” interne du composant. La méthode retourne un objet qui sera ensuite mappé sur this.state.
 .setState : méthode permettant simplement de mettre à jour le “state”. Elle est principalement appelée de l’extérieur pour mettre à jour les données.
 .componantDidMount : appelée lors de la création du composant, elle permet d’initialiser des méthodes et données.

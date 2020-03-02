@@ -6,26 +6,45 @@
 . approche composant : un élément de la page, état, données, actions. Indépendant
 . syntaxe JSX
 . Creat-React-App = outil pour faciliter le dev react en créant un squelette applicatif et masquant la complexité
-. séparation entre HTML, CSS, et JS
 . composition de composant
 . les données descendent, l’état remonte
-. dossier nodes_modules contient les dépendances
 . service worker
 . manifeste applicatif PWA
 . yarn est une alternative à npm
-. s’appui sur ES2015
-. déstructuration = aller chercher plusieurs propriétés dans un objet
-const { firstName, lastName, onClick } = this.props
-
-. export = rendre visible
-. import = importer
+-const { firstName, lastName, onClick } = this.props
 . composant pur fonctionnel = renvoit toujours la même chose
 . React.createElement()
 . ReactDOM.render()
 . props = attributs d’un composant
 . expression JSX = contenu dynamique
 
+-2 modules React et ReactDOM
+-2 classes : React.Component et React.PureComponent
 
+React
+-React.Component : classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
+-React.PureComponent : créer des composants React, implémente shouldComponentUpdate()
+-React.memo : comme PureComponent mais pour les composants créés à l’aide de fonctions 
+-React.createElement()
+-React.cloneElement(
+-React.createFactory(type)
+-React.isValidElement(object)
+-React.Children.map(
+-React.Fragment
+-React.createRef
+-React.forwardRef
+-React.lazy
+-React.Suspense
+
+
+
+
+ReactDOM : fournit des méthodes au DOM
+    -render() : Affiche un élément React au sein du nœud DOM
+    -hydrate() : Similaire à render(), mais sert à hydrater un conteneur dont le HTML a déjà été produit par ReactDOMServer
+    -unmountComponentAtNode() : Retire un composant React monté du DOM et nettoie ses gestionnaires d’événements et son état local
+    -findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
+    -createPortal() : Crée un portail
 
 // Avec JSX
 <User first="John" last="Smith" />
@@ -48,4 +67,7 @@ https://reactjs.org/community/examples.html
 https://dev.to/drminnaar/11-react-examples-2e6d
 
 https://jsfiddle.net/user/dashboard/fiddles/
+
+https://fr.reactjs.org/docs/react-api.html
+https://fr.reactjs.org/docs/react-dom.html
 
