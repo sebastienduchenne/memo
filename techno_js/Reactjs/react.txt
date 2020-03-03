@@ -4,32 +4,27 @@
 . Création de composants réutilisables qui contiennent le HTML, le CSS et le JS
 . Travail sur un DOM virtuel pour rafraichir les éléments de la page qui ont changé, en JavaScript
 . approche composant : un élément de la page, état, données, actions. Indépendant
-. syntaxe JSX
 . Creat-React-App = outil pour faciliter le dev react en créant un squelette applicatif et masquant la complexité
-. composition de composant
 . les données descendent, l’état remonte
-. service worker
-. manifeste applicatif PWA
 . yarn est une alternative à npm
 -const { firstName, lastName, onClick } = this.props
 . composant pur fonctionnel = renvoit toujours la même chose
-. React.createElement()
-. ReactDOM.render()
 . props = attributs d’un composant
-. expression JSX = contenu dynamique
+-PWA = progressive webapp
+
 
 -2 modules React et ReactDOM
 -2 classes : React.Component et React.PureComponent
 
-React
+>>> React
 -React.Component : classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
 -React.PureComponent : créer des composants React, implémente shouldComponentUpdate()
 -React.memo : comme PureComponent mais pour les composants créés à l’aide de fonctions 
 -React.createElement()
--React.cloneElement(
+-React.cloneElement()
 -React.createFactory(type)
 -React.isValidElement(object)
--React.Children.map(
+-React.Children.map()
 -React.Fragment
 -React.createRef
 -React.forwardRef
@@ -37,22 +32,27 @@ React
 -React.Suspense
 
 
+>>> ReactDOM : fournit des méthodes au DOM
+-render() : Affiche un élément React au sein du nœud DOM
+-hydrate() : Similaire à render(), mais sert à hydrater un conteneur dont le HTML a déjà été produit par ReactDOMServer
+-unmountComponentAtNode() : Retire un composant React monté du DOM et nettoie ses gestionnaires d’événements et son état local
+-findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
+-createPortal() : Crée un portail
 
 
-ReactDOM : fournit des méthodes au DOM
-    -render() : Affiche un élément React au sein du nœud DOM
-    -hydrate() : Similaire à render(), mais sert à hydrater un conteneur dont le HTML a déjà été produit par ReactDOMServer
-    -unmountComponentAtNode() : Retire un composant React monté du DOM et nettoie ses gestionnaires d’événements et son état local
-    -findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
-    -createPortal() : Crée un portail
+>>> service worker
+-script qui se lance entre la webpage et le réseau et qui sert de proxy. Il est utile en cas de perte du réseau
+
+
+
+>>> syntaxe JSX
+. expression JSX = contenu dynamique
 
 // Avec JSX
 <User first="John" last="Smith" />
 
 // sans JSX
 React.createElement(User, { first: 'John', last: 'Smith' })
-
-
 
 
 *** Liens
