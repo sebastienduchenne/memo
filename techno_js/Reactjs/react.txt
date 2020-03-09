@@ -4,13 +4,15 @@
 . Création de composants réutilisables qui contiennent le HTML, le CSS et le JS
 . Travail sur un DOM virtuel pour rafraichir les éléments de la page qui ont changé, en JavaScript
 . approche composant : un élément de la page, état, données, actions. Indépendant
-. Creat-React-App = outil pour faciliter le dev react en créant un squelette applicatif et masquant la complexité
-. les données descendent, l’état remonte
-. yarn est une alternative à npm
--const { firstName, lastName, onClick } = this.props
+. composition de composant
+. les données descendent dans les enfants, l’état remonte dans le parent
+. service worker
+. manifeste applicatif PWA
 . composant pur fonctionnel = renvoit toujours la même chose
-. props = attributs d’un composant
--PWA = progressive webapp
+
+.getInitialState : méthode permettant d’initialiser le “state” interne du composant. La méthode retourne un objet qui sera ensuite mappé sur this.state.
+.componantDidMount : appelée lors de la création du composant, elle permet d’initialiser des méthodes et données.
+.componantWillUnmount : Appelé lors de la destruction du composant. Peut être utilisé pour transmettre des données lors de cette phase.
 
 
 -2 modules React et ReactDOM
@@ -19,7 +21,7 @@
 >>> React
 -React.Component : classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
 -React.PureComponent : créer des composants React, implémente shouldComponentUpdate()
--React.memo : comme PureComponent mais pour les composants créés à l’aide de fonctions 
+-React.memo : comme PureComponent mais pour les composants créés à l’aide de fonctions
 -React.createElement()
 -React.cloneElement()
 -React.createFactory(type)
@@ -39,6 +41,7 @@
 -findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
 -createPortal() : Crée un portail
 
+<<<<<<< HEAD
 
 >>> service worker
 -script qui se lance entre la webpage et le réseau et qui sert de proxy. Il est utile en cas de perte du réseau
@@ -47,13 +50,25 @@
 
 >>> syntaxe JSX
 . expression JSX = contenu dynamique
+=======
+>>> JSX
+-syntaxe pour faciliter la création d'élément react
 
-// Avec JSX
-<User first="John" last="Smith" />
 
-// sans JSX
-React.createElement(User, { first: 'John', last: 'Smith' })
+-Avec JSX
+    <User first="John" last="Smith" />
+>>>>>>> c593ae3aabcd04e34cf60188308128aee15a7510
 
+-sans JSX
+    React.createElement(User, { first: 'John', last: 'Smith' })
+
+
+>>> composant
+-props = attributs d’un composant
+-l'état local d'un composant est dans this.state
+-on passe des données à un composant par l'argument this.props
+-this.setState(xxx) : mettre à jour le “state”. Elle est principalement appelée de l’extérieur pour mettre à jour les données.
+-la modification de l'état local met à jour le rendu du compoant et de celui des enfants
 
 *** Liens
 https://openclassrooms.com/fr/courses/4664381-realisez-une-application-web-avec-react-js
