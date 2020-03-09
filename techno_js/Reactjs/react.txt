@@ -14,6 +14,7 @@
 .componantDidMount : appelée lors de la création du composant, elle permet d’initialiser des méthodes et données.
 .componantWillUnmount : Appelé lors de la destruction du composant. Peut être utilisé pour transmettre des données lors de cette phase.
 
+
 -2 modules React et ReactDOM
 -2 classes : React.Component et React.PureComponent
 
@@ -22,10 +23,10 @@
 -React.PureComponent : créer des composants React, implémente shouldComponentUpdate()
 -React.memo : comme PureComponent mais pour les composants créés à l’aide de fonctions
 -React.createElement()
--React.cloneElement(
+-React.cloneElement()
 -React.createFactory(type)
 -React.isValidElement(object)
--React.Children.map(
+-React.Children.map()
 -React.Fragment
 -React.createRef
 -React.forwardRef
@@ -40,12 +41,23 @@
 -findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
 -createPortal() : Crée un portail
 
+<<<<<<< HEAD
+
+>>> service worker
+-script qui se lance entre la webpage et le réseau et qui sert de proxy. Il est utile en cas de perte du réseau
+
+
+
+>>> syntaxe JSX
+. expression JSX = contenu dynamique
+=======
 >>> JSX
 -syntaxe pour faciliter la création d'élément react
 
 
 -Avec JSX
     <User first="John" last="Smith" />
+>>>>>>> c593ae3aabcd04e34cf60188308128aee15a7510
 
 -sans JSX
     React.createElement(User, { first: 'John', last: 'Smith' })
@@ -57,8 +69,6 @@
 -on passe des données à un composant par l'argument this.props
 -this.setState(xxx) : mettre à jour le “state”. Elle est principalement appelée de l’extérieur pour mettre à jour les données.
 -la modification de l'état local met à jour le rendu du compoant et de celui des enfants
-
-
 
 *** Liens
 https://openclassrooms.com/fr/courses/4664381-realisez-une-application-web-avec-react-js
