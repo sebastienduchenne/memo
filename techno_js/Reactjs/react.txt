@@ -6,69 +6,63 @@
 . approche composant : un élément de la page, état, données, actions. Indépendant
 . composition de composant
 . les données descendent dans les enfants, l’état remonte dans le parent
-. service worker
 . manifeste applicatif PWA
 . composant pur fonctionnel = renvoit toujours la même chose
 
-.getInitialState : méthode permettant d’initialiser le “state” interne du composant. La méthode retourne un objet qui sera ensuite mappé sur this.state.
-.componantDidMount : appelée lors de la création du composant, elle permet d’initialiser des méthodes et données.
-.componantWillUnmount : Appelé lors de la destruction du composant. Peut être utilisé pour transmettre des données lors de cette phase.
+.getInitialState : méthode permettant d’initialiser le “state” interne du composant. La méthode retourne un objet qui sera ensuite mappé sur this.state (react sans ES6)
+
 
 
 -2 modules React et ReactDOM
--2 classes : React.Component et React.PureComponent
 
->>> React
+>>> module React
 -React.Component : classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
--React.PureComponent : créer des composants React, implémente shouldComponentUpdate()
+-React.PureComponent : classe pour créer des composants React, implémente shouldComponentUpdate()
 -React.memo : comme PureComponent mais pour les composants créés à l’aide de fonctions
 -React.createElement()
 -React.cloneElement()
 -React.createFactory(type)
 -React.isValidElement(object)
 -React.Children.map()
--React.Fragment
--React.createRef
--React.forwardRef
--React.lazy
--React.Suspense
+-React.Fragment : fragment
+-React.createRef() : accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
+-React.forwardRef(fonction de rendu)
+-React.lazy(fonction avec import) : charger un composant dynamiquement
+-React.Suspense : charger un composant une fois celui avec React.lazy chargé
 
 
->>> ReactDOM : fournit des méthodes au DOM
--render() : Affiche un élément React au sein du nœud DOM
--hydrate() : Similaire à render(), mais sert à hydrater un conteneur dont le HTML a déjà été produit par ReactDOMServer
--unmountComponentAtNode() : Retire un composant React monté du DOM et nettoie ses gestionnaires d’événements et son état local
--findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
--createPortal() : Crée un portail
+>>> module ReactDOM : fournit des méthodes au DOM
+-ReactDOM.render(composant react, id HTML) : Affiche un élément React au sein du nœud DOM
+-ReactDOM.hydrate() : Similaire à render(), mais sert à hydrater un conteneur dont le HTML a déjà été produit par ReactDOMServer
+-ReactDOM.unmountComponentAtNode() : Retire un composant React monté du DOM et nettoie ses gestionnaires d’événements et son état local
+-ReactDOM.findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
+-ReactDOM.createPortal(child, container) : Créé un portail
 
-<<<<<<< HEAD
+
+>>> syntaxe JSX
+-syntaxe pour faciliter la création d'élément react
+
+-Avec JSX
+    <User first="John" last="Smith" />
+    -User : nom de l'élément React
+    -first et last sont des propriétés du composant User
+-sans JSX
+    React.createElement(User, { first: 'John', last: 'Smith' })
+
 
 >>> service worker
 -script qui se lance entre la webpage et le réseau et qui sert de proxy. Il est utile en cas de perte du réseau
 
 
+>>> classe React.Component
+-cycle de vie
+-this.props = attributs d’un composant dans lequel on passe des données
+-this.state = état local d'un composant
+-this.setState(xxx) : mettre à jour le "state". La modification de l'état local met à jour le rendu du composant et de celui des enfants
+-componantDidMount() : appelée lors de la création du composant, après que la sortie du composant a été injectée dans le DOM. Elle permet d’initialiser des méthodes et données
+-componantWillUnmount() : Appelé lors de la destruction du composant. Peut être utilisé pour transmettre des données lors de cette phase
+-render() : ce qui sera afficher
 
->>> syntaxe JSX
-. expression JSX = contenu dynamique
-=======
->>> JSX
--syntaxe pour faciliter la création d'élément react
-
-
--Avec JSX
-    <User first="John" last="Smith" />
->>>>>>> c593ae3aabcd04e34cf60188308128aee15a7510
-
--sans JSX
-    React.createElement(User, { first: 'John', last: 'Smith' })
-
-
->>> composant
--props = attributs d’un composant
--l'état local d'un composant est dans this.state
--on passe des données à un composant par l'argument this.props
--this.setState(xxx) : mettre à jour le “state”. Elle est principalement appelée de l’extérieur pour mettre à jour les données.
--la modification de l'état local met à jour le rendu du compoant et de celui des enfants
 
 *** Liens
 https://openclassrooms.com/fr/courses/4664381-realisez-une-application-web-avec-react-js
@@ -86,3 +80,4 @@ https://jsfiddle.net/user/dashboard/fiddles/
 https://fr.reactjs.org/docs/react-api.html
 https://fr.reactjs.org/docs/react-dom.html
 
+http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
