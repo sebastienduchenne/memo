@@ -3,40 +3,28 @@
 . Gère l'interface, cad la vue de MVC
 . Création de composants réutilisables qui contiennent le HTML, le CSS et le JS
 . Travail sur un DOM virtuel pour rafraichir les éléments de la page qui ont changé, en JavaScript
-. approche composant : un élément de la page, état, données, actions. Indépendant
+. approche composant : petits morceaux de code réutilisables qui renvoient un élément React à afficher dans la page
 . composition de composant
 . les données descendent dans les enfants, l’état remonte dans le parent
 . manifeste applicatif PWA
 . composant pur fonctionnel = renvoit toujours la même chose
-
 .getInitialState : méthode permettant d’initialiser le “state” interne du composant. La méthode retourne un objet qui sera ensuite mappé sur this.state (react sans ES6)
+-outil de test ReactTestUtils pour tester les composants react
+-moteur de rendu ou renderer
+-props.children
+-refs
+-réconciliation : processus de mise à jour du DOM effectué si changement du state
+-Contexte : faire passer des données à travers l’arborescence du composant sans avoir à passer manuellement les props à chaque niveau
+-fragment : 
+-Composants d’ordre supérieur : 
+-portail : 
 
+>>> hooks
+-utiliser react sans avoir besoin d'écrire de classe
 
-
--2 modules React et ReactDOM
-
->>> module React
--React.Component : classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
--React.PureComponent : classe pour créer des composants React, implémente shouldComponentUpdate()
--React.memo : comme PureComponent mais pour les composants créés à l’aide de fonctions
--React.createElement()
--React.cloneElement()
--React.createFactory(type)
--React.isValidElement(object)
--React.Children.map()
--React.Fragment : fragment
--React.createRef() : accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
--React.forwardRef(fonction de rendu)
--React.lazy(fonction avec import) : charger un composant dynamiquement
--React.Suspense : charger un composant une fois celui avec React.lazy chargé
-
-
->>> module ReactDOM : fournit des méthodes au DOM
--ReactDOM.render(composant react, id HTML) : Affiche un élément React au sein du nœud DOM
--ReactDOM.hydrate() : Similaire à render(), mais sert à hydrater un conteneur dont le HTML a déjà été produit par ReactDOMServer
--ReactDOM.unmountComponentAtNode() : Retire un composant React monté du DOM et nettoie ses gestionnaires d’événements et son état local
--ReactDOM.findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
--ReactDOM.createPortal(child, container) : Créé un portail
+>>> gestion des saisies de formulaire
+-composant controlé : valeur saisie vérifiée
+-composant non-controlé : valeur saisie non vérifiée
 
 
 >>> syntaxe JSX
@@ -53,15 +41,6 @@
 >>> service worker
 -script qui se lance entre la webpage et le réseau et qui sert de proxy. Il est utile en cas de perte du réseau
 
-
->>> classe React.Component
--cycle de vie
--this.props = attributs d’un composant dans lequel on passe des données
--this.state = état local d'un composant
--this.setState(xxx) : mettre à jour le "state". La modification de l'état local met à jour le rendu du composant et de celui des enfants
--componantDidMount() : appelée lors de la création du composant, après que la sortie du composant a été injectée dans le DOM. Elle permet d’initialiser des méthodes et données
--componantWillUnmount() : Appelé lors de la destruction du composant. Peut être utilisé pour transmettre des données lors de cette phase
--render() : ce qui sera afficher
 
 
 *** Liens

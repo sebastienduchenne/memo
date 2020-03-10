@@ -1,0 +1,71 @@
+-3 objets : React, ReactDOM et ReactDOMServer
+
+>>> objet global React
+-React.Component : classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
+-React.PureComponent : classe pour créer des composants React, implémente shouldComponentUpdate()
+-React.memo : comme PureComponent mais pour les composants créés à l’aide de fonctions
+-React.createElement()
+-React.cloneElement()
+-React.createFactory(type)
+-React.isValidElement(object) : vérifie qu’un objet est bien un élément React.
+-React.Children.map()
+-React.Fragment : fragment
+-React.createRef() : accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
+-React.forwardRef(fonction de rendu)
+-React.lazy(fonction avec import) : charger un composant dynamiquement
+-React.Suspense : charger un composant une fois celui avec React.lazy chargé
+
+
+>>> classe React.Component
+-cycle de vie
+    -montage : constructor(), render(), componantDidMount()
+    -update : render(), componentDidUpdate()
+    -démontage : componantWillUnmount()
+-montage
+    -constructor()
+    -static getDerivedStateFromProps()
+    -render() : ce qui sera afficher
+    -componantDidMount() : appelée lors de la création du composant, après que la sortie du composant a été injectée dans le DOM. Elle permet d’initialiser des méthodes et données
+    -componentWillMount() : DEPRECIEE
+-mise à jour
+    -static getDerivedStateFromProps()
+    -shouldComponentUpdate()
+    -render()
+    -getSnapshotBeforeUpdate()
+    -componentDidUpdate()
+    -componentWillUpdate() : DEPRECIEE
+    -componentWillReceiveProps() : DEPRECIEE
+-démontage
+    -componantWillUnmount() : Appelé lors de la destruction du composant. Peut être utilisé pour transmettre des données lors de cette phase
+-gestion d'erreur
+    -static getDerivedStateFromError()
+    -componentDidCatch()
+-propriétés de classe
+    -defaultProps
+    -displayName
+-propriété d'instance
+    -props = attributs d’un composant dans lequel on passe des données, lecture seule
+    -state = état local d'un composant
+-autres
+    -setState(xxx) : mettre à jour le "state". La modification de l'état local met à jour le rendu du composant et de celui des enfants
+    -forceUpdate()
+
+
+>>> variable globale ReactDOM
+=fournit des méthodes au DOM
+-ReactDOM.render(composant react, id HTML) : Affiche un élément React au sein du nœud DOM
+-ReactDOM.hydrate() : Similaire à render(), mais sert à hydrater un conteneur dont le HTML a déjà été produit par ReactDOMServer
+-ReactDOM.unmountComponentAtNode() : Retire un composant React monté du DOM et nettoie ses gestionnaires d’événements et son état local
+-ReactDOM.findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
+-ReactDOM.createPortal(child, container) : Créé un portail
+
+>>> objet ReactDOMServer
+-renderToString(element)
+-renderToStaticMarkup(element)
+-renderToNodeStream(element)
+-renderToStaticNodeStream(element)
+
+
+>>> objet SyntheticEvent
+-enrobage pour la gestion d'évènements
+-cf la doc de react pour voir les évènements pris en compte
