@@ -1,26 +1,48 @@
 . Bibliothèque JavaScript, pas framework
 . Création d'applications web monopage
 . Gère l'interface, cad la vue de MVC
-. Création de composants réutilisables qui contiennent le HTML, le CSS et le JS
+. approche composant = création de composants réutilisables qui contiennent le HTML, le CSS et le JS
 . Travail sur un DOM virtuel pour rafraichir les éléments de la page qui ont changé, en JavaScript
-. approche composant : petits morceaux de code réutilisables qui renvoient un élément React à afficher dans la page
 . composition de composant
-. les données descendent dans les enfants, l’état remonte dans le parent
+. règle : les données descendent dans les enfants, l’état remonte dans le parent
 . manifeste applicatif PWA
 . composant pur fonctionnel = renvoit toujours la même chose
-.getInitialState : méthode permettant d’initialiser le “state” interne du composant. La méthode retourne un objet qui sera ensuite mappé sur this.state (react sans ES6)
--outil de test ReactTestUtils pour tester les composants react
 -moteur de rendu ou renderer
--props.children
--refs
--réconciliation : processus de mise à jour du DOM effectué si changement du state
+-props.children : passer des éléments enfants pour les comp qui ne connaissent pas leur enfant à l'avance (délégation de contenu)
+-refs : accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
+-réconciliation : mise à jour du DOM si changement du state
 -Contexte : faire passer des données à travers l’arborescence du composant sans avoir à passer manuellement les props à chaque niveau
--fragment : 
--Composants d’ordre supérieur : 
--portail : 
+-portail : afficher des composants enfants dans un nœud DOM qui existe en dehors de la hiérarchie DOM du composant parent
+-profileur : mesure à quelle fréquence une application React réalise son rendu, ceci dans un objectif d'optimisation
+-prop-types : vérifier la validité d'une donnée reçu
+-web component : encapsulation forte pour des composants réutilisables (non react)
+
+
+>>> StrictMode
+-outil pour détecter des problèmes
+      <React.StrictMode>
+        <div>
+          <ComponentOne />
+          <ComponentTwo />
+        </div>
+      </React.StrictMode>
+
+
+>>> Composants d’ordre supérieur (Higher-Order Component ou HOC)
+-fonction qui transforme un composant en un autre composant
+-const EnhancedComponent = higherOrderComponent(WrappedComponent);
+
 
 >>> hooks
 -utiliser react sans avoir besoin d'écrire de classe
+
+>>> fragment
+-permette de grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM
+<React.Fragment>
+    <ChildA />
+    <ChildB />
+</React.Fragment>
+-> React.Fragment n'est pas ajouté au DOM
 
 >>> gestion des saisies de formulaire
 -composant controlé : valeur saisie vérifiée
@@ -42,8 +64,15 @@
 -script qui se lance entre la webpage et le réseau et qui sert de proxy. Il est utile en cas de perte du réseau
 
 
+>>> React sans ES6
+-getInitialState : méthode permettant d’initialiser le “state” interne du composant. La méthode retourne un objet qui sera ensuite mappé sur this.state (react sans ES6)
 
-*** Liens
+
+>>> outil de test ReactTestUtils
+-pour tester les composants react
+
+
+>>> Liens
 https://openclassrooms.com/fr/courses/4664381-realisez-une-application-web-avec-react-js
 https://putaindecode.io/fr/articles/js/react/
 https://blog.ippon.fr/2016/04/19/comment-bien-debuter-en-reactjs/
@@ -60,3 +89,4 @@ https://fr.reactjs.org/docs/react-api.html
 https://fr.reactjs.org/docs/react-dom.html
 
 http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+

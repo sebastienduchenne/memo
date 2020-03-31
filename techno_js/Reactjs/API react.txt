@@ -1,5 +1,6 @@
 -3 objets : React, ReactDOM et ReactDOMServer
 
+
 >>> objet global React
 -React.Component : classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
 -React.PureComponent : classe pour créer des composants React, implémente shouldComponentUpdate()
@@ -41,8 +42,8 @@
     -static getDerivedStateFromError()
     -componentDidCatch()
 -propriétés de classe
-    -defaultProps
-    -displayName
+    -defaultProps : utilisée pour les props non définies
+    -displayName : utilisée dans les messages de débogage
 -propriété d'instance
     -props = attributs d’un composant dans lequel on passe des données, lecture seule
     -state = état local d'un composant
@@ -59,6 +60,7 @@
 -ReactDOM.findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
 -ReactDOM.createPortal(child, container) : Créé un portail
 
+
 >>> objet ReactDOMServer
 -renderToString(element)
 -renderToStaticMarkup(element)
@@ -69,3 +71,4 @@
 >>> objet SyntheticEvent
 -enrobage pour la gestion d'évènements
 -cf la doc de react pour voir les évènements pris en compte
+
