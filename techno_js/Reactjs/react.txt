@@ -4,7 +4,6 @@
 . Travail sur un DOM virtuel pour rafraichir les éléments de la page qui ont changé, en JavaScript
 . manifeste applicatif PWA
 -moteur de rendu ou renderer
--props.children : passer des éléments enfants pour les comp qui ne connaissent pas leur enfant à l'avance (délégation de contenu)
 -refs : accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
 -réconciliation : mise à jour du DOM si changement du state
 -Contexte : faire passer des données à travers l’arborescence du composant sans avoir à passer manuellement les props à chaque niveau
@@ -12,32 +11,22 @@
 -profileur : mesure à quelle fréquence une application React réalise son rendu, ceci dans un objectif d'optimisation
 -prop-types : vérifier la validité d'une donnée reçu
 -web component : encapsulation forte pour des composants réutilisables (non react)
--nommer les props du point de vue du composant plutôt que de celui du contexte dans lequel il est utilisé
+-on peut avoir plusieurs noeud DOM racines dans une application
 
 
->>> composant
--indépendants et réutilisables
--contient la balisage et la logique
--un composant peut aussi s'écrire avec la syntaxe d'une classe
--les composants sont comme des fonctions qui acceptent des props et renvoient des éléments react
--fonction composant = une fonction qui accepte des props et renvoit un élément react
--règle : tout composant React doit agir comme une fonction pure vis-à-vis de ses props.
--composition de composant : faire référence à d'autres composants en sortie
--composant pur fonctionnel = renvoit toujours la même chose
--règle : les données descendent dans les enfants, l’état remonte dans le parent
--props = entrée
--state = état local
--separation of concerns
+>>> élément
+= bloc élémentaire (les composants ont des trucs en plus)
+-les éléments react sont immuables (=enfants et attributs non modifiables)
 
 
 >>> StrictMode
 -outil pour détecter des problèmes
-      <React.StrictMode>
-        <div>
-          <ComponentOne />
-          <ComponentTwo />
-        </div>
-      </React.StrictMode>
+  <React.StrictMode>
+    <div>
+      <ComponentOne />
+      <ComponentTwo />
+    </div>
+  </React.StrictMode>
 
 
 >>> Composants d’ordre supérieur (Higher-Order Component ou HOC)
@@ -61,30 +50,6 @@
 -composant non-controlé : valeur saisie non vérifiée
 
 
->>> syntaxe JSX
--extension syntaxique de JS qui créé des éléments react
--c'est une expression
--pas obligatoire
--appel de fonction après compilation
--empêche les attaques d’injection
--représente des objets
-
--Avec JSX
-    <User first="John" last="Smith" />
-    -User : nom de l'élément React
-    -first et last sont des propriétés du composant User
--sans JSX
-    React.createElement(User, { first: 'John', last: 'Smith' })
-
--donne un élément react: 
-  const element = {
-    type: 'User',
-    props: {
-      first: "John",
-      last: "Smith"
-    }
-  };
-
 >>> service worker (non React)
 -script qui se lance entre la webpage et le réseau et qui sert de proxy. Il est utile en cas de perte du réseau
 
@@ -95,6 +60,36 @@
 
 >>> outil de test ReactTestUtils
 -pour tester les composants react
+
+
+>>> évènements
+
+
+
+function ActionLink() {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('Le lien a été cliqué.');
+  }
+
+  return (
+    <a href="#" onClick={handleClick}>
+      Clique ici
+    </a>
+  );
+}
+
+-empêcher le comportement par défaut : appeler explicitement preventDefault
+-Function.prototype.bind
+
+
+>>> Construire une appli react
+1 : décomposer l’interface utilisateur en une hiérarchie de composants
+2 : construire une version statique avec React
+3 : déterminer le contenu minimal (mais suffisant) de l’état de l’UI
+4 : identifier où votre état doit vivre
+5 : ajouter le flux de données inverse
+
 
 
 >>> Liens

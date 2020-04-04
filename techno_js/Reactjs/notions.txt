@@ -1,7 +1,9 @@
 composant
+élément
 syntaxe JSX
 state
 props
+cycle de vie
 service worker
 fragment
 ref
@@ -12,3 +14,4 @@ prop-types
 StrictMode
 composant contrôlé
 web component (non react)
+évènements

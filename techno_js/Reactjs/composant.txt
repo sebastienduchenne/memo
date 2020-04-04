@@ -1,0 +1,71 @@
+-éléments indépendants et réutilisables
+-contient la balisage et la logique
+-un composant peut s'écrire avec la syntaxe d'une fonction ou d'une classe
+-comme des fonctions qui acceptent des props et renvoient des éléments react
+-fonction composant = une fonction qui accepte des props et renvoit un élément react
+-composition de composant : faire référence à d'autres composants en sortie
+-composant pur fonctionnel = renvoit toujours la même chose
+-separation of concerns
+-props.children : passer des éléments enfants pour les comp qui ne connaissent pas leur enfant à l'avance (délégation de contenu)
+-Les mises à jour de l’état peuvent être asynchrones
+-Les mises à jour de l’état sont fusionnées
+-Affichage conditionnel
+-en cas de changement, react DOM met à jour le strict nécessaire (les noeuds)
+
+
+function Welcome(props) {
+  return <h1>Bonjour, {props.name}</h1>;
+}
+
+class Welcome extends React.Component {
+  render() {
+    return <h1>Bonjour, {this.props.name}</h1>;
+  }
+}
+
+>>> constituant
+-props = entrée
+-state = état local, est privé
+-méthodes de cycle de vie
+
+
+>>> règles
+-tout composant React doit agir comme une fonction pure vis-à-vis de ses props.
+-les données descendent dans les enfants, l’état remonte dans le parent
+-utiliser setState() pour modifier l'état
+-Les composants utilisateurs doivent commencer par une majuscule
+-nommer les props du point de vue du composant plutôt que de celui du contexte dans lequel il est utilisé
+
+>>> API
+Montage : 
+    1. constructor()
+    2. static getDerivedStateFromProps()
+    3. render()
+    4. componentDidMount()
+
+Mise à jour :
+    1. static getDerivedStateFromProps()
+    2. shouldComponentUpdate()
+    3. render()
+    4. getSnapshotBeforeUpdate()
+    5. componentDidUpdate()
+
+Démontage
+    componentWillUnmount()
+
+Gestion d’erreurs
+    -static getDerivedStateFromError()
+    -componentDidCatch()
+
+Propriétés de classe
+    -defaultProps : utilisée pour les props non définies
+    -displayName : utilisée dans les messages de débogage
+
+Propriété d'instance
+    -props = attributs d’un composant dans lequel on passe des données, lecture seule
+    -state = état local d'un composant
+
+Autres
+    -setState(xxx) : mettre à jour le "state". La modification de l'état local met à jour le rendu du composant et de celui des enfants. Accepte un objet ou une fonction
+    -forceUpdate()
+    
