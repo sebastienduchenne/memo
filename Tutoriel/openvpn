@@ -1,0 +1,46 @@
+doc openvpn client : https://openvpn.net/vpn-server-resources/connecting-to-access-server-with-linux/
+doc openvpn access server : https://openvpn.net/vpn-server-resources/installing-openvpn-access-server-on-a-linux-system/
+
+procédure d'installation de openvpn access server :
+apt update && apt -y install ca-certificates wget net-tools
+wget -qO - https://as-repository.openvpn.net/as-repo-public.gpg | apt-key add -
+echo "deb http://as-repository.openvpn.net/as/debian bionic main">/etc/apt/sources.list.d/openvpn-as-repo.list
+apt update && apt -y install openvpn-as
+
+
+Sur la VDI :
+-installer openvpn access server (https://openvpn.net/vpn-server-resources/installing-openvpn-access-server-on-a-linux-system/) en tapant :
+
+sudo apt update && sudo apt -y install ca-certificates wget net-tools
+sudo wget -qO - https://as-repository.openvpn.net/as-repo-public.gpg | sudo apt-key add -
+créer un fichier /etc/apt/sources.list.d/openvpn-as-repo.list et écrire dedans : "deb http://as-repository.openvpn.net/as/debian bionic main"
+sudo apt update && sudo apt -y install openvpn-as
+
+-taper la commande : passwd openvpn (permet de configurer le mdp du login "openvpn")
+-vérifier que le server vpn soit allumé avec la commande : service openvpnas status (chercher "active (running)" en vert)
+-ouvrir firefox
+
+Dans firefox :
+-aller sur https://127.0.0.1:943
+-username : openvpn, mdp : celui configuré après avoir tapé "passwd openvpn"
+-cliquer sur admin
+-username : openvpn, mdp : celui configuré après avoir tapé "passwd openvpn"
+-rubrique configuration > VPN settings > routing, ligne "Specify the private subnets ...": 
+10.0.0.0/8
+172.17.0.0/16
+-rubrique configuration > VPN settings > DNS settings : mettre Have clients use specific DNS servers à Yes. Primary DNS Server : 10.234.50.180. Secondary DNS Server : 10.234.71.124
+-revenir a la racine de l'interface web, et cliquez sur "Yourself (user-locked profile)" pour telechager le fichier de conf
+-rubrique Status > Status Overview > redémarrer le serveur
+-redémarrer la vdi
+
+Dans la VM :
+-vérifier que openvpn client soit déjà installé (commande : openvpn --version)
+-copier le contenu du fichier client.ovpn (présent sur la vdi) dans la VM dans un fichier du même nom
+-dans le fichier /etc/resolv.conf, remplacer le contenu par :
+nameserver 10.234.50.180 # sophia
+nameserver 10.234.71.124 # bagnolet
+nameserver 10.98.128.116 # montsouris
+
+-ouvrir une connexion sur le VPN avec la commande : sudo openvpn client.ovpn (username : openvpn, mdp : celui configuré après avoir tapé "passwd openvpn"), et attendre une 15
+si "Initialization Sequence Completed" s'affiche alors la connexion au VPN a réussi
+si "Exiting due to fatal error" s'affiche alors la connexion au VPN a échoué
