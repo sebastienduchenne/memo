@@ -31,7 +31,10 @@ class Welcome extends React.Component {
 
 >>> règles
 -tout composant React doit agir comme une fonction pure vis-à-vis de ses props.
--les données descendent dans les enfants, l’état remonte dans le parent
+-les données descendent dans les enfants
+-l’état remonte dans le parent : 
+    -l’état est ajouté au composant qui en a besoin pour s’afficher
+    -Si d’autres composants en ont également besoin, faire remonter l’état dans l’ancêtre commun le plus proche, puis descendre les données pour synchroniser les composants
 -utiliser setState() pour modifier l'état
 -Les composants utilisateurs doivent commencer par une majuscule
 -nommer les props du point de vue du composant plutôt que de celui du contexte dans lequel il est utilisé
@@ -68,4 +71,8 @@ Propriété d'instance
 Autres
     -setState(xxx) : mettre à jour le "state". La modification de l'état local met à jour le rendu du composant et de celui des enfants. Accepte un objet ou une fonction
     -forceUpdate()
-    
+
+
+>>> gestion des saisies de formulaire
+-composant controlé : valeur saisie vérifiée
+-composant non-controlé : valeur saisie non vérifiée

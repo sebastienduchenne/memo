@@ -8,8 +8,6 @@
 -réconciliation : mise à jour du DOM si changement du state
 -Contexte : faire passer des données à travers l’arborescence du composant sans avoir à passer manuellement les props à chaque niveau
 -portail : afficher des composants enfants dans un nœud DOM qui existe en dehors de la hiérarchie DOM du composant parent
--profileur : mesure à quelle fréquence une application React réalise son rendu, ceci dans un objectif d'optimisation
--prop-types : vérifier la validité d'une donnée reçu
 -web component : encapsulation forte pour des composants réutilisables (non react)
 -on peut avoir plusieurs noeud DOM racines dans une application
 
@@ -19,35 +17,9 @@
 -les éléments react sont immuables (=enfants et attributs non modifiables)
 
 
->>> StrictMode
--outil pour détecter des problèmes
-  <React.StrictMode>
-    <div>
-      <ComponentOne />
-      <ComponentTwo />
-    </div>
-  </React.StrictMode>
-
-
 >>> Composants d’ordre supérieur (Higher-Order Component ou HOC)
 -fonction qui transforme un composant en un autre composant
 -const EnhancedComponent = higherOrderComponent(WrappedComponent);
-
-
->>> hooks
--utiliser react sans avoir besoin d'écrire de classe
-
->>> fragment
--permette de grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM
-<React.Fragment>
-    <ChildA />
-    <ChildB />
-</React.Fragment>
--> React.Fragment n'est pas ajouté au DOM
-
->>> gestion des saisies de formulaire
--composant controlé : valeur saisie vérifiée
--composant non-controlé : valeur saisie non vérifiée
 
 
 >>> service worker (non React)
@@ -62,34 +34,12 @@
 -pour tester les composants react
 
 
->>> évènements
-
-
-
-function ActionLink() {
-  function handleClick(e) {
-    e.preventDefault();
-    console.log('Le lien a été cliqué.');
-  }
-
-  return (
-    <a href="#" onClick={handleClick}>
-      Clique ici
-    </a>
-  );
-}
-
--empêcher le comportement par défaut : appeler explicitement preventDefault
--Function.prototype.bind
-
-
 >>> Construire une appli react
 1 : décomposer l’interface utilisateur en une hiérarchie de composants
 2 : construire une version statique avec React
 3 : déterminer le contenu minimal (mais suffisant) de l’état de l’UI
 4 : identifier où votre état doit vivre
 5 : ajouter le flux de données inverse
-
 
 
 >>> Liens

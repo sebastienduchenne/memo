@@ -1,0 +1,1 @@
+-utiliser react sans avoir besoin d'écrire de classe

@@ -1,0 +1,4 @@
+-interceptent les erreurs JavaScript n’importe où au sein de leur arbre de composants enfants
+-affichent une UI de repli à la place de l’arbre de composants qui a planté
+-ne détectent que les erreurs présentes en dessous d’eux dans l’arbre des composants
+-n’interceptent pas les erreurs qui surviennent au sein des gestionnaires d’événements
