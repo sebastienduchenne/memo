@@ -7,10 +7,9 @@
 -refs : accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
 -réconciliation : mise à jour du DOM si changement du state
 -Contexte : faire passer des données à travers l’arborescence du composant sans avoir à passer manuellement les props à chaque niveau
--portail : afficher des composants enfants dans un nœud DOM qui existe en dehors de la hiérarchie DOM du composant parent
 -web component : encapsulation forte pour des composants réutilisables (non react)
 -on peut avoir plusieurs noeud DOM racines dans une application
-
+-le coté front doit gérer le temps de chargement et les erreurs
 
 >>> élément
 = bloc élémentaire (les composants ont des trucs en plus)

@@ -1,0 +1,65 @@
+>>> React.Component : classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
+
+
+>>> React.PureComponent : 
+-classe pour créer des composants React comme React.Component
+-différence : implémente shouldComponentUpdate()
+
+
+>>> React.memo
+-composant d’ordre supérieur
+-comme PureComponent mais pour les composants créés à l’aide de fonctions
+
+
+>>> React.createElement()
+
+
+>>> React.cloneElement()
+-clone un élément
+
+
+>>> React.createFactory(type)
+-renvoie une fonction qui produit des éléments React d’un type donné :
+    -une chaîne contenant un nom de balise (tel que 'div' ou 'span')
+    -un type de composant React
+    -un type de fragment React
+-obsolète, inutile avec du JSX
+
+
+>>> React.isValidElement(object)
+-vérifie qu’un objet est bien un élément React
+
+
+>>> React.Children
+-interagir avec la structure de données opaque de this.props.children
+React.Children.map : exécute une fonction sur chacun des enfants directs
+React.Children.forEach : Même chose que React.Children.map() mais sans renvoyer de tableau
+React.Children.count(children) : nombre total de composants présents dans children
+React.Children.only(children) : vérifie que children n’a qu’un seul enfant
+React.Children.toArray(children) : renvoie la structure de donnée opaque de children sous la forme d’un tableau linéarisé
+
+
+>>> React.Fragment
+-grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM
+<React.Fragment>
+    <ChildA />
+    <ChildB />
+</React.Fragment>
+    -> React.Fragment n'est pas ajouté au DOM
+-autre syntaxe : <></>
+
+
+>>> React.createRef()
+-accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
+
+
+>>> React.forwardRef(fonction de rendu)
+-crée un composant React qui transfère la valeur de l’attribut ref qu’il reçoit à un autre composant plus bas dans l’arbre
+
+>>> React.lazy(fonction avec import)
+-charger un composant dynamiquement
+
+
+>>> React.Suspense
+-charger un composant une fois celui avec React.lazy chargé
+

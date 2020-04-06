@@ -2,17 +2,17 @@
 
 
 >>> objet global React
--React.Component : classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
--React.PureComponent : classe pour créer des composants React, implémente shouldComponentUpdate()
+-React.Component : créer des composants React, n'implémente pas shouldComponentUpdate()
+-React.PureComponent : créer des composants React, implémente shouldComponentUpdate()
 -React.memo : comme PureComponent mais pour les composants créés à l’aide de fonctions
 -React.createElement()
--React.cloneElement()
--React.createFactory(type)
--React.isValidElement(object) : vérifie qu’un objet est bien un élément React.
--React.Children.map()
--React.Fragment : fragment
+-React.cloneElement() : clone un élément
+-React.createFactory(type) : (obsolète) renvoie une fonction qui produit des éléments React d’un type donné
+-React.isValidElement(object) : vérifie qu’un objet est bien un élément React
+-React.Children : interagir avec la structure de données opaque de this.props.children
+-React.Fragment : grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM
 -React.createRef() : accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
--React.forwardRef(fonction de rendu)
+-React.forwardRef(fonction de rendu) : crée un composant React qui transfère la valeur de l’attribut ref qu’il reçoit à un autre composant plus bas dans l’arbre
 -React.lazy(fonction avec import) : charger un composant dynamiquement
 -React.Suspense : charger un composant une fois celui avec React.lazy chargé
 

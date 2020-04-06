@@ -1,6 +1,0 @@
--permette de grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM
-<React.Fragment>
-    <ChildA />
-    <ChildB />
-</React.Fragment>
--> React.Fragment n'est pas ajouté au DOM
