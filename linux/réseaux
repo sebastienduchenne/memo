@@ -1,0 +1,5 @@
+nmap : trace réseau
+ifconfig = configurer et d'afficher les informations des interfaces réseau IP
+/etc/hosts : résolution DNS
+systemctl
+iptable

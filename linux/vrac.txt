@@ -1,27 +1,33 @@
-. sudo apt-get update : mettre à jour l’index, les descriptions des paquets locaux de l’OS
-. htop : utilisation ressources
+mettre à jour l’index, les descriptions des paquets locaux de l’OS
+    sudo apt-get update
+
+utilisation ressources
+    htop
 -------------------------------------------------------------------------------------
-*** Installer un paquet deb
-sudo dpkg -i package_file.deb
+Installer un paquet deb
+    sudo dpkg -i package_file.deb
 -------------------------------------------------------------------------------------
-*** set PATH environment
-export PATH=$PATH:/place/with/the/file
+set PATH environment
+    export PATH=$PATH:/place/with/the/file
 -------------------------------------------------------------------------------------
-netstat -ln : afficher les ports ouverts
+afficher les ports ouverts
+    netstat -ln
 -------------------------------------------------------------------------------------
-compter le nombre de fichiers en bash dans 'path' : ls path | wc -l
+afficher les processus actifs
+    pstree
+    pstree -p | grep chrome
+    pkill -e chrome / chromedriver / geckodriver
 -------------------------------------------------------------------------------------
-pstree
-pstree -p | grep chrome
-pkill -e chrome / chromedriver / geckodriver
--------------------------------------------------------------------------------------
-ssh -L 8042:localhost:8042 -L 8080:localhost:8080 sduchenne@10.107.3.101
+connexion SSH
+    ssh -L 8042:localhost:8042 -L 8080:localhost:8080 sduchenne@10.107.3.101
 -------------------------------------------------------------------------------------
 Pointer sur un site
+
 sudo /etc/hosts
 
 #site
 ip1 domaine1
 ip2 domaine1
-ip3 domaine1
 -------------------------------------------------------------------------------------
+requête POST avec header
+    curl -X POST url -H "header: value" --data 'value'

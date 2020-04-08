@@ -31,58 +31,13 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Gestion_de_la_m%C3%A9moire
 *** système
 npm install --save
 npm install --save-dev
-htop : utilisation ressources
 /etc/systemd
-pstree
-pstree -p | grep chrome
 pkill -e chrome
 pstree –up
 killall geckodriver-v0.24.0
 ps -ef
 ll
 
-
-*** réseau
-nmap : trace réseau
-ifconfig = configurer et d'afficher les informations des interfaces réseau IP
-/etc/hosts : résolution DNS
-systemctl
-iptable
-
-
---------------------------------------------------
->>> resize VM virtualbox
--cloner la VM : Vboxmanager clone "path"
--resize la VM cloné : Vboxmanager modifyhd --resize "path"
--dans virtualbox > stockage, changer la VM
--installer le "extension pack" avec la même version que virtualbox (pour le copier coller)
----------------------------------------------------------------------------------------------
-Variable d’environnement terminal
-export the below variables in terminal
-export http_proxy='http://proxyServerSddress:proxyPort'    
-export https_proxy='https://proxyServerSddress:proxyPort'
-
-and use the following commands to disable proxy
-unset http_proxy
-unset https_proxy
------------------------------------------------------------
-clé SSH (Secure SHell) 
--permet de se connecter de façon sécurisée
--clé privée, clé publique et passphrase (sécuriser la clé privée)
--dans gitlab : générer les clés sur linux, copier la publique dans gitlab, la privée est dans ~/.ssh/
-
-clé ssh
-keygen => créé clé ssh dans ~/.ssh
-copier la clé public dans le giltab settings du compte, on peut en mettre plusieurs
------------------------------------------------------------
-curl -X POST localhost:8084/api -H "content-type: application/json" --data '{"aaa": "sms"}'
------------------------------------------------------------
->>> web API
--API fetch : récupération de ressources
--web component : composants d'interface graphique personnalisés et réutilisables
--service worker
-
-https://developer.mozilla.org/fr/docs/Web/API
 
 *** Liens
 https://ignition-program.com/blog/guide-code-nouvelles-technologies-a-utiliser-2018/
