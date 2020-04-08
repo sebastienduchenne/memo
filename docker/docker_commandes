@@ -6,6 +6,12 @@ docker rmi -f d4f
 docker container ls
 docker ps
 
+-aller dans le conteneur "name" : docker exec name
+-lister images : docker image ls
+-supprimer image NAME : docker rm NAME
+-list running container : docker ps -a
+-stopper container CONTAINER : docker container kill CONTAINER
+
 -----------------------------------------------------------------------------------
 
 docker build : Construire l’image à partir d’un dockerfile avec la commande
@@ -36,10 +42,11 @@ docker container ls
 docker container ls --all 
 docker container ls -aq
 
+-----------------------------------------------------------------------------------
 
 All commands:
 
-Command	Description
+Command	        Description
 docker attach	Attach local standard input, output, and error streams to a running container
 docker build	Build an image from a Dockerfile
 docker builder	Manage builds
