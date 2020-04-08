@@ -1,0 +1,65 @@
+effacer les nouveaux FICHIERS non add : git clean -f
+effacer les nouveaux DOSSIERS non add : git clean -d
+supprimer modif de 1 fichier non add : git checkout <fichier>
+supprimer toutes les modif non add / non commit : git reset --hard
+supprimer le dernier commit : git reset HEAD^
+
+
+*** Commande de git
+git init : création d’un .git contenant l’historique du projet et la configuration
+git ignore : créer un .gitignore pour mettre les fichiers à ignorer
+git clone : ramener le contenu du dépôt distant (master) sur sa machine
+git status : fichiers modifiés sur la branche active
+git add file : ajoute une référence dans l'index
+
+
+*** Gérer les branches
+git branch nomBranche : créer une branche
+git branch : liste les branches en local
+git branch -d nom : supprimer branche nom
+git branch -m old_name new_name
+git checkout nomBranche : se placer dans nomBranche
+git checkout -b nomBranch : créer une branche et s'y placer
+git rebase branche1 branche2 : modifier une validation loin dans l’historique
+
+
+*** Commit, pull, push, fetch
+git commit : stocker dans le .git l’ensemble des modifications effectuées sur le code
+git commit --amend : modifier le message du dernier commit
+git remote add origin URL : ajouter un dépôt distant dans origin à « URL »
+git fetch origin master : importer les nouveaux commit de master et les mettre dans le dépot local
+git fetch --all : récupérer toutes les données du repository remote
+git merge branche : fusionner les commits de « branche » dans la branche courante
+git push origin branche : envoyer en distant les commit non pushés dans la branche « branche »
+git pull origin master : mettre à jour la branche courante avec master (pull = fetch puis merge)
+git diff : voir les différences dans la branche courante
+
+
+*** Log
+git log         : voir l’historique des commits du projet (q pour quitter)
+git log -p      : détails de chaque commits
+git log --stat  : résumé court de chaque commit
+
+
+*** Supprimer
+git checkout nomFichier : récupère « nomFichier » du dernier commit (annule les changements)
+git reset HEAD^ : annule le dernier commit
+git reset HEAD~2 : annule les 2 derniers commits
+git reset fsdf5df4sd4f34d35f4s3d5 : annule les commits jusqu’à celui précisé
+git reset --hard HEAD^ : annule le dernier commit et les changements
+git reset --hard HEAD nomFichier : retirer « nomFichier » ajouter dans un add
+git reset --hard : supprimer toutes les modif non add / non commit
+git clean -f : effacer les nouveaux fichiers non ajoutés à l’index
+git clean -d : effacer les nouveaux dossiers non ajoutés à l’index
+git revert 5qs4… : créer un commit inverse jusqu’au commit spécifié
+git revert HEAD^ : inverse le dernier commit parent
+git revert HEAD = supprimer le dernier commit sur dépot distant
+git prune : supprimer tout ce qui est inatteignable
+git remote prune origin : supprimer du repository local toutes les branches remote qui n’existent plus
+
+
+*** Sauvegarder son travail sans commit
+git stash       : créer une remise (sauvegarde) dans la branche en cours
+git stash list  : liste les différentes remises
+git stash pop   : récupérer son travail et supprimer la sauvegarde
+git stash apply : récupérer son travail sans supprimer la sauvegarde

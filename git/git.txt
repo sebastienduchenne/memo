@@ -3,90 +3,25 @@
     en local : projet
     dans le .git
     en distant : serveur
--Commit = ensemble de changement dans le code source (ajout, suppression, modification de lignes de code)
 -Origin : racine du dépôt distant sur laquelle se trouve les différentes branches
 -Master : branche principal sur le dépôt distant
 -.gitignore : dossier et fichier à ignorer
-
-
-*** Commande de git
-git init : création d’un .git contenant l’historique du projet et la configuration
-git ignore : mettre dans un fichier les fichiers à ignorer
-git clone : ramener le contenu du dépôt distant (master) sur sa machine
-git status : fichiers modifiés sur la branche active
-git add nomDossier : ajoute une référence au fichier nomFichier nouvellement créé dans le .git
-
-
-*** Gérer les branches
-git branch nomBranche = créer une branche
-git checkout nomBranche = se placer dans nomBranche
-git checkout -b nomBranch = créer une branche et s'y placer
-git rebase branche1 branche2 : modifier une validation loin dans l’historique
-git branch : liste les branches en local
-git branch -d nom : supprimer branche nom
-git branch -m “old_name” “new_name”
-
-
-*** Commit, pull, push
-git commit : stocker dans le .git l’ensemble des modifications effectuées sur le code
-git commit --amend : modifier le message du dernier commit
-git remote add origin URL : ajouter un dépôt distant dans origin à « URL »
-git fetch origin master : importer les nouveaux commit de master et les mettre dans le dépot local
-git merge branche : fusionner les commits de « branche » dans la branche courante
-git push origin branche : envoyer en distant les commit non pushés dans la branche « branche »
-git pull origin master : mettre à jour la branche courante avec master (pull = fetch puis merge)
-git diff : voir les différences dans la branche courante
-
-
-*** Log
-git log : voir l’historique des commits du projet (q pour quitter)
-git log -p : détails de chaque commits
-git log --stat : résumé court de chaque commit
-
-
-*** Supprimer
-git reset HEAD^ : annule le dernier commit
-git reset HEAD~2 : annule les 2 derniers commits
-git reset fsdf5df4sd4f34d35f4s3d5 : annule les commits jusqu’à celui précisé
-git reset --hard HEAD^ : annule le dernier commit et les changements
-git checkout nomFichier : récupère « nomFichier » du dernier commit (annule les changements)
-git reset --hard HEAD nomFichier : retirer « nomFichier » ajouter dans un add
-git reset --hard : effacer tous les changements non commités des fichiers mis dans l’index
-git clean -f : effacer les nouveaux fichiers non ajoutés à l’index
-git clean -d : effacer les nouveaux dossiers non ajoutés à l’index
-git revert 5qs4… : créer un commit inverse jusqu’au commit spécifié (inverse les commits pushés)
-git revert HEAD^ : inverse le dernier commit parent
-git revert HEAD = supprimer le dernier commit sur dépot distant
-git reset --hard : efface modif des fichiers indexés
-
-
-*** Sauvegarder son travail sans commit
-git stash : créer une remise (sauvegarde) dans la branche en cours
-git stash list : liste les différentes remises
-git stash pop = récupérer son travail et supprimer la sauvegarde
-git stash apply = récupérer son travail sans supprimer la sauvegarde
-
-
-*** Tutoriels
-Projet inexistant : git init, git ignore
-Projet existant : git clone url, cd nomProjet
 
 
 *** Configurer git
 vim ~/gitconfig : éditer le fichier de configuration de git (alias, utilisateur, couleur)
 
 
-*** A faire
-Un commit push n’est pas supprimable, pour l’annuler il faut faire un commit inverse (revert 56sq4)
-
-
 *** Workflow
 Créer/récupérer projet
+    Projet inexistant : git init, git ignore
+    Projet existant : git clone url, cd nomProjet
 Checkout « branche »
 modif
 status
 Add
 Commit 1
+Add
 Commit 2
 Pull origin master ?
 Push origin « branche »
@@ -99,9 +34,4 @@ Les différents types de branches :
 -feature
 -fix
 -release
-
-
-
-
-
 
