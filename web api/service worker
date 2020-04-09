@@ -1,0 +1,14 @@
+-pour parer aux pertes de connexions
+-récupérer des données que l'on met en cache local afin de pouvoir continuer à utiliser l'application en mode déconnecté en cas de perte du réseau
+-contraint à s'exécuter au travers d'HTTPS
+-s'appuie sur les promesses
+-certains navigateurs ne le supportent pas
+-un service worker fonctionne comme un serveur proxy, permettant de modifier les requêtes et les réponses, de les remplacer par des éléments de son propre cache, et bien plus
+-exécuté dans un thread à part
+-chargement du SW, puis déclenchement de l'évènement 'install' pour charger les données dans le cache
+-utilisation de l'API Cache pour gérer les ressources chargées
+-Un événement fetch se déclenche à chaque fois qu'une ressource contrôlée par un SW est retournée
+
+Etape
+1.L'URL du service worker URL est récupérée et enregistrée via serviceWorkerContainer.register()
+2.le SW est exécuté dans un contexte de worker appelé ServiceWorkerGlobalScope
