@@ -1,0 +1,5 @@
+-représente une fenêtre contenant un document DOM
+-chaque onglet contient son propre objet window
+
+
+var window = document.defaultView;

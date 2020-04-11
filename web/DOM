@@ -1,0 +1,4 @@
+-Document object Modele
+-interface de programmation pour les documents HTML et XML
+-Il fournit une page dont des programmes peuvent modifier la structure, son style et son contenu
+-représentation entièrement orientée objet de la page Web, et peut être manipulé à l'aide d'un langage de script

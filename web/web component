@@ -1,0 +1,5 @@
+-créer des éléments personnalisés réutilisables
+-API Shadow DOM
+-shadow DOM = encapsulation de la structure de balisage, du style et du comportement pour les  séparer du reste de code de la page et ainsi éviter le conflit
+
+let fantome = element.attachShadow({mode: 'open'});

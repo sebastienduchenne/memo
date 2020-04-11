@@ -2,5 +2,8 @@
 -web component : composants d'interface graphique personnalisés et réutilisables
 -service worker
 -cache
+-window
+-DOM
+-interface Document
 
 https://developer.mozilla.org/fr/docs/Web/API
