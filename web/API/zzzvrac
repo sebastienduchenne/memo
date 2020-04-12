@@ -1,0 +1,35 @@
+-API Window -> AbstractView
+-Document -> Node -> EventTarget
+-Element  ->
+-FetchAPI : objet Request et Response
+
+>>> API
+-Web storage API
+    -sessionStorage
+    -localStorage
+-Web worker
+    -worker dédié
+    -worker partagé
+    -service worker
+    -worker chrome
+    -audio worker
+-API fetch : récupération de ressources
+-Document
+-IndexedDB
+-API store data
+-WebGL = web Graphic Library
+-WebSocket = ouvrir un canal de communication bidirectionnelle entre un navigateur et un serveur
+-Window
+-DOM
+-Cache
+-EventTarget = recevoir des évènements et avoir des auditeurs
+
+
+>>> Accès :
+window / document.defaultView
+sessionStorage
+localStorage
+ServiceWorker.active
+
+
+https://developer.mozilla.org/fr/docs/Web/API
