@@ -1,9 +1,18 @@
 -API fetch : récupération de ressources
 -web component : composants d'interface graphique personnalisés et réutilisables
--service worker
+-web worker
+    -worker dédié
+    -worker partagé
+    -service worker
+    -worker chrome
+    -audio worker
 -cache
 -window
 -DOM
 -interface Document
+-indexedDB
+-API store data
+-websocket
+-EventTarget interface
 
 https://developer.mozilla.org/fr/docs/Web/API
