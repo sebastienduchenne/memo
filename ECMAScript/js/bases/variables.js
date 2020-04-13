@@ -4,8 +4,9 @@ var : fonction où elle est déclarée
 let et const : bloc où elle est déclarée
 la redéclaration dans une fonction fille d’une variable la masque dans la fonction fille, ne peut se faire qu’avec var
 -le changement d'une valeur change non pas la value mais change le pointage vers une nouvelle valeur
-
-variable sans affectation est “undefined”
+-les variables déclarées avec var sont hoisted to the top
+-les variables sont passées par valeur, et les objets par référence
+-variable sans affectation est “undefined”
 https://medium.com/@vincent.bocquet/var-let-const-en-js-quelles-diff%C3%A9rences-b0f14caa2049
 
 */

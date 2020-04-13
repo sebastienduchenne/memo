@@ -1,5 +1,5 @@
 /*
--x++ : renvoit la valeur avant puis fait l'incrémentation
+-x++ : opérateur d'incrémentation, renvoit la valeur avant puis fait l'incrémentation
 -++x : fait l'incrémentation puis renvoit la valeur
 -% : reste
 */
@@ -74,3 +74,7 @@ return; //return undefined
   null
   undefined
 */
+
+
+//check
+if (typeof myObj !== "undefined" && myObj !== null){}
