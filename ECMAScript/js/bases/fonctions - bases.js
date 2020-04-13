@@ -12,6 +12,15 @@
   -primitive (boolean, null, undefined, string, number) : variable originelle non modifiée
   -objects (object, function, array) : objet modifié
 
+-Dans le cas d’une function déclarée de manière classique, toute la function est chargée dans la mémoire du navigateur même si elle n’est pas utilisée immédiatement. À la différence des expressions de fonction (ou function expression) qui elles sont appelées quand l’interpréteur atteint cette ligne de code.
+
+-Lorsque JavaScript exécute une fonction, un objet de portée est créé pour conserver les variables locales créées au sein de cette fonction. Il est initialisé avec les variables passées en paramètres à la fonction.
+
+-s'il manque un paramètre, il prend la valeur "undefined"
+
+-L'objet arguments est un objet, semblable à un tableau, correspondant aux arguments passés à une fonction.
+
+
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions
 https://medium.com/codeshake/pour-les-jedis-javascript-%C3%A9pisode-i-au-coeur-des-fonctions-partie-1-8b2cd1cab002
 

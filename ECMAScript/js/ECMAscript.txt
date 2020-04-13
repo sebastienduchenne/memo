@@ -1,4 +1,3 @@
->>> ECMAScript
 -ECMAScript est un langage, une grammaire avec des fonctionnalités de base. Chaque environnement – les navigateurs web, Node – le comprend et lui ajoute de nouvelles expressions, contextuelles à cet environnement d’exécution. JavaScript est le grand ensemble des technologies qui reposent sur ECMAScript pour fonctionner.
 -ECMAscript = ensemble de règles que doit respecter les langages de ce standard (JavaScript, JScript et ActionScript), et standardisées par Ecma International dans le cadre de la spécification ECMA-262
 -API javascript : Node et les navigateurs ont chacun une API qui complète ECMA et qui différe entre elles
@@ -43,6 +42,9 @@ ES2015 :
     map et set
     Array.find()
     Array.findIndex()
+    template string
+    évolution des objets litéraux
+    symbol
 ES2016 :
     array.prototype.includes,
     opérateur d'exponentiation ** (puissance)
@@ -75,10 +77,3 @@ ES2020 :
     globalThis,
     Optional Chaining Operator ?,
     Nullish Coalescing Operator ??
-
-
-
-ES2019 :
-https://medium.com/@selvaganesh93/javascript-whats-new-in-ecmascript-2019-es2019-es10-35210c6e7f4b
-https://exploringjs.com/impatient-js/
-

@@ -10,6 +10,7 @@
 -propriété et méthode sont des membres
 -les propriétés sont encapsulés
 -objets : array, object, function
+-Les objets en JavaScript sont simplement des collections de paires nom-valeur.
 
 */
 var personne = {

@@ -23,6 +23,8 @@
 */
 
 /*
+map = appliquer un traitement à n’importe quelle valeur d’un array
+
 La méthode map() crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant.
 */
 
@@ -33,3 +35,4 @@ const map1 = array1.map(x => x * 2);//callback
 
 console.log(map1);
 // expected output: Array [2, 8, 18, 32]
+

@@ -1,6 +1,7 @@
 /*
--le type d'une classe est "fonction"
+-le type d'une classe est "function"
 -pas de hoisting pour les déclarations de classes
+-les classes sont un sucre syntaxique des prototypes d'objet
 
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Le_mod%C3%A8le_objet_JavaScript_en_d%C3%A9tails
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes
