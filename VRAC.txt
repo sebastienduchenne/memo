@@ -1,34 +1,19 @@
 *** VRAC
 . version vanilla : version standard d'un programme informatique : ni patché, ni modifié
 . fournisseur cloud : AWS
-. ember : framework JS pour faire des appli web
-. backbone : framework JS pour faire des appli web
 -algorithme hyperloglog = probabiliste
 . le ~ devant une variable inverse tout les bits de valeurs
 -MapReduce = patron d'architecture, inventé par Google, dans lequel sont effectués des calculs parallèles, et souvent distribués, de données très volumineuses (> 1 To)
 -Framework = cadre de travail, apporte un outil qui encadre notre travail (création formulaire, tests...), impose un certain nombre de règles afin d’augmenter la productivité dans un travail de groupe et faire plus facilement de la maintenance
--Amazon S3 : 
 -vector clock
--cassandra
 -inline caching = technique d'optimisation
 -inversion de controle = framework prend en charge l'exécution principale du programme et non le programe lui-même
 -injection de dépencance = un mécanisme qui permet d'implémenter le principe de l'inversion de contrôle. Il consiste à créer dynamiquement (injecter) les dépendances entre les différents objets (et non exprimées dans le code de manière statique)
+-garbage collector
+-computer cluster / grappe de serveur
 
 
-*** garbage collector
--mark and sweep
-
-
-
-https://developer.mozilla.org/fr/docs/Web/JavaScript/Gestion_de_la_m%C3%A9moire
-
-
-*** closure
--fonctionnel
--dialecte du Lisp
-
-
-*** système
+*** linux
 npm install --save
 npm install --save-dev
 /etc/systemd
@@ -37,10 +22,20 @@ pstree –up
 killall geckodriver-v0.24.0
 ps -ef
 ll
+apt-get
 
+*** technologies
+-kubernetes
+-langage closure
+-Amazon S3
+-cassandra
+-ember : framework JS pour faire des appli web
+-backbone : framework JS pour faire des appli web
+-microsoft Azure
+-react and flux
+-react and redux
+-cloudflare
 
 *** Liens
 https://ignition-program.com/blog/guide-code-nouvelles-technologies-a-utiliser-2018/
 https://vinceops.me/git-astuces-productivite-1/
-
-
