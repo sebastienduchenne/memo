@@ -1,0 +1,48 @@
+-plateforme de développement qui permet de créer des applications web dynamiques et immersives
+-typescript conseillé
+-angular 9 est sorti en fev 2020; chaque version est prévue pour être compatible avec la version antérieure
+-injection de dépencance = mécanisme qui permet d'implémenter le principe de l'inversion de contrôle. Il consiste à créer dynamiquement (injecter) les dépendances entre les différents objets (et non exprimées dans le code de manière statique)
+-une application Angular est une arborescence de plusieurs components
+-refonte de AngularJS
+-<app-root></app-root> : contient l'app
+-interpolation
+-Progressive Web Apps
+-Angular repose sur la couche PlatformBrowser pour communiquer avec le DOM
+-Separation of concerns = séparer les responsabilités avec une approche MVC
+-chaque version est maintenue pendant 18 mois
+
+
+
+
+
+
+*** directives
+-structurel
+    -*ngFor
+    -*ngIf
+-par attribut
+    -ngstyle
+    -ngclass
+
+
+*** interpolation
+-émettre des données issues du code TypeScript
+
+
+<li class="list-group-item">
+  <h4>Appareil : {{ appareilName }}</h4>
+</li>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mes appareils</h2>
+      <ul class="list-group">
+        <app-appareil></app-appareil>
+        <app-appareil></app-appareil>
+        <app-appareil></app-appareil>
+      </ul>
+    </div>
+  </div>
+</div>
