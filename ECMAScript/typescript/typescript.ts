@@ -3,6 +3,9 @@
 
 */
 
+var maChaineDeCaractere: string = "Hello World";
+
+
 //Annotation  _______________________________________________________
 
 //l  définir le type statique, optionnel (=> utilisation type dynamique)

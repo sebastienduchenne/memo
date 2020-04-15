@@ -1,0 +1,21 @@
+-superset de javascript
+-transcompilé en JS
+-compilateur 'tcs' qui fait de la transcompilation
+
+*** fonctionnalité en plus ES2015
+-module
+-union
+-alias
+-énumération
+-mixin
+-symbole
+-JSX
+-let, const
+-for ... of
+-paramètres optionnels
+-propriétés calculées
+-typage générique
+-typage strict
+-classe
+-interface
+-classe abstraite
