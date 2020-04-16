@@ -1,0 +1,120 @@
+= objets de portée globale, inclus dans l'objet global
+
+
+*** Propriétés - valeurs
+Infinity
+NaN
+undefined
+le littéral null
+globalThis
+
+
+*** Propriétés - fonctions
+eval()
+isFinite()
+isNaN()
+parseFloat()
+parseInt()
+decodeURI()
+decodeURIComponent()
+encodeURI()
+encodeURIComponent()
+
+
+*** Objets fondamentaux
+Object
+Function
+Boolean
+Symbol
+Error
+EvalError
+RangeError
+ReferenceError
+StopIteration
+SyntaxError
+TypeError
+URIError
+
+
+*** Nombres et dates
+Number
+BigInt
+Math
+Date
+
+
+*** Manipulation de textes
+String
+RegExp
+
+
+*** Collections indexées
+Array
+Int8Array
+Uint8Array
+Uint8ClampedArray
+Int16Array
+Uint16Array
+Int32Array
+Uint32Array
+Float32Array
+Float64Array
+BigInt64Array
+BigUint64Array
+
+*** Collections avec clefs
+-Ils contiennent des éléments itérables, dans leur ordre d'insertion.
+
+Map
+Set
+WeakMap
+WeakSet
+
+*** Données structurées
+-Ces objets permettent de représenter et de manipuler des tampons de données (buffers) et des données utilisant la notation JSON (JavaScript Object Notation).
+
+ArrayBuffer
+SharedArrayBuffer 
+Atomics 
+DataView
+JSON
+
+
+*** Objets de contrôle d'abstraction
+Promise
+Generator
+GeneratorFunction
+AsyncFunction
+
+
+*** Introspection
+Reflect
+Proxy
+
+
+*** Internationalisation
+Ces objets ont été ajoutés à ECMAScript pour des traitements dépendants de particularités linguistiques. Ils possèdent leur propre spécification.
+
+Intl
+Intl.Collator
+Intl.DateTimeFormat
+Intl.ListFormat
+Intl.NumberFormat
+Intl.PluralRules
+Intl.RelativeTimeFormat
+Intl.Locale
+
+
+*** WebAssembly
+WebAssembly
+WebAssembly.Module
+WebAssembly.Instance
+WebAssembly.Memory
+WebAssembly.Table
+WebAssembly.CompileError
+WebAssembly.LinkError
+WebAssembly.RuntimeError
+
+
+*** Autres
+arguments

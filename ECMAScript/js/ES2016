@@ -1,2 +1,11 @@
-array.prototype.includes
-opérateur d'exponentiation ** (puissance)
+-array.prototype.includes
+-opérateur d'exponentiation ** (puissance)
+
+
+*** array.prototype.includes
+- déterminer si un tableau contient une valeur et renvoie un booléen
+
+
+*** opérateur d'exponentiation **
+-puissance
+-2 ** 3 => 8

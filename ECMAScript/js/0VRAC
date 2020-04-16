@@ -1,18 +1,16 @@
--require : le chemin est relatif au script et non du dossier où est exécuté le script depuis le terminal
 -JSDoc décrit l'usage d'une fonction
 -les mots-clé réservé ne le sont que pour les identifiants (variables, fonctions)
+-Tous les objets en JavaScript descendent d'Object, tous les objets héritent des méthodes et des propriétés de Object.prototype
 
 
 **** A chercher
 -prototype
--require
 -passer des variables par référence
 -objets globaux
 -objet global
 -self
 -globalThis
 -this
--instruction vide ';'
 -throw
 -export
 -import, import.meta
@@ -23,8 +21,11 @@
 -...objet
 -typeof
 -delete
--void
 ->>, <<, >>> (décalage)
+-paramètre optionnel
+-promise
+-async await
+-closure
 
 -----------------------------------------
 
@@ -39,6 +40,9 @@
 -portée globale
     -composée des propriétés de l'objet global
 -globalThis = accès à l'objet global quel que soit l'environnement
+
+-----------------------------------------
+
 
 
 **** Liens

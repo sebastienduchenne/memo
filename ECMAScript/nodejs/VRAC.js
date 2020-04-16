@@ -15,6 +15,7 @@
 -npm : gestionnaire de paquets officiel de Node.js
 -MEAN stack : mongo-db, express, angular, nodejs
 -readdirSync : chemin est relatif au dossier où est exécuté le script depuis le terminal
+-require : le chemin est relatif au script et non du dossier où est exécuté le script depuis le terminal
 
 
 *** Installation

@@ -4,12 +4,8 @@
     .nav : fetch(), querySelector(), addEventListener(), document, API DOM pour page web
     .node : require()
 -transcompilateur = permet de convertir une version de ES en une plus ancienne (ex : Babel.js)
--call stack : pile d'appel de fonction
--message queue : callback, une fois la call stack vide
--job queue : promise
 
-closure
-callback
+
 
 ES2009 :
     The "use strict" Directive
@@ -28,17 +24,16 @@ ES2009 :
     JSON.stringify()
     Date.now()
 ES2015 :
-    classe,
-    promise,
-    fonction fléchée,
-    generator,
-    let and const,
-    classe,
-    module,
-    string multiline,
-    paramètre default,
-    destructuration,
-    for...of,
+    classe
+    promise
+    fonction fléchée
+    generator
+    let and const
+    module
+    string multiline
+    paramètre default
+    destructuration
+    for...of
     map et set
     Array.find()
     Array.findIndex()
@@ -46,13 +41,13 @@ ES2015 :
     évolution des objets litéraux
     symbol
 ES2016 :
-    array.prototype.includes,
+    array.prototype.includes
     opérateur d'exponentiation ** (puissance)
 ES2017 :
     string padding,
     object.values (objet en tableau)
     object.entries (tableau avec for of)
-    object.getOwnPropertyDescrpitors() (avoir un descripteur de la propriété propre d'un objet)
+    object.getOwnPropertyDescriptors() (avoir un descripteur de la propriété propre d'un objet)
     async function et await
 ES2018 :
     rest/spread (...args, )
@@ -63,17 +58,17 @@ ES2019 :
     object.fromEntries (transformer une liste de paires de clés/valeurs en un objet)
     trimStart() and trimEnd() (retirer espace au début / à la fin)
     flat() and flatMap(), (tableau)
-    Description property for Symbol objects,
-    Optional catch binding,
-    Function.toString(),
-    Well Formed JSON.Stringify(),
+    Description property for Symbol objects
+    Optional catch binding
+    Function.toString()
+    Well Formed JSON.Stringify()
     Array.Sort Stability
     JSON Superset
 ES2020 :
-    Private Fields in Classes,
-    Dynamic Import,
-    BigInt,
-    Promise.allSettled,
-    globalThis,
-    Optional Chaining Operator ?,
+    Private Fields in Classes
+    Dynamic Import
+    BigInt
+    Promise.allSettled
+    globalThis
+    Optional Chaining Operator ?
     Nullish Coalescing Operator ??
