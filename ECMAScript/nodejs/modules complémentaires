@@ -1,0 +1,8 @@
+-express : serveur
+-fastify : serveur rapide
+-restify : serveur API REST
+-koa : asynchrone et rapide
+-hapi : plus structuré et plus complexe
+-helmet : sécuriser une app express
+-serve-static
+-socket.io

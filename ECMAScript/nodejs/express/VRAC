@@ -1,0 +1,7 @@
+-utilise http
+
+*branchement d'extension / middleware
+= traite la requête (parser, modifier la réponse)
+-avec app.use()
+-
+

@@ -1,34 +1,13 @@
-package.json
-package-lock.json
-global
-dependencies and devDependencies
-event loop
-setImmediate()
-events:EventEmitter()
-process:nextTick()
+-Node.js est un environnement d’exécution JavaScript, un ensemble d'API et une VM. Le code est lu par le runtime, traduit en bytecode par la VM puis exécuté par le processeur
+-environnement bas niveau permettant d’exécuter du JS coté serveur
+-utilise la VM V8 qui rend l’exécution du JS très rapide (JIT)
+-npm : gestionnaire de paquets officiel de Node.js
 
 
-API
-    fs
-    globals
-    http : créer un serveur
-    modules
-    path
-    process : nextTick()
-    console
-    url
-    events : on, eventEmitter, once
+*** Installation
+-globale : dans un seul endroit, avec -g
+-locale : dans le dossier de travail
+-préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X, avec globale si update => casse tout
+-invite de commande intéractive ou REPL
 
 
-modules
-    express : framework pour faire des appli web
-    meteor
-    koa
-    next.js
-    micro
-    socket.io
-    os
-    request : requêter un site
-
-process
-    nextTick
