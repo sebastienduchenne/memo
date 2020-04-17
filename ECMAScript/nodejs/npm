@@ -1,0 +1,5 @@
+-dependencies
+-devDependencies
+-package.json
+-package-lock.json
+-attention aux dépendances circulaires

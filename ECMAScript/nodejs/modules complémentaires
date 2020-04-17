@@ -6,3 +6,5 @@
 -helmet : sécuriser une app express
 -serve-static
 -socket.io
+-esprima : parser en ECMAScript
+-axios : faire des requêtes HTTP

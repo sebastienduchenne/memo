@@ -1,0 +1,10 @@
+-créer un serveur
+
+*** méthodes
+-createServer()
+-listen()
+-writeHead()
+-write()
+-end()
+-request()
+-on()

@@ -1,7 +1,8 @@
 -yarn
 -PM2
 -mocha : faire des tests
--bower
+-bower = packager manager
+-npm = packager manager
 -grunt : outil permettant de créer des tâches automatisées en JavaScript
 -jasmine : TU en js
 -gulp : gestionnaire de taches
@@ -15,3 +16,4 @@
 -ember
 -babeljs.io = module qui convertit tout syntaxe récente en ES5, compréhensible par tous les navigateurs
 -next.js
+-MEAN = software stack, regroupe : mongo-db, express, angular, nodejs

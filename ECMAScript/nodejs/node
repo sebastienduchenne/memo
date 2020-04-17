@@ -5,9 +5,9 @@
 
 
 *** Installation
--globale : dans un seul endroit, avec -g
+-globale : dans un seul endroit, (avec '-g' : npm i module -g)
 -locale : dans le dossier de travail
--préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X, avec globale si update => casse tout
+-préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X; avec globale si update => casse tout
 -invite de commande intéractive ou REPL
 
 
