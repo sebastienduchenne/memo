@@ -8,3 +8,21 @@
 -socket.io
 -esprima : parser en ECMAScript
 -axios : faire des requêtes HTTP
+-adonisJs
+-LoopBack.io
+-Micro
+-Next.js : avec react
+-Nx
+-meteor : framework pour faire du client-serveur avec du publish-subscribe, mongodb
+-mojito : mocking
+-react.js
+-jasmine : TU en js
+-mocha : faire des tests
+-cappuccino
+-backbone : librairie pour faire des single-page app
+-ionic : framework pour dev d'app mobile cross-plateform avec html, css et js
+-ember
+-knockout : librairie pour faire de l'UI avec le pattern MVVM
+-electron : framework pour dev d'app desktop cross-plateform avec html, css et js
+-babeljs.io = module qui convertit tout syntaxe récente en ES5, compréhensible par tous les navigateurs
+-npx : exécuter des binaires dans les modules complémentaires

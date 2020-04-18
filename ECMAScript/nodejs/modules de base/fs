@@ -1,0 +1,7 @@
+-fs.readFile()
+-fs.appendFile()
+-fs.open()
+-fs.writeFile()
+-fs.readdirSync() : lire de manière synchrone le contenu d'un dossier. Le chemin est relatif au dossier où est exécuté le script depuis le terminal
+-fs.unlink() : supprimer fichier
+-fs.rename()
