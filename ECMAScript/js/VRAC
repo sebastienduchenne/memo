@@ -1,36 +1,21 @@
 -JSDoc décrit l'usage d'une fonction
 -les mots-clé réservé ne le sont que pour les identifiants (variables, fonctions)
--Tous les objets en JavaScript descendent d'Object, tous les objets héritent des méthodes et des propriétés de Object.prototype
--langage orienté-objet basé sur des prototypes
--les objets sont muables (mutable) : on peut donc augmenter les nouvelles instances en leur donnant de nouveaux champs et méthodes. Ces nouvelles instances peuvent à leur tour servir de prototypes pour de nouveaux objets. Nul besoin de classes pour créer des tas d’objets similaires. = le clonage
--property access : les objets ont des références qui pointent vers elles, il existe différente stratégies d'accès à une propriété
--JS est basé sur les évènements ce qui fait qu’il est plus rapide (peut exécuter plusieurs tâches en même temps)
--JSON.strongify() = convertir une valeur JavaScript en chaîne JSON
 
 
 **** A chercher
 -prototype
--passer des variables par référence
--objets globaux
--objet global
--self
--globalThis
--this
+-objets globaux, objet global, self, globalThis, this
 -throw
--export
--import, import.meta
--function*
--yield
+-export, import, import.meta
+-function*, generator, iterable, yield
+-fonction, paramètre optionnel, ...objet
 -new, new.target
 -super
--...objet
 -typeof
--delete
 ->>, <<, >>> (décalage)
--paramètre optionnel
--promise
--async await
+-promise, async await
 -closure
+-classe
 
 -----------------------------------------
 

@@ -1,16 +1,5 @@
 /*
-https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses
-https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise
-https://javascript.info/promise-basics
-https://stackoverflow.com/questions/3884281/what-does-the-function-then-mean-in-javascript
-https://blog.xebia.fr/2017/11/14/asyncawait-une-meilleure-facon-de-faire-de-lasynchronisme-en-javascript/
-https://javascript.developpez.com/actu/102019/Apprendre-les-mecanismes-de-base-de-l-asynchrone-en-JavaScript-un-tutoriel-de-Yahiko/
-https://javascript.developpez.com/actu/146280/Comprendre-les-Promises-en-JavaScript-TypeScript-article-de-yahiko/
-https://medium.com/codeshake/pour-les-jedis-javascript-%C3%A9pisode-i-au-coeur-des-fonctions-partie-1-8b2cd1cab002
-https://www.guru99.com/node-js-promise-generator-event.html
-
-
-promesse : objet qui représente une valeur qui n’est pas forcément disponible maintenant, mais qui le sera dans le futur (si tout va bien) ou pas (si l’exécution échoue). Le constructeur prend une fonction qui prend 2 paramètres pour la complétion ou l'échec. Une promesse a 4 états :
+-promesse : objet qui représente une valeur qui n’est pas forcément disponible maintenant, mais qui le sera dans le futur (si tout va bien) ou pas (si l’exécution échoue). Le constructeur prend une fonction qui prend 2 paramètres pour la complétion ou l'échec. Une promesse a 4 états :
 -pending
 -fulfilled
 -rejected
@@ -38,7 +27,7 @@ On attend de l'exécuteur qu'il démarre un travail asynchrone puis, une fois le
 
 appel exécuteur > constr renvoit promise > then(res,rej) > ... > appel resolve/reject
 
-*** Méthode promise
+*** Méthodes promise
 -Promise.all(iterable) : renvoie une promesse qui est résolue lorsque l'ensemble des promesses contenues dans l'itérable passé en argument ont été résolues ou qui échoue avec la raison de la première promesse qui échoue au sein de l'itérable
 -Promise.race(iterable) : Renvoie une promesse qui est tenue ou rompue dès que l'une des promesses de l'itérable est tenue ou rompue avec la valeur ou la raison correspondante.
 -Promise.reject() : renvoit une promise rejetée
@@ -83,15 +72,11 @@ Promise.all([promise1, promise2, promise3]).then(function(values) {
 // expected output: Array [3, 42, "foo"]
 
 
-///////// ASYNC AWAIT ///////////////////////////////////////
+/////////////////// ASYNC AWAIT ///////////////////////////////////////
 
 /*
-https://putaindecode.io/fr/articles/js/es2016/async-await/
-http://blog.js-republic.com/async-await-explique-via-diagrammes-et-exemples/
-
 - await = suspendre l’exécution jusqu’à ce que la promise soit réglée, utilisable dans les fonctions marquées de async. Si, dans une fonction async A, on appelle une fonction B avec await et que B n’est pas une promesse, alors B est convertie en promesse
 - async : une fonction définie avec le mot clé async renvoie systématiquement une promesse : si une erreur est levée pendant l’exécution de la fonction, la promesse est rejetée, et si une valeur est retournée, la promesse est résolue avec cette valeur.
-
 
 */
 
@@ -146,3 +131,14 @@ async function getAdditionAsynchrone() {
   const nombre2 = await getNombreAsynchrone2();
   return nombre1 + nombre2;
 }
+
+
+/*
+https://javascript.info/promise-basics
+https://stackoverflow.com/questions/3884281/what-does-the-function-then-mean-in-javascript
+https://blog.xebia.fr/2017/11/14/asyncawait-une-meilleure-facon-de-faire-de-lasynchronisme-en-javascript/
+https://javascript.developpez.com/actu/102019/Apprendre-les-mecanismes-de-base-de-l-asynchrone-en-JavaScript-un-tutoriel-de-Yahiko/
+https://javascript.developpez.com/actu/146280/Comprendre-les-Promises-en-JavaScript-TypeScript-article-de-yahiko/
+https://medium.com/codeshake/pour-les-jedis-javascript-%C3%A9pisode-i-au-coeur-des-fonctions-partie-1-8b2cd1cab002
+https://www.guru99.com/node-js-promise-generator-event.html
+*/

@@ -17,3 +17,5 @@
 -babeljs.io = module qui convertit tout syntaxe récente en ES5, compréhensible par tous les navigateurs
 -next.js
 -MEAN = software stack, regroupe : mongo-db, express, angular, nodejs
+-cappuccino
+-react.js

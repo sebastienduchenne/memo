@@ -1,24 +1,14 @@
--avec une boucle d'événements (event loop)
--modèle théorique :
-    -la call stack : pile d'appels de fonction
-    -heap / le tas : objets alloués en mémoire
-    -la job queue / la file : message à traiter. Chaque message est associé à une fonction. Lorsque la pile est vide ou a suffisamment d'espace, on retire un message de la queue et on le traite. (promise)
-
-(-la message queue : callback, une fois la call stack vide)
-
+-JS est synchrone = le programme exécute une instruction et doit attendre la fin de son éxecution avant de passer à l'instruction suivante
+-asynchrone = pas d'attente
+-asynchronisme utilisé en général pour toute intéraction extérieur au programme
+-Dans les navigateurs web, des messages sont ajoutés à chaque fois qu'un événement se produit
+-le moteur javascript est monothread, mais l'hôte peut être multithread
+-Une fois que le traitement asynchrone est terminé, la callback qui a été fournie en paramètre est insérée dans la message queue
 
 
-
-Le terme asynchrone fait référence au comportement de certains traitements dans JavaScript qui peuvent être délégués en dehors du moteur.
-
-4 éléments : pile d’exécution, API du systèmes hote, la file des callbacks et la boucle des évènements
--pile d’appel / call stack = les appels de fonctions. Un niveau de la pile n'est retiré que lorsque la fonction appelée a terminé son exécution
--API du systèmes hote = fournit toute une panoplie de fonctions et d'objets (API) au moteur JavaScript
--file des callbacks / message queue = Une fois que le traitement asynchrone est terminé ou qu'un événement particulier survient, la callback qui a été fournie en paramètre est insérée dans la file d'attente des callbacks avant d'être prise en compte par la boucle des événements.
--boucle des évènements / event loop = La boucle des événements a pour but de surveiller l'état de la pile d'exécution. Si cette dernière est vide d'instruction à exécuter, la boucle des événements déplacera la callback en attente dans la file vers la pile d'exécution, permettant à cette callback d'être ainsi exécutée.
-
-
-https://blog.oxiane.com/2018/01/29/lasynchrone-en-javascript/
-https://www.supinfo.com/articles/single/5640-programmation-asynchrone-javascript
-https://javascript.developpez.com/actu/102019/Apprendre-les-mecanismes-de-base-de-l-asynchrone-en-JavaScript-un-tutoriel-de-Yahiko/
-https://www.developpez.net/forums/blogs/676693-yahiko/b1546/bases-lasynchrone-javascript/
+*** 5 éléments : 
+-call stack = les appels de fonctions. Un niveau de la pile n'est retiré que lorsque la fonction appelée a terminé son exécution
+-API du système hote = fournit toute des fonctions et des objets au moteur JS
+-message queue = message à traiter en FIFO, contient les callbacks des appels asynchrones uniquement. Chaque message est associé à une fonction. Chaque message sera traité complètement avant tout autre message (peut être long à exécuter)
+-heap (le tas) : mémoire pour allouer des objets
+-event loop = surveille l'état de la call stack. Si cette dernière est vide d'instruction à exécuter, la boucle des événements déplacera la callback en attente dans la file vers la call stack pour être exécutée

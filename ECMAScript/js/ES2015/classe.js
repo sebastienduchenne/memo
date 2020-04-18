@@ -3,12 +3,9 @@
 -pas de hoisting pour les déclarations de classes
 -les classes sont un sucre syntaxique des prototypes d'objet
 
-https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Le_mod%C3%A8le_objet_JavaScript_en_d%C3%A9tails
-https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes
-
 */
 
-//----------------- syntaxe avec ES6 (sucre syntaxique)
+//----------------- syntaxe avec ES6
 class Employé {
   age; //champs public
   constructor(nom) {
@@ -52,7 +49,7 @@ let User = class { // nommée : let User = class MyClass {
 };
 
 
-//héritage
+//---------------------héritage
 class Rectangle {
   constructor(hauteur, largeur) {
     this.name = 'Rectangle';

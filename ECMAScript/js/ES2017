@@ -1,7 +1,7 @@
 -string padding
 -object.values (objet en tableau)
 -object.entries (tableau avec for of)
--object.getOwnPropertyDescrpitors() (avoir un descripteur de la propriété propre d'un objet)
+-object.getOwnPropertyDescrpitors()
 -async function et await
 
 
@@ -16,15 +16,18 @@
 'abc'.padEnd(10, "toto"); // "abctototot"
 
 
-***object.values (objet en tableau)
+***object.values 
+-objet en tableau
 
 
 
-***object.entries (tableau avec for ... of)
+***object.entries 
+-tableau avec for ... of
 
 
 
-***object.getOwnPropertyDescrpitors() (avoir un descripteur de la propriété propre d'un objet)
+***object.getOwnPropertyDescrpitors() 
+-avoir un descripteur de la propriété propre d'un objet
 
 
 

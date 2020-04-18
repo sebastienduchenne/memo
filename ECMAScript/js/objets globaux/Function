@@ -1,0 +1,6 @@
+-créée un objet Function
+-ne créée pas de fermeture liée au contexte de leur création contrairement à la déclaration de fonction
+
+
+var ajoute = new Function('a', 'b', 'return a + b');
+ajoute(2,6)

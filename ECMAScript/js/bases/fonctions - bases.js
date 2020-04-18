@@ -1,30 +1,37 @@
 /*
-= objet de 1ère classe : la fonction est un objet. Le nom de la fonction est une variable qui contient une référence vers la fonction stockée en mémoire. On peut donc : 
-  -assigner une fonction à une variable
+= objet de 1ère classe. On peut donc : 
+  -assigner une fonction à une variable (le nom de la fonction est une variable qui contient une référence vers la fonction stockée en mémoire)
   -passer la fonction en paramètre d’une fonction (cad la référence, = callback)
-  -mettre des () pour l’exécuter
--dans une fonction, on peut créer une variable locale avec "let" de même nom qu’une variable en dehors de la fonction sans que cette dernière ne soit modifiée
--certaines fonctions possèdent des arguments facultatifs : on n’est pas obligé de spécifier ces arguments -lors de l’appel de la fonction, l’argument sera donc de type undefined
--toute déclaration de fonction crée une fermeture (contrairement au constructeur function)
--lors de l’appel d’une fonction, les arguments vont être mis dans les variables spécifiés dans la fonction. Si il y a plus d’argument lors de l’appel, ils ne peuvent pas être mis dans une variable et sont donc rejetés. Si il n’y en a pas assez, les variables non spécifiées sont mise en undefined. Les arguments facultatifs doivent donc être mis après ceux obligatoires.
--Pour tester undefined : if(typeof nomVar === ‘undefined’) {}
--passe par valeur, si object la valeur est une référence
-  -primitive (boolean, null, undefined, string, number) : variable originelle non modifiée
-  -objects (object, function, array) : objet modifié
+  -mettre des () à son nom pour l’exécuter
 
--Dans le cas d’une function déclarée de manière classique, toute la function est chargée dans la mémoire du navigateur même si elle n’est pas utilisée immédiatement. À la différence des expressions de fonction (ou function expression) qui elles sont appelées quand l’interpréteur atteint cette ligne de code.
+-une fonction est un objet de type Function
 
 -Lorsque JavaScript exécute une fonction, un objet de portée est créé pour conserver les variables locales créées au sein de cette fonction. Il est initialisé avec les variables passées en paramètres à la fonction.
 
--s'il manque un paramètre, il prend la valeur "undefined"
+-Dans le cas d’une fonction déclarée de manière classique, toute la fonction est chargée dans la mémoire du navigateur même si elle n’est pas utilisée immédiatement. À la différence des expressions de fonction (ou function expression) qui elles sont appelées quand l’interpréteur atteint cette ligne de code.
 
--L'objet arguments est un objet, semblable à un tableau, correspondant aux arguments passés à une fonction.
+-dans une fonction, on peut créer une variable locale avec "let" de même nom qu’une variable en dehors de la fonction sans que cette dernière ne soit modifiée
+
+-toute création de fonction crée une fermeture (contrairement au constructeur Function)
 
 
-https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions
+*** arguments
+-lors de l’appel d’une fonction, les arguments vont être mis dans les variables spécifiés dans la fonction. 
+-S'il y a plus d’arguments lors de l’appel, ils ne peuvent pas être mis dans une variable et sont donc rejetés. 
+-S'il n’y en a pas assez, les variables non spécifiées sont mises en undefined. 
+-Les arguments facultatifs doivent donc être mis après ceux obligatoires.
+-passe par valeur, si objet alors la valeur est une référence ver l'objet
+  -primitive (boolean, null, undefined, string, number) : variable originelle non modifiée
+  -objects (object, function, array) : objet modifié
+
+-arguments facultatifs : 'arguments' est un objet, semblable à un tableau, correspondant aux arguments passés à une fonction
+-tester la valeur d'un argument facultatif : if(typeof nomVar === ‘undefined’) {}
+
+
+
 https://medium.com/codeshake/pour-les-jedis-javascript-%C3%A9pisode-i-au-coeur-des-fonctions-partie-1-8b2cd1cab002
-
 */
+
 
 function func(str = "", nbr = NaN, bool = false, obj = null) {
   return {
