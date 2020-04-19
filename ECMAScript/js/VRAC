@@ -22,15 +22,23 @@
 -objets globaux / objets natifs standards
     -différent de l'objet global
     -objets de portée globale
--objet global
-    -this en mode non-strict
-    -correspond à l'objet window si navigateur
+-objet global : coonstitué des objets globaux
 -contexte global d'exécution
     -en dehors de toute fonction
 -portée globale
     -composée des propriétés de l'objet global
--globalThis = accès à l'objet global quel que soit l'environnement
+-globalThis = renvoie l'objet global de plus haut niveau, quel que soit l'environnement (node, web, web worker)
+-window.frames
+-this : L'objet JavaScript représentant le contexte dans lequel le code courant est exécuté.
 
+
+navigateur :
+    objet global : window
+    this (non strict) => window
+    this (strict) => undefined
+    globalThis => this
+node : 
+    this => global
 -----------------------------------------
 
 
