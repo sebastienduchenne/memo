@@ -1,0 +1,8 @@
+os.arch() : Return the string that identifies the underlying architecture
+os.cpus() : Return information on the CPUs available on your system.
+os.freemem() : Return the number of bytes that represent the free memory in the system.
+os.homedir() : Return the path to the home directory of the current user.
+os.hostname() : Return the hostname.
+os.networkInterfaces() : Returns the details of the network interfaces available on your system.
+os.platform() : Return the platform that Node.js was compiled for
+os.type() : Identifies the operating system

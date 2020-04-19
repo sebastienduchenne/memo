@@ -1,10 +1,11 @@
--nextTick()
+-process.nextTick() : exécuter une fonction à la fin du tick en cours
 -process.exit(code) : force le processus à terminer le programme
 -process.on(signal, callback) : faire 'callback' lorsque 'signal' est reçu
 -process.env : contient des variables d'environnement
 -process.stdin
 -process.stdout
 -process.stderr
+
 
 *** process.argv
 

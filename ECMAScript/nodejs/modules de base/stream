@@ -1,0 +1,6 @@
+-moyen de manipuler un échange d'information dans réseaux, fichiers, ...
+
+
+
+
+const readableStream = new Stream.Readable() // créer un objet stream

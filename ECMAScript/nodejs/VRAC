@@ -1,24 +1,20 @@
+export NODE_ENV=production : indiquer à node que l'app est lancée en production
 
 
 *** A chercher
 -npm
--module de base : http, console, os, process, event, path, fs, modules
--require
+-module de base : http, process, event, modules, require
 -modules complémentaire : express, mocha, assert, sinon, 
 
 
 --------------------------------------------------------
 
 * tuto
-https://openclassrooms.com/fr/courses/1056721-des-applications-ultra-rapides-avec-node-js/1056866-node-js-mais-a-quoi-ca-sert
 https://oncletom.io/node.js/#fnref1
 https://medium.mybridge.co/node-js-top-10-open-source-projects-for-the-past-month-v-mar-2018-6047fc05b1bb
-https://www.tutorialsteacher.com/nodejs/nodejs-tutorials
 https://nodejs.dev/
 
 * project
 https://github.com/Requarks/wiki
 https://github.com/mrvautin/expressCart
 https://medium.mybridge.co/45-amazing-node-js-open-source-for-the-past-year-v-2019-c774d750e925
-
-

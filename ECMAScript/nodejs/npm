@@ -1,33 +1,41 @@
--package-lock.json : stocke la structure exacte de l'arborescence de dépendances à chaque installation. Il est généré à chaque modifications apportée au fichier "package.json"
+-package-lock.json : stocke la structure exacte de l'arborescence de dépendances à chaque installation, cad la version installée de chacunes. Il est généré à chaque modifications apportée au fichier "package.json"
 -attention aux dépendances circulaires
--semver = semantic versioning = gestion sémantique de version
+-semver = semantic versioning = gestion sémantique de version (^, ~, *)
 
 
 
 *** commandes
-npm install : installer les dépendances que le projet a besoin
-npm install packageName
-npm install packageName --save : ajoute le package dans 'dependencies'
-npm install packageName --save-dev : ajoute le package dans 'devDependencies'
+npm install : installer les dépendances que le projet a besoin (d'après package-lock.json)
+npm install --production : installer les packages présents dans dependencies
+npm install packageName : ajoute la référence dans 'dependencies'
+npm install packageName --save : ajoute la référence dans 'dependencies'
+npm install packageName --save-dev (ou -D) : ajoute la référence dans 'devDependencies'
 npm install packageName -g : installation globale
-    ->préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X; avec globale si update => casse tout
+    ->préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X; avec globale si update => créée des incompatibilités
+    ->les packages qui proposent un CLI devraient être installés globalement
+npm install <package>@<version>
 
-
-npm update : mettre à jour les packages
+npm update : mettre à jour les packages et package-lock.json
 npm update packageName
-
 
 npm run <task-name> : exécuter une commande spécifié dans 'scripts'
 npm run <task-name> -- param : ajouter des paramètres
 
-
-npm list
+npm list : afficher les packages, leur version et leur dépendances
 npm list -g
-npm list packageName
-
+npm list packageName : version de packageName
+npm list --depth=0 : toplevel
 
 npm root -g : renvoit le dossier où sont installés les modules en global
 
+npm view packageName version : dernière version sur npm
+npm view packageName versions : lister toutes les versions existantes
+
+npm outdated : afficher les packages mis à jour après un update
+
+npm uninstall <package-name>
+npm uninstall -S <package-name> : retire la référence de package.json
+npm uninstall -D <package-name> : retire la référence de devDependencies
 
 
 *** fichier package.json
