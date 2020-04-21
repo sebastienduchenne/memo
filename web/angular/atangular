@@ -1,0 +1,15 @@
+@angular/core
+    Injectable
+    NgModule
+    Component
+    OnInit
+
+@angular/forms
+    FormsModule
+
+@angular/platform-browser
+    BrowserModule
+
+@angular/router
+    Routes
+    ActivatedRoute

@@ -1,0 +1,8 @@
+-plateforme de développement qui permet de créer des applications web dynamiques et immersives
+-typescript conseillé
+-chaque version est prévue pour être compatible avec la version antérieure
+-une application Angular est une arborescence de plusieurs components
+-refonte de AngularJS
+-permet de créer des progressive Web Apps (PWA) = app avec une expérience utilisateur similaire à celle d'une application mobile
+-chaque version est maintenue pendant 18 mois
+-gestion des composants par cycles (lifecycle)

@@ -1,48 +1,65 @@
--plateforme de développement qui permet de créer des applications web dynamiques et immersives
--typescript conseillé
--angular 9 est sorti en fev 2020; chaque version est prévue pour être compatible avec la version antérieure
--injection de dépencance = mécanisme qui permet d'implémenter le principe de l'inversion de contrôle. Il consiste à créer dynamiquement (injecter) les dépendances entre les différents objets (et non exprimées dans le code de manière statique)
--une application Angular est une arborescence de plusieurs components
--refonte de AngularJS
 -<app-root></app-root> : contient l'app
 -interpolation
--Progressive Web Apps
--Angular repose sur la couche PlatformBrowser pour communiquer avec le DOM
+-repose sur la couche PlatformBrowser pour communiquer avec le DOM
+-le constructor d'un composant est appelé par le moteur JavaScript
+-les services fournissent les données à la racine des composants
+-<router-outlet></router-outlet> : où afficher les components dans le template
+-app.module
+  -les services (providers), composants créés (declarations), composants importés (imports)
+  -gestion des routes
+-les services sont injectés
+  -dans AppModule
+  -dans AppComponent
+  -dans un autre composant
+
+*** concepts utilisés
+-injection de dépendance = mécanisme qui permet d'implémenter le principe de l'inversion de contrôle. Il consiste à créer dynamiquement (injecter) les dépendances entre les différents objets (et non exprimées dans le code de manière statique)
 -Separation of concerns = séparer les responsabilités avec une approche MVC
--chaque version est maintenue pendant 18 mois
+-inversion de contrôle
 
 
-
-
-
-
-*** directives
--structurel
-    -*ngFor
-    -*ngIf
--par attribut
-    -ngstyle
-    -ngclass
+*** a chercher
+-routing
+-pipes
+-directives
+-ngOnInit() : exécutée une fois le composant initialisé, cad après la création des propriétés. Dans OnInit
+-ngOnDestroy()
+-OnInit
+-routerLink : naviguer dans l'app
+-RxJS
+-@Injectable()
+-HttpClient
+-lifecycle hooks
+-@Input()
+-@Component({})
+-Ivy : moteur de rendu et de compilation
+-i18n : gérer l’internationalization de l'application
+-service
+-@NgModule({})
 
 
 *** interpolation
--émettre des données issues du code TypeScript
+-afficher du texte dynamiquement dans le template d’un composant
 
 
-<li class="list-group-item">
-  <h4>Appareil : {{ appareilName }}</h4>
-</li>
+xxx.component.ts
+export class ProductDetailsComponent implements OnInit {
+  product;
+  ...
+}
+
+-xxx.component.html
+<a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+  {{ product.name }}
+</a>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>Mes appareils</h2>
-      <ul class="list-group">
-        <app-appareil></app-appareil>
-        <app-appareil></app-appareil>
-        <app-appareil></app-appareil>
-      </ul>
-    </div>
-  </div>
-</div>
+*** @
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+
+@Input() appareilName: string;
+@Input() appareilStatus: string;

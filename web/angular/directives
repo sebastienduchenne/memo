@@ -1,0 +1,6 @@
+-structurel
+    -*ngFor
+    -*ngIf
+-par attribut
+    -ngstyle
+    -ngclass
