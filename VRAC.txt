@@ -13,8 +13,6 @@
 
 
 *** linux
-npm install --save
-npm install --save-dev
 /etc/systemd
 pkill -e chrome
 pstree –up
