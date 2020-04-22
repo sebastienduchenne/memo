@@ -1,0 +1,20 @@
+-framework web pour faire un serveur léger
+-très performant part les librairies qu'il utilise (routeur http find-my-way et fast-json-stringify)
+-log
+
+
+
+*** exemple
+
+const fastify = require('fastify')({
+  logger: true
+})
+ 
+fastify.get('/', (request, reply) => {
+  reply.send({ hello: 'world' })
+})
+
+fastify.listen(3000, (err, address) => {
+  if (err) throw err
+  fastify.log.info(`server listening on ${address}`)
+})
