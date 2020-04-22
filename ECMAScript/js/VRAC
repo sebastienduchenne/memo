@@ -40,7 +40,13 @@ navigateur :
 node : 
     this => global
 -----------------------------------------
-
+*** prototype d'objet
+-mécanisme au sein de JavaScript qui permettent aux objets JavaScript d'hériter des propriétés d'autres objets
+-chaque objet pouvant avoir un prototype objet d'où il hérite des méthodes et des attributs
+-on remonte la chaîne de prototypage pour accéder aux attributs et méthodes hérités
+-les méthodes et attributs sont définis dans l'attribut prototype, la fonction constructrice de l'objet et non pas dans les instances des objets elles-mêmes
+-lien entre l'objet instancié et son constructeur
+-L'attribut prototype est un attribut qui contient un objet où l'on définit les éléments dont on va pouvoir hériter
 
 
 **** Liens
