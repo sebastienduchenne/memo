@@ -1,30 +1,43 @@
+-esprima : parser en ECMAScript, analyse lexicale et syntaxique d'un programme JS
+-axios : faire des requêtes HTTP
+-Next.js : framework permettant d’effectuer le rendu des applications web React
+-Nx : ensemble d'outils de dev pour monorepos
+-meteor : framework pour faire du client-serveur avec du publish-subscribe, mongodb
+-cappuccino : développement d'app web avec l'UI de MacOS
+-babeljs.io : module qui convertit tout syntaxe récente en ES5, compréhensible par tous les navigateurs
+-npx : exécuter des binaires dans les modules complémentaires
+-nodemon : utility that will monitor for any changes in your source and automatically restart your server
+-forever : outil en ligne de commande permettant d'exécuter une application node.js de façon continue
+
+
+*** front
+-react.js
+-Angular
+-ember : application web monopage MVC coté client
+-backbone : librairie pour faire des single-page app
+-ionic : framework pour dev des app mobile cross-plateform en html, css et js
+-knockout : librairie pour faire de l'UI avec le pattern MVVM
+-electron : framework pour dev d'app desktop cross-plateform avec html, css et js
+
+
+*** serveur
 -express : serveur
 -fastify : serveur rapide
 -restify : serveur API REST
 -koa : asynchrone et rapide
--hapi : plus structuré et plus complexe
--helmet : sécuriser une app express
--serve-static
--socket.io
--esprima : parser en ECMAScript
--axios : faire des requêtes HTTP
--adonisJs
--LoopBack.io
--Micro
--Next.js : avec react
--Nx
--meteor : framework pour faire du client-serveur avec du publish-subscribe, mongodb
--mojito : mocking
--react.js
+-hapi : serveur plus structuré et plus complexe
+-adonisJs : framework MVC, micro API server
+-socket.io : communication synchrone bilatérale
+-helmet : sécuriser une app express en variant les headers HTTP
+-serve-static : middleware pour servir des fichiers
+-LoopBack.io : API et microservice
+
+
+*** tests et mock
+-cypress : test end-to-end
+-jest : test
+-karma : test
 -jasmine : TU en js
 -mocha : faire des tests
--cappuccino
--backbone : librairie pour faire des single-page app
--ionic : framework pour dev d'app mobile cross-plateform avec html, css et js
--ember
--knockout : librairie pour faire de l'UI avec le pattern MVVM
--electron : framework pour dev d'app desktop cross-plateform avec html, css et js
--babeljs.io = module qui convertit tout syntaxe récente en ES5, compréhensible par tous les navigateurs
--npx : exécuter des binaires dans les modules complémentaires
--nodemon
--forever
+-mojito : mocking
+-sinon : Standalone test spies, stubs and mocks
