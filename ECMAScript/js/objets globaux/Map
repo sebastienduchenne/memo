@@ -1,0 +1,8 @@
+-représente un dictionnaire
+
+*** différences avec un objet
+-Les clés d'une Map sont ordonnées
+-les clés peuvent prendre n'importe quelle valeur
+-size pour compter la taille d'une map
+-Un objet Map est un itérable et on peut donc le parcourir directement
+-Un objet Map permettra d'obtenir de meilleures performances si on ajoute et supprime des éléments fréquemment

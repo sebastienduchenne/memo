@@ -8,6 +8,8 @@
 -npx : exécuter des binaires dans les modules complémentaires
 -nodemon : utility that will monitor for any changes in your source and automatically restart your server
 -forever : outil en ligne de commande permettant d'exécuter une application node.js de façon continue
+-mongoose : communiquer avec mongodb
+-linter : chercher des erreurs des erreurs son code
 
 
 *** front
@@ -41,3 +43,4 @@
 -mocha : faire des tests
 -mojito : mocking
 -sinon : Standalone test spies, stubs and mocks
+-chai : test

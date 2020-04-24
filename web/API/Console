@@ -1,0 +1,4 @@
+Console.assert() : Affiche un message et une trace d'appels dans la console si l'assertion en argument est à false.
+Console.clear() : Vide la console.
+Console.count() : Affiche le nombre de fois que la ligne a été appelée avec un label donné.
+Console.log() : Permet d'afficher des messages dans la console.

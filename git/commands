@@ -5,7 +5,7 @@ supprimer toutes les modif non add / non commit : git reset --hard
 supprimer le dernier commit : git reset HEAD^
 
 
-*** Commande de git
+*** divers
 git init : création d’un .git contenant l’historique du projet et la configuration
 git ignore : créer un .gitignore pour mettre les fichiers à ignorer
 git clone : ramener le contenu du dépôt distant (master) sur sa machine
@@ -21,6 +21,7 @@ git branch -m old_name new_name
 git checkout nomBranche : se placer dans nomBranche
 git checkout -b nomBranch : créer une branche et s'y placer
 git rebase branche1 branche2 : modifier une validation loin dans l’historique
+git branch -a : lister les branches distantes
 
 
 *** Commit, pull, push, fetch

@@ -1,0 +1,6 @@
+*** Méthodes
+-Date.now()
+-Date.parse()
+
+*** Méthodes de Date.prototype
+-Date.prototype.getDate()

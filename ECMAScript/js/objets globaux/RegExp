@@ -1,0 +1,3 @@
+-Le constructeur RegExp crée un objet expression rationnelle pour la reconnaissance d'un modèle dans un texte.
+-expressions rationnelles sont des motifs utilisés pour correspondre à certaines combinaisons de caractères au sein de chaînes de caractères
+-les expressions rationnelles sont également des objets

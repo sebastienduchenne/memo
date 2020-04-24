@@ -2,4 +2,18 @@
 -chaque onglet contient son propre objet window
 
 
-var window = document.defaultView;
+document.defaultView => window
+
+
+*** propriétés
+window.console
+Window.document
+Window.frames
+Window.length
+Window.screen
+
+
+*** méthodes
+Window.alert()
+Window.confirm()
+Window.prompt()

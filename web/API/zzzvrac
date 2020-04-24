@@ -3,7 +3,8 @@
 -Element  ->
 -FetchAPI : objet Request et Response
 
->>> API
+
+*** API
 -Web storage API
     -sessionStorage
     -localStorage
@@ -14,22 +15,26 @@
     -worker chrome
     -audio worker
 -API fetch : récupération de ressources
+    -Request
+    -Response
+    -Headers
+    -GlobalFetch
 -Document
 -IndexedDB
 -API store data
 -WebGL = web Graphic Library
 -WebSocket = ouvrir un canal de communication bidirectionnelle entre un navigateur et un serveur
 -Window
+    -Console
 -DOM
 -Cache
--EventTarget = recevoir des évènements et avoir des auditeurs
+-EventTarget : recevoir des évènements et avoir des auditeurs
+-Event : représente tout événement qui a lieu dans le DOM (FetchEvent)
+-Node
+-Blob : représente un objet, semblable à un fichier, qui est immuable et qui contient des données brutes
 
 
->>> Accès :
-window / document.defaultView
+*** Accès
 sessionStorage
 localStorage
 ServiceWorker.active
-
-
-https://developer.mozilla.org/fr/docs/Web/API
