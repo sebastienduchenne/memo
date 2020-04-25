@@ -1,0 +1,9 @@
+*** template string
+let l = `je m’appelle ${prenom}`
+
+*** string sur plusieurs lignes
+var x =
+"Hello World!";
+
+var x = "Hello \
+World!";

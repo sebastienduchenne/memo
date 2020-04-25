@@ -1,0 +1,30 @@
+
+//try catch, throw
+function getRectArea(width, height) {
+  if (isNaN(width) || isNaN(height)) {
+    throw "Parameter is not a number!";
+  }
+}
+
+try {
+  getRectArea(3, 'A');
+}
+catch(e) {
+  console.log(e);
+  // expected output: "Parameter is not a number!"
+}
+
+
+//label, continue, break
+var str = "";
+
+loop1:
+for (var i = 0; i < 5; i++) {
+  if (i === 1) {
+    continue loop1;
+  }
+  str = str + i;
+  if (i === 5) {
+    break;
+  }
+}

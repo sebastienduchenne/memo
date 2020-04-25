@@ -7,3 +7,18 @@
 -utilise l'asynchronisme ce qui le rend rapide à exécuter
 -toutes les expressions sont de type référence = leur évaluation produit une référence vers une donnée. La référence se nomme le référent de l’expression et la donnée le référé de l’expression.
 -gestion de la mémoire automatique, garbage collector
+
+*** types
+-6 types primitifs
+    Number
+    String
+    Boolean
+    Symbol
+    null
+    undefined
+    BigInt pour ES2020
+-Object
+    Function
+    Array
+    Date
+    RegExp

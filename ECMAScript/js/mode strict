@@ -1,0 +1,8 @@
+=impose des contraintes de développement 
+    -pas de variables non déclarées
+
+-invocation : "use strict" au début ou dans une fonction, automatique dans les modules
+
+*** Convertir les fautes en erreurs
+
+*** simplifier le code

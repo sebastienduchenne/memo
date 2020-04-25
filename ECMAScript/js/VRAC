@@ -1,6 +1,6 @@
 -JSDoc décrit l'usage d'une fonction
 -les mots-clé réservé ne le sont que pour les identifiants (variables, fonctions)
--geler un objet = rendre immuable un objet
+
 
 **** A chercher
 -prototype
@@ -12,12 +12,12 @@
 -new, new.target
 -super
 -typeof
-->>, <<, >>> (décalage)
 -promise, async await
 -closure
 -classe
 -map, set
 -static
+-export default
 
 -----------------------------------------
 
@@ -43,13 +43,17 @@ node :
     this => global
 -----------------------------------------
 
+//concaténation et addition
+var x = 10 + 5;          // the result in x is 15
+var y = 10 + "5";        // the result in y is "105"
 
 
-**** Liens
+//debugger
+debugger; // permet de démarrer un débogueur (s'il existe)
 
-https://javascript.info/
-https://jpvincent.developpez.com/tutoriels/javascript/usage-avance-fonctions-javascript/
-https://developer.mozilla.org/fr/docs/Apprendre/JavaScript/Building_blocks/Build_your_own_function
-https://putaindecode.io/fr/articles/frontend/2015-etat-lieux-javascript-modulaire/
-https://www.antoinebrossault.com/les-functions-expressions/
 
+return; //return undefined
+
+
+//check
+if (typeof myObj !== "undefined" && myObj !== null){}

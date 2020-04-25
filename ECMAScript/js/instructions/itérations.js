@@ -1,14 +1,20 @@
+/*
+-for
+-for ... in
+-for ... of
+-for await ... of
+-do ... while
+-switch
+-while
+*/
+
 //for
-for (var i = 0; i < 9; i++) {
-  //...
-}
+for (var i = 0; i < 9; i++) { }
 
 //for ... in
-for (val in values) {
-  console.log(val)
-}
+for (val in values) { }
 
-//do while
+//do ... while
 var result = "";
 var i = 0;
 
@@ -17,15 +23,8 @@ do {
   result = result + i;
 } while (i < 5);
 
-//for in
-var string1 = "";
-var object1 = {a: 1, b: 2, c: 3};
 
-for (var property1 in object1) {
-  string1 += object1[property1];
-}
-
-//for of
+//for ... of
 function* foo(){
   yield 1;
   yield 2;
@@ -38,7 +37,7 @@ for (let o of foo()) {
   break; // closes iterator, triggers return
 }
 
-//for await of : parcourt les objets itérables asynchrones
+//for await ... of : parcourt les objets itérables asynchrones
 
 
 //switch
