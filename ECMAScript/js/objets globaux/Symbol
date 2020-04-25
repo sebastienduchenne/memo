@@ -1,1 +1,6 @@
 -type de données primitif représentant une donnée unique et inchangeable qui peut être utilisée afin de représenter des identifiants pour des propriétés d'un objet
+
+= type primitif et immuable qui peut être utilisée afin de représenter des identifiants pour des propriétés d'un objet
+
+const symbol1 = Symbol();
+const symbol2 = Symbol(42);

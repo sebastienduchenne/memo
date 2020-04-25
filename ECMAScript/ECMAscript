@@ -9,67 +9,67 @@
 *** versions de ECMA-262
 
 ES2009 :
-    The "use strict" Directive
-    String.trim()
+    La directive "use strict"
+    String.prototype.trim()
     Array.isArray()
-    Array.forEach()
-    Array.map()
-    Array.filter()
-    Array.reduce()
-    Array.reduceRight()
-    Array.every()
-    Array.some()
-    Array.indexOf()
-    Array.lastIndexOf()
+    Array.prototype.forEach()
+    Array.prototype.map()
+    Array.prototype.filter()
+    Array.prototype.reduce()
+    Array.prototype.reduceRight()
+    Array.prototype.every()
+    Array.prototype.some()
+    Array.prototype.indexOf()
+    Array.prototype.lastIndexOf()
     JSON.parse()
     JSON.stringify()
     Date.now()
 ES2015 :
     classe
-    promise
+    Promise
     fonction fléchée
-    generator
+    Generator
     let and const
     module
     string multiline
     paramètre default
-    destructuration
+    destructuration de tableau
     for...of
-    map et set
-    Array.find()
-    Array.findIndex()
+    Map et Set
+    Array.prototype.find()
+    Array.prototype.findIndex()
     template string
-    évolution des objets litéraux
-    symbol
+    évolution des objets littéraux
+    Symbol
 ES2016 :
-    array.prototype.includes
+    Array.prototype.includes()
     opérateur d'exponentiation ** (puissance)
 ES2017 :
-    string padding,
-    object.values (objet en tableau)
-    object.entries (tableau avec for of)
-    object.getOwnPropertyDescriptors() (avoir un descripteur de la propriété propre d'un objet)
+    string padding
+    Object.values()
+    Object.entries()
+    Object.getOwnPropertyDescriptors()
     async function et await
 ES2018 :
     rest/spread (...args, )
-    async iteration,
-    promise.prototype.finally(),
+    async iteration
+    Promise.prototype.finally()
     regular expression improvements
 ES2019 :
-    object.fromEntries (transformer une liste de paires de clés/valeurs en un objet)
-    trimStart() and trimEnd() (retirer espace au début / à la fin)
-    flat() and flatMap(), (tableau)
+    Object.fromEntries()
+    String.prototype.trimStart() et String.prototype.trimEnd()
+    Array.prototype.flat() et Array.prototype.flatMap()
     Description property for Symbol objects
     Optional catch binding
     Function.toString()
     Well Formed JSON.Stringify()
-    Array.Sort Stability
+    Array.prototype.Sort() Stability
     JSON Superset
 ES2020 :
     Private Fields in Classes
     Dynamic Import
     BigInt
-    Promise.allSettled
+    Promise.allSettled()
     globalThis
     Optional Chaining Operator ?
     Nullish Coalescing Operator ??

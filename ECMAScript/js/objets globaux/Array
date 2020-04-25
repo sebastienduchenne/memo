@@ -22,6 +22,8 @@ fruits.unshift('Strawberry') : ajouter au début
 fruits.indexOf('Banana') : index d'un élément
 fruits.splice(pos, n) : supprimer n éléments à partir de l'index pos
 fruits.slice() : copier le tableau
+fruits.includes(val) : déterminer si un tableau contient la valeur val
+
 
 shift   <-         -> pop
            0 1 2 3

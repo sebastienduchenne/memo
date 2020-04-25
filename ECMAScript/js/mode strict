@@ -1,8 +1,27 @@
 =impose des contraintes de développement 
-    -pas de variables non déclarées
+    -déclarer une variable
+    -interdit de supprimer une variable ou une fonction
+    -interdit dupliquer un paramètre dans une fonction
+    -interdit de créer une variable octale
+    -interdit de créer un caractère échappé octal
+    -Writing to a read-only property is not allowed
+    -Writing to a get-only property is not allowed
+    -Deleting an undeletable property is not allowed
+    -The word eval cannot be used as a variable
+    -The word arguments cannot be used as a variable
+    -The with statement is not allowed
+    -eval() is not allowed to create variables in the scope from which it was called
+    -If the object is not specified, functions in strict mode will return undefined and functions in normal mode will return the global object (window)
+    -mots clé réservés : 
+        implements
+        interface
+        let
+        package
+        private
+        protected
+        public
+        static
+        yield
+
 
 -invocation : "use strict" au début ou dans une fonction, automatique dans les modules
-
-*** Convertir les fautes en erreurs
-
-*** simplifier le code

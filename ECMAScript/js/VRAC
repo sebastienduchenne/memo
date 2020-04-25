@@ -1,4 +1,3 @@
--JSDoc décrit l'usage d'une fonction
 -les mots-clé réservé ne le sont que pour les identifiants (variables, fonctions)
 
 
@@ -6,14 +5,12 @@
 -prototype
 -objets globaux, objet global, self, globalThis, this
 -throw
--export, import, import.meta
+-export, import
 -function*, generator, iterable, yield
--fonction, paramètre optionnel, ...objet
+-fonction, ...objet
 -new, new.target
 -super
--typeof
 -promise, async await
--closure
 -classe
 -map, set
 -static
@@ -43,17 +40,23 @@ node :
     this => global
 -----------------------------------------
 
-//concaténation et addition
+*** concaténation et addition
 var x = 10 + 5;          // the result in x is 15
 var y = 10 + "5";        // the result in y is "105"
-
-
-//debugger
-debugger; // permet de démarrer un débogueur (s'il existe)
 
 
 return; //return undefined
 
 
-//check
+*** check
 if (typeof myObj !== "undefined" && myObj !== null){}
+
+
+*** paramètre default
+-par défaut, la valeur des paramètres d'une fonction sera undefined
+
+function multiplier(a, b = 1) {
+    return a * b;
+}
+
+*** import.meta : contient des informations à propos du module

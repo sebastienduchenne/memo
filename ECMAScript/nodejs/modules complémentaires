@@ -20,6 +20,9 @@
 -ionic : framework pour dev des app mobile cross-plateform en html, css et js
 -knockout : librairie pour faire de l'UI avec le pattern MVVM
 -electron : framework pour dev d'app desktop cross-plateform avec html, css et js
+-vue.js
+-react and flux
+-react and redux
 
 
 *** serveur
