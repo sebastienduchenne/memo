@@ -1,0 +1,6 @@
+-créer une instance d'un certain type d'objet à partir du constructeur qui existe pour celui-ci
+4 étapes suivantes :
+    -Il crée un nouvel objet à partir de zéro
+    -Il lie cet objet à un autre objet en le définissant comme son prototype
+    -Le nouvel objet, créé à l'étape 1, est passé comme valeur this à la fonction
+    -Si la fonction ne renvoie pas d'objet, c'est la valeur this qui est renvoyée

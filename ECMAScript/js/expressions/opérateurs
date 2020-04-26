@@ -29,3 +29,14 @@ true == 1; //true, because 'true' is converted to 1 and then compared
 
 *** opérateur d'exponentiation ** = puissance
 -2 ** 3 => 8
+
+
+*** super
+-appeler ou d'accéder à des fonctions définies sur l'objet parent
+
+
+*** new.target
+-Dans les appels de constructeurs, new.target fait référence au constructeur qui a été appelé par new
+-Dans les appels de fonction « normaux », new.target vaut undefined
+-tester si une fonction ou un constructeur a été appelé avec new
+-méta-propriété

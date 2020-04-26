@@ -23,10 +23,14 @@
 -passe par valeur, si objet alors la valeur est une référence ver l'objet
   -primitive (boolean, null, undefined, string, number) : variable originelle non modifiée
   -objects (object, function, array) : objet modifié
+-les paramètres sont mis dans le tableau arguments
 
 -arguments facultatifs : 'arguments' est un objet, semblable à un tableau, correspondant aux arguments passés à une fonction
 -tester la valeur d'un argument facultatif : if(typeof nomVar === ‘undefined’) {}
 
+
+-par défaut, la valeur des paramètres d'une fonction sera undefined
+-return; //return undefined
 
 
 https://medium.com/codeshake/pour-les-jedis-javascript-%C3%A9pisode-i-au-coeur-des-fonctions-partie-1-8b2cd1cab002

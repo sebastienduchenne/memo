@@ -1,10 +1,16 @@
+//export
+//import
+//import.meta
+
+//*************** export *********************
+
 /*
 2 types d'export : 
     -export nommé
     -export par défaut
 */
 
-// *************** export nommé ************
+// *** export nommé
 
 // exporte une fonction déclarée précédemment
 export { maFonction };
@@ -13,8 +19,7 @@ export { maFonction };
 export const machin = Math.sqrt(2);
 
 
-
-//**************** export par défaut *********
+//*** export par défaut
 export default function() {}
 
 export default class {}
@@ -30,3 +35,7 @@ import {monExport} from '/modules/mon-module.js';
 
 //Importer plusieurs éléments exportés depuis un module
 import {machin, truc} from '/modules/mon-module.js';
+
+
+//*************** import.meta *********************
+//contient des informations à propos du module

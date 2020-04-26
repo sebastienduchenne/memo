@@ -1,0 +1,3 @@
+-valeur : le contexte dans lequel le code courant est exécuté
+-dans le contexte global => objet global
+-dans la fonction d'un objet => l'objet

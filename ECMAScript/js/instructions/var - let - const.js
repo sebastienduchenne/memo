@@ -9,11 +9,17 @@
 
 let x = 1; // la portée est celle du bloc courant, globale en dehors de toute fonction
 const c = 0; // la portée est celle du bloc courant, comme let, globale en dehors de tout fonction. Const est un abus de langage car c'est la référence vers la valeur qui ne peut pas être changé et non la valeur, donc on peut ajouter un élément à un tableau const ou modifier une propriété d'un objet const
-var v = 2; // la portée est la fonction qui contient la déclaration, qu’importe le bloc dans lequel elle se trouve, et le contexte global en dehors de toute fonction
+var v = 2; // la portée est le bloc de la fonction dans laquelle elle est déclarée, et le contexte global en dehors de toute fonction
 
-//var et let : on peut aussi ne pas définir de valeur initiale, la variable aura donc une valeur undefined.
 //La déclaration sans instruction var (exemple : maVar = ‘test’) revient à écrire var maVar = ‘test’ dans un contexte global. La variable devient donc une propriété de l’objet global window
 
+// variableVar *est* utilisable ici
+for (var variableVar = 0; variableVar < 5; variableVar++) {
+  // variableVar *est* également disponible ici
+} 
+// variableVar *est* toujours disponible ici
+
+//--------------------------
 var x = 10;// Here x is 10
 { 
   var x = 2;  // Here x is 2
@@ -29,7 +35,6 @@ var x = 10;// Here x is 10
 // Here x is 10
 
 //--------------------------
-
 
 
 // 1. Avec initialiseur

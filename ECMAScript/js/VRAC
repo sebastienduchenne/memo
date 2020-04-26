@@ -1,20 +1,7 @@
 -les mots-clé réservé ne le sont que pour les identifiants (variables, fonctions)
-
-
-**** A chercher
--prototype
--objets globaux, objet global, self, globalThis, this
--throw
--export, import
--function*, generator, iterable, yield
--fonction, ...objet
--new, new.target
--super
--promise, async await
--classe
--map, set
--static
--export default
+-null : absence de valeur
+-undefined : variable non itinialisée
+-false, 0, la chaîne vide (""), NaN, null et undefined deviennent toutes false 
 
 -----------------------------------------
 
@@ -45,18 +32,13 @@ var x = 10 + 5;          // the result in x is 15
 var y = 10 + "5";        // the result in y is "105"
 
 
-return; //return undefined
-
-
 *** check
 if (typeof myObj !== "undefined" && myObj !== null){}
 
 
-*** paramètre default
--par défaut, la valeur des paramètres d'une fonction sera undefined
-
-function multiplier(a, b = 1) {
-    return a * b;
-}
-
-*** import.meta : contient des informations à propos du module
+*** static
+-définir une méthode statique
+-appeler une static depuis une static : utiliser this.staticMethod()
+-appeler une static depuis un constructeur / une méthode non static :
+    -this.constructor.staticMethod()
+    -ClassName.staticMethod()
