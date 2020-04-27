@@ -11,6 +11,10 @@
 
 
 var b = ['coucou', 'ça va', '?'];
+
+          Array               Object
+            |                   |
+            v                   v
 b ---> Array.prototype ---> Object.prototype ---> null
 
 -un constructeur est une fonction que l'on invoque avec l'opérateur new

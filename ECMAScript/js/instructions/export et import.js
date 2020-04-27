@@ -27,6 +27,19 @@ export default class {}
 
 //*************** import *********************
 
+import exportParDefaut from "nom-module";
+import * as nom from "nom-module";
+import { export } from "nom-module";
+import { export as alias } from "nom-module";
+import { export1 , export2 } from "nom-module";
+import { export1 , export2 as alias2 , [...] } from "nom-module";
+import exportParDefaut, { export [ , [...] ] } from "nom-module";
+import exportParDefaut, * as nom from "nom-module";
+import "nom-module";
+import { toto , truc } from "nom-module/chemin/vers/fichier-non-exporte";
+let promesse = import("nom-module");
+
+
 //Importer l'intégralité du contenu d'un module
 import * as monModule from '/modules/mon-module.js';
 

@@ -60,20 +60,21 @@ var v = function(p){
 v("coucou");
 
 
-//valeur par défaut des arguments
+//*********** valeur par défaut des arguments
 function multiply(a, b = 1) {
   return a * b;
 }
 
-//paramètres du reste
+
+// ********** paramètres du reste
 function maFonction(a, b, ...theArgs) { // theArgs est un tableau
   //...
 }
 maFonction("un", "deux", "trois", "quatre", "cinq");
 
 
+// ********** arguments
 const Parameters = (param) => {/*...*/};
-
 
 //arguments = ensemble des arguments passées à une fonction
 function func1(a, b, c) {
@@ -100,7 +101,8 @@ ajoute(2, 6);
 
 var AsyncFunction = Object.getPrototypeOf(async function(){}).constructor
 
-//IIFE (immediately invoked function expression)
+
+//******** IIFE (immediately invoked function expression)
 //= fonction qui est exécutée dès qu'elle est définie
 var result = (function () { 
   var name = "Barry"; 
@@ -120,3 +122,12 @@ var result = (function () {
 function pow(x, n) {
   return x ** n;
 }
+
+/*
+*** static
+-définir une méthode statique
+-appeler une static depuis une static : utiliser this.staticMethod()
+-appeler une static depuis un constructeur / une méthode non static :
+    -this.constructor.staticMethod()
+    -ClassName.staticMethod()
+*/

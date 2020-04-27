@@ -73,3 +73,5 @@ ES2020 :
     globalThis
     Optional Chaining Operator ?
     Nullish Coalescing Operator ??
+    String.prototype.matchAll()
+    Ordre de parcours du for-in standardisé

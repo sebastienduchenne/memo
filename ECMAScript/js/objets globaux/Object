@@ -10,6 +10,15 @@
 
 -Object.entries() : Retourne un tableau contenant les paires [clé, valeur] des propriétés énumérables propres (cad directement rattachées à l'objet) de l'objet donné et dont les clés sont des chaînes de caractères
 
+const object1 = {
+  a: 'somestring',
+  b: 42
+};
+
+for (let [key, value] of Object.entries(object1)) {
+  console.log(`${key}: ${value}`);
+}
+
 -Object.freeze() : Gèle un objet
 
 -Object.fromEntries() : Renvoie un nouvel objet à partir d'un itérable contenant des paires de clés-valeurs (l'opération duale de Object.entries).

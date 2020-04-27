@@ -1,30 +1,11 @@
 -les mots-clé réservé ne le sont que pour les identifiants (variables, fonctions)
 -null : absence de valeur
 -undefined : variable non itinialisée
--false, 0, la chaîne vide (""), NaN, null et undefined deviennent toutes false 
+-false, 0, la chaîne vide (""), NaN, null et undefined deviennent toutes false
+-valeur primitive : immuable
+-wrapper = enveloppe objet, manipule qqch comme un objet comme number (fonction qui est destinée à appeler une ou plusieurs autres fonctions)
+-L'initialisation dans une fonction, que ce soit pour un objet ou un tableau, n'a pas d'effet hors du scope de la fonction. C'est pourquoi on dit quelquefois que l'argument est passé par échange (call-sharing) plutôt que par référence.
 
------------------------------------------
-
--objets globaux / objets natifs standards
-    -différent de l'objet global
-    -objets de portée globale
--objet global : coonstitué des objets globaux
--contexte global d'exécution
-    -en dehors de toute fonction
--portée globale
-    -composée des propriétés de l'objet global
--globalThis = renvoie l'objet global de plus haut niveau, quel que soit l'environnement (node, web, web worker)
--window.frames
--this : L'objet JavaScript représentant le contexte dans lequel le code courant est exécuté.
-
-
-navigateur :
-    objet global : window
-    this (non strict) => window
-    this (strict) => undefined
-    globalThis => this
-node : 
-    this => global
 -----------------------------------------
 
 *** concaténation et addition
@@ -34,11 +15,3 @@ var y = 10 + "5";        // the result in y is "105"
 
 *** check
 if (typeof myObj !== "undefined" && myObj !== null){}
-
-
-*** static
--définir une méthode statique
--appeler une static depuis une static : utiliser this.staticMethod()
--appeler une static depuis un constructeur / une méthode non static :
-    -this.constructor.staticMethod()
-    -ClassName.staticMethod()
