@@ -7,8 +7,6 @@
 -Le nom de l'objet agit comme un espace de noms
 -propriété et méthode sont des membres
 -les propriétés sont encapsulés
--objets : array, object, function
--tous les objets en JavaScript descendent d'Object, tous les objets héritent des méthodes et des propriétés de Object.prototype
 -les objets sont muables (mutable) : on peut donc augmenter les nouvelles instances en leur donnant de nouveaux champs et méthodes. Ces nouvelles instances peuvent à leur tour servir de prototypes pour de nouveaux objets. Nul besoin de classes pour créer des tas d’objets similaires
 -property access : les objets ont des références qui pointent vers elles, il existe différentes stratégies d'accès à une propriété
 -geler un objet = rendre immuable un objet

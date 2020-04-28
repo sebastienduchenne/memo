@@ -20,12 +20,16 @@
     -Headers
     -GlobalFetch
 -Document
+    -defaultView => window
+    	-console.log()
+        -document
+        -prompt()
+    -cookie
+    -width
 -IndexedDB
 -API store data
 -WebGL = web Graphic Library
 -WebSocket = ouvrir un canal de communication bidirectionnelle entre un navigateur et un serveur
--Window
-    -Console
 -DOM
 -Cache
 -EventTarget : recevoir des évènements et avoir des auditeurs

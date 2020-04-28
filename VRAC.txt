@@ -10,7 +10,7 @@
 -inversion de controle = framework prend en charge l'exécution principale du programme et non le programe lui-même
 -garbage collector
 -computer cluster / grappe de serveur
-
+-Propriétés ACID : atomicité, cohérence, isolation et durabilité
 
 *** linux
 /etc/systemd

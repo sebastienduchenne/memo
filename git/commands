@@ -10,7 +10,7 @@ git init : création d’un .git contenant l’historique du projet et la config
 git ignore : créer un .gitignore pour mettre les fichiers à ignorer
 git clone : ramener le contenu du dépôt distant (master) sur sa machine
 git status : fichiers modifiés sur la branche active
-git add file : ajoute une référence dans l'index
+git add file : ajoute file dans l'index
 
 
 *** Gérer les branches

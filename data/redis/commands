@@ -1,0 +1,47 @@
+*** commandes redis serveur
+
+-lancer redis avec un fichier de conf PAR DEFAUT
+redis-server
+
+-lancer redis avec un fichier de conf PERSO
+redis-server /etc/redis.conf
+
+
+*** commandes pour intéragir avec redis (455 commandes)
+
+redis-cli : intéragir avec redis
+redis-cli ping : vérifier si redis tourne, renvoit PONG
+
+ping
+set key value : créer une paire clé-valeur
+get key
+KEYS Web* : lister toutes les clés commençants par Web
+setex Webuser:Tmp 600 TempVisitor : clé temporaire qui expire au bout de 10mn
+ttl Webuser:Tmp : affiche le nb de secondes restantes
+
+
+-les LIST
+LPUSH LastWebVisitors Webuser:1 : insérer dans la liste LastWebVisitors la valeur Webuser:1
+LTRIM LastWebVisitors 0 5 : garder les 5 plus récents 
+LRANGE LastWebVisitors 0 -1 : afficher la liste du plus récent au plus vieux
+
+-les SET
+SADD Webuser:HasGMail Webuser:3
+SMEMBERS Webuser:IsFrench
+SINTER Webuser:IsFrench Webuser:HasGMail : utilisateurs Français avec GMail 
+SDIFF Webuser:IsFrench Webuser:HasGMail : différence entre le premier SET et les autres SET spécifiés ici
+
+-les HASH
+HSET Webuser:Nicolas email toto[AT]zaptravel.com
+HGETALL Webuser:Nicolas
+HGET Webuser:Nicolas firstName
+
+-Les SortedSet (ou ZSET)
+ZADD DealsFranceByPrice 59 Trip:Lyon
+ZRANGE DealsFranceByPrice 0 0
+ZREVRANGE DealsFranceByPrice 0 0 WITHSCORES
+ZREVRANGEBYSCORE DealsFranceByPrice 200 0 WITHSCORES
+ZRANK : trouver à quel rang se trouve une clé donnée
+ZINTERSTORE : permet de stocker l’union de plusieurs ensembles et d’effectuer des calculs
+
+-> similaire au SQL

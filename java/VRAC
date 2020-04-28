@@ -1,0 +1,6 @@
+
+*** gestion de la concurrence
+-système de multi-threading
+-bloquant
+-créer autant de thread que de connexion
+-> souvent de l'attente

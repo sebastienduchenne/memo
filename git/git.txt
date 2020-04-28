@@ -6,6 +6,7 @@
 -Origin : racine du dépôt distant sur laquelle se trouve les différentes branches
 -Master : branche principal sur le dépôt distant
 -.gitignore : dossier et fichier à ignorer
+-index : contient un instantané du contenu de la copie de travail et c’est cet instantané qui sera utilisé comme contenu du prochain commit
 
 
 *** Configurer git
@@ -28,10 +29,10 @@ Push origin « branche »
 Créer une pull request
 Accepter/refuser la PR
 
-Les différents types de branches : 
+
+*** Les différents types de branches : 
 -master
 -develop
 -feature
 -fix
 -release
-

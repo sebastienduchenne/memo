@@ -1,4 +1,5 @@
 -module : variable qui représente le module
+-chaque fichier est traité comme un module séparé
 -un module peut regrouper plusieurs classes
 -2 standarts pour écrire des modules
     -CommonJS, utilisé par Node.js
@@ -6,9 +7,16 @@
 
 
 -exports : rendre des propriétés et des méthodes disponibles en dehors du module
--require : le chemin est relatif au script et non depuis le dossier où le terminal exécute le script
 -__dirname : chemin absolu du dossier
 -__filename : chemin absolu du script
+
+
+
+*** require
+-le chemin est relatif au script et non depuis le dossier où le terminal exécute le script
+-chargement synchrone
+-on ne peut pas charger un élément particulier dans le module
+-scanne tout le dossier nodes_modules pour trouver le module
 
 
 *** exports

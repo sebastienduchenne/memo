@@ -1,14 +1,21 @@
+-Scaled Agile Framework
+-agile à l’échelle de l’entreprise
+-un incrément = 3 sprints + 1 sprint d’innovation
+-epic > feature > US
+-WSJF pour prioriser les features
+-definition of done = critères d’acceptance d’un produit
 
 
-Scaled Agile Framework
-agile à l’échelle de l’entreprise
+*** Rôles
+-RTE (Release Train Engineer) = Damien BAIN-THOUVEREZ
+-PM (Product manager) = Pascal SENICOURT
+-BO (business Owner) = PETESH, DE ROUVILLE, DELEMAR
+-Epic Owner
+-SA (System Architect)
+-system engineer
 
-
-
-
-
-
-https://openclassrooms.com/fr/courses/4511316-perfectionnez-votre-gestion-de-projet-agile/4695191-utilisez-le-modele-safe
-
-
-
+*** Cérémonies
+-PI planning : définir les US à embarquer, au début d’un incrément
+-retrospective : à la fin d’un incrément
+-solution demo : à la fin d’un incrément
+-system demo : à la fin d’un sprint

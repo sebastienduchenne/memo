@@ -1,0 +1,18 @@
+-une famille de SGBD
+-s'écarte du paradigme classique des bases relationnelles
+-pas de définition claire
+
+
+*** familles
+-NoSQL orienté-agrégats : agrégats de données
+-NoSQL orienté-graphes : stocker les données sous forme de graphe
+
+
+*** quelques outils NoSQL
+-mongoDB : orienté-document
+-Redis
+-Cassandra
+-Voldemort
+-CouchDB
+-SimpleDB : de Amazon
+-HBase

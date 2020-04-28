@@ -1,5 +1,5 @@
 /*
-- await = suspendre l’exécution jusqu’à ce que la promise soit réglée, utilisable dans les fonctions marquées de async. Si, dans une fonction async A, on appelle une fonction B avec await et que B n’est pas une promesse, alors B est convertie en promesse
+- await : suspendre l’exécution jusqu’à ce que la promise soit résolue, utilisable dans les fonctions marquées de async. Si, dans une fonction async A, on appelle une fonction B avec await et que B n’est pas une promesse, alors B est convertie en promesse
 - async : une fonction définie avec le mot clé async renvoie systématiquement une promesse : si une erreur est levée pendant l’exécution de la fonction, la promesse est rejetée, et si une valeur est retournée, la promesse est résolue avec cette valeur.
 
 */

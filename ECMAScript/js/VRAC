@@ -6,12 +6,6 @@
 -wrapper = enveloppe objet, manipule qqch comme un objet comme number (fonction qui est destinée à appeler une ou plusieurs autres fonctions)
 -L'initialisation dans une fonction, que ce soit pour un objet ou un tableau, n'a pas d'effet hors du scope de la fonction. C'est pourquoi on dit quelquefois que l'argument est passé par échange (call-sharing) plutôt que par référence.
 
------------------------------------------
-
-*** concaténation et addition
-var x = 10 + 5;          // the result in x is 15
-var y = 10 + "5";        // the result in y is "105"
-
 
 *** check
 if (typeof myObj !== "undefined" && myObj !== null){}

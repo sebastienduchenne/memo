@@ -1,91 +1,33 @@
--REmote DIctionary Server
+-REmote DIctionary Server ou serveur de dictionnaire distant
 -système de gestion de base de données ou base clef-valeur
-scalable
+-scalable
 -écrit en C ANSI et distribué sous licence BSD
--base NoSQL, voire No-NoSQL
+-mouvance NoSQL, voire No-NoSQL
 -vise à fournir les performances les plus élevées possibles
--rapide
-
-
-*** usages, conseils
--Il est important d’optimiser la taille de vos structures afin de limiter la consommation mémoire.
--si images : stocker URL dans Redis et les images dans Amazon S3
--ne pas oublier de sauvegarder les données car elles sont effacées quand le serveur s'arrête
 
 
 *** caractéristiques
 -manipule des type de données simples : chaînes de caractères, tableaux associatifs, listes, ensembles et ensembles ordonnés
 -mise en cache = conserve l'intégralité des données en RAM. Cela permet d'obtenir d'excellentes performances en évitant les accès disques, particulièrement coûteux sur ce plan
--Quand la taille des données est trop importante pour tenir en mémoire, Redis peut également utiliser de la mémoire virtuelle. 
+-Quand la taille des données est trop importante pour tenir en mémoire, Redis peut également utiliser de la mémoire virtuelle
 -pub/sub = mécanisme publish-subscribe permettant d'émettre des événements aux différents clients connectés sur la base
 -offre la possibilité de « capturer » l'état de la base dans un fichier
 -gestion de sessions
 -propose différentes structures de données : clé/valeur, SortedSet, liste à double entrées
 -mono-threadé, architecture événementielle non bloquante
 
-pub/sub = s’abonner afin d’être notifié lorsqu’un élément est ajouté sur une liste
+
+*** usages, conseils
+-optimiser la taille des structures afin de limiter la consommation mémoire
+-si images : stocker URL dans Redis et les images dans Amazon S3
+-ne pas oublier de sauvegarder les données car elles sont effacées quand le serveur s'arrête
 
 
 *** installation
-.prérequis : avoir MAJ tcl
+-> prérequis : avoir MAJ tcl
 wget http://download.redis.io/redis-stable.tar.gz
 tar xvzf redis-stable.tar.gz
 cd redis-stable
 make
 sudo cp src/redis-server /usr/local/bin/
 sudo cp src/redis-cli /usr/local/bin/
-
-
-*** commandes redis serveur
-
--lancer redis avec un fichier de conf PAR DEFAUT
-redis-server
-
--lancer redis avec un fichier de conf PERSO
-redis-server /etc/redis.conf
-
-
-*** commandes pour intéragir avec redis (455 commandes)
-redis-cli : intéragir avec redis
-redis-cli ping : vérifier si redis tourne, renvoit PONG
-
-ping
-set key value : créer une paire clé-valeur
-get key
-KEYS Web* : lister toutes les clés commençants par Web
-setex Webuser:Tmp 600 TempVisitor : clé temporaire qui expire au bout de 10mn
-ttl Webuser:Tmp : affiche le nb de secondes restantes
-
-
--les LIST
-LPUSH LastWebVisitors Webuser:1 : insérer dans la liste LastWebVisitors la valeur Webuser:1
-LTRIM LastWebVisitors 0 5 : garder les 5 plus récents 
-LRANGE LastWebVisitors 0 -1 : afficher la liste du plus récent au plus vieux
-
--les SET
-SADD Webuser:HasGMail Webuser:3
-SMEMBERS Webuser:IsFrench
-SINTER Webuser:IsFrench Webuser:HasGMail : utilisateurs Français avec GMail 
-SDIFF Webuser:IsFrench Webuser:HasGMail : différence entre le premier SET et les autres SET spécifiés ici
-
--les HASH
-HSET Webuser:Nicolas email toto[AT]zaptravel.com
-HGETALL Webuser:Nicolas
-HGET Webuser:Nicolas firstName
-
--Les SortedSet (ou ZSET)
-ZADD DealsFranceByPrice 59 Trip:Lyon
-ZRANGE DealsFranceByPrice 0 0
-ZREVRANGE DealsFranceByPrice 0 0 WITHSCORES
-ZREVRANGEBYSCORE DealsFranceByPrice 200 0 WITHSCORES
-ZRANK : trouver à quel rang se trouve une clé donnée
-ZINTERSTORE : permet de stocker l’union de plusieurs ensembles et d’effectuer des calculs
-
--> similaire au SQL
-
-
-
-*** liens
-https://redis.io/topics/quickstart
-http://www.touilleur-express.fr/2013/04/03/redis/
-https://github.com/luin/ioredis
