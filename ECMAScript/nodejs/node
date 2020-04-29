@@ -1,13 +1,13 @@
--Node.js est un environnement d’exécution JavaScript bas niveau
+-Node.js est un environnement d’exécution JavaScript bas niveau côté serveur
+-asynchronisme, donc généralement non bloquant
+-monothread
 -il regroupe un ensemble d'API et une VM. Le code est lu par le runtime, traduit en bytecode par la VM puis exécuté par le processeur
 -utilise le moteur JS V8 de Google qui rend l’exécution du JS très rapide
--npm : gestionnaire de paquets officiel de Node.js
--monothread
--asynchronisme, donc généralement non bloquant
 -utilise le système de module CommonJS
+-npm : gestionnaire de paquets officiel de Node.js
 
 
-*** mode REPL
+*** mode REPL (Read-Eval-Print-Loop)
 -taper du code JS
 -commande 'node' pour l'utiliser :
 

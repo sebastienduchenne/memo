@@ -10,7 +10,15 @@
 -forever : outil en ligne de commande permettant d'exécuter une application node.js de façon continue
 -mongoose : communiquer avec mongodb
 -linter : chercher des erreurs des erreurs son code
-
+-node-inspector : debugger GUI
+-Geddy : web app en MVC
+-Locomotive : web app en MVC
+-Total.js : 
+-Keystone : develop database-driven websites, applications and APIs in Node.js. Built on Express and MongoDB
+-Derbyjs : MVC
+-Sails.js
+-Loopback
+-ActionHero : multi-transport Node.JS API Server with integrated cluster capabilities and delayed tasks.
 
 *** front
 -react.js
@@ -47,3 +55,10 @@
 -mojito : mocking
 -sinon : Standalone test spies, stubs and mocks
 -chai : test
+-Frisby : REST API
+
+
+*** templates
+-Jade
+-Vash
+-GruntJS

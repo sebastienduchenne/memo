@@ -7,10 +7,15 @@
 -Framework = cadre de travail, apporte un outil qui encadre notre travail (création formulaire, tests...), impose un certain nombre de règles afin d’augmenter la productivité dans un travail de groupe et faire plus facilement de la maintenance
 -vector clock
 -inline caching = technique d'optimisation
--inversion de controle = framework prend en charge l'exécution principale du programme et non le programe lui-même
 -garbage collector
 -computer cluster / grappe de serveur
 -Propriétés ACID : atomicité, cohérence, isolation et durabilité
+
+
+*** archi
+-inversion de contrôle = le framework prend en charge l'exécution principale du programme et non le programe lui-même
+-injection de dépendance = une implémentation de l'inversion de contrôle. Créer dynamiquement (injecter) les dépendances entre les différents objets
+
 
 *** linux
 /etc/systemd

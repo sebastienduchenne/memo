@@ -1,19 +1,20 @@
-*** Java ou .NET
+*** modèle Java ou .NET
 -multi-threading et synchrone = pour chaque requête au serveur, un thread se charge de la gérer, et il n’est libéré qu’une fois que les opérations demandées sont achevées, ce qui fait attendre le thread
 -or beaucoup d'opérations web sont IO ce qui est très consommateur de temps et de ressources
 -Le serveur doit donc créer autant de thread que de connexion, d'autant que le nombre de thread est limité ce qui fait attendre les requêtes en surplus
 -ainsi, le multithreading synchrone n'est pas très adapté au web
 
 
-*** nodejs
+*** modèle nodejs
 -asynchrone = exécuter une instruction sans attendre le résultat avant de passer à la suivante
--opérations non bloquantes : requêtes HTTP, les opérations de lectures/écritures sur le disque, les appels à la BD
+-qq opérations non bloquantes : requêtes HTTP, les opérations de lectures/écritures sur le disque, les appels à la BD
 -single-thread (mais l'hôte peut être multithread)
 -avantages de ce modèle
     -pas d'attente => rapidité
     -peut gérer beaucoup de requête simultanément
+    -utilise moins de ressources
 -inconvénient
-    -nodejs adapté pour des applications web mais montre ses limites dans des applications gourmandes en ressources CPU
+    -nodejs adapté pour des applications web mais montre ses limites dans des applications gourmandes en ressources CPU (traitement images, ...)
 
 
 *** 

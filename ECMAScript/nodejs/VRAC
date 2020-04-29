@@ -1,5 +1,5 @@
 -export NODE_ENV=production : indiquer à node que l'app est lancée en production
-
+-toute ce qui est créée est par défaut local au module et non global comme en JS
 
 
 *** tuto

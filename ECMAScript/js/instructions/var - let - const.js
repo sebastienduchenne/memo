@@ -7,11 +7,17 @@
 -variable sans affectation est “undefined”
 */
 
-let x = 1; // la portée est celle du bloc courant, globale en dehors de toute fonction
-const c = 0; // la portée est celle du bloc courant, comme let, globale en dehors de tout fonction. Const est un abus de langage car c'est la référence vers la valeur qui ne peut pas être changé et non la valeur, donc on peut ajouter un élément à un tableau const ou modifier une propriété d'un objet const
-var v = 2; // la portée est le bloc de la fonction dans laquelle elle est déclarée, et le contexte global en dehors de toute fonction
+let x = 1; 
+// la portée est celle du bloc courant, si déclaration au niveau global la variable n'est pas ajouté à l'objet global
 
+const c = 0; 
+// la portée est celle du bloc courant, comme let, globale en dehors de tout fonction. Const est un abus de langage car c'est la référence vers la valeur qui ne peut pas être changé et non la valeur, donc on peut ajouter un élément à un tableau const ou modifier une propriété d'un objet const
+
+var v = 2; 
+// la portée est la fonction qui contient la déclaration, et le contexte global en dehors de toute fonction
 //La déclaration sans instruction var (exemple : maVar = ‘test’) revient à écrire var maVar = ‘test’ dans un contexte global. La variable devient donc une propriété de l’objet global window
+
+//Si on affecte une valeur à une variable qui n'a pas été déclarée, cela devient une variable globale, cad une propriété de l'objet global, lorsque l'affectation est exécutée
 
 // variableVar *est* utilisable ici
 for (var variableVar = 0; variableVar < 5; variableVar++) {
@@ -36,6 +42,14 @@ var x = 10;// Here x is 10
 
 //--------------------------
 
+function f() {
+  if (true) {
+    var x = 5
+  }
+  // Here x is 5
+}
+
+//--------------------------
 
 // 1. Avec initialiseur
 
@@ -54,5 +68,3 @@ let maVariable3;
 const maVariable4;  // erreur : initialisation manquante
 alert(maVariable3); // affiche undefined
 alert(maVariable4); // erreur : initialisation manquante
-
-

@@ -1,0 +1,15 @@
+= solutionner des problèmes courants
+
+
+-Les modèles de création
+    -factory
+    -abstract factory
+    -builder
+    -prototype
+    -singleton
+-Les modèles de structuration
+    -façade
+    -decorator
+-Les modèles de comportement
+    -observateur
+    -visiteur
