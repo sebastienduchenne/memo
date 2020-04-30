@@ -1,0 +1,31 @@
+-intéragir avec une BD
+
+
+// service
+import { HttpClient } from '@angular/common/http';
+
+export class MyserviceService {
+   private apiurl = "http://jsonplaceholder.typicode.com/users";
+
+   constructor(private http: HttpClient) { }
+
+   getData() {
+      return this.http.get(this.apiurl);
+   }
+}
+
+
+// Component
+import { Component } from '@angular/core';
+import { MyserviceService } from './myservice.service';
+
+export class AppComponent {
+   public persondata = [];
+   constructor(private myservice: MyserviceService) {}
+   ngOnInit() {
+      this.myservice.getData().subscribe((data) => {
+         this.persondata = Array.from(Object.keys(data), k=>data[k]);
+         console.log(this.persondata);
+      });
+   }
+}

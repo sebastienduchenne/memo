@@ -1,9 +1,6 @@
--<app-root></app-root> : contient l'app
--interpolation
 -repose sur la couche PlatformBrowser pour communiquer avec le DOM
 -le constructor d'un composant est appelé par le moteur JavaScript
 -les services fournissent les données à la racine des composants
--<router-outlet></router-outlet> : où afficher les components dans le template
 -app.module
   -les services (providers), composants créés (declarations), composants importés (imports)
   -gestion des routes
@@ -11,55 +8,37 @@
   -dans AppModule
   -dans AppComponent
   -dans un autre composant
-
-*** concepts utilisés
--injection de dépendance = mécanisme qui permet d'implémenter le principe de l'inversion de contrôle. Il consiste à créer dynamiquement (injecter) les dépendances entre les différents objets (et non exprimées dans le code de manière statique)
--Separation of concerns = séparer les responsabilités avec une approche MVC
--inversion de contrôle
-
-
-*** a chercher
--routing
--pipes
--directives
--ngOnInit() : exécutée une fois le composant initialisé, cad après la création des propriétés. Dans OnInit
--ngOnDestroy()
--OnInit
--routerLink : naviguer dans l'app
--RxJS
--@Injectable()
--HttpClient
--lifecycle hooks
--@Input()
--@Component({})
 -Ivy : moteur de rendu et de compilation
 -i18n : gérer l’internationalization de l'application
--service
--@NgModule({})
+-ngOnInit() : exécutée une fois le composant initialisé, cad après la création des propriétés. Dans OnInit
 
 
-*** interpolation
--afficher du texte dynamiquement dans le template d’un composant
+*** balises
+-<app-root></app-root> : contient l'app
+-<router-outlet></router-outlet> : où afficher les components dans le template
 
 
-xxx.component.ts
-export class ProductDetailsComponent implements OnInit {
-  product;
-  ...
-}
-
--xxx.component.html
-<a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
-  {{ product.name }}
-</a>
+*** concepts utilisés
+-inversion de contrôle : Angular contrôle l'exécution du programme
+-injection de dépendance = mécanisme qui permet d'implémenter le principe de l'inversion de contrôle. Il consiste à créer dynamiquement (injecter) les dépendances entre les différents objets (et non exprimées dans le code de manière statique)
+-Separation of concerns = séparer les responsabilités avec une approche MVC
 
 
 *** @
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
-})
+@Component({ selector: '', templateUrl: '', styleUrls: [''] })
 
 @Input() appareilName: string;
-@Input() appareilStatus: string;
+
+@Directive({ selector: '[changeText]' })
+
+@Pipe ({ name : 'sqrt' })
+
+@NgModule({ declarations: [], imports: [], providers: [], bootstrap: [] })
+
+@Injectable({ providedIn: 'root' }) 
+
+
+***
+<a [title]="product + ' details'" [routerLink]="['/products', productId]">
+  {{ product }}
+</a>

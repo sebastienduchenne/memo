@@ -1,0 +1,2 @@
+-librairie
+-programmation réactive : basé sur le concept d'observateur. On définit des observables et des observateurs. Les observables vont émettre des événements qui seront interceptés par les observateurs.

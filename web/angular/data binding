@@ -1,0 +1,15 @@
+-afficher du texte dynamiquement dans le template d’un composant
+-interpolation en français
+-{{}} dans le html
+
+
+// component
+export class componentName {
+  product;
+  ...
+}
+
+// html
+<span>
+  {{ product }}
+</span>
