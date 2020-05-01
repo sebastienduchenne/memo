@@ -1,41 +1,18 @@
--repose sur la couche PlatformBrowser pour communiquer avec le DOM
 -le constructor d'un composant est appelé par le moteur JavaScript
--les services fournissent les données à la racine des composants
--app.module
-  -les services (providers), composants créés (declarations), composants importés (imports)
-  -gestion des routes
--les services sont injectés
-  -dans AppModule
-  -dans AppComponent
-  -dans un autre composant
--Ivy : moteur de rendu et de compilation
--i18n : gérer l’internationalization de l'application
+-i18n : internationaliser l'application, cad rendre l'appli multilingue
 -ngOnInit() : exécutée une fois le composant initialisé, cad après la création des propriétés. Dans OnInit
-
+-RouterLinkActive : Directive permettant d'ajouter une classe CSS à un élément lorsque la route devient active
+-Angular Materials : fournit des modules tel que autocomplete, datepicker, slider, menus, grids, et toolbar
+-2 types de compilation de template : JIT et AOT
+-JWT : JSON Web Tokens
+-NgRx = Angular + RxJS + redux pattern
+-Angular Universal = générer côté serveur le rendu HTML d'une SPA
+-SSR = Server Side Rendering ou rendu coté serveur, avec Universal
+-Sentry = Gestion des erreurs
 
 *** balises
 -<app-root></app-root> : contient l'app
 -<router-outlet></router-outlet> : où afficher les components dans le template
-
-
-*** concepts utilisés
--inversion de contrôle : Angular contrôle l'exécution du programme
--injection de dépendance = mécanisme qui permet d'implémenter le principe de l'inversion de contrôle. Il consiste à créer dynamiquement (injecter) les dépendances entre les différents objets (et non exprimées dans le code de manière statique)
--Separation of concerns = séparer les responsabilités avec une approche MVC
-
-
-*** @
-@Component({ selector: '', templateUrl: '', styleUrls: [''] })
-
-@Input() appareilName: string;
-
-@Directive({ selector: '[changeText]' })
-
-@Pipe ({ name : 'sqrt' })
-
-@NgModule({ declarations: [], imports: [], providers: [], bootstrap: [] })
-
-@Injectable({ providedIn: 'root' }) 
 
 
 ***

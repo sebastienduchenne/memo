@@ -1,0 +1,62 @@
+-RxJS = Reactive extensions for JavaScript
+-librairie pour faire de la programmation réactive avec des observables
+-fournie avec Angular
+-programmation réactive = paradigme de programmation visant à conserver une cohérence d'ensemble en propageant les modifications d'une source réactive (variable, entrée utilisateur...) aux éléments dépendants de cette source
+-on définit des observables et des observateurs. Les observables vont émettre des évènements qui seront interceptés par les observateurs
+
+
+*** observable
+-émettent  des évènements
+-émet 3 types d'information : des données, une erreur ou un message complete
+
+
+// A partir d'un tableau
+const myObservable2 = from(['bonjour', 'le', 'monde']);
+
+// Envoie une valeur toutes les 2 secondes
+const myObservable3 = interval(2000);
+
+// A partir d'une valeur
+const myObservable = Observable.of(42);
+
+
+
+*** Observer
+-interceptent des évènements
+-a 3 fonctions pour réagir à chaque type d'information :
+    next() : arrivé d'un élément
+    error() : une erreur survient, désinscrit
+    complete() : fin de séquence, désinscrit
+
+
+var observer = rx.Observer.create(
+  function onNext(result){ 
+    console.log(result); 
+  },
+  function onError(err){ 
+    console.log(err); 
+  },
+  function onCompleted(){ 
+    console.log('Completed'); 
+  }
+);
+
+subscriber = observable.subscribe(observer);
+...
+
+
+ngOnDestroy():void {
+  this.subscriber.unsubscribe(); // pour éviter les fuites mémoires
+}
+
+
+*** subject
+= un type d'Observable qui permet de réagir à de nouvelles informations et d'en émettre
+
+
+*** opérateur
+= fonction qui se place entre l'Observable et l'Observer et qui peut filtrer et/ou modifier les données
+    -map() : modifie les valeurs reçues
+    -filter() : filtre les valeurs reçues selon la fonction qu'on lui passe en argument
+    -throttleTime() : impose un délai minimum entre deux valeurs
+    -scan() et reduce() : exécuter une fonction qui réunit l'ensemble des valeurs reçues selon une fonction que vous lui passez (reduce() retourne la valeur finale, et scan() retourne chaque étape du calcul)

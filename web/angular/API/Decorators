@@ -1,0 +1,19 @@
+Attribute 
+Component
+ContentChild 
+ContentChildren 
+Directive
+Host 
+HostBinding 
+HostListener 
+Inject : variable
+Injectable
+Input
+NgModule : app.module.ts
+Optional 
+Output 
+Pipe
+Self 
+SkipSelf 
+ViewChild 
+ViewChildren

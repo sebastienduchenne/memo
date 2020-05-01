@@ -7,6 +7,14 @@
 -Master : branche principal sur le dépôt distant
 -.gitignore : dossier et fichier à ignorer
 -index : contient un instantané du contenu de la copie de travail et c’est cet instantané qui sera utilisé comme contenu du prochain commit
+-quand on est sur la branche de travail, tirer la develop (source de vérité ultime) régulièrement pour éviter les conflits et d'avoir à rebase quand on push
+-un linter dans le pipeline check les fichiers et fail si problème de linter
+-une MR a une vie : pouces, commentaires
+-linter :  
+    -sert à vérifier que le code est conforme à des règles de bonnes pratiques
+    -A exécuter avant chaque commit puis corriger les mauvaises pratiques
+    -'--fix' : fix automatiquement
+    -‘--no-verify’ quand on push et qu’on ne veut pas qu’il y ait de vérification
 
 
 *** Configurer git
@@ -36,3 +44,10 @@ Accepter/refuser la PR
 -feature
 -fix
 -release
+
+
+*** Gitlab Pages
+-lancer un pipeline > settings > pages > cliquer sur lien créé
+    -si erreur 404 : la page web n'a pas été poussé sur public/
+    -si erreur 401 : pas de permission, aller dans settings > general > visibility > mettre "Project visibility" à "internal" et "Pages access control" à "Everyone"
+    -------> il se peut qu'il faille attendre quelques minutes pour pousser les fichiers sur public

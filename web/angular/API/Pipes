@@ -24,3 +24,8 @@
     {{ 454.78787814 | number: '3.4-4' }}
 -Slicepipe
     {{months | slice:2:6}}
+-AsyncPipe
+-I18nPluralPipe
+-I18nSelectPipe
+-KeyValuePipe
+-TitleCasePipe 

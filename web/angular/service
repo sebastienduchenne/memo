@@ -1,4 +1,4 @@
--code utilisable par n'importe quel composant : connexion à une DB
+-code utilisable par n'importe quel composant : connexion à une DB, ...
 -commande : ng g service myservice
     src/app/myservice.service.ts
     src/app/myservice.service.spec.ts

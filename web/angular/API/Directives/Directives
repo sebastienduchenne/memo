@@ -2,12 +2,12 @@
     -*ngFor
     -*ngIf
 -par attribut
-    -ngstyle
-    -ngclass
+    -ngStyle
+    -ngClass
 -de component
 
 
-*** boucle avec nbFor
+*** boucle avec NgForOf
 
 // dans app.component.ts
 
@@ -21,7 +21,7 @@ months = ["January", "February", "March", "April", "May", "June", "July",
 </select>
 
 
-*** condition avec ngIf
+*** condition avec NgIf
 
 // dans app.component.ts
 isavailable = true;

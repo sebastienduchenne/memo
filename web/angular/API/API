@@ -3,6 +3,7 @@
     NgModule
     Component
     OnInit
+    onDestroy
 
 @angular/forms
     FormsModule

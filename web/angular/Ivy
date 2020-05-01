@@ -1,0 +1,4 @@
+-Ivy : moteur de rendu et de compilation
+-compilation en AOT (Ahead Of Time) plus rapide
+-Lecture du code généré plus facile, et facilité de debug
+-bundle plus léger donc plus rapide à charger
