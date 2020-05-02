@@ -1,0 +1,16 @@
+-pour naviguer entre les pages
+-fichier app-routing.module.ts
+-balise <router-outlet></router-outlet>
+
+
+// app.module.ts
+import { AppRoutingModule , RoutingComponent} from './app-routing.module'; 
+
+declarations[...,RoutingComponent]
+
+// html
+<nav> 
+   <a routerLink = "/home">Home</a> 
+   <a routerLink = "/contactus">Contact Us </a> 
+</nav> 
+<router-outlet></router-outlet>

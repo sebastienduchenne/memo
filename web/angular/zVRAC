@@ -1,21 +1,10 @@
 -le constructor d'un composant est appelé par le moteur JavaScript
 -i18n : internationaliser l'application, cad rendre l'appli multilingue
--ngOnInit() : exécutée une fois le composant initialisé, cad après la création des propriétés. Dans OnInit
 -RouterLinkActive : Directive permettant d'ajouter une classe CSS à un élément lorsque la route devient active
--Angular Materials : fournit des modules tel que autocomplete, datepicker, slider, menus, grids, et toolbar
--2 types de compilation de template : JIT et AOT
--JWT : JSON Web Tokens
--NgRx = Angular + RxJS + redux pattern
--Angular Universal = générer côté serveur le rendu HTML d'une SPA
--SSR = Server Side Rendering ou rendu coté serveur, avec Universal
--Sentry = Gestion des erreurs
+-JWT (JSON Web Tokens) : encoder un objet JSON dans un token
+
 
 *** balises
 -<app-root></app-root> : contient l'app
 -<router-outlet></router-outlet> : où afficher les components dans le template
 
-
-***
-<a [title]="product + ' details'" [routerLink]="['/products', productId]">
-  {{ product }}
-</a>
