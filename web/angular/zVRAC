@@ -2,9 +2,16 @@
 -i18n : internationaliser l'application, cad rendre l'appli multilingue
 -RouterLinkActive : Directive permettant d'ajouter une classe CSS à un élément lorsque la route devient active
 -JWT (JSON Web Tokens) : encoder un objet JSON dans un token
-
+-platform-browser-dynamic : compilation JIT
+-les décorateurs sont des fonctions qui ajoutent des méta-données à des classes
 
 *** balises
 -<app-root></app-root> : contient l'app
 -<router-outlet></router-outlet> : où afficher les components dans le template
 
+
+*** module
+-au moins 1 : le root module nommé AppModule
+-peut en avoir plusieurs
+-différent des modules ES2015
+-un module contient en ensemble de components angular

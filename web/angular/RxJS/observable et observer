@@ -1,0 +1,34 @@
+import { Observable } frpm 'rxjs/Observable';
+import 'rxjs/Rx';
+
+
+const myObservable = new Observable((observer) => {
+    const datasource = new DataSource();
+    datasource.ondata = (e) => observer.next(e);
+    datasource.onerror = (err) => observer.error(err);
+    datasource.oncomplete = () => observer.complete();
+    return () => {
+        datasource.destroy();
+    };
+});
+
+myObservable.subscribe(
+    value => { console.log(value) },
+    error => { console.log(error) },
+    () => { console.log('fin') }
+);
+
+
+var observer = rx.Observer.create(
+    function onNext(result){ console.log(result); },
+    function onError(err){ console.log(err); },
+    function onCompleted(){ console.log('Completed'); }
+);
+
+// myObservable.subscribe(observer)
+
+
+
+ngOnDestroy():void {
+    this.subscriber.unsubscribe();
+}
