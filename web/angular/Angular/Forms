@@ -1,0 +1,16 @@
+-formulaires
+-2 méthodes
+  -Template-driven Forms (à éviter)
+  -Reactive Forms
+
+
+*** Reactive Forms
+-utilise la programmation réactive
+-séparation de la logique du formulaire et de la vue
+-génération dynamique de formulaires
+
+
+-FormControl
+-FormGroup
+-FormArray
+-FormBuilder

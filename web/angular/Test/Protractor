@@ -1,0 +1,3 @@
+-test E2E
+-utilise Jasmine comme framework de tests et d'assertion et le "webdriver" Selenium pour communiquer avec les "browsers"
+-Page Objects

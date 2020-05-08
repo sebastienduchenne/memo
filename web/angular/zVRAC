@@ -1,17 +1,23 @@
--le constructor d'un composant est appelé par le moteur JavaScript
--i18n : internationaliser l'application, cad rendre l'appli multilingue
 -RouterLinkActive : Directive permettant d'ajouter une classe CSS à un élément lorsque la route devient active
 -JWT (JSON Web Tokens) : encoder un objet JSON dans un token
 -platform-browser-dynamic : compilation JIT
 -les décorateurs sont des fonctions qui ajoutent des méta-données à des classes
+-variable local avec #
+    <input type="text" #user>
+-une application Angular est une arborescence de composants
+-Bazel : build Angular apps (pas considéré comme stable)
+-ng-conf et Angular Connect = conférences
+-webpack : construire les bundles JS
+-Rx-Scavenger = garbage collector de subscription RxJS pour Angular
+
+
+*** couches
+-PlatformBrowser : communiquer avec le DOM
+-PlatformNativeScript : utilisation de Native Script pour faire le pont entre le code Angular et le code natif Android ou iOS
+-PlatformServer : générer le rendu HTML côté serveur
+-Ionic qui : produire des applications natives contenant des "web views" Angular
+
 
 *** balises
 -<app-root></app-root> : contient l'app
 -<router-outlet></router-outlet> : où afficher les components dans le template
-
-
-*** module
--au moins 1 : le root module nommé AppModule
--peut en avoir plusieurs
--différent des modules ES2015
--un module contient en ensemble de components angular

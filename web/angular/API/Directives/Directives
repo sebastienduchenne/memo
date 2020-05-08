@@ -1,7 +1,0 @@
--structurel
-    -ngFor : boucle
-    -ngIf : condition
--par attribut
-    -ngStyle : ajouter du style CSS
-    -ngClass : ajouter une classe CSS
--de component

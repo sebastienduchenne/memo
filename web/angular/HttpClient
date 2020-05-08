@@ -1,4 +1,6 @@
 -intéragir avec une BD
+-wrapper de la classe native XMLHttpRequest
+-les méthodes get, post, ... renvoient un observable
 
 
 // service

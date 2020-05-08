@@ -17,7 +17,13 @@
 -si dans la promise on fait appel à reject() alors on doit mettre les 2 paramètres res et rej dans then()
 -On attend de l'exécuteur qu'il démarre un travail asynchrone puis, une fois le travail terminé, appelle la fonction resolve (si tout s'est bien passé) ou la fonction reject (lorsqu'il y a eu un problème) pour définir l'état final de la promesse
 
--appel exécuteur > constr renvoit promise > then(res,rej) > ... > appel resolve/reject
+
+*** Etapes de fonctionnement des Promises
+1.run executor immédiatement contenant un appel asynchrone
+2.renvoit de l'objet Promise
+3.dire à l'objet Promise quoi faire en cas de succès ou d'échec avec then/catch
+4.une fois l'appel asynchrone fini, la promesse passe à l'état fulfilled ou rejected
+5.exécution des callbacks de succès/d'échec dans la job queue
 
 
 *** Méthodes promise

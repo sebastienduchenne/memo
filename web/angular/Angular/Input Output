@@ -1,16 +1,14 @@
 *** Input
 = Recevoir des données du composant parent
--property binding
 -@Input()
 
 // component
 export class MeteoComponent {
-  @Input() ville: string;  // <!-- Voici l'input
+  @Input() ville: string;  // input
 }
 
 // html parent
-<meteo ville="Paris"></meteo>
-<meteo [ville]="Paris"></meteo> // mettre des [] si ville est un array
+<meteo [ville]="Paris"></meteo>
 
 
 *** Output

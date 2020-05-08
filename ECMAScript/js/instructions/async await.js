@@ -1,10 +1,10 @@
 /*
-- await : suspendre l’exécution jusqu’à ce que la promise soit résolue, utilisable dans les fonctions marquées de async. Si, dans une fonction async A, on appelle une fonction B avec await et que B n’est pas une promesse, alors B est convertie en promesse
-- async : une fonction définie avec le mot clé async renvoie systématiquement une promesse : si une erreur est levée pendant l’exécution de la fonction, la promesse est rejetée, et si une valeur est retournée, la promesse est résolue avec cette valeur.
+- await : suspendre l’exécution d'une fonction asynchrone jusqu’à ce que la promise soit résolue. Si, dans une fonction async A, on appelle une fonction B avec await et que B n’est pas une promesse, alors B est convertie en promesse
+- async : une fonction définie avec le mot clé async renvoie systématiquement une promesse : si une erreur est levée pendant l’exécution de la fonction, la promesse est rejetée, et si une valeur est retournée, la promesse est résolue avec cette valeur
 
 */
 
-function getOTC() {
+async function getOTC() {
   return new Promise(async (resolve) => {
     //sans async await
     axios.get(urls.otc[parameters.env]).then((response) => {
@@ -23,6 +23,10 @@ function getOTC() {
     resolve(otc);
   });
 }
+
+
+//******************************************/
+
 
 //sans async-await
 it('should enter OTC', () => {
@@ -47,6 +51,9 @@ it('should enter OTC', async () => { //async
 })
 
 
+//******************************************/
+
+
 async function getNombreAsynchrone1() {/* traitement asynchrone (appel d’une API HTTP) */}
 async function getNombreAsynchrone2() {/* traitement asynchrone (appel d’une API HTTP) */}
 
@@ -55,3 +62,16 @@ async function getAdditionAsynchrone() {
   const nombre2 = await getNombreAsynchrone2();
   return nombre1 + nombre2;
 }
+
+//******************************************/
+
+
+async function f2() {
+  var y = await 20;
+  console.log(y); // 20
+}
+console.log(1);
+f2();
+console.log(2);
+
+// console : 1 2 20
