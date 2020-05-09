@@ -1,4 +1,4 @@
--au moins 1 : le root module nommé AppModule
+-au moins 1 : le root module nommé AppModule dans le app.module.ts
 -différent des modules ES2015
 -un module contient en ensemble de composants angular
 -seul et unique "root module" ou module par défaut, nommé AppModule

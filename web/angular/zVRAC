@@ -2,9 +2,8 @@
 -JWT (JSON Web Tokens) : encoder un objet JSON dans un token
 -platform-browser-dynamic : compilation JIT
 -les décorateurs sont des fonctions qui ajoutent des méta-données à des classes
--variable local avec #
+-référence local avec #
     <input type="text" #user>
--une application Angular est une arborescence de composants
 -Bazel : build Angular apps (pas considéré comme stable)
 -ng-conf et Angular Connect = conférences
 -webpack : construire les bundles JS

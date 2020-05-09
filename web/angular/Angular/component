@@ -20,3 +20,16 @@
     2.le change detector du composant compare les anciennes et les nouvelles valeurs de chaque expression utilisée dans les bindings
     3.en cas de changement, mise à jour dans la vue
     4.change detection des enfants et retour l'étape 2
+
+
+*** lifecycle hooks
+= les différentes étapes de la naissance à la mort d'un component
+-Constructor
+-ngOnChanges : si une property a changé
+-ngOnInit : après initialisation du composant
+-ngDoCheck
+    -ngAfterContentInit : après l'initialisation d'un Content, après le 1er ngDoCheck
+    -ngAfterContentChecked : après ngAfterContentInit
+    -ngAfterViewInit : après qu'Angular initialise la vue et celles des enfants, après le 1er ngAfterContentChecked
+    -ngAfterViewChecked : après ngAfterViewInit
+-ngOnDestroy : juste avant qu'une directive / pipe / service soit détruit
