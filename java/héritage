@@ -1,0 +1,23 @@
+-problème : on veut spécialiser une classe sans recopier les attributs et les méthodes mais en rajouter
+-principe selon lequel une classe peut hériter des caractéristiques d'autres classes
+-super-classe = généralisation, sous-classe = spécialisation
+-mot clé extends
+-toute classe hérite de Object
+-soit B hérite de A, B hérite des membres private de A mais n'y a pas accès
+-final rajouté à une classe pour éviter que des classes héritent d'elle
+-si on met le même attribut dans les filles, il faudra le mettre dans la mère
+-on ne peut pas retirer d'attribut ou de méthodes
+-jamais 2 appels à un constructeur dans un constructeur
+-si on utilise super dans une méthode héritée, la méthode est spécialisée. Lorsqu'on spécialise une méthode, on peut augmenter sa visibilité mais pas la réduire
+
+
+******** mot-clé super ********
+-super() : appel au constructeur de la super-classe, soit B hérite de A, pour créer B : constructeur de Object, puis A, puis B
+-super() rajouté implicitement par le compilateur si il n'y a pas de this()
+-super.methode() : utilisé dans la méthode redéfinie pour appeler la méthode overridée de la classe mère = spécification
+
+
+******** redéfinition ********
+-possibilité de donner une nouvelle implémentation d'une méthode héritée sans changer sa signature
+-empêcher la redéfinition d'une méthode d'instance en ajoutant final
+-annoter la méthode par @Override, indique au compilateur qu'on redéfinit la méthode et vérifie l'orthographe de la méthode

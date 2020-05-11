@@ -1,0 +1,22 @@
+****** Observer ******
+-Objectif : Coordonner un sujet et un observateur. Le sujet a un état interne qui change, l’observateur doit se synchroniser avec les changements
+-Quand : 
+    -le changement d’un objet se répercute vers d’autres
+    -un objet doit prévenir d’autres objets
+
+
+****** Chain of Responsablity ******
+****** Command ******
+****** Interpreter ******
+****** Iterator ******
+****** Mediator ******
+****** Memento ******
+****** State ******
+****** Strategy ******
+
+****** Template Method ******
+objectif : définir le squelette d’un algorithme à l’aide d’opérations abstraites
+quand : 
+
+
+****** Visitor ******

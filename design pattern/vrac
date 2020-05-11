@@ -1,4 +1,5 @@
-= solutionner des problèmes courants
+= une solution générale pour un problème récurrent dans un contexte donnée
+-23 patterns
 
 
 -Les modèles de création
@@ -7,9 +8,26 @@
     -builder
     -prototype
     -singleton
+
 -Les modèles de structuration
     -façade
     -decorator
+    -Flyweight
+    -Composite
+    -Adapter
+    -Bridge
+    -Flyweight
+    -Proxy
+
 -Les modèles de comportement
-    -observateur
-    -visiteur
+    -observer
+    -visitor
+    -Chain of Responsablity
+    -Command
+    -Interpreter
+    -Iterator
+    -Mediator
+    -Memento
+    -State
+    -Strategy
+    -Template Method

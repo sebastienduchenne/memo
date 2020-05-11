@@ -1,0 +1,10 @@
+****** Composite ****** 
+-Objectifs : représente une hiérarchie d’objet ou chaque objet peut être un composant simple ou un composant en contenant d’autres
+-Quand : hiérarchie d’objets
+
+****** Adapter ****** 
+****** Bridge ****** 
+****** Decorator ****** 
+****** Façade ****** 
+****** Flyweight ****** 
+****** Proxy ****** 
