@@ -4,6 +4,8 @@
 -écrit en C ANSI et distribué sous licence BSD
 -mouvance NoSQL, voire No-NoSQL
 -vise à fournir les performances les plus élevées possibles
+-ne pas oublier de sauvegarder les données car elles sont effacées quand le serveur s'arrête
+-optimiser la taille des structures afin de limiter la consommation mémoire
 
 
 *** caractéristiques
@@ -18,9 +20,9 @@
 
 
 *** usages, conseils
--optimiser la taille des structures afin de limiter la consommation mémoire
 -si images : stocker URL dans Redis et les images dans Amazon S3
--ne pas oublier de sauvegarder les données car elles sont effacées quand le serveur s'arrête
+-couche de mise en cache
+-système de messagerie pub / sub
 
 
 *** installation
