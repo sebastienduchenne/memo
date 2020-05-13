@@ -74,3 +74,31 @@ const metadata = {
 };
 
 let { title: englishTitle, translations: [{ title: localeTitle }] } = metadata;
+
+
+*** Chaînage optionnel (optional chaining) : '?.'
+-lire la valeur d'une propriété située profondément dans une chaîne d'objets connectés sans avoir à valider expressément que chaque référence dans la chaîne est valide
+-renvoit undefined si la prpriété est absente
+
+
+const adventurer = {
+  name: 'Alice',
+  cat: {
+    name: 'Dinah'
+  }
+};
+
+const dogName = adventurer.dog?.name;
+console.log(dogName); // expected output: undefined
+
+
+*** Nullish Coalescing Operator '??'
+-soit A ?? B
+-renvoit B si A vaut null ou undefined, ou A sinon
+
+
+const foo = null ?? 'default string';
+console.log(foo); // expected output: "default string"
+
+const baz = 0 ?? 42;
+console.log(baz); // expected output: 0

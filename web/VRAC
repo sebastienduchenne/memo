@@ -2,4 +2,3 @@
 -typescript
 -artifactory
 -compodoc = générer automatiquement une documentation à partir de commentaire en JS
--webpack = créer des bundles dans ton projet Angular

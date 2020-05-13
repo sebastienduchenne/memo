@@ -1,8 +1,11 @@
-//export
-//import
-//import.meta
+/*
+-découper une application
+-extension .mjs
+-chargement : <script type="module" src="main.mjs"></script>
+-import et export ne peuvent être utilisés que dans un module
 
-/*************** export *********************
+
+*************** export *********************
 
 2 types d'export : 
     -export nommé : exporter plusieurs valeurs

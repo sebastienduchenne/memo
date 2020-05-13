@@ -1,0 +1,27 @@
+******* protocole iterable *******
+
+-permet aux objets JavaScript de définir ou de personnaliser leur comportement lors d'une itération
+-certains types natifs possèdent un comportement itératif par défaut
+    -String, Array, TypedArray, Map et Set
+-afin d'être itérable, un objet doit implémenter la méthode @@iterator, cela signifie que l'objet (ou un des objets de sa chaîne de prototypes) doit avoir une propriété avec une clé @@iterator qui est accessible via 'Symbol.iterator'
+
+
+******* protocole itérateur *******
+
+-définit une façon standard pour produire une suite de valeurs, ainsi qu'une valeur de retour lorsque toutes les valeurs ont été générées
+-un objet est considéré comme un itérateur lorsqu'il implémente une méthode next()
+
+
+******* exemple d'utilisation *******
+
+var uneChaîne = "coucou";
+
+var itérateur = uneChaîne[Symbol.iterator]();
+
+itérateur.next();  // { value: "c", done: false }
+itérateur.next();  // { value: "o", done: false }
+itérateur.next();  // { value: "u", done: false }
+
+
+//redéfinir le comportement par défaut
+uneChaîne[Symbol.iterator] = function() {...}

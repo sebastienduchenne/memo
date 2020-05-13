@@ -1,0 +1,8 @@
+= transformer les différents fichiers (css, jade, js, coffee, images, less) d'un projet JS en fichiers JS et png
+-on peut choisir entre performance et lazy loading
+-alternative à browserify
+-loader : css-loader et style-loader 
+
+
+webpack .\moduleB.js app.js
+-> création d'un fichier 'app.js'

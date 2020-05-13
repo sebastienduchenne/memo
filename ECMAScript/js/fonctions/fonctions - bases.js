@@ -66,11 +66,16 @@ function multiply(a, b = 1) {
 }
 
 
-// ********** paramètres du reste
+// ********** paramètres du reste, rest parameter
 function maFonction(a, b, ...theArgs) { // theArgs est un tableau
   //...
 }
 maFonction("un", "deux", "trois", "quatre", "cinq");
+
+
+// ********** syntaxe de décomposition, spread operator
+const numbers = [1, 2, 3];
+console.log(sum(...numbers));
 
 
 // ********** arguments

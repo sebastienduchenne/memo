@@ -18,3 +18,13 @@ World!";
 
 'abc'.padEnd(10);         // "abc       "
 'abc'.padEnd(10, "toto"); // "abctototot"
+
+
+*** itération
+-String.prototype[@@iterator]()
+
+
+const str = 'The quick red fox jumped over the lazy dog\'s back.';
+
+let iterator = str[Symbol.iterator]();
+let theChar = iterator.next();

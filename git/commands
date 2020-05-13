@@ -34,6 +34,7 @@ git merge branche : fusionner les commits de « branche » dans la branche coura
 git push origin branche : envoyer en distant les commit non pushés dans la branche « branche »
 git pull origin master : mettre à jour la branche courante avec master (pull = fetch puis merge)
 git diff : voir les différences dans la branche courante
+git diff --stat : fichiers et nombres de lignes modifiés
 
 
 *** Log

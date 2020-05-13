@@ -33,5 +33,24 @@ var monNomDeDonnee = 'hauteur'
 var maValeurDeDonnee = '1.75m'
 personne[monNomDeDonnee] = maValeurDeDonnee //Nous n'aurions pas pu construire ce membre avec la notation avec un point, car celle-ci n'accepte qu'un nom et pas une variable pointant vers un nom.
 
-//delete
+
+// ******** delete ********
 delete personne.interets
+
+
+// ******** rest and spread property ********
+const myObject = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+const { a, ...x } = myObject;
+// a = 1
+// x = { b: 2, c: 3 }
+
+
+// ******** opérateur in ********
+// renvoie true si une propriété donnée appartient à l'objet donné
+const car = { make: 'Honda', model: 'Accord', year: 1998 };
+console.log('make' in car);

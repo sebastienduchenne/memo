@@ -4,6 +4,8 @@
     .nav : fetch(), querySelector(), addEventListener(), document, API DOM pour page web
     .node : require()
 -transcompilateur = permet de convertir une version de ES en une plus ancienne (ex : Babel.js)
+-ECMA : organisation qui gère la standardisation dans le domaine informatique. Concrètement elle va imposer des standards pour des technologies, des formats de fichiers ou des langages de programmation
+-ECMAScript est géré par le comité appelé TC39
 
 
 *** versions de ECMA-262
@@ -30,10 +32,10 @@ ES2015 :
     fonction fléchée
     Generator
     let and const
-    module
+    module mjs
     string multiline
     paramètre default
-    destructuration de tableau
+    affectation par décomposition ou destructuring
     for...of
     Map et Set
     Array.prototype.find()
@@ -41,6 +43,8 @@ ES2015 :
     template string
     évolution des objets littéraux
     Symbol
+    rest parameter and spread operator : ...var
+    le protocole « itérable » et le protocole « itérateur »
 ES2016 :
     Array.prototype.includes()
     opérateur d'exponentiation ** (puissance)
@@ -51,7 +55,7 @@ ES2017 :
     Object.getOwnPropertyDescriptors()
     async function et await
 ES2018 :
-    rest/spread (...args, )
+    rest and spread property : ...var
     async iteration
     Promise.prototype.finally()
     regular expression improvements
@@ -68,10 +72,10 @@ ES2019 :
 ES2020 :
     Private Fields in Classes
     Dynamic Import
-    BigInt
+    BigInt : 900000000000000000n
     Promise.allSettled()
     globalThis
-    Optional Chaining Operator ?
-    Nullish Coalescing Operator ??
+    opérateur de chaînage optionnel (optional chaining) : '?.'
+    Nullish Coalescing Operator '??'
     String.prototype.matchAll()
     Ordre de parcours du for-in standardisé
