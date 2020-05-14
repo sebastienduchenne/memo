@@ -2,7 +2,7 @@
 -le type d'une classe est "function"
 -pas de hoisting pour les déclarations de classes
 -les classes sont un sucre syntaxique des prototypes d'objet
-
+-mixin = classe contenant des méthodes pouvant être utilisées par d'autres classes sans avoir besoin d'hériter d'elles
 */
 
 //----------------- syntaxe avec ES6

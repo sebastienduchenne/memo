@@ -1,12 +1,13 @@
 /*
 -promesse : objet qui représente une valeur qui n’est pas forcément disponible maintenant, mais qui le sera dans le futur (si tout va bien) ou pas (si l’exécution échoue)
+-représente l'état d'une opération asynchrone
 -Une promesse a 4 états possibles :
   -pending (en attente) : état initial, la promesse n'est ni remplie, ni rompue
   -fulfilled (tenue) : l'opération a réussi
   -rejected (rompue) : l'opération a échoué
   -settled (acquittée) : la promesse est tenue ou rompue mais elle n'est plus en attente
 -Job Queue : file qui contient les fonctions dans p.then() et qui sont exécutées à la fin du tick
--chainage des promesses : suite de then, catch et finally
+-composition = chainage des promesses : suite de then, catch et finally. Cela est possible car ces méthodes renvoient un objet Promise
 -HOF (Higher Order Function)
 -si échec et mais pas de catch, alors la promise ne sera jamais résolue
 
@@ -66,7 +67,7 @@ promise1.then(
 
 /*** Promise​.all(iterable)
 
--renvoie une promesse qui est résolue lorsque l'ensemble des promesses contenues dans l'itérable passé en argument ont été résolues ou qui échoue avec la raison de la première promesse qui échoue au sein de l'itérable
+-renvoie une promesse tenue lorsque toutes les promesses de l'argument itérable sont tenues, ou une promesse rompue dès qu'une promesse de l'argument itérable est rompue avec la raison de la première promesse qui échoue au sein de l'itérable
 */
 
 var promise1 = Promise.resolve(3);
@@ -83,7 +84,7 @@ Promise.all([promise1, promise2, promise3]).then(function(values) {
 
 /*** Promise.allSettled(iterable)
 
--renvoie une promesse qui est résolue une fois que l'ensemble des promesses de l'itérable passée en argument sont réussies ou rejetées. La valeur de résolution de cette promesse est un tableau d'objets dont chacun est le résultat de chaque promesse de l'itérable.
+-renvoie une promesse qui est résolue une fois que l'ensemble des promesses de l'itérable passée en argument sont acquittées (réussies ou rejetées). La valeur de résolution de cette promesse est un tableau d'objets dont chacun est le résultat de chaque promesse de l'itérable.
 */
 const promise1 = Promise.resolve(3);
 const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));

@@ -2,7 +2,13 @@
 -on peut choisir entre performance et lazy loading
 -alternative à browserify
 -loader : css-loader et style-loader 
+-graph dependency
+-entry point
+-webpack.config.js
+-output
 
+
+*** commandes
 
 webpack .\moduleB.js app.js
--> création d'un fichier 'app.js'
+    -> création d'un fichier 'app.js' à partir de '.\moduleB.js'

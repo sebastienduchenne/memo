@@ -4,7 +4,7 @@
 -false, 0, la chaîne vide (""), NaN, null et undefined deviennent toutes false
 -valeur primitive : immuable
 -wrapper = enveloppe objet, manipule qqch comme un objet comme number (fonction qui est destinée à appeler une ou plusieurs autres fonctions)
--L'initialisation dans une fonction, que ce soit pour un objet ou un tableau, n'a pas d'effet hors du scope de la fonction. C'est pourquoi on dit quelquefois que l'argument est passé par échange (call-sharing) plutôt que par référence.
+-l'initialisation dans une fonction, pour un objet ou un tableau, n'a pas d'effet en dehors de la portée de la fonction. On dit que l'argument est passé par échange (call-sharing) plutôt que par référence
 
 
 *** check

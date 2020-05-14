@@ -1,7 +1,0 @@
--fournit une interface pour la récupération de ressources
--CORS
--HTTP origin
--objet Request et Response
--API Fetch
-
--GlobalFetch.fetch : effectuer une requête et obtenir une ressource

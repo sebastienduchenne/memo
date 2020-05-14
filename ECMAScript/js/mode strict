@@ -1,18 +1,14 @@
-=impose des contraintes de développement 
-    -déclarer une variable
-    -interdit de supprimer une variable ou une fonction
-    -interdit dupliquer un paramètre dans une fonction
-    -interdit de créer une variable octale
-    -interdit de créer un caractère échappé octal
-    -Writing to a read-only property is not allowed
-    -Writing to a get-only property is not allowed
-    -Deleting an undeletable property is not allowed
-    -The word eval cannot be used as a variable
-    -The word arguments cannot be used as a variable
-    -The with statement is not allowed
-    -eval() is not allowed to create variables in the scope from which it was called
-    -If the object is not specified, functions in strict mode will return undefined and functions in normal mode will return the global object (window)
-    -mots clé réservés : 
+=impose des contraintes de développement : interdit les anciennes pratiques et utilise les nouvelles fonctionnalités de JS, le code est plus lisible et syntaxiquement correct :
+    -obligatoire de déclarer une variable avant de l'initialiser
+    -interdit d'affecter une valeur à une variable non accessible en écriture
+    -interdit de supprimer une propriété non supprimable
+    -dans une fonction, ne pas déclarer plusieurs paramètres avec le même nom    -interdit de créer une variable octale
+    -interdit de définir des propriétés sur des valeurs primitives
+    -interdit d'utiliser 'with'
+    -interdit d'utiliser eval() à créer des variables dépassant sa propre portée.
+    -this renvoit 'undefined'
+    -la propriété 'arguments' ne permet pas d’accéder aux variables passées à la fonction
+    -mots clé réservés, à ne pas utiliser en tant que nom de variable : 
         implements
         interface
         let
@@ -24,4 +20,6 @@
         yield
 
 
--invocation : "use strict" au début ou dans une fonction, automatique dans les modules
+-invocation : "use strict;" au début ou dans une fonction, invoqué automatiquement dans les modules JS
+-non strict = mode par défaut ou sloppy mode
+-certaines erreurs silencieuses sont transformées en erreurs explicites

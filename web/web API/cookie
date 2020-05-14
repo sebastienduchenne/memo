@@ -1,0 +1,20 @@
+-cookie = petit fichier qui contient des données et qui va être stocké dans le navigateur
+-permet de conserver des informations : préférences, info de connexion (dans ce cas, le navigateur envoit au serveur le cookie de connexion)
+-par défaut, un cookie est supprimé dès que le navigateur est fermé
+
+
+document.cookie; // liste des cookies
+document.cookie = 'user=John' // créer un update un cookie user
+document.cookie = 'user=John; path=/; domain=xxx.com; secure'
+
+
+*** options
+-domain : domaine de validité (domain=xxx.com)
+-path : dossier d'accessibilité (path=/absolute_folder)
+-expires : date d'expiration au format UTC (14 Jun 2017 00:00:00 PDT)
+-max-age : en secondes (max-age=84000)
+-secure : à envoyer uniquement en HTTPS et pas en HTTP
+-samesite : empêcher le navigateur d’envoyer un cookie lors d’une requête cross-site
+    -samesite="strict" : ne jamais envoyer un cookie si l’utilisateur arrive sur le site depuis un autre site
+    -samesite="lax" : comme 'strict', sauf que les cookies provenant de requêtes GET seront envoyés
+
