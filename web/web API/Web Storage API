@@ -1,4 +1,0 @@
--fournit des mécanismes par lesquels les navigateurs peuvent stocker des paires clé / valeur
--2 mécanismes :
-    -sessionStorage : maintient une zone de stockage distinct pour chaque origine donnée qui est disponible pour la durée de la session de la page
-    -localStorage : comme sessionStorage, mais persiste même lorsque le navigateur est fermé et rouvert

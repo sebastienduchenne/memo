@@ -1,0 +1,13 @@
+-mixin = une classe contenant des méthodes pouvant être utilisées par d'autres classes sans hériter d'elles. C'est un genre d'héritage multiple
+
+
+*** propriétés
+-WindowOrWorkerGlobalScope.caches
+-WindowOrWorkerGlobalScope.indexedDB
+-WindowOrWorkerGlobalScope.isSecureContext
+-WindowOrWorkerGlobalScope.origin
+
+*** méthodes
+-WindowOrWorkerGlobalScope.fetch()
+-WindowOrWorkerGlobalScope.setTimeout()
+-WindowOrWorkerGlobalScope.setInterval()

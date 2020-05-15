@@ -1,0 +1,14 @@
+-permet de stocker des données sous forme de paires clé / valeur
+-2 mécanismes :
+    -sessionStorage : les données expirent à la fin de la session de navigation actuelle (une session de navigation dure tant que le navigateur est ouvert), donc même après un rechargement de la page
+    -localStorage : les données persistent même lorsque le navigateur est fermé
+-les méthodes sont les même dans les 2 mécanismes
+-avantages : les cookies sont envoyés au serveur et ralentissent la navigation. Le web storage ne fait pas ça et ne ralentit pas la navigation
+
+
+*** méthodes
+sessionStorage.setItem('clé', 'valeur'); // Enregistrer des données
+sessionStorage.length // nombre de données stockées.
+let data = sessionStorage.getItem('clé'); // Récupérer des données
+sessionStorage.removeItem('clé'); // Supprimer une paire clé/valeur
+sessionStorage.clear(); // Supprimer toutes les données

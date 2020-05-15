@@ -9,7 +9,7 @@
     -service worker = serveur proxy
     -worker chrome = pour dev des extensions firefox
     -audio worker = traitement audio
-
+-algorithme de clonage structuré : sérialiser les objets JavaScript complexes
 
 
 >>> workers partagés, interface SharedWorker

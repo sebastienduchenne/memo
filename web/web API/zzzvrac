@@ -1,7 +1,6 @@
 -API Window -> AbstractView
 -Document -> Node -> EventTarget
 -Element  ->
--FetchAPI : objet Request et Response
 -Browser Object Model (BOM) : regroupe un ensemble d'API
 
 
@@ -36,9 +35,10 @@
 -EventTarget : interface que vont implémenter les objets qui peuvent recevoir des évènements
 -Event : représente tout événement qui a lieu dans le DOM (FetchEvent)
 -Node : interface de base pour une grande partie des objets du DOM
--Blob : représente un objet, semblable à un fichier, qui est immuable et qui contient des données brutes
+-Blob : représente un objet qui est immuable et qui contient des données brutes
 -Window
 -Element : interface de base pour tous les objets d’un document
+-File : interface qui fournit des informations sur des fichiers
 
 
 *** Accès
