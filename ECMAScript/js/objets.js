@@ -1,16 +1,24 @@
 /*
 = collection de paires nom-valeur qui peuvent être des données apparentées et/ou de fonctionnalités
 -aussi appelé tableau associatif
+= ensembles dynamiques de propriétés 
 -2 types d'objets
   -objet littéral = on écrit littéralement le contenu de l'objet pour le créer
   -objet instancié = créé depuis une classe
 -Le nom de l'objet agit comme un espace de noms
 -propriété et méthode sont des membres
 -les propriétés sont encapsulés
+-les objets ont un prototype
 -les objets sont muables (mutable) : on peut donc augmenter les nouvelles instances en leur donnant de nouveaux champs et méthodes. Ces nouvelles instances peuvent à leur tour servir de prototypes pour de nouveaux objets. Nul besoin de classes pour créer des tas d’objets similaires
 -property access : les objets ont des références qui pointent vers elles, il existe différentes stratégies d'accès à une propriété
 -geler un objet = rendre immuable un objet
-
+-propriétés en propre = propriétés directement rattachées à un objet
+-[[Prototype]] : faire référence au prototype d'un objet
+-accès au prototype de obj :
+  -obj.__proto__ : OBSOLETE
+  -Object.getPrototypeOf(obj) et Object.setPrototypeOf(obj)
+-tous les objets descendent d'Object
+-tous les objets héritent des méthodes et des propriétés de Object.prototype, et peuvent être surchargées
 */
 var personne = {
     prenom: 'Martin',
@@ -34,7 +42,7 @@ var maValeurDeDonnee = '1.75m'
 personne[monNomDeDonnee] = maValeurDeDonnee //Nous n'aurions pas pu construire ce membre avec la notation avec un point, car celle-ci n'accepte qu'un nom et pas une variable pointant vers un nom.
 
 
-// ******** delete ********
+// ******** opérateur delete ********
 delete personne.interets
 
 

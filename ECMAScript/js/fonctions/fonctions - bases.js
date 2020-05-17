@@ -32,6 +32,7 @@
 -par défaut, la valeur des paramètres d'une fonction sera undefined
 -return; //return undefined
 
+-func.prototype : définir le prototype à affecter aux instances des objets créés par func
 
 https://medium.com/codeshake/pour-les-jedis-javascript-%C3%A9pisode-i-au-coeur-des-fonctions-partie-1-8b2cd1cab002
 */
