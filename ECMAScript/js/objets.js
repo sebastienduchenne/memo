@@ -1,10 +1,11 @@
 /*
 = collection de paires nom-valeur qui peuvent être des données apparentées et/ou de fonctionnalités
 -aussi appelé tableau associatif
-= ensembles dynamiques de propriétés 
+= ensembles dynamiques de propriétés
+= un ensemble cohérent des propriétés et des fonctions
 -2 types d'objets
   -objet littéral = on écrit littéralement le contenu de l'objet pour le créer
-  -objet instancié = créé depuis une classe
+  -objet instancié = créé depuis une classe / une fonction
 -Le nom de l'objet agit comme un espace de noms
 -propriété et méthode sont des membres
 -les propriétés sont encapsulés
@@ -40,6 +41,38 @@ personne.auRevoir = function() { alert("Bye bye tout le monde !"); }//ajout mét
 var monNomDeDonnee = 'hauteur'
 var maValeurDeDonnee = '1.75m'
 personne[monNomDeDonnee] = maValeurDeDonnee //Nous n'aurions pas pu construire ce membre avec la notation avec un point, car celle-ci n'accepte qu'un nom et pas une variable pointant vers un nom.
+
+
+// ******** créer un objet avec une fonction constructeur
+function User(lastname, firstname){
+  this.lastname = lastname;
+  this.firstname = firstname;
+  this.presentation = function(){
+    console.log(this.lastname + " " + this.firstname)
+  }
+}
+let user1 = new User("Doe", "John")
+
+/*
+-on copie la fonction presentation() autant de fois que l'on créé un objet User ce qui n'est pas optimal. La solution est de créer un prototype
+-une propriété __proto__ est ajouté automatiquement et correspond au prototype du constructeur. On peut lui ajouter des propriétés et des fonctions qui seront hérités aux objets créés par le constructeur
+
+user1 :
+  lastname : "Doe"
+  firstname : "John"
+  __proto__ : prototype de Object
+      constructor
+      hasOwnProperty
+      ...
+
+          Array
+            |
+            v
+b ---> Array.prototype
+
+
+
+*/
 
 
 // ******** opérateur delete ********

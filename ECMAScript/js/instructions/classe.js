@@ -3,6 +3,13 @@
 -pas de hoisting pour les déclarations de classes
 -les classes sont un sucre syntaxique des prototypes d'objet
 -mixin = classe contenant des méthodes pouvant être utilisées par d'autres classes sans avoir besoin d'hériter d'elles
+-les déclarations qui composent le corps de la classe sont exécutées en mode strict
+
+
+*** constructor
+-créer et initiliaser un objet
+-il ne peut y avoir qu'une seule fonction constructor dans une classe
+-si on ne définit pas de constructor, un constructeur est ajouté par défaut
 */
 
 //----------------- syntaxe avec ES6
@@ -15,7 +22,7 @@ class Employé {
 
   getNom() {return this.nom;}
 
-  static func(){
+  static func(){ // fonction statique
     //...
   }
 }
@@ -50,6 +57,8 @@ let User = class { // nommée : let User = class MyClass {
 
 
 //---------------------héritage
+//étendre Object.prototype = monkey patching. Déconseillé car brise l'encapsulation
+
 class Rectangle {
   constructor(hauteur, largeur) {
     this.name = 'Rectangle';
@@ -70,4 +79,3 @@ class Carré extends Rectangle {
     this.name = 'Carré';
   }
 }
-
