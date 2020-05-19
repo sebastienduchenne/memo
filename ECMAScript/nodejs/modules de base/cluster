@@ -1,0 +1,37 @@
+-mode cluster lancer l'appli sur plusieurs coeurs
+-2 types de process :
+  -mode master : le premier process, sert à dispatcher les requêtes aux worker
+  -worker process : traitent les requêtes
+-il faut lancer autant d’instances qu’il y a de cores sur la machine
+-les process partagent le même port
+-communication entre les process par IPC
+
+*** méthodes
+
+cluster.isMaster
+cluster.isWorker
+cluster.setupMaster() : changer le comportement par défaut de l'appel à fork()
+cluster.fork() : faire un fork
+cluster.disconnect()
+
+
+*** exemple
+
+var cluster = require("cluster");
+var numCPUs = require("os").cpus().length;
+
+if (cluster.isMaster) {
+  var i = 0;
+
+  while (i < numCPUs) {
+    cluster.fork();
+    i++;
+  }
+
+  cluster.on("exit", function(worker, code, signal) {
+    console.log("worker " + worker.process.pid + " died");
+  });
+
+} else {
+    // lancement serveur
+}

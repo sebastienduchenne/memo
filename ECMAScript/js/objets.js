@@ -21,6 +21,7 @@
 -tous les objets descendent d'Object
 -tous les objets héritent des méthodes et des propriétés de Object.prototype, et peuvent être surchargées
 */
+
 var personne = {
     prenom: 'Martin',
     interets: ['musique', 'skier'],
@@ -95,3 +96,22 @@ const { a, ...x } = myObject;
 // renvoie true si une propriété donnée appartient à l'objet donné
 const car = { make: 'Honda', model: 'Accord', year: 1998 };
 console.log('make' in car);
+
+
+/* ******** appel par pratage ou call by sharing ********
+-la valeur d'une variable objet est une référence (l'adresse en mémoire) à l'objet
+-appel de fonction avec paramètre : passage de la référence de l'objet
+-ajout / modif d'une propriété : affecte l'objet d'origine
+-réaffectation du paramètre : nouvelle référence/adresse affecté à la variable donc pas d'effet sur l'objet d'origine
+*/
+function fonction(a, b, c) {
+  a.prop2 = "prop2" // objet d'origine affecté
+  a = {'prop2': 'another value'}; // objet d'origine non affecté
+  b = "another string";
+  c = 10;
+}
+var obj1 = {'prop': 'value'};
+var str = 'string';
+var num = 2;
+fonction(obj1, str, num);
+console.log(obj1, str, num); // output : {'prop': 'value'}, 'string', 2

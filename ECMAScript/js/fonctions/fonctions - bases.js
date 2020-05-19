@@ -137,3 +137,8 @@ function pow(x, n) {
     -this.constructor.staticMethod()
     -ClassName.staticMethod()
 */
+
+// *** check initialisation d'un paramètre d'une fontion
+function f(par){
+  if (typeof par !== "undefined" && par !== null){}
+}

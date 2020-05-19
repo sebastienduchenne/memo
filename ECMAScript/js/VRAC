@@ -4,8 +4,4 @@
 -false, 0, la chaîne vide (""), NaN, null et undefined deviennent toutes false
 -valeur primitive : immuable
 -wrapper = enveloppe objet, manipule qqch comme un objet comme number (fonction qui est destinée à appeler une ou plusieurs autres fonctions)
--l'initialisation dans une fonction, pour un objet ou un tableau, n'a pas d'effet en dehors de la portée de la fonction. On dit que l'argument est passé par échange (call-sharing) plutôt que par référence
-
-
-*** check
-if (typeof myObj !== "undefined" && myObj !== null){}
+-JS effectue automatiquement les conversions entre chaînes primitives et objets String

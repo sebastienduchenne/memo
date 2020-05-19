@@ -12,11 +12,6 @@
 -Propriétés ACID : atomicité, cohérence, isolation et durabilité
 
 
-*** archi
--inversion de contrôle = le framework prend en charge l'exécution principale du programme et non le programe lui-même
--injection de dépendance = une implémentation de l'inversion de contrôle. Créer dynamiquement (injecter) les dépendances entre les différents objets
-
-
 *** linux
 /etc/systemd
 pkill -e chrome
@@ -37,6 +32,16 @@ apt-get
 -puppet = gestion de la configuration de serveurs esclaves
 -jenkins = outils d'intégration continue
 -NuGet = package manager
+
+
+*** stratégie d'évaluation
+= règles de calcul d'une expression
+-2 types : 
+    -strict : les arguments sont calculés avant d'être utilisés
+    -non strict : les arguments sont calculés au moment où ils sont utilisés
+-Appel par valeur : copie de l'objet
+-Appel par référence : une référence à l'objet
+-Appel par partage : copie de la référence à l'objet
 
 
 *** Liens

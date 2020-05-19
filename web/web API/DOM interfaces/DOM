@@ -7,3 +7,6 @@ script -> DOM -> page web
 
 -indépendant de tout langage de programmation
 -contient des objets de type Node
+
+
+Node.appenchild()

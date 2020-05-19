@@ -1,5 +1,7 @@
 = une solution générale pour un problème récurrent dans un contexte donnée
--23 patterns
+-inversion de contrôle = le framework prend en charge l'exécution principale du programme et non le programe lui-même
+-injection de dépendance = une implémentation de l'inversion de contrôle. Créer dynamiquement (injecter) les dépendances entre les différents objets
+
 
 
 -Les modèles de création
