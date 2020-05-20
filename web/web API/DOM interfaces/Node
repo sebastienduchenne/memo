@@ -1,0 +1,7 @@
+
+Node -> EventTarget
+
+
+*** méthodes
+
+-Node.appenchild(childNode) : ajoute childNode comme dernier enfant à Node

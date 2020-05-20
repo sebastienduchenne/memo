@@ -1,4 +1,9 @@
--javascript
--typescript
 -artifactory
 -compodoc = générer automatiquement une documentation à partir de commentaire en JS
+-moteur de rendu HTML = composant logiciel d'un navigateurs permettant d'afficher une page web
+    -Firefox : Gecko
+-moteur JS
+    -Google : V8
+    -Mozilla : Rhino
+    -Netscape : SpiderMonkey
+    -Apple : JavaScriptCore
