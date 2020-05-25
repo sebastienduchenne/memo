@@ -3,4 +3,4 @@
 -document = ensemble de paires clé-valeur
 -collection = ensemble de documents. Equivalent d'une table en SQL
 -asynchrone
--ajout auto de _index lors d'une insertion
+-ajout auto d'un ObjectId unique, nommé '_id', lors d'une insertion

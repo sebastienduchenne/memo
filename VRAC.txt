@@ -9,7 +9,30 @@
 -inline caching = technique d'optimisation
 -garbage collector
 -computer cluster / grappe de serveur
--Propriétés ACID : atomicité, cohérence, isolation et durabilité
+-architecture 3 tiers
+    -presentation layer
+    -business logic layer
+    -data access layer
+-Infrastructure as a Service (IaaS) : AWS
+-Platform as a Service (PaaS) : plateforme de dev
+-Software as a Service (SaaS) : Microsoft Office 365
+-Backend as a Service (BaaS) : fournir aux applications mobiles et Web des services cloud backend (stockage de fichiers, gestion de comptes, ...)
+-développeur full stack = familiarisé avec les différentes couches d'une appli :
+    -réseau et environnement hote
+    -données
+    -business logic
+    -API
+    -UI
+    -UX
+    -besoin du consommateur
+
+
+*** transaction
+-propriétés ACID
+    -atomicité : la transaction se fait au complet ou pas du tout
+    -cohérence : la transaction amènera le système d'un état valide à un autre état valide
+    -isolation : pas de dépendance entre les transactions
+    -durabilité : les résultats doivent être enregistrés de façon permanente
 
 
 *** linux

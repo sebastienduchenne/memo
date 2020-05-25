@@ -1,6 +1,25 @@
+-Not Only SQL
 -une famille de SGBD
+-ni schéma, ni structure de stockage donc pas de langage, donc il faut savoir ce que l'on cherche
 -s'écarte du paradigme classique des bases relationnelles
 -pas de définition claire
+-avantages
+    -scalable
+    -plus facile à déployer
+
+
+*** catégories
+-gestion de documents
+    -traitement sur des documents
+    -techno : mongoDB
+-orienté colonne
+    -traitement sur des colonnes
+    -techno : BigTable, HBase, Spark SQL, Elasticsearch
+-base orienté graphe
+    -
+    -techno : Neo4j, OrientDB, FlockDB
+-key-value
+    -techno : Redis
 
 
 *** familles
@@ -16,3 +35,6 @@
 -CouchDB
 -SimpleDB : de Amazon
 -HBase
+-elasticsearch
+-MemCached
+-Azure Cosmos DB
