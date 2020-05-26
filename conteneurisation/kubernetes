@@ -1,4 +1,4 @@
--fournir une plate-forme permettant d'automatiser le déploiement, la montée en charge et la mise en œuvre de conteneurs d'application sur des clusters de serveurs
+-plate-forme permettant d'automatiser le déploiement, la montée en charge et la mise en œuvre de conteneurs d'application sur des clusters de serveurs
 -souvent utilisé avec docker
 -pod = vue abstraite de composants conteneurisés
 -chaque pod possède une adresse IP unique
@@ -11,3 +11,4 @@
 -kubelet = responsable de l'état d'exécution de chaque nœud
 -kube-proxy
 -cAdvisor = agent qui surveille et récupère les données de consommation des ressources et des performances comme le processeur, la mémoire, ainsi que l'utilisation disque et réseau des conteneurs de chaque node
+-computer cluster / grappe de serveur / ferme de calcul = techniques consistant à regrouper plusieurs ordinateurs indépendants appelés nœuds

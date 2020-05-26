@@ -1,0 +1,33 @@
+-REmote DIctionary Server ou serveur de dictionnaire distant
+-base clef-valeur
+-écrit en C ANSI et distribué sous licence BSD
+-vise à fournir les performances les plus élevées possibles
+
+
+*** caractéristiques
+-manipule des type de données simples : chaînes de caractères, tableaux associatifs, listes, ensembles et ensembles ordonnés
+-utilisation de mémoire virtuelle en cas de taille des données trop importante
+-offre la possibilité de « capturer » l'état de la base dans un fichier
+-propose différentes structures de données : clé/valeur, SortedSet, liste à double entrées
+-mono-threadé, architecture événementielle non bloquante
+
+
+*** usages
+-couche de mise en cache = conserve l'intégralité des données en RAM. Cela permet d'obtenir d'excellentes performances en évitant les accès disques, particulièrement coûteux sur ce plan
+-système de messagerie pub / sub = mécanisme publish-subscribe permettant d'émettre des événements aux différents clients connectés sur la base
+-gestion de sessions
+
+
+*** conseils
+-ne pas oublier de sauvegarder les données car elles sont effacées quand le serveur s'arrête
+-optimiser la taille des structures afin de limiter la consommation mémoire
+
+
+*** installation
+-> prérequis : avoir MAJ tcl
+wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+sudo cp src/redis-server /usr/local/bin/
+sudo cp src/redis-cli /usr/local/bin/

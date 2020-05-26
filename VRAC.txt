@@ -3,20 +3,14 @@
 . fournisseur cloud : AWS
 -algorithme hyperloglog = probabiliste
 . le ~ devant une variable inverse tout les bits de valeurs
--MapReduce = patron d'architecture, inventé par Google, dans lequel sont effectués des calculs parallèles, et souvent distribués, de données très volumineuses (> 1 To)
 -Framework = cadre de travail, apporte un outil qui encadre notre travail (création formulaire, tests...), impose un certain nombre de règles afin d’augmenter la productivité dans un travail de groupe et faire plus facilement de la maintenance
 -vector clock
 -inline caching = technique d'optimisation
 -garbage collector
--computer cluster / grappe de serveur
 -architecture 3 tiers
     -presentation layer
     -business logic layer
     -data access layer
--Infrastructure as a Service (IaaS) : AWS
--Platform as a Service (PaaS) : plateforme de dev
--Software as a Service (SaaS) : Microsoft Office 365
--Backend as a Service (BaaS) : fournir aux applications mobiles et Web des services cloud backend (stockage de fichiers, gestion de comptes, ...)
 -développeur full stack = familiarisé avec les différentes couches d'une appli :
     -réseau et environnement hote
     -données
@@ -25,6 +19,19 @@
     -UI
     -UX
     -besoin du consommateur
+-CDN = content delivery network ou réseau de diffusion de contenu (RDC)
+-Firebase = ensemble de services d'hébergement d'applications
+
+
+*** cloud computing
+-accès à des services informatiques (serveurs, stockage, mise en réseau, logiciels) via internet à partir d’un fournisseur
+-services
+    -Infrastructure as a Service (IaaS) : AWS
+    -Platform as a Service (PaaS) : plateforme de dev
+    -Software as a Service (SaaS) : Microsoft Office 365
+    -Backend as a Service (BaaS) : fournir aux applications mobiles et Web des services cloud backend (stockage de fichiers, gestion de comptes, ...)
+    -MBaaS
+-Microsoft Azure
 
 
 *** transaction
@@ -46,18 +53,14 @@ apt-get
 
 
 *** technologies
--kubernetes
 -langage closure
--Amazon S3
--cassandra
--microsoft Azure
 -cloudflare
 -puppet = gestion de la configuration de serveurs esclaves
 -jenkins = outils d'intégration continue
 -NuGet = package manager
 
 
-*** stratégie d'évaluation
+*** stratégies d'évaluation d'une expression
 = règles de calcul d'une expression
 -2 types : 
     -strict : les arguments sont calculés avant d'être utilisés
@@ -65,8 +68,3 @@ apt-get
 -Appel par valeur : copie de l'objet
 -Appel par référence : une référence à l'objet
 -Appel par partage : copie de la référence à l'objet
-
-
-*** Liens
-https://ignition-program.com/blog/guide-code-nouvelles-technologies-a-utiliser-2018/
-https://vinceops.me/git-astuces-productivite-1/

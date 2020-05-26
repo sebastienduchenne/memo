@@ -1,0 +1,11 @@
+-base orientée colonnes
+-gérer des quantités massives de données sur un grand nombre de serveurs (distribué)
+-faible latence pour les opérations de tous les clients
+-open source
+-fondation Apache
+-écrit en Java
+-CQL (Cassandra Query Language) : langage de requête spécifique
+-Elassandra = Cassandra + Elasticsearch
+-supporte MapReduce
+-aucun point de défaillance unique (single point of failure ou SPOF) (= point d'un système informatique dont le reste du système est dépendant et dont une panne entraine l'arrêt complet du système)
+-prise en charge des propriétés ACID

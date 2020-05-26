@@ -1,0 +1,43 @@
+-Not Only SQL
+-une famille de SGBD qui ne comporte ni schéma, ni structure de stockage, ni langage, donc il faut savoir ce que l'on cherche
+-s'écarte du paradigme classique des bases relationnelles
+-pas de définition claire
+-NoSQL orienté-agrégats : agrégats de données
+
+
+*** avantages par rapport aux BD SQL
+-scalability
+-disponibilité et cohérence à la fois contrairement à SQL qui doit faire un tradeoff
+-plus facile à déployer
+-plus souple à être subdivisé et distribué sur les serveurs
+-mapping facile
+
+
+********** catégories de BD **********
+
+*** clé-valeur
+-stockage des données en clé-valeur
+-avantages
+    -facilement scalable
+    -temps de lecture / écriture bas
+-technos : Redis, Voldemort, Amazon DynamoDB
+
+
+*** orientée documents
+-avantages
+    -flexibilité
+-inconvénients
+    -duplication des données
+-technos : MongoDB, CouchBase, CouchDB, DynamoDB
+
+
+*** orientée colonne
+-avantages
+    -haute capacité de stockage
+    -accès rapide aux données
+-technos : BigTable, HBase, Spark SQL, Elasticsearch, Cassandra
+
+
+*** orientée graphe
+-pour des données relationnelles : social, financier
+-technos : Neo4j, OrientDB, FlockDB

@@ -1,6 +1,0 @@
--schéma de définition = modéliser les données
--modèle = à partir d'un schéma
--document = ensemble de paires clé-valeur
--collection = ensemble de documents. Equivalent d'une table en SQL
--asynchrone
--ajout auto d'un ObjectId unique, nommé '_id', lors d'une insertion

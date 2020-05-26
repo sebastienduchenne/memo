@@ -1,0 +1,7 @@
+-scalability = capacité à s'adapter à un changement d'ordre de grandeur de la demande
+-cohérence des données (consistency) = capacité pour un système à refléter, sur la copie d'une donnée, les modifications intervenues sur d'autre copies de cette donnée
+-disponibilité des données
+-Amazon S3 = Amazon Simple Storage Service, part de Amazon Web Service
+-SimpleDB de Amazon
+-MemCached
+-Azure Cosmos DB de Microsoft

@@ -1,0 +1,98 @@
+-patron de conception (design pattern) = arrangement caractéristique de modules, une solution générale pour un problème récurrent dans un contexte donnée
+-patron d'architecture = une solution générale et réutilisable à un problème d'architecture récurrent. Plus large que les design pattern
+
+
+*** Fonctionnel
+-Fermeture
+-Curryfication
+-Composition de fonctions
+-Foncteur
+-Monade
+-Générateur
+
+
+*** Patrons d'architecture
+
+-ADR
+-Active record
+-Broker
+-Client-serveur
+-POC
+-DAO
+-DTO
+-DDD
+-ECB
+-ECS
+-EDA
+-Front controller
+-Identity map
+-Interceptor
+-Implicit invocation
+-Inversion de contrôle = le framework prend en charge l'exécution principale du programme et non le programe lui-même
+    -injection de dépendance = une implémentation de l'inversion de contrôle. Créer dynamiquement (injecter) les dépendances entre les différents objets
+-Model 2
+-MOM
+-Microservices
+-MVA
+-MVC
+-MVP
+-MVVM
+-Monolithic
+-Architecture en couches
+-Naked objects
+-P2P
+-Publish-subscribe
+-PAC
+-REST
+-SOA
+-Service locator
+-SN
+-SBA
+-Specification
+
+
+*** Design pattern
+
+-Les modèles de création
+    -factory
+    -abstract factory
+    -builder
+    -prototype
+    -singleton
+-Les modèles de structuration
+    -façade
+    -decorator
+    -Flyweight
+    -Composite
+    -Adapter
+    -Bridge
+    -Flyweight
+    -Proxy
+-Les modèles de comportement
+    -observer
+    -visitor
+    -Chain of Responsablity
+    -Command
+    -Interpreter
+    -Iterator
+    -Mediator
+    -Memento
+    -State
+    -Strategy
+    -Template Method
+
+
+*** Autres patrons
+
+-Modèle de Seeheim
+-Mémoïsation = mémoriser les valeurs retournées par une fonction
+-Post-redirect-get
+-Support d'initialisation à la demande
+-Signaux et slots
+-Désignation chaînée
+-Double-checked locking
+-MapReduce
+    = patron d'architecture dans lequel sont effectués des calculs parallèles de données très volumineuses
+    -données distribuées dans un cluster de machines pour être traitées
+-Reactor
+-Fonction de rappel
