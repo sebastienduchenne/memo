@@ -1,0 +1,8 @@
+-accès à des services informatiques (serveurs, stockage, mise en réseau, logiciels) via internet à partir d’un fournisseur
+-services
+    -Infrastructure as a Service (IaaS) : AWS
+    -Platform as a Service (PaaS) : plateforme de dev
+    -Software as a Service (SaaS) : Microsoft Office 365
+    -Backend as a Service (BaaS) : fournir aux applications mobiles et Web des services cloud backend (stockage de fichiers, gestion de comptes, ...)
+    -MBaaS
+-Microsoft Azure

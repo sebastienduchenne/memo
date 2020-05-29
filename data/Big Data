@@ -1,0 +1,18 @@
+-Data lake = dépôt de données brutes accessible en lecture seule
+-datanode = un serveur d'un réseau
+-namenode = serveur central. route et administre les nodes, distribue les chunks, ne fait pas de traitements. Il est rack-aware
+-redondance des chunks
+-secondary namenode = prend le relais si le namenode tombe en panne
+-élasticité = capacité d'un système à s'adapter en fonction du nombre de serveurs et de la quantité de données à répartir
+
+
+*** sharding
+-distribuer des chunks (bout de fichiers) sur un ensemble de serveurs
+-3 familles
+    -HDFS : distribution
+    -clustered index : BTree
+    -consistent hashing : tables de hachage
+
+
+*** HDFS (Hadoop Distributed File System)
+= technique de distribution de fichiers volumineux

@@ -3,5 +3,13 @@
 -disponibilité des données
 -Amazon S3 = Amazon Simple Storage Service, part de Amazon Web Service
 -SimpleDB de Amazon
--MemCached
 -Azure Cosmos DB de Microsoft
+
+
+*** Théorème de Brewer ou "théorème de CAP"
+-3 propriétés pour caractériser les bases de données
+    -Consistency (cohérence)
+    -Availability (disponibilité)
+    -Partition Tolerance (distribution)
+-théorème : dans toute base de données, on ne peut respecter au plus que 2 propriétés parmi la cohérence, la disponibilité et la distribution
+-le triangle de CAP : on peut placer une BD sur une face d'un triangle

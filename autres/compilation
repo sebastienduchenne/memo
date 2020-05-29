@@ -1,3 +1,4 @@
+*** compilation JIT
 = compilation à la volée, traduction de bytecode en code machine natif au moment de l'exécution
 -si il existe une version compilée d'un bout de code, elle sera appelée
 -lorsque le code est exécuté plusieurs fois, le profileur repère les bouts qui sont souvent exécutés (chauds) et les donne au compilateur pour qu'il créée une version optimisée du code qui sera ensuite stockée. A la prochaine exécution du code, c'est le code optimisé qui sera appelé
