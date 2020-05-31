@@ -1,0 +1,22 @@
+-browserStack
+-cypress
+-protractor
+-karma
+-jasmine
+-selenium
+-mocha
+-allure
+-protractorImageComparison
+
+
+*** types de test
+-par niveau
+    -unitaire (karma)
+    -intégration
+    -système
+    -end to end (protractor, selenium)
+
+-par famille
+    -de charge (gatling)
+    -de validation
+    -de non régression

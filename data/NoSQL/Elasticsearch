@@ -1,18 +1,18 @@
--moteur de texte distribué
--serveur pour l'indexation et la recherche des données
 -base de données NoSQL orientée colonnes
--similaire à Solr
--utilise Lucene
--Il fournit un moteur de recherche distribué et multi-entité à travers une interface REST
--Il est associé à Kibana (visualiseur de données) et Logstash (ETL) (initialement destiné aux logs)
-
+-moteur de texte distribué
+-serveur pour l'indexation et la recherche des données dans des documents orientés texte
+-il fournit un moteur de recherche distribué (Lucene) et multi-entité à travers une interface REST
+-suite Elastic : 
+  -Elasticsearch
+  -Kibana : visualiseur de données
+  -Logstash
 
 
 *** fonctionnement
 -Elasticsearch intègre un moteur Lucene qui va s’occuper d’extraire les mots d’une collection de documents et de préparer des colonnes de mots
--pour ES : un mot = une colonne de documents avec pour valeur le poids du mot dans chacun des documents (mot1:{doc1:0,7; doc2:0,3; doc3:0})
--La couche de distribution effectuée par Elasticsearch permet de router les requêtes, paralléliser les traitements, répliquer les données en cas de panne et augmenter la capacité d’indexation de Lucene.
--Chaque serveur est donc un Lucene, en charge d’une partie des documents
+-un mot = une colonne de documents avec pour valeur le poids du mot dans chacun des documents (mot1:{doc1:0,7; doc2:0,3; doc3:0})
+-la couche de distribution effectuée par Elasticsearch permet de router les requêtes, paralléliser les traitements, répliquer les données en cas de panne et augmenter la capacité d’indexation de Lucene
+-chaque serveur est un Lucene en charge d’une partie des documents
 
   Elasticsearch
         |
@@ -21,7 +21,7 @@
 l  l  l  l  l  l
 
 
--cluster ElasticSearch : composé de plusieurs nœuds qui communiquent entre eux. Chaque nœud correspond à une instance d’ElasticSearch en cours d’exécution, et peut être ajouté ou retiré du cluster même lorsque ce dernier est en train de fonctionner.
+-cluster Elasticsearch : composé de plusieurs nœuds qui communiquent entre eux. Chaque noeud correspond à une instance d’Elasticsearch en cours d’exécution, et peut être ajouté ou retiré du cluster même lorsque ce dernier est en train de fonctionner
 -noeud
 
 -Index : une demande de recherche sur Elasticsearch ne s’applique jamais au contenu lui-même, mais toujours à l’index. Tous les contenus de tous les documents sont stockés et déjà préparés dans ce dossier ; la recherche prend donc peu de temps. Il s’agit d’un index inversé : pour chaque terme de recherche, l’emplacement où le terme peut être trouvé est indiqué.
@@ -29,15 +29,12 @@ l  l  l  l  l  l
 -Field : un document se compose de plusieurs champs. En plus du champ de contenu proprement dit, un document va contenir d’autres métadonnées. Par exemple, Elasticsearch peut être utilisé pour rechercher des métadonnées sur l’auteur ou sur la date de création.
 
 
-*** Lucene
--logiciel pour créer des moteurs de recherche
+*** moteur de recherche Lucene
+-logiciel Apache pour créer des moteurs de recherche
 -indexation et recherche
 -un document contient des mots. Quand on fait une recherche, on évalue la pertinence de chaque mot du document et on leur associe un poids qui va nous servir pour établir un score pour chaque requête
 -le poids d'un mot dépend de sa fréquence dans le texte, la taille du texte, sa fréquence dans toute la collection de documents
 
 
-
-*** liens
-https://www.supinfo.com/articles/single/1418-introduction-elasticsearch
-https://www.ionos.fr/digitalguide/serveur/configuration/elasticsearch/
-https://blog.zenika.com/2012/11/14/premiers-pas-avec-elasticsearch-partie-1/
+*** interface Kibana
+-interface graphique permettant de visualiser, sous forme de diagramme et de graphique, des données présentes dans une base Elasticsearch 
