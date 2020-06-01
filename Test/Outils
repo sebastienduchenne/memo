@@ -1,0 +1,20 @@
+*** outils de test
+-browserStack
+-cypress
+-protractor
+-karma
+-jasmine
+-selenium
+-mocha
+-allure
+-protractorImageComparison
+-Jmeter
+-QC
+-Octane
+-X-Ray
+
+
+*** Selenium
+= outil pour automatiser des tests d’interfaces Web
+-Selenium IDE : extension permettant de créer des scénario
+-Selenium WebDriver : API permettant de programmer des actions sur les interfaces web

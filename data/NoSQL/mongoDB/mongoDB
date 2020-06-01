@@ -3,6 +3,7 @@
 -collection = ensemble de documents BSON. Equivalent d'une table en SQL
 -database = ensemble de collections
 -asynchrone
+-assure la cohérence des données
 
 
 *** document

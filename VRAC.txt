@@ -45,7 +45,6 @@ apt-get
 -langage closure
 -cloudflare
 -puppet = gestion de la configuration de serveurs esclaves
--jenkins = outils d'intégration continue
 -NuGet = package manager
 
 
@@ -57,3 +56,11 @@ apt-get
 -Appel par valeur : copie de l'objet
 -Appel par référence : une référence à l'objet
 -Appel par partage : copie de la référence à l'objet
+
+
+*** intégration et livraison continue
+-intégration continue = lancer des tests pour vérifier qu'à chaque modification du code source, il n'y a pas de régressions
+-livraison continue = les fonctionnalités logicielles sont livrées fréquemment mais ne sont pas déployées
+-déploiement continu = les fonctionnalités sont livrées fréquemment de manière automatisée
+-jenkins = outils d'intégration continue
+-GitLab CI = outils d'intégration continue
