@@ -1,3 +1,9 @@
+= ensemble d’instructions et de métadonnées qui permet de construire une nouvelle image à partir d’une autre
+.peut être optimisé pour gagner du temps
+
+
+-----------------------------------------------------------
+
 -FROM node:10.12.0-alpine
 image source
 
@@ -44,6 +50,3 @@ ajouter des fichiers locaux ou distants à l'intérieur de votre image, il est l
 COPY prend un fichier (ou répertoire) du host et de le mettre dans le conteneur.
 ADD fait la même chose, mais le src peut être une URL. Dans ce cas, docker se charge du téléchargement et de placer le fichier téléchargé dans dest. Si src est un fichier zippé et dest un répertoire docker dezzipe src (ADD file.zip /var/opt/)
 La documentation de Docker conseille d’utiliser COPY au profit de ADD, sauf pour des cas spécifiques.
-
-
-

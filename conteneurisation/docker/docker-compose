@@ -1,6 +1,7 @@
-docker-compose : pour lancer plusieurs conteneurs à partir d'un seul fichier docker-compose.yml
-créer et lancer un conteneur : dose -f docker-compose.yml -f x-override.yml up x-api
-run container : 
+= docker-compose : lancer plusieurs conteneurs à partir d'un seul fichier docker-compose.yml
+-ce fichier au format YAML précise tous les conteneurs et leurs options exécutable en une seule fois
+-créer et lancer un conteneur : dose -f docker-compose.yml -f x-override.yml up x-api
+-run container : 
     -simple : docker-compose -f docker-compose.yml up
     -avec un override : docker-compose -f docker-compose.yml -f docker-compose.PROJET.yml up
 
