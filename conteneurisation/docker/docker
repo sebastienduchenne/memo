@@ -1,50 +1,45 @@
-= plate-forme logicielle permettant de déployer des applications dans des conteneurs
--fait de la conteneurisation = les applications et leur dépendances sont mises dans des conteneurs, ce qui les isolent
--les VM virtualisent le matériel d'un serveur alors que les conteneurs virtualisent l'OS d'un serveur
+*** Approche des VM
+-les VM virtualisent le matériel et un OS
+-permet une isolation complète des appli
+-un hyperviseur permet de gérer et d'exécuter les VM
+-très couteux en espace et en CPU
+
+
+*** Docker
+= outil permettant d'exécuter des applications et leurs dependances dans des conteneurs sur n'importe quel serveur(conteneurisation)
+-tourne sur la machine hôte Linux
+-pas besoin d'un hyperviseur donc plus léger
+-représente une couche abstraite
+-fournit une API, en étend LXC, pour exécuter les conteneurs
+
+
+*** fonctionnalités de Linux utilisées
+-Cgroups ou groupes de contrôles : limiter l’accès aux ressources (mémoire, CPU, E/S, connexions réseau). Cela évite que les besoins en ressources d’un processus affectent les autres processus en cours d’exécution
+
+-namespace : limiter un processus et ses fils à une section spécifique du système sous-jacent
+
+-LXC (Linux Containers) = le format de conteneur Linux standard
+
+
+*** Conteneur
+-empaquete le code, la config et les dépendances de l'appli (bibliothèques et env d'exécution). Cela permet d'exécuter les appli sur une grande variété de systèmes hôtes
+-par défaut, les conteneurs sont isolés de leur environnement (les autres appli et la machine), ce qui évitent les conflits
+-peut se connecter au réseau de l'hôte
+-a un cycle de vie
+-connectable aux autres conteneurs par des réseaux virtuels
+-instance d'une image
 
 
 *** Avantages
--accroît la flexibilité et la portabilité d'exécution d'une application, laquelle va pouvoir tourner de façon fiable et prédictible sur une grande variété de machines hôtes
--les applications ayant des exigences différentes peuvent être exécutées indépendemment les unes des autres sans que l’overhead d’un système invité séparé doive être accepté
--économie de ressources
--délais entre écriture du code et MEP court
--partage des app et de leurs dépendances faciles
--les appli tournent dans le même environnement (local computer, live server)
--les appli sont séparées ce qui évitent les conflits
--les apps ont leur propre hôte
--lancement des tests d'intégration indépendamment
-
--les conteneurs logiciels permettent d’utiliser des applications sur plusieurs plateformes et dans différentes infrastructures sans avoir à les adapter spécifiquement aux configurations matérielles ou logicielles des différents systèmes hôtes
--Docker utilise des images portables de logiciel de conteneurs. Les images de conteneurs contiennent des applications propres, y compris toutes les bibliothèques, les fichiers binaires et les fichiers de configuration nécessaires à l’exécution des processus d’application encapsulés et n’imposent donc que des exigences minimales au système hôte en question. Ceci permet de déplacer un conteneur d’application entre différents systèmes Linux, Windows ou MacOs sans configuration supplémentaire, à condition que la plateforme Docker ait été installée en tant que couche abstraite
+-déploiement plus rapide et facile
+-moins couteux en ressources CPU que les VM
+-portabilité d'exécution des appli
+-les appli peuvent être lancées sur une grande variété de machines hôtes
 
 
 *** Image docker
--template avec des instructions pour créer un conteneur
+-un fichier dockerfile qui contient les instructions pour créer un conteneur
 -chaque image est une superposition de couche, cela permet de restaurer une version précédente
--on utilise un dockerfile pour créer une image
-
-
-*** conteneur
-= instance d'une image et configuration du conteneur (mappage de port, dossiers à partager, ...)
-- a un cycle de vie
-- léger car pas besoin d'un hyperviseur
-- connectable à un ou plusieurs réseau
-- par défaut, les conteneurs sont isolés les uns des autres et de la machine. On peut configurer des réseaux
-- par défaut, le conteneur peut se connecter au réseau de l'hote
-
-
-* docker run -i -t ubuntu /bin/bash
-1- si ubuntu absent : download ubuntu (docker pull ubuntu)
-2- création du conteneur (docker container create)
-3- allocation filesystem pour le conteneur
-4- création d'une interface pour connecter le conteneur à un réseau (avec IP)
-5- démarrage du conteneur et exécution /bin/bash
-6- si exit, le conteneur stoppe mais n'est pas supprimé
-
--un conteneur n'inclut pas d’OS, mais utilise les fonctionnalités de l’OS fournies par la machine hôte Linux :
-    -Cgroups : groupes de controles, limitent l’accès aux ressources mémoire, CPU et E/S, ce qui empêche les besoins en ressources d’un processus d’affecter d’autres processus en cours d’exécution
-    -namespace : limitent un processus et ses processus fils à une section spécifique du système sous-jacent
--éléments : bibliothèques, outils système, code et environnement d'exécution
 
 
 *** Docker engine
@@ -53,9 +48,10 @@
     -server = le daemon docker : processus en arrière plan qui gère des objets Docker (images, conteneurs, volumes et réseau), et écoute l'API
     -API-REST : interface pour communiquer avec le daemon
     -docker client CLI : programme client du point de vue de Docker qui intéragit avec le daemon via l’API-REST
--> server C API C CLI
+
+-> serveur C API C CLI
 
 
-*** services
+*** Services
 -dans une application distribuée, les différentes parties sont des services (BD, server, front)
 -un service lance une image

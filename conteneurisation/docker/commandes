@@ -1,52 +1,81 @@
-docker build --name="name"
-docker run -p 16260:8080 name
-docker images
-docker stop name
-docker rmi -f d4f
-docker container ls
-docker ps
+*** images
 
--aller dans le conteneur "name" : docker exec name
--lister images : docker image ls
--supprimer image NAME : docker rm NAME
--list running container : docker ps -a
--stopper container CONTAINER : docker container kill CONTAINER
+-pull une image
+    docker pull img_name
 
------------------------------------------------------------------------------------
+-push une image
+    docker push img_name
 
-docker build : Construire l’image à partir d’un dockerfile avec la commande
-docker run xxx : lancer le container xx
+-lister images (non intermédiaires)
+    docker images
+    docker image ls
 
-déclarer puis lancer un container
-$ docker run debian:wheezy
-docker create puis docker start
+-Build an image from a Dockerfile
+    docker build path
 
-créer un container
-$ docker create --tty --interactive --name="wonderful_mobidock" debian:7
+-créer une img à partir de changement de c
+    docker commit c_name
 
-supprimer une image
-docker rmi -f d4f //(les 3 1er caractères de l'ID)
+-supprimer des images
+    docker rmi d4f gz5
 
-docker swarm = créer un cluster selon une architecture slave master
-docker swarm init
-docker swarm join IP:2377
-docker stack deploy : déploiement
-docker commit : créer un conteneur, le modifier, puis appliquer ces changements à une nouvelle image
-docker ps : conteneur à l’état de running
-docker ps -a : tous les conteneurs running ou non
-docker logs x : voir les logs du conteneur x
-docker exec … : exécuter des commandes dans un conteneur
-docker image ls : lister images
 
-docker container ls 
-docker container ls --all 
-docker container ls -aq
+*** container
 
------------------------------------------------------------------------------------
+-créer un container (sans le run)
+    docker create img_name
+    docker container create img_name
 
-All commands:
+-exécuter le conteneur c_name (déja créé et à l'arrêt)
+    docker start c_name
 
-Command	        Description
+-create then run a container (create puis start)
+    docker run img_name
+
+-aller dans le conteneur c_name
+    docker exec c_name
+
+-list running container
+    docker ps
+    docker container ls
+
+-list all container
+    docker ps --all
+    docker container ls --all
+
+-voir les logs du conteneur c_name
+    docker logs c_name
+
+-kill running containers
+    docker container kill c_name
+
+-stop running containers
+    docker stop c_name
+
+-supprimer un container
+    docker rm c_name
+
+
+* docker run -i -t ubuntu /bin/bash
+
+1- si ubuntu absent : docker pull ubuntu
+2- docker create
+3- allocation filesystem pour le conteneur
+4- création d'une interface pour connecter le cont à un réseau (avec IP)
+5- démarrage du conteneur et exécution /bin/bash
+6- si exit, le conteneur stoppe mais n'est pas supprimé
+
+
+*** swarm
+
+-initialiser un swarm : docker swarm init
+-join a swarm : docker swarm join host:port
+
+
+*** All commands
+
+   Command	        Description
+
 docker attach	Attach local standard input, output, and error streams to a running container
 docker build	Build an image from a Dockerfile
 docker builder	Manage builds
@@ -54,55 +83,54 @@ docker checkpoint	Manage checkpoints
 docker commit	Create a new image from a container’s changes
 docker config	Manage Docker configs
 docker container	Manage containers
-docker cp	Copy files/folders between a container and the local filesystem
+docker cp	    Copy files/folders between a container and the local filesystem
 docker create	Create a new container
 docker deploy	Deploy a new stack or update an existing stack
-docker diff	Inspect changes to files or directories on a container’s filesystem
+docker diff	    Inspect changes to files or directories on a container’s filesystem
 docker engine	Manage the docker engine
 docker events	Get real time events from the server
-docker exec	Run a command in a running container
+docker exec	    Run a command in a running container
 docker export	Export a container’s filesystem as a tar archive
 docker history	Show the history of an image
 docker image	Manage images
 docker images	List images
 docker import	Import the contents from a tarball to create a filesystem image
-docker info	Display system-wide information
+docker info	    Display system-wide information
 docker inspect	Return low-level information on Docker objects
-docker kill	Kill one or more running containers
-docker load	Load an image from a tar archive or STDIN
+docker kill	    Kill one or more running containers
+docker load	    Load an image from a tar archive or STDIN
 docker login	Log in to a Docker registry
 docker logout	Log out from a Docker registry
-docker logs	Fetch the logs of a container
+docker logs	    Fetch the logs of a container
 docker manifest	Manage Docker image manifests and manifest lists
 docker network	Manage networks
-docker node	Manage Swarm nodes
+docker node	    Manage Swarm nodes
 docker pause	Pause all processes within one or more containers
 docker plugin	Manage plugins
-docker port	List port mappings or a specific mapping for the container
-docker ps	List containers
-docker pull	Pull an image or a repository from a registry
-docker push	Push an image or a repository to a registry
+docker port	    List port mappings or a specific mapping for the container
+docker ps	    List containers
+docker pull	    Pull an image or a repository from a registry
+docker push	    Push an image or a repository to a registry
 docker rename	Rename a container
 docker restart	Restart one or more containers
-docker rm	Remove one or more containers
-docker rmi	Remove one or more images
-docker run	Run a command in a new container
-docker save	Save one or more images to a tar archive (streamed to STDOUT by default)
+docker rm	    Remove one or more containers
+docker rmi	    Remove one or more images
+docker run	    Run a command in a new container
+docker save	    Save one or more images to a tar archive (streamed to STDOUT by default)
 docker search	Search the Docker Hub for images
 docker secret	Manage Docker secrets
 docker service	Manage services
 docker stack	Manage Docker stacks
 docker start	Start one or more stopped containers
 docker stats	Display a live stream of container(s) resource usage statistics
-docker stop	Stop one or more running containers
+docker stop	    Stop one or more running containers
 docker swarm	Manage Swarm
 docker system	Manage Docker
-docker tag	Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
-docker top	Display the running processes of a container
+docker tag	    Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+docker top	    Display the running processes of a container
 docker trust	Manage trust on Docker images
 docker unpause	Unpause all processes within one or more containers
 docker update	Update configuration of one or more containers
 docker version	Show the Docker version information
 docker volume	Manage volumes
-docker wait	Block until one or more containers stop, then print their exit codes
-
+docker wait	    Block until one or more containers stop, then print their exit codes
