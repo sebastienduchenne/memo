@@ -21,6 +21,8 @@
     -besoin du consommateur
 -CDN = content delivery network ou réseau de diffusion de contenu (RDC)
 -Firebase = ensemble de services d'hébergement d'applications
+-yeoman
+-scaffolding
 
 
 *** transaction

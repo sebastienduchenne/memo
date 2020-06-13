@@ -1,9 +1,2 @@
 -export NODE_ENV=production : indiquer à node que l'app est lancée en production
 -toute ce qui est créée est par défaut local au module et non global comme en JS
-
-
-*** projects
-https://github.com/Requarks/wiki
-https://github.com/mrvautin/expressCart
-https://medium.mybridge.co/45-amazing-node-js-open-source-for-the-past-year-v-2019-c774d750e925
-https://medium.mybridge.co/node-js-top-10-open-source-projects-for-the-past-month-v-mar-2018-6047fc05b1bb
