@@ -1,4 +1,5 @@
 *** classe EventEmitter
+-gérer des évènements
 -méthodes
     -on() : exécuter une fonction à un event particulier
     -emit() : déclencher un event
@@ -7,11 +8,14 @@
     -removeListener(eventName, listener) : Enlevez un listener du tableau des listeners de l'événement
 
 
+*** exemple
+
 const EventEmitter = require('events').EventEmitter
+
 const eventEmitter = new EventEmitter()
 
-eventEmitter.on('start', () => {
-  console.log('started')
+eventEmitter.on('start', (message) => {
+  console.log(message)
 })
 ...
-eventEmitter.emit('start')
+eventEmitter.emit('start', hello)

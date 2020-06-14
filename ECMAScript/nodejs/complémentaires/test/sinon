@@ -1,0 +1,17 @@
+= faire des stubs, mocks et spies
+-permet d'isoler le code
+
+
+*** exemple
+
+var sinon = require('sinon');
+
+it("returns the return value from the original function", function () {
+    var callback = sinon.fake.returns(42);
+    var proxy = once(callback);
+
+    assert.equals(proxy(), 42);
+});
+
+//let stub = sinon.stub(...).callsFake(...)
+//expect(stub.calledOnce).to.be.true

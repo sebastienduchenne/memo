@@ -1,0 +1,2 @@
+-assert.equal(actual, expected)
+-assert.notEqual(actual, expected)
