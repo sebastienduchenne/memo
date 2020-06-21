@@ -1,0 +1,13 @@
+= libération automatique de la mémoire lorsqu'un objet n'est plus utilisé
+-cycle de vie de la mémoire
+    1. allouer de la mémoire
+    2. utiliser la mémoire
+    3. libérer la mémoire
+-il est difficile de savoir quand une mémoire n'est plus utilisée. C'est un problème indécidable, donc c'est une approximation
+
+
+*** ramasse-miette
+-référence : un objet peut accéder à un autre
+-un objet n'est plus utilisé lorsqu'aucun autre le référence. Il peut être ramassé par le ramasse-miette
+-si les cycles ne sont pas éliminés => ne libère jamais la mémoire ce qui créé des fuites de mémoire
+-gestion des cycles par l'algo du mark & swipe, qui détermine quels sont les objets non atteignables
