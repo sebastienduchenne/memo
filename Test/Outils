@@ -1,17 +1,18 @@
 *** outils de test
--browserStack
+-browserStack : plateforme qui met des OS et device à disposition
 -cypress
 -protractor
 -karma
 -jasmine
 -selenium
 -mocha
--allure
--protractorImageComparison
+-allure : faire des rapports de test 
+-protractorImageComparison (plus maintenu)
 -Jmeter
 -QC
 -Octane
--X-Ray
+-X-Ray : plug-in Jira
+-Katalon
 
 
 *** Selenium

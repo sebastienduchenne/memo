@@ -1,0 +1,24 @@
+-faire une API
+
+
+*** codes
+
+@CrossOrigin
+@RestController
+@RequestMapping(path = Paths.UI_DATA_API, produces = MediaType.APPLICATION_JSON_VALUE)
+public class DataController {
+
+    @Autowired
+    public BrowserStackController(){ }
+
+    @GetMapping(value = "/plan", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getPlan(){ }
+
+    @GetMapping(value = "/getTests/{build}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getTests(@PathVariable String build){
+        // build contient le paramètre
+    }
+
+}

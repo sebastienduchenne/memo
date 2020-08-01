@@ -1,0 +1,24 @@
+-gestionnaire de dépendances
+-pom.xml : contient les dépendances
+-groupId = domaine
+-artifactId = nom du projet
+-appli web Initializr pour générer des projet Maven
+
+
+*** Commandes
+
+-builder le projet
+    mvn package
+
+-exécuter le build
+    java -cp target/<artifactId>-<version>-SNAPSHOT.jar <groupId>.App
+
+
+
+***
+
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+</properties>
