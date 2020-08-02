@@ -1,0 +1,55 @@
+= outil qui fait tourner un cluster Kubernetes à noeud unique dans une VM
+-le node est de type master et worker
+-fonctionnalités K prises en charge:
+    -DNS
+    -NodePorts
+    -ConfigMaps et Secrets
+    -Dashboards
+    -Container Runtime: Docker, CRI-O, et containerd
+    -Activation de la CNI (Container Network Interface)
+    -Ingress
+
+
+*** commandes
+
+minikube start [option] : démarrer le cluster K dans une VM
+    --vm-driver=none : hyperviseur à utiliser (none : physique; défaut : virtualBox)
+    --memory=4096 : RAM allouée (défaut : 2048)
+    --cpus=4 : nombre de CPU alloué (défaut : 2)
+    --disk-size=40g : taille disque alloué, <nb>b, k, m or g (défaut : 20g)
+
+
+minikube ip : adresse IP
+
+minikube config -h : obtenir les noms des champs configurables du nœud
+
+minikube status : état du cluster
+
+minikube logs : afficher logs
+    -f : suivre en permanence les logs de Minikube
+    -n : nombre de lignes à afficher (50 par défaut)
+    --problems : afficher uniquement les logs qui pointent vers des problèmes connus
+
+minikube ssh : se connecter au node (peu utile)
+
+minikube stop : arrêter le cluster
+
+minikube update-check : vérifier si minikube est à jour
+
+minikube dashboard : lancer l'interface web Dashboard dans un navigateur
+
+minikube delete : supprimer le cluster
+
+minikube version : version installée
+
+
+*** installation
+
+-installation :
+$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
+
+-déplacement du binaire :
+$ sudo mv minikube /usr/local/bin
+
+-vérifier l'installation :
+$ minikube version
