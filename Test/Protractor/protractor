@@ -1,76 +1,68 @@
-//  	expect(await browser.imageComparison.checkScreen('examplePaged', { /* some options*/ })).toEqual(0);
-describe('connexion et aller sur georeso', function() {
-  it('se connecter', async function() {
-    browser.waitForAngularEnabled(false);
-      
-    browser.get('url');
+------------- Commandes -----------------------------------------------
 
-    browser.sleep(5000);
+mettre à jour webdriver-manager
+  sudo webdriver-manager update
+
+lancer le serveur
+  sudo webdriver-manager start
+
+lancer les tests
+  protractor conf.js
 
 
-    $('#user').sendKeys("user");
-    $('#password').sendKeys("mdp");
-    $('#spanLinkValidForm').click();
-    
-    browser.sleep(5000);
-    
-    //browser.wait(protractor.ExpectedConditions.visibilityOf($('#DT-DICT_profil')), 10000, 'Element "DT-DICT_profil" taking too long to appear in the DOM');
-    $('#DT-DICT_profil').click();
-    
-    browser.sleep(5000);
-    
-    
+----------------- BUGS ------------------------------------------------
+
+*** unknown error: DevToolsActivePort file doesn't exist
+
+  => retirer dans la conf "seleniumAddress: 'http://localhost:4444/wd/hub'"
+
+
+*** session not created: This version of ChromeDriver only supports Chrome version 84
+
+=> installer la bonne version du navigateur
+
+Chrome :
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+  sudo apt install ./google-chrome-stable_current_amd64.deb
+
+
+----------------- code ------------------------------------------------
+
+browser.waitForAngularEnabled(false);
+
+browser.get('url');
+
+$('#id').sendKeys("x");
+
+$('#id').click();
+
+browser.sleep(3000);
+
+element(by.css('.class'))
+
+await browser.actions()
+  .mouseMove({x: 570, y: 210})
+  .click(protractor.Button.RIGHT)
+  .perform();
+
+let services = await element.all(by.css('#id ul li')).getText();
+
+let e = element(by.xpath('//*[contains(text(), "text")]'))
+
+expect(e.getAttribute('class')).toMatch('className');
+
+
+describe('titre', function() {
+  it('titre', async function() {
+
   });
 });
 
-describe('vérifier activation filtre', function() {
-  it('should add a todo', async function() {
-      
-    browser.get('url');
-    
-    browser.sleep(3000);
 
-    //await browser.protractorImageComparison.saveElement($('#glyphicon-ok-style'), "icone filtre OK");
+*** protractorImageComparison
+v1.7.2
 
-    await browser.actions()
-      .mouseMove({x: 180, y: -40})
-      .click(protractor.Button.RIGHT)
-      .perform();
+await browser.protractorImageComparison.checkElement($('#btn_filter'), "titre");
 
-    browser.sleep(2000);
-
-    await browser.actions()
-      .mouseMove({x: 20, y: -120})
-      .click()
-      .perform();
-
-    //await browser.actions().mouseMove({x: 30, y: -100}).perform();
-    //await browser.actions().click().perform();
-
-
-    browser.sleep(5000);
-
-/*
-    let display = await $('#glyphicon-ok-style').getCssValue('display')
-    expect(display).toEqual("block")
-
-    //console.log(display)
-
-    //browser.sleep(5000);
-
-    $('#btn_filter').click();
-
-    browser.sleep(5000);
-
-    element(by.css('.onoffswitch-label')).click();
-
-    browser.sleep(5000);
-
-    let display = await $('#glyphicon-ok-style').getCssValue('display')
-    console.log(display)
-
-    //close : btn_close
-    //identifyWidget
-    */
-  });
-});
+await browser.protractorImageComparison.checkFullPageScreen("titre");
