@@ -1,11 +1,15 @@
-= docker-compose : lancer plusieurs conteneurs à partir d'un seul fichier docker-compose.yml
--ce fichier au format YAML précise tous les conteneurs et leurs options exécutable en une seule fois
--créer et lancer un conteneur : dose -f docker-compose.yml -f x-override.yml up x-api
--run container : 
-    -simple : docker-compose -f docker-compose.yml up
-    -avec un override : docker-compose -f docker-compose.yml -f docker-compose.PROJET.yml up
+= exécuter des applications à conteneurs multiples
+-à partir d'un fichier docker-compose.yml
 
 
+*** plusieurs conteneurs
+-application avec BD + log + app + serveur -> on peut mettre chaque élément dans un conteneur différent
+-si plusieurs projets qui utilisent une BD : 
+  -mettre la BD dans chacun des conteneur
+  -ou BD dans un seul conteneur : rassemble les données et facilite la gestion
+
+
+*** étapes
 => être dans le dossier docker
 0.liste des ps running
 1.créer et lancer un conteneur : dose xxx.yml up
@@ -17,14 +21,23 @@
 
 *** 5 Commandes
 
-docker-compose up : démarre les services décrits dans le docker-compose.yml et ne rend pas la main
-docker-compose up -d : rend la main une fois que les services sont démarrés
-docker-compose up –build : reconstruit les services avant de les lancer
+docker-compose up : démarre les services et ne rend pas la main
+  -d : rend la main une fois que les services sont démarrés
+  -build : reconstruit les services avant de les lancer
+
+-créer et lancer un conteneur : 
+  dose -f docker-compose.yml -f x-override.yml up x-api
+
+-run container : 
+  -simple : docker-compose -f docker-compose.yml up
+  -avec override : docker-compose -f docker-compose.yml -f docker-compose.PROJET.yml up
+
+
 
 docker-compose down : stoppe les services
 
 docker-compose restart : redémarre l’ensemble des services
-docker-compose restart nginx : redémarre un des services (ici nginx)
+docker-compose restart nginx : redémarre un des services
 
 docker-compose exec : exécuter une commande dans un container
 docker-compose exec rails bash : fournit une console bash au sein du conteneur rails
@@ -43,7 +56,7 @@ services : liste des services
     image : nom de l'image de départ
     environment : variables d'environnement
     volumes : share content between the local host and the container
-    working_dir : the directory where the command instruction is executed.
+    working_dir : the directory where the command instruction is executed
     command : an instruction that start the application
     links
     ports
@@ -69,8 +82,6 @@ networks:
 volumes:
   nom:
   node_modules:  
-
-
 
 
 *** inconvénients

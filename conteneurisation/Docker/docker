@@ -61,3 +61,20 @@
 *** Services
 -dans une application distribuée, les différentes parties sont des services (BD, server, front)
 -un service lance une image
+
+
+*** volumes
+-les données modifiées d'un conteneur sont éphémères car les layers de l'image sont en lecture seule. Lors de l'exécution d'un conteneur, une couche en lecture-écriture est ajoutée et contient les modifications. Cette ensemble de couche est appelé 'Union File System'
+-volumes = fichiers, sur l'hôte, utilisés pour la persistance des données
+-chemin hôte : /var/lib/docker/volumes/<nom_v>
+-utiliser -v dans docker run pour monter un volume
+
+
+*** réseau
+-permettre aux conteneurs de communiquer entre eux et avec le monde extérieur
+-types de réseaux
+    -bridge
+    -none : interdire toute communication interne et externe avec le conteneur
+    -host : les conteneurs utilisent la même interface que l'hôte
+    -overlay : mise en réseau multi-hôte native
+    -macvlan

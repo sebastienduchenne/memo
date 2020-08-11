@@ -1,14 +1,4 @@
--activer le service docker
-    sudo systemctl start docker
-
--lister les images dispo dans le Docker Hub registry
-    docker search <recherche>
-
--aide d'une sous-commande
-    docker <sous-commande> --help
-
-
-*** images
+*********** images ***********
 
 -pull une image depuis le DHR
     docker pull img_name
@@ -34,7 +24,7 @@
 -info sur l'image
     docker inspect <name>
 
-*** container
+*********** container ***********
 
 -créer un container (sans le run)
     docker create img_name
@@ -51,6 +41,7 @@
         --name : nommer
         --expose : exposer un port
         -p : mapper un port, (redirection de port)
+        -v v_hote:/v_c: monter le volume v_hote, créé si inexistant
         => surcharger le CMD : ajouter la commande à la fin
 
 -aller dans le conteneur c_name
@@ -78,29 +69,103 @@
     docker rm c_name
 
 
-*** autres
+*********** volumes ***********
 
-* créer une image à partir d'un container
-    docker commit <name> <new name>
+-créer un volume
+    docker volume create <nom volume>
 
-* docker run -i -t ubuntu /bin/bash
+-lister les volumes
+    docker volume ls
 
-1- si ubuntu absent : docker pull ubuntu
-2- docker create
-3- allocation filesystem pour le conteneur
-4- création d'une interface pour connecter le cont à un réseau (avec IP)
-5- démarrage du conteneur et exécution /bin/bash
-6- si exit, le conteneur stoppe mais n'est pas supprimé
+-supprimer un ou plusieurs volumes
+    docker volume rm <nom volume>
+        -f : forcer la suppression
+
+-info sur une volume
+    docker volume inspect <nom volume>
+
+-supprimer tous les volumes locaux inutilisés
+    docker volume prune
+        -f : forcer la suppression
+
+-supprimer un conteneur et ses volumes
+    docker rm -v <id_c / id_nom>
+        -f : forcer la suppression
+        -v : supprime les volumes associés au conteneur
 
 
-*** swarm
+*********** réseau ***********
 
--initialiser un swarm : docker swarm init
--join a swarm : docker swarm join host:port
+-créer un réseau docker
+    docker network create --driver <type_driver> <nom_réseau>
 
----------------------------------------------------------------------------------------------------
+-lister les réseaux
+    docker network ls
 
-*** All commands
+-supprimer un ou plusieurs réseaux
+    docker network rm <nom_réseau>
+
+-info sur un réseau
+    docker network inspect <nom_réseau>
+        -v : mode verbose
+
+-supprimer tous les réseaux non inutilisés
+    docker network prune
+        -f : forcer la suppression
+
+-connecter un conteneur à un réseau
+    docker network connect <nom_réseau> <nom_c>
+
+-déconnecter un conteneur d'un réseau
+    docker network disconnect <nom_réseau> <nom_c>
+        -f : forcer la déconnexion
+
+-démarrer un conteneur et le connecter d'un réseau
+    docker run --network <nom_réseau> <nom_img>
+
+
+*********** autres ***********
+
+-activer le service docker
+    sudo systemctl start docker
+
+-lister les images dispo dans le Docker Hub registry
+    docker search <recherche>
+
+-aide d'une sous-commande
+    docker <sous-commande> --help
+
+-statistiques de consommation des conteneurs (avoir lancé l'image httpd)
+    docker stats : tous les conteneurs
+    docker stats <nom_c> : stat de nom_c
+        -f : formater le résultat de la commande
+
+-info détaillé
+    docker inspect <nom_c>
+        -f : formater le résultat de la commande
+
+-logs d'un conteneur
+    docker logs <nom_c>
+
+-logs de la construction d'une image
+    docker history <nom_img>
+
+-créer une image à partir d'un container
+    docker commit <nom_c> <nom_img>
+
+
+*********** swarm ***********
+
+-initialiser un swarm
+    docker swarm init
+
+-join a swarm
+    docker swarm join host:port
+
+
+-------------------------------------------------------------------------
+
+*********** All commands ***********
 
    Command	        Description
 

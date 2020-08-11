@@ -4,23 +4,19 @@
 -docker hub = registre basé sur le Cloud pour les référentiels (dépôts) de logiciels
 -Single Point Of Failure = si le master tombe il sera automatiquement remplacé par un des noeuds qui deviendra le nouveau master
 -google cAdvisor : Fournit aux utilisateurs de conteneurs une bonne compréhension sur l'utilisation des ressources et des performances générales sur les conteneurs en cours d'utilisation. Il s'agit d'un processus daemon qui collecte, aggrege, opère et exporte les informations des conteneurs en cours
--volume : stocker des données d'un conteneur
 
 
-*** plusieurs conteneurs
--application avec BD + log + app + serveur -> on peut mettre chaque élément dans un conteneur différent
--si plusieurs projets qui utilisent une BD : 
-    -mettre la BD dans chacun des conteneur
-    -ou BD dans un seul conteneur : rassemble les données et facilite la gestion
+
+* docker run -i -t ubuntu /bin/bash
+
+1- si ubuntu absent : docker pull ubuntu
+2- docker create
+3- allocation filesystem pour le conteneur
+4- création d'une interface pour connecter le cont à un réseau (avec IP)
+5- démarrage du conteneur et exécution /bin/bash
+6- si exit, le conteneur stoppe mais n'est pas supprimé
 
 
-*** réseaux
-$ docker network ls : lister réseaux
-$ docker network inspect bridge : info sur un réseau
--3 réseaux par défaut après installation :
-    -bridge : où les conteneur sont lancés par défaut
-    -host
-    -none
 
 
 *** test
