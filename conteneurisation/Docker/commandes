@@ -1,7 +1,18 @@
+-activer le service docker
+    sudo systemctl start docker
+
+-lister les images dispo dans le Docker Hub registry
+    docker search <recherche>
+
+-aide d'une sous-commande
+    docker <sous-commande> --help
+
+
 *** images
 
--pull une image
+-pull une image depuis le DHR
     docker pull img_name
+    docker pull img_name:tag
 
 -push une image
     docker push img_name
@@ -11,14 +22,17 @@
     docker image ls
 
 -Build an image from a Dockerfile
-    docker build path
+    docker build <img_name> <path>
 
 -créer une img à partir de changement de c
     docker commit c_name
 
 -supprimer des images
     docker rmi d4f gz5
+    docker rmi -f d4f gz5 -> force
 
+-info sur l'image
+    docker inspect <name>
 
 *** container
 
@@ -29,8 +43,15 @@
 -exécuter le conteneur c_name (déja créé et à l'arrêt)
     docker start c_name
 
--create then run a container (create puis start)
-    docker run img_name
+-create puis run un container (create puis start)
+    docker run [option] img_name
+        -t : TTY
+        -i : intéractif
+        -d : arrière plan
+        --name : nommer
+        --expose : exposer un port
+        -p : mapper un port, (redirection de port)
+        => surcharger le CMD : ajouter la commande à la fin
 
 -aller dans le conteneur c_name
     docker exec c_name
@@ -45,6 +66,7 @@
 
 -voir les logs du conteneur c_name
     docker logs c_name
+        -t : heure
 
 -kill running containers
     docker container kill c_name
@@ -55,6 +77,11 @@
 -supprimer un container
     docker rm c_name
 
+
+*** autres
+
+* créer une image à partir d'un container
+    docker commit <name> <new name>
 
 * docker run -i -t ubuntu /bin/bash
 
@@ -71,6 +98,7 @@
 -initialiser un swarm : docker swarm init
 -join a swarm : docker swarm join host:port
 
+---------------------------------------------------------------------------------------------------
 
 *** All commands
 

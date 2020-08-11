@@ -4,49 +4,63 @@
 
 -----------------------------------------------------------
 
--FROM node:10.12.0-alpine
-image source
+-FROM <img_src>
+    partir d'une image source
 
 -MAINTAINER <name>
-auteur
+    définir l'auteur
 
--WORKDIR /home/nodejs/app
-changer le répertoire courant de l'image, toutes les commandes qui suivront seront exécutées à partir de ce répertoire
+-WORKDIR <app path>
+    définir le répertoire courant de l'image, correspond aussi au dossier courant lors du démarrage
 
--ENV NODE_ENV prod
-set variable d’env
+-ENV <nom> <valeur>
+    créer une variable d’environnement, accessible dans le dockerfile et le conteneur
 
--COPY package*.json ./
-copier un fichier
+-COPY <src> <dest>
+    copier un fichier local vers l'image
 
 -RUN
-executer une commande dans l'image
-RUN <commande> : 
-RUN ["executable","param1","param2"]
+    exécuter une commande lors de la création de l'image. Ajoute une couche contenant l'application
 
--ARG port=80
+-ARG <nom>=<valeur>
+    créer une variable utilisable dans le dockerfile. Utiliser avec ${<nom>}
 
--CMD instr : instruction qui doit s'exécuter au lancement du conteneur. un seul par dockerfile
+-CMD <cmd>
+    exécuter une commande au démarrage du conteneur en définissant les commandes et/ou paramètres par défaut de ENTRYPOINT. La commande au démarrage peut être surchargée à la fin du 'docker run'. Un seul CMD par dockerfile
 
--VOLUME : dossier à partager
+-VOLUMES
+    créer un point de montage qui permettra de persister les données
 
--EXPOSE $port : port à partager
+-EXPOSE <port>
+    exposer un port
 
--LABEL : ajoute des paires clé-valeur
+-LABEL <name>=<valeur> <name>=<valeur>
+    ajouter des paires clé-valeur en guise de méta-données. Info visible avec docker inspect <name>
 
--ADD file dest
-ajouter des fichiers locaux ou distants à l'intérieur de votre image, il est le plus souvent utilisé pour importer les sources de son projet ou des fichiers de configuration
+-ADD <src> <dest>
+    ajouter un fichier dans l'image (sources du projet ou fichiers de conf). On peut mettre une URL en tant que src, contrairement à COPY, et dézippe si besoin. Utiliser COPY si src n'est pas une URL
 
--ENTRYPOINT
+-ENTRYPOINT <cmd>
+    exécuter une commande au démarrage du conteneur
 
 -USER
+    désigner l'utilisateur qui lancera les prochaines instructions RUN, CMD ou ENTRYPOINT (root par défaut)
 
 -STOPSIGNAL
 
 
+*** ordre
 
-*** Remarques
-
-COPY prend un fichier (ou répertoire) du host et de le mettre dans le conteneur.
-ADD fait la même chose, mais le src peut être une URL. Dans ce cas, docker se charge du téléchargement et de placer le fichier téléchargé dans dest. Si src est un fichier zippé et dest un répertoire docker dezzipe src (ADD file.zip /var/opt/)
-La documentation de Docker conseille d’utiliser COPY au profit de ADD, sauf pour des cas spécifiques.
+FROM
+MAINTAINER
+# début couche 1
+RUN
+COPY
+# fin couche 1 et début couche 2
+RUN
+COPY
+# fin couche 2
+EXPOSE
+ENTRYPOINT
+[CMD]
+WORKDIR

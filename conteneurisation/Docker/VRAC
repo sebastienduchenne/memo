@@ -1,11 +1,10 @@
 -montée en charge
 -la stack = ensemble de services reliés entre eux qui partagent des dépendances et qui peuvent être scalés
--cluster
 -docker registry = stocke les images
--réplicat = instance d'une image
 -docker hub = registre basé sur le Cloud pour les référentiels (dépôts) de logiciels
 -Single Point Of Failure = si le master tombe il sera automatiquement remplacé par un des noeuds qui deviendra le nouveau master
 -google cAdvisor : Fournit aux utilisateurs de conteneurs une bonne compréhension sur l'utilisation des ressources et des performances générales sur les conteneurs en cours d'utilisation. Il s'agit d'un processus daemon qui collecte, aggrege, opère et exporte les informations des conteneurs en cours
+-volume : stocker des données d'un conteneur
 
 
 *** plusieurs conteneurs

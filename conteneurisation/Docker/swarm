@@ -1,11 +1,22 @@
 = groupe de différentes machines (virtuelles ou physiques) qui lancent docker et qui forment un cluster et qui vont fonctionner dans un schéma "master / worker". 
 - Dans un swarm, les machines sont appelées worker ou node
-- Chaque service est susceptible d'avoir des besoins en ressources différents et peuvent croître à des rythmes différents. En séparant les services dans des conteneurs différents, nous pouvons composer chaque service en utilisant le type d'instance le plus approprié en fonction de différents besoins en ressources. 
+-chaque services a des besoins en ressources différents et qui varient avec le temps. En séparant les services dans des conteneurs différents, nous pouvons composer chaque service en utilisant le type d'instance le plus approprié en fonction de différents besoins en ressources. 
 - un cluster a un ou plusieurs manager appelés orchestrateurs ou swarm manager
 - dans un cluster les conteneurs sont appelés services
 - utilisation d'un load balancing pour répartir la charge sur les différents noeuds
 - dans un cluster : le manager gère différents services/node, qui contiennent chacun un daemon gérant plusieurs conteneurs
 - un conteneur s'exécutant dans un service s'appelle une tache ou réplica
+-dans swarm, un conteneur est nommé service, une machine est nommée noeud
+-un swarm est un cluster
+-un hote exécute un DOCKER
+-une tache est attribué à un worker
+-swarm > node / host > conteneur
+-swarm manager
+-host docker
+    -container
+    -docker daemon
+    -images
+
 
 CLI ----->     swarm manager                 |
             /        |       \               |
@@ -21,3 +32,10 @@ conteneur      conteneur      conteneur      |
 *** stratégies
 -noeud le plus vide : remplit les machines les moins utilisés
 -global : chaque machine a une seule instance du conteneur spécifié
+
+
+*** commandes
+
+-activer le mode swarm
+$ docker-machine ssh mymanager "docker swarm init --advertise-addr 192.168.99.103"
+

@@ -1,45 +1,51 @@
 *** Approche des VM
 -les VM virtualisent le matériel et un OS
--permet une isolation complète des appli
+-permet une isolation complète des appli, car une VM contient une appli, ses dépendances et un OS
 -un hyperviseur permet de gérer et d'exécuter les VM
 -très couteux en espace et en CPU
 
 
 *** Docker
-= outil permettant d'exécuter des applications et leurs dependances dans des conteneurs sur n'importe quel serveur(conteneurisation)
+= outil permettant d'exécuter des applications et leurs dépendances dans des conteneurs sur n'importe quel serveur (conteneurisation)
 -tourne sur la machine hôte Linux
 -pas besoin d'un hyperviseur donc plus léger
 -représente une couche abstraite
--fournit une API, en étend LXC, pour exécuter les conteneurs
+-fournit une API, en étendant LXC, pour exécuter les conteneurs
 
 
 *** fonctionnalités de Linux utilisées
--Cgroups ou groupes de contrôles : limiter l’accès aux ressources (mémoire, CPU, E/S, connexions réseau). Cela évite que les besoins en ressources d’un processus affectent les autres processus en cours d’exécution
+-Cgroups (ou groupes de contrôles) = limiter l’accès aux ressources (mémoire, CPU, E/S, connexions réseau). Cela évite que les besoins en ressources d’un processus affectent les autres processus en cours d’exécution
 
--namespace : limiter un processus et ses fils à une section spécifique du système sous-jacent
+-namespace = limiter un processus et ses fils à une section spécifique du système sous-jacent, cad donner une vue du système à un processus
 
 -LXC (Linux Containers) = le format de conteneur Linux standard
 
 
 *** Conteneur
--empaquete le code, la config et les dépendances de l'appli (bibliothèques et env d'exécution). Cela permet d'exécuter les appli sur une grande variété de systèmes hôtes
+-empaquete le code, la config et les dépendances de l'appli (bibliothèques et environnement d'exécution)
+-cela permet d'exécuter les appli sur une grande variété de systèmes hôtes
 -par défaut, les conteneurs sont isolés de leur environnement (les autres appli et la machine), ce qui évitent les conflits
 -peut se connecter au réseau de l'hôte
 -a un cycle de vie
 -connectable aux autres conteneurs par des réseaux virtuels
--instance d'une image
+-une image en cours d'exécution
 
 
 *** Avantages
 -déploiement plus rapide et facile
--moins couteux en ressources CPU que les VM
--portabilité d'exécution des appli
--les appli peuvent être lancées sur une grande variété de machines hôtes
+-moins couteux en ressources que les VM
+-portabilité d'exécution des appli sur une grande variété de machines hôtes
 
 
 *** Image docker
--un fichier dockerfile qui contient les instructions pour créer un conteneur
--chaque image est une superposition de couche, cela permet de restaurer une version précédente
+-package incluant tout ce qu'il faut pour lancer un conteneur :
+    -code
+    -variables d'environnement
+    -bibliothèques
+    -fichiers de config
+-créée à partir d'un fichier dockerfile, qui contient toutes les instructions pour créer l'image
+-une image est une superposition de couche, contenant les différentes applications. Cela permet de restaurer une version précédente
+-l'exécution d'une image donne un conteneur
 
 
 *** Docker engine
