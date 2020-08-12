@@ -1,12 +1,17 @@
 = exécuter des applications à conteneurs multiples
 -à partir d'un fichier docker-compose.yml
+-il faut réfléchir
+    -combien de conteneurs et leur rôle
+    -volumes
+    -type de réseaux
+-un conteneur est appelé service
+-les services démarrent dans l'ordre de dépendance
 
-
-*** plusieurs conteneurs
--application avec BD + log + app + serveur -> on peut mettre chaque élément dans un conteneur différent
+*** exemples
+-application avec BD + log + app + serveur -> mettre chaque élément dans un conteneur différent
 -si plusieurs projets qui utilisent une BD : 
-  -mettre la BD dans chacun des conteneur
-  -ou BD dans un seul conteneur : rassemble les données et facilite la gestion
+    -mettre la BD dans chacun des conteneur
+    -ou BD dans un seul conteneur : rassemble les données et facilite la gestion
 
 
 *** étapes
@@ -19,22 +24,21 @@
 5.stopper stack : dose stop
 
 
-*** 5 Commandes
+*** Commandes
 
-docker-compose up : démarre les services et ne rend pas la main
-  -d : rend la main une fois que les services sont démarrés
-  -build : reconstruit les services avant de les lancer
-
--créer et lancer un conteneur : 
-  dose -f docker-compose.yml -f x-override.yml up x-api
+docker-compose up : démarre les services (ne rend pas la main par défaut)
+    -d : rend la main une fois que les services sont démarrés
+    -build : reconstruit les services avant de les lancer
 
 -run container : 
-  -simple : docker-compose -f docker-compose.yml up
-  -avec override : docker-compose -f docker-compose.yml -f docker-compose.PROJET.yml up
+    -simple : docker-compose -f nom_comp.yml up
+    -avec override : docker-compose -f nom_comp.yml -f PROJET.yml up nom
 
+docker-compose start : démarre les conteneurs
 
+docker-compose ps : lister les conteneurs
 
-docker-compose down : stoppe les services
+docker-compose down : stopper les services puis tous supprimer
 
 docker-compose restart : redémarre l’ensemble des services
 docker-compose restart nginx : redémarre un des services
@@ -44,9 +48,15 @@ docker-compose exec rails bash : fournit une console bash au sein du conteneur r
 docker-compose exec rails bin/rails db:migrate : effectue un rails db:migrate au sein du conteneur rails
 
 docker-compose logs : ensemble des logs des services depuis le dernier démarrage et rend la main
-docker-compose logs -f : logs des services et continue de les « écouter » sans rendre la main
-docker-compose logs -f rails : logs pour le conteneur rails uniquement
+    -f : logs des services et continue de les « écouter » sans rendre la main
+    -f rails : logs pour le conteneur rails uniquement
 dose logs --tail=0 -f projet
+
+docker-compose kill : stopper les conteneurs
+
+docker-compose rm : supprimer des conteneurs stoppés
+
+docker-compose images : lister les images
 
 
 *** Fichier yaml
@@ -54,8 +64,8 @@ version : version de docker
 services : liste des services
   nom_service
     image : nom de l'image de départ
-    environment : variables d'environnement
-    volumes : share content between the local host and the container
+    environment : variables d'environnement à surcharger
+    volumes : volumes à créer
     working_dir : the directory where the command instruction is executed
     command : an instruction that start the application
     links
@@ -69,7 +79,7 @@ services : liste des services
     networks
     container_name
     build : defines the configuration options
-      context : This defines the build context for the image build — in this case, the current project directory
+      context : This defines the build context for the image build
       target
       dockerfile : path vers dockerfile
       args

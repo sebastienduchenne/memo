@@ -78,3 +78,7 @@
     -host : les conteneurs utilisent la même interface que l'hôte
     -overlay : mise en réseau multi-hôte native
     -macvlan
+
+-bridge
+    -par défaut
+    -interface docker0
