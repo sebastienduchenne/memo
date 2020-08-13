@@ -132,15 +132,15 @@
 -lister les images dispo dans le Docker Hub registry
     docker search <recherche>
 
--aide d'une sous-commande
-    docker <sous-commande> --help
+-aide d'une commande
+    docker <commande> --help
 
 -statistiques de consommation des conteneurs (avoir lancé l'image httpd)
     docker stats : tous les conteneurs
     docker stats <nom_c> : stat de nom_c
         -f : formater le résultat de la commande
 
--info détaillé
+-info détaillées
     docker inspect <nom_c>
         -f : formater le résultat de la commande
 
@@ -152,15 +152,6 @@
 
 -créer une image à partir d'un container
     docker commit <nom_c> <nom_img>
-
-
-*********** swarm ***********
-
--initialiser un swarm
-    docker swarm init
-
--join a swarm
-    docker swarm join host:port
 
 
 -------------------------------------------------------------------------

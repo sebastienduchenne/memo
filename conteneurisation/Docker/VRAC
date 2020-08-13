@@ -1,9 +1,6 @@
 -montée en charge
--la stack = ensemble de services reliés entre eux qui partagent des dépendances et qui peuvent être scalés
 -docker registry = stocke les images
 -docker hub = registre basé sur le Cloud pour les référentiels (dépôts) de logiciels
--Single Point Of Failure = si le master tombe il sera automatiquement remplacé par un des noeuds qui deviendra le nouveau master
--google cAdvisor : Fournit aux utilisateurs de conteneurs une bonne compréhension sur l'utilisation des ressources et des performances générales sur les conteneurs en cours d'utilisation. Il s'agit d'un processus daemon qui collecte, aggrege, opère et exporte les informations des conteneurs en cours
 
 
 
@@ -15,20 +12,3 @@
 4- création d'une interface pour connecter le cont à un réseau (avec IP)
 5- démarrage du conteneur et exécution /bin/bash
 6- si exit, le conteneur stoppe mais n'est pas supprimé
-
-
-
-
-*** test
-
-NGINX
-
-sudo docker pull nginx
-sudo docker run -p 8080:80 -d nginx
-aller sur localhost:8080
-
-
-créer un fichier index.html avec “Hello world”
-sudo docker run -p 8080:80 -v “$PWD”:/usr/share/nginx/html:ro -d nginx
-
-http://localhost:8080/helloworld.html
