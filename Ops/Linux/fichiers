@@ -1,0 +1,31 @@
+compter le nombre de fichiers dans 'path'
+    ls path | wc -l
+
+
+>>> supprimer
+supprimer un dossier et tout son contenu : 
+    rm -R dossier
+
+>>> rechercher
+-Tous les fichiers du dossier où l'on se trouve : 
+    grep "expr" *
+
+-Tous les fichiers .tex du dossier où l'on se trouve : 
+    grep "expr" *.tex
+
+-Tous les fichiers du dossier courant et de ses sous-dossier : 
+    grep -r "expr" .
+
+-Tous les fichiers .tex du dossier courant et de ses sous-dossier
+    grep -r --include="*.tex" "expr"
+
+-Tous les fichiers contenant 'expr' dans le dossier et les sous-dossier
+    find . -iname "*expr*"
+
+
+### dossier et fichier
+
+supprimer dossier :     rm -rf nomDir
+compresser fichier :    tar cvf archive.tar.gz dossier
+decompresser fichier :  tar xvf archive.tar
+transfert fichier :     scp 

@@ -1,0 +1,31 @@
+Apt-get permet d'effectuer l'installation et la désinstallation de paquets en provenance d'un dépôt APT
+
+sudo apt-get update : MAJ info sur les paquets dans le fichier de config
+sudo apt-get install nom_paquet : installer un paquet
+sudo apt-get dist-upgrade : MAJ tous les paquets installés avec ajout de nouveaux paquets si nécessaires
+
+sudo apt-get purge <paquets(s)> : désinstalle les paquets indiqués et leurs fichiers de configuration
+
+sudo apt-get update : met à jour la liste des fichiers disponibles
+
+apt show <package name> : version
+
+sudo add-apt-repository ppa:xx       autoriser dépot xx
+sudo add-apt remove nom_paquet       supprimer paquet
+
+
+# en ligne de commande
+sudo apt-get install <package>
+
+sudo apt-get update
+
+# extension paquet téléchargé
+
+.deb : double-click, le gestionnaire de paquets apparait : cliquer sur le bouton installer
+.jar
+.tar.gz
+
+
+
+Installer un paquet deb
+    sudo dpkg -i package_file.deb

@@ -1,0 +1,12 @@
+-les mots-clé réservé ne le sont que pour les identifiants (variables, fonctions)
+-null : absence de valeur
+-undefined : variable non itinialisée
+-false, 0, la chaîne vide (""), NaN, null et undefined deviennent toutes false
+-valeur primitive : immuable
+-JS effectue automatiquement les conversions entre chaînes primitives et objets String
+-polyfill = script qui a pour but de fournir une technologie à tous les navigateurs existants
+
+
+*** wrapper
+= objet qui correspond à une enveloppe / surcouche d'éléments JS par laquelle on passe pour encadrer leur utilisation
+-le développeur se passe complètement de l'objet original

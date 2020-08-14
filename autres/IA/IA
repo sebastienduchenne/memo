@@ -1,17 +1,8 @@
-. Big data
 . IA forte, faible
-. darknet yolo
 . convolution
-. Réseau de neurones
-. bot
-. machine learning
-
-
-
-https://medium.com/@lola.com/nlp-vs-nlu-whats-the-difference-d91c06780992
-
-.bot
-. outils : tensorflow, yolo
+-overfitting = surapprentissage, incapacité à généraliser
+-bot
+. outils : tensorflow, darknet yolo
 . déduction,
 . induction : déduire des lois par généralisation des observations
 .la machine apprends mais ne comprends pas ce qu'elle fait
@@ -26,6 +17,7 @@ Machine learning, apprentissage machine
 .non supervisé : déterminer la structure des données
 . par transfert
 
+
 Algorithme
 . génétique
 . Réseau de neurones RBF, MLP
@@ -37,7 +29,3 @@ Réseau de neurones
 . opacité sur la façon de calculer du réseau
 . Succession de couches de plusieurs neurones. Chacune prends ses entrées sur les sorties de la précédente. A chaque synapse est associé un poids
 .fonction de combinaison, fonction d'activation
-
-Algorithme génétique
-
-

@@ -1,0 +1,16 @@
+nmap : trace réseau
+ifconfig = configurer et d'afficher les informations des interfaces réseau IP
+/etc/hosts : résolution DNS
+systemctl
+iptable
+
+afficher les ports ouverts
+    netstat -ln
+
+connexion SSH
+    ssh -L 8042:localhost:8042 -L 8080:localhost:8080 sduchenne@10.107.3.101
+
+requête POST avec header
+    curl -X POST url -H "header: value" --data 'value'
+
+wget

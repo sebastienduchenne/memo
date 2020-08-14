@@ -1,0 +1,28 @@
+/etc/systemd
+pkill -e chrome
+pstree –up
+killall geckodriver-v0.24.0
+ps -ef
+ll
+eval
+chmod : modifier les permissions d’un fichier ou d’un dossier
+/etc/hosts
+--------------------------------------------------------------------
+utilisation ressources
+    htop
+--------------------------------------------------------------------
+set PATH environment
+    export PATH=$PATH:/place/with/the/file
+--------------------------------------------------------------------
+afficher les processus actifs
+    pstree
+    pstree -p | grep chrome
+    pkill -e chrome / chromedriver / geckodriver
+--------------------------------------------------------------------
+Pointer sur un site
+
+sudo /etc/hosts
+
+#site
+ip1 domaine1
+ip2 domaine1

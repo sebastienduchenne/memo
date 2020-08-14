@@ -1,6 +1,4 @@
-*** VRAC
 . version vanilla : version standard d'un programme informatique : ni patché, ni modifié
-. fournisseur cloud : AWS
 -algorithme hyperloglog = probabiliste
 . le ~ devant une variable inverse tout les bits de valeurs
 -Framework = cadre de travail, apporte un outil qui encadre notre travail (création formulaire, tests...), impose un certain nombre de règles afin d’augmenter la productivité dans un travail de groupe et faire plus facilement de la maintenance
@@ -33,16 +31,6 @@
     -durabilité : les résultats doivent être enregistrés de façon permanente
 
 
-*** linux
-/etc/systemd
-pkill -e chrome
-pstree –up
-killall geckodriver-v0.24.0
-ps -ef
-ll
-apt-get
-
-
 *** technologies
 -langage closure
 -cloudflare
@@ -58,11 +46,3 @@ apt-get
 -Appel par valeur : copie de l'objet
 -Appel par référence : une référence à l'objet
 -Appel par partage : copie de la référence à l'objet
-
-
-*** intégration et livraison continue
--intégration continue = lancer des tests pour vérifier qu'à chaque modification du code source, il n'y a pas de régressions
--livraison continue = les fonctionnalités logicielles sont livrées fréquemment mais ne sont pas déployées
--déploiement continu = les fonctionnalités sont livrées fréquemment de manière automatisée
--jenkins = outils d'intégration continue
--GitLab CI = outils d'intégration continue
