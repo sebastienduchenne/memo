@@ -25,10 +25,9 @@
 -empaquete le code, la config et les dépendances de l'appli (bibliothèques et environnement d'exécution)
 -cela permet d'exécuter les appli sur une grande variété de systèmes hôtes
 -par défaut, les conteneurs sont isolés de leur environnement (les autres appli et la machine), ce qui évitent les conflits
--peut se connecter au réseau de l'hôte
--a un cycle de vie
--connectable aux autres conteneurs par des réseaux virtuels
 -une image en cours d'exécution
+-a un cycle de vie avec un état
+-on peut limiter la mémoire utilisée par les conteneurs
 
 
 *** Avantages
@@ -64,7 +63,10 @@
 
 
 *** volumes
--les données modifiées d'un conteneur sont éphémères car les layers de l'image sont en lecture seule. Lors de l'exécution d'un conteneur, une couche en lecture-écriture est ajoutée et contient les modifications. Cette ensemble de couche est appelé 'Union File System'
+-par défaut, les données modifiées d'un conteneur ne persistent pas après relance
+    -> à l'exécution, les layers de l'image sont en lecture seule
+    -> une couche en lecture-écriture est ajoutée et contient les modifications
+    -> cette ensemble de couche est appelé 'Union File System'
 -volumes = fichiers, sur l'hôte, utilisés pour la persistance des données
 -chemin hôte : /var/lib/docker/volumes/<nom_v>
 -utiliser -v dans docker run pour monter un volume
@@ -72,13 +74,16 @@
 
 *** réseau
 -permettre aux conteneurs de communiquer entre eux et avec le monde extérieur
--types de réseaux
-    -bridge
-    -none : interdire toute communication interne et externe avec le conteneur
-    -host : les conteneurs utilisent la même interface que l'hôte
-    -overlay : mise en réseau multi-hôte native
-    -macvlan
+-types de réseaux ou driver
+    -bridge : 
+        -réseau créé à l'installation de Docker et connecté à l'interface docker0
+        -les conteneurs l'utilisent par défaut
+        -conteneurs non accessibles depuis l'extérieur par défaut (configurer le mappage de port pour l'être)
+    -none : le conteneur n'a pas d'interface et ne peut pas communiquer
+    -host : pas d'isolation réseau, donc les conteneurs utilisent la même interface que l'hôte et sont accessibles depuis l'extérieur
+    -overlay : créer un réseau distribué entre plusieurs hôtes DOcker
+    -macvlan : connecter une app au réseau physique, par attribution d'une adresse MAC à un conteneur
 
--bridge
-    -par défaut
-    -interface docker0
+
+*** registry Docker privé
+= système privé de stockage d'images Docker, comme le Docker Hub

@@ -1,16 +1,23 @@
-nmap : trace réseau
-ifconfig = configurer et d'afficher les informations des interfaces réseau IP
-/etc/hosts : résolution DNS
-systemctl
-iptable
+-nmap : trace réseau
 
-afficher les ports ouverts
+-ifconfig : configurer et afficher les informations des interfaces réseau IP
+
+-systemctl : services lancés au démarrage
+    systemctl list-units --type=service : lister les services actifs
+
+-iptables : pare-feu Linux
+
+-afficher les ports ouverts
     netstat -ln
 
-connexion SSH
-    ssh -L 8042:localhost:8042 -L 8080:localhost:8080 sduchenne@10.107.3.101
+-connexion SSH
+    ssh -L 8042:localhost:8042 <login>@<ip>
 
-requête POST avec header
+-requête POST avec header
     curl -X POST url -H "header: value" --data 'value'
 
-wget
+-wget : télécharger qqch
+
+-ip addr show <interface_name> : info sur une interface
+
+-adresse MAC = identifiant physique stocké dans une carte réseau ou une interface réseau similaire. Elle est unique au monde, sauf modification

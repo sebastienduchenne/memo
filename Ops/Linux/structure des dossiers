@@ -1,0 +1,55 @@
+/bin : commandes de base (sous Unix, presque toutes les commandes sont "externes", et non intégrées au shell comme sous DOS)
+
+/boot : informations nécessaires au démarrage de la machine
+
+/dev : fichiers spéciaux correspondant aux périphériques
+
+/etc : la plupart des fichiers de configuration
+    /etc/hosts
+
+/home : dossier personnels des utilisateurs
+
+/lib : principales bibliothèques partagées
+
+/lost+found : fragments de fichiers perdus lors d'un crash disque
+
+/mnt : monter temporairement un système de fichiers (DD externe...)
+
+/opt : logiciels commerciaux installés
+
+/proc : infos sur l'état du système et des processus en cours d'exécution
+
+/root : dossier de l'administrateur système
+
+/sbin : commandes de base nécessaires à l'administration système (vérification et réparation des disques, mise en place du réseau...)
+
+/tmp : fichiers temporaires
+
+/usr : logiciels installés avec le système
+
+    /usr/X11R6 : X-Window
+    /usr/bin : exécutables
+    /usr/dict : dictionnaires (pour les correcteurs d'orthographe et les craqueurs de mots de passe)
+    /usr/doc : documentation
+    /usr/etc : quelques fichiers de config
+    /usr/games : jeux
+    /usr/include : fichiers d'en-tête pour la programmation
+    /usr/info : doc au format GNU info
+    /usr/lib : DLL non vitales
+    /usr/local : une sous-hiérarchie qui contient des logiciels compilés sur place à partir des sources. Organisation similaire à /usr
+    /usr/man : manuel en ligne
+    /usr/sbin : principalement les serveurs réseau
+    /usr/share : fichiers de données
+    /usr/spool : généralement un lien symbolique vers /var/spool
+    /usr/src : sources de certains logiciels, principalement le noyau de Linux
+
+/var :des données fréquemment réécrites
+
+    /var/catman : pages du manuel décompressées
+    /var/lib : bases de données, fichiers de config
+    /var/local : complète /usr/local de la même façon que /var complète /usr
+    /var/lock : fichiers qui servent à marquer l'utilisation de certaines ressources (box)
+    /var/log : journal du système
+    /var/run : principalement des infos sur les serveurs en fonctionnement
+    /var/spool : ce qui attend d'être utilisé par un logiciel (mail, files d'attente  imprimante...)
+    /var/tmp : fichiers temporaires

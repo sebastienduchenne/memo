@@ -3,6 +3,5 @@
     -Kubernetes : Google, puis Cloud Native Computing Foundation
     -ECS : Amazon
     -Marathon : Mesos
--cluster = ensemble d'hôtes exécutant des conteneurs linux
 -computer cluster / grappe de serveur / ferme de calcul = techniques consistant à regrouper plusieurs ordinateurs indépendants appelés nœuds
 -load balancing = équilibreur de charge

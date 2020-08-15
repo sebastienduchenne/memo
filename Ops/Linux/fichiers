@@ -1,19 +1,41 @@
-compter le nombre de fichiers dans 'path'
-    ls path | wc -l
+touch nom : créer un fichier
+mkdir nom : créer un dossier
+ls nom : lister
+ll : alias de ls -l, afficher les attributs
+cd
+pwd : chemin de la racine vers le dossier courant
+
+-cat nom : afficher un fichier dans le terminal
+-less : voir le contenu d'un fichier
+-more
+
+-compter le nombre de fichiers dans 'path' : ls path | wc -l
+
+-chmod : modifier les permissions d’un fichier ou d’un dossier
+
+-compresser en zip : zip -r nom.zip nom
+-décompresser un zip : unzip nom.zip -d destination
+
+-compresser fichier en tar.gz : tar cvf archive.tar.gz dossier
+-décompresser fichier tar : tar xvf archive.tar
+
+-transfert fichier ssh 
+    scp -r -p user@serveur1:chemin/source user@serveur2:chemin/destination
+
+-supprimer un fichier : rm nom
+-supprimer un dossier et tout son contenu : rm -r nom
+
+-déplacer fichier : mv src dest
 
 
->>> supprimer
-supprimer un dossier et tout son contenu : 
-    rm -R dossier
-
->>> rechercher
--Tous les fichiers du dossier où l'on se trouve : 
+*** rechercher
+-Tous les fichiers du dossier où l'on se trouve
     grep "expr" *
 
--Tous les fichiers .tex du dossier où l'on se trouve : 
+-Tous les fichiers .tex du dossier où l'on se trouve
     grep "expr" *.tex
 
--Tous les fichiers du dossier courant et de ses sous-dossier : 
+-Tous les fichiers du dossier courant et de ses sous-dossier
     grep -r "expr" .
 
 -Tous les fichiers .tex du dossier courant et de ses sous-dossier
@@ -21,11 +43,3 @@ supprimer un dossier et tout son contenu :
 
 -Tous les fichiers contenant 'expr' dans le dossier et les sous-dossier
     find . -iname "*expr*"
-
-
-### dossier et fichier
-
-supprimer dossier :     rm -rf nomDir
-compresser fichier :    tar cvf archive.tar.gz dossier
-decompresser fichier :  tar xvf archive.tar
-transfert fichier :     scp 

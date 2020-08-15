@@ -1,6 +1,9 @@
 -patron de conception (design pattern) = arrangement caractéristique de modules, une solution générale pour un problème récurrent dans un contexte donnée
 -patron d'architecture = une solution générale et réutilisable à un problème d'architecture récurrent. Plus large que les design pattern
-
+-architecture 3 tiers
+    -presentation layer
+    -business logic layer
+    -data access layer
 
 *** Fonctionnel
 -Fermeture
