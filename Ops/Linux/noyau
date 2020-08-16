@@ -1,0 +1,21 @@
+-cgroups, control groups (ou groupes de contrôles) 
+    = limiter l’accès aux ressources (mémoire, CPU, E/S, connexions réseau). 
+    -Cela évite que les besoins en ressources d’un processus affectent les autres processus en cours d’exécution
+
+-namespace 
+    = isoler le point de vue d’une application de l’environnement : processus, systèmes de fichiers et user ID. Cad limiter ce que peut voir l’application d'environnement
+    -imbrication de namespace
+    -groupes d'isolation
+    -différents namespace : 
+        -pid, 
+        -mnt, 
+        -net, 
+        -ipc, 
+        -user, 
+        -uts
+
+-LXC (Linux Containers) = le format de conteneur Linux standard
+-UnionFS
+-devicemapper
+-capabilities : gérer les privilèges d'un processus
+-AppArmor (Application Armor) : outil qui limite les accès aux ressources des applications

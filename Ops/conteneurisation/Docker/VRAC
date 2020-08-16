@@ -1,14 +1,3 @@
--montée en charge
--docker registry = stocke les images
--docker hub = registre basé sur le Cloud pour les référentiels (dépôts) de logiciels
-
-
-
-* docker run -i -t ubuntu /bin/bash
-
-1- si ubuntu absent : docker pull ubuntu
-2- docker create
-3- allocation filesystem pour le conteneur
-4- création d'une interface pour connecter le cont à un réseau (avec IP)
-5- démarrage du conteneur et exécution /bin/bash
-6- si exit, le conteneur stoppe mais n'est pas supprimé
+-libvirt
+-systemd-nspawn
+-containerd et runc

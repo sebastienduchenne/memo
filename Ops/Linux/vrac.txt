@@ -1,15 +1,19 @@
-ll
 eval
 fsck : réparer en cas de crash disque
 htop : utilisation ressources
+chroot
+systemd
 --------------------------------------------------------------------
 set PATH environment
     export PATH=$PATH:/place/with/the/file
 --------------------------------------------------------------------
-Pointer sur un site
+-Pointer sur un site
 
-sudo /etc/hosts
+$ sudo /etc/hosts
 
-#site
+-> ajouter l'ip et le nom de domaine
+
+#nom site
 ip1 domaine1
 ip2 domaine1
+--------------------------------------------------------------------

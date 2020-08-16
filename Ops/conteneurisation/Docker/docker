@@ -1,4 +1,5 @@
 *** Approche des VM
+
 -les VM virtualisent le matériel et un OS
 -permet une isolation complète des appli, car une VM contient une appli, ses dépendances et un OS
 -un hyperviseur permet de gérer et d'exécuter les VM
@@ -6,37 +7,63 @@
 
 
 *** Docker
+
 = outil permettant d'exécuter des applications et leurs dépendances dans des conteneurs sur n'importe quel serveur (conteneurisation)
 -tourne sur la machine hôte Linux
 -pas besoin d'un hyperviseur donc plus léger
 -représente une couche abstraite
--fournit une API, en étendant LXC, pour exécuter les conteneurs
-
-
-*** fonctionnalités de Linux utilisées
--Cgroups (ou groupes de contrôles) = limiter l’accès aux ressources (mémoire, CPU, E/S, connexions réseau). Cela évite que les besoins en ressources d’un processus affectent les autres processus en cours d’exécution
-
--namespace = limiter un processus et ses fils à une section spécifique du système sous-jacent, cad donner une vue du système à un processus
-
--LXC (Linux Containers) = le format de conteneur Linux standard
-
-
-*** Conteneur
--empaquete le code, la config et les dépendances de l'appli (bibliothèques et environnement d'exécution)
--cela permet d'exécuter les appli sur une grande variété de systèmes hôtes
--par défaut, les conteneurs sont isolés de leur environnement (les autres appli et la machine), ce qui évitent les conflits
--une image en cours d'exécution
--a un cycle de vie avec un état
--on peut limiter la mémoire utilisée par les conteneurs
+-libcontainer = driver qui remplace les LXC de linux, et qui permet au daemon docker d'utiliser des fonctionnalités de linux :
+    -namespace : limiter ce que peut voir l’application de l'environnement
+    -cgroups : limiter l’accès aux ressources
+    -capabilities : gérer les privilèges d'un processus
+    -interfaces réseaux
+    -règles de firewall
+-docker engine = moteur docker
+-on peut préciser l'utilisation des LXC
 
 
 *** Avantages
--déploiement plus rapide et facile
--moins couteux en ressources que les VM
--portabilité d'exécution des appli sur une grande variété de machines hôtes
+
+-déploiement des applications plus rapide et plus facile
+-consommation faibles de ressources
+-portabilité d'exécution des appli sur une grande variété d'environnement dont le cloud
+
+
+*** inconvénients
+
+-environnement 64 bits uniquement
+-applications legacy doivent être adaptées aux conteneurs
+
+
+*** Docker engine
+
+= docker client + docker host
+-docker client = client de Docker host qui intéragit avec le daemon via l’API
+-docker host = machine virtuelle où les conteneurs sont déployés
+    -daemon docker : moteur d'exécution des conteneurs qui gère des objets Docker (images, conteneurs, volumes et réseau), et écoute l'API. Récupère les images d'un docker registry
+    -API : interface pour communiquer avec le daemon
+    -images
+    -conteneurs
+
+
+*** Conteneur
+
+-empaquete le code, la config et les dépendances de l'appli (bibliothèques et environnement d'exécution)
+    => cela permet d'exécuter les appli sur une grande variété de systèmes hôtes
+-par défaut, les conteneurs sont isolés de leur environnement (les autres appli et la machine), ce qui évitent les conflits
+-une image en cours d'exécution
+-a un cycle de vie avec un état
+-contraintes sur l'utilisation des ressources
+-étapes docker run :
+    -docker pull <image_name>
+    -docker create
+    -allocation filesystem pour le conteneur
+    -création d'une interface pour connecter le conteneur à un réseau
+    -docker start
 
 
 *** Image docker
+
 -package incluant tout ce qu'il faut pour lancer un conteneur :
     -code
     -variables d'environnement
@@ -45,24 +72,11 @@
 -créée à partir d'un fichier dockerfile, qui contient toutes les instructions pour créer l'image
 -une image est une superposition de couche, contenant les différentes applications. Cela permet de restaurer une version précédente
 -l'exécution d'une image donne un conteneur
-
-
-*** Docker engine
-= application client-serveur
--3 composants :
-    -server = le daemon docker : processus en arrière plan qui gère des objets Docker (images, conteneurs, volumes et réseau), et écoute l'API
-    -API-REST : interface pour communiquer avec le daemon
-    -docker client CLI : programme client du point de vue de Docker qui intéragit avec le daemon via l’API-REST
-
--> serveur C API C CLI
-
-
-*** Services
--dans une application distribuée, les différentes parties sont des services (BD, server, front)
--un service lance une image
+-docker registry = système de stockage d'images
 
 
 *** volumes
+
 -par défaut, les données modifiées d'un conteneur ne persistent pas après relance
     -> à l'exécution, les layers de l'image sont en lecture seule
     -> une couche en lecture-écriture est ajoutée et contient les modifications
@@ -73,17 +87,21 @@
 
 
 *** réseau
+
 -permettre aux conteneurs de communiquer entre eux et avec le monde extérieur
--types de réseaux ou driver
+-types de réseaux ou driver :
     -bridge : 
         -réseau créé à l'installation de Docker et connecté à l'interface docker0
         -les conteneurs l'utilisent par défaut
         -conteneurs non accessibles depuis l'extérieur par défaut (configurer le mappage de port pour l'être)
     -none : le conteneur n'a pas d'interface et ne peut pas communiquer
     -host : pas d'isolation réseau, donc les conteneurs utilisent la même interface que l'hôte et sont accessibles depuis l'extérieur
-    -overlay : créer un réseau distribué entre plusieurs hôtes DOcker
+    -overlay : créer un réseau distribué entre plusieurs hôtes Docker
     -macvlan : connecter une app au réseau physique, par attribution d'une adresse MAC à un conteneur
 
 
-*** registry Docker privé
-= système privé de stockage d'images Docker, comme le Docker Hub
+*** registry Docker
+
+= système de stockage d'images Docker
+-Docker Hub = registry public contenant de nombreuses images
+-on peut en créer des privés
