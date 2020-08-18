@@ -1,49 +1,65 @@
+*** serveur
+
 -lancer le serveur sur linux
-sudo /etc/init.d/mongod stop
+    sudo systemctl start mongod
+
+-vérifier que mongodb est bien lancé
+    sudo systemctl status mongod
+
+-stopper le serveur
+    sudo systemctl restart mongod
 
 -se connecter au serveur
-mongo
+    mongo
+
+
+*** BD
 
 -Afficher les BD avec du contenu
-show dbs
+    show dbs
 
 -Création d'une BD
-use name
+    use users
 
--voir la BD courante
-db
+-voir le nom de la BD courante
+    db
+
+-supprimer la BD
+    db.runCommand({dropDatabase: 1}) : la base de données
+
+
+*** collection
 
 -insérer des données dans la collection users
-db.users.insert({nom:"Doe", prenom:"John", new Date('May 18, 1984')})
+    db.users.insert({nom:"Doe", prenom:"John", new Date('May 18, 1984')})
+    db.article.insert({title:"title1", author:"author1", content:"content1"})
 
 -trouver des éléments
-db.users.find() : Afficher une collection
-db.users.find({age:5}) : où l'age vaut 5
-db.users.find({prenom: /^j*/}) : commence par 'j'
-db.users.find({age:{$gt:40}}) : age < 40
-db.users.findOne({age:{$gt:40}}) : get un seul élément
-db.users.find({age:{$in:[5,10]}}) : age vaut 5 ou 10
-db.users.find().limit(3) : limiter le nombre de résultat à 3
-db.users.find().sort(age:-1) : ordonner par age décroissant
-db.users.find({age:{$gt:40}},{"nom":true}) : get les noms de ceux ayant < 40 ans
+    db.users.find() : Afficher une collection
+    db.users.find({age:5}) : où l'age vaut 5
+    db.users.find({prenom: /^j*/}) : commence par 'j'
+    db.users.find({age:{$gt:40}}) : age < 40
+    db.users.findOne({age:{$gt:40}}) : get un seul élément
+    db.users.find({age:{$in:[5,10]}}) : age vaut 5 ou 10
+    db.users.find().limit(3) : limiter le nombre de résultat à 3
+    db.users.find().sort(age:-1) : ordonner par age décroissant
+    db.users.find({age:{$gt:40}},{"nom":true}) : get les noms de ceux ayant < 40 ans
 
 -compter le nombre de document dans une collection
-db.users.count()
+    db.users.count()
 
--modifier
-.tous les stephen par boby
-db.users.update({prenom:"stephen"},{$set:{prenom:"boby"}},{multi:true})
+-modifier tous les stephen par boby
+    db.users.update({prenom:"stephen"},{$set:{prenom:"boby"}},{multi:true})
 
-.ajouter la clé 'sexe' à tous les users
-db.users.update({prenom:"boby"}, {$set:{sexe:"male"}}, {multi:true})
+-ajouter la clé 'sexe' à tous les users
+    db.users.update({prenom:"boby"}, {$set:{sexe:"male"}}, {multi:true})
 
-.ajouter un user olivier s'il n'existe pas
-db.patients.update({prenom:"olivier"}, {$set:{sexe:"male"}}, {upsert:true})
+-ajouter un user olivier s'il n'existe pas
+    db.patients.update({prenom:"olivier"}, {$set:{sexe:"male"}}, {upsert:true})
 
--save : insert ou update si déjà existant
-db.users.save({prenom:"jean claude", nom:"Van Damme"})
+-insert ou update si déjà existant
+    db.users.save({prenom:"jean claude", nom:"Van Damme"})
 
 -supprimer
-db.users.remove({prenom:"olivier"}) : ceux qui s'appelle olivier
-db.users.drop() : la collection
-db.runCommand({dropDatabase: 1}) : la base de données
+    db.users.remove({prenom:"olivier"}) : ceux qui s'appelle olivier
+    db.users.drop() : la collection

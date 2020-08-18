@@ -1,0 +1,34 @@
+*** serveur
+
+-démarrer le serveur
+    sudo systemctl start mysql
+
+-redémarrer le serveur
+    sudo systemctl restart mysql
+
+-stopper le serveur
+    sudo systemctl stop mysql
+
+-recharger la configuration
+sudo systemctl reload mysql
+
+
+*** utiliser mysql
+
+-lancer mysql
+    sudo mysql
+
+-sélectionner une DB
+    use nom_db
+
+-créer une DB
+    CREATE DATABASE nom_de_la_base;
+
+-lister les DB
+    SHOW DATABASES;
+
+-supprimer une DB
+    DROP DATABASE nom_de_la_base;
+
+-importer une DB en SQL
+    SOURCE fichier.sql;
