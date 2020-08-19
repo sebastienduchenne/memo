@@ -6,8 +6,11 @@
 -vérifier que mongodb est bien lancé
     sudo systemctl status mongod
 
--stopper le serveur
+-relancer le serveur
     sudo systemctl restart mongod
+
+-stopper le serveur
+    sudo systemctl stop mongod
 
 -se connecter au serveur
     mongo
