@@ -1,9 +1,17 @@
 import mongoose from 'mongoose';
 
 // connexion
-mongoose.connect('mongodb://localhost:27017/stackoverflow-example');
+mongoose.connect('mongodb://localhost/<database>', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'DB connection error!'));
+db.once('open', function (){
+  console.log("Connexion à la base OK");
+});
 
 
 // schéma
