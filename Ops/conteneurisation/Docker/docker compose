@@ -60,6 +60,33 @@ docker-compose rm : supprimer des conteneurs stoppés
 docker-compose images : lister les images
 
 
+---------------------------------------------
+
+docker-compose build
+docker-compose config
+docker-compose create
+docker-compose down
+docker-compose events
+docker-compose exec
+docker-compose help
+docker-compose kill
+docker-compose logs
+docker-compose pause
+docker-compose port
+docker-compose ps
+docker-compose pull
+docker-compose push
+docker-compose restart
+docker-compose rm
+docker-compose run
+docker-compose scale
+docker-compose start
+docker-compose stop
+docker-compose top
+docker-compose unpause
+docker-compose up
+
+
 *** Fichier docker-compose.yml
 
 version : version de docker

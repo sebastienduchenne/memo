@@ -19,23 +19,35 @@
     show dbs
 
 -Création d'une BD
-    use users
+    use <db>
 
 -voir le nom de la BD courante
     db
 
 -supprimer la BD
-    db.runCommand({dropDatabase: 1}) : la base de données
+    db.runCommand({dropDatabase: 1})
 
 
 *** collection
 
+=> on peut stocker des objets dans une variable
+
+-afficher les collections
+    show collections
+
+-afficher une collection
+    db.<collection>.find()
+
+-renommer une collection
+    db.oldname.renameCollection("newname")
+
+-supprimer une collection
+    db.<collection>.drop()
+
 -insérer des données dans la collection users
     db.users.insert({nom:"Doe", prenom:"John", new Date('May 18, 1984')})
-    db.article.insert({title:"title1", author:"author1", content:"content1"})
 
 -trouver des éléments
-    db.users.find() : Afficher une collection
     db.users.find({age:5}) : où l'age vaut 5
     db.users.find({prenom: /^j*/}) : commence par 'j'
     db.users.find({age:{$gt:40}}) : age < 40
@@ -60,6 +72,5 @@
 -insert ou update si déjà existant
     db.users.save({prenom:"jean claude", nom:"Van Damme"})
 
--supprimer
+-supprimer des documents
     db.users.remove({prenom:"olivier"}) : ceux qui s'appelle olivier
-    db.users.drop() : la collection
