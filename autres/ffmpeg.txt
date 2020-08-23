@@ -1,0 +1,3 @@
+*** extraire son d'une vidéo / convertir une vidéo
+
+    ffmpeg -i <src> <dest>.<format souhaité audio ou vidéo>
