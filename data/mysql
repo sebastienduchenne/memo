@@ -19,7 +19,7 @@ sudo systemctl reload mysql
     sudo mysql
 
 -sélectionner une DB
-    use nom_db
+    use nom_db;
 
 -créer une DB
     CREATE DATABASE nom_de_la_base;
@@ -32,3 +32,6 @@ sudo systemctl reload mysql
 
 -importer une DB en SQL
     SOURCE fichier.sql;
+
+-lister les tables
+    show tables;

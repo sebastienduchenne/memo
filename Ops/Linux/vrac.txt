@@ -17,3 +17,4 @@ $ sudo /etc/hosts
 ip1 domaine1
 ip2 domaine1
 --------------------------------------------------------------------
+TTY (affiche sur la sortie standard le nom du fichier connecté sur l'entrée standard)

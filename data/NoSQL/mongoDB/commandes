@@ -35,7 +35,6 @@
 
 -insérer des données dans la collection users
     db.users.insert({nom:"Doe", prenom:"John", new Date('May 18, 1984')})
-    db.article.insert({title:"title1", author:"author1", content:"content1"})
 
 -trouver des éléments
     db.users.find() : Afficher une collection
