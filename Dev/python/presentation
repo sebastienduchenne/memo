@@ -13,8 +13,22 @@
 
 
 *** virtualenv
-=
--travailler sur plusieurs projets à la fois nécessitant chacun des librairies de version différente
+= environnement où l'on peut travailler avec une version spécifique d'une dépendance
+-on peut ainsi travailler sur plusieurs projets contenant des versions différentes dans les dépendances 
+-virtualenv va créer un dossier qui va contenir les dépendances
+-étapes
+    -si ce n'est pas fait, installer virtualenv : pip install virtualenv
+    -créer un dossier de projet et aller dedans
+    -créer un environnement virtuel : virtualenv <nom venv>
+    -activer l'environnement : source <nom venv>/bin/activate
+    -installer les dépendances
+    -créer le fichier d'application 'app.py', qui contient le code
+    -créer le fichier vide '__init__.py'
+    -rendre l'application exécutable : export FLASK_APP=app
+    -export FLASK_ENV=development
+    -lancer l'application : flask run
+    -on désactive l'environnement avec : deactivate
+    -on supprimer un environnement en supprimant le dossier
 
 
 *** pip
@@ -23,10 +37,10 @@
 -pip install django==2.2
 -pip uninstall django
 -pip install django --upgrade
--pip install django==2.1 --upgrade #downgrader
--pip list --outdated #quels lib n'est plus à jour
--pip freeze #lib installées et leur version
-
+-pip install django==2.1 --upgrade  # downgrader
+-pip install -r requirements.txt    # installer à partir d'une liste (pip freeze)
+-pip list --outdated                # quelles lib ne sonr plus à jour
+-pip freeze                         # lib installées et leur version
 
 
 *** usages
@@ -53,10 +67,3 @@ re       : fonctions permettant de travailler sur des expressions régulières
 .py  -> script modifiable
 .pyc -> script compilé
 .pyw -> script executé sans lancement de terminal (sous windows)
-
-
-*** liens
-https://openclassrooms.com/fr/courses/235344-apprenez-a-programmer-en-python/230659-decouvrez-python
-https://python-django.dev/
-http://biopython.org/DIST/docs/tutorial/Tutorial.html
-http://www.dailymotion.com/playlist/x22t3u_universal_avs_apprendre-le-python/
