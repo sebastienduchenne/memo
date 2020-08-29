@@ -21,3 +21,4 @@
 -ip addr show <interface_name> : info sur une interface
 
 -adresse MAC = identifiant physique stocké dans une carte réseau ou une interface réseau similaire. Elle est unique au monde, sauf modification
+-DNS (Domain Name System) = système qui traduit les noms de domaines en adresse IP

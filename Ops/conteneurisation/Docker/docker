@@ -99,6 +99,13 @@
     -overlay : créer un réseau distribué entre plusieurs hôtes Docker
     -macvlan : connecter une app au réseau physique, par attribution d'une adresse MAC à un conteneur
 
+-3 réseaux créés automatiquement
+    -bridge, type bridge, interface docker0, réseau par défaut
+    -host, type host
+    -none, type null
+-on peut créer des "réseaux définis par l'utiliteur" ou "user defined networks"
+    -permet la résolution DNS des noms d'hôtes
+
 
 *** registry Docker
 
