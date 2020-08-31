@@ -4,8 +4,16 @@ htop : utilisation ressources
 chroot
 systemd
 --------------------------------------------------------------------
-set PATH environment
-    export PATH=$PATH:/place/with/the/file
+*** variable PATH
+-variable d'environnement qui indique à Linux où chercher des exécutables
+-variable située dans le fichier /etc/environment
+-afficher la variable
+    echo $PATH
+-set PATH pour la durée de la session du terminal
+    export PATH=$PATH:/chemin/vers/le/repertoire
+-set PATH permanent
+    ajouter le chemin à la fin du fichier /etc/environment
+    source /etc/environment pour que le changement prenne effets
 --------------------------------------------------------------------
 -Pointer sur un site
 
