@@ -1,0 +1,10 @@
+http {
+  gzip on;
+  server {
+    server_name axopen.com;
+    listen 80;
+     location / {
+       try_files $uri $uri/ /index.html;
+   }
+  }
+}

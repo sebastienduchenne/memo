@@ -28,13 +28,13 @@ Interface : IConsole {872da645-4a9b-1727-bee2-5585105b9eed}
 
 ------------ solution
 
-Panneau de configuration > Programme > Activer ou désactiver des fonctionnalités windows
+1.Panneau de configuration > Programme > Activer ou désactiver des fonctionnalités windows
 
 Décocher :
     -Hyper-V
     -Containers
     -Plateforme d'odinateur virtuel (virtual machine platform)
 
-on peut aussi désactiver Hyper-V en tapant la commande :
+2.désactiver Hyper-V en tapant la commande :
 
     dism.exe /Online /Disable-Feature:Microsoft-Hyper-V

@@ -1,0 +1,18 @@
+# /etc/nginx/nginx.conf
+
+events {}                   # event context needs to be defined to consider config valid
+
+http {
+    server {
+        listen 80;
+        server_name  netguru.co  www.netguru.co  *.netguru.co;
+
+        location / {
+            root /index.html;
+        }
+
+        location /foo {
+            root "foo";
+        }
+    }
+}
