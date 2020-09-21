@@ -1,0 +1,41 @@
+-lancer nginx
+    nginx
+
+-relancer nginx avec une nouvelle config
+    sudo service nginx reload
+
+-envoi d'un signal durant l'exécution
+    nginx -s <signal>
+
+        -stop : fast shutdown
+        -quit : graceful shutdown (wait for workers to finish their processes)
+        -reload : reload the configuration file, start the new worker process with a new configuration, gracefully shut down old worker processes
+        -reopen : reopen the log file
+
+-utiliser un autre fichier de conf que celui par défaut
+    nginx -c <file>
+
+-set global configuration directives
+    nginx -g directives
+
+    ex : nginx -g "pid /var/run/nginx.pid; worker_processes `sysctl -n hw.ncpu`;"
+
+-nginx version
+    nginx -v
+
+-nginx version, compiler version, and configure parameters
+    nginx -V
+
+-suppress non-error messages during configuration testing
+    nginx -q
+
+-test the configuration file : nginx checks the configuration for correct syntax, and then tries to open files referred in the configuration
+    nginx -t
+    nginx -T : additionally dump configuration files to standard output (1.9.2)
+
+-aide d'une commande
+    nginx <cmd> -?
+    nginx <cmd> -h
+
+-set nginx path prefix, i.e. a directory that will keep server files (default value is /usr/local/nginx)
+    nginx -p <prefix>

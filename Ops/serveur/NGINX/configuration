@@ -1,0 +1,36 @@
+<context name> {
+    <directive name>
+}
+
+
+***
+resolver 10.0.0.1;
+module ngx_http_upstream_module
+upstream backend {...} : définir un groupe de serveurs
+worker_processes nb;
+
+
+http {
+    gzip on;
+    upstream backend {
+        least_conn;
+        ip_hash;
+        hash;
+        least_time
+        random
+        server
+    }
+    server {...}
+}
+
+------------------
+
+server {
+    listen
+    root
+    location url {
+        proxy_pass
+        fastcgi_pass
+        fastcgi_param
+    }
+}
