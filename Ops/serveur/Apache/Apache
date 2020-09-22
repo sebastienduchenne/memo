@@ -1,4 +1,5 @@
 -serveur HTTP
+-Apache Software Foundation
 -Modèle Thread Driven
     -un thread créé par requête, s'occupe du traitement de toute la page. Se bloque quand attend une I/O
     -problème si bcp de connexions simultanées : blocage entre thread + bcp de piles d'exécution
