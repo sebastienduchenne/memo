@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <myButton v-bind:compte-initial="0"></myButton>
+    </div>
+    <script>
+      Vue.component('myButton', {
+        props: [ "compteInitial" ],
+        data: () => ({
+          compte: 0,
+        }),
+        template: `<button v-on:click="auClic">Cliqué {{ compte }} fois</button>`,
+        computed: {
+          compteFoisDeux() {
+            return this.compte * 2;
+          }
+        },
+        watch: {
+          compte(n, old) {
+            console.log(`old: ${old} ; n: ${n}.`);
+          }
+        },
+        methods: {
+          auClic() {
+              this.compte += 1;
+          }
+        },
+        mounted() {
+          this.compte = this.compteInitial;
+        }
+      });
+
+      new Vue({
+        el: '#app',
+      });
+    </script>
+  </body>
+</html>
