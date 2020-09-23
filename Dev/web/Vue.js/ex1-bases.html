@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script> <!-- import de vue.js -->
+  </head>
+  <body>
+    <div id="app">                         <!-- view -->
+      <p>{{ message }}</p>
+      <p><input v-model="message"></p>     <!-- two way binding -->
+      <p v-if="seen">if</p>                <!-- v-if -->
+      <ol>
+        <li v-for="todo in todos">         <!-- v-for -->
+          {{ todo.text }}
+        </li>
+      </ol>
+      <button v-on:click="helloworld">Hello World !</button>    <!-- v-on -->
+    </div>
+    <script>
+      new Vue({                       // view model
+        el: "#app",                   // view, el = element
+        data: data = {                // model
+          message: "Hello World !",
+          seen: true,                 // v-if
+          todos: [                    // v-for
+            { text: '1' },
+            { text: '2' },
+            { text: '3' }
+          ]
+        },
+        methods: {
+          helloworld: function () {
+            this.message = "helloworld"
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
