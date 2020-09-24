@@ -1,0 +1,10 @@
+= transformer les différents fichiers d'un projet JS en fichiers JS, png et html
+-on peut choisir entre performance et lazy loading
+-alternative à browserify
+-loader : css-loader et style-loader 
+-graph dependency
+-entry point
+-webpack.config.js
+-output
+-bundle
+-webpack-cli
