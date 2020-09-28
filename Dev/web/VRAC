@@ -7,3 +7,6 @@
     -Mozilla : Rhino
     -Netscape : SpiderMonkey
     -Apple : JavaScriptCore
+-React => Next.js, Gatsby
+-Vue => Nuxt
+-GraphQL (Graph Query Language) = langage de requêtes dont la structure de la réponse du serveur est fixée par le client 

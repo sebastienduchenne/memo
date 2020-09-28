@@ -1,0 +1,16 @@
+-Cascading Style Sheet
+-préprocesseurs CSS = outil permettant de générer dynamiquement des fichiers CSS
+    -Sass
+    -LESS
+    -PostCSS
+    -Stylus
+
+
+*** Sass
+-extension .scss
+-variable qui commence par '$'
+-sélecteur '&'
+-directive @extend
+-%placeholder
+-mixin
+-interpolation de variables
