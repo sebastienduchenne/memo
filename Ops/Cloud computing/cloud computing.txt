@@ -1,23 +1,34 @@
-Cloud computing : exploiter les capacités de calcul de serveurs distants
+-Cloud computing = exploiter les capacités de calcul de serveurs distants pour accéder à des services informatiques (serveurs, stockage, mise en réseau, logiciels) via internet à partir d’un fournisseur
 
 
-Services
+*** types de services
 
-SaaS : 
-software as a service, application mise à disposition des utilisateurs
+-SaaS (Software as a Service) = application mise à disposition des utilisateurs
+    -ex : Google Docs, Microsoft Office 365
 
-PaaS : 
-plateform as a service, offre l'accès à une plateforme pouvant contenir des applications
-Ex: MS Azure, AWS, heroku, open shift, cloudfoundry
+-PaaS (Plateform as a Service) = plateforme où l'on peut développer des applications. L'utilisateur donne son code et ne gère pas les serveurs
+    Ex: MS Azure, AWS, Heroku, Open Shift, Cloud Foundry, Google App Engine
 
-IaaS : 
-infrastructure as a service, accès à un parc informatique virtualisé
+-IaaS (Infrastructure as a Service) = accès à un parc informatique virtualisé
 
--accès à des services informatiques (serveurs, stockage, mise en réseau, logiciels) via internet à partir d’un fournisseur
--services
-    -Infrastructure as a Service (IaaS) : AWS
-    -Platform as a Service (PaaS) : plateforme de dev
-    -Software as a Service (SaaS) : Microsoft Office 365
-    -Backend as a Service (BaaS) : fournir aux applications mobiles et Web des services cloud backend (stockage de fichiers, gestion de comptes, ...)
-    -MBaaS
--Microsoft Azure
+-BaaS (Backend as a Service) = fournir aux applications mobiles et web des services cloud backend
+    -ex : stockage de fichiers, gestion de comptes
+
+-MBaaS (Mobile Backend as a service)
+
+
+Application         SaaS
+Middleware          PaaS
+OS                  PaaS
+Virtualisation      IaaS
+Serveur / stockage  IaaS
+Réseau              IaaS
+Data center         IaaS
+
+
+*** fournisseurs
+-Cloud Foundry (PaaS)
+    -architecture basée sur les conteneurs
+    -prend en charge n'importe quel langage
+    -KubeCF : déploiement sur Kubernetes
+    -BOSH : outil de déploiement
