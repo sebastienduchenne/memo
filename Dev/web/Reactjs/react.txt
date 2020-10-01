@@ -1,39 +1,40 @@
-. Bibliothèque JavaScript, pas framework
-. Gère l'interface utilisateur, cad la vue de MVC
-. approche composant = création de composants indépendants et réutilisables
-. Travail sur un DOM virtuel pour rafraichir les éléments de la page qui ont changé, en JavaScript
-. manifeste applicatif PWA
--moteur de rendu ou renderer
+-bibliothèque JavaScript, pas framework
+-gère l'interface utilisateur, cad la vue de MVC
+-manifeste applicatif PWA
 -refs : accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
--réconciliation : mise à jour du DOM si changement du state
--Contexte : faire passer des données à travers l’arborescence du composant sans avoir à passer manuellement les props à chaque niveau
--web component : encapsulation forte pour des composants réutilisables (non react)
 -on peut avoir plusieurs noeud DOM racines dans une application
 -le coté front doit gérer le temps de chargement et les erreurs
 
->>> élément
+
+*** fonctionnement et concepts de React
+-approche composant = création de composants indépendants et réutilisables
+-React travaille en JS sur un DOM virtuel in memory, puis répercute les changements sur le DOM du browser
+-React ne change que ce qui a besoin d'être changé
+-moteur de rendu ou renderer
+-contexte : faire passer des données à travers l’arborescence du composant sans avoir à passer manuellement les props à chaque niveau
+-réconciliation : mise à jour du DOM si changement du state
+-syntaxe JSX
+
+
+*** élément
 = bloc élémentaire (les composants ont des trucs en plus)
 -les éléments react sont immuables (=enfants et attributs non modifiables)
 
 
->>> Composants d’ordre supérieur (Higher-Order Component ou HOC)
+*** Composants d’ordre supérieur (Higher-Order Component ou HOC)
 -fonction qui transforme un composant en un autre composant
 -const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 
->>> service worker (non React)
--script qui se lance entre la webpage et le réseau et qui sert de proxy. Il est utile en cas de perte du réseau
-
-
->>> React sans ES6
+*** React sans ES6
 -getInitialState : méthode permettant d’initialiser le “state” interne du composant. La méthode retourne un objet qui sera ensuite mappé sur this.state (react sans ES6)
 
 
->>> outil de test ReactTestUtils
+*** outil de test ReactTestUtils
 -pour tester les composants react
 
 
->>> Construire une appli react
+*** Construire une appli react
 1 : décomposer l’interface utilisateur en une hiérarchie de composants
 2 : construire une version statique avec React
 3 : déterminer le contenu minimal (mais suffisant) de l’état de l’UI
@@ -41,21 +42,8 @@
 5 : ajouter le flux de données inverse
 
 
->>> Liens
-https://openclassrooms.com/fr/courses/4664381-realisez-une-application-web-avec-react-js
-https://putaindecode.io/fr/articles/js/react/
-https://blog.ippon.fr/2016/04/19/comment-bien-debuter-en-reactjs/
-https://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm
-
-https://github.com/ahfarmer/calculator
-
-https://reactjs.org/community/examples.html
-https://dev.to/drminnaar/11-react-examples-2e6d
-
-https://jsfiddle.net/user/dashboard/fiddles/
-
-https://fr.reactjs.org/docs/react-api.html
-https://fr.reactjs.org/docs/react-dom.html
-
-http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
-
+*** Create React App
+= outil pour aider à réaliser des appli React
+-commandes
+    -npx create-react-app <appname> : créer une app create
+    -npm start

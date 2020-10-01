@@ -23,13 +23,14 @@ class Welcome extends React.Component {
   }
 }
 
->>> constituant
+
+*** constituant
 -props = entrée
 -state = état local, est privé
 -méthodes de cycle de vie
 
 
->>> règles
+*** règles
 -tout composant React doit agir comme une fonction pure vis-à-vis de ses props.
 -les données descendent dans les enfants
 -l’état remonte dans le parent : 
@@ -39,7 +40,8 @@ class Welcome extends React.Component {
 -Les composants utilisateurs doivent commencer par une majuscule
 -nommer les props du point de vue du composant plutôt que de celui du contexte dans lequel il est utilisé
 
->>> API
+
+*** API
 Montage : 
     1. constructor()
     2. static getDerivedStateFromProps()
@@ -73,6 +75,6 @@ Autres
     -forceUpdate()
 
 
->>> gestion des saisies de formulaire
+*** gestion des saisies de formulaire
 -composant controlé : valeur saisie vérifiée
 -composant non-controlé : valeur saisie non vérifiée
