@@ -1,19 +1,20 @@
 -bibliothèque JavaScript, pas framework
 -gère l'interface utilisateur, cad la vue de MVC
 -manifeste applicatif PWA
--refs : accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
 -on peut avoir plusieurs noeud DOM racines dans une application
 -le coté front doit gérer le temps de chargement et les erreurs
+-Redux = libraire JS basé sur Flux pour gérer un state global
 
 
 *** fonctionnement et concepts de React
 -approche composant = création de composants indépendants et réutilisables
 -React travaille en JS sur un DOM virtuel in memory, puis répercute les changements sur le DOM du browser
+-flux de données unidirectionnel
 -React ne change que ce qui a besoin d'être changé
 -moteur de rendu ou renderer
 -contexte : faire passer des données à travers l’arborescence du composant sans avoir à passer manuellement les props à chaque niveau
 -réconciliation : mise à jour du DOM si changement du state
--syntaxe JSX
+-syntaxe JSX recommandée
 
 
 *** élément
@@ -46,4 +47,34 @@
 = outil pour aider à réaliser des appli React
 -commandes
     -npx create-react-app <appname> : créer une app create
-    -npm start
+
+
+*** bonnes pratiques
+-state à éviter autant que possible
+-propTypes à définir
+-principe de responsabilité unique pour les composants : un composant pour une fonctionnalité
+-utiliser des composants d’ordre supérieur
+-mettre la logique dans la méthode render()
+
+
+--------------------------------------------------------------------
+*** notions
+
+composant React
+élément
+syntaxe JSX
+state
+props
+cycle de vie
+fragment
+ref
+portail
+Composants d’ordre supérieur
+profileur
+prop-types
+StrictMode
+composant contrôlé
+évènements
+React router
+Redux
+Flux

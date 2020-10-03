@@ -18,16 +18,6 @@
 -script qui se lance entre la webpage et le réseau et qui sert de proxy. Il est utile en cas de perte du réseau
 
 
-*** Flux
-= architecture
-4 concepts :
-    -actions (vennant du serveur ou de l'utilisateur)
-    -dispatcher = composant qui réceptionne les actions puis les retransmets
-    -stores = équivalent du model de MVC, ils contiennent les données et réagissent aux actions que le dispatcher leur transmet
-    -views = gèrent le rendu des données dans le DOM, et lance des actions lorsque l'utilisateur effectue certaines actions
--le flux est unidirectionnel
-
-
 *** web component
 -créer des éléments personnalisés réutilisables
 -encapsulation forte

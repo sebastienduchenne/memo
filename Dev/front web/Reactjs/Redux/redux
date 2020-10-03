@@ -1,0 +1,6 @@
+= libraire JS basé sur Flux qui gère un state global
+3 concepts
+    -global state : tout l’état d’une application est décrit comme un objet
+    -action = objet représentant une intéraction
+    -reducer = fonction pure qui modifie le state avec l'action
+-React-Redux pour relier le store Redux et les composants React
