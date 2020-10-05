@@ -3,7 +3,6 @@
 -manifeste applicatif PWA
 -on peut avoir plusieurs noeud DOM racines dans une application
 -le coté front doit gérer le temps de chargement et les erreurs
--Redux = libraire JS basé sur Flux pour gérer un state global
 
 
 *** fonctionnement et concepts de React
@@ -22,17 +21,8 @@
 -les éléments react sont immuables (=enfants et attributs non modifiables)
 
 
-*** Composants d’ordre supérieur (Higher-Order Component ou HOC)
--fonction qui transforme un composant en un autre composant
--const EnhancedComponent = higherOrderComponent(WrappedComponent);
-
-
 *** React sans ES6
 -getInitialState : méthode permettant d’initialiser le “state” interne du composant. La méthode retourne un objet qui sera ensuite mappé sur this.state (react sans ES6)
-
-
-*** outil de test ReactTestUtils
--pour tester les composants react
 
 
 *** Construire une appli react
@@ -53,7 +43,7 @@
 -state à éviter autant que possible
 -propTypes à définir
 -principe de responsabilité unique pour les composants : un composant pour une fonctionnalité
--utiliser des composants d’ordre supérieur
+-utiliser des composants d’ordre supérieur (HOC)
 -mettre la logique dans la méthode render()
 
 
@@ -69,7 +59,7 @@ cycle de vie
 fragment
 ref
 portail
-Composants d’ordre supérieur
+Composants d’ordre supérieur (HOC)
 profileur
 prop-types
 StrictMode
@@ -78,3 +68,4 @@ composant contrôlé
 React router
 Redux
 Flux
+hooks

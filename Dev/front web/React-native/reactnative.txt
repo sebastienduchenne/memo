@@ -1,5 +1,1 @@
-. Développer des applications natives
-
-
-Liens
-https://blog.arca-computing.fr/react-native-une-bonne-alternative-au-developpement-natif/
+-Développer des applications natives

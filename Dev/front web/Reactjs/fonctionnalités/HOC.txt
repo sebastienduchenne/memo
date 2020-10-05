@@ -1,0 +1,4 @@
+*** composants d’ordre supérieur (HOC, Higher order components)
+= fonctions pures qui ajoutent des fonctionnalités aux composants existants
+
+const EnhancedComponent = higherOrderComponent(WrappedComponent);

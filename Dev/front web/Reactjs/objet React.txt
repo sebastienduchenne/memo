@@ -1,36 +1,71 @@
->>> React.Component : classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
+*** React.Component
+= classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
+
+-cycle de vie
+    -montage
+        1. constructor()
+        2. static getDerivedStateFromProps()
+        3. render() : ce qui sera afficher
+        4. componantDidMount() : appelée lors de la création du composant, après que la sortie du composant a été injectée dans le DOM. Elle permet d’initialiser des méthodes et données
+        5. componentWillMount() : DEPRECIEE
+    -mise à jour
+        1. static getDerivedStateFromProps()
+        2. shouldComponentUpdate()
+        3. render()
+        4. getSnapshotBeforeUpdate()
+        5. componentDidUpdate()
+        -componentWillUpdate() : DEPRECIEE
+        -componentWillReceiveProps() : DEPRECIEE
+    -démontage
+        -componantWillUnmount() : Appelé lors de la destruction du composant. Peut être utilisé pour transmettre des données lors de cette phase
+
+-gestion d'erreur
+    -static getDerivedStateFromError()
+    -componentDidCatch()
+
+-propriétés de classe
+    -defaultProps : utilisée pour les props non définies
+    -displayName : utilisée dans les messages de débogage
+
+-propriété d'instance
+    -props = attributs d’un composant dans lequel on passe des données, lecture seule
+    -state = état local d'un composant
+
+-autres
+    -setState(xxx) : mettre à jour le "state". La modification de l'état local met à jour le rendu du composant et de celui des enfants. Accepte un objet ou une fonction
+    -forceUpdate()
 
 
->>> React.PureComponent : 
+*** React.PureComponent
 -classe pour créer des composants React comme React.Component
 -différence : implémente shouldComponentUpdate()
 
 
->>> React.memo
--composant d’ordre supérieur
+*** React.memo
+-un composant d’ordre supérieur
 -comme PureComponent mais pour les composants créés à l’aide de fonctions
 
 
->>> React.createElement()
+*** React.createElement()
 
 
->>> React.cloneElement()
+*** React.cloneElement()
 -clone un élément
 
 
->>> React.createFactory(type)
+*** React.createFactory(type)
 -renvoie une fonction qui produit des éléments React d’un type donné :
     -une chaîne contenant un nom de balise (tel que 'div' ou 'span')
     -un type de composant React
     -un type de fragment React
--obsolète, inutile avec du JSX
+-OBSOLETE, inutile avec du JSX
 
 
->>> React.isValidElement(object)
+*** React.isValidElement(object)
 -vérifie qu’un objet est bien un élément React
 
 
->>> React.Children
+*** React.Children
 -interagir avec la structure de données opaque de this.props.children
 React.Children.map : exécute une fonction sur chacun des enfants directs
 React.Children.forEach : Même chose que React.Children.map() mais sans renvoyer de tableau
@@ -39,27 +74,21 @@ React.Children.only(children) : vérifie que children n’a qu’un seul enfant
 React.Children.toArray(children) : renvoie la structure de donnée opaque de children sous la forme d’un tableau linéarisé
 
 
->>> React.Fragment
+*** React.Fragment
 -grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM
-<React.Fragment>
-    <ChildA />
-    <ChildB />
-</React.Fragment>
-    -> React.Fragment n'est pas ajouté au DOM
--autre syntaxe : <></>
 
 
->>> React.createRef()
+*** React.createRef()
 -accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
 
 
->>> React.forwardRef(fonction de rendu)
+*** React.forwardRef(fonction de rendu)
 -crée un composant React qui transfère la valeur de l’attribut ref qu’il reçoit à un autre composant plus bas dans l’arbre
 
->>> React.lazy(fonction avec import)
+
+*** React.lazy(fonction avec import)
 -charger un composant dynamiquement
 
 
->>> React.Suspense
+*** React.Suspense
 -charger un composant une fois celui avec React.lazy chargé
-

@@ -9,10 +9,11 @@
 -props.children : passer des éléments enfants pour les comp qui ne connaissent pas leur enfant à l'avance (délégation de contenu)
 -Les mises à jour de l’état peuvent être asynchrones
 -Les mises à jour de l’état sont fusionnées
--Affichage conditionnel
--en cas de changement, react DOM met à jour le strict nécessaire (les noeuds)
+-affichage conditionnel = afficher un composant ou non en fonction de l'état de l'application
+-en cas de changement, ReactDOM met à jour le strict nécessaire (les noeuds)
 
 
+*** props
 function Welcome(props) {
   return <h1>Bonjour, {props.name}</h1>;
 }
@@ -24,10 +25,6 @@ class Welcome extends React.Component {
 }
 
 
-*** composants d’ordre supérieur (HOC, Higher order components)
-= fonctions pures qui ajoutent des fonctionnalités aux composants existants
-
-
 *** constituant
 -props = entrée
 -state = état local, est privé
@@ -35,7 +32,7 @@ class Welcome extends React.Component {
 
 
 *** règles
--tout composant React doit agir comme une fonction pure vis-à-vis de ses props.
+-tout composant React doit agir comme une fonction pure vis-à-vis de ses props
 -les données descendent dans les enfants
 -l’état remonte dans le parent : 
     -l’état est ajouté au composant qui en a besoin pour s’afficher
@@ -43,40 +40,6 @@ class Welcome extends React.Component {
 -utiliser setState() pour modifier l'état
 -Les composants utilisateurs doivent commencer par une majuscule
 -nommer les props du point de vue du composant plutôt que de celui du contexte dans lequel il est utilisé
-
-
-*** API
-Montage : 
-    1. constructor()
-    2. static getDerivedStateFromProps()
-    3. render()
-    4. componentDidMount()
-
-Mise à jour :
-    1. static getDerivedStateFromProps()
-    2. shouldComponentUpdate()
-    3. render()
-    4. getSnapshotBeforeUpdate()
-    5. componentDidUpdate()
-
-Démontage
-    componentWillUnmount()
-
-Gestion d’erreurs
-    -static getDerivedStateFromError()
-    -componentDidCatch()
-
-Propriétés de classe
-    -defaultProps : utilisée pour les props non définies
-    -displayName : utilisée dans les messages de débogage
-
-Propriété d'instance
-    -props = attributs d’un composant dans lequel on passe des données, lecture seule
-    -state = état local d'un composant
-
-Autres
-    -setState(xxx) : mettre à jour le "state". La modification de l'état local met à jour le rendu du composant et de celui des enfants. Accepte un objet ou une fonction
-    -forceUpdate()
 
 
 *** gestion des saisies de formulaire
