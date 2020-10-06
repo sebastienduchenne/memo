@@ -45,7 +45,13 @@
 -principe de responsabilité unique pour les composants : un composant pour une fonctionnalité
 -utiliser des composants d’ordre supérieur (HOC)
 -mettre la logique dans la méthode render()
-
+-tout composant React doit agir comme une fonction pure vis-à-vis de ses props (props en lecture seule)
+-l’état remonte dans le parent = si un composant parent a besoin des données de ses enfants ou que 2 enfants ont besoin de communiquer, il vaut mieux déclarer l'état dans le parent. Ainsi, le parent passe les données aux props des enfants. Cela permet d'éviter des bugs
+-les données descendent dans les enfants = les parents passent les données aux enfants qui ne connaissent pas leur origine, et peuvent à leur tour passer les données à leurs enfants (cascade de props)
+-utiliser setState() pour modifier l'état
+-le nom d'un composant utilisateur doit commencer par une majuscule
+-nommer les props du point de vue du composant plutôt que de celui du contexte dans lequel il est utilisé
+-extraire un composant si une partie de l'UI est utilisée plusieurs fois ou complexe
 
 --------------------------------------------------------------------
 *** notions

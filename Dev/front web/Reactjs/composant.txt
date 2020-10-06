@@ -1,47 +1,64 @@
--éléments indépendants et réutilisables
--contient la balisage et la logique
--un composant peut s'écrire avec la syntaxe d'une fonction ou d'une classe
+-composant = élément indépendant et réutilisable
 -comme des fonctions qui acceptent des props et renvoient des éléments react
--fonction composant = une fonction qui accepte des props et renvoit un élément react
 -composition de composant : faire référence à d'autres composants en sortie
--composant pur fonctionnel = renvoit toujours la même chose
--separation of concerns
+-composant pur fonctionnel = ne modifie pas les entrées et renvoit toujours la même chose pour les même entrées
+-les composants sont de la SoC car ils contiennent le HTML et la logique qui gère la même responsabilité
 -props.children : passer des éléments enfants pour les comp qui ne connaissent pas leur enfant à l'avance (délégation de contenu)
--Les mises à jour de l’état peuvent être asynchrones
--Les mises à jour de l’état sont fusionnées
 -affichage conditionnel = afficher un composant ou non en fonction de l'état de l'application
 -en cas de changement, ReactDOM met à jour le strict nécessaire (les noeuds)
+-composant monté = injecté dans le DOM
+-composant à état : contient un state
 
 
-*** props
-function Welcome(props) {
-  return <h1>Bonjour, {props.name}</h1>;
-}
+*** déclarer un composant et le lier à la vue
 
-class Welcome extends React.Component {
-  render() {
-    return <h1>Bonjour, {this.props.name}</h1>;
-  }
-}
+-créer avec une fonction composant
+    function Welcome(props) {  // seulement 'props' en argument
+      return <h1>Bonjour, {props.name}</h1>;
+    }
+
+-créer avec une classe
+        -> permet d'ajouter un state et des méthodes de cycle de vie
+    class Welcome extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {...}
+      }
+      componentDidMount() {  }
+      componentWillUnmount() {  }
+      render() {
+        return <h1>Bonjour, {this.props.name}</h1>;
+      }
+    }
+
+-relier un composant à la vue
+    ReactDOM.render(
+      <Welcome name="John" />,
+      document.getElementById('root')
+    );
 
 
-*** constituant
--props = entrée
--state = état local, est privé
+*** constituant d'un composant
+-props
+  = propriétés, entrée qui reçoit des données d'un parent
+  -doivent être en lecture seule
+-state 
+  = état local
+  -est privé ou encapsulé
+  -à modifier avec setState({...})
+  -les mises à jour de l’état peuvent être asynchrones = grouper plusieurs appels à setState en une fois
+  -les mises à jour de l’état sont fusionnées = React fusionne les objets que l'on donne avec l’état actuel
 -méthodes de cycle de vie
-
-
-*** règles
--tout composant React doit agir comme une fonction pure vis-à-vis de ses props
--les données descendent dans les enfants
--l’état remonte dans le parent : 
-    -l’état est ajouté au composant qui en a besoin pour s’afficher
-    -Si d’autres composants en ont également besoin, faire remonter l’état dans l’ancêtre commun le plus proche, puis descendre les données pour synchroniser les composants
--utiliser setState() pour modifier l'état
--Les composants utilisateurs doivent commencer par une majuscule
--nommer les props du point de vue du composant plutôt que de celui du contexte dans lequel il est utilisé
 
 
 *** gestion des saisies de formulaire
 -composant controlé : valeur saisie vérifiée
 -composant non-controlé : valeur saisie non vérifiée
+
+
+*** gestion d'évènements
+-nommé en camelCase
+
+  <button onClick={eventName}>
+    Texte
+  </button>
