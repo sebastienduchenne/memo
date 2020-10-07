@@ -1,1 +1,7 @@
--utiliser react sans avoir besoin d'écrire de classe
+-fonctions permettant d'utiliser React sans avoir besoin d'écrire de classes
+
+
+*** hooks
+-useState = ajouter un état local
+-useContext
+-useEffect

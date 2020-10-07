@@ -1,0 +1,20 @@
+= vérifier la validité de types des props d’un composant
+-PropTypes n'est vérifié qu'en mode DEV
+-si valeur invalide => message d'avertissement dans la console
+
+
+*** exemple
+
+import PropTypes from 'prop-types';
+
+class Hello extends React.Component {
+  render() {
+    return (
+      <h1>Hello, {this.props.name}</h1>
+    );
+  }
+}
+
+Hello.propTypes = { 
+    name: PropTypes.string
+};

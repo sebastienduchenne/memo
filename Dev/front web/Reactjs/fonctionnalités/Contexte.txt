@@ -1,0 +1,5 @@
+= passer des données à travers l'arbre des composants sans les faire passer explicitement à travers tous les composants
+-passer des données globales (authentifié, préférence de langue, thème de l'UI)
+
+
+*** exemple

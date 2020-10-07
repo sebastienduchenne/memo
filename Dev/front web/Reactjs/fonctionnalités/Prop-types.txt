@@ -1,1 +1,0 @@
--vérifier la validité de types des props d’un composant

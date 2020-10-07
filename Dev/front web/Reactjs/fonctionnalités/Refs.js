@@ -1,40 +1,38 @@
 /*
-= référence permettant d'accéder à un nœud du DOM ou éléments React créés dans la méthode de rendu
--à éviter
+= référence permettant d'accéder à un nœud du DOM ou à un élément React créé dans la méthode de rendu
+-ne pas en abuser
 
-dans noeud : ref = "id"
-dans js : ReactDOM.findDOMNode(this.refs.id)
+dans js : this.myRef = React.createRef();   
+dans noeud : <div ref={this.myRef} />
 
 */
 
-class App extends React.Component {
+class CustomTextInput extends React.Component {
     constructor(props) {
         super(props);
-            
-        this.state = {
-            data: ''
-        }
-        this.updateState = this.updateState.bind(this);
-        this.clearInput = this.clearInput.bind(this);
-    };
-    updateState(e) {
-        this.setState({data: e.target.value});
+        this.textInput = React.createRef(); // crée une référence pour stocker l’élément DOM textInput
+        this.focusTextInput = this.focusTextInput.bind(this);
     }
-    clearInput() {
-        this.setState({data: ''});
-        ReactDOM.findDOMNode(this.refs.myInput).focus(); // <--------------------------------
+
+    focusTextInput() {
+        // Donne explicitement le focus au champ texte en utilisant l’API DOM native.
+        // Remarque : nous utilisons `current` pour cibler le nœud DOM
+        this.textInput.current.focus();  
     }
+
     render() {
+        // on associe la ref `textInput` créée dans le constructeur avec le `<input>`
         return (
             <div>
-                <input 
-                    value = {this.state.data} 
-                    onChange = {this.updateState} 
-                    ref = "myInput"></input>   {/* <------------------------------------- */}
-                <button onClick = {this.clearInput}>CLEAR</button>
-                <h4>{this.state.data}</h4>
+                <input
+                    type="text"
+                    ref={this.textInput} />        
+                <input
+                    type="button"
+                    value="Donner le focus au champ texte"
+                    onClick={this.focusTextInput}
+                />
             </div>
         );
     }
 }
-export default App;
