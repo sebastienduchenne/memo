@@ -1,4 +1,9 @@
-//on utilise l'évènement onChange pour déclencher une méthode
+/*
+-on utilise l'évènement onChange pour déclencher une méthode
+-les formulaires ont un état interne
+-composant controllé : les données gérées par le composant React
+-composant non controllé : les données sont gérées par le DOM
+*/
 
 
 class App extends React.Component {
@@ -25,8 +30,6 @@ class App extends React.Component {
         );
     }
 }
-export default App;
-
 
 //--------------------------------------------------------------
 
@@ -66,4 +69,53 @@ class Content extends React.Component {
         );
     }
 }
-export default App2;
+
+
+//------------------------------------------------------------------
+
+class FormulaireHTML extends React.Component {
+    render() {
+        return (
+            <form action="http://localhost:5000/subscribe" method="post">
+                <label htmlFor="login">Login :</label>
+                <input type="text" id="login" name="login" autoComplete="off" required />
+                <button type="submit">S'inscrire</button>
+            </form>
+        )
+    }
+}
+
+class ComposantControlle extends React.Component {
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+    handleSubmit(event) {  // les valeurs sont dans event
+        event.preventDefault();
+        const data = new FormData(event.target);
+        let login = data.get('login')
+        data.set('login', login);
+
+        fetch('http://localhost:5000/connect', { method: 'POST', body: data, })
+        .then(function(response) {
+            console.log(response)
+        })
+    }
+
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label htmlFor="login">
+                    Login :
+                    <input 
+                        type="text"
+                        name="login"
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                        required/>
+                </label>
+                <button type="submit">Se connecter</button>
+            </form>
+        )
+    }
+}
