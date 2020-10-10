@@ -1,6 +1,95 @@
-= libraire JS basé sur Flux qui gère un state global
-3 concepts
-    -global state : tout l’état d’une application est décrit comme un objet
+= libraire JS basée sur Flux mais qui gère un state global et n'a pas de dispatcher
+-conteneur à état prévisible
+-permet de gérer plus facilement des données qui sont utilisées par plusieurs composants
+-alternative à Redux
+    -database : mais il faut requêter la DB à chaque fois
+    -plusieurs states : il faut que chaque state se passent les données ce qui est compliqué à gérer
+-4 concepts
+    -global state = tout l’état d’une application est décrit comme un objet
     -action = objet représentant une intéraction
-    -reducer = fonction pure qui modifie le state avec l'action
--React-Redux pour relier le store Redux et les composants React
+    -store = réceptionne une action et fait appel à un reducer, parmis plusieurs, selon l'action reçue
+    -reducer = fonction pure, incluse dans le store, qui modifie une partie du state global
+-flux de données : création action -> update state -> update view
+-règle reducer (recommandé) : ne pas modifier le state directement, mais créer un nouvel objet et on le copie dans le state
+
+
+*** 2 types de composant
+-presentational component : n'utilise pas redux
+-container component : utilise redux
+
+
+*** code
+
+-App.js                     : ajout du store
+-/Components
+    -Component1.js          : création d'une action + liaison d'un reducer au composant
+    -Component2.js
+-/Store
+    -configureStore.js      : création du store
+    -/Reducers
+        -reducer1.js        : création d'un reducer
+
+---------------------------
+
+// Store/configureStore.js - création du store
+
+import { createStore } from 'redux';
+import reducer1 from './Reducers/reducer1'
+
+export default createStore(reducer1)
+
+
+// Store/Reducers/reducers.js - création d'un reducer
+
+function reducer1 (state, action) {
+    let nextState                           // nouveau state
+    switch(action.type) {
+        case 'ACTION_1':
+            // ...
+            nextState = {
+                ...state,
+                value: action.value
+            }
+            return nextState
+        default: 
+            return state
+    }
+}
+
+
+// App.js - Ajout du store
+
+import { Provider } from 'react-redux'
+import Store from './Store/configureStore'
+
+class App extends React.Component {
+    render() {
+        return (
+            <Provider store={Store}>
+                <ComponentX/>
+            </Provider>
+        )
+    }
+}
+
+
+// Components/Component1.js - connexion du store au composant
+
+import { connect } from 'react-redux'
+
+class Component1 extends React.Component{
+    // ...
+    _defAction1(){                          // création d'une action
+        const action = { type: "ACTION_1", value: this.state.x }
+    }
+    // ...
+    render(){ /* ... */ }
+}
+
+const mapStateToProps = (state) => {        // pour que le composant soit informé du changement
+    return {
+        x : state.x
+    }
+}
+
+export default connect(mapStateToProps)(Component1)     // liaison d'un reducer au composant
