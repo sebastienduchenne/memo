@@ -36,3 +36,13 @@ fetch(url, options)
     .then(function(response) {
         //...
     })
+
+-----------
+
+fetch(url, {
+    method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(requestData),
+}).then(function(response) {
+    console.log(response)
+})

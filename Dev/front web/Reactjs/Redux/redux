@@ -81,6 +81,7 @@ class Component1 extends React.Component{
     // ...
     _defAction1(){                          // création d'une action
         const action = { type: "ACTION_1", value: this.state.x }
+        this.props.dispatch(action)
     }
     // ...
     render(){ /* ... */ }
