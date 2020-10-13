@@ -1,4 +1,5 @@
--fonctions permettant d'utiliser React sans avoir besoin d'écrire de classes
+= fonctions permettant d'utiliser React sans avoir besoin d'écrire de classes
+-permet de gérer les states directement depuis React
 
 
 *** hooks

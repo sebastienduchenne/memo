@@ -1,33 +1,61 @@
 = libraire JS basée sur Flux mais qui gère un state global et n'a pas de dispatcher
 -conteneur à état prévisible
--permet de gérer plus facilement des données qui sont utilisées par plusieurs composants
--alternative à Redux
+-alternative à Redux :
     -database : mais il faut requêter la DB à chaque fois
     -plusieurs states : il faut que chaque state se passent les données ce qui est compliqué à gérer
--4 concepts
-    -global state = tout l’état d’une application est décrit comme un objet
-    -action = objet représentant une intéraction
-    -store = réceptionne une action et fait appel à un reducer, parmis plusieurs, selon l'action reçue
-    -reducer = fonction pure, incluse dans le store, qui modifie une partie du state global
 -flux de données : création action -> update state -> update view
--règle reducer (recommandé) : ne pas modifier le state directement, mais créer un nouvel objet et on le copie dans le state
+-Redux décentralise le développement logique et centralise les states dans un store (inverse de React)
+
+-règles
+    -le global state est unique
+    -le state n'est qu'en lecture seule : on créée un nouvel objet et on le copie dans le state
+    -les reducers sont des fonctions pures
+
+-quand utiliser Redux
+    -5 à 6 niveaux dans l'arbre de composants
+    -communication entre les composants
+
+
+*** 5 objets
+-global state = objet qui contient tout l’état de l'application
+-action = objet représentant une intéraction
+-store
+    = objet qui réceptionne une action et fait appel à un reducer selon l'action reçue
+    -peut contenir plusieurs reducers
+-reducer
+    = fonction pure qui modifie le state global
+    -incluse dans le store
+    -gère la logique
+    -déterminent la construction progressive de l'arbre
+-action creator = fonction qui créée une action
+
+
+*** modules
+-Redux
+    -combineReducers() : regrouper les reducers dans un reducer global
+    -dispatch(action)
+    -listeners et subscribe(listener): peu utilisés
+-react-redux
+    -<Provider> : balise qui permet d'accéder au store n'importe où dans l'application
+    -connect()(component) = liaison d'un store au composant
+    -mapStateToProps : parcours le state de l'application
+    -mapDispatchToProps : parcours les actions à dispatcher
 
 
 *** 2 types de composant
--presentational component : n'utilise pas redux
--container component : utilise redux
+-presentational component = n'utilise pas redux
+-containers ou "smart components" ou "stateful components" = components qui communiquent directement avec la partie Redux du code, en récupérant les states et qui vont dispatcher les actions, gèrent l'interface
 
 
 *** code
-
--App.js                     : ajout du store
--/Components
-    -Component1.js          : création d'une action + liaison d'un reducer au composant
-    -Component2.js
--/Store
-    -configureStore.js      : création du store
-    -/Reducers
-        -reducer1.js        : création d'un reducer
+- /src
+    - /actions          => liste des action creators
+    - /components       => components, dits "stateless", qui n'interviennent pas avec le state
+    - /constants        => liste des types d'action
+    - /containers       => dispatche les actions
+    - /reducers         => liste des reducers
+    - index.js          => ajout du store
+    - registerServiceWorker.js
 
 ---------------------------
 
@@ -56,8 +84,20 @@ function reducer1 (state, action) {
     }
 }
 
+// Reducers/index.js
+import { combineReducers } from 'redux'
 
-// App.js - Ajout du store
+// import des reducers
+
+const rootReducer = combineReducers({
+	todos,
+	visibilityFilter,
+})
+
+export default rootReducer
+
+
+// index.js - Ajout du store
 
 import { Provider } from 'react-redux'
 import Store from './Store/configureStore'
@@ -73,11 +113,11 @@ class App extends React.Component {
 }
 
 
-// Components/Component1.js - connexion du store au composant
+// Containers/Container1.js - connexion du store au composant
 
 import { connect } from 'react-redux'
 
-class Component1 extends React.Component{
+class Container1 extends React.Component{
     // ...
     _defAction1(){                          // création d'une action
         const action = { type: "ACTION_1", value: this.state.x }

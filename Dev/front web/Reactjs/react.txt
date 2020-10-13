@@ -3,6 +3,7 @@
 -manifeste applicatif PWA
 -on peut avoir plusieurs noeud DOM racines dans une application
 -le coté front doit gérer le temps de chargement et les erreurs
+-React centralise une grande partie du développement logique à la racine du projet, tout en décentralisant le lieu des divers states et props => devient massif surtout pour un gros projet
 
 
 *** fonctionnement et concepts de React
@@ -41,7 +42,7 @@
 
 *** bonnes pratiques
 -state à éviter autant que possible
--propTypes à définir
+-utiliser des propTypes
 -principe de responsabilité unique pour les composants : un composant pour une fonctionnalité
 -utiliser des composants d’ordre supérieur (HOC)
 -mettre la logique dans la méthode render()
