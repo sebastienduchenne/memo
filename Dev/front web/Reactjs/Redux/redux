@@ -1,10 +1,19 @@
-= libraire JS basée sur Flux mais qui gère un state global et n'a pas de dispatcher
+= Framework/libraire JS qui centralise les states des composants
+-basée sur Flux mais qui gère un state global et n'a pas de dispatcher
 -conteneur à état prévisible
+
+-sans Redux :
+    -l'état de l'application est décentralisé à travers tous les components de l'application
+    -les mises à jour des states ne suivent pas d'ordre précis à cause du temps de réponse des API, de l'asynchronicité
+
+-Redux décentralise le développement logique et centralise les states dans un store (inverse de React)
+-Redux permet d'être certain de l'état de l'application à tout moment, en centralisant à la fois le state global de l'application, et l'ordre dans lequel les changements de states doivent avoir lieu
+
 -alternative à Redux :
     -database : mais il faut requêter la DB à chaque fois
     -plusieurs states : il faut que chaque state se passent les données ce qui est compliqué à gérer
+
 -flux de données : création action -> update state -> update view
--Redux décentralise le développement logique et centralise les states dans un store (inverse de React)
 
 -règles
     -le global state est unique
@@ -12,8 +21,9 @@
     -les reducers sont des fonctions pures
 
 -quand utiliser Redux
-    -5 à 6 niveaux dans l'arbre de composants
+    -architecture de 5 à 6 niveaux minimum dans l'arbre de composants
     -communication entre les composants
+    -intention de monter en échelle
 
 
 *** 5 objets
@@ -32,42 +42,53 @@
 
 *** modules
 -Redux
-    -combineReducers() : regrouper les reducers dans un reducer global
-    -dispatch(action)
-    -listeners et subscribe(listener): peu utilisés
+    -combineReducers()      : regrouper les reducers dans un reducer global
+    -bindActionCreators()   : lier le component React aux actions et à dispatch
+    -createStore()          : créer un store
+    -dispatch(action)       : fonction qui envoie une action à un reducer, appelée par un container
+    -listeners et subscribe(listener) : peu utilisés
 -react-redux
-    -<Provider> : balise qui permet d'accéder au store n'importe où dans l'application
-    -connect()(component) = liaison d'un store au composant
-    -mapStateToProps : parcours le state de l'application
-    -mapDispatchToProps : parcours les actions à dispatcher
+    -<Provider>             : balise qui permet d'accéder au store n'importe où dans l'application
+    -connect()(component)   : liaison d'un store à un component
+    -mapStateToProps        : passer des données du store aux props d'un composant
+    -mapDispatchToProps     : parcours les actions à dispatcher
+-redux-offline
+-reselect : permet d'utiliser les selectors
+    -createSelector()       : créer un selector
 
 
 *** 2 types de composant
--presentational component = n'utilise pas redux
--containers ou "smart components" ou "stateful components" = components qui communiquent directement avec la partie Redux du code, en récupérant les states et qui vont dispatcher les actions, gèrent l'interface
+-presentational component = n'utilise pas redux, n'interviennent pas avec le state
+-containers ou "smart components" ou "stateful components" = components qui communiquent directement avec la partie Redux du code : connect(mapS, mapD)(comp), dispatch des actions, gestion de l'UI
 
 
 *** code
 - /src
     - /actions          => liste des action creators
-    - /components       => components, dits "stateless", qui n'interviennent pas avec le state
+    - /components       => components dits "stateless", qui n'interviennent pas avec le state
     - /constants        => liste des types d'action
-    - /containers       => dispatche les actions
-    - /reducers         => liste des reducers
-    - index.js          => ajout du store
+    - /containers       => dispatche les actions, mapStateToProps, mapDispatchToProps, connect()()
+    - /reducers         => liste des reducers, combineReducers()
+    - index.js          => création du store, <Provider>
     - registerServiceWorker.js
 
----------------------------
 
-// Store/configureStore.js - création du store
+===========================================================================
+
+------------------- index.js - création du store --------------
 
 import { createStore } from 'redux';
-import reducer1 from './Reducers/reducer1'
+import reducer from './Reducers/reducer1'
 
-export default createStore(reducer1)
+const store = createStore(reducer)
+render( 
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+)
 
-
-// Store/Reducers/reducers.js - création d'un reducer
+------------------- Store/Reducers/reducers.js - création d'un reducer -------------------
 
 function reducer1 (state, action) {
     let nextState                           // nouveau state
@@ -84,7 +105,7 @@ function reducer1 (state, action) {
     }
 }
 
-// Reducers/index.js
+------------------- Reducers/index.js -------------------
 import { combineReducers } from 'redux'
 
 // import des reducers
@@ -97,40 +118,21 @@ const rootReducer = combineReducers({
 export default rootReducer
 
 
-// index.js - Ajout du store
-
-import { Provider } from 'react-redux'
-import Store from './Store/configureStore'
-
-class App extends React.Component {
-    render() {
-        return (
-            <Provider store={Store}>
-                <ComponentX/>
-            </Provider>
-        )
-    }
-}
-
-
-// Containers/Container1.js - connexion du store au composant
+------------------- Containers/Container1.js - connexion du store à un component -------------------
 
 import { connect } from 'react-redux'
 
-class Container1 extends React.Component{
-    // ...
-    _defAction1(){                          // création d'une action
-        const action = { type: "ACTION_1", value: this.state.x }
-        this.props.dispatch(action)
-    }
-    // ...
-    render(){ /* ... */ }
-}
+const mapDispatchToProps = (dispatch) => ({ 
+    actions: bindActionCreators(TodoActions, dispatch) 
+})
 
-const mapStateToProps = (state) => {        // pour que le composant soit informé du changement
+const mapStateToProps = (state) => ({     // pour que le composant soit informé du changement
     return {
         x : state.x
     }
-}
+})
 
-export default connect(mapStateToProps)(Component1)     // liaison d'un reducer au composant
+export default connect(
+    mapStateToProps, 
+    mapDispatchToProps
+)(Component1)               // liaison d'un reducer au component afin de update ses props

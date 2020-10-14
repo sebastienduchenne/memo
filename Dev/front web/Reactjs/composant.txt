@@ -1,6 +1,6 @@
 -composant = élément indépendant et réutilisable
 -comme des fonctions qui acceptent des props et renvoient des éléments react
--composition de composant : faire référence à d'autres composants en sortie
+-composition de composants = un composant est un assemblage de plusieurs composants plus petits
 -composant pur fonctionnel = ne modifie pas les entrées et renvoit toujours la même chose pour les même entrées
 -les composants sont de la SoC car ils contiennent le HTML et la logique qui gère la même responsabilité
 -props.children : passer des éléments enfants pour les comp qui ne connaissent pas leur enfant à l'avance (délégation de contenu)
@@ -8,6 +8,7 @@
 -en cas de changement, ReactDOM met à jour le strict nécessaire (les noeuds)
 -composant monté = injecté dans le DOM
 -composant à état : contient un state
+-chaque composant est seul responsable des informations qu’il fournit à ses fils
 
 
 *** déclarer un composant et le lier à la vue

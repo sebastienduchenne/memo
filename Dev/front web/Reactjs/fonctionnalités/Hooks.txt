@@ -1,6 +1,9 @@
 = fonctions permettant d'utiliser React sans avoir besoin d'écrire de classes
 -permet de gérer les states directement depuis React
 
+*** avantages
+-plus facile à lire que les classes
+-les composants complexes sont difficiles à comprendre 
 
 *** hooks
 -useState = ajouter un état local

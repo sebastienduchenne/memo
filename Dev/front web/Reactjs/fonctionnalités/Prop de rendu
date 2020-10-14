@@ -1,0 +1,2 @@
+= partager du code entre des composants React en utilisant une prop dont la valeur est une fonction
+-ou render prop

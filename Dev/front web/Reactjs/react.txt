@@ -4,6 +4,7 @@
 -on peut avoir plusieurs noeud DOM racines dans une application
 -le coté front doit gérer le temps de chargement et les erreurs
 -React centralise une grande partie du développement logique à la racine du projet, tout en décentralisant le lieu des divers states et props => devient massif surtout pour un gros projet
+-quand les données changent, l'UI est censée réagir pour refléter le nouveau state de l'application
 
 
 *** fonctionnement et concepts de React
@@ -13,7 +14,7 @@
 -React ne change que ce qui a besoin d'être changé
 -moteur de rendu ou renderer
 -contexte : faire passer des données à travers l’arborescence du composant sans avoir à passer manuellement les props à chaque niveau
--réconciliation : mise à jour du DOM si changement du state
+-réconciliation = MAJ du DOM du navigateur à partir du DOM virtuel en minimisant les opérations
 -syntaxe JSX recommandée
 
 
@@ -49,12 +50,14 @@
 -tout composant React doit agir comme une fonction pure vis-à-vis de ses props (props en lecture seule)
 -l’état remonte dans le parent = si un composant parent a besoin des données de ses enfants ou que 2 enfants ont besoin de communiquer, il vaut mieux déclarer l'état dans le parent. Ainsi, le parent passe les données aux props des enfants. Cela permet d'éviter des bugs
 -les données descendent dans les enfants = les parents passent les données aux enfants qui ne connaissent pas leur origine, et peuvent à leur tour passer les données à leurs enfants (cascade de props)
+        => pour éviter le couplage fort entre les composants et donc augmenter la maintenance
 -utiliser setState() pour modifier l'état
 -le nom d'un composant utilisateur doit commencer par une majuscule
 -nommer les props du point de vue du composant plutôt que de celui du contexte dans lequel il est utilisé
 -extraire un composant si une partie de l'UI est utilisée plusieurs fois ou complexe
 
 --------------------------------------------------------------------
+
 *** notions
 
 composant React
@@ -74,6 +77,13 @@ composant contrôlé
 évènements
 React router
 Redux
-Flux
 hooks
 Contexte
+Prop de rendu ou render prop
+
+
+*** modules complémentaires
+-Redux
+-formik = créer des formulaires
+-downshift
+-React Router
