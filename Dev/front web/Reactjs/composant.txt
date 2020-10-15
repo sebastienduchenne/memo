@@ -3,34 +3,65 @@
 -composition de composants = un composant est un assemblage de plusieurs composants plus petits
 -composant pur fonctionnel = ne modifie pas les entrées et renvoit toujours la même chose pour les même entrées
 -les composants sont de la SoC car ils contiennent le HTML et la logique qui gère la même responsabilité
--props.children : passer des éléments enfants pour les comp qui ne connaissent pas leur enfant à l'avance (délégation de contenu)
 -affichage conditionnel = afficher un composant ou non en fonction de l'état de l'application
 -en cas de changement, ReactDOM met à jour le strict nécessaire (les noeuds)
 -composant monté = injecté dans le DOM
 -composant à état : contient un state
 -chaque composant est seul responsable des informations qu’il fournit à ses fils
+-props 'techniques'
+    -key : unique, dans un tableau
+    -children : tableau contenant la liste des enfants, passer des éléments enfants pour les comp qui ne connaissent pas leur enfant à l'avance (délégation de contenu)
+    -dangerouslySetInnerHTML : injecter du balisage manuel, ne doit être utilisée qu'en dernier recours
+-nom minuscule => élément natif
+-nom majuscule => composant React
+
+<HelloComponent name="John"/>    => React.createElement('HelloComponent', { name="John"}, 'Hello ')
 
 
-*** déclarer un composant et le lier à la vue
+*** fonction composant
+-composant pur fonctionnel, doit toujours renvoyer la même chose pour les mêmes arguments, et ce sans effet de bord ni variation
+-se limite au rendu et aux props, donc pas d'état local, d'appel API, de méthodes de cycle de vie, d'intéraction avec des éléments du DOM, d'appel de méthodes métiers. A utiliser pour des cas simples
+-à préféré aux classes
 
--créer avec une fonction composant
-    function Welcome(props) {  // seulement 'props' en argument
-      return <h1>Bonjour, {props.name}</h1>;
+function HelloComponent({name="world"}) {
+  return <p>Hello {name} !</p>
+}
+
+const HelloComponent2 = ( {name="world"} ) => <p>Hello {name} !</p>
+
+
+*** composant avec une classe
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {...}
+  }
+  componentDidMount() {  }
+  componentWillUnmount() {  }
+  render() {
+    return <h1>Bonjour, {this.props.name}</h1>;
+  }
+}
+
+
+*** defaultProps
+-mettre des valeur par défaut aux props
+
+-pour une fonction :
+    MyCoolComponent.defaultProps = {
+        l10n: true,
+        required: false,
     }
 
--créer avec une classe
-        -> permet d'ajouter un state et des méthodes de cycle de vie
-    class Welcome extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = {...}
-      }
-      componentDidMount() {  }
-      componentWillUnmount() {  }
-      render() {
-        return <h1>Bonjour, {this.props.name}</h1>;
-      }
+-dans une classe
+    static defaultProps = {
+        initialCollapsed: false,
     }
+    => utilisation : props.initialCollapsed
+
+
+*** lier à la vue
 
 -relier un composant à la vue
     ReactDOM.render(
@@ -63,3 +94,23 @@
   <button onClick={eventName}>
     Texte
   </button>
+
+
+*** boucles sur liste
+
+const users = [
+  { id: 1, name: 'a' },
+  { id: 2, name: 'b' },
+  { id: 3, name: 'c' },
+  { id: 4, name: 'd' },
+]
+
+render () {
+  return (
+    <div className="userList">
+      {this.props.users.map(({ id, name }) => (
+        <a href={`/users/${id}`}>{name}</a>
+      ))}
+    </div>
+  )
+}

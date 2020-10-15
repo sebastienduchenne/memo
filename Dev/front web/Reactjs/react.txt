@@ -7,6 +7,48 @@
 -quand les données changent, l'UI est censée réagir pour refléter le nouveau state de l'application
 
 
+
+<button onClick={() => console.log(`Hello ${whom} !`)}>
+    ok
+</button>
+
+
+{won && <p>GAGNÉ !</p>}
+
+render() {
+  const won = True
+  return (
+    {won && <p>GAGNÉ !</p>}
+  )
+}
+
+
+*** remonté de l'état et descente des données
+
+-s'il y a des éléments du state à partager entre plusieurs composants, on fait remonter la donnée vers l’état local du plus proche composant ancêtre commun dans l'arbre, cad celui qui contient dans son arbre l’ensemble des composants souhaitant partager la données. Il faut donc 
+    -faire redescendre la données par les props jusqu’aux composants qui en ont besoin
+    -faire remonter les demandes d’évolution par des props de type fonction, fournies par le composant doté de l’état local, et utilisées par les composants qui en ont besoin
+
+
+handleChange(e) { // composant fils
+    // Avant : this.setState({temperature: e.target.value});
+    this.props.onTemperatureChange(e.target.value);
+    // ...
+
+    this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
+}
+
+
+handleCelsiusChange(temperature) {
+    this.setState({scale: 'c', temperature});
+}
+
+<TemperatureInput // père
+    scale="c"
+    temperature={celsius}
+    onTemperatureChange={this.handleCelsiusChange} />
+
+
 *** fonctionnement et concepts de React
 -approche composant = création de composants indépendants et réutilisables
 -React travaille en JS sur un DOM virtuel in memory, puis répercute les changements sur le DOM du browser

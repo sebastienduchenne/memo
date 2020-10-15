@@ -1,0 +1,6 @@
+-petit framework MVC
+
+
+var Comment = Espresso.Controller.extend({
+  init: function() { ... }
+})
