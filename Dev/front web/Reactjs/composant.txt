@@ -23,7 +23,7 @@
 -se limite au rendu et aux props, donc pas d'état local, d'appel API, de méthodes de cycle de vie, d'intéraction avec des éléments du DOM, d'appel de méthodes métiers. A utiliser pour des cas simples
 -à préféré aux classes
 
-function HelloComponent({name="world"}) {
+function HelloComponent({name="world"}) { // (props) -> {props.name}
   return <p>Hello {name} !</p>
 }
 
