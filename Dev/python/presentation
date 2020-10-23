@@ -10,6 +10,7 @@
 -IDE : PyCharm, VS code, ...
 -Black : formateur de python pour respecter certaines règles
 -PyPI = Python Package Index
+-Tkinter = bibliothèque graphique d’origine de Python
 
 
 *** virtualenv
