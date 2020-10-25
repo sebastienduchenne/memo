@@ -125,7 +125,8 @@ Prop de rendu ou render prop
 
 
 *** modules complémentaires
--Redux
+-Redux = ajouter un state global
 -formik = créer des formulaires
 -downshift
--React Router
+-React Router = routage
+-Relay = building data-driven React applications

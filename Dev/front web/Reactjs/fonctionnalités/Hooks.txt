@@ -1,11 +1,33 @@
 = fonctions permettant d'utiliser React sans avoir besoin d'écrire de classes
 -permet de gérer les states directement depuis React
+-règles
+    -appeler les Hooks uniquement au niveau racine 
+    -appeler les Hooks uniquement depuis des fonctions React 
+
 
 *** avantages
 -plus facile à lire que les classes
 -les composants complexes sont difficiles à comprendre 
 
+
 *** hooks
 -useState = ajouter un état local
 -useContext
--useEffect
+-useEffect = permet l’exécution d’effets de bord
+
+
+*** exemple
+
+import React, { useState } from 'react';
+
+function Example() {
+    const [count, setCount] = useState(0);
+    return (
+        <div>
+            <p>Vous avez cliqué {count} fois</p>
+            <button onClick={() => setCount(count + 1)}>
+                Cliquez ici
+            </button>
+        </div>
+    );
+}
