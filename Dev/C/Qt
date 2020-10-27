@@ -7,7 +7,7 @@
 
 
 *** Qt et Python
--PyQt = module qui lie un script Python à Qt
+-module qui lie un script Python à Qt : PyQt et PySide2 (officiel)
 -pyuic5 = permet de convertir une interface graphique en code Python
     pyuic5 mainwindow.ui -x -o gui.py
     python3 gui.py

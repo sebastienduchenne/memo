@@ -1,0 +1,8 @@
+-classe qthread
+    -classe de PyQt qui enrobe l'exécution d'un thread, mais ne fait pas de vrais threads. 
+    -permet aussi d'envoyer des signaux entre les threads
+    -on peut arrêter "sauvagement" un QThread avec terminate()
+-module Threading de Python
+    -on ne peutpas  arrêter "sauvagement" un thread
+-utilisation notamment avec des GUI pour faire de gros calculs
+-les threads s'exécutent sur un seul coeur à cause du GIL (Global Interpreter Lock) de cPython
