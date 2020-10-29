@@ -1,23 +1,16 @@
-#commentaire
-
 '''
-tout est objet : une variable peut contenir une référence vers tous les éléments manipulés par le langage : nombres, méthodes, modules, etc
+-tout est objet : une variable peut contenir une référence vers tous les éléments manipulés par le langage : nombres, méthodes, modules, etc
 
+-variable "__name__" : nom du module, vaut "__main__" lorsqu'il vient de l'entrée standart
+
+-encodage UTF8, par défaut dans python 3
+- -*- coding: utf-8 -*-
+- coding: utf-8
 '''
-#encodage UTF8, par défaut dans python 3
-# -*- coding: utf-8 -*-
-# coding: utf-8
-
-print("toto")
-
 
 #saisir
 age = input("Quel est votre age? : ")
 print("Vous avez %d ans" % age)
-
-
-#importer
-from func import *
 
 
 #types
@@ -28,7 +21,6 @@ complex c
 str name1 = 'engel'  # str
 unicode name2 = u'engel' # unicode, préférable, par défaut dans python 3
  
-
 
 #boucle
 i = 0
@@ -45,6 +37,39 @@ for i in range(0,100):
     print(i)
 
 
+#####################################################################################""
+
+None # type null
+
+'''
+dunder variable = variable entourées de '__' (double under, double souligné)
+__name__ : 
+__file__ : chemin du fichier
+magic method : __init__, __add__, __len__, __repr__
+'''
+
+def my_function(default = "a"):                 # paramètre par défaut
+    print(default)
+
+def my_function(*param):                        # "*" avant si nombre d'arguments inconnus
+    print(param[2])
+
+def my_function(c, b, a):
+    print(b)
+
+my_function(a = "a", b = "b", c = "c")          # pour ne pas respecter l'ordre des arguments
+
+def my_function(**kid):                         # "**" si nombre d'arguments keywords inconnus
+    print(kid["a"])
+
+my_function(a = "a", a = "a")
+
+def myfunction():
+    pass                                       # "pass" permet de ne pas mettre d'instruction
+
+
+### import
+
 #module et package
 #-module = ensemble de fonctions
 #-package = ensemble de modules
@@ -52,20 +77,15 @@ from package.module import fonction
 from package.module import *
 
 
-#classes
-class Personne:
-    def __init__(self, nom, prenom):
-        self.nom = nom
-        self.prenom = prenom
-    def presenter(self):
-        return self.nom + " " + self.prenom
+# Module1.py
+  
+def hello(): 
+    print("This is imported from JustMyModule") 
 
-class Etudiant(Personne):
-    def __init__(self, niveau, nom, prenom):
-        Personne.__init__(self, nom, prenom)
-        self.niveau = niveau
-    def presenter(self):
-        return self.niveau + " " + Personne.presenter(self)
 
-e = Etudiant("Licence INFO", "Dupontel", "Albert")
-assert e.nom == "Dupontel"
+# Module2.py
+
+import Module1 
+
+# Calling the method created inside the module 
+Module1.hello() 

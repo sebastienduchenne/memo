@@ -1,16 +1,14 @@
 -indentation
--interprété
+-langage interprété
 -paradigme : impérative, orienté objet, fonctionnel
 -typage dynamique fort
 -ramasse-miette
--utilisé dans le milieu scientifique
 -supporte l'héritage multiple
 -encapsulation limitée
 -créer du code complexe en peu de lignes
 -IDE : PyCharm, VS code, ...
 -Black : formateur de python pour respecter certaines règles
--PyPI = Python Package Index
--Tkinter = bibliothèque graphique d’origine de Python
+-PyPI (Python Package Index) = dépôt de packages
 -interpréteur Python : cPython (écrit en C), Pypy, IronPython, Jython
 
 
@@ -21,6 +19,7 @@
     -est le plus connu 
     -créée un dossier qui va contenir les dépendances
     -il faut créer un env puis l'activer
+
 -étapes virtualenv
     -si ce n'est pas fait, installer virtualenv : pip install virtualenv
     -créer un dossier de projet et aller dedans
@@ -30,16 +29,6 @@
     -ajouter son application
     -on désactive l'environnement avec : deactivate
     -on supprimer un environnement en supprimant le dossier
-
-
-*** flask
-= faire du dev web
--étapes
-    -créer le fichier d'application 'app.py', qui contient le code
-    -créer le fichier vide '__init__.py'
-    -rendre l'application exécutable : export FLASK_APP=app
-    -export FLASK_ENV=development
-    -lancer l'application : flask run
 
 
 *** pip
@@ -63,26 +52,7 @@
 -app Java avec Jython
 -app bioinformatique : module biopython
 -jeux vidéos : pyGame
-
-
-*** modules utiles
-random   : fonctions permettant de travailler avec des valeurs aléatoires
-math     : toutes les fonctions utiles pour les opérations mathématiques (cosinus,sinus,exp,etc.)
-sys      : fonctions systèmes
-os       : fonctions permettant d'interagir avec le système d'exploitation
-time     : fonctions permettant de travailler avec le temps
-calendar : fonctions de calendrier
-profile  : fonctions permettant d'analyser l'execution des fonctions
-urllib2  : fonctions permettant de récupérer des informations sur internet
-re       : fonctions permettant de travailler sur des expressions régulières
-
--Machine Learning
-    NumPy
-    SciPy
-    Matplotlib
-    Pandas
-    Scikit-learn
-    Statsmodels
+-milieu scientifique
 
 
 *** extensions
