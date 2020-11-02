@@ -10,6 +10,12 @@
     -QtWidget = classe de base
         -QMainWindow = classe pour fenêtre principale
         -QLabel
+
+-signal = message envoyé par un widget lorsqu'un évènement se produit
+-slot = fonction qui est appelée lorsqu'un évènement s'est produit
+
+self.__<element>.<signal>.connect()
+
 '''
 
 
@@ -24,10 +30,19 @@ class MyWindow( QMainWindow ):
     def __init__ ( self ) :
         QMainWindow.__init__( self )
         self.setWindowTitle( 'title' )
+        self.resize(320, 150)
 
         self.__button = QPushButton( "button", self )
         self.__button.setGeometry(10, 10, 100, 50)
-        
+        self.__button.clicked.connect(self.on_click_button) # connecter un signal à un slot
+
+        self.__label = QLabel( self )
+        self.__label.setGeometry(150, 20, 50, 35)
+        self.__label.setText( "label" )
+
+    def on_click_button(self, result):
+        self.__label.setText( "clicked" )
+
 
 if __name__ == "__main__" :
     app = QApplication( sys.argv )

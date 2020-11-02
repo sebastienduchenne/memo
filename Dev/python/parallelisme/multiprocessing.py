@@ -8,7 +8,7 @@ dans le module : Pool, mp, Process, Queue, Pipe, Lock, Value, Array, Manager, Ti
 
 '''
 
-# classe Process
+# créer un processus
 from multiprocessing import Process
 
 def f(name):
@@ -19,6 +19,21 @@ if __name__ == '__main__':
     p.start()
     p.join()
 
+
+# partage de données par mémoire partagée
+from multiprocessing import Process, Value, Array
+
+def f(n):
+    n.value = 3.14
+
+if __name__ == '__main__':
+    num = Value('d', 0.0)
+
+    p = Process(target=f, args=(num))
+    p.start()
+    p.join()
+
+    print(num.value)
 
 
 # synchronisation de process : avec Lock

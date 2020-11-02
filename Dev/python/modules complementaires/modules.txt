@@ -12,6 +12,7 @@ pyqtgraph   : créer des graphiques
 matplotlib  : créer des graphiques
 numpy       : permet d’effectuer des calculs numériques, gestion facilitée des tableaux de nombres
 Tkinter     : bibliothèque graphique d’origine de Python
+SciPy       : optimisation, stats et traitement du signal. Utilisé pour le calcul scientifique
 
 
 *** Machine Learning

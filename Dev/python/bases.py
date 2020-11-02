@@ -85,7 +85,48 @@ def hello():
 
 # Module2.py
 
-import Module1 
+import Module1 as m
 
 # Calling the method created inside the module 
-Module1.hello() 
+m.hello() 
+
+
+# générateurs
+'''
+-une fonction génératrice renvoie un générateur
+-yield x : retourne 'x'
+-next() : exécuter les instructions jusqu'à 'yield'
+'''
+def firstn(n):      # fonction génératrice
+    num = 0
+    while num < n:
+        yield num   # retourne num
+        num += 1
+
+sum_of_first_n = sum(firstn(1000000))
+
+
+# try ... except
+try:
+  print(x)
+except:
+  print("An exception occurred")
+except:
+  print("Something else went wrong")
+finally:
+  print("The 'try except' is finished")
+
+# finaly
+try:
+  print("Hello")
+except:
+  print("Something went wrong")
+else:
+  print("Nothing went wrong")   # exécuté s'il n'y a pas eu d'erreur
+
+
+# lever une exception
+x = -1
+
+if x < 0:
+  raise Exception("Sorry, no numbers below zero") 
