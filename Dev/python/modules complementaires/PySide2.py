@@ -51,3 +51,38 @@ if __name__ == "__main__" :
     myWindow.show()
     
     sys.exit( app.exec_() )
+
+
+# créer un signal
+
+class Record(QThread):
+
+	data = Signal(int, String)
+
+	def __init__(self):
+		QThread.__init__(self, parent)
+
+    def run(self):
+        self.data.emit(3, "toto"))
+
+
+class MyWindow( QMainWindow ):
+    
+    def __init__ ( self ) :
+        QMainWindow.__init__( self )
+
+		self._thread = Record()
+		self._thread.data.connect(self._update_record)
+
+    @Slot(int, String)
+    def _update_record(self, nb, s):
+        print(nb + " - " +s)
+
+
+if __name__ == "__main__":
+    app = QApplication( sys.argv )
+
+    myWindow = MyWindow()
+    myWindow.show()
+    
+    sys.exit( app.exec_() )
