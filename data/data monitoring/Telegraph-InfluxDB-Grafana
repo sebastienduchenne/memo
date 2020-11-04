@@ -1,0 +1,36 @@
+-Telegraf
+    = agent de récupération de métriques
+    -récupère des données au format Prometheus
+    -2 modes de récupération de données
+        -push : la donnée est poussée dans Telegraf par le composant qui l’expose
+        -pull : Telegraf récupère la donnée en interrogeant le composant qui l’expose
+    -il faut ajouter des plugins pour récupérer des métriques
+    -plugin http_listener : écouter en http sur un port, fonctionne en mode push
+
+-InfluxDB
+    = Time Series Database (TSDB)
+    -avantages : performances, durée de rétention importante et scalabilité
+
+-Grafana
+    = outil de supervision
+    -s’intégre à une TSDB
+    -on peut définir des seuils d'alerte et des actions
+
+    => TIG
+
+
+Grafana <- InfluxDB <- Telegraf <- composant
+
+
+*** exemple Telegraf
+
+$ cat /etc/telegraf/telegraf.d/http_listener.conf
+
+## Influx HTTP write listener
+[[inputs.http_listener]]
+## Address and port to host HTTP listener on
+service_address = ":8186"
+
+## timeouts
+read_timeout = "10s"
+write_timeout = "10s"

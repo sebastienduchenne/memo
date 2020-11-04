@@ -1,0 +1,3 @@
+-Prometheus = outil de monitoring
+-Time Serie Data (TSD) = séquence de points de données collectés à intervalles réguliers sur une période de temps
+-Time Series Database (TSDB) = BD optimisée pour les données horodatées
