@@ -1,18 +1,9 @@
 -algorithme hyperloglog = probabiliste
 -vector clock
 -garbage collector
--développeur full stack = familiarisé avec les différentes couches d'une appli :
-    -réseau et environnement hote
-    -données
-    -business logic
-    -API
-    -UI
-    -UX
-    -besoin du consommateur
 -CDN = content delivery network ou réseau de diffusion de contenu (RDC)
--Firebase = ensemble de services d'hébergement d'applications
--yeoman
--scaffolding
+-yeoman = outil permettant de générer la structure de base de projets et de gérer les dépendances. ensemble de 3 outils : Yo, Grunt, et Bower.
+-scaffolding = technique permettant de générer la structure de base de projets
 
 
 *** transaction

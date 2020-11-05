@@ -1,0 +1,48 @@
+= exploiter les capacités de calcul de serveurs distants pour accéder à des services informatiques (serveurs, stockage, mise en réseau, logiciels) via internet à partir d’un fournisseur
+
+
+*** types de services
+
+-SaaS (Software as a Service)
+    = application mise à disposition des utilisateurs
+    -ex : Google Docs, Microsoft Office 365
+
+-PaaS (Plateform as a Service)
+    = plateforme où l'on peut développer des applications. L'utilisateur donne son code et ne gère pas les serveurs
+    -ex: MS Azure, AWS, Heroku, Open Shift, Cloud Foundry, Google App Engine
+
+-IaaS (Infrastructure as a Service)
+    = accès à un parc informatique virtualisé
+
+-BaaS (Backend as a Service)
+    = fournir aux applications mobiles et web des services cloud backend
+    -ex : stockage de fichiers, gestion de comptes
+
+-MBaaS (Mobile Backend as a service)
+
+
+Application         SaaS
+Middleware          PaaS
+OS                  PaaS
+Virtualisation      IaaS
+Serveur / stockage  IaaS
+Réseau              IaaS
+Data center         IaaS
+
+
+*** fournisseurs
+-Cloud Foundry (PaaS)
+    -architecture basée sur les conteneurs
+    -prend en charge n'importe quel langage
+    -KubeCF : déploiement sur Kubernetes
+    -BOSH : outil de déploiement
+
+-AWS = Amazon Web Service
+    -Amazon S3 = Amazon Simple Storage Service
+    -SimpleDB
+
+-Microsoft Azure
+    -Azure Cosmos DB
+
+-Google
+    -Firebase = plateforme mobile de Google qui permet d'héberger des applications pour mobile et pour le web
