@@ -1,6 +1,6 @@
 <map version="freeplane 1.7.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="Nodejs" FOLDED="false" ID="ID_510123161" CREATED="1605566479909" MODIFIED="1605566485720" STYLE="oval">
+<node TEXT="Concepts" FOLDED="false" ID="ID_1963761329" CREATED="1605562674044" MODIFIED="1605562712364" STYLE="oval">
 <font SIZE="18"/>
 <hook NAME="MapStyle">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
@@ -63,26 +63,15 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="7" RULE="ON_BRANCH_CREATION"/>
-<node TEXT="axios - requ&#xea;te" POSITION="right" ID="ID_1951849898" CREATED="1605731388353" MODIFIED="1605732976835">
-<edge COLOR="#00007c"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="3" RULE="ON_BRANCH_CREATION"/>
+<node TEXT="s&#xe9;maphore - mutex" POSITION="right" ID="ID_1358346477" CREATED="1605562679341" MODIFIED="1605565784763">
+<edge COLOR="#ff0000"/>
 </node>
-<node TEXT="Puppeteer - scrap" POSITION="right" ID="ID_221895244" CREATED="1605478162815" MODIFIED="1605732983356">
-<edge COLOR="#7c0000"/>
+<node TEXT="thread" POSITION="right" ID="ID_1130992235" CREATED="1605562686373" MODIFIED="1605562689678">
+<edge COLOR="#0000ff"/>
 </node>
-<node TEXT="express - serveur" POSITION="right" ID="ID_196515707" CREATED="1604610204064" MODIFIED="1605732992920">
-<edge COLOR="#00ffff"/>
-</node>
-<node TEXT="eslint" POSITION="right" ID="ID_1811026043" CREATED="1604609888845" MODIFIED="1605732287682">
-<edge COLOR="#ff00ff"/>
-</node>
-<node TEXT="test" POSITION="left" ID="ID_1351697862" CREATED="1605731339707" MODIFIED="1605731445890">
+<node TEXT="ORM" POSITION="right" ID="ID_1531310068" CREATED="1605562695075" MODIFIED="1605562698998">
 <edge COLOR="#00ff00"/>
-<node TEXT="Jest" ID="ID_1247801527" CREATED="1605047166859" MODIFIED="1605047169128"/>
-<node TEXT="Enzyme" ID="ID_526984968" CREATED="1605047209905" MODIFIED="1605047212842"/>
-<node TEXT="chai" ID="ID_654938272" CREATED="1604609871298" MODIFIED="1604609874077"/>
-<node TEXT="Protractor" ID="ID_522326608" CREATED="1605731426582" MODIFIED="1605731430172"/>
-<node TEXT="Mocha" ID="ID_917879920" CREATED="1605731536753" MODIFIED="1605731538726"/>
 </node>
 </node>
 </map>
