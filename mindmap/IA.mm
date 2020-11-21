@@ -63,12 +63,15 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="10" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="11" RULE="ON_BRANCH_CREATION"/>
 <node TEXT="machine learning" POSITION="right" ID="ID_533176756" CREATED="1605484346791" MODIFIED="1605484356697">
 <edge COLOR="#ff0000"/>
 </node>
 <node TEXT="deep learning" POSITION="right" ID="ID_497610533" CREATED="1605484357793" MODIFIED="1605484363068">
 <edge COLOR="#0000ff"/>
+</node>
+<node TEXT="data mining" POSITION="right" ID="ID_665775034" CREATED="1605978244175" MODIFIED="1605978249109">
+<edge COLOR="#7c7c00"/>
 </node>
 <node TEXT="algorithmes" POSITION="right" ID="ID_1008156059" CREATED="1605484784786" MODIFIED="1605484789173">
 <edge COLOR="#7c007c"/>

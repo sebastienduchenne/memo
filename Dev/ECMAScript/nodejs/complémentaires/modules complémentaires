@@ -9,7 +9,7 @@
 -nodemon : utility that will monitor for any changes in your source and automatically restart your server
 -forever : outil en ligne de commande permettant d'exécuter une application node.js de façon continue
 -mongoose : communiquer avec mongodb
--linter : chercher des erreurs des erreurs son code
+-linter : chercher des erreurs son code
 -node-inspector : debugger GUI
 -Geddy : web app en MVC
 -Locomotive : web app en MVC
@@ -19,6 +19,8 @@
 -Sails.js
 -Loopback
 -ActionHero : multi-transport Node.JS API Server with integrated cluster capabilities and delayed tasks.
+-Pug (=Jade) : moteur de templates
+
 
 *** front
 -react.js
@@ -56,9 +58,3 @@
 -sinon : Standalone test spies, stubs and mocks
 -chai : test
 -Frisby : REST API
-
-
-*** templates
--Jade
--Vash
--GruntJS
