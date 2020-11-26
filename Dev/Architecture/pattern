@@ -6,6 +6,16 @@
     -data access layer = base de données
 
 
+*** principes SOLID
+= 5 principes de conception destinés à produire des architectures fiables et robustes
+
+-Single responsibility principle : une seule responsabilité
+-Open/closed principle : une entité doit être ouverte à l'extension, mais fermée à la modification
+-Liskov substitution principle : on doit pouvoir remplacer une instance par un sous-type
+-Interface segregation principle : plusieurs interfaces spécifiques pour chaque client plutôt qu'une seule interface générale
+-Dependency inversion principle : dépendre des abstractions, pas des implémentations
+
+
 *** Fonctionnel
 -Fermeture
 -Curryfication
@@ -32,7 +42,7 @@
 -Identity map
 -Interceptor
 -Implicit invocation
--Inversion de contrôle = le framework prend en charge l'exécution principale du programme et non le programe lui-même
+-Inversion de contrôle = le framework prend en charge l'exécution principale du programme et non le programme lui-même
     -injection de dépendance = une implémentation de l'inversion de contrôle. Créer dynamiquement (injecter) les dépendances entre les différents objets
 -Model 2
 -MOM
