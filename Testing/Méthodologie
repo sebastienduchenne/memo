@@ -15,3 +15,9 @@
 -pour chaque sprint sont rédigé plusieurs user stories / parcours utilisateur. A la fin du sprint, les user stories sont testés (définition US ; dev ; test ; prod)
 -Les tests dans une méthode agile vont prendre une place plus importante que dans une méthode classique. Le test d’un logiciel coûte plus cher en agile que dans un cycle en V !
 -une équipe agile doit mettre en place des méthodologies de code (TU + TDD) afin de diminuer la charge des tests au cours des sprints
+
+
+*** tests
+
+browsers : firefox, chrome, IE, safari, Edge
+device : desktop, tablette, smartphone, iPhone, iPad

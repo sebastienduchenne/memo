@@ -2,7 +2,7 @@
     -composant / unitaire (karma)
     -intégration : entre composant (mocha)
     -système : système entier
-    -end to end (protractor, selenium)
+    -acceptance / end to end (protractor, selenium)
 
 -par famille
     -de charge / de performance (gatling)
@@ -49,6 +49,7 @@
 -Test de capacité : Simulation où on augmente le nombre d’utilisateurs par paliers, afin de déterminer quelle est la limite du système
 -Test de stress : Simulation d’un grand nombre d’utilisateurs arrivant en même temps, par exemple dans le cas d’une pub à la télévision ou d’une campagne de marketing viral sur les réseaux sociaux
 -Test d’endurance : Simulation d’une charge importante sur une longue durée, afin de vérifier que l’application ne souffre pas de dégradation de performances
+
 
 *** Test vitaux
 = s’assurer que les fonctions « vitales » de l’application sont toujours en état de fonctionner

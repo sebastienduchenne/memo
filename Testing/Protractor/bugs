@@ -1,0 +1,14 @@
+
+*** unknown error: DevToolsActivePort file doesn't exist
+
+  => retirer dans la conf "seleniumAddress: 'http://localhost:4444/wd/hub'"
+
+
+*** session not created: This version of ChromeDriver only supports Chrome version 84
+
+=> installer la bonne version du navigateur
+
+Chrome :
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+  sudo apt install ./google-chrome-stable_current_amd64.deb

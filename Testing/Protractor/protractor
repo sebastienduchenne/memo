@@ -10,26 +10,10 @@ lancer les tests
   protractor conf.js
 
 
------------------ BUGS ------------------------------------------------
-
-*** unknown error: DevToolsActivePort file doesn't exist
-
-  => retirer dans la conf "seleniumAddress: 'http://localhost:4444/wd/hub'"
-
-
-*** session not created: This version of ChromeDriver only supports Chrome version 84
-
-=> installer la bonne version du navigateur
-
-Chrome :
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-  sudo apt install ./google-chrome-stable_current_amd64.deb
-
-
 ----------------- code ------------------------------------------------
 
-browser.waitForAngularEnabled(false);
+-appli non Angular
+    browser.waitForAngularEnabled(false); 
 
 browser.get('url');
 
@@ -39,8 +23,6 @@ $('#id').click();
 
 browser.sleep(3000);
 
-element(by.css('.class'))
-
 await browser.actions()
   .mouseMove({x: 570, y: 210})
   .click(protractor.Button.RIGHT)
@@ -48,20 +30,26 @@ await browser.actions()
 
 let services = await element.all(by.css('#id ul li')).getText();
 
-let e = element(by.xpath('//*[contains(text(), "text")]'))
-
 expect(e.getAttribute('class')).toMatch('className');
 
 
-describe('titre', function() {
-  it('titre', async function() {
-
-  });
-});
+-attendre qu'un élément soit visible
+  let EC = protractor.ExpectedConditions;
+  browser.wait(EC.visibilityOf(e), 10000, 'bouton non clickable');
 
 
-*** protractorImageComparison
-v1.7.2
+-get élément
+  element(by.css('#id ul li'));
+  element(by.css('input'))
+  element(by.css('[placeholder = "placeholder"]'));
+  element(by.xpath('//*[contains(text(), "text")]'));
+  element(by.css('[value="add"]'));
+  element.all(by.css('.done-true'));
+
+
+----------------- protractorImageComparison ------------------------------------------------
+
+=> v1.7.2
 
 await browser.protractorImageComparison.checkElement($('#btn_filter'), "titre");
 
