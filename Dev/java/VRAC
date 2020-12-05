@@ -16,3 +16,17 @@ app -> API JPA -> API JDBC -> BD relationnelle
 -bloquant
 -créer autant de thread que de connexion
 -> souvent de l'attente
+
+
+
+*** Netflix OSS (Netflix Open Source Software Center)
+-ensemble de librairies, stack
+    -Hystrix : tolérance aux fautes
+    -Zuul : faire du proxy inverse
+    -Ribbon : 
+    -Astyanax : client Cassandra pour Java
+-fonctionnalités
+    -faire une architecture orientée microservices
+    -tolérances aux fautes
+    -load balancing
+    -service discovery

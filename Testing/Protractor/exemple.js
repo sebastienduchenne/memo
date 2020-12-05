@@ -2,6 +2,13 @@
 
 exports.config = {
     specs: ['scenario.js'],
+    onPrepare() {},
+    beforeLaunch: () => {},
+    afterLaunch: () => {},
+    framework: 'jasmine2',
+    jasmineNodeOpts: {
+      defaultTimeoutInterval: 420000,
+    },
     capabilities: {
         browserName: 'firefox'
     },
