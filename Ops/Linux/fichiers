@@ -36,7 +36,8 @@ pwd : chemin de la racine vers le dossier courant
     grep "expr" *.tex
 
 -Tous les fichiers du dossier courant et de ses sous-dossier
-    grep -r "expr" .
+    grep -r "expr" .        # affiche les fichiers et le texte
+    grep -rl "expr" .       # affiche que les fichiers
 
 -Tous les fichiers .tex du dossier courant et de ses sous-dossier
     grep -r --include="*.tex" "expr"
