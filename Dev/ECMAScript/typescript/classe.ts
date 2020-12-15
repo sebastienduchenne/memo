@@ -1,26 +1,27 @@
-class MaClasseDeBase {
+class ClasseMere {
 	private _firstname: string;
 	private _lastname;
+	readonly empCode: number;		// readonly, compile error if modified
+	static pi: number = 3.14;
 
 	public constructor(firstname: string, lastname: string) {
     	this._firstname = firstname;
     	this._lastname = lastname;
 	}
 
-	public direBonjour(): string {
-    	return "Bonjour " + this._firstname + ", " + this._lastname;
+	public sayHello(): string { // méthode d'instance
+    	return "Hello " + this._firstname + ", " + this._lastname;
 	}
+
+	static m() { /* ... */ } // méthode de classe
 }
 
-// La classe hérite de "MaClasseDeBase".
-class MaClasse extends MaClasseDeBase {
+class ClasseFille extends ClasseMere {
 	public constructor(firstname: string, lastname: string) {
-    	// Accède au constructeur de "MaClasseDeBase".
     	super(firstname, lastname);
 	}
 }
 
-// Création d'une instance de "MaClasse" et
-// appel de la méthode: "direBonjour" de la classe parente : "MaClasseDeBase".
-var monInstance: MaClasse = new MaClasse("Jean", "Dupond");
-monInstance.direBonjour();
+ClasseMere.pi; // returns 3.14
+var monInstance: ClasseFille = new ClasseFille("John", "Doe");
+monInstance.sayHello();

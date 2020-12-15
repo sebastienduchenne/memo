@@ -1,7 +1,4 @@
-
-//Module  ___________________________________________________________________
- 
-//l  espace de nom, contient des classes, fonctions
+//l'espace de nom contient des classes, fonctions
 
 declare module arithmetics {
 	add(left: number, right: number): number;

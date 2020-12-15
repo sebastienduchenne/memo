@@ -4,6 +4,11 @@
 -inférence de type : deviner le type à partir de la valeur
 
 
+*** compilation
+-commande : tsc name.ts
+-ou utilisation d'un fichier tsconfig.json
+
+
 *** fonctionnalité en plus ES2015
 -module
 -union
