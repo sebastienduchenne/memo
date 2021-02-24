@@ -1,22 +1,33 @@
+mysqlshell : advanced command-line client and code editor for MySQL
+mysqladmin : exécuter des commandes d'administration
+mysqld : serveur
+
+
 *** serveur
 
 -démarrer le serveur
     sudo systemctl start mysql
+    sudo service mysqld start
 
 -redémarrer le serveur
     sudo systemctl restart mysql
 
 -stopper le serveur
     sudo systemctl stop mysql
+    sudo service mysqld stop
 
 -recharger la configuration
-sudo systemctl reload mysql
+    sudo systemctl reload mysql
+
+-vérifier que mysql est lancé
+    mysqladmin -u root -p status
 
 
 *** utiliser mysql
 
 -lancer mysql
-    sudo mysql
+    sudo mysql  (ne pas oublier le sudo sinon erreur de droits)
+    mysql -u root -p
 
 -sélectionner une DB
     use nom_db;
@@ -35,3 +46,14 @@ sudo systemctl reload mysql
 
 -lister les tables
     show tables;
+
+-importer des données
+    sudo mysql database < backup-file.sql
+    sudo mysql -u username -p new_database < data-dump.sql
+    SOURCE file.sql;
+
+-exporter structures et données
+    mysqldump -u root --no-data --add-drop-database --databases app > file.sql
+
+-reload the grant tables
+    FLUSH PRIVILEGES;

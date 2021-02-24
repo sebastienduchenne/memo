@@ -3,8 +3,13 @@ fsck : réparer en cas de crash disque
 htop : utilisation ressources
 chroot
 systemd
---------------------------------------------------------------------
+stopper un service
+    service <name> stop
+TTY : affiche sur la sortie standard le nom du fichier connecté sur l'entrée standard
+
+
 *** variable PATH
+
 -variable d'environnement qui indique à Linux où chercher des exécutables
 -variable située dans le fichier /etc/environment
 -afficher la variable
@@ -14,8 +19,9 @@ systemd
 -set PATH permanent
     ajouter le chemin à la fin du fichier /etc/environment
     source /etc/environment pour que le changement prenne effets
---------------------------------------------------------------------
--Pointer sur un site
+
+
+*** Pointer sur un site
 
 $ sudo /etc/hosts
 
@@ -24,5 +30,3 @@ $ sudo /etc/hosts
 #nom site
 ip1 domaine1
 ip2 domaine1
---------------------------------------------------------------------
-TTY (affiche sur la sortie standard le nom du fichier connecté sur l'entrée standard)
