@@ -1,0 +1,15 @@
+mettre à jour webdriver-manager
+    sudo webdriver-manager update
+
+lancer le serveur
+    sudo webdriver-manager start
+
+lancer les tests
+    protractor conf.js
+
+
+*** chrome
+
+1.sur https://chromedriver.chromium.org/downloads, télécharger la version qui correspond à la version installée de chrome
+2.changer les droits du fichier chromeDriver à 775
+3.commande : protractor conf.js --chromeDriver=path/to/chromedriver

@@ -1,17 +1,3 @@
-------------- Commandes -----------------------------------------------
-
-mettre à jour webdriver-manager
-  sudo webdriver-manager update
-
-lancer le serveur
-  sudo webdriver-manager start
-
-lancer les tests
-  protractor conf.js
-
-
------------------ code ------------------------------------------------
-
 -appli non Angular
     browser.waitForAngularEnabled(false); 
 
@@ -24,20 +10,20 @@ lancer les tests
 -cliquer sur un élément
     $('#id').click();
 
--cliquer avec la souris
-    await browser.actions()
-      .mouseMove({x: 570, y: 210})
-      .click(protractor.Button.RIGHT)
-      .perform();
-
--vérifier la valeur d'un attribut
-    expect(e.getAttribute('class')).toMatch('className');
-
--attendre qu'un élément soit visible
+-attente
     let EC = protractor.ExpectedConditions;
-    browser.wait(EC.visibilityOf(e), 10000, 'bouton non clickable');
+    bouton cliquable                            browser.wait(EC.elementToBeClickable(elm), 5000, "xxx")
+    présent dans le DOM mais "display:none"     browser.wait(EC.isDisplayed(e), 1000, 'xxx');
+    boolean de la présence dans le DOM          e.isPresent();
+    présence dans le DOM                        browser.wait(EC.visibilityOf(e), 1000, 'xxx');
+    pause                                       browser.sleep(1000)                         
 
-expect(list[0].getAttribute('type')).toEqual('text');
+-vérifier une valeur
+    expect(text).toEqual('text');
+    expect(text).to.eventually.equals(true);
+    expect(text).to.eventually.be.true;
+    expect(text).toMatch('text');
+    expect(text).to.not.equal("text");
 
 -maximiser le browser
     browser.driver.manage().window().maximize();
@@ -46,27 +32,31 @@ expect(list[0].getAttribute('type')).toEqual('text');
     let cookies = await browser.manage().getCookies()
 
 -exécuter un script
-    browser.executeScript()
+    v = browser.executeScript('return document.geElementById("xxx").value')
 
--pause
-    browser.sleep(1000)
-
--beforeEach
+-before et after
     beforeEach(async () => { })
+    beforeAll(async () => { })
+    afterAll(async () => { })
+    afterEach(async () => { })
 
-browser.ignoreSynchronization = true;
+-ne pas attendre les promises Angular
+    browser.ignoreSynchronization = true;
 
 -action souris
-    browser.actions().dragAndDrop(elem,target).mouseUp().perform();
-    ptor.driver.actions()
-            .dragAndDrop(plot0, {x: 200, y: 100})
+    browser.actions()
+            .dragAndDrop(elem,target)
+            .mouseUp()
+            .perform();
+    browser.actions()
             .mouseMove(plot0, {x: 200, y: 100}) // 200px from left, 200 px from top of plot0
             .mouseDown()
             .mouseMove({x: 600, y: 0}) // 600px to the right of current location
             .perform();
-
--attendre qu'un bouton soit cliquable
-    browser.wait(EC.elementToBeClickable(elm), 5000)
+    browser.actions()
+            .mouseMove({x: 570, y: 210})
+            .click(protractor.Button.RIGHT)
+            .perform();
 
 
 *** locators
@@ -84,13 +74,13 @@ by.partialButtonText('Save')            // part of button text
 by.cssContainingText('.pet', 'Dog')     // for selecting this: <li class="pet">Dog</li>
 by.deepCss('span')                      // for selecting all level of spans <span><span>x</span></span>
 by.xpath('//ul/li/a')                   // Locates elements matching a XPath selector
-by.xpath('//*[contains(text(), "x")]')
-by.xpath('//div[@class="x"]')
+by.xpath('//*[contains(text(), "x")]')  // les div qui contiennent le texte "x"
+by.xpath('//div[@class="x"]')           // les div qui ont pour class "x"
 by.xpath('//div[contains(@class,"x")]')
-by.xpath('//div[@id="x"])'
-by.xpath('//div[@title="x"]')
-by.xpath('//div[text()="x"]')
-by.xpath('//input[@name="x"]')
+by.xpath('//div[text()="x"]')           // les div qui ont pour texte "x"
+by.css('[data-selector=xxx] button')    // les button avec tel data-selector
+by.xpath('..')                          // père de e
+by.css("[type=button]")                 // recherche les buttons dans les fils de e
 
 $$('div[role="dialog"]:not([data-selector="drawer-container"])')
 
@@ -112,6 +102,12 @@ let services = await element.all(by.css('#id ul li')).getText();
 
 => v1.7.2
 
-await browser.protractorImageComparison.checkElement($('#btn_filter'), "titre");
+save
+    await browser.pic.saveScreen('examplePaged', { /* options*/ });
+    await browser.pic.saveFullPageScreen('fullPage', { /* options*/ });
 
-await browser.protractorImageComparison.checkFullPageScreen("titre");
+check
+    await browser.pic.checkElement($('#btn_filter'), "titre");
+    await browser.pic.checkFullPageScreen("titre");
+    await browser.pic.checkScreen('examplePaged', "titre");
+    expect(await browser.pic.checkFullPageScreen('fullPage', { /* options*/ })).toEqual(0);

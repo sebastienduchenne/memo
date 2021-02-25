@@ -11,6 +11,8 @@ exports.config = {
       args: ['--window-size=1280,1024', '--disable-browser-side-navigation'],
       w3c: false,
     },
+    //marionette : true, => your connection is not private dans chrome
+    //acceptInsecureCerts : true, => your connection is not private chrome
   },
 
   onPrepare() {

@@ -1,27 +1,34 @@
+-un framework agile
 -sprint de 2-3 semaines
 -équipe de 5 à 11 individus
--prendre des initiatives, ne pas attendre les instructions
--demander de l’aide à d’autres équipes qui ont déjà travaillé sur une techno
--l'équipe décide des outils qu’elle utilise et du workflow et de comment elle s’organise
+-équipe auto-gérée : décide des outils qu’elle utilise, du workflow et de comment elle s’organise
 -pas de silo, chacun doit savoir faire un peu de tout, tout en ayant une expertise dans un secteur, entraide entre les membres
+-vélocité = effort que l’équipe peut fournir
+-complexité = effort que nécessite une US
+-poker planning = estimer la complexité des fonctionnalités à développer
 
 
 *** backlogs
--product backlog = ensemble des US du projet
--sprint backlog = ensemble des US embarquées pour un sprint
+-product backlog = ensemble des fonctionnalités du projet. Produit et géré par le PO
+-sprint backlog = ensemble des US détaillées par le PO et embarquées pour un sprint
 
 
-*** cérémonies / meeting pour un sprint
+*** cérémonies / meeting
 
--Sprint Planning Meeting = définir le contenu du sprint backlog à partir du product backlog. Le PO doit venir avec son backlog affiné (Users Stories décrites) et priorisé, et on décide des US à embarquer
+-Sprint Planning Meeting
+    = définir le contenu du sprint backlog à partir du product backlog. Le PO doit venir avec son backlog affiné (Users Stories décrites) et priorisé, et on décide des US à embarquer
 
--Daily meeting = s'assurer que tout le monde va dans la même direction. Tout les jours, chacun répond à 3 questions : ce qui a été fait la veille, ce que l'on va faire ojd, quels sont les obstacles
+-Daily meeting
+    = s'assurer que tout le monde va dans la même direction. Tout les jours, chacun répond à 3 questions : ce qui a été fait la veille, ce que l'on va faire ojd, quels sont les obstacles
 
--Backlog Refinement / backlog grooming = affiner le contenu des US
+-Backlog Refinement / backlog grooming
+    = affiner le contenu des US
 
--Sprint Review meeting = montrer le travail réalisé au cours du sprint afin de le soumettre à la validation du Product Owner. La scrum team doit préparer une démonstration des User Story / Tâches réalisées au cours du sprint
+-Sprint Review meeting
+    = montrer le travail réalisé au cours du sprint afin de le soumettre à la validation du Product Owner. La scrum team doit préparer une démonstration des User Story / Tâches réalisées au cours du sprint
 
--Sprint Retrospective = bilan du sprint écoulé, ce qui a été et n’a pas été, à améliorer, idées d’amélioration, retour d’expérience
+-Sprint Retrospective
+    = bilan du sprint écoulé, ce qui a été et n’a pas été, à améliorer, idées d’amélioration, retour d’expérience
 
 
 *** rôles
@@ -43,7 +50,7 @@
     -communique de façon privilégiée avec les parties prenantes et les clients / utilisateurs
     -décrit les US avec l’équipe, priorise ce qui est à réaliser par l’équipe et assure la cohérence globale du produit
 
--équipe de dev :
+-équipe de réalisation :
     -collabore avec le PO pour créer et affiner les US. Elle évalue leur complexité et détermine ce qu’elle prévoit de réaliser. Elle développe, test et livre ces fonctionnalités. Elle est garante de la qualité du produit et propose des améliorations techniques au PO
     -est auto-organisée et pluridisciplinaire
     -composé de dev, testeur, analyste et autre expert

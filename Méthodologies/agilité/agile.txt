@@ -18,6 +18,8 @@
 *** l'Agilité
 
 = une approche de gestion de projet qui incite à répondre, de manière très rapide, aux changements de l’environnement et aux contraintes imposées par les délais, toujours plus courts, de livraison de projets
+    -> approche adaptative
+
 -on parle de culture, une approche, une philosophie plutôt que de méthode
 
 -considère que spécifier et planifier dans les détails l'intégralité d'un produit est contre productif
@@ -26,12 +28,20 @@
 
 -le client donne sa vision du produit et ses fonctionnalités (rédaction possible). L'équipe réalise une partie du produit durant la 1ère itération. A la fin, elle montre ce qui a été réalisé au client qui se rend compte du produit et peut demander des changements. Il y a ainsi plus de visibilité et de confiance et les risques sont levés tôt (plus d'effet tunnel)
 
--méthodes agile : Scrum, eXtreme Programming, RAD, Chrystal Clear
 -User Story ou récit utilisateur
     = décrit une fonctionnalité à développer
     -'en tant que …, je souhaite …, afin de …'
     -critères d’acceptation, cad des éléments obligatoires pour valider que la fonctionnalité répond aux besoins
     -Gherkins = langage servant à écrire des tests fonctionnels, 'Given … when … then …'
+
+-plusieurs méthodes
+    -SCRUM
+    -eXtreme Programming (XP)
+    -Crystal clear
+    -RAD
+    ...
+
+-faire une application utile à l'utilisateur final, lui apporter le plus de valeur possible
 
 
 *** Avantages
@@ -92,8 +102,8 @@
 -veille, s'intéresser à de nouvelles choses
 -aider l’équipe à atteindre ses objectifs
 -qqun qui a une idée va faire ce qu’il faut pour concrétiser l’idée : contacter, demander avis, se former
--vélocité = effort que l’équipe peut fournir
--complexité = effort que nécessite une US
--poker planning = estimer la complexité des fonctionnalités à développer
 -remise en question permanente
 -auto-organisation
+-board kanban
+-découpage epic / storie / tâche
+-TDD

@@ -1,15 +1,16 @@
 = Gestionnaire de version (VCS) décentralisé
--3 versions d’un même fichier :
-    en local : projet
-    dans le .git
-    en distant : serveur
+-5 espace :
+    remise
+    espace de travail
+    index
+    dépôt local dans le .git
+    dépôt distant sur le serveur
 -Origin : racine du dépôt distant sur laquelle se trouve les différentes branches
 -Master : branche principal sur le dépôt distant
 -.gitignore : dossier et fichier à ignorer
--index : contient un instantané du contenu de la copie de travail et c’est cet instantané qui sera utilisé comme contenu du prochain commit
+-index : fichier qui contient un instantané du contenu de la copie de travail et sera utilisé comme contenu du prochain commit
 -quand on est sur la branche de travail, tirer la develop (source de vérité ultime) régulièrement pour éviter les conflits et d'avoir à rebase quand on push
 -un linter dans le pipeline check les fichiers et fail si problème de linter
--une MR a une vie : pouces, commentaires
 -linter :  
     -sert à vérifier que le code est conforme à des règles de bonnes pratiques
     -A exécuter avant chaque commit puis corriger les mauvaises pratiques
