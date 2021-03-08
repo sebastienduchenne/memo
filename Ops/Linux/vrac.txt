@@ -2,9 +2,6 @@ eval
 fsck : réparer en cas de crash disque
 htop : utilisation ressources
 chroot
-systemd
-stopper un service
-    service <name> stop
 TTY : affiche sur la sortie standard le nom du fichier connecté sur l'entrée standard
 
 
@@ -30,3 +27,25 @@ $ sudo /etc/hosts
 #nom site
 ip1 domaine1
 ip2 domaine1
+
+
+*** systemd
+
+= gestionnaire de système, le daemon du système
+-premier programme lancé par le noyau
+-se charge de lancer tous les programmes suivants
+-successeur de upstart avec initctl
+
+systemctl = outil de gestion des services dans systemd
+    activer un service au démarrage : sudo systemctl enable service
+    désactiver un service au démarrage : sudo systemctl disable service
+    démarrer un service : sudo systemctl start service
+    arrêter un service : sudo systemctl stop service
+    relancer un service : sudo systemctl restart service
+    recharger un service : sudo systemctl reload service
+    status d'un service : sudo systemctl status service
+
+journalisation
+    -The Journal
+    -commande : journalctl
+    -dans "/var/log/journal/"
