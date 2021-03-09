@@ -1,7 +1,6 @@
 -algorithme hyperloglog = probabiliste
 -vector clock
 -garbage collector
--CDN = content delivery network ou réseau de diffusion de contenu (RDC)
 -yeoman = outil permettant de générer la structure de base de projets et de gérer les dépendances. ensemble de 3 outils : Yo, Grunt, et Bower.
 -scaffolding = technique permettant de générer la structure de base de projets
 
@@ -15,6 +14,5 @@
 
 
 *** technologies
--cloudflare = CDN
 -puppet = gestion de la configuration de serveurs esclaves
 -NuGet = package manager

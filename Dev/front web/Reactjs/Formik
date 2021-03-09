@@ -1,5 +1,4 @@
 =créer des formulaires
--validation des champs
 -connect() : HOC
 -component
     <ErrorMessage />
@@ -13,7 +12,7 @@
     -useField()
     -useFormikContext()
     -withFormik()
-
+-Yup pour la validation des champs
 
 *** exemple
 

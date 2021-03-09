@@ -1,3 +1,4 @@
+-CDN = content delivery network ou réseau de diffusion de contenu (RDC)
 -Cloudflare = entreprise qui propose 
     -réseau de distribution de contenu
     -des services de sécurité (attaque DDoS, pare-feu)
