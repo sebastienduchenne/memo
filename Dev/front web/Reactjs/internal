@@ -1,0 +1,36 @@
+-React ne change que ce qui a besoin d'être changé
+-moteur de rendu ou renderer : produit un rendu de composants React sous forme d’objets JS nus
+-si un node diffère, il sera re-rendu dans toute son arborescence
+-une fois le nouveau DOM virtuel créé, React le compare avec l'ancien DOM virtuel et créé une liste de modification à apporter au DOM du browser
+
+
+-rendu d'un composant en 2 phases :
+    -phase de rendu (render) :
+        0. constructor()
+        1. getDerivedStateFromError() : en cas d'erreur
+        2. getDerivedStateFromProps() : si changement de props / state
+        3. shouldComponentUpdate() : si appel forceUpdate()
+        4. render() qui retourne du JSX
+        5. le moteur React construit le DOM virtuel
+        6. lancement de la réconciliation qui retourne une liste de changements
+    -phase de commit : 
+        1. application des modifications au DOM du browser 
+        2. puis appel des méthodes : componentDidMount / componentDidCatch / componentDidUpdate / componentWillUnmount
+
+
+-React travaille sur DOM virtuel
+    = objet JSON représentant le DOM du browser
+    -sert à gagner en rapidité de rendu de l'appli (200 000 node / sec) car modifier le DOM du browser est très long
+    -recréé en entier à chaque appel de setState et de dispatch
+    -une fois le rendu fini, le DOM du browser est modifié à partir de ce DOM virtuel = réconciliation
+    -ce DOM est créée par la fonction render()
+
+
+-réconciliation
+    = étape où un algo cherche à minimiser les opérations de synchronisation entre le DOM virtuel et le DOM du browser
+    -l'algo donne une liste de changement à effectuer
+    -complexité en O(n^3) où n est le nombre de noeud dans l'arbre, React utilise une heuristique en O(n)
+    -le moteur de réconciliation s'appele Fiber
+    -2 hypothèses sur la réconciliation
+        -2 éléments de type différent produira des arbres différents
+        -les éléments enfants doivent avoir une key

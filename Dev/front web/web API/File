@@ -1,0 +1,15 @@
+-lire un fichier mais pas écrire
+-utiliser les méthodes de Blob
+
+File -> Blob
+
+
+*** exemple
+
+<input id="file" type="file" multiple />
+
+<script>
+    document.querySelector('#file').addEventListener('change', function() {
+        alert(this.files[0].name);
+    });
+</script>

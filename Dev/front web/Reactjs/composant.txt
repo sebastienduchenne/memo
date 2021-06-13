@@ -1,0 +1,144 @@
+*** définition
+
+-composant = élément indépendant et réutilisable
+-commence par une majuscule (les éléments HTML natifs commencent par une minuscule)
+-2 façons d'en déclarer : avec une fonction ou avec une classe
+-renvoit du HTML
+
+-comme des fonctions qui acceptent des props et renvoient des éléments react
+-composition de composants = un composant est un assemblage de plusieurs composants plus petits
+-composant pur fonctionnel = ne modifie pas les entrées et renvoit toujours la même chose pour les même entrées
+-les composants sont de la SoC car ils contiennent le HTML et la logique qui gère la même responsabilité
+-affichage conditionnel = afficher un composant ou non en fonction de l'état de l'application
+-en cas de changement, ReactDOM met à jour le strict nécessaire (les noeuds)
+-composant monté = injecté dans le DOM
+-composant à état = contient un state
+-chaque composant est seul responsable des informations qu’il fournit à ses fils
+-props 'techniques'
+    -key : unique, dans un tableau
+    -children : tableau contenant la liste des enfants, passer des éléments enfants pour les comp qui ne connaissent pas leur enfant à l'avance (délégation de contenu)
+    -dangerouslySetInnerHTML : injecter du balisage manuel, ne doit être utilisée qu'en dernier recours
+-3 phases : mounting, updating, unmounting
+
+
+*** fonction composant
+-composant pur fonctionnel, doit toujours renvoyer la même chose pour les mêmes arguments, et ce sans effet de bord ni variation
+-se limite au rendu et aux props
+  = propriétés, entrée qui reçoit des données d'un parent
+  -doivent être en lecture seule
+-A utiliser pour des cas simples
+
+
+function Greetings({name="world"}) {                            // (props) -> {props.name}
+  return <span>Bonjour <strong>{props.name}</strong> !</span>
+}
+
+const Greetings = props => {
+  return (
+    <span>
+      Bonjour <strong>{props.name}</strong> !
+    </span>
+  )
+}
+
+const Greetings = ({name}) => (
+  <span>
+    Bonjour <strong>{name}</strong> !
+  </span>
+)
+
+utilisation : <Greetings name="John">
+
+
+*** composant avec une classe
+= fonction composant (rendu et props) + 
+  -état local ou state
+  -appel API
+  -méthodes de cycle de vie
+  -intéraction avec des éléments du DOM
+  -appel de méthodes métiers
+
+-la classe hérite de React.Component
+
+-state 
+  = état local d'un composant, cad ses données
+  -est privé ou encapsulé
+  -à mettre à jour avec setState({...})
+  -les mises à jour de l’état peuvent être asynchrones = grouper plusieurs appels à setState en une fois
+  -les mises à jour de l’état sont fusionnées = React fusionne les objets que l'on donne avec l’état actuel
+-méthodes de cycle de vie
+  constructor : initialiser un état local
+  render : produire le rendu du composant
+  componentDidMount : une fois le composant monté, appel API
+  componentDidUpdate : une fois le composant mis à jour, travailler sur le DOM et requêtes réseaux
+  componentWillUnmount : juste avant démontage du composant, libèrer les ressources
+
+  voir fichier "objet React.txt" pour plus de détails et de méthode
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);                       // obligatoire
+    this.state = {...}                  // à définir dans le constructor
+  }
+  componentDidMount() {  }              // méthode de cycle de vie
+  render() {                            // méthode de rendu
+    return <h1>Bonjour, {this.props.name}</h1>;
+  }
+}
+
+
+*** defaultProps
+-mettre des valeurs par défaut aux props
+
+-pour une fonction :
+    MyCoolComponent.defaultProps = {
+        l10n: true,
+        required: false,
+    }
+
+-dans une classe
+    static defaultProps = {
+        initialCollapsed: false,
+    }
+    => utilisation : props.initialCollapsed
+
+
+*** relier un composant à la vue
+
+    ReactDOM.render(
+      <Welcome name="John" />,
+      document.getElementById('root')
+    );
+
+
+*** gestion des saisies de formulaire
+-composant controlé : valeur saisie vérifiée
+-composant non-controlé : valeur saisie non vérifiée
+
+
+*** gestion d'évènements
+-nommé en camelCase
+
+  <button onClick={eventName}>
+    Texte
+  </button>
+
+
+*** boucles sur liste
+
+const users = [
+  { id: 1, name: 'a' },
+  { id: 2, name: 'b' },
+  { id: 3, name: 'c' },
+  { id: 4, name: 'd' },
+]
+
+render () {
+  return (
+    <div className="userList">
+      {this.props.users.map(({ id, name }) => (
+        <a href={`/users/${id}`}>{name}</a>
+      ))}
+    </div>
+  )
+}

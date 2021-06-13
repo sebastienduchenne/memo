@@ -1,0 +1,18 @@
+-afficher qqch sur la sortie stdout (sauf pour console.error() qui affiche sur stderr)
+-console.dir() : afficher objet et tableau
+-console.time() : démarrer un chrono, on l’arrète avec console.timeEnd()
+-console.error() : affiche sur la sortie 'stderr'
+-console.log()
+-console.info()
+-console.table() : afficher un tableau
+-console.trace() : afficher la stack trace
+-console.clear()
+-console.count() : compte le nombre de fois qu'un string est affiché
+
+-console.log('My %s has %d years', 'cat', 2)
+    %s format a variable as a string
+    %d format a variable as a number
+    %i format a variable as its integer part only
+    %o format a variable as an object
+
+-console.log(JSON.stringify(obj, null, 2)) : afficher la totalité d'un objet avec une indentation de 2

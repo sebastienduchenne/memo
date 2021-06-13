@@ -1,0 +1,58 @@
+-créer du code complexe en peu de lignes
+-IDE : PyCharm, VS code, ...
+-Black : formateur de python pour respecter certaines règles
+-PyPI (Python Package Index) = dépôt de packages
+-interpréteur Python : cPython (écrit en C), Pypy, IronPython, Jython
+-CPython compiles Python en un bytecode intermédiaire qui est ensuite interprété par une VM
+-PyPy fait de la compilation JIT et créée directement du langage machine
+
+
+*** caractéristiques de Python
+-indentation
+-langage interprété
+-paradigme : impérative, orienté objet, fonctionnel
+-typage dynamique fort
+-ramasse-miette
+-supporte l'héritage multiple
+-encapsulation limitée
+-générateur
+
+
+*** pip
+= système de gestion de paquets
+-on peut installer à partir d'un fichier de dépendances "requirements.txt"
+
+-commandes
+    -pip install django
+    -pip install django==2.2
+    -pip uninstall django
+    -pip install django --upgrade
+    -pip install django==2.1 --upgrade  # downgrader
+    -pip install -r requirements.txt    # installer à partir d'un fichier de dépendances (pip freeze)
+    -pip list --outdated                # quelles lib ne sonr plus à jour
+    -pip freeze                         # lib installées et leur version
+
+
+*** usages
+-web : avec le framework Django
+-système : tâches répétitives
+-app Java avec Jython
+-app bioinformatique : module biopython
+-jeux vidéos : pyGame
+-milieu scientifique
+
+
+*** extensions
+.py  -> script modifiable
+.pyc -> script compilé
+.pyw -> script executé sans lancement de terminal (sous windows)
+
+
+*** Anaconda
+= distribution Python, cad qu'il contient Python et une multitude packages intercompatibles
+-outils :
+    -Conda = outil de gestion de packages
+    -Anaconda Navigator = interface graphique permettant de lancer Jupyter
+    -Spyder = IDE pour écrire du python
+    -Anaconda Prompt = terminal
+    -Jupyter = écrire du python au format notebook

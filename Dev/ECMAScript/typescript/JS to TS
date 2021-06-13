@@ -1,0 +1,36 @@
+1. ajouter un fichier tsconfig.json
+
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "allowJs": true,
+        "target": "es5"
+    },
+        "include": [
+        "./src/**/*"
+    ]
+}
+
+
+2. intégrer avec un outil de build comme webpack
+    
+commande pour installer un TypeScript loader : npm install awesome-typescript-loader source-map-loader 
+
+webpack.config.js :
+
+module: {
+    loaders: [
+        // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+        { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
+    ],
+
+    preLoaders: [
+        // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+        { test: /\.js$/, loader: "source-map-loader" }
+    ]
+}
+
+
+3. renommer les extensions '.js' en '.ts' et les '.jsx' en '.tsx'
+
+4. corriger les erreurs

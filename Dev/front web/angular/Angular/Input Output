@@ -1,0 +1,36 @@
+*** Input
+= Recevoir des données du composant parent
+-@Input()
+
+// component
+export class MeteoComponent {
+  @Input() ville: string;  // input
+}
+
+// html parent
+<meteo [ville]="Paris"></meteo>
+
+
+*** Output
+= Transmettre des données ou un évènement au composant parent
+-@Output()
+
+// component
+export class MeteoComponent {
+  @Output() alerteCanicule = new EventEmitter<any>(); // output
+
+  // Méthode appelée si la température est trop élevée
+  onTemperatureRises() {
+    this.alerteCanicule.emit();  // Déclenche l'output sans transmettre de données
+    //this.alerteCanicule.emit(this.temperature); // transmettre une données
+  }
+}
+
+// html
+
+// à la réception de l'évènement 'alerteCanicule', appel à boireBeaucoup()
+<meteo (alerteCanicule)="boireBeaucoup()"></meteo>
+
+// à la réception de l'évènement 'alerteCanicule', appel à boireBeaucoup() en lui envoyant la donnée de température
+<meteo (alerteCanicule)="boireBeaucoup($event)"></meteo>
+

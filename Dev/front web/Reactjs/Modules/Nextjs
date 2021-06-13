@@ -1,0 +1,9 @@
+= framework bâti sur React, Webpack et Babel
+-faire des appli universelles = appli hybrides ou appli fullstack (JS avec rendu côté client et serveur)
+-JAMstack architecture
+
+
+*** fonctionnalités
+-code splitting automatique
+-server side rendering
+-génération de sites web statiques

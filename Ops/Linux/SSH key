@@ -1,0 +1,8 @@
+clé SSH (Secure SHell) 
+-permet de se connecter de façon sécurisée
+-clé privée, clé publique et passphrase (sécuriser la clé privée)
+-dans gitlab : générer les clés sur linux, copier la publique dans gitlab, la privée est dans ~/.ssh/
+
+clé ssh
+keygen => créé clé ssh dans ~/.ssh
+copier la clé public dans le giltab settings du compte, on peut en mettre plusieurs

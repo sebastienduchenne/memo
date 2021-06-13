@@ -1,0 +1,47 @@
+-API Window -> AbstractView
+-Document -> Node -> EventTarget
+-Element  ->
+-Browser Object Model (BOM) : regroupe un ensemble d'API
+
+
+*** API
+-Web storage API
+    -sessionStorage
+    -localStorage
+-Web worker
+    -worker dédié
+    -worker partagé
+    -service worker
+    -worker chrome
+    -audio worker
+-API fetch : récupération de ressources
+    -Request
+    -Response
+    -Headers
+    -GlobalFetch
+-Document : représente le document actuel
+    -defaultView => window
+    	-console.log()
+        -document
+        -prompt()
+    -cookie
+    -width
+-IndexedDB
+-API store data
+-WebGL = web Graphic Library
+-WebSocket = ouvrir un canal de communication bidirectionnelle entre un navigateur et un serveur
+-DOM
+-Cache
+-EventTarget : interface que vont implémenter les objets qui peuvent recevoir des évènements
+-Event : représente tout événement qui a lieu dans le DOM (FetchEvent)
+-Node : interface de base pour une grande partie des objets du DOM
+-Blob : représente un objet qui est immuable et qui contient des données brutes
+-Window
+-Element : interface de base pour tous les objets d’un document
+-File : interface qui fournit des informations sur des fichiers
+
+
+*** Accès
+sessionStorage
+localStorage
+ServiceWorker.active

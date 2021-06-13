@@ -1,0 +1,47 @@
+
+*** approche séquentielle
+
+function serveCustomer(customer) {
+    let order = customer.placeOrder(menu);
+    let food = cook.prepareFood(order);
+    let tip = customer.eatAndPay(food);
+    return tip; 
+}
+
+-> le client suivant attend que le précédent ait fini de manger, ce qui créée beaucoup d'attente
+
+
+*** approche asynchrone
+
+function serveCustomer(customer, done) {
+    customer.placeOrder(menu, (error, order) => {
+        cook.prepareFood(order, (error, food) => {
+            customer.eatAndPay(food, done);
+        })
+    })
+}
+
+-> cette manière de développer pose le problème du sapin de noël lorsqu'il y a beaucoup d'imbrications de fonctions
+
+
+*** approche asynchrone avec promesse
+
+function serveCustomer(customer) {
+    return customer.placeOrder(menu)
+      .then(order => cook.prepareFood(order))
+      .then(food => customer.eatAndPay(food))
+}
+
+-> plus lisible
+
+
+*** approche asynchrone avec promesse et async/await
+
+const serveCustomer = async (customer) => {
+    let order = await customer.placeOrder(menu);
+    let food = await cook.prepareFood(order);
+    let tip = await customer.eatAndPay(food);
+    return tip;
+}
+
+-> très facile à lire

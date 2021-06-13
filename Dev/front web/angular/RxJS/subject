@@ -1,0 +1,69 @@
+import { Subject } from 'rxjs/Subject';
+
+export class AppareilService {
+  
+    appareilsSubject = new Subject<any[]>();
+  
+    private appareils = [
+        { id: 1, name: 'Machine à laver', status: 'éteint' },
+        { id: 2, name: 'Frigo', status: 'allumé' },
+        { id: 3, name: 'Ordinateur', status: 'éteint' }
+    ];
+
+    emitAppareilSubject() {
+        this.appareilsSubject.next(this.appareils.slice());
+    }
+
+    switchOnAll() {
+        for(let appareil of this.appareils) {
+            appareil.status = 'allumé';
+        }
+        this.emitAppareilSubject();
+    }
+}
+
+--------------------------------------------------
+
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AppareilService } from '../services/appareil.service';
+import { Subscription } from 'rxjs/Subscription';
+
+@Component({
+    selector: 'app-appareil-view',
+    templateUrl: './appareil-view.component.html',
+    styleUrls: ['./appareil-view.component.scss']
+})
+export class AppareilViewComponent implements OnInit, OnDestroy {
+
+    appareils: any[];
+    appareilSubscription: Subscription;
+
+    lastUpdate = new Promise((resolve, reject) => {
+        const date = new Date();
+        setTimeout(
+            () => {
+                resolve(date);
+            }, 2000
+        );
+    });
+
+    constructor(private appareilService: AppareilService) { }
+
+    ngOnInit() {
+        this.appareilSubscription = this.appareilService.appareilsSubject.subscribe(
+            (appareils: any[]) => {
+                this.appareils = appareils;
+            }
+        );
+        this.appareilService.emitAppareilSubject();
+    }
+
+    onAllumer() {
+        this.appareilService.switchOnAll();
+    }
+
+    ngOnDestroy() {
+        this.appareilSubscription.unsubscribe();
+    }
+
+}

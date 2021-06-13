@@ -1,0 +1,42 @@
+-module : variable qui représente le module
+-chaque fichier est traité comme un module séparé
+-un module peut regrouper plusieurs classes
+-2 standarts pour écrire des modules
+    -CommonJS, utilisé par Node.js
+    -AMD (Asynchronous Module Definition), utilisé par requireJS
+
+
+-require : importer un module
+-exports : objet qui permet de rendre des propriétés et des méthodes disponibles en dehors du module
+-__dirname : chemin absolu du dossier
+-__filename : chemin absolu du script
+
+
+
+*** require
+-importer un module
+-le chemin est relatif au script et non depuis le dossier où le terminal exécute le script
+-chargement synchrone
+-on ne peut pas charger un élément particulier dans le module
+-scanne tout le dossier nodes_modules pour trouver le module
+
+
+*** module.exports ou exports
+-exporter qqch de créé dans un module
+-module.exports et exports sont équivalents
+-2 moyens : 
+    -l'objet à exporter est une propriété de 'exports'
+    -exporter un seul objet
+
+const car = { brand: 'Ford', model: 'Fiesta' }
+module.exports = car
+//..in the other file
+const car = require('./car')
+
+    OU
+
+const car = { brand: 'Ford', model: 'Fiesta' }
+module.exports.car = car
+//..in the other file
+const items = require('./items')
+items.car

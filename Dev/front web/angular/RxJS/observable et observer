@@ -1,0 +1,51 @@
+import { Observable } frpm 'rxjs/Observable';
+import 'rxjs/Rx';
+
+
+const myObservable1 = from(['Hello', 'world']); // A partir d'un tableau
+
+const myObservable2 = interval(2000); // Envoie une valeur toutes les 2 sec
+
+const myObservable3 = Observable.of(42); // A partir d'une valeur
+
+const data$ = new Observable(observer => {
+
+    observer.next(1);
+    observer.next(2);
+    //observer.error(new Error('Oups!'));
+    observer.next(3);
+    observer.complete();
+
+});
+
+
+const myObservable4 = new Observable((observer) => {
+    const datasource = new DataSource();
+    datasource.ondata = (e) => observer.next(e);
+    datasource.onerror = (err) => observer.error(err);
+    datasource.oncomplete = () => observer.complete();
+    return () => {
+        datasource.destroy();
+    };
+});
+
+subscriber1 = myObservable.subscribe(
+    value => { console.log(value) },
+    error => { console.log(error) },
+    () => { console.log('fin') }
+);
+
+
+var observer = rx.Observer.create(
+    function onNext(result){ console.log(result); },
+    function onError(err){ console.log(err); },
+    function onCompleted(){ console.log('Completed'); }
+);
+
+// subscriber2 = myObservable.subscribe(observer)
+
+
+
+ngOnDestroy():void {
+    this.subscriber1.unsubscribe();
+}

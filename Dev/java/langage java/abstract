@@ -1,0 +1,12 @@
+-on définit une méthode abstraite car le comportement n'est pas défini et est différent selon les classes qui en héritent
+-si on déclare une méthode abstraite, la classe doit être déclaré abstraite
+-une CA peut contenir des méthodes concrètes et des attributs
+-une CA peut ne contenir aucune méthode abstraite
+-une CA ne peut pas être instanciée
+-une CA a un constructeur
+
+
+****** Une sous classe de la classe abstraite peut ******
+-implémenter toutes les méthodes A => instanciable
+-ne pas implémenter toutes les méthodes A => doit être déclaré abstraite
+-ajouter des méthodes A => doit être déclaré abstraite

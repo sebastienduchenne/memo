@@ -1,0 +1,36 @@
+-créée un objet Function
+-ne créée pas de fermeture liée au contexte de leur création contrairement à la déclaration de fonction
+
+
+var ajoute = new Function('a', 'b', 'return a + b');
+ajoute(2,6)
+
+
+*** Function.prototype.call() ***
+
+-réaliser un appel à une fonction avec une valeur this donnée et des arguments fournis individuellement
+
+let user = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+let user1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+let user2 = {
+  firstName:"Tom",
+  lastName: "Doe"
+}
+person.fullName.call(user1);  // -> "John Doe"
+
+
+*** Function.prototype.apply() ***
+
+-appeller une fonction en lui passant une valeur this et des arguments sous forme d'un tableau
+
+
+*** Function.prototype.bind() ***
+
+-créer une nouvelle fonction qui, lorsqu'elle est appelée, a pour contexte this la valeur passée en paramètre et éventuellement une suite d'arguments qui précéderont ceux fournis à l'appel de la fonction créée

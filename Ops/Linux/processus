@@ -1,0 +1,12 @@
+afficher les processus actifs
+    pstree
+    ps -ef
+    pstree -up
+    pstree -p | grep chrome
+    pkill -e chrome / chromedriver / geckodriver
+
+*** tuer un processus
+
+-pkill -e chrome
+
+-killall geckodriver-v0.24.0

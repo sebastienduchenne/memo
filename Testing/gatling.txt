@@ -1,0 +1,12 @@
+
+
+
+
+A la fin de chaque test, Gatling génère un rapport HTML, qui représente :
+-le nombre d'utilisateurs actifs au cours du temps
+-la distribution des temps de réponse
+-les centiles des temps de réponse au cours du temps
+-le nombre de requêtes par seconde
+-le nombre de réponses par seconde
+
+

@@ -1,0 +1,61 @@
+-principe de pesticide
+-modèle spotify
+-cornet de glace
+-shift left = déplacer les TU au début du projet, tester tôt
+-on ne peut pas trouver TOUTES les erreurs, il faut trouver les plus critiques et gênantes
+-tout test est un compromis : le test parfait (fiable, rapide et simple) n’existe pas. Même le plus complet des tests d’intégration fait des hypothèses qui ne protègent pas à 100% d’erreurs inattendues
+-il faut au préalable préparer le test : remplir la BD, créer les comptes ...
+-la stratégie de tests dépend du contexte : besoin, contraintes, outils, la faculté de livraison, l’existant, le budget, la durée de vie du projet, le mode de dév
+-tester = chercher des erreurs. Il faut être ouvert d’esprit, cad il faut chercher des cas qui n’ont pas été pensé par le dev. L’objectif du testeur est de ne pas laisser passer de trop grosse erreur, il peut y avoir une erreur qui passe car c’est humain. Dans ce cas on cherche le responsable, on va d’abord se tourner vers le testeur, s’il n’est pas responsable il doit se défendre. S’assurer qu’un produit répond aux exigences de la spécification
+-cas de test = spécifications des entrées, des conditions d’exécutions, de la procédure, des étapes et résultats attendus pour atteindre un objectif de test
+-test FIRST = Fast, Isolated / indépendant, Repeatable, Self-validating, Thorough/Timely
+-rapport de test d’une campagne contient 
+    1)tests réalisés : types, US testées, ano testées
+    2)config testées
+    3)anomalies trouvées
+    4)avis : GO/NO GO
+
+
+*** Définitions
+-test = vérifier qu’un programme ne comporte pas d’erreur, qu’un produit répond aux exigences de la spécification
+-test de validation / acceptance test = vérifier si toutes les exigences clients sont respectées
+-test unitaire = vérifier une unité du programme
+-test d’intégration = tester les interfaces entre les différents programmes
+-test de non-régression
+-test fonctionnel / end to end = tester les fonctions du logiciel, valider les exigences logiciels
+-test vital =
+-test de charges
+-test d’interface
+-campagne de test = ensemble de cas de test à exécuter sur une période donnée
+-stratégie de test
+-épopée
+-jeu de test
+-test libre
+-boite blanche : on connait les composants
+-boite noire : on ne connait pas les composants
+-smoke test = test destiné à révéler des défaillances simples et graves
+-plan de test
+-périmètre de test = ensemble des tests (non reg, story)
+-objectif de test
+-test d'acceptation : correspond au besoin de l'utilisateur, accessibilité
+
+
+*** Couverture de test
+= outil de mesure du taux de code source testé
+    couverture des méthodes
+    couverture des instructions = tester chaque ligne de code
+    couverture des chemins d’exécution = passer par les différents chemins pour tester une ligne de code
+-couverture fonctionnelle forte = tester tout
+
+
+*** Cycle de vie d’un bug
+1.un dev / un testeur détecte un bug
+2.création issue / defect
+3.bug assigné à un dev
+4.le dev corrige et signale que le bug est corrigé
+5.le testeur teste, si bug non corrigé ou régression : signalé
+6.bug clos
+
+
+*** tests auto
+-design pattern Page Object et screenplay

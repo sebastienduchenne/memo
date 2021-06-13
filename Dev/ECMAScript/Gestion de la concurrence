@@ -1,0 +1,37 @@
+*** modèle Java ou .NET
+-contiennent un pool de process / thread
+-multi-threading et synchrone = pour chaque requête au serveur, un thread/process se charge de la gérer, et il n’est libéré qu’une fois les opérations demandées sont achevées, ce qui fait attendre le thread
+-or beaucoup d'opérations web sont IO ce qui est très consommateur de temps et de ressources
+-Le serveur doit donc créer autant de thread que de connexion, d'autant que le nombre de thread est limité ce qui fait attendre les requêtes en surplus
+-ainsi, le multi-threading synchrone n'est pas très adapté au web
+
+
+*** modèle nodejs
+
+-utilise une boucle d'évènements pour gérer les instructions
+-instruction asynchrone = exécuter une instruction sans attendre le résultat avant de passer à la suivante
+-la boucle est notifiée par des évènements (requête HTTP, ouverture fichier) associée à une fonction callback
+-notre application est responsable du traitement équitable des clients
+-qq opérations non bloquantes : requêtes HTTP, les opérations de lectures/écritures sur le disque, les appels à la BD
+-single-thread (mais l'hôte peut être multithread)
+-avantages de ce modèle
+    -pas d'attente => rapidité
+    -peut gérer beaucoup de requête simultanément
+    -utilise moins de ressources
+-inconvénient
+    -nodejs est adapté pour des applications web mais montre ses limites pour des applications qui demandent beaucoup de ressources CPU (traitement d'images, ...)
+
+
+*** navigateurs
+
+-Dans les navigateurs web, des messages sont ajoutés à chaque fois qu'un événement se produit
+-Une fois que le traitement asynchrone est terminé, la callback qui a été fournie en paramètre est insérée dans la message queue
+
+
+*** 5 éléments
+
+-call stack = les appels de fonctions. Un niveau de la pile n'est retiré que lorsque la fonction appelée a terminé son exécution
+-API du système hote = fournit toute des fonctions et des objets au moteur JS
+-message queue = message à traiter en FIFO, contient les callbacks des appels asynchrones uniquement. Chaque message est associé à une fonction. Chaque message sera traité complètement avant tout autre message (peut être long à exécuter)
+-heap (le tas) : mémoire pour allouer des objets
+-event loop = surveille l'état de la call stack. Si cette dernière est vide d'instruction à exécuter, la boucle des événements déplacera la callback en attente dans la file vers la call stack pour être exécutée

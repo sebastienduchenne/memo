@@ -1,0 +1,81 @@
+-ECMAscript = ensemble de normes que doivent respecter les langages de programmation de type script (JavaScript, JScript et ActionScript)
+-standardisée par ECMA International grâce aux spécifications ECMA-262 et ECMA-402
+-les navigateurs web et Node le comprend et lui ajoute une API, contextuelle à cet environnement d’exécution :
+    .nav : fetch(), querySelector(), addEventListener(), document, API DOM pour page web
+    .node : require()
+-transcompilateur = permet de convertir une version de ES en une plus ancienne (ex : Babel.js)
+-ECMA : organisation qui gère la standardisation dans le domaine informatique. Concrètement elle va imposer des standards pour des technologies, des formats de fichiers ou des langages de programmation
+-ECMAScript est géré par le comité appelé TC39
+
+
+*** versions de ECMA-262
+
+ES2009 :
+    La directive "use strict"
+    String.prototype.trim()
+    Array.isArray()
+    Array.prototype.forEach()
+    Array.prototype.map()
+    Array.prototype.filter()
+    Array.prototype.reduce()
+    Array.prototype.reduceRight()
+    Array.prototype.every()
+    Array.prototype.some()
+    Array.prototype.indexOf()
+    Array.prototype.lastIndexOf()
+    JSON.parse()
+    JSON.stringify()
+    Date.now()
+ES2015 :
+    classe
+    Promise
+    fonction fléchée
+    Generator
+    let and const
+    module mjs
+    string multiline
+    paramètre default
+    affectation par décomposition ou destructuring
+    for...of
+    Map et Set
+    Array.prototype.find()
+    Array.prototype.findIndex()
+    template string
+    évolution des objets littéraux
+    Symbol
+    rest parameter and spread operator : ...var
+    le protocole « itérable » et le protocole « itérateur »
+ES2016 :
+    Array.prototype.includes()
+    opérateur d'exponentiation ** (puissance)
+ES2017 :
+    string padding
+    Object.values()
+    Object.entries()
+    Object.getOwnPropertyDescriptors()
+    async function et await
+ES2018 :
+    rest and spread property : ...var
+    async iteration
+    Promise.prototype.finally()
+    regular expression improvements
+ES2019 :
+    Object.fromEntries()
+    String.prototype.trimStart() et String.prototype.trimEnd()
+    Array.prototype.flat() et Array.prototype.flatMap()
+    Description property for Symbol objects
+    Optional catch binding
+    Function.toString()
+    Well Formed JSON.Stringify()
+    Array.prototype.Sort() Stability
+    JSON Superset
+ES2020 :
+    Private Fields in Classes
+    Dynamic Import
+    BigInt : 900000000000000000n
+    Promise.allSettled()
+    globalThis
+    opérateur de chaînage optionnel (optional chaining) : '?.'
+    Nullish Coalescing Operator '??'
+    String.prototype.matchAll()
+    Ordre de parcours du for-in standardisé

@@ -1,0 +1,48 @@
+-fournit une interface pour la récupération de ressources
+-fournit 3 interfaces : 
+    -Request : représente une requête
+    -Response : représente la réponse à une requête
+    -Headers : représente les headers de requête et de réponse
+-implémente le mixin Body : fournit des méthodes permettant de gérer le body de la requête et de la réponse
+-CORS
+-HTTP origin
+
+
+*** objet Response
+-Response.ok : booléen, true si le code est 2xx, false sinon
+-Response.status : statut code HTTP de la réponse
+-Response.json() : retourne la réponse dans un objet JSON
+-Response.blob() : retourne la réponse dans un objet Blob
+-Response.text() : retourne la réponse sous forme de chaine de caractères
+-Response.formData() : retourne la réponse dans un objet FormData
+-Response.arrayBuffer() : retourne la réponse dans un objet ArrayBuffer
+
+
+*** méthode fetch
+-effectuer une requête et obtenir une ressource
+-méthode globale
+-entrée : une URL ou un objet Request
+-renvoit une promesse
+
+
+var options = { method: 'GET',
+               headers: h,
+               body: b,
+               referrer: url,
+               mode: 'cors', // 'no-cors' ou 'same-origin'
+               cache: 'default' };
+
+fetch(url, options)
+    .then(function(response) {
+        //...
+    })
+
+-----------
+
+fetch(url, {
+    method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(requestData),
+}).then(function(response) {
+    console.log(response)
+})

@@ -1,0 +1,109 @@
+*** L’informatique aujourd'hui
+
+-instabilité et obsolescence des demandes, fortes exigences des clients, accélération du marché technologique, diversification des offres => anticipation des besoins des clients et définition complète de l’ensemble des demandes sont devenues très risquées
+-il faut donc être réactif, rapide et s’adapter aux changements
+-survivre dans un environnement instable
+
+
+*** Méthodes classiques (cycle en V, ...)
+
+-le client doit clairement exprimer son besoin
+-les dépenses augmentent fortement lorsque des rectifications sont effectuées durant l'implémentation
+-les changements survenant durant le projet sont limités afin de tenir les délais et respecter les coûts fixés
+-Des contrats « rigides » sont élaborés avec le client, précisant, de manière très fixe, le périmètre et le coût de la solution
+-L’accent est donc mis sur la phase de planification durant laquelle se fait la définition de l’ensemble des besoins à implémenter (rédaction de spécifications, de doc, d'un CDC)
+-effet tunnel = pas de communication avec le client ou entre le MOA et la MOE ce qui aboutit souvent à l'échec du produit
+
+
+*** l'Agilité
+
+= une approche de gestion de projet qui incite à répondre, de manière très rapide, aux changements de l’environnement et aux contraintes imposées par les délais, toujours plus courts, de livraison de projets
+    -> approche adaptative
+
+-on parle de culture, une approche, une philosophie plutôt que de méthode
+
+-considère que spécifier et planifier dans les détails l'intégralité d'un produit est contre productif
+
+-le principe est de se fixer des objectifs à court terme. Une fois atteint, on s'adapte et on se fixe d'autres objectifs = approche empirique
+
+-le client donne sa vision du produit et ses fonctionnalités (rédaction possible). L'équipe réalise une partie du produit durant la 1ère itération. A la fin, elle montre ce qui a été réalisé au client qui se rend compte du produit et peut demander des changements. Il y a ainsi plus de visibilité et de confiance et les risques sont levés tôt (plus d'effet tunnel)
+
+-User Story ou récit utilisateur
+    = décrit une fonctionnalité à développer
+    -'en tant que …, je souhaite …, afin de …'
+    -critères d’acceptation, cad des éléments obligatoires pour valider que la fonctionnalité répond aux besoins
+    -Gherkins = langage servant à écrire des tests fonctionnels, 'Given … when … then …'
+
+-plusieurs méthodes
+    -SCRUM
+    -eXtreme Programming (XP)
+    -Crystal clear
+    -RAD
+    ...
+
+-faire une application utile à l'utilisateur final, lui apporter le plus de valeur possible
+
+
+*** Avantages
+
+-pas d'effet tunnel
+-adaptation rapide au changement (imprévus, nouveaux besoins)
+-pas de rédaction inutile
+-client plus satisfait
+-plus de confiance
+-plus de visibilité
+-montrer le produit au client pour s’assurer qu’il correspond à ses attentes
+
+
+*** Manifeste agile (2001)
+
+-Le Manifeste Agile de définit pas une méthode, il fédère le mouvement agile avec un ensemble de valeurs et de principes. La façon de les mettre en oeuvre sur les projet (les méthodes) varie.
+
+
+-4 valeurs
+    -Les individus et leurs interactions plus que les processus et les outils
+    -Des logiciels opérationnels plus qu'une documentation exhaustive
+    -La collaboration avec les clients plus que la négociation contractuelle
+    -L'adaptation au changement plus que le suivi d'un plan
+
+-> les seconds éléments sont moins importants
+
+
+-12 principes
+    -Satisfaire le client en priorité
+    -Accueillir favorablement les demandes de changement
+    -Livrer le plus souvent possible des versions opérationnelles de l’application
+    -Assurer une coopération permanente entre le client et l’équipe projet
+    -Construire des projets autour d’individus motivés
+    -Privilégier la conversation en face à face
+    -Mesurer l’avancement du projet en termes de fonctionnalités de l’application
+    -Faire avancer le projet à un rythme soutenable et constant
+    -Porter une attention continue à l’excellence technique et à la conception
+    -Faire simple
+    -Responsabiliser les équipes
+    -Ajuster à intervalles réguliers son comportement et ses processus pour être plus efficace (amélioration continue)
+
+
+*** Pratiques, mises en oeuvre
+
+-amélioration continue
+-chercher des solutions aux problèmes rencontrés
+-la solution vient de l’équipe
+-maximiser la valeur ajoutée
+-équipe auto-organisée, elle gère le workflow comme elle veut
+-recherche de solutions
+-écoute, chacun s’exprime
+-entraide
+-explorer
+-communication
+-responsabiliser les membres de l’équipe
+-créativité
+-être proactif
+-veille, s'intéresser à de nouvelles choses
+-aider l’équipe à atteindre ses objectifs
+-qqun qui a une idée va faire ce qu’il faut pour concrétiser l’idée : contacter, demander avis, se former
+-remise en question permanente
+-auto-organisation
+-board kanban
+-découpage epic / storie / tâche
+-TDD

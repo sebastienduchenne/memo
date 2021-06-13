@@ -1,0 +1,48 @@
+-le constructeur RegExp crée un objet expression rationnelle pour la reconnaissance d'un modèle dans un texte
+-ce sont des motifs utilisés pour correspondre à certaines combinaisons de caractères au sein de chaînes de caractères
+-ce sont des objets
+-RegExp ou expression rationnelle ou expression régulière
+-String.match() : renvoit les caractères de la RegExp dans une chaine
+-String.search() : renvoit la position de la RegExp dans une chaine
+-classe de caractères [xxx] : spécifier un ensemble de caractères qui vont pouvoir être trouvés
+
+
+*** méta-caractères
+-de classe
+    -'\' : échappement
+    -'^' : non ([^aeiouy])
+    -'-' : dans un intervalle ([a-z])
+-hors classe
+    -'.' : n’importe quel caractère sauf '\n'
+    -'A|B' : alternative
+    -'^A' : A au début
+    -'A$' : A à la fin
+    -'A?' : eq à {0,1}
+    -'A+' : au moins un A
+    -'A*' : 0 ou 1 ou plusieurs A
+    -'{x}'
+    -'{x,y}'
+    -'{x,}'
+    -'()' : sous masque
+
+*** exemples
+let chaine = 'Bonjour, je m\'appelle Pierre et vous ?';
+
+let masque1 = /Pierre/; // 'Pierre'
+let masque2 = /[A-Z]/; // majuscule
+let masque3 = /[A-Z]/g; // toutes les majuscules, le 'g' permet de faire une recherche globale
+
+chaine.match(masque1); // Pierre
+chaine.match(masque2); // B
+chaine.match(masque3); // B,P
+
+
+let m1 = /j[aeiouy]/g; // 'j' suivi d'une voyelle
+let m2 = /[^aeiouy]/g; // autre chose qu'une voyelle dans la chaine
+let m3 = /[\^aeiouy]/g; // '^' ou une voyelle dans la chaine
+let m4 = /[aei^ouy]/g; // '^' ou une voyelle dans la chaine
+let m5 = /[a-z]o/g; // une lettre minuscule suivie d'un 'o'
+let m6 = /[a-zA-Z]o/g; // une lettre (min ou maj) suivie d'un 'o'
+let m7 = /[a\-z]/g; // 'a', '-' et 'z'
+let m8 = /[0-9az-]/g; // un chiffre, 'a', 'z' et '-'
+let m9 = /[0-9[\]]/g; // un chiffre, '[' et ']'

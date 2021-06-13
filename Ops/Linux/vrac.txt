@@ -1,0 +1,51 @@
+eval
+fsck : réparer en cas de crash disque
+htop : utilisation ressources
+chroot
+TTY : affiche sur la sortie standard le nom du fichier connecté sur l'entrée standard
+
+
+*** variable PATH
+
+-variable d'environnement qui indique à Linux où chercher des exécutables
+-variable située dans le fichier /etc/environment
+-afficher la variable
+    echo $PATH
+-set PATH pour la durée de la session du terminal
+    export PATH=$PATH:/chemin/vers/le/repertoire
+-set PATH permanent
+    ajouter le chemin à la fin du fichier /etc/environment
+    source /etc/environment pour que le changement prenne effets
+
+
+*** Pointer sur un site
+
+$ sudo /etc/hosts
+
+-> ajouter l'ip et le nom de domaine
+
+#nom site
+ip1 domaine1
+ip2 domaine1
+
+
+*** systemd
+
+= gestionnaire de système, le daemon du système
+-premier programme lancé par le noyau
+-se charge de lancer tous les programmes suivants
+-successeur de upstart avec initctl
+
+systemctl = outil de gestion des services dans systemd
+    activer un service au démarrage : sudo systemctl enable service
+    désactiver un service au démarrage : sudo systemctl disable service
+    démarrer un service : sudo systemctl start service
+    arrêter un service : sudo systemctl stop service
+    relancer un service : sudo systemctl restart service
+    recharger un service : sudo systemctl reload service
+    status d'un service : sudo systemctl status service
+
+journalisation
+    -The Journal
+    -commande : journalctl
+    -dans "/var/log/journal/"

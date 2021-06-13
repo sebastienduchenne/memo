@@ -1,0 +1,18 @@
+-algorithme hyperloglog = probabiliste
+-vector clock
+-garbage collector
+-yeoman = outil permettant de générer la structure de base de projets et de gérer les dépendances. ensemble de 3 outils : Yo, Grunt, et Bower.
+-scaffolding = technique permettant de générer la structure de base de projets
+
+
+*** transaction
+-propriétés ACID
+    -atomicité : la transaction se fait au complet ou pas du tout
+    -cohérence : la transaction amènera le système d'un état valide à un autre état valide
+    -isolation : pas de dépendance entre les transactions
+    -durabilité : les résultats doivent être enregistrés de façon permanente
+
+
+*** technologies
+-puppet = gestion de la configuration de serveurs esclaves
+-NuGet = package manager

@@ -1,0 +1,86 @@
+*** Modèles traditionnels
+
+-Etapes
+    1. l'équipe de dév collecte les exigences métier puis rédige le code
+    2. elle teste son programme dans un environnement isolé
+    3. elle met le code à la disposition des équipes d'exploitation pour la MEP et gèrent aussi la stabilité et la fiabilité du système
+
+-ce paradigme pose un problème : lorsque les deux équipes travaillent en silo, les dev peuvent ne pas être au courant des obstacles opérationnels qui empêchent le programme de fonctionner comme attendu
+
+-le monde de l'informatique évolue de plus en plus vite, les exigences changent sans cesse, il faut livrer de plus en plus rapidement, les modèles traditionnels (cascade, cycle en V) ne sont donc plus adaptés
+
+
+*** Devops
+
+-approche conçue pour accroitre la valeur ajoutée et livrer rapidement
+-c'est une philosophie, une culture, un état d'esprit qui implique tout le monde dans l'entreprise
+-forte collaboration entre les équipes de dev et d'exploitation (ops)
+
+
+*** avantages
+
+-répond plus vite au besoin du client
+-plus de compétitivité
+-gain de confiance
+-mise à jour et innovation plus rapide
+-gestion plus efficace des imprévus
+-plus de fiabilité
+
+
+*** bonnes pratiques
+
+-Intégration continue
+-livraison continue
+-déploiement continu
+-microservices
+-Infrastructure en tant que code (IaC) = configuration de l'infrastructure par le code (contrôle des versions, intégration continue, VM)
+-Surveillance et journalisation pour mesurer la performance
+-Communication et collaboration entre les équipes
+-automatisation
+-dev et ops peuvent être fusionnées en une équipe : les membres travaillent sur la conception, le dev, l'exploitation, le test et le déploiement
+-sécurité => DevSecOps
+-utilisation de conteneurs
+-pipeline CI/CD : automatisation et surveillance des différentes phases de l'intégration jusqu'au déploiement
+
+
+*** intégration, livraison et déploiement continu
+
+-intégration continue : ensemble de pratiques consistant à vérifier, pour chaque modification de code source, que le résultat des modifications ne produit pas de régression
+
+-livraison continue : 
+    -les équipes de dév produisent et testent le code dans des cycles courts, en s'appuyant sur l'automatisation
+    -raccourcir au maximum les boucles de rétroaction afin d'améliorer la qualité des logiciels
+
+-déploiement continue : 
+    -étapes du dev jusqu'aux tests en prod
+    -cycles très courts pour livrer souvent
+    -automatisation
+    -inclut l'intégration continue
+
+
+dév | build - test | delivery - test | deploy - test
+
+<--- intég cont -->
+<------- livraison continue -------->
+<-------------- déploiement continu --------------->
+
+
+*** Missions du devops
+
+-Déploiement d’applications
+-Réalisation de phases de test
+-Mise en place d’une surveillance de la qualité de la production
+
+
+*** Qualités, compétences du devops
+
+-compétences :
+    -programmation et intégration
+    -déploiement d’infrastructures : mise en place de passerelles pour transférer des opérations ou des données
+    -évaluation : capacité à évaluer le fonctionnement des applications, à procéder à des ajustements en termes de ressources et d’outils et à mesurer les performances des solutions mises en place
+
+-compétences « humaines » :
+    -Avoir un bon relationnel
+    -Être capable de gérer des équipes ayant des rôles complémentaires mais bien spécifiques
+    -Savoir prendre du recul et comprendre le point de vue des autres pour mener à bien le projet dans les meilleures conditions et atteindre l’ensemble des objectifs fixés
+    -Être capable de fédérer des profils hétérogènes, ayant des intérêts parfois très contradictoires, dans le but de produire une solution efficace et cohérente

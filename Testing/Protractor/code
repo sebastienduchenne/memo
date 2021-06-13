@@ -1,0 +1,164 @@
+element(xxx) => renvoit un elementFinder
+element.all(xxx) => renvoit un ElementArrayFinder
+
+elementFinder = représente un élément d'un ElementArrayFinder
+
+
+-appli non Angular
+    browser.waitForAngularEnabled(false); 
+
+-aller à une URL
+    browser.get('url');
+
+-remplir un champs
+    $('#id').sendKeys("x");
+
+-cliquer sur un élément
+    $('#id').click();
+
+-attente
+    let EC = protractor.ExpectedConditions;
+    bouton cliquable                            browser.wait(EC.elementToBeClickable(elm), 5000, "xxx")
+    présent dans le DOM mais "display:none"     browser.wait(EC.isDisplayed(e), 1000, 'xxx');
+    boolean de la présence dans le DOM          e.isPresent();
+    présence dans le DOM                        browser.wait(EC.visibilityOf(e), 1000, 'xxx');
+    pause                                       browser.sleep(1000)                         
+
+-vérifier une valeur
+    expect(text).toEqual('text');
+    expect(text).to.eventually.equals(true);
+    expect(text).to.eventually.be.true;
+    expect(text).toMatch('text');
+    expect(text).to.not.equal("text");
+
+-maximiser le browser
+    browser.driver.manage().window().maximize();
+
+-récupérer les cookies
+    let cookies = await browser.manage().getCookies()
+
+-exécuter un script
+    v = browser.executeScript('return document.geElementById("xxx").value')
+
+-before et after
+    beforeEach(async () => { })
+    beforeAll(async () => { })
+    afterAll(async () => { })
+    afterEach(async () => { })
+
+-ne pas attendre les promises Angular
+    browser.ignoreSynchronization = true;
+
+-action souris
+    browser.actions()
+            .dragAndDrop(elem,target)
+            .mouseUp()
+            .perform();
+    browser.actions()
+            .mouseMove(plot0, {x: 200, y: 100}) // 200px from left, 200 px from top of plot0
+            .mouseDown()
+            .mouseMove({x: 600, y: 0}) // 600px to the right of current location
+            .perform();
+    browser.actions()
+            .mouseMove({x: 570, y: 210})
+            .click(protractor.Button.RIGHT)
+            .perform();
+
+
+*** locators
+
+by.css('.myclass')                      // Find an element using a css selector
+by.id('myid')                           // Find an element with the given id
+by.name('field_name')                   // Find an element using an input name selector
+by.model('name')                        // Find an element with a certain ng-model, (AngularJS)
+by.binding('bindingname')               // Find an element bound to the given variable, (AngularJS)
+by.repeater('cat in pets')              // find web element by repeater
+by.options('c for c in colors')         // find web element by options
+by.buttonText('Save')                   // the whole of button text
+by.partialButtonText('Save')            // part of button text
+by.cssContainingText('.pet', 'Dog')     // for selecting this: <li class="pet">Dog</li>
+by.deepCss('span')                      // for selecting all level of spans <span><span>x</span></span>
+by.xpath('//ul/li/a')                   // lien dans les listes
+by.xpath('//*[contains(text(), "x")]')  // tous ce qui contient le texte "x"
+by.xpath('//div[@class="x"]')           // les div qui ont pour class "x"
+by.xpath('//div[contains(@class,"x")]')
+by.xpath('//div[text()="x"]')           // les div qui ont pour texte "x"
+by.css('[id=xxx] button')               : les button avec tel data-selector
+by.xpath('..')                          : père
+e.element(by.css("[type=button]"))      : recherche les buttons dans les fils de e
+by.css("button")                        : balise button
+by.css("[type=button]")                 : balise avec un attribut de valeur button (dans un input)
+by.css('[id=xxx] button')               : les buttons dans l'arborescence dans une balise avec l'id xxx
+$$('div[role="dialog"]:not([id="drawer-container"])')
+
+get element : element(locator)
+              $(locator) = element(by.css('my-css'));
+
+ignorer un élément : ajouter un 'i'
+
+    <div id='abcDE' class='column'>
+
+    with class : div[id='abcde' i]
+
+
+combinaison
+    <div id='abc' class='column'>
+        <label id='fourth' class='expand'>css id</label>
+    </div>
+
+    with class : .column.expand
+    with id : .abc.fourth
+    with tagname : div label
+    with mix 1: div.column#fourth
+    with mix 1: #abc label.expand
+
+    ----
+
+    <div>
+        <button class="xxx"> </button>
+        <p class="xxx">Légende</p>
+        <textarea id="drawingBoard-caption" class="xxx"></textarea>
+    </div>
+
+
+    let e = element(by.css('[id = "drawingBoard-caption"]'))
+    let pere = e.element(by.xpath('..'))
+    let button = pere.element(by.css("button"))
+
+
+Multiple Elements : 
+    element.all(locator)
+        .count()
+        .get(index)
+        .first()
+        .last()
+
+        $$('.selector') = element.all(by.css('.selector'))
+
+let services = await element.all(by.css('#id ul li')).getText();
+
+
+*** Filtrer
+
+element.all(xxx).filter(function(elem, index) {
+  return elem.getText().then(function(text) {
+    return text === 'Third';
+  });
+}).first().click();
+
+
+
+
+----------------- protractorImageComparison ------------------------------------------------
+
+=> v1.7.2
+
+save
+    await browser.pic.saveScreen('examplePaged', { /* options*/ });
+    await browser.pic.saveFullPageScreen('fullPage', { /* options*/ });
+
+check
+    await browser.pic.checkElement($('#btn_filter'), "titre");
+    await browser.pic.checkFullPageScreen("titre");
+    await browser.pic.checkScreen('examplePaged', "titre");
+    expect(await browser.pic.checkFullPageScreen('fullPage', { /* options*/ })).toEqual(0);

@@ -1,0 +1,66 @@
+= ensemble d’instructions et de métadonnées qui permet de construire une nouvelle image à partir d’une autre
+.peut être optimisé pour gagner du temps
+
+
+-----------------------------------------------------------
+
+-FROM <img_src>
+    partir d'une image source
+
+-MAINTAINER <name>
+    définir l'auteur
+
+-WORKDIR <app path>
+    définir le répertoire courant de l'image, correspond aussi au dossier courant lors du démarrage
+
+-ENV <nom> <valeur>
+    créer une variable d’environnement, accessible dans le dockerfile et le conteneur
+
+-COPY <src> <dest>
+    copier un fichier local vers l'image
+
+-RUN
+    exécuter une commande lors de la création de l'image. Ajoute une couche contenant l'application
+
+-ARG <nom>=<valeur>
+    créer une variable utilisable dans le dockerfile. Utiliser avec ${<nom>}
+
+-CMD <cmd>
+    exécuter une commande au démarrage du conteneur en définissant les commandes et/ou paramètres par défaut de ENTRYPOINT. La commande au démarrage peut être surchargée à la fin du 'docker run'. Un seul CMD par dockerfile
+
+-VOLUMES
+    créer un point de montage qui permettra de persister les données
+
+-EXPOSE <port>
+    exposer un port
+
+-LABEL <name>=<valeur> <name>=<valeur>
+    ajouter des paires clé-valeur en guise de méta-données. Info visible avec docker inspect <name>
+
+-ADD <src> <dest>
+    ajouter un fichier dans l'image (sources du projet ou fichiers de conf). On peut mettre une URL en tant que src, contrairement à COPY, et dézippe si besoin. Utiliser COPY si src n'est pas une URL
+
+-ENTRYPOINT <cmd>
+    exécuter une commande au démarrage du conteneur
+
+-USER
+    désigner l'utilisateur qui lancera les prochaines instructions RUN, CMD ou ENTRYPOINT (root par défaut)
+
+-STOPSIGNAL
+
+
+*** ordre
+
+FROM
+MAINTAINER
+# début couche 1
+RUN
+COPY
+# fin couche 1 et début couche 2
+RUN
+COPY
+# fin couche 2
+EXPOSE
+ENTRYPOINT
+[CMD]
+WORKDIR

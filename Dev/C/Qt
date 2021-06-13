@@ -1,0 +1,13 @@
+-framework pour créer des interfaces graphiques
+-Qt Creator = IDE pour programmer des projets Qt
+-widget = élément d'une fenêtre
+-signal = message envoyé par un widget lorsqu'un évènement se produit
+-slot = fonction qui est appelée lorsqu'un évènement s'est produit
+-fichier .ui : fichier XML qui décrit la fenêtre et ses composants
+
+
+*** Qt et Python
+-module qui lie un script Python à Qt : PyQt et PySide2 (officiel)
+-pyuic5 = permet de convertir une interface graphique en code Python
+    pyuic5 mainwindow.ui -x -o gui.py
+    python3 gui.py

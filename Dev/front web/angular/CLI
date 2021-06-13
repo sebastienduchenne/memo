@@ -1,0 +1,26 @@
+-CLI ou "Command Line Interface"
+-outil pour créer une app angular en ligne de commande
+
+
+*** commands
+-ng new project-name : créer un projet
+
+-ng generate component component-name : créer un component
+    ng g c component-name
+
+-ng serve : lancer le serveur de développement local
+    ng serve --host 0.0.0.0 –port 4205 : lancer sur le port 4205 (4200 par défaut)
+
+-ng build app-name : Compiles an Angular app into an output directory named dist/
+
+-ng test : run unit test
+
+-ng update : update dependencies
+
+-ng lint : run linting
+
+-ng add : Adds support for an external library
+
+-ng e2e : Builds and serves, then runs e2e tests using Protractor
+
+-ng help

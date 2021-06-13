@@ -1,0 +1,14 @@
+-artifactory
+-compodoc = générer automatiquement une documentation à partir de commentaire en JS
+-moteur de rendu HTML = composant logiciel d'un navigateurs permettant d'afficher une page web
+    -Firefox : Gecko
+-moteur JS
+    -Google : V8
+    -Mozilla : Rhino
+    -Netscape : SpiderMonkey
+    -Apple : JavaScriptCore
+-React => Next.js, Gatsby
+-Vue => Nuxt
+-GraphQL (Graph Query Language) = langage de requêtes dont la structure de la réponse du serveur est fixée par le client
+-framework front : Angular, Vue.js, Reactjs, Aurelia, Ember, Marko, Mavo, Backbone, Svelte, Glimmer
+-SSG = Static Site generator

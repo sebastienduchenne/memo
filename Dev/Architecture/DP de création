@@ -1,0 +1,19 @@
+***** Abstract factory *****
+-Créer des familles de produits (ex : DAO, IHM)
+-Pour rendre indépendant la création des objets que le système utilise
+
+
+***** Singleton *****
+-Assure qu’une unique instance d’une classe est autorisée dans le système
+-Une unique instance d’une classe est autorisée
+-Contrôle de l’accès à une instance unique
+-Constructeur privé
+
+
+***** Builder *****
+
+
+***** Factory Method *****
+
+
+***** Prototype *****

@@ -1,0 +1,16 @@
+-version vanilla : version standard d'un programme informatique : ni patché, ni modifié
+-le ~ devant une variable inverse tout les bits de valeurs
+-Framework = cadre de travail, apporte un outil qui encadre notre travail (création formulaire, tests...), impose un certain nombre de règles afin d’augmenter la productivité dans un travail de groupe et faire plus facilement de la maintenance
+-langage closure
+-inline caching = technique d'optimisation
+
+
+
+*** stratégies d'évaluation d'une expression
+= règles de calcul d'une expression
+-2 types : 
+    -strict : les arguments sont calculés avant d'être utilisés
+    -non strict : les arguments sont calculés au moment où ils sont utilisés
+-Appel par valeur : copie de l'objet
+-Appel par référence : une référence à l'objet
+-Appel par partage : copie de la référence à l'objet

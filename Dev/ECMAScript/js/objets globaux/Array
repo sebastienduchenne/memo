@@ -1,0 +1,95 @@
+-si on utilise des index nommés pour un tableau, celui-ci sera transformé en un objet standart. Cela supprimera les méthodes et propriétés
+
+
+let arr = new Array();//syntaxe 1, peu utilisé
+let arr = [];//syntaxe 2
+
+alert( fruits.length ); // 3
+alert( fruits ); // Apple,Orange,Plum
+
+let arr = [ 'Apple', { name: 'John' }, true, function() { alert('hello'); } ];
+
+var fruits = ['Apple', 'Banana'];
+
+fruits.forEach(function(item, index, array) { // boucler
+  console.log(item, index);
+});
+
+fruits.push('Orange') : ajouter à la fin
+fruits.pop() : supprimer le dernier
+fruits.shift() : supprimer le premier
+fruits.unshift('Strawberry') : ajouter au début
+fruits.indexOf('Banana') : index d'un élément
+fruits.splice(pos, n) : supprimer n éléments à partir de l'index pos
+fruits.slice() : copier le tableau
+fruits.includes(val) : déterminer si un tableau contient la valeur val
+
+
+shift   <-         -> pop
+           0 1 2 3
+unshift ->         <- push
+
+fruits.length = 2 // efface les éléments après index=2
+fruits.length = 0 // efface tout le tableau
+
+
+*** find
+
+array.find(callback) : renvoie la valeur du premier élément trouvé dans le tableau qui respecte la condition donnée par la fonction de test passée en argument
+
+const array1 = [5, 12, 8, 130, 44];
+const found = array1.find(element => element > 10);
+
+
+*** findIndex
+
+array.findIndex(callback) : renvoie l'indice du premier élément du tableau qui satisfait une condition donnée par une fonction
+
+
+*** tableau 2D
+
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+
+*** destructuring assignment
+
+const tableau = [1, 2, 3, 4]
+let [un,,trois] = tableau;
+let [un,,trois] = [1, 2, 3, 4] // autre notation
+let [un,...trois] = [1, 2, 3, 4] // un = un, trois = [2, 3, 4]
+
+var a = 3;
+var b = 6;
+[a,b] = [b,a]; // inversion des valeurs
+
+( [{ code }] = text ) // code = text[0].code
+
+
+*** dans une boucle
+
+for (var i = 0, item; item = a[i]; i++) {
+  // Faire quelque chose avec item
+}
+-> on sort de la boucle quand 'item = a[i]' vaudra undefined
+
+
+*** map
+
+-crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant
+
+const array1 = [1, 4, 9, 16];
+const map1 = array1.map(x => x * 2);
+console.log(map1); // [2, 8, 18, 32]
+
+
+*** filter
+
+-retourne un nouveau tableau contenant tous les éléments du tableau d'origine qui remplissent une condition déterminée par la fonction callback
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);
+console.log(result); // ["exuberant", "destruction", "present"]

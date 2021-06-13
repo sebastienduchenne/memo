@@ -1,0 +1,39 @@
+-évènement = action qui peut être écouté et à laquelle on peut répondre
+
+
+*** qq évènements
+-onload : chargement de la page
+-onclick : clic souris
+-onkeydown : touche keyboard
+-onmouseover : survol d'un élément
+
+
+*** gérer un évènement
+-par un gestionnaire d’évènements : écouter et répondre à un évènement
+-addEventListener() : ajouter un gestionnaire d’évènements, méthode de l’interface EventTarget
+-removeEventListener() : supprimer un gestionnaire d’évènements
+
+<span>Text</span>
+let s1 = document.querySelector('span');
+
+s1.addEventListener('click', function(){...});
+
+...
+s2.removeEventListener('click', fonction);
+
+
+*** propagation d'un évènement
+-l'évènement passe à travers les gestionnaires d’évènements, on dit que l’évènement se « propage » dans le DOM
+-chemin de l'évènement: 
+    1.part de la racine et va jusqu’à la cible de l’évènement (phase de capture)
+    2.puis revient à la racine (phase de bouillonnement)
+-les gestionnaires d’évènements sont par défaut configurés pour ne s’exécuter que dans la phase de bouillonnement et pour ignorer la phase de capture
+-forcer l'exécution dans la phase de capture : ajouter true
+    s1.addEventListener('click', function(){...}, true)
+
+
+-stopper la propagation : stopPropagation()
+function cliqueAndStop(e){
+    //...
+    e.stopPropagation();
+}

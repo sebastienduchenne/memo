@@ -1,0 +1,49 @@
+-extension syntaxique de JS qui créé des éléments react
+-c'est une expression
+-pas obligatoire
+-appel de fonction après compilation
+-empêche les attaques d’injection
+-représente des objets
+
+-Avec JSX
+    <User first="John" last="Smith" />
+    -User : nom de l'élément React
+    -first et last sont des propriétés du composant User
+-sans JSX
+    React.createElement(User, { first: 'John', last: 'Smith' })
+
+-donne un élément react: 
+  const element = {
+    type: 'User',
+    props: {
+      first: "John",
+      last: "Smith"
+    }
+  };
+
+
+
+
+const element = (
+  <h1 className="greeting">
+    Bonjour, monde !
+  </h1>
+);
+
+sBabel compile en :
+
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Bonjour, monde !'
+);
+
+React.createElement() crée l'objet :
+
+const element = {
+  type: 'h1',
+  props: {
+    className: 'greeting',
+    children: 'Bonjour, monde !'
+  }
+};

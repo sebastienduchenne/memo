@@ -1,0 +1,135 @@
+= gestionnaire de dépendances
+-pom.xml : contient les dépendances
+-groupId = domaine, de la forme "org.exemple.demo"
+-artifactId = nom du projet
+-appli web Initializr pour générer des projets Maven
+-archétype = modèle de squelette
+-profil = permet de créer des options dans le build
+
+
+*** build lifecycle
+= cycle de vie de construction, enchainement d'étapes appelées "phases"
+-3 build lifecycles de base
+    -default : construire et déployer le projet
+        validate, compile, package, install, deploy, test, ...
+    -clean : nettoyer le projet en supprimant les éléments issus de la construction de celui-ci
+    -site : créer un site web pour le projet
+-phase : une étape d'un build lifecycle
+-goal : une étape d'une phase, chaque goal est réalisé par un "plugins Maven", plugin:goal
+    -> pour activer un goal, on configure le pom.xml
+
+-build lifecycle 
+    phases 1
+        goal 1
+        goal 2
+    phases 2
+        goal 1
+        goal 2
+
+
+*** installer
+
+-windows
+    -télécharger la version binaire .zip
+    -décompresser le binaire dans à la racine du projet, dans "/maven/apache-maven-<VERSION>"
+    -ajouter le chemin vers Maven à la variable Path
+    -tester l'installation : mvn -v
+
+-linux
+    -télécharger la version binaire .tar.gz
+    -décompresser le binaire dans à la racine du projet, dans "/maven/apache-maven-<VERSION>"
+    -ajouter au .bashrc :
+        # Java
+        export JAVA_HOME="/chemin/vers/repertoire/env/java/jdk<VERSION>"
+        MAVEN_HOME="/chemin/vers/repertoire/env/maven/apache-maven-<VERSION>"
+        PATH="$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin"
+
+
+*** configuration
+
+-fichier de conf : dans <HOME>/.m2/settings.xml
+-dépendances placées dans un repository local : <HOME>.m2/repository
+    -> on peut déplacer ce repo en modifiant le fichier de conf :
+
+        <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+            ...
+            <!-- localRepository
+            | The path to the local repository maven will use to store artifacts.
+            |
+            | Default: ${user.home}/.m2/repository -->
+            <localRepository>/chemin/vers/repertoire/env/maven/repository</localRepository>
+            ...
+        </settings>
+
+*** Commandes
+
+-générer un squelette, (à partir d'un archétype)
+    mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1
+
+
+phases du build lifecycle default :
+    mvn validate :  vérifier que la configuration projet est correcte (POM, pas d'éléments manquants...)
+    mvn compile  :  compiler les sources du projet
+    mvn package  :  builder les éléments issus de la compilation dans un format distribuable (JAR, WAR...)
+    mvn install  :  installer le package dans le repository local
+    mvn deploy   :  envoyer le package dans le repository distant défini dans le POM
+    mvn test     :  tester le code compilé avec les classes de tests unitaires contenues dans le projet
+
+
+-exécuter le build
+    java -cp target/<artifactId>-<version>-SNAPSHOT.jar <groupId>.App
+    java -jar <artifact-name>
+
+
+*** squelette d'un projet
+
+mon-appli
+ ├── pom.xml
+ └── src
+      ├── main
+      │    └── java
+      │         └── org
+      │              └── exemple
+      │                   └── demo
+      │                        └── App.java
+      └── test
+           └── java
+                └── org
+                     └── exemple
+                          └── demo
+                               └── AppTest.java
+
+*** pom.xml
+
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+</properties>
+
+----------------
+
+    => activer un goal
+
+<project>
+    ...
+    <!-- =============================================================== -->
+    <!-- Build -->
+    <!-- =============================================================== -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>

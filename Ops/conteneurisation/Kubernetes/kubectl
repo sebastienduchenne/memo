@@ -1,0 +1,38 @@
+*** kubectl
+
+kubectl create deployment --image=[chemin]
+kubectl create -f file.yaml
+
+kubectl get deployments : liste des déploiements
+
+kubectl get pods : liste des pods
+    -o wide : affiche l'IP du pod et le node qui l'héberge
+
+kubectl get services : liste des services
+
+kubectl get nodes : liste des nodes actifs
+
+kubectl expose deploy test-deployment : publier un déploiement
+
+kubectl cluster-info : info sur le cluster
+
+kubectl delete pod <PODNAME> : supprimer un pod
+
+kubectl logs <PODNAME> -c <CONTNAME> : afficher les logs d'un conteneur
+
+kubectl apply -f file.yaml : appliquer des changements
+
+
+*** installation
+
+-vérifier si la virtualisation est prise en charge (doit être non vide)
+$ egrep --color 'vmx|svm' /proc/cpuinfo
+
+-installation :
+$ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x kubectl
+
+-déplacement du binaire :
+$ sudo mv ./kubectl /usr/local/bin/kubectl
+
+-vérifier l'installation :
+$ kubectl version

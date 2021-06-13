@@ -1,0 +1,69 @@
+-Entrée/sortie = ensemble des actions qui servent respectivement à recevoir et à produire des données quel que soit le type d’interaction utilisée
+-Flux / stream = permettent d’encapsuler les envois et les réceptions de données de façon à cacher le support utilisé. On les utilise indifféremment du type de source/destination
+
+
+****** 3 types de classe ******
+
+-Flux de base : sens (entrée ou sortie) + type de données (octet ou caractère)
+    -Reader, Writer, InputStream, OutputStream
+-Constructeur : support + flux de base (fichier, tableau, chaine, tube), 
+    -hérite d’un flux de base
+    -File, ByteArray, Piped, StringBuffer, CharArray 
+-Filtre : fonctionnalité + flux de base (buffer, sérialisation, compression), 
+    -hérite de filter<flux de base>
+    -Buffered, Print, Cipher, 
+
+
+****** Les types de flux ******
+
+-Flux d’octets : InputStream, OutputStream
+-Flux de caractères : Reader, Writer
+
+-API octet
+    -Int Read () : lire
+    -Long Skip (n) : saute  n des octets
+    -Int Available () : nb octet dispo
+    -Void Close () : ferme le flux
+
+    -Void Write () : écrire, bloquant tant qu’il n’y a rien à lire et que le flux reste ouvert
+    -Void Flush () : vide le buffer en forçant l’écriture
+    -Void Close () : ferme le flux
+
+
+****** Les sources/destinations ******
+
+-Trouver les flux
+    -Accesseur : System.In, System.Out, getInputStream (), getOutputStream ()
+    -Constructeur : 
+
+
+****** Les filtres ******
+
+= Classes qui ajoutent des fonctionnalités aux flux, suivent le design pattern du décorateur
+-Prennent le flux de base comme paramètre du constructeur
+-Override => polymorphisme
+-Ajout de méthode
+
+-InputStreamReader = constructeur qui transforme un InputStream en un Reader
+
+
+****** Les filtres personnalisés ******
+
+-Classe qui hérite de Filter<flux de base>
+-Constructeur avec en paramètre le flux de base
+    -Super (para)
+    -Enregistrer les autres paras dans les attributs
+-Redéfinir la méthode read/write
+
+
+****** Code ******
+
+InputStreamReader (System.In)
+
+
+OutputStream os = p.getOutputStream();
+int x;
+while ( (x = System.in.read()) != -1 ) {
+    os.write(x);
+}
+os.close();

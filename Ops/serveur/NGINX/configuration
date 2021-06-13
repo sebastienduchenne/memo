@@ -1,0 +1,50 @@
+*** création d'un nouveau fichier de config Nginx
+
+1.créer un nouveau fichier dans /etc/nginx/sites-available
+2.ajouter un lien symbolique dans /etc/nginx/sites-enabled grâce à la commande ln :
+    ln -s lien-fichier-original lien-fichier-symbolique
+
+
+***
+
+<context name> {
+    <directive name>    <value>;
+}
+
+
+***
+resolver 10.0.0.1;
+module ngx_http_upstream_module
+upstream backend {...}      # définir un groupe de serveurs
+worker_processes nb;
+error_log   <url>;
+pid         <url>;
+
+events {
+    worker_connections  <nb>    # définir le nombre maximal de connexions simultanées
+}
+
+http {
+    gzip on;
+    upstream backend {
+        least_conn;
+        ip_hash;
+        hash;
+        least_time
+        random
+        server
+    }
+    server {...}
+}
+
+------------------
+
+server {
+    listen  <port>;
+    root    <path>
+    location url {
+        proxy_pass
+        fastcgi_pass
+        fastcgi_param
+    }
+}

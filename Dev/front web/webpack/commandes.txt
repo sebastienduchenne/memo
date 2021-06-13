@@ -1,0 +1,2 @@
+webpack .\moduleB.js app.js
+    -> création d'un fichier 'app.js' à partir de '.\moduleB.js'

@@ -1,0 +1,17 @@
+= type de données primitif représentant une donnée unique et inchangeable qui peut être utilisée afin de représenter des identifiants pour des propriétés d'un objet
+-chaque symbole créé avec Symbol est unique et immutable
+-usage
+    -implémentation d'un enum : permet d'éviter les collisions
+    -clé dans un tableau
+
+
+
+const myKey = Symbol("MY_KEY");
+
+const myMutableObject = {};
+myMutableObject[myKey] = "a value";
+
+// En utilisant les *computed property keys*
+const myObj = {
+  [myKey]: "a value",
+};

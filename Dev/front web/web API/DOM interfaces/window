@@ -1,0 +1,24 @@
+-l'interface Window représente une fenêtre contenant un document DOM
+-l’objet Window implémente l’interface Window.
+-chaque onglet contient son propre objet window
+
+
+document.defaultView => window
+
+
+*** propriétés
+window.console
+Window.document
+Window.frames
+Window.length
+Window.screen : propriétés de l’écran qui affiche la fenêtre courante
+Window.navigator : état et l’identité du navigateur
+Window.Location : informations relatives à l’URL de la page courante
+Window.History : manipuler l’historique de navigation du navigateur
+
+
+*** méthodes
+Window.alert()
+Window.confirm()
+Window.prompt()
+Window.open() : ouvre une nouvelle fenêtre

@@ -1,0 +1,21 @@
+-NgRx = Angular + RxJS + redux pattern
+-propose une conception du développement d’applications qui tourne autour des actions utilisateurs et serveur
+-objectif = centraliser les données dans un objet global, que l'on pourra modifier via des actions typées
+
+
+*** actions
+= messages distribués pour mettre à jour l’état dans le store
+-est un objet qui décrit ce qu'il se passe
+
+
+*** selector
+= fonctions pures qui prennent des tranches d’état en argument et renvoient des données d’état que nous pouvons transmettre à nos composants
+
+
+*** Effects
+-second module de NGRX
+-fournit des listenners d’actions qui peuvent effectuer des fonctions et retourner une nouvelle action
+
+
+*** root reducer
+= objet qui a pour propriété des fonctions représentant l’ensemble des changements de l’application

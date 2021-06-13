@@ -1,0 +1,2 @@
+-enrobage pour la gestion d'évènements
+-cf la doc de react pour voir les évènements pris en compte

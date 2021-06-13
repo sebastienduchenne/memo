@@ -1,0 +1,126 @@
+-bibliothèque JavaScript, pas framework
+-gère l'interface utilisateur, cad la vue de MVC
+-approche composant = création de composants indépendants et réutilisables
+
+-manifeste applicatif PWA
+-on peut avoir plusieurs noeud DOM racines dans une application
+-le coté front doit gérer le temps de chargement et les erreurs
+-React centralise une grande partie du développement logique à la racine du projet, tout en décentralisant le lieu des divers states et props => devient massif surtout pour un gros projet
+-quand les données changent, l'UI est censée réagir pour refléter le nouveau state de l'application
+-contexte : faire passer des données à travers l’arborescence du composant sans avoir à passer manuellement les props à chaque niveau
+-flux de données unidirectionnel
+
+
+<button onClick={() => console.log(`Hello ${whom} !`)}>
+    ok
+</button>
+
+
+{won && <p>GAGNÉ !</p>}
+
+render() {
+  const won = True
+  return (
+    {won && <p>GAGNÉ !</p>}
+  )
+}
+
+
+*** remonté de l'état et descente des données
+
+-s'il y a des éléments du state à partager entre plusieurs composants, on fait remonter la donnée vers l’état local du plus proche composant ancêtre commun dans l'arbre, cad celui qui contient dans son arbre l’ensemble des composants souhaitant partager la données. Il faut donc 
+    -faire redescendre la données par les props jusqu’aux composants qui en ont besoin
+    -faire remonter les demandes d’évolution par des props de type fonction, fournies par le composant doté de l’état local, et utilisées par les composants qui en ont besoin
+
+
+handleChange(e) { // composant fils
+    // Avant : this.setState({temperature: e.target.value});
+    this.props.onTemperatureChange(e.target.value);
+    // ...
+
+    this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
+}
+
+
+handleCelsiusChange(temperature) {
+    this.setState({scale: 'c', temperature});
+}
+
+<TemperatureInput // père
+    scale="c"
+    temperature={celsius}
+    onTemperatureChange={this.handleCelsiusChange} />
+
+
+*** élément HTML
+= bloc élémentaire déclaré par React DOM, peu couteux à créer (les composants ont des trucs en plus)
+-les éléments react sont immuables (=enfants et attributs non modifiables)
+-commence par une minuscule
+
+
+*** Construire une appli react
+1 : décomposer l’interface utilisateur en une hiérarchie de composants
+2 : construire une version statique avec React
+3 : déterminer le contenu minimal (mais suffisant) de l’état de l’UI
+4 : identifier où l'état doit vivre
+5 : ajouter le flux de données inverse
+
+
+*** Create React App
+= outil pour aider à réaliser des appli React
+-commandes
+    -créer une app create : npx create-react-app <appname>
+    -run project : npm start
+    -lancer les tests : npm test
+    -construire l'app pour la prod : npm run build
+
+
+*** bonnes pratiques
+-state à éviter autant que possible
+-utiliser des propTypes
+-principe de responsabilité unique pour les composants : un composant pour une fonctionnalité
+-utiliser des composants d’ordre supérieur (HOC)
+-mettre la logique dans la méthode render()
+-tout composant React doit agir comme une fonction pure vis-à-vis de ses props (props en lecture seule)
+-l’état remonte dans le parent = si un composant parent a besoin des données de ses enfants ou que 2 enfants ont besoin de communiquer, il vaut mieux déclarer l'état dans le parent. Ainsi, le parent passe les données aux props des enfants. Cela permet d'éviter des bugs
+-les données descendent dans les enfants = les parents passent les données aux enfants qui ne connaissent pas leur origine, et peuvent à leur tour passer les données à leurs enfants (cascade de props)
+        => pour éviter le couplage fort entre les composants et donc augmenter la maintenance
+-utiliser setState() pour modifier l'état
+-nommer les props du point de vue du composant plutôt que de celui du contexte dans lequel il est utilisé
+-extraire un composant si une partie de l'UI est utilisée plusieurs fois ou trop complexe
+-syntaxe JSX recommandée
+-composition plutôt que l'héritage, permet de faire de la délégation de contenu et de la spécialisation
+
+
+--------------------------------------------------------------------
+
+*** Résumé
+
+composant React
+élément HTML = bloc élémentaire déclaré par React DOM
+langage JSX = langage proche du HTML permettant d'écrire des noeuds dans le DOM
+state = état local d'un composant
+props = propriétés d'un composant
+Cycle de vie
+Fragment : grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM
+Ref : référence permettant d'accéder à un nœud du DOM ou à un élément React créé dans la méthode de rendu
+Portail : afficher des comp enfants dans un nœud DOM existant en dehors de la hiérarchie DOM du comp parent
+HOC : fonction pure qui ajoute des fonctionnalités à une définition de composant, comme un décorateur
+Profileur : mesurer à quelle fréquence une app React réalise son rendu, afin de l'optimiser
+PropTypes : vérifier la validité de types des props d’un composant
+StrictMode : outil pour détecter des problèmes (dépréciation, effet de bord inattendus)
+Composant contrôlé : les valeurs saisies sont vérifiées
+Evènements : appeler à une méthode suite à une action
+Hooks : utiliser des fonctionnalités React sans classe
+Contexte : passer des données à travers l'arbre des composants sans les faire passer à travers tous les composants
+Prop de rendu : partager du code entre des composants React en utilisant une prop dont la valeur est une fonction
+
+
+*** modules complémentaires
+-Redux = ajouter un state global
+-Redux-Thunk
+-Redux-saga = gérer les effets de bords
+-formik = créer des formulaires
+-downshift
+-React Router = routage
+-Relay = building data-driven React applications

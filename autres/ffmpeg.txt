@@ -1,0 +1,7 @@
+*** extraire son d'une vidéo / convertir une vidéo
+
+    ffmpeg -i <src> <dest>.<format souhaité audio ou vidéo>
+
+-Options
+    -r 20 : 20 de FPS
+    -an : supprimer l'audio

@@ -1,0 +1,49 @@
+-Scaled Agile Framework, agile à l’échelle de l’entreprise
+-un incrément = 3 sprints + 1 sprint d’innovation
+-epic > feature > US
+-WSJF pour prioriser les features
+-Rôles : RTE, PM, business Owner, Epic Owner, SA
+
+
+*** Les 3 rôles dédiés au fonctionnement du train agile
+-le Release Train Engineer (RTE), le Product Manager (PM) et le System Architect (SA) collaborent pour établir
+    -le contenu priorisé des évolutions fonctionnelles à apporter
+    -les principes d’architecture à mettre en place
+    -le bon fonctionnement agile tu train
+-des coachs et référents sur l’agilité, le Design Thinking et le DevOps accompagnent ces rôles dans la mise en oeuvre des pratiques et proposent des solutions et des améliorations du train
+
+
+*** Le RTE (Release Train Engineer)
+-est au service des équipes du train et y incarne les valeurs de l’agilité
+-facilite la collaboration et à ce titre organise et facilite les événements et processus du train
+-favorise la coordination entre les équipes et avec les autres trains avec lesquels des adhérents existent
+-avec les parties prenantes, ils partagent les points de blocage et aide à leur résolution avec les équipes du train
+-il impulse la dynamique d’amélioration continue
+
+
+*** Le PM (Product manager)
+-porte la vision des évolutions de la solution et s’assure qu’elle apporte le maximum de valeur pour les clients/utilisateurs et le business
+-dans ce cadre, il :
+    -collecte et affine les besoins des clients/utilisateurs
+    -définit les fonctionnalités et les priorise avec le collectif de business owners dans le backlog du programme
+    -précise la valeur généré pour les clients et pour le business de l’entreprise
+-entretient une relation privilégiée avec les PO du train, les parties prenantes et le client/utilisateur
+
+
+*** Le SA (System Architect)
+-définit les orientations architecturales, techniques et d’infrastructure de la solution répondant à la vision
+-participe à la définition des exigences non fonctionnelles et des enablers du train et des systèmes et interfaces
+-construit les hypothèses technologiques et évalue les alternatives
+-travaille avec le RTE, le PM et les équipes de dev
+
+
+*** Cérémonies
+-PI planning : définir les US à embarquer, au début d’un incrément
+-retrospective : à la fin d’un incrément
+-solution demo : à la fin d’un incrément
+-system demo : à la fin d’un sprint
+
+
+-un incrément :
+
+PIP ; i1 ; sd1 ; ... ; innovation ; solution demo ; retrospective 

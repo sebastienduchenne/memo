@@ -1,0 +1,21 @@
+-saisi : valeur hors de plage, erronée (alphanumérique si attend numérique), caractère (+,$, &, é, », <,@…, VIDE, spéciaux), nombre négatif, nombre très grand
+-injection SQL
+-test aux limites
+-modifier HTML : augmenter nb caractères acceptés, désélectionner bouton radio...
+-couleurs, disposition
+-JS non activé
+-back / forward / refresh
+-wording
+-GA
+-les différents navigateurs et devices, responsive
+-nominal
+-compte I, PRO, M, MC, caraïbe, Mayotte, réunion, NSRU
+-affichage / disparition message erreur
+-bouton : grisage/dégrisage, cliquer plusieurs fois, effets
+-cookies
+-page session expirée
+-limite réservation
+-test interface
+-mode mobile / tablette / PC
+-cliquer plein de fois / sur plusieurs boutons
+-back / forward navigateur

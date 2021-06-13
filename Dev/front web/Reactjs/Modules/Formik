@@ -1,0 +1,119 @@
+=créer des formulaires
+-utilisable en composant, hooks et HOC
+-component
+    <ErrorMessage />
+    <FastField />
+    <Field />
+    <FieldArray />
+    <Form />
+    <Formik />
+-hooks
+    -useFormik()
+    -useField()
+    -useFormikContext()
+-HOC
+    -withFormik()
+    -connect()
+-Yup pour la validation des champs
+
+
+*** exemple
+
+------------------------- avec composant React
+
+import { Formik, Field, Form } from 'formik';
+
+/* en typescript
+
+type Props = {
+  name: string;
+  onChange?: (field: string, value: boolean | undefined) => void;
+  value: boolean | undefined;
+  strict?: boolean;
+}
+
+interface Values {
+  email: string;
+}
+*/
+
+const Basic = () => (
+  <div>
+    <h1>Title</h1>
+    <Formik
+      initialValues={{ 
+        email: ''
+      }}
+      validate={values => {
+        const errors = {};
+        if (!values.email) {
+          errors.email = 'Required';
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
+          errors.email = 'Invalid email address';
+        }
+        return errors;
+      }}
+      onSubmit={async (values) => {
+        await new Promise((r) => setTimeout(r, 500));
+        alert(JSON.stringify(values, null, 2));
+      }}
+    >
+      {({ 
+          isSubmitting,
+          setFieldValue,
+          values,
+          errors,
+          touched,
+      }) => (
+        <Form>
+          <label htmlFor="email">email</label>
+          <Field id="email" name="email" placeholder="email" />
+          {errors.email}
+
+          <button type="submit" disabled={isSubmitting}>Submit</button>
+        </Form>
+      )}
+    </Formik>
+  </div>
+);
+
+
+------------------------- avec Hooks useFormik()
+
+import React from 'react';
+import { useFormik } from 'formik';
+
+const SignupForm = () => {
+  const formik = useFormik({
+    initialValues: { ... },
+    onSubmit: values => { ... },
+  });
+
+  return (
+    <form> ... </form>
+  );
+};
+
+
+------------------------- avec HOC withFormik()
+
+import React from 'react';
+import { withFormik } from 'formik';
+
+const MyForm = props => {
+  const { ... } = props;
+  return (
+    <form>...</form>
+  );
+};
+
+const MyEnhancedForm = withFormik({
+  mapPropsToValues: () => ({ name: '' }),
+  
+  validate: values => { ... },
+
+  handleSubmit: (values, { setSubmitting }) => { ... },
+  displayName: 'BasicForm',
+})(MyForm);

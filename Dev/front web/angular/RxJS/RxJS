@@ -1,0 +1,41 @@
+-RxJS = Reactive extensions for JavaScript
+-fournie avec Angular
+-librairie pour faire de la programmation réactive à base d'observables
+-programmation réactive = paradigme de programmation consistant à propager les modifications d'une source réactive (variable, entrée utilisateur...) aux éléments dépendants de cette source
+-on définit des observables et des observateurs. Les observables vont émettre des évènements qui seront interceptés par les observateurs
+-Angular fournit généralement des "wrappers" à base d'Observables pour la plupart des sources de données asynchrones
+
+
+*** observable
+-émet des évènements
+-émet 3 types d'information : des données, une erreur ou un message complete
+-lazy : le traitement n'est déclenché que dès la 1ère inscription
+-convention de nommage de l'observable : suffixer avec '$'
+
+
+*** Observer
+-interceptent des évènements
+-objet qui a 3 fonctions pour réagir à chaque type d'information :
+    -next() : arrivé d'un élément
+    -error() : une erreur survient, désinscrit
+    -complete() : fin de séquence, désinscrit
+-unsubscribe()
+    -désinscrire les "callbacks" : next, error et  complete
+    -détruire l'Observable si celui-ci est de type "cold"
+    -nécessaire pour éviter les fuites mémoire, la consommation inutile de CPU et les effets de bord
+
+
+*** subject
+= un type d'Observable qui permet de réagir à de nouvelles informations et d'en émettre
+-a un état et une liste d'Observers
+-permet de créer des sources de données
+
+
+*** opérateur
+= fonction qui se place entre l'Observable et l'Observer et qui peut filtrer et/ou modifier les données
+-créé à partir d'un observable avec la méthode pipe() qui renvoit un observable
+-qq opérateurs natifs:
+    -map() : modifie les valeurs reçues
+    -filter() : filtre les valeurs reçues
+    -throttleTime() : impose un délai minimum entre deux valeurs
+    -scan() et reduce() : exécuter une fonction qui réunit l'ensemble des valeurs reçues selon une fonction que vous lui passez (reduce() retourne la valeur finale, et scan() retourne chaque étape du calcul)

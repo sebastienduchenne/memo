@@ -1,0 +1,20 @@
+= partager du code entre des composants React en utilisant une prop dont la valeur est une fonction
+-ou render prop
+
+
+*** exemple
+
+handleMouseMove(event) {
+    this.setState({
+        x: event.clientX,
+        y: event.clientY
+    });
+}
+
+render() {
+    return (
+        <div onMouseMove={this.handleMouseMove}>
+            ...
+        </div>
+    );
+}

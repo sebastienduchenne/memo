@@ -1,0 +1,34 @@
+-repérer les erreurs JS et afficher une UI de repli à la place de l’arbre de composants qui a planté (comme un catch)
+-le périmètre ne détecte que les erreurs dans ses enfants et non dans son propre code
+-n’interceptent pas les erreurs qui surviennent au sein des gestionnaires d’événements
+-sert à éviter qu'une erreur dans un composant ne casse l'ensemble de l'application
+-les erreurs non interceptées entraîneront le démontage de l’intégralité de l’arbre des composants car il est pire d'afficher des erreurs que de ne rien afficher
+
+
+*** exemple
+
+class ErrorBoundary extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false };
+    }
+
+    static getDerivedStateFromError(error) {   // Mise à jour de l'état, afin de montrer l'UI de repli au prochain rendu
+        return { hasError: true };  
+    }
+
+    componentDidCatch(error, errorInfo) {   // ajout de l'erreur dans les logs
+        logErrorToMyService(error, errorInfo);
+    }
+
+    render() {
+        if (this.state.hasError) {   // affichage de l'UI de repli
+            return <h1>Something went wrong.</h1>;
+        }
+        return this.props.children;
+    }
+}
+
+<ErrorBoundary>
+  <MyWidget />
+</ErrorBoundary>

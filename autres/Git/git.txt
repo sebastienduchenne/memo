@@ -1,0 +1,87 @@
+= Gestionnaire de version (VCS) décentralisé
+-5 espaces :
+    remise
+    espace de travail
+    index
+    dépôt local dans le .git
+    dépôt distant sur le serveur
+-Origin : racine du dépôt distant sur laquelle se trouve les différentes branches
+-Master : branche principal sur le dépôt distant
+-.gitignore : dossier et fichier à ignorer
+-index : fichier qui contient un instantané du contenu de la copie de travail et sera utilisé comme contenu du prochain commit
+-quand on est sur la branche de travail, tirer la develop (source de vérité ultime) régulièrement pour éviter les conflits et d'avoir à rebase quand on push
+-un linter dans le pipeline check les fichiers et fail si problème de linter
+-linter :  
+    -sert à vérifier que le code est conforme à des règles de bonnes pratiques
+    -A exécuter avant chaque commit puis corriger les mauvaises pratiques
+    -'--fix' : fix automatiquement
+    -‘--no-verify’ quand on push et qu’on ne veut pas qu’il y ait de vérification
+-alias
+    git config --global alias.ci commit => git ci
+
+
+*** Configurer git
+-fichier de conf global .gitconfig à la racine du home, contient les alias, le code couleur et les données utilisateur
+
+éditer email : git config --global user.email "email@exemple.com"
+éditer nom   : git config --global user.name "name"
+
+
+*** Workflow
+Créer/récupérer projet
+    Projet inexistant : git init, git ignore
+    Projet existant : git clone url, cd nomProjet
+Checkout « branche »
+modif
+status
+Add
+Commit 1
+Add
+Commit 2
+Pull origin master ?
+Push origin « branche »
+Créer une pull request
+Accepter/refuser la PR
+
+
+*** Les différents types de branches : 
+-master
+-develop
+-feature
+-fix
+-release
+
+
+*** Gitlab Pages
+-lancer un pipeline > settings > pages > cliquer sur lien créé
+    -si erreur 404 : la page web n'a pas été poussé sur public/
+    -si erreur 401 : pas de permission, aller dans settings > general > visibility > mettre "Project visibility" à "internal" et "Pages access control" à "Everyone"
+    -------> il se peut qu'il faille attendre quelques minutes pour pousser les fichiers sur public
+
+
+*** résumé
+git status
+git commit
+git merge
+git push
+git diff
+git log
+git config
+git tag
+git blame
+git checkout
+git remote
+git revert
+git fetch
+git pull
+git branch
+git init
+git clone
+git reset
+git stash
+git show
+git rebase
+git add
+alias
+index
+remise

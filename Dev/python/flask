@@ -1,0 +1,7 @@
+= faire du dev web
+-étapes
+    -créer le fichier d'application 'app.py', qui contient le code
+    -créer le fichier vide '__init__.py'
+    -rendre l'application exécutable : export FLASK_APP=app
+    -export FLASK_ENV=development
+    -lancer l'application : flask run

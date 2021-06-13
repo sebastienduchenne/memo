@@ -1,0 +1,8 @@
+Variable d’environnement terminal
+export the below variables in terminal
+export http_proxy='http://proxyServerSddress:proxyPort'    
+export https_proxy='https://proxyServerSddress:proxyPort'
+
+and use the following commands to disable proxy
+unset http_proxy
+unset https_proxy

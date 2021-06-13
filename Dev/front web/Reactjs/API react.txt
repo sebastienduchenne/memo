@@ -1,0 +1,36 @@
+-3 objets : React, ReactDOM et ReactDOMServer
+
+
+*** objet global React
+
+-React.Component : créer des composants React, n'implémente pas shouldComponentUpdate()
+-React.PureComponent : créer des composants React, implémente shouldComponentUpdate()
+-React.memo : comme PureComponent mais pour les composants créés à l’aide de fonctions
+-React.createElement() : créer un élément
+-React.cloneElement() : clone un élément
+-React.isValidElement(object) : vérifie qu’un objet est bien un élément React
+-React.Children : interagir avec la structure de données opaque de this.props.children
+-React.Fragment : grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM
+-React.createRef() : accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
+-React.forwardRef() : créer un composant qui transfère la valeur d'un ref à un autre composant plus bas dans l’arbre
+-React.lazy(fonction avec import) : charger un composant dynamiquement
+-React.Suspense : charger un composant une fois celui avec React.lazy chargé
+
+
+*** variable globale ReactDOM
+
+= fournit des méthodes au DOM
+-ReactDOM.render(composant react, id HTML) : Affiche un élément React au sein du nœud DOM
+-ReactDOM.hydrate() : Similaire à render(), mais sert à hydrater un conteneur dont le HTML a déjà été produit par ReactDOMServer
+-ReactDOM.unmountComponentAtNode() : Retire un composant React monté du DOM et nettoie ses gestionnaires d’événements et son état local
+-ReactDOM.findDOMNode() : renvoie l’élément DOM (natif au navigateur) qui a servi de point de montage.
+-ReactDOM.createPortal(child, container) : Créé un portail
+
+
+*** objet ReactDOMServer
+
+= produire sous forme de texte le HTML nécessaire à l’affichage de composants
+-ReactDOMServer.renderToString(element)
+-ReactDOMServer.renderToStaticMarkup(element)
+-ReactDOMServer.renderToNodeStream(element)
+-ReactDOMServer.renderToStaticNodeStream(element)

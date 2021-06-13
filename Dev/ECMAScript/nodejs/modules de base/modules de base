@@ -1,0 +1,13 @@
+-assert : test
+-fs : système de fichier
+-path : chemin
+-url : URL
+-event : gestion d'évènements
+-util : utilities
+-http : créer un serveur HTTP
+-os : capacité de la machine
+-child_process : appeler un exécutable système
+-process : info sur le processus en cours
+-stream : flux de données
+-console : afficher des logs
+-buffer : stocker des données binaires provenant d'un fichier ou du réseau

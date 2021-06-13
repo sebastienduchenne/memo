@@ -1,0 +1,29 @@
+******* Déclaration d’un package *******
+
+= ensemble de classes rangées ensemble
+-structurer le projet
+-conflit de nom par création d'un espace de nommage
+-affiner la visibilité
+
+-nom en minuscule
+-en haut de la classe : package nom ;
+-package par défaut
+
+
+******* Accéder une classe d’un autre package *******
+
+-import d'une classe pour en faciliter l'accès
+-import nomPackage.* : import des classes dans le package et non pas dans les sous-packages
+-import static
+
+
+******* Régler les conflits d’import *******
+
+
+******* Définir une visibilité liée au package *******
+
+-modificateur
+    -public : toutes les classes du projet
+    -protected : classe du package + classes filles qu'elles soient dans le même package ou non
+    -package : classe du package
+    -private : dans la classe

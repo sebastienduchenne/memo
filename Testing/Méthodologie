@@ -1,0 +1,23 @@
+*** Méthodologie de test
+-ATDD - Acceptance test–driven development = méthode d’implémentation d’une fonctionnalité à travers ses tests d’acceptation, les tests fonctionnels guident à la création de la fonctionnalité. On écrit d’abord le test d’acceptation, on constate qu’il échoue, puis on implémente la fonctionnalité, juste assez pour que le test passe.
+-TDD – test driven development =
+-BDD – behavior driven development = pratique Agile consistant à écrire des tests avec un langage compris par tous, le PO écrit les tests fonctionnels pour indiquer aux dev les fonctionnalités attendus pour enlever toutes incompréhension entre les dev et le métier
+-SDD – support driven development =
+-EDD – example driven development =
+-DDT – data driven testing =
+
+
+*** Test en agile
+-automatisation des tests : écrire des scripts puis les exécuter
+-phase d’analyse d’un bug = chercher la cause
+-dans les itérations
+-testeur = représentant de l’utilisateur dans l’équipe
+-pour chaque sprint sont rédigé plusieurs user stories / parcours utilisateur. A la fin du sprint, les user stories sont testés (définition US ; dev ; test ; prod)
+-Les tests dans une méthode agile vont prendre une place plus importante que dans une méthode classique. Le test d’un logiciel coûte plus cher en agile que dans un cycle en V !
+-une équipe agile doit mettre en place des méthodologies de code (TU + TDD) afin de diminuer la charge des tests au cours des sprints
+
+
+*** tests
+
+browsers : firefox, chrome, IE, safari, Edge
+device : desktop, tablette, smartphone, iPhone, iPad

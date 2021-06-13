@@ -1,0 +1,74 @@
+-package-lock.json : stocke la structure exacte de l'arborescence de dépendances à chaque installation, cad la version installée de chacunes. Il est généré à chaque modifications apportée au fichier "package.json"
+-attention aux dépendances circulaires
+-semver = semantic versioning = gestion sémantique de version (^, ~, *)
+
+
+
+*** commandes
+npm install : installer les dépendances que le projet a besoin (d'après package-lock.json)
+npm install --production : installer les packages présents dans dependencies
+npm install packageName : ajoute la référence dans 'dependencies'
+npm install packageName --save : ajoute la référence dans 'dependencies'
+npm install packageName --save-dev (ou -D) : ajoute la référence dans 'devDependencies'
+npm install packageName -g : installation globale
+    ->préférable localement car permet d’avoir des projets qui utilisent différentes versions du paquet X; avec globale si update => créée des incompatibilités
+    ->les packages qui proposent un CLI devraient être installés globalement
+npm install <package>@<version>
+
+npm update : mettre à jour les packages et package-lock.json
+npm update packageName
+
+npm run <task-name> : exécuter une commande spécifié dans 'scripts'
+npm run <task-name> -- param : ajouter des paramètres
+
+npm list : afficher les packages, leur version et leur dépendances
+npm list -g
+npm list packageName : version de packageName
+npm list --depth=0 : toplevel
+
+npm root -g : renvoit le dossier où sont installés les modules en global
+
+npm view packageName version : dernière version sur npm
+npm view packageName versions : lister toutes les versions existantes
+
+npm outdated : afficher les packages mis à jour après un update
+
+npm uninstall <package-name>
+npm uninstall -S <package-name> : retire la référence de package.json
+npm uninstall -D <package-name> : retire la référence de devDependencies
+
+
+*** fichier package.json
+-fichier JSON qui regroupe des infos sur le projet et de la config (ESlint, babel)
+{
+  "name": "test-project",
+  "author": "xxx",
+  "bugs": "url issues",
+  "licence": "MIT",
+  "repository": "github:whatever/testing",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "main": "src/main.js", // point d'entrée
+  "private": true, // si true : empêche la publication sur npm
+  "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "test": "npm run unit",
+    "lint": "eslint --ext .js,.vue src test/unit",
+    "build": "node build/build.js"
+  },
+  "dependencies": { //package nécessaire pour la prod
+    "vue": "~2.5.2", // '~' : patch release
+    "another_dep": "^2.2.0" // '^' : minor release
+     "another_dep": "*2.2.0" // '*' : major release
+  },
+  "devDependencies": { //package utilisé pour le développement (test)
+    "autoprefixer": "^7.1.2"
+  },
+  "engines": { // version de Node.js l'app fonctionne
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"] //browsers et versions supportées
+}

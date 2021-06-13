@@ -1,0 +1,23 @@
+-Document object Modele
+-interface de programmation pour les documents HTML et XML
+-Il fournit une page dont des programmes peuvent modifier la structure, son style et son contenu, cad il relie les pages Web aux scripts ou langages de programmation.
+-représentation entièrement orientée objet de la page Web, et peut être manipulé à l'aide d'un langage de script
+
+script -> DOM -> page web
+
+-indépendant de tout langage de programmation
+-contient des objets de type Node
+-level
+    -0 : implémentation de base
+    -1 : représenter un document sous la forme d'un arbre
+    -2 : 'Core', 'HTML', 'Events', 'Style', 'View' et 'Traversal and Range'
+    -3 : support de XPath, la gestion d'événements clavier, et une interface de sérialisation de documents XML
+    -4
+
+*** interfaces du DOM
+-Document
+-Element
+-Event
+-Node
+-Window
+...

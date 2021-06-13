@@ -1,0 +1,30 @@
+= langage proche du HTML permettant d'écrire des noeuds dans le DOM
+-sucre syntaxique pour la fonction React.createElement()
+-les composants et les fonctions peuvent en renvoyer
+-ne peut contenir de if, à remplacer par opérateur ternaire ou mettre le if dans une fonction
+-ne peut contenir de boucle, pour les tableaux on peut utiliser la fonction map. Il est conseillé d'ajouter une propriété key sur chacun des composants pour les tableaux de composants
+-à la compilation, les expressions JSX sont transformées en appel de fonctions JS
+
+const element = (
+  <h1 className="greeting">
+    Bonjour, monde !
+  </h1>
+);
+
+        EQUIVALENT A :
+
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Bonjour, monde !'
+);
+
+        createElement() créé un objet :
+
+const element = {
+  type: 'h1',
+  props: {
+    className: 'greeting',
+    children: 'Bonjour, monde !'
+  }
+};

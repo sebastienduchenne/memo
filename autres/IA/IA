@@ -1,0 +1,45 @@
+-IA forte, faible
+-convolution
+-overfitting = surapprentissage, incapacité à généraliser
+-bot
+-outils : tensorflow, darknet yolo
+-déduction,
+-induction : déduire des lois par généralisation des observations
+-la machine apprends mais ne comprends pas ce qu'elle fait
+-plus une IA est polyvalente, moins elle est performante
+-automatisation de certains métiers ou automatisation de certaines tâches
+-fichier h5 : modèle entrainé avec tensorflow, contient couche du réseau et poid
+-fichier pbmm : modèle de transcription, contient couche du réseau et poid
+-fichier pkl : pickle, fichier binaire qui stocke le scaler
+-scaler = une IA prend des données d'entrée en vecteur, or différence entre données et les IA n'aiment pas donc on pseudo normalise entre 0 et 1, calcul moyenne et écart type. Le scaler contient les paramètres qui permettent de pseudo-normaliser les données
+-CMUSphinx = outil de speech recognition
+-Pickling, marshal = modules de sérialisation
+-sérialisation ou pickling = processus par lequel une hiérarchie d'objets Python est convertie en un flux d'octets
+-pickle = format de sérialisation binaire
+-Scikit-learn : librairie de machine learning, model fitting, data preprocessing, model selection and evaluation
+
+
+*** Machine learning, apprentissage machine
+-supervisé : étiquette avec les données
+-par renforcement : récompense
+-non supervisé : déterminer la structure des données
+-par transfert
+
+
+*** Algorithme
+-génétique
+-Réseau de neurones RBF, MLP
+
+
+*** Réseau de neurones
+-bayésien
+-Limite : besoin de cas concrets, d'autant plus si le problème est complexe
+-opacité sur la façon de calculer du réseau
+-Succession de couches de plusieurs neurones. Chacune prends ses entrées sur les sorties de la précédente. A chaque synapse est associé un poids
+-fonction de combinaison, fonction d'activation
+
+
+*** Markov
+-chaine de markov = processus de Markov à temps discret
+-processus stochastique ou processus aléatoire = représente une évolution, discrète ou à temps continu, d'une variable aléatoire
+-propriété de Markov = un processus stochastique vérifie la propriété de Markov si la probabilité des états futurs ne dépend que de l'état présent et non pas des états passés (absence de "mémoire")

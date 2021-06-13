@@ -1,0 +1,59 @@
+-plateforme permettant d'automatiser l'exploitation de conteneurs linux
+-outil d'orchestration qui permet : 
+    -de planifier l'exécution
+    -la mise à l'échelle
+    -de gérer l'intégrité dans le temps
+    -optimiser les ressources
+-souvent utilisé avec docker : K8s dit à Docker quels conteneurs lancer
+-permet de résoudre les problèmes lorsqu'il y a beaucoup de conteneurs
+
+
+-node = machine de travail
+-cluster K = 1 master node + n worker nodes
+-cluster K > node > pod > container
+-kubectl = outil en ligne de commande qui intéragit avec l'API
+-replicaSet = s'assure que les réplicas spécifiés sont actifs
+-job
+-replicas = nombre d'instances d'un pod
+-interface web Dashboard
+-usages
+    -héberger des appli cloud native comme diffusion de données en continue et en temps réel
+-kubeadm
+-volumes
+-namespace et ResourceQuotas
+-Vagrant et Ansible
+
+
+*** master node / K control panel
+
+= serveur qui controle les worker nodes
+-4 composants
+    -API server = reçoit les commandes de l'utilisateur
+    -scheduler = répartie les tâches à faire sur les workers selon les ressources dispo
+    -controller manager = apporte des modifications pour amener l'état actuel du serveur à l'état souhaité
+    -etcd = BD qui stocke des données sur les clusters. Distribuée, persistante, légère, stocke des données clé-valeur
+
+
+*** worker node
+
+-4 composants
+    -kubelet = service responsable de l'état d'exécution de chaque nœud. Communique avec le master node
+    -cAdvisor = agent qui surveille et récupère les données de consommation des ressources et des performances comme le processeur, la mémoire, ainsi que l'utilisation disque et réseau des conteneurs de chaque node
+    -kube-proxy = proxy qui fait du forwarding de requêtes
+    -n pods = couche d'abstraction de plusieurs conteneurs
+-on peut mettre un node par machine linux
+-chaque pod possède une adresse IP unique, un même IPC et un même nom d'hote
+
+
+*** Deployment
+-couche d'abstraction au dessus du pod et du replicaSet
+-Deployment controller
+
+
+*** service
+-abstraction au dessus des pods
+-4 types
+    -clusterIP
+    -nodePort
+    -loadBalancer
+    -externalName

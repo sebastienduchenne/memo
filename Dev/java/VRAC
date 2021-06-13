@@ -1,0 +1,32 @@
+-Spring boot = framework qui permet d’auto-configurer une application et de créer un squelette prêt à l’emploi (starter)
+-JHipster = générateur d’application web avec une partie back en java / spring boot et une partie front en react / angular / vue
+-Jakarta
+
+
+*** API JPA
+Java Persistence API
+implémentation de JPA : OpenJPA, Eclipse Link et Hibernate
+spécification d’ORM pour java
+
+app -> API JPA -> API JDBC -> BD relationnelle
+
+
+*** gestion de la concurrence
+-système de multi-threading
+-bloquant
+-créer autant de thread que de connexion
+-> souvent de l'attente
+
+
+
+*** Netflix OSS (Netflix Open Source Software Center)
+-ensemble de librairies, stack
+    -Hystrix : tolérance aux fautes
+    -Zuul : faire du proxy inverse
+    -Ribbon : 
+    -Astyanax : client Cassandra pour Java
+-fonctionnalités
+    -faire une architecture orientée microservices
+    -tolérances aux fautes
+    -load balancing
+    -service discovery

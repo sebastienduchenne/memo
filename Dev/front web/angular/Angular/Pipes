@@ -1,0 +1,31 @@
+-transformer des données
+-avec le caractère '|'
+
+<p>{{title | uppercase}}</p>
+
+-à rajouter au app.module.ts 
+
+
+*** pipes disponibles dans angular
+-Lowercasepipe
+    {{title | lowercase}}
+-Uppercasepipe
+    {{title | uppercase}}
+-Datepipe
+    {{todaydate | date:'d/M/y'}}
+    {{todaydate | date:'shortTime'}}
+-Currencypipe
+    {{6589.23 | currency:"USD"}}
+-Jsonpipe
+    {{ jsonval | json }}
+-Percentpipe
+    {{00.54565 | percent}}
+-Decimalpipe
+    {{ 454.78787814 | number: '3.4-4' }}
+-Slicepipe
+    {{months | slice:2:6}}
+-AsyncPipe
+-I18nPluralPipe
+-I18nSelectPipe
+-KeyValuePipe
+-TitleCasePipe 

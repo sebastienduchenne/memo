@@ -1,0 +1,9 @@
+-mettre en place un cluster Kubernetes multi-nœud
+    -Vagrant : créer et provisionner les VM
+    -Ansible : installer et configurer l'environnement Kubernetes
+
+
+*** Vagrant
+-vagrantfile : décrit la config et le provisionnement des machines
+
+$ vagrant up : exécuter le projet

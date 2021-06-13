@@ -1,0 +1,24 @@
+*** modules utiles
+random      : fonctions permettant de travailler avec des valeurs aléatoires
+math        : toutes les fonctions utiles pour les opérations mathématiques (cosinus,sinus,exp,etc.)
+sys         : fonctions systèmes
+os          : fonctions permettant d'interagir avec le système d'exploitation
+time        : fonctions permettant de travailler avec le temps
+calendar    : fonctions de calendrier
+profile     : fonctions permettant d'analyser l'execution des fonctions
+urllib2     : fonctions permettant de récupérer des informations sur internet
+re          : fonctions permettant de travailler sur des expressions régulières
+pyqtgraph   : créer des graphiques
+matplotlib  : créer des graphiques
+numpy       : permet d’effectuer des calculs numériques, gestion facilitée des tableaux de nombres
+Tkinter     : bibliothèque graphique d’origine de Python
+SciPy       : optimisation, stats et traitement du signal. Utilisé pour le calcul scientifique
+
+
+*** Machine Learning
+NumPy
+SciPy
+Matplotlib
+Pandas
+Scikit-learn
+Statsmodels

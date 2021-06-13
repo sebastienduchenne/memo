@@ -1,0 +1,42 @@
+= framework JavaScript permettant de construire des interfaces utilisateur et des appli web monopages
+-directive pour étendre le HTML
+-Vue CLI
+-binding = liaison entre un objet Vue et un élément HTML
+-two way binding avec la directive 'v-model'
+-réactif : quand l'objet Vue change (ses propriétés), la vue (l'élément HTML) change
+-une application est une instance de Vue
+-DOM virtuel
+-composant = réutilisable et autonome
+    -el : élément HTML à lier avec l'objet Vue
+    -data : données. Doit être une fonction pour ne pas affecter toutes les instances
+    -computed
+    -props : attribut
+    -template : élément HTML
+    -watch
+    -methods : liste de fonctions
+    -méthodes de cycle de vie
+
+
+*** directives (préfixée par 'v-')
+-v-model : two way binding
+-v-for : boucle
+-v-bind : binding data -> vue
+-v-if, v-else, v-else-if : condition
+-v-slot
+-v-cloak
+-v-once
+-v-html
+-v-show
+-v-on : écouter des évènements
+-v-text
+
+
+*** cycle de vie
+-beforeCreate()
+-created()
+-beforeMount()
+-mounted()
+-beforeUpdated()
+-updated()
+-beforeDestroyed()
+-destroyed()

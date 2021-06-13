@@ -1,0 +1,33 @@
+-buffer = zone de mémoire extérieur à la V8
+-You can think of a buffer like an array of integers, which each represent a byte of data.
+-slice
+
+
+
+*** écriture
+const buf1 = Buffer.from('Hey!')
+
+const buf2 = Buffer.alloc(4) // initialiser à 0
+buf2.write('Hey!')
+buf2[1] = 111 //modifier le 'e' en 'o'
+
+const buf3 = Buffer.allocUnsafe(1024) // ne pas initialiser
+
+
+*** lecture
+console.log(buf1[0]) //72 : H
+console.log(buf1[1]) //101 : e
+console.log(buf1[2]) //121 : y
+
+console.log(buf1.toString())
+
+console.log(buf1.length)
+
+for (const item of buf1) {
+  console.log(item) //72 101 121 33
+}
+
+*** copier
+const buf = Buffer.from('Hey!')
+let bufcopy = Buffer.alloc(4) //allocate 4 bytes
+buf.copy(bufcopy)

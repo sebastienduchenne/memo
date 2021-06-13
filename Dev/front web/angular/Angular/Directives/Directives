@@ -1,0 +1,9 @@
+= classes permettant d'enrichir et modifier la vue grâce à un attribut
+
+-structural directive = manipuler le DOM en ajoutant ou en retirant des éléments
+    -ngFor : boucle
+    -ngIf : condition
+    -ngSwitchCase : switch case
+-attribute directive = modifier l'apparence ou le comportement d'un élément DOM
+    -ngStyle : ajouter du style CSS
+    -ngClass : ajouter une classe CSS

@@ -1,0 +1,7 @@
+-différents orchestrateurs :
+    -Docker Swarm : Docker inc.
+    -Kubernetes : Google, puis Cloud Native Computing Foundation
+    -ECS : Amazon
+    -Marathon : Mesos
+-computer cluster / grappe de serveur / ferme de calcul = techniques consistant à regrouper plusieurs ordinateurs indépendants appelés nœuds
+-load balancing = équilibreur de charge

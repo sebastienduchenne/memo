@@ -1,0 +1,9 @@
+path.basename(path) : dernière portion d'un chemin
+path.dirname(path) : les dossiers d'un chemin
+path.extname(path) : extension d'un chemin
+path.isAbsolute(path) : chemin absolu ou pas
+path.join(x,y,z) : concaténer pour faire un chemin
+path.normalize(path) : chemin d'un chemin avec des éléments relatifs ('.','..')
+path.parse(path) : décomposer un chemin en JSON
+path.relative(path1, path2) : chemin relatif depuis path1
+path.resolve(path) : chemin absolu d'un chemin relatif

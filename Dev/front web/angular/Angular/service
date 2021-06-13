@@ -1,0 +1,39 @@
+-code utilisable par n'importe quel composant : connexion à une DB, ...
+-commande : ng g service myservice
+    src/app/myservice.service.ts
+    src/app/myservice.service.spec.ts
+
+
+// myservice.service.ts
+export class MyserviceService { 
+   serviceproperty = "Service Created"; 
+   constructor() { } 
+   showTodayDate() { 
+      let ndate = new Date(); 
+      return ndate; 
+   } 
+}
+
+
+// app.module.ts
+import { MyserviceService } from './myservice.service';
+
+providers: [MyserviceService], 
+
+
+// app.component.ts
+import { MyserviceService } from './myservice.service';
+
+export class AppComponent implements OnInit {
+    newcomponent = "Entered in new component created"; 
+    todaydate; <------------------------------------------------------
+
+    constructor(private myservice: MyserviceService) {} <-------------
+
+    ngOnInit() {
+        this.todaydate = this.myservice.showTodayDate(); <------------
+    }
+}
+
+// html
+{{todaydate}}

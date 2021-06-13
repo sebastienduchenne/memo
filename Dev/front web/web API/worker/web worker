@@ -1,0 +1,19 @@
+-mécanisme grâce auquel les instructions d'un script peuvent être exécutés dans un thread en arrière-plan séparé du thread d'exécution principal d'une application web
+-av : le thread principal fonctionne sans blocage ni ralentissement
+-utilisable : websocket, indexedDB, API store data, éléments de window
+-non utilisable : manip du DOM, méthodes et propriétés de window
+-envoie de données entre worker et thread principal par des messages, réponse par gestion d'évènements
+-types de worker
+    -worker dédié = worker standard utilisé par un script unique
+    -workers partagés = peut être accédé à partir de plusieurs contextes de navigation
+    -service worker = serveur proxy
+    -worker chrome = pour dev des extensions firefox
+    -audio worker = traitement audio
+-algorithme de clonage structuré : sérialiser les objets JavaScript complexes
+
+
+>>> workers partagés, interface SharedWorker
+-worker qui peut être accédé à partir de plusieurs contextes de navigation 
+-contexte : fenêtre, iframe, worker
+-les contextes partagent le même protocole, hôte et port
+-contexte global : SharedWorkerGlobalScope

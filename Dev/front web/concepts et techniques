@@ -1,0 +1,27 @@
+-code splitting = charger le code depuis le serveur uniquement quand on en a besoin
+-Server Side Rendering (SSR) / rendu côté serveur 
+    = générer le rendu d'une page web / app côté serveur puis l'envoyer au navigateur
+    -temps de réponse faible
+-JAMstack
+    = repose sur des assets (fichiers HTML, CSS, images, polices) pré-assemblés et envoyés aux clients par un CDN situé géographiquement au plus proche de l'émetteur de la requête
+    -JavaScript, API, Markup
+-Single Page App (SPA)
+    -rendu dynamique
+-Progressives Web Apps (PWA) = appli qui s'exécute dans un navigateur mais avec des perf proches des applis natives, sont en concurrences
+    -rapide
+    -gestion des pertes de connexions (service worker)
+    -gérer les notif push
+    -manipulation du hardware du mobile impossible
+
+
+*** service worker (non React)
+-script qui se lance entre la webpage et le réseau et qui sert de proxy. Il est utile en cas de perte du réseau
+
+
+*** web component
+-créer des éléments personnalisés réutilisables
+-encapsulation forte
+-API Shadow DOM
+-shadow DOM = encapsulation de la structure de balisage, du style et du comportement pour les  séparer du reste de code de la page et ainsi éviter le conflit
+
+let fantome = element.attachShadow({mode: 'open'});

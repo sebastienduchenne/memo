@@ -1,0 +1,11 @@
+-Netflix Open Source Software Center
+-ensemble de librairies, stack
+    -Hystrix : tolérance aux fautes
+    -Zuul : faire du proxy inverse
+    -Ribbon : load balancing
+    -Astyanax : client Cassandra pour Java
+-fonctionnalités
+    -faire une architecture orientée microservices
+    -tolérances aux fautes
+    -load balancing
+    -service discovery

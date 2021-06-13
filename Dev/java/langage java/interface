@@ -1,0 +1,24 @@
+-problèmes : 
+    -assurer qu'un ensemble de classe offre un service minimum commun
+    -faire du polymorphisme avec des objets dont les classes n'appartiennent pas à la même hiérarchie d'héritage
+    -utilisation d'objets sans connaître leur type réel
+
+=> type complètement abstrait offrant une liste de fonctionnalités / de capacités (comme une API) toutes déclarées abstract et public
+-ne contient ni attribut ni constructeur mais peut contenir des constantes public static
+-une classe implémente une interface si elle définit toutes les méthodes de l'interface, sinon elle doit être déclarée abstract
+-public interface Inter{} // public class A implements Inter{}
+
+
+**** Polymorphisme d'interface ****
+-des variables déclarées comme interface Inter contiennent une référence vers un objet dont les classes (peuvent être différentes et) implémentent Inter
+
+
+**** Classe ou Interface pour faire du polymorphisme ? ****
+-la classe hérite déjà d'une classe et on veut lui ajouter des capacités
+s-elon la relation entre A et B, héritage : « est un », interface : « est capable de faire »
+
+
+**** Mot-clé default ****
+-depuis java 8, on peut mettre du code dans une méthode interface en mettant en plus le mot clé « default »
+-la classe n’est pas obligée de redéfinir la méthode default
+-mais si une classe implémente 2 interfaces avec une méthode qui a la même signature et le même type de retour, l’appel à la méthode créée une erreur à la compilation. Pour éviter cette erreur on doit redéfinir la méthode, on peut aussi préciser de quelle interface on souhaite utiliser la méthode par InterfaceA.super.methodeA()

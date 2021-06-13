@@ -1,0 +1,42 @@
+-capacité de choisir dynamiquement la méthode qui correspond au type réel de l'objet
+-soit B hérite de A, on fournit un B dans les expressions qui attendent un A, c'est la méthode de B (la plsu spécialisée) qui sera appelée, car la recherche de la méthode débute dans la classe de l'objet référencé par A, b doit pouvoir se faire passer pour un A
+-la recherche de la méthode est menée l'exécution et ce mécanisme est appelé liaison dynamique
+-super.methode()
+-on ne peut rien supprimer d'une classe surclassée, mais on peut faire des rajouts
+-pas de polymorphisme sur les méthodes de classe
+-lorsqu'on appelle une méthode à un objet, la machine recherche la méthode dans la classe de l'objet, si elle ne la trouve pas, elle cherche la méthode dans sa classe mère … jusque dans la classe Object
+
+
+***** surclassement ou upcasting *****
+= fait d'enregistrer une référence d'une instance d'une classe B héritant d'une classe A dans une variable de type A
+
+
+***** déclassement ou donwcasting *****
+= le fait de convertir une référence surclassée, 
+cela a pour effet de libérer certaines fonctionnalités cachées par le surclassement. 
+Forcé par cast
+On passe un contrat avec le compilateur, ce qui enlève la sécurité sur le typage, on lui garantie que b est un type B
+
+
+***** instanceof *****
+savoir si une instance est une classe ou une sous-classe d'une classe donnée
+si a est une référence de B, alors a instanceof A renvoie true
+
+
+***** Le polymorphisme impose des limites à l'héritage *****
+
+-on ne peut pas :
+    -supprimer un membre
+    -changer le type d'un attribut
+    -réduire la visibilité d'un membre
+    -faire de la covariance avec un type incompatible
+
+-covariance
+    -le fait de modifier le type de retour d'une méthode lors de sa redéfinition
+    -le type de retour de la méthode redéfinit doit être un descendant du type de retour de la méthode de base
+    -la visibilité peut être augmentée car c'est comme si on ajoutait une fonctionnalité
+
+
+***** Redéfinition de méthode de classe *****
+-hiding = redéfinition d'une méthode de classe
+-pas de polymorphisme de méthode de classe

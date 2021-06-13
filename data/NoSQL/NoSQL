@@ -1,0 +1,64 @@
+-Not Only SQL
+-une famille de SGBD qui ne comporte ni schéma, ni structure de stockage, ni langage, donc il faut savoir ce que l'on cherche
+-s'écarte du paradigme classique des bases relationnelles
+-pas de définition claire
+-NoSQL orienté-agrégats : agrégats de données
+
+
+*** propriétés BASE
+-les BD relationnelles doivent avoir des propriétés ACID. Dans un contexte distribué, ces contraintes sont lourdes et les BD NoSQL doivent avoir les propriétés BASE :
+    -Basically Available : donnée disponible qq soit la charge
+    -Soft-state : pas nécessaire cohérent
+    -Eventually consistent : cohérence à terme
+
+
+*** avantages par rapport aux BD SQL
+-scalability
+-disponibilité et cohérence à la fois contrairement à SQL qui doit faire un tradeoff
+-plus facile à déployer
+-plus souple à être subdivisé et distribué sur les serveurs
+-mapping facile
+
+
+********** catégories de BD **********
+
+*** clé-valeur
+-stockage des données en clé-valeur, comme une table de hachage, donc ni schéma, ni structure, ni langage
+-avantages
+    -facilement scalable
+    -temps de lecture / écriture rpide
+    -adaptée si on possède la clé
+-technos : Redis, Voldemort, Amazon DynamoDB, SimpleDB, MemCached
+
+
+*** orientée documents
+-clé-valeur où la valeur est un document avec une structure arborescente
+-avantages
+    -flexibilité
+-inconvénients
+    -duplication des données
+    -non adaptée pour les données interconnectées
+-technos : MongoDB, CouchBase, CouchDB, DynamoDB, Cassandra
+
+{
+    "_id":5415614,
+    "nom":"Doe",
+    "prenom":"John"
+}
+
+
+*** orientée colonne
+-stocke les données par colonne et non par ligne
+-avantages
+    -haute capacité de stockage
+    -accès rapide aux données
+    -ajout de colonne plus facile
+    -adaptée pour faire des calculs d'analyse ou souvent mettre à jour la base
+-technos : BigTable, HBase, Spark SQL, Elasticsearch
+
+
+*** orientée graphe
+-stockage sous forme d'un graphe (noeuds, relations, propriétés)
+-avantages
+    -adaptée pour les données connectées, réseaux sociaux
+-technos : Neo4j, OrientDB, FlockDB

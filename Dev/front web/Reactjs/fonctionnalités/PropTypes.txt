@@ -1,0 +1,35 @@
+= bibliothèque qui permet de vérifier la validité de types des propriétés d’un composant lorsqu'il est utilisé
+-si valeur invalide => message d'avertissement dans la console
+-à part de React
+-PropTypes n'est vérifié qu'en mode DEV
+-attributs
+    -propTypes : type des propriétés
+    -defaultProps : valeur par défaut
+    -shape : décrire la structure attendu d'un objet
+-alternatives : Typescript, Flow
+
+
+*** exemple
+
+import PropTypes from 'prop-types';
+
+class Hello extends React.Component {
+  render() {
+    return (
+      <h1>Hello, {this.props.name}</h1>
+    );
+  }
+}
+
+Hello.propTypes = {                     // type des propriétés
+    name : PropTypes.string,
+    setX : PropTypes.func,
+    o : PropTypes.object.isRequired,    // propriété obligatoire
+    task: PropTypes.shape({             // décrire la structure attendu d'un objet
+      id : PropTypes.number.isRequired,
+      label : PropTypes.string
+    })
+};
+Hello.defaultProps = {                  // valeur par défaut
+    name : "world"
+}

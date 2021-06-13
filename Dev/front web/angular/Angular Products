@@ -1,0 +1,23 @@
+-Angular
+-Protractor : tests E2E
+-Forms : formulaires
+-PWA : service worker
+-Augury : extension pour debug une app angular
+-Langages services : aide à l'édition de code (autocomplétion, message d'erreurs, conseils)
+-Router : routing et navigation
+-Elements : exporter ses composants pour les utiliser ailleurs
+-CDK : Component Dev Kit, kit qui contient des comportements prédéterminés
+    -Pack Bidi : texte bidirectionnel
+    -Pack Layout : créer des UI responsives
+    -Pack Overlay : ouvrir des fenêtres flottantes à l’écran
+    -Pack Table : élaborer une expérience de table de données personnalisée
+    -Pack Ally : créer des composants accessibles (lecteur d'écran, ...)
+-Universal : rendu côté serveur
+-Karma : TU et TI
+-Labs : laboratoire pour explorer de nouvelles idées
+-Compiler : compilateur
+-i18n : multilingues, internationalisation
+-Http : get data from a server
+-Material : gère l'UI
+-Animations : créer des animations dans l'app
+-CLI : interface en ligne de commandes

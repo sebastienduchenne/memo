@@ -1,0 +1,20 @@
+*** Flux
+= architecture
+-4 concepts :
+    -actions (venant du serveur ou de l'utilisateur)
+    -dispatcher = composant qui réceptionne les actions puis les retransmets
+    -stores = équivalent du modèle de MVC, ils contiennent les données et réagissent aux actions que le dispatcher leur transmet
+    -views = gèrent le rendu des données dans le DOM, et lance des actions lorsque l'utilisateur effectue certaines actions
+-action -> dispatcher -> store -> view
+-le flux de données est unidirectionnel
+
+
+*** Redux
+= libraire JS basé sur Flux qui gère un state global
+-architecture Flux avec un seul store (= state global) et des reducers
+    -store : fonction qui contient l’état des reducers, un getter, une fonction de dispatch et des subscribers
+    -reducer = fonction pure qui modifie le state
+-3 principes
+    -l’état de l’application entière est stocké dans un seul store
+    -l’état ne peut être mis à jour que par l’envoi d’actions
+    -ils retournent le nouvel état basé sur l’état actuel et l’action

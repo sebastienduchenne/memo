@@ -1,0 +1,30 @@
+*** template string
+let l = `je m’appelle ${prenom}`
+
+
+*** string sur plusieurs lignes
+var x =
+"Hello World!";
+
+var x = "Hello \
+World!";
+
+
+*** string padding
+-compléter la chaîne courante avec une chaîne de caractères donnée afin d'obtenir une chaîne de longueur fixée
+
+'abc'.padStart(10);         // "       abc"
+'abc'.padStart(10, "toto"); // "totototabc"
+
+'abc'.padEnd(10);         // "abc       "
+'abc'.padEnd(10, "toto"); // "abctototot"
+
+
+*** itération
+-String.prototype[@@iterator]()
+
+
+const str = 'The quick red fox jumped over the lazy dog\'s back.';
+
+let iterator = str[Symbol.iterator]();
+let theChar = iterator.next();

@@ -1,0 +1,30 @@
+*** root
+-e2e/ : test e2e
+    -src/ : test case, page object
+    -protractor.conf.js
+    -tsconfig.json
+-node_modules/
+-src/
+    -app/
+        -app.component.css
+        -app.component.html
+        -app.component.spec.ts : TU pour le component
+        -app.component.ts
+        -app.module.ts : composants, directives, pipes et services en lien avec l'appli
+        -app-routing.module.ts : routes
+    -assets/ : images, scripts
+    -environments/
+        -environment.prod.ts
+        -environment.ts
+    -favicon.ico : image onglet
+    -index.html
+    -main.ts
+    -polyfills.ts : pour la compatibilité
+    -styles.css
+    -test.ts : TU
+-.editorconfig : fichier de conf pour l'éditeur
+-angular.json : info sur le projet
+-tsconfig.app.json
+-tsconfig.json : fichier de config pour la compilation
+-tsconfig.spec.json
+-tslint.json : fichier de config pour le linter, cad les règles à suivre

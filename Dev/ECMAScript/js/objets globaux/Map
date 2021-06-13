@@ -1,0 +1,22 @@
+-représente un dictionnaire
+
+*** différences avec un objet
+-Les clés d'une Map sont ordonnées
+-les clés peuvent prendre n'importe quelle valeur
+-size pour compter la taille d'une map
+-Un objet Map est un itérable et on peut donc le parcourir directement
+-Un objet Map permettra d'obtenir de meilleures performances si on ajoute et supprime des éléments fréquemment
+
+
+map = appliquer un traitement à n’importe quelle valeur d’un array
+
+La méthode map() crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant.
+
+
+var array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.map(x => x * 2);//callback
+
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]

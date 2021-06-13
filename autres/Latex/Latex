@@ -1,0 +1,25 @@
+Il faut intaller une distribution TeX qui va servir à compiler le code latex en document. Il faut aussi un éditeur.
+
+###########################
+### sur windows
+###########################
+
+distribution : MikTake
+éditeur : texmaker
+
+###########################
+### sur linux
+###########################
+
+distribution : texlive
+éditeur : texmaker
+
+
+*commandes
+
+-tex to dvi
+	latex filename.tex
+-dvi to pdf
+	dvipdf filename.dvi
+
+

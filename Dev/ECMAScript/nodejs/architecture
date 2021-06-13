@@ -1,0 +1,14 @@
+-api-route : couche de routes
+-services : couche de service qui implémente la logique métier
+-modles : couche d'accès aux données
+-tests : tests unitaires
+-config : dossier de fichiers de config
+-scripts : dossier de scripts
+-app.js, index.js : point d'entrée de l'appli
+
+
+*** avantages
+-code plus lisible
+-code plus maintenable
+-ajout d'une fonctionnalité facile sans tout casser
+-bug plus facile à trouver

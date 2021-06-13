@@ -1,0 +1,33 @@
+-le formulaire est créé dans le template
+-inconvénients
+    -peu efficace
+    -peu extensible
+-donc à éviter pour des formulaires complexes
+
+
+//component
+onSubmit(form: NgForm) {
+    const name = form.value['name'];
+    const status = form.value['status'];
+}
+
+//HTML
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+        <label for="name">Nom de l'appareil</label>
+        <input type="text" id="name" name="name" ngModel required>
+    </div>
+    <button type="submit" [disabled]="f.invalid">Enregistrer</button>
+</form>
+
+
+-balise form
+    -(ngSubmit)="onSubmit(f)" 
+    -#f="ngForm" : référence locale
+-input
+    -name="name" : pour get la value dans le typescript
+    -ngModel
+    -required : élément requis pour la validation du formulaire
+-button 
+    -type="submit"
+    -[disabled]="f.invalid" : activer le button une fois le formulaire valide

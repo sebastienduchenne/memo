@@ -1,0 +1,27 @@
+-créer un serveur
+
+
+*** méthodes
+-server
+    -http.createServer()
+    -http.listen()
+-client
+    -http.request()
+    -http.on()
+-response
+    on()
+    response.end()
+    response.setHeader
+    response.writeHead()
+-request
+    request.write()
+    request.end()
+
+
+getHeaderNames() get the list of the names of the HTTP headers already set
+getHeaders() get a copy of the HTTP headers already set
+setHeader('headername', value) sets an HTTP header value
+getHeader('headername') gets an HTTP header already set
+removeHeader('headername') removes an HTTP header already set
+hasHeader('headername') return true if the response has that header set
+headersSent() return true if the headers have already been sent to the client

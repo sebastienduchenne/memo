@@ -1,0 +1,2 @@
+-Processus = données + pointeur EIP (pointeur vers l’instr en cours de lecture)
+-thread = processus léger

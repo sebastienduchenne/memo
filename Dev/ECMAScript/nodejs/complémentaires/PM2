@@ -1,0 +1,41 @@
+-gestionnaire d'application ou process manager
+-laisser tourner des tâches/instances NodeJS en processus
+-plus complet que 'forever'
+-en cas de crash d'une appli, elle sera automatiquement relancée
+-un daemon est lancé pour intéragir avec les appli
+-mode watch : relance l'appli en cas de modification d'un fichier
+-monit : performances en temps réel d'une application dans la console
+-imonit : faire des stress tests, voir la répartition de charge
+
+
+*** commandes
+
+-lancer une instance NodeJS
+pm2 start server.js
+
+-redémarrer une instance
+pm2 restart <id|name|app-name>
+
+-arrêter une instance
+pm2 stop <id|name|app-name>
+
+-supprimer une instance de la liste PM2
+pm2 delete <id|name|app-name>
+
+-voir tous les processus démarré/arrêté
+pm2 list
+
+-logs
+pm2 logs
+
+-mode watch
+pm2 start app.js --watch
+
+-moniteur
+pm2 monit
+
+-imonit
+pm2 imonit
+
+-lancer plusieurs instances
+pm2 start app.js -i max

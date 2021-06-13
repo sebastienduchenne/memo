@@ -1,0 +1,49 @@
+-micro-framework pour aller plus vite dans la création d'applications Node.js
+-basé sur le concept de middlewares
+-utilise http
+-gestion des routes
+-une application Express est une succession d’appels de fonctions middleware
+-express.Router : créer des gestionnaires de route modulaires et pouvant être montés
+
+
+
+*** routes prises en charge
+get, post, put, head, delete, options, trace, copy, lock, mkcol, move, purge, propfind, proppatch, unlock, report, mkactivity, checkout, merge, m-search, notify, subscribe, unsubscribe, patch, search, connect, all
+
+
+*** méthodes res
+res.download()	Vous invite à télécharger un fichier.
+res.end()	Met fin au processus de réponse.
+res.json()	Envoie une réponse JSON.
+res.jsonp()	Envoie une réponse JSON avec une prise en charge JSONP.
+res.redirect()	Redirige une demande.
+res.render()	Génère un modèle de vue.
+res.send()	Envoie une réponse de divers types.
+res.sendFile()	Envoie une réponse sous forme de flux d’octets.
+res.sendStatus()	Définit le code de statut de réponse et envoie sa représentation sous forme de chaîne comme corps de réponse.
+
+
+*** template
+= langages faciles à écrire qui permettant de produire du HTML et d'insérer au milieu du contenu variable
+-exemples : Twig, Smarty, Haml, JSP, Jade, EJS
+
+
+*** middlewares
+-logiciel qui fournit aux applications des fonctionnalités et des services communs
+-traite la requête (parser, modifier la réponse, ...)
+-interconnectés et peuvent communiquer entre eux avec 4 paramètres :
+    -err: les erreurs
+    -req: la requête du visiteur
+    -res: la réponse à renvoyer (la page HTML et les informations d'en-tête)
+    -next: un callback vers la prochaine fonction à appeler
+-avec app.use()
+
+
+*** middlewares de base
+-compression : permet la compression gzip de la page pour un envoi plus rapide au navigateur
+-cookie-parser : permet de manipuler les cookies
+-cookie-session : permet de gérer des informations de session (durant la visite d'un visiteur)
+-serve-static : permet de renvoyer des fichiers statiques contenus dans un dossier (images, fichiers à télécharger...)
+-serve-favicon : permet de renvoyer la favicon du site
+-csrf : fournit une protection contre les failles CSRF
+...

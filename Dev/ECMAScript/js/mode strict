@@ -1,0 +1,25 @@
+=impose des contraintes de développement : interdit les anciennes pratiques et utilise les nouvelles fonctionnalités de JS, le code est plus lisible et syntaxiquement correct :
+    -obligatoire de déclarer une variable avant de l'initialiser
+    -interdit d'affecter une valeur à une variable non accessible en écriture
+    -interdit de supprimer une propriété non supprimable
+    -dans une fonction, ne pas déclarer plusieurs paramètres avec le même nom    -interdit de créer une variable octale
+    -interdit de définir des propriétés sur des valeurs primitives
+    -interdit d'utiliser 'with'
+    -interdit d'utiliser eval() à créer des variables dépassant sa propre portée.
+    -this renvoit 'undefined'
+    -la propriété 'arguments' ne permet pas d’accéder aux variables passées à la fonction
+    -mots clé réservés, à ne pas utiliser en tant que nom de variable : 
+        implements
+        interface
+        let
+        package
+        private
+        protected
+        public
+        static
+        yield
+
+
+-invocation : "use strict;" au début ou dans une fonction, invoqué automatiquement dans les modules JS
+-non strict = mode par défaut ou sloppy mode
+-certaines erreurs silencieuses sont transformées en erreurs explicites

@@ -1,0 +1,11 @@
+-outil pour détecter des problèmes
+    -dépréciation
+    -effet de bord inattendus
+
+
+  <React.StrictMode>
+    <div>
+      <ComponentOne />
+      <ComponentTwo />
+    </div>
+  </React.StrictMode>

@@ -1,0 +1,128 @@
+*** swarm
+= groupe d'hôtes Docker fonctionnant selon un schéma "master / worker"
+-ce groupe forme un cluster swarm
+-dans un cluster swarm
+    -n swarm manager = orchestrateur qui attribue des tâches aux services
+    -n services / worker / node = hôtes exécutant des tâches
+    -les conteneurs sont des réplicas
+
+
+CLI ----->     swarm manager           |
+            /        |       \         | --> un swarm
+          node1    node2    node3      |
+
+
+*** service
+= img effectuant une tâche et exécutée sur des réplicas
+-effectue des tâches sur un noeud particulier
+-chaque service a des besoins différents en ressources et qui varient avec le temps. En séparant les services dans des conteneurs différents, nous pouvons composer chaque service en utilisant le type d'instance le plus approprié en fonction de différents besoins en ressources
+-plusieurs conteneurs peuvent faire partie du même service
+-les tâches ont un état : new, pending, complete
+-gestion d'un service individuel avec 'docker service'
+-gestion d'une app à plusieurs services avec 'docker stack'
+-possibilité d'augmenter le nombre de réplicas (scale) sans interruption du service
+-possibilité de mettre à jour l'image du service sans interruption du service
+-l'ajout d'un noeud au swarm nécessite de le redémarrer
+
+
+*** swarm manager
+-noeud qui attribue les tâches aux services
+-si plusieurs manager, un seul (le leader) gère la configuration du cluster et les autres (followers, status reachable) sont disponibles pour remplacer le leader en cas de défaillance
+-a un mécanisme de load balancing pour répartir la charge sur les différents noeuds
+-Single Point Of Failure = si le master crash, il sera automatiquement remplacé par un des noeuds qui deviendra le nouveau master
+-il faut activer le mode swarm sur ce noeud
+
+
+*** stack
+= ensemble de services reliés entre eux qui partagent des dépendances et qui peuvent être scalés
+
+
+*** étapes de création d'un cluster swarm
+1.réfléchir aux caractéristiques du swarm : 
+    nb de conteneurs ou réplicas,
+    port à exposer,
+    contraintes de ressources,
+    préférence de placement sur un noeud,
+    action en cas d'erreur,
+    img de base
+2.créer les nodes manager et worker :   docker-machine create -d <type> <nom>
+3.activer le mode swarm :               docker swarm init
+4.joindre les machines au cluster :     docker swarm join
+5.configurer le shell du manager
+
+
+*** stratégies
+-noeud le plus vide : remplit les machines les moins utilisées
+-global : chaque machine a une seule instance du conteneur spécifié
+
+
+************************** commandes **************************
+
+-activer le mode swarm
+    docker-machine ssh mymanager "docker swarm init --advertise-addr 192.168.99.103"
+
+-initialiser un swarm
+    docker swarm init
+
+-joindre une machine à un cluster swarm
+    docker swarm join --token <token> <myvm ip>:<port>
+
+-Lister les différents nœuds du Swarm 
+    docker node ls
+
+-Inspecter un nœud
+    docker node inspect <NODE NAME> 
+        --pretty : meilleur effet visuel
+
+-Retirer un nœud du Swarm (ne supprime pas la VM)
+    docker node rm <NODE NAME>
+        -f : forcer la suppression
+
+
+------------------------------------------------------------
+
+    => application à service individuel 
+
+-Créer un service
+    docker service create <IMAGE NAME>
+        --name : nom du service
+        --replicas <number> : nombre de tâches
+        --publish published=<cible>,target=<source> : mapper un port
+        --restart-condition=<conditon> : condition de redémarrage en cas d'erreur
+        --limit-memory <number> : limiter l'utilisation de la mémoire
+        --limit-cpu <number> : limiter l'utilisation du CPU
+
+-Visualiser l'état d'avancement de vos services Swarm 
+    docker service ls
+
+-lister les différentes tâches du service 
+    docker service ps <SERVICE NAME>
+
+-Mise en échelle des répliques du service
+    docker service scale <SERVICE NAME>=<NUMBER>
+
+-Mise à jour de des conteneurs du service
+    docker service update --image <IMAGE NAME>:<TAG> <SERVICE NAME>
+
+-Supprimer un service
+    docker service rm <SERVICE NAME>
+
+
+------------------------------------------------------------
+
+    => application multi-service
+
+-Déployer une nouvelle pile ou met à jour une pile existante
+    docker stack deploy -c <Docker Compose File> <STACK NAME>
+
+-Lister tous les services de la pile
+    docker stack services <STACK NAME>
+
+-Répertorier les tâches de la pile
+    docker stack ps <STACK NAME>
+
+-Supprimer tous les services de la pile
+    docker stack rm <STACK NAME>
+
+-Lister le nombre de services de la pile
+    docker stack ls

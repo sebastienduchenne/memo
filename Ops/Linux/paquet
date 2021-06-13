@@ -1,0 +1,39 @@
+apt : outil qui permet de gérer des paquets en provenance de dépot APT
+
+extension paquet téléchargé
+    .deb : double-click, le gestionnaire de paquets apparait : cliquer sur le bouton installer
+    .jar
+    .tar.gz
+
+
+*** commandes
+
+MAJ l'index des dépôts, contenant des info sur les paquets présents dans un dépot
+    sudo apt update
+
+installer un paquet
+    APT : sudo apt install <package>
+    deb : sudo dpkg -i name.deb
+
+MAJ de paquet
+    tout les paquets : sudo apt upgrade
+    un paquet : sudo apt install --only-upgrade <package>
+
+désinstaller un paquet et leurs fichiers de configuration
+    simple : sudo apt remove <package>
+    complète : sudo apt purge <package>
+
+voir les info d'un paquet
+    sudo apt show <package>
+
+autoriser un dépot APT xx
+    sudo add-apt-repository ppa:xx       
+
+voir la liste des packages installés
+    dpkg --list
+
+supprimer les fichiers d'archives
+    sudo apt autoclean
+
+voir les dépendances d'un paquet
+    sudo apt depends <package>

@@ -1,0 +1,40 @@
+-robustesse : capacité d'un programme à continuer de fonctionner en présence d'évènements exceptionnels => mécanisme d'EXCEPTION
+-correction : capacité d'un programme à donner des résultats corrects lorsqu'il fonctionne correctement => mécanisme d'ASSERTION
+
+
+****** Les exceptions ******
+
+-mécanisme pour gérer les erreurs
+-erreurs modélisées par des classes héritant de java.lang.Throwable
+-exception = événement arrivant durant l'exécution d'un programme interrompant son fonctionnement normal
+-à chaque événement est associé une sous-classe précise
+
+
+****** Les blocs : try-catch-finally ******
+
+-try ou bloc d'essai
+    -s'applique à un bloc d'instruction pouvant générer des exceptions
+    -ne compila pas si aucune instruction n'est susceptible de générer des exceptions
+
+-catch ou bloc de traitement d'erreur
+    -définie le traitement d'une erreur
+    -une instance de la classe d'exception est lancé en paramètre
+    -il peut y avoir plusieurs catch d'affilé
+    -le premier catch correspondant au type d'exécution est lancé
+
+-finally : toujours exécuté
+
+-une instruction qui génère une erreur = lève/lance une exception
+-un bloc qui traite/capture l'exception
+
+
+****** Les types d’exceptions ******
+
+-Les exceptions de type Error
+    -peuvent survenir dans toutes les portions de code
+    -dans le fonctionnement de la JVM
+    -ex : StackOverflowError
+
+-Les exceptions de type RuntimeException
+    -peuvent survenir dans toutes les portions de code
+    -IndexOutOfBandsException

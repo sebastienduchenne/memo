@@ -1,0 +1,41 @@
+Angular 2
+    -réécriture de AngularJS
+    -filter renommé en pipes
+Angular 3
+    -Inexistante
+Angular 4
+    -<template> renommée en <ng-template> à cause d'un conflit
+    -HttpClient
+    -4 nouvels events : GuardsCheckStart, GuardsCheckEnd, ResolveStart, ResolveEnd
+Angular 5
+    -support des PWA
+    -amélioration de Material Design
+Angular 6
+    -ng update
+    -ng add
+    -Angular Elements
+    -Angular Material + CDK Components
+    -Angular Material Starter Components
+    -CLI Workspaces
+    -Library Support
+    -Tree Shakable Providers
+    -Animations Performance Improvements
+    -RxJS v6
+Angular 7
+    -mise à jour du CLI et Angular Materials
+    -Virtual Scrolling
+    -nouvelles dépendences : TypeScript 3.1, RxJS 6.3, Node 10
+Angular 8
+    -Bundles optimisés pour les navigateurs modernes
+    -Meilleure prise en charge des Web Workers
+    -Rétrocompatibilité du Routeur Angular
+    -Mise à jour des dépendances
+    -Opt-in pour la télémétrie
+Angular 9
+    -Ivy : moteur de rendu et de compilation
+    -i18n avec Ivy
+    -Injection de dépendances : any et plateform
+Angular 10
+    -Le type de Urlmatcher peut toujours retourner null
+    -ajout d’informations sur les dépendances et les sélecteurs ng-content aux métadonnées
+    -un opérateur logique pourra être ajouté à la migration des classes non décorées

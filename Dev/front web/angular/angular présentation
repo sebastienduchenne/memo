@@ -1,0 +1,27 @@
+-plateforme de développement qui permet de créer des applications web dynamiques et immersives
+-permet de créer des progressive Web Apps (PWA) = app avec une expérience utilisateur similaire à celle d'une application mobile
+-repose sur la couche PlatformBrowser pour communiquer avec le DOM
+-s'appuie sur la programmation réactive
+-une application Angular 
+    -est une arborescence de composants
+    -est un ensemble de module NgModules
+    -à un root module et peut avoir plusieurs modules de feature 
+-une view = un component et son template
+-view hierarchy = arbre de view
+
+*** concepts utilisés
+-inversion de contrôle : Angular contrôle l'exécution du programme
+-injection de dépendance = mécanisme qui permet d'implémenter le principe de l'inversion de contrôle. Il consiste à créer dynamiquement (injecter) les dépendances entre les différents objets (et non exprimées dans le code de manière statique)
+-Separation of concerns = séparer les responsabilités avec une approche MVC
+
+
+
+
+Angular app
+    -root component A
+        -A1
+        -A2
+    -root component B
+        -B1
+        -B2
+        -B3

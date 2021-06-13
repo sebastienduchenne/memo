@@ -1,0 +1,28 @@
+= permet de définir ce qui sera testé, pourquoi tester, comment les tests s’effectueront, quand et qui teste
+= décrit les activités à mettre en œuvre pour chaque niveau de test
+-type de test : intég, vitaux, fonctionnel, NR
+-automatisation
+-module ou test case indépendant qui décrira le scénario
+-objectifs à atteindre
+-environnement
+-niveau de test
+-quand tester
+-quels outils
+
+
+2 types de plan de test
+    -plan de test maître = décrit l’implémentation de la stratégie de test
+    -plan de test de niveau = décrit les activités précises à mettre en œuvre pour chaque niveau de test
+
+
+---------------------------------------------------------------
+
+-Introduction to the Test Plan document
+-Assumptions while testing the application
+-List of test cases included in testing the application
+-List of features to be tested
+-What sort of approach to use while testing the software
+-List of deliverables that need to be tested
+-The resources allocated for testing the application
+-Any risks involved during the testing process
+-A schedule of tasks and milestones to be achieved

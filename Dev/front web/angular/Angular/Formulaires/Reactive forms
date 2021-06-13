@@ -1,0 +1,54 @@
+-utilise la programmation réactive
+-séparation de la logique du formulaire et de la vue
+-génération dynamique de formulaires
+-le formulaire est créé dans l'objet Typescript et le template
+-scalable
+-plus testable
+-Validators : validation des données
+    -Validators.required
+    -Validators.email
+    -Validators.pattern("[^ @]*@[^ @]*")
+-outils
+  -FormControl : un élément d'un formulaire (email, ...)
+  -FormGroup : formulaire réactif
+  -FormArray
+  -FormBuilder : créer des objet FormGroup
+
+
+
+//composant
+userForm: FormGroup;
+
+constructor(private formBuilder: FormBuilder) { }
+
+ngOnInit() {
+  this.initForm();
+}
+
+initForm() {
+  this.userForm = this.formBuilder.group({
+    email: ['', [Validators.required, Validators.email]], // FormControl
+  });
+}
+
+onSubmitForm() {
+  const formValue = this.userForm.value; // get valeurs du formulaire
+  const email = formValue['email'];
+}
+
+
+//HTML
+<form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+    <div class="form-group">
+        <label for="id_email">Adresse e-mail</label>
+        <input type="text" id="id_email" formControlName="email">
+    </div>
+    <button type="submit" [disabled]="userForm.invalid">Soumettre</button>
+</form>
+
+
+-balise form
+  -formGroup : relié à 'userForm'
+  -ngSubmit : évènement qui exécute 'onSubmitForm()'
+-input : 'formControlName' relié au control 'email' dans l'objet TypeScript
+-button : type submit, déclenche l'évènement ngSubmit

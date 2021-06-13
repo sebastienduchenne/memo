@@ -1,0 +1,35 @@
+-grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM
+
+class Table extends React.Component {
+    render() {
+        return (
+            <table>
+                <tr>
+                    <Columns />
+                </tr>
+            </table>
+        );
+    }
+}
+
+class Columns extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+                <td>Hello</td>
+                <td>world</td>
+            </React.Fragment>
+        );                          // -> React.Fragment n'est pas ajouté au DOM
+    }
+}
+
+<table>
+    <tr>
+        <td>Hello</td>
+        <td>World</td>
+    </tr>
+</table>
+
+-autre syntaxe : <>...</>
+
+-fragment à clé : <React.Fragment key={item.id}>

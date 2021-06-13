@@ -1,0 +1,104 @@
+-% : reste
+
+*** concaténation et addition
+var x = 10 + 5;          // the result in x is 15
+var y = 10 + "5";        // the result in y is "105"
+
+
+** incrémentation
+-x++ : opérateur d'incrémentation, renvoit la valeur puis incrémente
+-++x : opérateur de décrémentation, incrémente puis renvoit la valeur
+
+
+*** typeof
+console.log(typeof 42);// expected output: "number"
+
+
+*** in
+var car = {make: 'Honda', model: 'Accord', year: 1998};
+console.log('make' in car); // expected output: true
+
+
+*** instanceof
+console.log(string instanceof Object);
+
+
+*** opérateurs d'égalité
+2 == "2" // true, une conversion est effectuée si nécessaire
+2 === "2" // false, pas de conversion
+true == 1; //true, because 'true' is converted to 1 and then compared
+
+
+*** décalage binaire <<, >>, >>>
+
+
+*** opérateur d'exponentiation ** = puissance
+-2 ** 3 => 8
+
+
+*** super
+-appeler ou d'accéder à des fonctions définies sur l'objet parent
+
+
+*** new.target
+-Dans les appels de constructeurs, new.target fait référence au constructeur qui a été appelé par new
+-Dans les appels de fonction « normaux », new.target vaut undefined
+-tester si une fonction ou un constructeur a été appelé avec new
+-méta-propriété
+
+
+*** affectation par décomposition = destructuring
+let a, b, rest;
+[a, b] = [10, 20];
+[, b] = [10, 20]; // ignorer une valeur
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}); 
+    -> {a, b, ...rest} considéré comme un bloc sans ()
+    -> il faut aussi un ; à l'instr d'avant pour éviter l'appel de fonction
+[a = 5, b = 7] = [1];
+[a, b] = [b, a]; // Échange de variables
+
+const {p: toto, q: truc} = {p: 42, q: true};
+const {a = 10; b = 5} = {a: 3}; // valeur par défaut
+const {a: aa = 10, b: bb = 5} = {a: 3}; // affecter de nouveaux noms
+
+const metadata = {
+    title: "Scratchpad",
+    translations: [
+       {
+        locale: "de",
+        title: "JavaScript-Umgebung"
+       }
+    ],
+    url: "/en-US/docs/Tools/Scratchpad"
+};
+
+let { title: englishTitle, translations: [{ title: localeTitle }] } = metadata;
+
+
+*** Chaînage optionnel (optional chaining) : '?.'
+-lire la valeur d'une propriété située profondément dans une chaîne d'objets connectés sans avoir à valider expressément que chaque référence dans la chaîne est valide
+-renvoit undefined si la prpriété est absente
+
+
+const adventurer = {
+  name: 'Alice',
+  cat: {
+    name: 'Dinah'
+  }
+};
+
+const dogName = adventurer.dog?.name;
+console.log(dogName); // expected output: undefined
+
+
+*** Nullish Coalescing Operator '??'
+-soit A ?? B
+-renvoit B si A vaut null ou undefined, ou A sinon
+
+
+const foo = null ?? 'default string';
+console.log(foo); // expected output: "default string"
+
+const baz = 0 ?? 42;
+console.log(baz); // expected output: 0

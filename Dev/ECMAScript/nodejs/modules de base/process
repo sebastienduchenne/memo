@@ -1,0 +1,21 @@
+-process.nextTick() : exécuter une fonction à la fin du tick en cours
+-process.exit(code) : force le processus à terminer le programme
+-process.on(signal, callback) : faire 'callback' lorsque 'signal' est reçu
+-process.env : contient des variables d'environnement
+-process.stdin
+-process.stdout
+-process.stderr
+
+
+*** process.argv
+
+-process.argv : tableau des arguments passés à l'exécution du script
+-process.argv.slice(n) : accéder l'argument 'n' si pas de nom
+
+$ node app.js joe
+const args = process.argv.slice(2)
+args[0] // joe
+
+$ node app.js --name=joe
+const args = require('minimist')(process.argv.slice(2))
+args['name'] // joe

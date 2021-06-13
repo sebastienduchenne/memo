@@ -1,0 +1,71 @@
+-un framework agile
+-sprint de 2-3 semaines
+-équipe de 5 à 11 individus
+-équipe auto-gérée : décide des outils qu’elle utilise, du workflow et de comment elle s’organise
+-pas de silo, chacun doit savoir faire un peu de tout, tout en ayant une expertise dans un secteur, entraide entre les membres
+-vélocité = effort que l’équipe peut fournir
+-complexité = effort que nécessite une US
+-poker planning = estimer la complexité des fonctionnalités à développer
+
+
+*** backlogs
+-product backlog = ensemble des fonctionnalités du projet. Produit et géré par le PO
+-sprint backlog = ensemble des US détaillées par le PO et embarquées pour un sprint
+
+
+*** cérémonies / meeting
+
+-Sprint Planning Meeting
+    = définir le contenu du sprint backlog à partir du product backlog. Le PO doit venir avec son backlog affiné (Users Stories décrites) et priorisé, et on décide des US à embarquer
+
+-Daily meeting
+    = s'assurer que tout le monde va dans la même direction. Tout les jours, chacun répond à 3 questions : ce qui a été fait la veille, ce que l'on va faire ojd, quels sont les obstacles
+
+-Backlog Refinement / backlog grooming
+    = affiner le contenu des US
+
+-Sprint Review meeting
+    = montrer le travail réalisé au cours du sprint afin de le soumettre à la validation du Product Owner. La scrum team doit préparer une démonstration des User Story / Tâches réalisées au cours du sprint
+
+-Sprint Retrospective
+    = bilan du sprint écoulé, ce qui a été et n’a pas été, à améliorer, idées d’amélioration, retour d’expérience
+
+
+*** rôles
+
+-scrum master (SM) :
+    = s’assure que Scrum est correctement appliqué, rôle de coach, aide l’équipe à avancer et à franchir les obstacles, facilitateur
+    -est au service de l’équipe et y incarne les valeurs de l’agilité
+    -facilite la collaboration
+    -organise et anime les cérémonies 
+    -contribue à l’appropriation des pratiques agiles
+    -aide l’équipe à surmonter les points de blocage
+    -aide l’équipe à créer un environnement favorable à une bonne dynamique d’équipe
+    -aide l’équipe à améliorer en continu son fonctionnement
+    -favorise la coordination entre son équipe et les acteurs avec lesquels des adhérences existent
+
+-product owner (PO) :
+    -porte la vision du produit à réaliser et s’assure qu’il apporte le maximum de valeur au client et qu’il répond aux enjeux business
+    -fédère l’équipe autour des objectifs d’amélioration du produit
+    -communique de façon privilégiée avec les parties prenantes et les clients / utilisateurs
+    -décrit les US avec l’équipe, priorise ce qui est à réaliser par l’équipe et assure la cohérence globale du produit
+
+-équipe de réalisation :
+    -collabore avec le PO pour créer et affiner les US. Elle évalue leur complexité et détermine ce qu’elle prévoit de réaliser. Elle développe, test et livre ces fonctionnalités. Elle est garante de la qualité du produit et propose des améliorations techniques au PO
+    -est auto-organisée et pluridisciplinaire
+    -composé de dev, testeur, analyste et autre expert
+
+
+*** user story US
+= récit utilisateur
+-"en tant que …, je souhaite …, afin de …"
+-« pourquoi », « comment », « critères d’acceptance »
+-a des critères d’acceptance = critère pour valider que la fonctionnalité répond aux besoins
+-DOR et DOD
+
+
+*** Definition of Ready / Done
+-DOR = éléments qu’une US doit rassembler pour être candidate au développement
+-DOD = éléments pour que le dev de l'US soit terminé
+-définies par l’équipe
+-Why ? What ? How ? How Many ? What size ?

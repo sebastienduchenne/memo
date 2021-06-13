@@ -1,0 +1,23 @@
+-API de stockage côté client qui permet de gérer des quantités importantes de données structurées
+-utilise des index afin de faire des recherches performantes
+-SGBD transactionnel
+-transaction = ensemble atomique
+-orienté objet : on peut stocker tout type d'objet indexé avec une clé
+-opérations asynchrones
+-respecte la politique de même origine
+-évènements DOM pour vous informer quand les résultats sont disponibles
+-interface IDBFactory
+
+
+*** exemple
+let request = window.indexedDB.open("db", 3); // ouverture d'une connexion
+
+
+//ajout de gestionnaire de succès et d'erreur
+request.onerror = function(event) {
+  // ...
+};
+
+request.onsuccess = function(event) {
+  // ...
+};

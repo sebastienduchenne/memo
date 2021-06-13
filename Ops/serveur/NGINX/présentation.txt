@@ -1,0 +1,47 @@
+= serveur web asynchrone
+-fonctionnalités
+    -reverse proxy
+    -cache HTTP
+    -load balancing
+-avantages
+    -faible utilisation de la mémoire
+    -performant pour des sites gourmands en ressources
+    -peut gérer un grand nombre de connexions simultanées
+-installé dans /etc/nginx
+-par défaut : /etc/nginx/sites-enabled
+-modèle Event Driven : un seul thread qui réceptionne les requêtent et les dispatchent. Améliore les perf générales
+-contient : des directives et des contextes (équivaut à un scope)
+-3 packages : nginx-extras, nginx-full, nginx-light
+-hôte virtuel ou vhost
+
+
+*** modules
+-offres des variables, commencent pas '$'
+-version de base
+    -core : Outils et directives essentiels
+    -event : configurer les mécanismes internes de la capacité de mise en réseau
+    -configuration : utiliser le système d’inclusion
+
+
+*** fichiers de configuration
+
+-nginx.conf
+    -fichier de configuration globale du serveur
+    -les paramètres qui s'y trouvent doivent impacter l'ensemble du serveur
+    -ne pas touche
+-mime.types : liste des types MIME résolus par les extensions de fichiers
+-sites-available
+    -contient les fichiers de conf des sites ou services (un fichier par pré-occupation/site/service)
+    -ce dossier est un dépôt = les fichiers qui y sont ne sont pas pris en compte
+-sites-enabled : liens symboliques vers les fichiers de site-available que l'on souhaite activer
+-conf.d
+    -dossier pour appliquer les paramètres communs à tous les sites
+    -peut également servir de la même façon que site-available (renommer ses fichiers ".conf" en ".disabled" pour désactiver les sites)
+-proxy.conf : conf proxy
+-Fastcgi.conf : conf FastCgi
+
+
+Par défaut, les fichiers de conf se trouvent dans :
+    /etc/nginx/
+    /usr/local/etc/nginx/
+    /usr/local/nginx/conf/

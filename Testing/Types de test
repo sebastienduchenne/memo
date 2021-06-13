@@ -1,0 +1,84 @@
+-par niveau
+    -composant / unitaire (karma)
+    -intégration : entre composant (mocha)
+    -système : système entier
+    -acceptance / end to end (protractor, selenium)
+
+-par famille
+    -de charge / de performance (gatling)
+    -de validation : test d'une nouvelle fonctionnalité / US
+    -de non régression
+    -d'utilisabilité
+    -exploratoire : tester sans plan de test déjà écrit
+    -vitaux
+    -fonctionnel
+
+
+*** Test unitaire
+
+= procédé permettant de s'assurer du bon fonctionnement d'une unité de programme : fonction, classe, module
+-Il s’agit de vérifier, en fonction de certaines données fournies en entrée d’un module de code (on parle parfois d'unité fonctionnelle testée, ou SUT pour system under test), que les données qui en sortent ou les actions qui en découlent sont conformes aux spécifications du module
+-En d'autres termes, il s'agit de vérifier le respect du contrat de service du module
+-les services et ressources externes sont remplacés par des bouchons
+
+
+*** Test d’intégration
+
+= assurer du bon fonctionnement de la mise en oeuvre conjointe de plusieurs unités de programme, testés unitairement au préalable
+-chacun des modules indépendants du logiciel est assemblé et testé dans l’ensemble
+-vérifier l'aspect fonctionnel, les performances et la fiabilité du logiciel
+-pas de mock
+
+-exemples de TI =
+    -checker la bonne mise à jour de la base de données
+    -checker que les autres composants ont bien réagit comme il faut
+    -checker le type de retour du composant
+    -checker les interfaces
+-stratégie
+    -big bang
+    -bottom up
+    -top down
+    -sandwich
+
+
+*** Test de performance
+
+= vérifier la performance et la robustesse d’une application
+
+-Test de charge : Simulation de la charge attendue d’utilisateurs
+-Test de capacité : Simulation où on augmente le nombre d’utilisateurs par paliers, afin de déterminer quelle est la limite du système
+-Test de stress : Simulation d’un grand nombre d’utilisateurs arrivant en même temps, par exemple dans le cas d’une pub à la télévision ou d’une campagne de marketing viral sur les réseaux sociaux
+-Test d’endurance : Simulation d’une charge importante sur une longue durée, afin de vérifier que l’application ne souffre pas de dégradation de performances
+
+
+*** Test vitaux
+= s’assurer que les fonctions « vitales » de l’application sont toujours en état de fonctionner
+= S’assurer rapidement qu’une livraison n’a pas engendré de régression critique sur l’application
+-Exécution très rapide (30 minutes maximum)
+-Nombre de tests réduits (sous ensemble des tests de régression)
+-Couvre toutes les fonctionnalités principales du produit
+-Exécution très fréquente (à chaque livraison de code)
+-Tests à automatiser (en priorité)
+
+
+*** test de non-régression 
+=vérifier que nos nouveaux développements n'ont rien cassé dans le code existants
+-regroupant un sous-ensemble des tests de validation
+-enrichir cette campagne régulièrement, avec l’arrivée de nouvelles fonctionnalité ou la découverte de bugs impactant la production
+
+
+*** Test de validation
+= ensemble des tests servant à « valider » une nouvelle fonctionnalité
+-test en profondeur, bcp de cas
+
+
+*** Campagnes de test
+= un ensemble de cas de tests à exécuter sur une période donnée. Prend des modules du plan de test
+-campagne de validation = test de validation en profondeur d'une nouvelle story
+-campagne de régression = tests de non reg, tout le produit, quelques tests, automatisée
+-campagne de tests vitaux = peu de tests, tout le produit, souvent, dès la livraison
+-Etapes d'une campagne de test
+    -choix des tests
+    -préparation des environnements (des comptes)
+    -exécution des tests
+    -communication des résultats de la campagne

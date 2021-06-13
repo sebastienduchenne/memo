@@ -1,0 +1,40 @@
+*** installer une VM
+
+-retirer l'image ISO du stockage une fois l'OS installé
+
+
+*** ajouter les modules complémentaires
+
+
+
+-------------------------------------  BUGS  ------------------------------------------------------
+
+-> Windows 10
+-> survénu après installation de docker
+
+
+Au démarrage d'un VM, affichage d'un boite de dialogue avec le message d'erreur suivant : 
+
+
+VMMR0_DO_NEM_INIT_VM failed: VERR_NEM_MISSING_KERNEL_API_2 (VERR_NEM_MISSING_KERNEL_API_2).
+
+VT-x is not available (VERR_VMX_NO_VMX).
+
+
+Code d'erreur : E_FAIL (0x80004005)
+Composant : ConsoleWrap
+Interface : IConsole {872da645-4a9b-1727-bee2-5585105b9eed}
+
+
+------------ solution
+
+1.Panneau de configuration > Programme > Activer ou désactiver des fonctionnalités windows
+
+Décocher :
+    -Hyper-V
+    -Containers
+    -Plateforme d'odinateur virtuel (virtual machine platform)
+
+2.désactiver Hyper-V en tapant la commande :
+
+    dism.exe /Online /Disable-Feature:Microsoft-Hyper-V

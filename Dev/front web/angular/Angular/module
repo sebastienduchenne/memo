@@ -1,0 +1,11 @@
+-au moins 1 : le root module nommé AppModule dans le app.module.ts
+-différent des modules ES2015
+-un module contient en ensemble de composants angular
+-seul et unique "root module" ou module par défaut, nommé AppModule
+-feature modules
+    -Domain Feature Module : représente une fonctionnalité entière
+    -Service Feature Module : met à disposition des services
+    -Widget Feature Module : ne contient que des composants
+    -Routed Feature Module : contient des composants associés à des routes
+    -Routing Feature Module : alléger la définition d'un Routed Feature Module en prenant en charge la configuration du routing
+-shared module = factoriser des imports de modules

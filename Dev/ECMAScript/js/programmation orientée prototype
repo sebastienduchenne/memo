@@ -1,0 +1,60 @@
+-il n'y a que des objets et pas d'instances ni de classe
+-Chaque objet possède une propriété privée qui contient un lien vers un autre objet appelé le prototype. Ce prototype possède également son prototype et ainsi de suite, jusqu'à ce qu'un objet ait null comme prototype. Null est ainsi le dernier maillon de la chaîne de prototype
+-les objets présents dans le prototype seront hérités mais pas les propriétés en propre
+-Object.prototype a pour prototype 'null'
+-Les objets JavaScript sont des ensembles dynamiques de propriétés
+-les propriétés directement rattachées à un objet sont appelées propriétés en propre
+-Lorsqu'on tente d'accéder aux propriétés d'un objet, la propriété sera recherchée d'abord sur l'objet même, puis sur son prototype, puis sur le prototype du prototype et ainsi de suite jusqu'à ce qu'elle soit trouvée ou que la fin de la chaîne de prototype ait été atteinte
+-JavaScript ne possède pas de méthodes au sens des langages de classe. En effet, en JavaScript, toute fonction associée à un objet est également une propriété
+-héritage dynamique : tout objet peut changer de parent à l'exécution, n'importe quand
+-ajouter ou de retirer des propriétés à n’importe quel objet pendant l’exécution
+-le prototype d’un constructeur a 2 propriétés a minima :
+  -constructor : renvoit vers le constructeur
+  -__proto__ : renvoit vers un autre prototype
+-le contenu d'un prototype d'un constructeur est partagé par tous les objets créés par ce constructeur
+-on parle plutot de délégation que d'héritage
+
+var b = ['coucou', 'ça va', '?'];
+
+          Array               Object
+            |                   |
+            v                   v
+b ---> Array.prototype ---> Object.prototype ---> null
+
+
+-un constructeur est une fonction que l'on invoque avec l'opérateur new
+-on met les fonctions dans le prototype et les propriétés dans les objets
+-pour accéder à un membre, on cherche d'abords dans l'objet puis dans son prototype, puis dans le prototype du prototype ..., jusqu'au prototype de Object. On dit qu’on "« "remonte la chaine des prototypes"
+-il est possible de créer des objets qui ne descendent pas d'Object 
+
+function User(lastname, firstname){ ... }
+User.prototype.prop = "prop"
+let user1 = new User("Doe", "John")
+user1.prop //-> "prop"
+
+-ombrage ou shadowing = il y a une propriété avec le même nom en propre dans un objet et dans son prototype. La propriété dans le prototype ne sera pas utilisé
+-lorsqu'on appelle une fonction héritée, this pointe vers l'objet hérité et non vers le prototype qui possède la fonction comme propriété en propre
+
+*** prototype d'objet
+
+-mécanisme au sein de JavaScript qui permettent aux objets JavaScript d'hériter des propriétés d'autres objets
+-chaque objet pouvant avoir un prototype objet d'où il hérite des méthodes et des attributs
+-on remonte la chaîne de prototypage pour accéder aux attributs et méthodes hérités
+-les méthodes et attributs sont définis dans l'attribut prototype, la fonction constructrice de l'objet et non pas dans les instances des objets elles-mêmes
+-lien entre l'objet instancié et son constructeur
+-L'attribut prototype est un attribut qui contient un objet où l'on définit les éléments dont on va pouvoir hériter
+
+
+*** console.log(fonction.prototype)
+{
+  constructor: ƒ fonction(),
+  __proto__: { // propriétés en propre de Object.prototype
+    constructor: ƒ Object(),
+    hasOwnProperty: ƒ hasOwnProperty(),
+    isPrototypeOf: ƒ isPrototypeOf(),
+    propertyIsEnumerable: ƒ propertyIsEnumerable(),
+    toLocaleString: ƒ toLocaleString(),
+    toString: ƒ toString(),
+    valueOf: ƒ valueOf()
+  }
+}

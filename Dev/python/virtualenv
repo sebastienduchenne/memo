@@ -1,0 +1,16 @@
+= environnement où l'on peut travailler avec une version spécifique d'une dépendance
+-on peut ainsi travailler sur plusieurs projets utilisant des dépendances de versions différentes
+-virtualenv 
+    -est le plus connu 
+    -créée un dossier qui va contenir les dépendances
+    -il faut créer un env puis l'activer
+
+-étapes virtualenv
+    -si ce n'est pas fait, installer virtualenv : pip install virtualenv
+    -créer un dossier de projet et aller dedans
+    -créer un environnement virtuel : virtualenv <nom venv>
+    -activer l'environnement : source <nom venv>/bin/activate   # (env) doit s'afficher
+    -installer les dépendances
+    -ajouter son application
+    -on désactive l'environnement avec : deactivate
+    -on supprimer un environnement en supprimant le dossier

@@ -1,0 +1,70 @@
+-allocation = réserver de l'espace mémoire
+-contraire = libération, désallocation ou restitution
+-malloc
+-pile = stack
+-tas
+-var globales
+-adresse virtuelle
+-obfuscation
+-classes enveloppes
+
+
+******* allocation statique *******
+-se fait avant l'exécution du prog
+-l'espace alloué statiquement est déjà réservé dans l'exécutable du prog lorsque l'OS charge le prog
+    1. spécifier la mémoire nécessaire dans le code source
+    2. réserver l'espace mémoire dans le binaire au moment de la compilation
+    3. au chargement du prog, l'espace réservé devient accessible
+-av : mémoire immédiatement utilisable
+
+
+******* allocation dynamique *******
+-se fait pendant l'exécution du prog car l'espace mémoire ne se trouve pas dans le binaire
+-les variables locales (= types primitifs et références(=@ d'un objet en mémoire) ) sont allouées sur la pile et les objets dans le tas
+-inc : prend plus de temps
+
+
+******* Les méthodes *******
+
+** Appel de méthode **
+
+-bloc d'initialisation static
+    -contient des instructions qui initialisent un attribut statique
+    -intérêt lorsque l'initialisation des champs statiques ne peut être faite par une simple expression
+
+** Récursion **
+
+-appel d'une méthode f plusieurs fois : les variables locales de f sont ajoutées dans la pile autant de fois que f est appelée
+
+
+******* Les tableaux *******
+
+-les tableaux sont des objets
+-lorsqu'on met un tableau en paramètre d'une méthode, on met sa référence, et la méthode manipule le tableau original et non pas une copie
+
+
+******* Les objets immuables *******
+
+-objet non mutable = il est impossible de modifier son état après sa création
+
+** La classe String **
+-à chaque affectation dans un String, un nouvel objet String est créée dans le tas
+-utiliser StringBuilder ou StringBuffer qui sont des types mutables
+-StringBuffer : les méthodes sont synchronisées donc utilisé pour le multi-thread
+    -créer une variable buffer de type StringBuffer, 
+    -ajout d'une chaine de caractère : buffer.append(''chaine''') ;
+    -insertion : buffer.insert(4, ''f'') ;
+    -suppression de l'indice 2 à 4 : buffer.delete(2,4) ;
+    -modifications : buffer.replace(1, 2, ''fe'') ;
+-StringBuilder : les mêmes méthodes que la classe StringBuffer mais elles ne sont pas synchronisées, donc utilisé lors de l'utilisation d'un seul thread
+
+
+******* Les classes *******
+
+-Les membres de classe : une classe A contient des attributs de classe. A l'exécution du programme, le classloader met en mémoire la classe A avec les attributs de classe, puis des objets de type A contenant les attributs d'instance sont créés
+
+-classloader
+    -classe qui charge les classes dynamiquement, à la demande par le programme
+    -fait partie de la JVM
+
+-L'héritage : en mémoire, l'objet créée dispose de ses membres et de ceux de ses parents

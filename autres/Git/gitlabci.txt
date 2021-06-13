@@ -1,0 +1,9 @@
+tags : is used to select specific Runners from the list of all Runners that are allowed to run this project.
+
+
+artifacts
+paths
+
+when
+job
+script

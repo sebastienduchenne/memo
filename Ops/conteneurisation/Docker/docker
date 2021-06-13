@@ -1,0 +1,114 @@
+*** Approche des VM
+
+-les VM virtualisent le matériel et un OS
+-permet une isolation complète des appli, car une VM contient une appli, ses dépendances et un OS
+-un hyperviseur permet de gérer et d'exécuter les VM
+-très couteux en espace et en CPU
+
+
+*** Docker
+
+= outil permettant d'exécuter des applications et leurs dépendances dans des conteneurs sur n'importe quel serveur (conteneurisation)
+-tourne sur la machine hôte Linux
+-pas besoin d'un hyperviseur donc plus léger
+-représente une couche abstraite
+-libcontainer = driver qui remplace les LXC de linux, et qui permet au daemon docker d'utiliser des fonctionnalités de linux :
+    -namespace : limiter ce que peut voir l’application de l'environnement
+    -cgroups : limiter l’accès aux ressources
+    -capabilities : gérer les privilèges d'un processus
+    -interfaces réseaux
+    -règles de firewall
+-docker engine = moteur docker
+-on peut préciser l'utilisation des LXC
+
+
+*** Avantages
+
+-déploiement des applications plus rapide et plus facile
+-consommation faibles de ressources
+-portabilité d'exécution des appli sur une grande variété d'environnement dont le cloud
+
+
+*** inconvénients
+
+-environnement 64 bits uniquement
+-applications legacy doivent être adaptées aux conteneurs
+
+
+*** Docker engine
+
+= docker client + docker host
+-docker client = client de Docker host qui intéragit avec le daemon via l’API
+-docker host = machine virtuelle où les conteneurs sont déployés
+    -daemon docker : moteur d'exécution des conteneurs qui gère des objets Docker (images, conteneurs, volumes et réseau), et écoute l'API. Récupère les images d'un docker registry
+    -API : interface pour communiquer avec le daemon
+    -images
+    -conteneurs
+
+
+*** Conteneur
+
+-empaquete le code, la config et les dépendances de l'appli (bibliothèques et environnement d'exécution)
+    => cela permet d'exécuter les appli sur une grande variété de systèmes hôtes
+-par défaut, les conteneurs sont isolés de leur environnement (les autres appli et la machine), ce qui évitent les conflits
+-une image en cours d'exécution
+-a un cycle de vie avec un état
+-contraintes sur l'utilisation des ressources
+-étapes docker run :
+    -docker pull <image_name>
+    -docker create
+    -allocation filesystem pour le conteneur
+    -création d'une interface pour connecter le conteneur à un réseau
+    -docker start
+
+
+*** Image docker
+
+-package incluant tout ce qu'il faut pour lancer un conteneur :
+    -code
+    -variables d'environnement
+    -bibliothèques
+    -fichiers de config
+-créée à partir d'un fichier dockerfile, qui contient toutes les instructions pour créer l'image
+-une image est une superposition de couche, contenant les différentes applications. Cela permet de restaurer une version précédente
+-l'exécution d'une image donne un conteneur
+-docker registry = système de stockage d'images
+
+
+*** volumes
+
+-par défaut, les données modifiées d'un conteneur ne persistent pas après relance
+    -> à l'exécution, les layers de l'image sont en lecture seule
+    -> une couche en lecture-écriture est ajoutée et contient les modifications
+    -> cette ensemble de couche est appelé 'Union File System'
+-volumes = fichiers, sur l'hôte, utilisés pour la persistance des données
+-chemin hôte : /var/lib/docker/volumes/<nom_v>
+-utiliser -v dans docker run pour monter un volume
+
+
+*** réseau
+
+-permettre aux conteneurs de communiquer entre eux et avec le monde extérieur
+-types de réseaux ou driver :
+    -bridge : 
+        -réseau créé à l'installation de Docker et connecté à l'interface docker0
+        -les conteneurs l'utilisent par défaut
+        -conteneurs non accessibles depuis l'extérieur par défaut (configurer le mappage de port pour l'être)
+    -none : le conteneur n'a pas d'interface et ne peut pas communiquer
+    -host : pas d'isolation réseau, donc les conteneurs utilisent la même interface que l'hôte et sont accessibles depuis l'extérieur
+    -overlay : créer un réseau distribué entre plusieurs hôtes Docker
+    -macvlan : connecter une app au réseau physique, par attribution d'une adresse MAC à un conteneur
+
+-3 réseaux créés automatiquement
+    -bridge, type bridge, interface docker0, réseau par défaut
+    -host, type host
+    -none, type null
+-on peut créer des "réseaux définis par l'utiliteur" ou "user defined networks"
+    -permet la résolution DNS des noms d'hôtes
+
+
+*** registry Docker
+
+= système de stockage d'images Docker
+-Docker Hub = registry public contenant de nombreuses images
+-on peut en créer des privés

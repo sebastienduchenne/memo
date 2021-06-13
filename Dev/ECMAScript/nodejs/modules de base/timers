@@ -1,0 +1,18 @@
+-setTimeout() : attendre un délai avant d'exécuter une fonction
+-clearTimeout(id) : supprimer le compteur créé avec setTimeout
+-setImmediate() : exécuter une fonction durant le prochain tick
+    ->similaire à setTimeout( () => {}, 0)
+-setInterval() : exécuter une fonction toutes les n ms
+-clearInterval(id)
+
+
+
+*** intervalle si la tâche a une durée différente à chaque exécution 
+
+const myFunction = () => {
+  // do something
+
+  setTimeout(myFunction, 1000)
+}
+
+setTimeout(myFunction, 1000)

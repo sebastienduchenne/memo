@@ -1,0 +1,35 @@
+-isolement des composants avec les autres, pas d'héritage des attributs des composants parents
+-le constructor d'un composant est appelé par le moteur JavaScript
+-root component = l'élément le plus haut de la hiérarchie de composants Angular
+
+
+*** séparation des préoccupations (separation of concern)
+-Presentational Component (ou Dumb Component) = gère l'UI
+-container component = use stores and data services, business logic
+-view component = read route parameters
+
+
+*** change detection
+= détecter les changements du modèle et mettre à jour la vue
+-approche déclarative = la vue sait quelles propriétés du modèle surveiller
+-chaque composant dispose d'un change detector
+-le change detector analyse la liste des expressions utilisées dans la vue
+-détection des changements par Zone.js qui encapsule et d'intercepte tous les appels asynchrones
+-fonctionnement :
+    1.déclenchement de la change detection du root component à chaque fin de tick
+    2.le change detector du composant compare les anciennes et les nouvelles valeurs de chaque expression utilisée dans les bindings
+    3.en cas de changement, mise à jour dans la vue
+    4.change detection des enfants et retour l'étape 2
+
+
+*** lifecycle hooks
+= les différentes étapes de la naissance à la mort d'un component
+-Constructor
+-ngOnChanges : si une property a changé
+-ngOnInit : après initialisation du composant
+-ngDoCheck
+    -ngAfterContentInit : après l'initialisation d'un Content, après le 1er ngDoCheck
+    -ngAfterContentChecked : après ngAfterContentInit
+    -ngAfterViewInit : après qu'Angular initialise la vue et celles des enfants, après le 1er ngAfterContentChecked
+    -ngAfterViewChecked : après ngAfterViewInit
+-ngOnDestroy : juste avant qu'une directive / pipe / service soit détruit

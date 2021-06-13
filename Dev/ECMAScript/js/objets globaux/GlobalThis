@@ -1,0 +1,16 @@
+-globalThis = renvoie l'objet global de plus haut niveau, quel que soit l'environnement (node, web, web worker)
+-this : L'objet JavaScript représentant le contexte dans lequel le code courant est exécuté.
+
+navigateur :
+    objet global : window
+    this (non strict) => window
+    this (strict) => undefined
+    globalThis => window
+    frames => window
+node : 
+    objet global : global
+    this (top level) <=> module.exports
+    créer une variable est local au module
+web worker :
+    objet global : DedicatedWorkerGlobalScope (similaire à window)
+    self => DedicatedWorkerGlobalScope

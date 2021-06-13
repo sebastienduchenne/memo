@@ -1,0 +1,5 @@
+** fatal error: stdio.h: Aucun fichier ou dossier de ce type
+
+-installer des bibliothèques de développement et fichiers d'en-têtes
+sudo apt-get install libc6-dev
+

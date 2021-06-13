@@ -1,0 +1,8 @@
+-intégration de système = réunir les différentes parties d'un produit, développées séparément
+
+*** intégration et livraison continue
+-intégration continue = lancer des tests pour vérifier qu'à chaque modification du code source, il n'y a pas de régressions
+-livraison continue = les fonctionnalités logicielles sont livrées fréquemment mais ne sont pas déployées
+-déploiement continu = les fonctionnalités sont livrées fréquemment de manière automatisée
+-jenkins = outils d'intégration continue
+-GitLab CI = outils d'intégration continue

@@ -1,0 +1,31 @@
+-Structured Query Langage
+
+---------------- requête ----------------------
+
+*** DB
+
+-sélectionner une DB
+    use nom_db;
+
+-créer une DB
+    CREATE DATABASE nom_de_la_base;
+
+-lister les DB
+    SHOW DATABASES;
+
+-supprimer une DB
+    DROP DATABASE nom_de_la_base;
+
+-importer une DB en SQL
+    SOURCE fichier.sql;
+
+
+*** tables
+
+-lister les tables
+    show tables;
+	
+-update donnée
+	UPDATE table
+	SET nom_colonne = 'nouvelle valeur', colonne_2 = 'valeur 2'
+	WHERE condition

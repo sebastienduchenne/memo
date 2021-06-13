@@ -1,0 +1,7 @@
+-couverture de code lors d'un test avec mocha
+-couverture sous forme d'un tableau
+-installation : npm install --save-dev nyc
+-dans le package.json
+"scripts": {
+    "test": "nyc mocha"
+}

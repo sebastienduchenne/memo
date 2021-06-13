@@ -1,0 +1,239 @@
+-esprima : parser en ECMAScript, analyse lexicale et syntaxique d'un programme JS
+-axios : faire des requêtes HTTP
+    -axios-mock-adapter : 
+-Nx : ensemble d'outils de dev pour monorepos
+-meteor : framework pour faire du client-serveur avec du publish-subscribe, mongodb
+-cappuccino : développement d'app web avec l'UI de MacOS
+-babeljs.io : module qui convertit tout syntaxe récente en ES5, compréhensible par tous les navigateurs
+-npx : exécuter des binaires dans les modules complémentaires
+-mongoose : communiquer avec mongodb
+-linter : chercher des erreurs dans son code
+-node-inspector : debugger GUI
+-Geddy : web app en MVC
+-Locomotive : web app en MVC
+-Total.js : 
+-Keystone : develop database-driven websites, applications and APIs in Node.js. Built on Express and MongoDB
+-Derbyjs : MVC
+-Sails.js
+-ActionHero : multi-transport Node.JS API Server with integrated cluster capabilities and delayed tasks.
+-Pug (=Jade) : moteur de templates
+-husky : lancer des scripts avant/après l'utilisation de git
+-chart.js : JavaScript charting
+-eslint :
+    -eslint-config-airbnb-base :
+    -eslint-config-airbnb : 
+    -eslint-config--react-app : 
+    -eslint-plugin-import : 
+    -eslint-plugin-jest : 
+    -eslint-plugin-jsx-a11y : 
+    -eslint-plugin--react-hooks : 
+    -eslint-plugin-react : 
+-zone.js : Effectuer plusieurs requêtes HTTP avant d’afficher les données
+-popper.js : put the tooltip in the right place near the button
+-js-sha512 : SHA xxx hash functions for JavaScript supports UTF-8 encoding
+-json-loader : json loader module for webpack.module for webpack
+-ejs : Embedded JavaScript templates
+-ng-multiselect-dropdown : multiselect dans une liste déroulante
+-rxjs : réagir à des événements ou à des données de manière asynchrone
+-ngx-papaparse : données CSV
+-ngp-sort-pipe : Sort/OrderBy data
+-yup : a JavaScript schema builder for value parsing and validation
+-@babel/cli :
+-@babel/core :
+-@babel/plugin-transform-runtime :
+-@babel/preset-env :
+-@babel/runtime :
+-@types/jest : 
+-@types/lodash : 
+-@types/node : 
+-@types/styled-components : 
+-@types/yup : 
+-@typescript-eslint/eslint-plugin : 
+-@typescript-eslint/parser : 
+-@webcomponents/custom-elements :
+-agm/core : Angular Google Maps
+-allure-commandline : 
+-atob :
+-bcrypt :
+-bingmaps : These are the official TypeScript definitions for the Bing Maps V8 Web Control
+-chai-as-promised : 
+-chai-string : 
+-cors :
+-cross-env : 
+-dotenv :
+-env-cmd : 
+-enzyme-adapter-react-16 : 
+-enzyme-to-json : 
+-express-session :
+-fast-csv :
+-history : 
+-https-proxy-agent :
+-iconv-lite :
+-json2csv :
+-jsonwebtoken :
+-jwks-client :
+-libphonenumber-js : 
+-memoize-one : 
+-morgan :
+-node-libcurl :
+-nodemailer :
+-nyc : 
+-pdf-lib :
+-pdfmake:
+-prop-types : 
+-querystring :
+-reselect : 
+-serve :
+-styled-components : 
+-tslib : contains all of the TypeScript helper functions
+-tunnel :
+-typescript : 
+-utils-specs : 
+-uuidv4 : 
+
+
+-------------------   utils   -------------------
+-underscore : fonctionnel
+-debug
+-colors
+-mkdirp
+-rimraf
+-cpr
+-forever : outil en ligne de commande permettant d'exécuter une application node.js de façon continue
+-nodemon : restart le serveur en cas de changement dans le code source
+-async : provides straight-forward, powerful functions for working with asynchronous JavaScript
+-lodash : faciliter le travail sur les arrays, numbers, objects, strings
+    core, fp, array, at
+    -lodash.chunk : 
+    -lodash.debounce : 
+
+-------------------   promesses, io et flux   -------------------
+-rsvp : promesses
+-q : promesses
+-bluebird : promesses
+-q-io : I/O
+-promised-fs
+-MockFS : tests unitaires
+-read : requêtage HTTP
+-event-stream
+-concat-stream
+-through
+-split
+-parse : interpréter du JSON
+-stringify : produit un flux JSON à partir d'un flux d'objets
+
+
+-------------------   configuration et CLI   -------------------
+-nconf : gestion priorisée de config
+-commander : analyse des options en ligne de commande
+-nopt : analyse des options en ligne de commande
+-optimist : analyse des options en ligne de commande
+
+
+-------------------   serveur   -------------------
+-socket.io : communication bidirectionnelle et temps réel entre le serveur et les clients
+-bunyan : logging avancé
+-winston : logging avancé
+-passport : authentification
+-nodemailer : envoyer des e-mails
+-daemon : tourner un serveur sans session attachée
+-express : serveur
+    -helmet : sécuriser une app express en variant les headers HTTP
+-fastify : serveur rapide
+-restify : serveur API REST
+-koa : asynchrone et rapide
+-hapi : serveur plus structuré et plus complexe
+-adonisJs : framework MVC, micro API server
+-serve-static : middleware pour servir des fichiers
+-LoopBack.io : API et microservice
+
+
+-------------------   tests   -------------------
+-mocha
+-chai
+-chai-as-promised
+-blanket
+-cypress : test end-to-end
+-jest
+-karma
+-jasmine : TU en js
+-jasmine-allure-reporter : 
+-mojito : mocking
+-sinon : Standalone test spies, stubs and mocks
+-Frisby : REST API
+-Enzyme
+-Istanbul : a JavaScript test coverage tool
+-supertest
+-protractor-axe-report-plugin : 
+-protractor-image-comparison :
+
+
+-------------------   front   -------------------
+-jQuery
+-moment.js : date
+-bootstrap : CSS
+-select2 : saisie dans une liste
+-kalendae : date picker
+-highcharts : charting library based on SVG, also contains Highstock, the financial charting package, and Highmaps for geo maps
+-highstock
+-highmaps
+-lawnchair, localforage : stockage lourd
+-webshim ; polyfills
+
+
+-Angular
+    -Angular Maps (X-Map) : a set of components and services to provide map functionality in angular 2+ apps
+    -angular-font-awesome : manage Font Awesome icons
+    -angular-highcharts-chart : a Highcharts directive for Angular
+    -angular-notifier : notification library
+    -ng2-charts : Beautiful charts for Angular2 based on Chart.js
+    -bn-ng-idle : a pretty simple user idle / session timout detector for Angular
+
+
+-ember : application web monopage MVC coté client
+-backbone : librairie pour faire des single-page app
+-ionic : framework pour dev des app mobile cross-plateform en html, css et js
+-knockout : librairie pour faire de l'UI avec le pattern MVVM
+-electron : framework pour dev d'app desktop cross-plateform avec html, css et js
+-Vue.js
+
+
+-React.js
+    -Next.js : framework permettant d’effectuer le rendu des applications web React
+    -flux : 
+    -formik : formulaires
+    -react-a11y : 
+    -react-app-polyfill : 
+    -react-color: 
+    -react-dnd-html5-backend : 
+    -react-dnd-touch-backend : 
+    -react-dnd : 
+    -react-dom : 
+    -react-image-file-resizer : 
+    -react-json-view : 
+    -react-resize-detector : 
+    -react-responsive : 
+    -react-router : routage
+    -react-router-dom: 
+    -react-router-last-location : 
+    -react-scripts : 
+    -react-test-renderer : 
+    -react-virtualized-auto-sizer : 
+    -react-window : 
+    -@types/react : 
+    -@types/react-color : 
+    -@types/react-dom : 
+    -@types/react-redux : 
+    -@types/react-resize-detector : 
+    -@types/react-responsive :
+    -@types/react-router-dom : 
+    -Redux
+        -react-redux : 
+        -redux-devtools : 
+        -redux-logger : 
+        -redux-mock-store : 
+        -redux-responsive : 
+        -redux-thunk : 
+        -raven-for-redux : 
+        -enzyme-redux : 
+        -connected-react-router

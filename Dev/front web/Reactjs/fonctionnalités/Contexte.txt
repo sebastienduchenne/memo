@@ -1,0 +1,32 @@
+= passer des données à travers l'arbre des composants sans les faire passer explicitement à travers tous les composants
+-passer des données globales (authentifié, préférence de langue, thème de l'UI)
+
+
+*** exemple
+
+const ThemeContext = React.createContext('light');
+
+class App extends React.Component {
+    render() {
+        return (
+            <ThemeContext.Provider value="dark">
+                <Toolbar />
+            </ThemeContext.Provider>
+        );
+    }
+}
+
+function Toolbar() {  
+    return (
+        <div>
+            <ThemedButton />
+        </div>
+    );
+}
+
+class ThemedButton extends React.Component {
+    static contextType = ThemeContext;
+    render() {
+        return <Button theme={this.context} />;  
+    }
+}

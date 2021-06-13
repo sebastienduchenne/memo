@@ -1,0 +1,32 @@
+-pour naviguer entre les pages
+-fichier app-routing.module.ts
+-balise <router-outlet></router-outlet>
+
+
+-les Resolver
+-les Guard
+-les Child routes
+
+
+*** guard
+-routing
+-contrôler l'accès à une route
+-méthode qui renvoie un booléen / un Observable<boolean> / une Promise<boolean> en fonction de l’expression qu’on lui demande de vérifier
+
+
+*** resolver
+= résoudre les données selon les besoins d'un composant / d'une page / d'un écran donné
+
+
+
+// app.module.ts
+import { AppRoutingModule , RoutingComponent} from './app-routing.module'; 
+
+declarations[...,RoutingComponent]
+
+// html
+<nav> 
+   <a routerLink = "/home">Home</a> 
+   <a routerLink = "/contactus">Contact Us </a> 
+</nav> 
+<router-outlet></router-outlet>

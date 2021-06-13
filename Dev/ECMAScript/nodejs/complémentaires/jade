@@ -1,0 +1,43 @@
+= moteur de template pour NodeJS
+
+
+******** serveur ********
+
+app.set("view engine","jade")
+
+app.get('/', function (req, res) {
+    let tab1 = [1,2,3]
+    res.render('StudentList', { text: "toto" });
+    res.render('StudentList', { tab: tab1 });
+});
+
+
+******** template 'StudentList.jade' ********
+
+doctype html
+html
+    head
+        title=title
+    body
+        p text
+        ul
+            each item in tab
+                li=item
+
+
+******** page html générée ********
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jade Page</title>
+    </head>
+    <body>
+        <p>toto</p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </body>
+</html>

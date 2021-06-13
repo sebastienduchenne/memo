@@ -1,0 +1,8 @@
+-yarn
+-PM2
+-bower = packager manager
+-npm = packager manager
+-grunt : outil permettant de créer des tâches automatisées en JavaScript
+-gulp : gestionnaire de taches
+-CoffeScript : langage qui se compile en JS, rajoute du sucre et des fonctionnalités
+-MEAN = software stack, regroupe : mongo-db, express, angular, nodejs

@@ -1,0 +1,60 @@
+= Framework/libraire JS qui centralise les states des composants
+-basée sur Flux mais qui gère un state global et n'a pas de dispatcher
+-conteneur à état prévisible
+-indépendant de React
+
+-sans Redux :
+    -l'état de l'application est décentralisé à travers tous les components de l'application
+    -les mises à jour des states ne suivent pas d'ordre précis à cause du temps de réponse des API, de l'asynchronicité
+
+-Redux décentralise le développement logique et centralise les states dans un store (inverse de React)
+-Redux permet d'être certain de l'état de l'application à tout moment, en centralisant à la fois le state global de l'application, et l'ordre dans lequel les changements de states doivent avoir lieu
+
+-alternative à Redux :
+    -database : mais il faut requêter la DB à chaque fois
+    -plusieurs states : il faut que chaque state se passent les données ce qui est compliqué à gérer
+
+-règles
+    -le global state est unique
+    -le state n'est qu'en lecture seule : on créée un nouvel objet et on le copie dans le state
+    -les reducers sont des fonctions pures
+
+-quand utiliser Redux
+    -architecture de 5 à 6 niveaux minimum dans l'arbre de composants
+    -communication entre les composants
+    -intention de monter en échelle
+
+
+*** 5 objets
+-global state = objet qui contient tout l’état de l'application
+-action = objet représentant une intéraction
+-store
+    = objet qui réceptionne une action et fait appel à un reducer selon l'action reçue
+    -peut contenir plusieurs reducers
+-reducer
+    = fonction pure qui modifie le state global
+    -incluse dans le store
+    -gère la logique
+    -déterminent la construction progressive de l'arbre
+-action creator = fonction qui créée une action
+
+
+*** flux de données
+1. lorsqu'un évènement survient, la vue dispatche des actions
+2. les reducers interceptent les actions et retournent un objet représentant le nouveau state global
+3. le store est mis à jour avec le nouveau state
+
+events vue -> envoie actions -> interception par reducers -> update store -> update components cad la vue
+
+
+*** API
+-store                  : objet qui est un arbre de state
+    getState()
+    dispatch(action)    : fonction qui envoie une action à un reducer, appelée par un container
+    subscribe(listener) : s'inscrire au state du store
+    replaceReducer(nextReducer)
+-createStore(reducer,)  : créer un store
+-combineReducers(...)   : regrouper plusieurs reducers dans un reducer global
+-bindActionCreators()   : lier le component React aux actions et à dispatch
+-compose(...functions)
+-applyMiddleware(...middleware) : ajouter un middleware au store

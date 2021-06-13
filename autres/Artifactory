@@ -1,0 +1,6 @@
+= gestionnaire de dépôts binaires
+-fonctionnalités :
+    -conservation à long terme des objets binaires
+    -distribution et leur sécurisation de ces objets
+    -centralisation des artefacts et des paquets créés
+    -traçabilité des produits

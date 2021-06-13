@@ -1,0 +1,17 @@
+-Common Gateway Interface (CGI) = standart
+-Problème c10k : capacité à gérer 10 000 connexions simultanées
+-serveur proxy = composant logiciel ou matériel qui joue le rôle d'intermédiaire en se plaçant entre 2 hôtes pour faciliter ou surveiller leurs échanges. Peut permettre d'accéder à un autre réseau
+-reverse proxy = permettre d'accéder à des serveurs internes
+-Server Side Includes (SSI) = langage de programmation fait pour être interprété par un serveur HTTP pour l'envoi d'un document HTML
+-LAMP (Linux, Apache, MySQL, PHP) = pile logicielle
+-serveurs
+    -NGINX : event driven model
+    -Apache : thread driven model
+    -Tomcat : Java
+
+
+*** load balancing
+= distribuer une tâche entre plusieurs serveurs
+-techniques:
+    -assigner un poids
+    -round robin = circularité

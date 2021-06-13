@@ -1,0 +1,4 @@
+-représente un objet qui est immuable et qui contient des données brutes
+-Binary Large Objects
+-le constructeur Blob() permet de créer des blobs à partir d'autres objets
+-on lit le contenu d'un blob avec un objet FileReader

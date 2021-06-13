@@ -1,0 +1,107 @@
+*** React.Component
+= classe pour créer des composants React, n'implémente pas shouldComponentUpdate()
+
+-cycle de vie d'un composant
+    -montage
+        1. constructor() : initialiser un état local et lier des méthodes gestionnaires d’événements à l’instance
+        2. static getDerivedStateFromProps() : mettre à jour le state quand des propriétés passées au comp sont mises à jour
+        3. render() : retourne du JSX qui sera affiché dans l'UI, fonction pure donc setState() ne peut être appelée
+        4. update DOM
+        5. componentDidMount() : appelé dès que le composant est monté, cad ajouté au DOM. On peut y faire des appels API pour initialiser des données puis faire appel à setState()
+
+    -mise à jour : déclenchée par changement de props / state / appel à forceUpdate()
+        1. static getDerivedStateFromProps()
+        2. shouldComponentUpdate() (sauf si appel de forceUpdate()) : sortir du rendu
+        3. render()
+        4. getSnapshotBeforeUpdate() : appelé avant mise à jour du DOM, permet de capturer des infos du DOM courant avant MAJ
+        5. update DOM
+        6. componentDidUpdate() : appelé après une mise à jour. On peut y travailler sur le DOM et faire des requêtes réseaux
+    
+    -captation d'erreur : throw new error()
+        1. getDerivedStateFromError() : une erreur vient d'être levée, on peut y affiche une UI de remplacement
+        2. getDerivedStateFromProps()
+        3. shouldComponentUpdate()
+        4. render()
+        5. getSnapshotBeforeUpdate()
+        6. update DOM
+        7. componentDidCatch()
+
+    -démontage
+        1. componentWillUnmount() : appelé juste avant le démontage et la destruction d'un composant. On peut y libèrer les ressources : annulation de requêtes réseau, résiliation d’abonnements
+
+    -> c'est React qui appelle les méthodes de cycle de vie
+
+-gestion d'erreur
+    -static getDerivedStateFromError()
+    -componentDidCatch()
+
+-propriétés de classe
+    -defaultProps : utilisée pour les props non définies
+    -displayName : utilisée dans les messages de débogage
+
+-propriété d'instance
+    -props = attributs d’un composant dans lequel on passe des données, lecture seule
+    -state = état local d'un composant
+
+-autres
+    -setState(xxx) : mettre à jour le "state". La modification de l'état local provoque une appel au render() du composant et de celui des enfants. Accepte un objet ou une fonction. Il ne faut donc pas l'appeler dans render() sinon boucle infinie
+    -forceUpdate() : forcer la mise à jour de la vue quand le state et props n'ont pas changé mais que la vue dépend d'autres données
+
+
+*** React.PureComponent
+-classe pour créer des composants React comme React.Component
+-différence : implémente shouldComponentUpdate()
+
+
+*** React.memo
+-un composant d’ordre supérieur
+-comme PureComponent mais pour les composants créés à l’aide de fonctions
+
+
+*** React.createElement()
+-créer un élément
+
+
+*** React.cloneElement()
+-clone un élément
+
+
+*** React.createFactory(type)
+-renvoie une fonction qui produit des éléments React d’un type donné :
+    -une chaîne contenant un nom de balise (tel que 'div' ou 'span')
+    -un type de composant React
+    -un type de fragment React
+-OBSOLETE, inutile avec du JSX
+
+
+*** React.isValidElement(object)
+-vérifie qu’un objet est bien un élément React
+
+
+*** React.Children
+-interagir avec la structure de données opaque de this.props.children
+React.Children.map : exécute une fonction sur chacun des enfants directs
+React.Children.forEach : Même chose que React.Children.map() mais sans renvoyer de tableau
+React.Children.count(children) : nombre total de composants présents dans children
+React.Children.only(children) : vérifie que children n’a qu’un seul enfant
+React.Children.toArray(children) : renvoie la structure de donnée opaque de children sous la forme d’un tableau linéarisé
+
+
+*** React.Fragment
+-grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM
+
+
+*** React.createRef()
+-accéder aux nœuds du DOM ou éléments React créés dans la méthode de rendu
+
+
+*** React.forwardRef(fonction de rendu)
+-crée un composant React qui transfère la valeur de l’attribut ref qu’il reçoit à un autre composant plus bas dans l’arbre
+
+
+*** React.lazy(fonction avec import)
+-charger un composant dynamiquement
+
+
+*** React.Suspense
+-charger un composant une fois celui avec React.lazy chargé

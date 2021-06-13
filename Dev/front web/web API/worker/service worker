@@ -1,0 +1,27 @@
+-serveurs proxy placés entre une application web, et le navigateur ou le réseau
+-worker événementiel
+-pour parer aux pertes de connexions
+-récupérer des données que l'on met en cache local afin de pouvoir continuer à utiliser l'application en mode déconnecté en cas de perte du réseau
+-contraint à s'exécuter au travers d'HTTPS
+-s'appuie sur les promesses
+-certains navigateurs ne le supportent pas
+-un service worker fonctionne comme un serveur proxy, permettant de modifier les requêtes et les réponses, de les remplacer par des éléments de son propre cache, et bien plus
+-exécuté dans un thread à part
+-chargement du SW, puis déclenchement de l'évènement 'install' pour charger les données dans le cache
+-utilisation de l'API Cache pour gérer les ressources chargées
+-Un événement FetchEvent se déclenche à chaque fois qu'une ressource contrôlée par un SW est retournée
+
+Etape
+1.enregistrement : l'URL du service worker URL est récupérée et enregistrée via serviceWorkerContainer.register()
+2.Téléchargement (toutes les 24h)
+3.Installation
+4.Activation
+
+>>> Interface
+-Cache
+-CacheStorage
+-Client
+
+>>> Usages
+-Synchronisation de données en arrière-plan
+-Amélioration des performances

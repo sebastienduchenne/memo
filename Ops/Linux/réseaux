@@ -1,0 +1,52 @@
+-adresse MAC = identifiant physique stocké dans une carte réseau ou une interface réseau similaire. Elle est unique au monde, sauf modification
+-DNS (Domain Name System) = système qui traduit les noms de domaines en adresse IP
+-FQDN : Fully Qualified Domain Name
+    ex : mail123.exemple.com
+        mail123 : nom d'hote
+        exemple : domaine de deuxième niveau
+        com : domaine de 1er niveau
+-Ethernet : protocole de réseau local à commutation de paquets
+
+
+*** nom d’hôte
+= le nom d’un périphérique dans un réseau
+-localhost = nom d'hote local
+-un nom d'hôte est associé à une adresse IP
+-port = porte sur une machine sur lequel un programme peut écouter
+
+
+*** interface
+= porte dans la couche réseau
+-eth0, eth1 : interface filaire
+-wlan0, wlan1 : interface sans fil
+-lo : loopback, désigne son propre pc
+
+
+*** commandes
+
+-trace réseau
+    nmap
+
+-configurer et afficher les informations des interfaces réseau IP
+    ifconfig
+
+-info sur les services
+    services actifs : systemctl list-units --type=service
+
+-configurer le par-feu
+    iptables
+
+-afficher les ports ouverts
+    netstat -ln
+
+-connexion SSH
+    ssh -L <port local>:<nom distant>:<port distant> <login>@<ip>
+
+-requête POST avec header
+    curl -X POST url -H "header: value" --data 'value'
+
+-télécharger qqch
+    wget
+    
+-info sur une interface
+    ip addr show <interface_name>

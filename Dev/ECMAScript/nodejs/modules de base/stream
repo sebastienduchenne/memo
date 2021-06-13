@@ -1,0 +1,31 @@
+-interface permettant de manipuler un échange d'information
+-requête HTTP, lecture / écriture de fichiers, ...
+-les streams sont des instances de EventEmitter
+-4 types fondamentaux de streams
+    -writable : écrire des data
+    -readable : abstraction d'une source où des données sont consommables
+    -duplex : lire et écrire des data
+    -transform
+-un buffer permet de stocker les données en attendant d'être lues. Si le buffer est plein, les nouvelles données sont perdues
+-une readable a 3 états : null, false, true
+
+
+*** méthodes
+-readable.pause()
+-readable.read()
+-readable.resume() : reprendre la lecture
+-readable.pipe(dest) : attacher un writable au readable
+
+-writable.write()
+-writable.drestroy() : détruire le stream
+
+
+*** exemple
+const stream = require('stream');
+
+const readableStream = new Stream.Readable() // créer un objet stream
+
+
+fs.createReadStream('file.txt')
+    .pipe(zlib.createGzip()) // compresser
+    .pipe(fs.createWriteStream('file.txt.gz'));

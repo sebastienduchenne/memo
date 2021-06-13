@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ol>
+        <!-- on fournit à chaque todo-item l'objet todo et une clé à chaque composant -->
+        <todo-item
+          v-for="item in taches"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+        ></todo-item>
+      </ol>
+    </div>
+    <script>
+      Vue.component('todo-item', {
+        props: {
+          todo : String
+        },
+        template: '<li>{{ todo.text }}</li>'
+      })
+
+      let app = new Vue({
+        el: '#app',
+        data: {
+          taches: [
+            { id: 0, text: 't1' },
+            { id: 1, text: 't2' },
+            { id: 2, text: 't3' }
+          ]
+        }
+      })
+    </script>
+  </body>
+</html>

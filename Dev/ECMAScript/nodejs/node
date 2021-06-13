@@ -1,0 +1,32 @@
+-Node.js est un environnement d’exécution JavaScript bas niveau côté serveur
+-asynchronisme, donc généralement non bloquant
+-monothread
+-il regroupe un ensemble d'API et une VM. Le code est lu par le runtime, traduit en bytecode par la VM puis exécuté par le processeur
+-utilise le moteur JS V8 de Google qui rend l’exécution du JS très rapide
+-utilise le système de module CommonJS
+-npm : gestionnaire de paquets officiel de Node.js
+-libuv (Unicorn Velociraptor Library) : librairie qui permet le support de l'asynchronisme I/O avec une boucle d'évènements. Utilisé dans chrome
+-l'utilisation de V8 évite les incompatibilités entre navigateurs et ne nécessite donc plus de polyfills
+
+
+*** release
+-nouvelle version majeure tout les 6 mois
+-les versions pairs sont LTS pendant 12 mois
+-une version : 12 mois + 18 mois support actif + 12 mois maintenance = 3 ans et demi
+
+*** mode REPL (Read-Eval-Print-Loop)
+-taper du code JS
+-commande 'node' pour l'utiliser :
+
+$ node
+>
+
+-Exploring JavaScript objects
+-Explore global objects
+
+
+*** usages de Node.js
+-micro-service et API
+-fonction dans le cloud sans serveur
+-applications en ligne de commande (CLI)
+-applications de bureau (éditeur Atom)

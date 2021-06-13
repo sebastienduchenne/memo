@@ -1,0 +1,77 @@
+-base de données NoSQL orientée colonnes
+-moteur de texte distribué
+-serveur pour l'indexation et la recherche des données dans des documents orientés texte
+-il fournit un moteur de recherche distribué (Lucene) et multi-entité à travers une interface REST
+-assure la disponibilité des données mais pas leur cohérence (conséquence du fait de l'utilisation d'un moteur de recherche)
+-adapté pour le stockage des logs dont la cohérence n'est pas nécessaire
+-suite Elastic : 
+  -Elasticsearch
+  -Kibana : outils de visualisation de données
+  -Logstash : agréger et traiter des données
+
+
+*** cas d'utilisation
+-log
+-monitoring des performances applicatives
+-analyse et visualisation de données
+-recherche de site web
+
+
+*** fonctionnement
+-Elasticsearch intègre un moteur Lucene qui va s’occuper d’extraire les mots d’une collection de documents et de préparer des colonnes de mots
+-un mot = une colonne de documents avec pour valeur le poids du mot dans chacun des documents (mot1:{doc1:0,7; doc2:0,3; doc3:0})
+-la couche de distribution effectuée par Elasticsearch permet de router les requêtes, paralléliser les traitements, répliquer les données en cas de panne et augmenter la capacité d’indexation de Lucene
+-chaque serveur est un Lucene en charge d’une partie des documents
+
+  Elasticsearch
+        |
+----------------
+|  |  |  |  |  |
+l  l  l  l  l  l
+
+
+-cluster Elasticsearch : composé de plusieurs nœuds qui communiquent entre eux. Chaque noeud correspond à une instance d’Elasticsearch en cours d’exécution, et peut être ajouté ou retiré du cluster même lorsque ce dernier est en train de fonctionner
+-noeud
+
+-Index : une demande de recherche sur Elasticsearch ne s’applique jamais au contenu lui-même, mais toujours à l’index. Tous les contenus de tous les documents sont stockés et déjà préparés dans ce dossier ; la recherche prend donc peu de temps. Il s’agit d’un index inversé : pour chaque terme de recherche, l’emplacement où le terme peut être trouvé est indiqué.
+-Document : l’output de l’index présente les documents dans lesquels les données se trouvent. Il n’est pas nécessaire qu’il s’agisse de textes complets (par exemple, des articles de blog). Il suffit d’avoir des fichiers purs avec des informations.
+-Field : un document se compose de plusieurs champs. En plus du champ de contenu proprement dit, un document va contenir d’autres métadonnées. Par exemple, Elasticsearch peut être utilisé pour rechercher des métadonnées sur l’auteur ou sur la date de création.
+
+
+*** moteur de recherche Lucene
+-logiciel Apache pour créer des moteurs de recherche
+-indexation et recherche
+-un document contient des mots. Quand on fait une recherche, on évalue la pertinence de chaque mot du document et on leur associe un poids qui va nous servir pour établir un score pour chaque requête
+-le poids d'un mot dépend de sa fréquence dans le texte, la taille du texte, sa fréquence dans toute la collection de documents
+
+
+*** insertion des données
+-indexation des données pour une recherche plus rapide
+-index inversé = structure de données qui liste chaque mot qui apparait dans n'importe quel document et identifie tous les documents dans lesquels chaque mot apparait
+
+
+*** requéter
+-effectué sur les index
+-on effectue une requête avec curl et un fichier JSON en data. ES renvoit ensuite  les données correspondantes avec chacune un score de pertinence
+-agréger du texte pour avoir des statistiques avec 'aggs'
+
+
+*** sharding
+-répartir la charge sur plusieurs serveurs ce qui diminue le temps de réponse
+-shard = bloc de données
+-shard primary et shard replica
+cluster > noeud > shard > document
+-par défaut, 5 shards primaires et 1 réplica
+
+
+*** commandes cluster
+-curl localhost:9200/...
+-suffixe ?pretty
+
+_cluster/health : état de santé du cluster
+_cat/shards : état de tous les shards
+_nodes/process : avoir plus de détails sur les noeuds
+
+
+*** interface de visualisation Kibana
+-interface graphique permettant de visualiser, sous forme de diagramme et de graphique, des données présentes dans une base Elasticsearch 

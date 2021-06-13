@@ -1,0 +1,18 @@
+*** Qualités et comportement du testeur
+-rigoureux
+-pourquoi bug
+-titiller, chercher des cas particuliers
+-aller voir les dev pour leur remonter un problème ou avoir une précision sur l’implémentation
+-être au courant de ce qui se passe (MEP, livraison, bug, story)
+-trouver les bugs le plus tôt possible / processus de prévention des anomalies
+-Un testeur doit assurer une qualité minimale à l’application
+-l’esprit qualité doit être inculquer par le testeur
+-Il doit être capable de bien faire comprendre l’importance de la qualité des tests et de leurs plus-value.
+-capable de bien comprendre les situations, analyser le contexte (normes, délais, niveau de qualité requis…) afin de proposer pour chaque campagne la meilleure sélection de tests, la meilleure stratégie, la solution la plus efficiente en fonction des moyens dont il dispose
+
+
+*** Postes
+-Testeur manuel : son rôle est de valider les spécifications, contrôler le résultat attendu, écrire et exécuter la campagne de tests manuellement, et proposer des évolutions à la MOA
+-Automaticien de tests
+-Automaticien de tests sur mobiles
+-Référent Test ou Correspondant Test

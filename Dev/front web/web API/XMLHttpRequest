@@ -1,0 +1,43 @@
+= interagir avec des serveurs
+-AJAX
+-synchrone ou asynchrone
+
+XMLHttpRequest -> XMLHttpRequestEventTarget -> EventTarget
+
+
+*** méthodes
+
+XMLHttpRequest.open() : instancie une nouvelle requête ou réinitialise une déjà existante
+XMLHttpRequest.send(body) : envoie la requête au serveur. 'body' optionnel
+
+XMLHttpRequest.onload : gestionnaire d'event en cas de succès
+XMLHttpRequest.onreadystatechange : gestionnaire d'event en cas de changement d'état
+
+
+*** exemple GET
+
+let xhr = new XMLHttpRequest();
+xhr.open('GET', '/server', true);
+
+xhr.onload = function () {
+  // Requête finie, traitement ici.
+};
+
+xhr.send(null);
+
+
+*** exemple POST
+
+let xhr = new XMLHttpRequest();
+
+xhr.open("POST", "/server", true); // true pour asynchrone
+
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+xhr.onreadystatechange = function() { // Appelle une fonction au changement d'état
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        // Requête finie, traitement ici
+    }
+}
+
+xhr.send("foo=bar&lorem=ipsum");

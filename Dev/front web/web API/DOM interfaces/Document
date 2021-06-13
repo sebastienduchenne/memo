@@ -1,0 +1,17 @@
+-L'interface Document représente n'importe quelle page Web chargée dans le navigateur et sert de point d'entrée dans le contenu de la page Web
+
+Document -> Node
+
+
+*** Prpriétés
+
+Document.defaultView : window
+Document.cookie : liste des cookies
+
+
+*** méthodes
+
+Document.createElement(tagName) : créer un nouvel élément de type 'tagName'
+Document.querySelector(selector) : renvoit le 1er élément 'selector'
+Document.getElementById(id) : renvoie une référence à 'id'
+Document.getElementsByClassName(names) : renvoie un tableau de tous les éléments enfants qui ont tous les noms de classe 'names'

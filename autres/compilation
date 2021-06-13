@@ -1,0 +1,9 @@
+*** compilation JIT
+= compilation à la volée, traduction de bytecode en code machine natif au moment de l'exécution
+-si il existe une version compilée d'un bout de code, elle sera appelée
+-lorsque le code est exécuté plusieurs fois, le profileur repère les bouts qui sont souvent exécutés (chauds) et les donne au compilateur pour qu'il créée une version optimisée du code qui sera ensuite stockée. A la prochaine exécution du code, c'est le code optimisé qui sera appelé
+-l'optimiser fait des hypothèses optimistes sur comment le code sera exécuté. Parfois, l'hypothèse d'optimisation est fausse et l'optimiser fait une désoptimisation
+-dans la JVM, chaque méthode est listée et est associée à un compteur qui est décrémenté à chaque appel, lorsque le compteur atteint 0, une compilation JIT est déclenchée pour la méthode
+-il faut trouver un compromis entre l'optimisation et l'interprétation
+
+https://www.ibm.com/support/knowledgecenter/fr/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_overview.html

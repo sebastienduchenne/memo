@@ -1,0 +1,17 @@
+-mesure à quelle fréquence une application React réalise son rendu, ceci dans un objectif d'optimisation
+-nécessite un id et une fonction onRender dans ses props
+
+render(
+  <App>
+    <Profiler id="Panel" onRender={callback}>
+      <Panel {...props}>
+        <Profiler id="Content" onRender={callback}>
+          <Content {...props} />
+        </Profiler>
+        <Profiler id="PreviewPane" onRender={callback}>
+          <PreviewPane {...props} />
+        </Profiler>
+      </Panel>
+    </Profiler>
+  </App>
+);

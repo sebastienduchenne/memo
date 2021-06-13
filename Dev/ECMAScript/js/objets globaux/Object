@@ -1,0 +1,118 @@
+************ Méthodes du constructeur Object ************
+
+*** Object.assign() *** 
+
+-copie les valeurs de toutes propriétés propres énumérables depuis un ou plusieurs objets source dans un objet cible
+
+
+*** Object.create() *** 
+
+-crée un nouvel objet à partir d'un prototype d'objet et des propriétés
+
+let o = Object.create(proto);
+
+o -> proto
+
+
+*** Object.defineProperty() *** 
+
+-Ajoute à un objet la propriété nommée décrite par le descripteur donné
+
+
+*** Object.defineProperties() *** 
+
+-Ajoute à un objet les propriétés nommées décrites par les descripteurs donnés
+
+
+*** Object.entries() *** 
+
+-Retourne un tableau contenant les paires clé-valeur des propriétés énumérables propres (cad directement rattachées à l'objet) de l'objet donné et dont les clés sont des chaînes de caractères
+
+const object1 = {
+  a: 'somestring',
+  b: 42
+};
+
+for (let [key, value] of Object.entries(object1)) {
+  console.log(`${key}: ${value}`);
+}
+
+
+*** Object.freeze() *** 
+
+-Gèle un objet
+
+
+*** Object.fromEntries() *** 
+
+-Renvoie un nouvel objet à partir d'un itérable contenant des paires de clés-valeurs (l'opération duale de Object.entries)
+
+
+*** Object.getOwnPropertyDescriptor() *** 
+
+-Retourne un descripteur de propriété pour une propriété nommée d'un objet
+
+
+*** Object.getOwnPropertyDescriptors() *** 
+
+-Retourne un objet contenant tous les descripteurs des propriétés propres d'un objet
+
+
+*** Object.getOwnPropertyNames() *** 
+
+-Retourne un tableau contenant les noms de toutes les propriétés énumérables et non énumérables propres de l'objet donné
+
+
+*** Object.getOwnPropertySymbols() *** 
+
+-Retourne un tableau de toutes les propriétés symboles trouvées directement dans un objet donné
+
+
+*** Object.getPrototypeOf() *** 
+
+-Retourne le prototype de l'objet indiqué
+
+
+*** Object.is() *** 
+
+-Détermine si deux valeurs sont la même valeur. Considère comme égales toutes les valeurs NaN (ce qui diffère à la fois de la Comparaison d'Égalité Abstraite et de la Comparaison d'Égalité Stricte)
+
+
+*** Object.isExtensible() *** 
+
+-Détermine si l'extension d'un objet est permise
+
+
+*** Object.isFrozen() *** 
+
+-Détermine si un objet a été gelé
+
+
+*** Object.isSealed() *** 
+
+-Détermine si un objet est scellé
+
+
+*** Object.keys() *** 
+
+-Retourne un tableau contenant les noms de toutes les propriétés énumérables propres de l'objet donné
+
+
+*** Object.preventExtensions() *** 
+
+-Empêche toute extension de l'objet
+
+
+*** Object.seal() *** 
+
+-Empêche un autre code de détruire les propriétés d'un objet
+
+
+*** Object.setPrototypeOf() *** 
+
+-Définit le prototype d'un objet (c-à-d, la propriété interne [[Prototype]])
+
+
+*** Object.values() *** 
+
+-Retourne le tableau des valeurs énumérables propres de l'objet donné dont les clés sont des chaînes de caractères

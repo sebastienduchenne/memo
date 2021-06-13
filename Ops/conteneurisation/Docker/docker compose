@@ -1,0 +1,135 @@
+= exécuter des applications à conteneurs multiples
+-à partir d'un fichier docker-compose.yml
+-il faut réfléchir
+    -combien de conteneurs et leur rôle
+    -volumes
+    -type de réseaux
+-un conteneur est appelé service
+-les services démarrent dans l'ordre de dépendance
+-possibilité d'étendre un fichier compose
+
+
+*** exemples
+-application avec BD + log + app + serveur -> mettre chaque élément dans un conteneur différent
+-si plusieurs projets qui utilisent une BD : 
+    -mettre la BD dans chacun des conteneur
+    -ou BD dans un seul conteneur : rassemble les données et facilite la gestion
+
+
+*** étapes
+=> être dans le dossier docker
+0.liste des ps running
+1.créer et lancer un conteneur : dose xxx.yml up
+2.voir les logs : dose logs xxx
+3.aller dans le conteneur : dose exec xxx
+4.redémarrer le conteneur : dose restart xxx
+5.stopper stack : dose stop
+
+
+*** Commandes
+
+docker-compose up : démarre les services (ne rend pas la main par défaut)
+    -d : rend la main une fois que les services sont démarrés
+    -build : reconstruit les services avant de les lancer
+
+    -run simple : docker-compose -f docker-compose.yml up
+    -run avec override : docker-compose -f docker-compose.yml -f dc.override.yml up
+
+docker-compose start : démarre les conteneurs
+
+docker-compose ps : lister les conteneurs
+
+docker-compose down : stopper les services puis tous supprimer
+
+docker-compose restart : redémarre l’ensemble des services
+docker-compose restart nginx : redémarre un des services
+
+docker-compose exec : exécuter une commande dans un container
+docker-compose exec rails bash : fournit une console bash au sein du conteneur rails
+docker-compose exec rails bin/rails db:migrate : effectue un rails db:migrate au sein du conteneur rails
+
+docker-compose logs : ensemble des logs des services depuis le dernier démarrage et rend la main
+    -f : logs des services et continue de les « écouter » sans rendre la main
+    -f rails : logs pour le conteneur rails uniquement
+docker-compose logs --tail=0 -f projet
+
+docker-compose kill : stopper les conteneurs
+
+docker-compose rm : supprimer des conteneurs stoppés
+
+docker-compose images : lister les images
+
+
+---------------------------------------------
+
+docker-compose build
+docker-compose config
+docker-compose create
+docker-compose down
+docker-compose events
+docker-compose exec
+docker-compose help
+docker-compose kill
+docker-compose logs
+docker-compose pause
+docker-compose port
+docker-compose ps
+docker-compose pull
+docker-compose push
+docker-compose restart
+docker-compose rm
+docker-compose run
+docker-compose scale
+docker-compose start
+docker-compose stop
+docker-compose top
+docker-compose unpause
+docker-compose up
+
+
+*** Fichier docker-compose.yml
+
+version : version de docker
+
+services : liste des services
+  nom_service
+    image : nom de l'image de départ
+    environment : variables d'environnement à surcharger
+    volumes : volumes à créer
+    working_dir : dossier courant
+    command : commande à lancer au démarrage
+    links
+    ports
+      published
+      target
+    expose : port à exposer au réseau docker
+    env_file
+    depends_on : services dont il dépend
+    restart : defines the restart policy (no, unless-stopped)
+    networks
+    container_name
+    deploy:
+      replicas: 
+      resources:
+        limits:
+          memory:xM
+      restart_policy:
+        condition: on-failure
+    build : defines the configuration options
+      context : This defines the build context for the image build
+      target
+      dockerfile : path vers dockerfile
+      args
+        port
+
+networks:
+  app-network:
+    driver: 
+
+volumes:
+  nom:
+  node_modules:  
+
+
+*** inconvénients
+Soit 2 conteneurs A et B, si A s’arrête, il faudrait arrêter B puis relancer A et B

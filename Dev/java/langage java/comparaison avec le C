@@ -1,0 +1,39 @@
+************** En java **************
+
+-c++ retirés des pointeurs, de l'héritage multiple et de la surcharge des opérateurs
+-les instances d'une classe sont instanciées dynamiquement
+-garbage collector = gestionnaire de mémoire en détectant les objets à détruire
+
+1. compilation : .java (code source) => .class (bytecode) par le compilateur
+2. .class téléchargé
+3. exécution : .class interprété par la JVM (vérification, optimisation en JIT, traduction en binaire et lance l'exécution)
+
+=> compile once, run everywhere
+
+-compilation à la volée (compilation JIT) = traduction du bytecode natif en code machine natif au moment de l’exécution
+-hotspot = bloc répété plusieurs fois, la première fois il est compilé, lorsque le bloc est appelé une nouvelle fois, on utilise ce qui a déjà été compilé
+
+
+************** En C et C++ **************
+
+-le compilateur de C++ produit du code natif propre à l'evrt de travail où le code source est compilé = plusieurs compilation pour toute les architectures
+
+=> Java est moins efficace mais plus portable que le C++
+
+
+************** langage compilé **************
+-un compilateur analyse et traduit le code en langage binaire
+-av : une compilation pour plusieurs exécutions, exécution plus rapide
+-inc : recompiler si modif prog, plusieurs compilations pour plusieurs machines
+
+
+************** langage interprété **************
+-un interpréteur lit le code à chaque exécution du prog
+-av : exécutable sur n'importe quelle machine pourvut d'un interpréteur
+-inc : exécution plus lente qu'un binaire
+
+
+************** langage semi-compilé (java) **************
+-génération d'un code intermédiaire qui sera interprété
+-av : multiplateforme
+-inc : moins performant

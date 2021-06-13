@@ -1,0 +1,13 @@
+-scalability = capacité à s'adapter à un changement d'ordre de grandeur de la demande
+-cohérence des données (consistency) = capacité pour un système à refléter, sur la copie d'une donnée, les modifications intervenues sur d'autre copies de cette donnée
+-disponibilité des données
+-SimpleDB de Amazon
+
+
+*** Théorème de Brewer ou "théorème de CAP"
+-3 propriétés pour caractériser les bases de données
+    -Consistency (cohérence)
+    -Availability (disponibilité)
+    -Partition Tolerance (distribution)
+-théorème : dans toute base de données, on ne peut respecter au plus que 2 propriétés parmi la cohérence, la disponibilité et la distribution
+-le triangle de CAP : on peut placer une BD sur une face d'un triangle

@@ -1,0 +1,39 @@
+= fonctions qu'il est possible de quitter puis de reprendre
+-le contexte d'un générateur (les liaisons avec ses variables) est sauvegardé entre les reprises successives
+-à la fois un itérateur et un itérable
+-définir un generator avec 'function*'
+
+
+*** yield
+
+-suspendre puis retourner la valeur
+-retourne un objet IteratorResult avec 2 propriétés value et done
+-l'appel d'un next() reprend l'exécution à l'instruction qui suit celle où on  s'était arrêté
+
+
+*** next()
+
+= exécute le corps de la fonction jusqu'à yield et retourne un objet avec 2 propriétés :
+    -value : la valeur générée
+    -done : booléen indiquant si le générateur a produit sa dernière valeur ou non
+-lorsque l'exécution est terminée où qu'on a atteint un 'return', les autres appels à next() renverront '{value: undefined, done: true}'
+-si on lui envoit un argument, la valeur sera affectée comme résultat d'une expression yield (elle remplace l'expression s'il y en a une)
+
+
+*** close()
+-clôture le générateur
+-tout appel ultérieur à next() : '{value: undefined, done: true}'
+
+
+*** exemple
+
+function* generator(i) {
+  yield i;
+  yield i + 10;
+}
+
+const gen = generator(10); // renvoit un itérateur
+
+console.log(gen.next().value); // expected output: 10
+console.log(gen.next().value); // expected output: 20
+console.log(gen.next().value); // expected output: undefined

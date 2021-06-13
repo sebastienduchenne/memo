@@ -1,0 +1,91 @@
+-Concurrence
+-parallélisme
+-mémoire partagée
+-mémoire répartie
+-non-déterminisme
+-synchronisation
+-communication
+-section critique
+-exclusion mutuelle
+-algorithme de Dekker
+-algorithme de Peterson
+-sémaphore
+
+
+*** Pourquoi la concurrence
+
+-séquentialité = une instruction exécutée après l’autre. Le programme est déterministe
+-pallalélisme = plusieurs instructions s’exécutent en même temps dans des pcs différents. Cela introduit de la concurrence. Le programme devient non-déterministe, cad que, qu’il se termine ou pas, il produira des résultats différents
+-concurrence des pcs = exécution en parallèle de prog sur des machines
+-prog concurrente = paradigme tenant compte dans un prog de l’existence de plusieurs piles sémantiques
+-application parallèle = ensemble des processus interagissant sur une mémoire commune ou communiquant via un média
+
+=> or la concurrence peut poser des problèmes et des contraintes
+-zone critique : si pas d’exclusion alors possible résultat incohérent, donc pour avoir un résultat cohérent il faut accès à une ressource avec des contraintes à l’exécution des pcs tel que mutex, sémaphore
+-non déterminisme
+-débogage plus difficile
+-gestion mémoire
+-liveness = famine
+-livelock = cycle non productif / verrou actif
+deadlock = chacun attend l’autre
+-attente active = boucle sur un l’état d’un objet. MAUVAIS car consomme de la ressource CPU pour rien
+
+
+*** Modèles de parallélisme
+
+-système à mémoire partagée
+    = plusieurs processus séquentiels interagissant sur une mémoire commune
+    -communication implicite
+    -synchronisation explicite en utilisant l’exclusion mutuelle et l’attente sur condition
+    -utilisée quand on se sert de manière concurrente d’une ressource commune
+-système à mémoire répartie
+    = chaque pcs a sa mémoire privée.  Ils doivent communiquer pour tranférer de l’information à travers un média assurant ces transferts. Des programmes appelés protocoles se chargent de gérer le flux d’informations
+    -communication explicite
+    -synchronisation implicite
+    -protocoles qui permettent la synchronisation
+
+
+-synchronisation
+    -bloquer l’exécution de certains pcs à des points précis de leur flux d’exécution de manière que tout les pcs se rejoignent à des étapes relais données
+    = se synchroniser (ex : attendre une condition)
+-communication = envoi et réception d’informations entre pcs
+
+
+-Types de communication
+    -synchrone = transfert d’informations possible que lors d’une synchronisation globale des pcs. Un pcs envoie un message puis attend la réponse de l’autre pcs pour travailler ou envoyer un autre message. On dit que l’émission et la réception peuvent être bloquante
+    -asynchrone = pas de synchronisation des pcs. Le medium peut stocker des messages en vue de leur acheminement futur. L’émission est non bloquante
+    -évanescent = le message n’est reçu que par les pcs prêt à recevoir et perdu pour les autres car le medium ne le stocke pas
+
+
+*** Section critique et exclusion mutuelle
+
+-section critique = ressource qui ne doit être utilisée que par un pcs au plus
+-les pcs doivent s’exclure mutuellement de la section critique
+
+-Algorithmes d’exclusion mutuelle
+    -Dekker
+        -une variable globale que chaque pcs peut consulter et changer dans la section critique
+        -un pcs voulant entrer dans la SC met à 0 sa case, puis il regarde si l’autre est dans le même état
+        -si non, il entre dans la SC
+        -si oui, il consulte l’arbitre qui indique à qui est le tour, mais il ne peut être modifié que dans la SC par le pcs l’occupant en lui indiquant l’autre pcs
+    -Peterson
+        -une variable globale que chaque pcs peut consulter et changer dans la section critique
+        -pc1 veux entrer dans la SC met à 0 sa case
+        -pc1 donne la priorité à pc2. pc1 attend que pc2 signale son refus ou qu’il redonne à pc1 la priorité
+
+
+-Sémaphore
+    = variable qui sert à partager des ressources (protéger une section critique) et à la synchronisation de pcs. Elle ne prend qu’une valeur entière positive ou nulle
+    -initialisé au nombre de ressources
+    -Si il est positif, il représente le nombre de ressources libre. Si il est négatif, sa valeur absolue représente le nombre de pcs en attente
+    -2 opérations indivisibles peuvent être effectuées dessus
+        -P / tester / “Puis-je ?” : sem--, si sem > 0 alors pcs utilise une ressource, si <= 0 alors pcs attend jusqu’a ce qu’un ressource soit disponible
+        -V / incrémenter / “Vas-y” : sem++, réveiller aléatoirement un pcs qui attend
+    -utilisation : le pcs fait WAIT, utilise la ressource, puis SIGNAL
+    -usage : 
+        -diner des philosophes (interblocage, famine)
+        -exclusion mutuelle si init à 1 = sémaphore binaire
+        -producteur-consommateur
+    -limite : 
+        -interblocage
+        -inversion de priorité

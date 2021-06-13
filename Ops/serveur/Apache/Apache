@@ -1,0 +1,24 @@
+-serveur HTTP
+-Apache Software Foundation
+-Modèle Thread Driven
+    -un thread créé par requête, s'occupe du traitement de toute la page. Se bloque quand attend une I/O
+    -problème si bcp de connexions simultanées : blocage entre thread + bcp de piles d'exécution
+-écrit en C
+-fichiers de conf dans le répertoire /etc/apache2
+
+
+*** commandes
+
+sudo a2ensite <conf d'un site à activer>
+sudo a2dissite <conf d'un site à désactiver>
+
+sudo a2enconf <conf d'un service à activer>
+sudo a2disconf <conf d'un service à désactiver>
+
+sudo a2enmod <conf d'un module à activer>
+sudo a2dismod <conf d'un module à désactiver>
+
+
+*** lancer un vhost
+-charger une conf : sudo a2enconf confName
+-recharger apache : sudo systemctl reload apache2

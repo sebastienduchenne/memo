@@ -1,0 +1,7 @@
+-valeur : le contexte dans lequel le code courant est exécuté
+-dans le contexte global => objet global
+-dans la fonction d'un objet => l'objet
+-dans une fonction, hors objet, hors mode strict => objet global
+-dans une fonction, hors objet, mode strict, sans base => undefined
+-dans une fonction, hors objet, mode strict, avec base => objet global
+-dans une fonction flécheé => this utilisé dans le contexte englobant

@@ -1,0 +1,222 @@
+*********** images ***********
+
+-pull une image depuis le DHR
+    docker pull img_name
+    docker pull img_name:tag
+
+-push une image
+    docker push img_name
+
+-lister images (non intermédiaires)
+    docker images
+    docker image ls
+
+-Build an image from a Dockerfile
+    docker build <img_name> <path>
+
+-créer une img à partir de changement de c
+    docker commit c_name
+
+-supprimer des images
+    docker rmi d4f gz5
+    docker rmi -f d4f gz5 -> force
+
+-info sur l'image
+    docker inspect <name>
+
+*********** container ***********
+
+-créer un container (sans le run)
+    docker create img_name
+    docker container create img_name
+
+-exécuter le conteneur c_name (déja créé et à l'arrêt)
+    docker start c_name
+
+-create puis run un container (create puis start)
+    docker run [option] img_name
+        -t : TTY
+        -i : intéractif
+        -d : arrière plan
+        --name : nommer
+        --expose : exposer un port
+        -p : mapper un port, (redirection de port)
+        -v v_hote:/v_c: monter le volume v_hote, créé si inexistant
+        => surcharger le CMD : ajouter la commande à la fin
+
+-aller dans le conteneur c_name
+    docker exec c_name
+
+-list running container
+    docker ps
+    docker container ls
+
+-list all container
+    docker ps --all
+    docker container ls --all
+
+-voir les logs du conteneur c_name
+    docker logs c_name
+        -t : heure
+
+-kill running containers
+    docker container kill c_name
+
+-stop running containers
+    docker stop c_name
+
+-supprimer un container
+    docker rm c_name
+
+
+*********** volumes ***********
+
+-créer un volume
+    docker volume create <nom volume>
+
+-lister les volumes
+    docker volume ls
+
+-supprimer un ou plusieurs volumes
+    docker volume rm <nom volume>
+        -f : forcer la suppression
+
+-info sur une volume
+    docker volume inspect <nom volume>
+
+-supprimer tous les volumes locaux inutilisés
+    docker volume prune
+        -f : forcer la suppression
+
+-supprimer un conteneur et ses volumes
+    docker rm -v <id_c / id_nom>
+        -f : forcer la suppression
+        -v : supprime les volumes associés au conteneur
+
+
+*********** réseau ***********
+
+-créer un réseau docker
+    docker network create --driver <type_driver> <nom_réseau>
+
+-lister les réseaux
+    docker network ls
+
+-supprimer un ou plusieurs réseaux
+    docker network rm <nom_réseau>
+
+-info sur un réseau
+    docker network inspect <nom_réseau>
+        -v : mode verbose
+
+-supprimer tous les réseaux non inutilisés
+    docker network prune
+        -f : forcer la suppression
+
+-connecter un conteneur à un réseau
+    docker network connect <nom_réseau> <nom_c>
+
+-déconnecter un conteneur d'un réseau
+    docker network disconnect <nom_réseau> <nom_c>
+        -f : forcer la déconnexion
+
+-démarrer un conteneur et le connecter d'un réseau
+    docker run --network <nom_réseau> <nom_img>
+
+
+*********** autres ***********
+
+-activer le service docker
+    sudo systemctl start docker
+
+-lister les images dispo dans le Docker Hub registry
+    docker search <recherche>
+
+-aide d'une commande
+    docker <commande> --help
+
+-statistiques de consommation des conteneurs (avoir lancé l'image httpd)
+    docker stats : tous les conteneurs
+    docker stats <nom_c> : stat de nom_c
+        -f : formater le résultat de la commande
+
+-info détaillées
+    docker inspect <nom_c>
+        -f : formater le résultat de la commande
+
+-logs d'un conteneur
+    docker logs <nom_c>
+
+-logs de la construction d'une image
+    docker history <nom_img>
+
+-créer une image à partir d'un container
+    docker commit <nom_c> <nom_img>
+
+-créer un registry
+    -docker run -d -p 5000:5000 --restart=always --name mon-registry registry:2
+
+-------------------------------------------------------------------------
+
+*********** All commands ***********
+
+   Command	        Description
+
+docker attach	Attach local standard input, output, and error streams to a running container
+docker build	Build an image from a Dockerfile
+docker builder	Manage builds
+docker checkpoint	Manage checkpoints
+docker commit	Create a new image from a container’s changes
+docker config	Manage Docker configs
+docker container	Manage containers
+docker cp	    Copy files/folders between a container and the local filesystem
+docker create	Create a new container
+docker deploy	Deploy a new stack or update an existing stack
+docker diff	    Inspect changes to files or directories on a container’s filesystem
+docker engine	Manage the docker engine
+docker events	Get real time events from the server
+docker exec	    Run a command in a running container
+docker export	Export a container’s filesystem as a tar archive
+docker history	Show the history of an image
+docker image	Manage images
+docker images	List images
+docker import	Import the contents from a tarball to create a filesystem image
+docker info	    Display system-wide information
+docker inspect	Return low-level information on Docker objects
+docker kill	    Kill one or more running containers
+docker load	    Load an image from a tar archive or STDIN
+docker login	Log in to a Docker registry
+docker logout	Log out from a Docker registry
+docker logs	    Fetch the logs of a container
+docker manifest	Manage Docker image manifests and manifest lists
+docker network	Manage networks
+docker node	    Manage Swarm nodes
+docker pause	Pause all processes within one or more containers
+docker plugin	Manage plugins
+docker port	    List port mappings or a specific mapping for the container
+docker ps	    List containers
+docker pull	    Pull an image or a repository from a registry
+docker push	    Push an image or a repository to a registry
+docker rename	Rename a container
+docker restart	Restart one or more containers
+docker rm	    Remove one or more containers
+docker rmi	    Remove one or more images
+docker run	    Run a command in a new container
+docker save	    Save one or more images to a tar archive (streamed to STDOUT by default)
+docker search	Search the Docker Hub for images
+docker secret	Manage Docker secrets
+docker service	Manage services
+docker stack	Manage Docker stacks
+docker start	Start one or more stopped containers
+docker stats	Display a live stream of container(s) resource usage statistics
+docker stop	    Stop one or more running containers
+docker swarm	Manage Swarm
+docker system	Manage Docker
+docker tag	    Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+docker top	    Display the running processes of a container
+docker trust	Manage trust on Docker images
+docker unpause	Unpause all processes within one or more containers
+docker update	Update configuration of one or more containers
+docker version	Show the Docker version information
+docker volume	Manage volumes
+docker wait	    Block until one or more containers stop, then print their exit codes

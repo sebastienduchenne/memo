@@ -1,0 +1,79 @@
+*** serveur
+
+-lancer le serveur sur linux
+    sudo systemctl start mongod
+
+-vérifier que mongodb est bien lancé
+    sudo systemctl status mongod
+
+-relancer le serveur
+    sudo systemctl restart mongod
+
+-stopper le serveur
+    sudo systemctl stop mongod
+
+-se connecter au serveur
+    mongo
+
+
+*** BD
+
+-Afficher les BD avec du contenu
+    show dbs
+
+-Création d'une BD
+    use <db>
+
+-voir le nom de la BD courante
+    db
+
+-supprimer la BD
+    db.runCommand({dropDatabase: 1})
+
+
+*** collection
+
+=> on peut stocker des objets dans une variable
+
+-afficher les collections
+    show collections
+
+-afficher une collection
+    db.<collection>.find()
+
+-renommer une collection
+    db.oldname.renameCollection("newname")
+
+-supprimer une collection
+    db.<collection>.drop()
+
+-insérer des données dans la collection users
+    db.users.insert({nom:"Doe", prenom:"John", new Date('May 18, 1984')})
+
+-trouver des éléments
+    db.users.find({age:5}) : où l'age vaut 5
+    db.users.find({prenom: /^j*/}) : commence par 'j'
+    db.users.find({age:{$gt:40}}) : age < 40
+    db.users.findOne({age:{$gt:40}}) : get un seul élément
+    db.users.find({age:{$in:[5,10]}}) : age vaut 5 ou 10
+    db.users.find().limit(3) : limiter le nombre de résultat à 3
+    db.users.find().sort(age:-1) : ordonner par age décroissant
+    db.users.find({age:{$gt:40}},{"nom":true}) : get les noms de ceux ayant < 40 ans
+
+-compter le nombre de document dans une collection
+    db.users.count()
+
+-modifier tous les stephen par boby
+    db.users.update({prenom:"stephen"},{$set:{prenom:"boby"}},{multi:true})
+
+-ajouter la clé 'sexe' à tous les users
+    db.users.update({prenom:"boby"}, {$set:{sexe:"male"}}, {multi:true})
+
+-ajouter un user olivier s'il n'existe pas
+    db.patients.update({prenom:"olivier"}, {$set:{sexe:"male"}}, {upsert:true})
+
+-insert ou update si déjà existant
+    db.users.save({prenom:"jean claude", nom:"Van Damme"})
+
+-supprimer des documents
+    db.users.remove({prenom:"olivier"}) : ceux qui s'appelle olivier

@@ -1,0 +1,38 @@
+*** Property binding []
+-passer une information d’un composant parent à un composant enfant
+
+
+<img [alt]="bookName" [src]="bookPictureUrl">
+
+
+*** Event binding ()
+-écouter un évènement JavaScript ou passer une information d’un composant enfant à un composant parent (via un évènement)
+-évènements
+    -click
+    -change (<select>)
+
+
+// component
+myClickFunction(event) {
+    alert("Button is clicked");
+}
+
+// html
+<button (click) = "myClickFunction($event)">OK</button>
+
+
+*** Two ways binding [()]
+-synchronisation complète d’une information entre un composant parent et un composant enfant en utilisant les deux types de binding précédemment cités
+
+
+*** interpolation {{}}
+-afficher du texte dynamiquement dans le template d’un composant
+
+
+// component
+export class componentName {
+  product;
+}
+
+// html
+<span>{{ product }}</span>

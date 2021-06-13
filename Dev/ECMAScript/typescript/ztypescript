@@ -1,0 +1,34 @@
+-sur-ensemble de javascript version ES2015
+-vérifie que le programme ne comporte pas d'erreurs, c'est un Static Type Checker
+-compilateur 'tcs' qui fait de la transcompilation en JS
+-inférence de type : deviner le type à partir de la valeur
+
+
+*** compilation
+-avec tsconfig.json : tsc
+-paramètres par défauts : tsc name.ts
+-avec un autre fichier de conf : tsc --project tsconfig.prod.json
+
+
+*** fonctionnalité en plus de ES2015
+-type : enum, never, let, const, union, intersection, tuple, string, boolean, any, inférence, symbol, unknown
+-loop : for, for of, for in
+-fonction : void, never, paramètres optionnels ?, générique
+-classe, classe abstraite, classe générique, constructeur
+-membre de classe : readOnly, static, public, private, protected
+-template string `${xxx}`
+-module
+-alias
+-mixin
+-JSX
+-propriétés calculées
+-typage strict
+-interface et interface générique
+-décorateur
+-directive triple-slash
+-attraper les erreurs à la compilation
+-orienté objet
+-Static Type Checker
+-namespace
+-fournit des utility types
+-declaration merging

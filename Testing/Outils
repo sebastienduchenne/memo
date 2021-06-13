@@ -1,0 +1,22 @@
+*** outils de test
+-browserStack : plateforme qui met des OS et device à disposition
+-cypress
+-protractor
+-karma
+-jasmine
+-selenium
+-mocha
+-allure : faire des rapports de test 
+-protractorImageComparison (plus maintenu)
+-Jmeter
+-QC
+-Octane
+-X-Ray : plug-in Jira
+-Katalon
+-Espresso : test auto e2e pour appli mobile
+
+
+*** Selenium
+= outil pour automatiser des tests d’interfaces Web
+-Selenium IDE : extension permettant de créer des scénario
+-Selenium WebDriver : API permettant de programmer des actions sur les interfaces web

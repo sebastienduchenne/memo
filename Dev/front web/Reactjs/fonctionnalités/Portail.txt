@@ -1,0 +1,2 @@
+-afficher des composants enfants dans un nœud DOM qui existe en dehors de la hiérarchie DOM du composant parent
+-ReactDOM.createPortal(child, container)

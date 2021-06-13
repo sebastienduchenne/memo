@@ -1,0 +1,16 @@
+-instance
+
+
+
+*** envoyer des cookies
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED="0" // évite erreur UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+
+cookie = "NAME=x; expires=Session; path=/; domain='x'; secure=true; httpOnly=true; sameSite=None"
+
+let res = await axios.get(url, {
+    withCredentials: true,
+    headers: {
+        Cookie: cookie
+    }
+})

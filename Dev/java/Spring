@@ -1,0 +1,47 @@
+-framework pour simplifier la création d'applications Java
+-caractéristiques et fonctionnalités :
+    -injection de dépendances
+    -principes SOLID
+    -gestion des transactions avec Spring TX
+    -exécution de requêtes SQL avec Spring JDBC
+
+        => Spring est une boite à outils, on utilise ce qui nous intéresse
+
+-Spring boot 2 = framework qui permet d’auto-configurer une application et de créer un squelette prêt à l’emploi (starter)
+
+
+*** codes
+
+@CrossOrigin
+@RestController
+@RequestMapping(path = Paths.UI_DATA_API, produces = MediaType.APPLICATION_JSON_VALUE)
+public class DataController {
+
+    @Autowired
+    public BrowserStackController(){ }
+
+    @GetMapping(value = "/plan", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getPlan(){ }
+
+    @GetMapping(value = "/getTests/{build}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getTests(@PathVariable String build){
+        // build contient le paramètre
+    }
+
+}
+
+
+*** définitions
+
+-inversion de contrôle (IoC) = le framework prend en charge l'exécution principale du programme et non le programme lui-même
+    -injection de dépendance = on sépare les contrats des modules de leur implémentation, et on injecte les implémentations au démarrage de l'application. Les dépendances entre composants ne sont plus indiquées dans le code de manière statique, mais déterminées dynamiquement à l'exécution. C'est une implémentation de l'IoC
+    -design pattern de stratégie, tel que Factory
+
+-principes de conception SOLID
+    -Single responsibility principle : une seule responsabilité
+    -Open/closed principle : une entité doit être ouverte à l'extension, mais fermée à la modification
+    -Liskov substitution principle : on doit pouvoir remplacer une instance par un sous-type
+    -Interface segregation principle : plusieurs interfaces spécifiques pour chaque client plutôt qu'une seule interface générale
+    -Dependency inversion principle : dépendre des abstractions, pas des implémentations

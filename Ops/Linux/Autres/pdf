@@ -1,0 +1,14 @@
+======== convertir
+
+convert 1.png 2.png 3.png toto.pdf
+
+
+========  concaténer
+
+logiciel : pdftk
+
+plusieurs fichiers : 
+	pdftk 1.pdf 2.pdf 3.pdf cat output 123.pdf
+
+tous les fichiers PDF d'un dossier
+	pdftk *.pdf cat output tous.pdf

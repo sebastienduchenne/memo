@@ -1,0 +1,92 @@
+= fonctions permettant d'utiliser React sans avoir besoin d'écrire de classes
+-règles
+    -appeler les Hooks au niveau racine, donc pas dans des if / boucles ou fonctions, afin de garantir l'ordre d'appel
+    -appeler les Hooks depuis des fonctions React (composant ou hooks perso) et non depuis des fonctions JS classiques
+
+-avantage : 
+    -permet de découper les composants à base de classe complexes en pleins de petites fonctions composant, ce qui les rend plus facile à lire et donc à comprendre
+    -pas besoin de convertir une fonction composant en classe 
+
+
+-useState : ajouter un état local
+-useContext : récupérer la valeur actuelle du contexte passé en paramètre
+-useEffect : exécuter une fonction passée en paramètre après chaque affichage
+-useReducer: gérer des états complexes
+-useCallback : mémoïser une fonction
+-useMemo : mémoïser le retour d’une fonction
+-useRef : récupérer un objet modifiable
+-useImperativeHandle
+-useLayoutEffect
+-useDebugValue
+
+
+import React, { useState } from 'react'
+
+
+*** useState
+
+= ajouter un état local, ou plutot déclarer une variable d'état
+-const [state, setState] = useState(initialState)
+    state : état actuel
+    setState : fonction pour modifier le state
+    initialState : état initial
+-si plusieurs appels useState, React sait quel état correspond à quel appel à useState car il se repose sur l'ordre d'appel
+
+-exemple :
+    const [count, setCount] = useState(0);
+    return (
+        <div>
+            <p>Vous avez cliqué {count} fois</p>
+            <button onClick={() => setCount(count + 1)}>
+                Cliquez ici
+            </button>
+        </div>
+    );
+
+
+*** useContext
+
+= récupérer la valeur actuelle du contexte passé en paramètre
+-const value = useContext(MonContext)
+    value : valeur stockée dans le contexte
+    MonContext : objet Context qui contient la valeur actuelle
+
+-exemple :
+    const UserContext = createContext({ name: "Doe" }); : création d'un contexte
+
+    function App() {
+        const user = useContext(UserContext);   // récupération de la valeur du contexte
+        return <span>{user.name}</span>;
+    }
+
+
+*** useEffect
+
+= exécuter la fonction passée en paramètre après chaque affichage
+-useEffect(effectFunction, conditionalArray)
+    effectFunction : fonction d’effet exécutée
+    conditionalArray : tableau de propriétés conditionnant l’exécution de l’effet, optionnel
+
+-exemple :
+    useEffect(() => {
+        document.title = `Compteur : ${count}`;
+    });
+    return (...)
+
+
+*** useReducer
+
+= gérer des états complexes
+const [state, dispatchFunction] = useReducer(reducerFunction, initialArg, initFunction)
+    state : valeur actuelle retournée par useReducer
+    dispatchFunction : fonction qui va appeler reducerFunction()
+    reducerFunction : fonction qui va mettre à jour state
+    initialArg : argument qui sera passé à iniFunction(), optionnel
+    initFunction : fonction exécutée au montage du composant et initialise state, optionnel
+
+
+*** useRef
+= récupérer un objet modifiable
+const refContainer = useRef(initialValue)
+    refContainer : un objet avec une propriété "current"
+    initialValue : valeur initiale de la propriété "current", optionnel

@@ -1,0 +1,16 @@
+= module bundler = outil permettant de grouper les modules et leurs dépendances afin de générer des éléments statiques
+-on peut choisir entre performance et lazy loading
+-alternative à browserify
+-loader : css-loader et style-loader 
+-graph dependency
+-entry point
+-webpack.config.js = fichier de config de webpack
+-output
+-bundle
+-webpack-cli
+-optimiser le poids du code source augmentant les perf de l'appli
+-Live Reload
+-charger du code à la demande
+-hot loading
+-serveur de développement avec Hot Module Reload
+-output dans le dossier ./dist

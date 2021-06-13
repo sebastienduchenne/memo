@@ -1,0 +1,4 @@
+-cloner la VM : Vboxmanager clone "path"
+-resize la VM cloné : Vboxmanager modifyhd --resize "path"
+-dans virtualbox > stockage, changer la VM
+-installer le "extension pack" avec la même version que virtualbox (pour le copier coller)

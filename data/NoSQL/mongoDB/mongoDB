@@ -1,0 +1,27 @@
+= database basée document
+-document = ensemble de paires clé-valeur. Equivalent d'une entrée en SQL
+-collection = ensemble de documents BSON. Equivalent d'une table en SQL
+-database = ensemble de collections
+-asynchrone
+-assure la cohérence des données
+
+
+*** document
+= ensemble de paires clé-valeur. Equivalent d'une entrée en SQL
+-stocké dans un format binaire BSON
+    -BSON = Binary JSON
+    -info en plus : taille document, de type données
+    -support de données en plus du JSON : date UTC, raw binary, object ID
+
+                \x16\x00\x00\x00           // total document size
+                \x02                       // 0x02 = type String
+{"a": "toto"} → a\x00                      // field name
+                \x06\x00\x00\x00toto\x00   // field value
+                \x00                       // 0x00 = type EOO ('end of object')
+
+-tout document à un champ '_id' unique
+-lors d'une insertion, création automatique d'un ObjectId de 12 bytes : 
+    -timestamp (4)
+    -machine ID du serveur (3)
+    -ps ID qui a créé le document (2)
+    -increment (3) au cas où un autre doc à le même timestamp

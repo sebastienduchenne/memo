@@ -1,0 +1,29 @@
+*** Programmation déclarative
+-créer des applications sur la base de composants logiciels indépendants du contexte et ne comportant aucun état interne
+-l'appel d'un de ces composants avec les mêmes arguments produit exactement le même résultat, quel que soit le moment et le contexte de l'appel
+-on décrit le QUOI, c'est-à-dire le problème
+-pas d'effet de bord
+-plusieurs formes :
+    -la programmation descriptive (HTML)
+    -la programmation fonctionnelle (Lisp, Caml, Haskell)
+    -la programmation logique (Prolog)
+    -la programmation par contraintes
+
+
+*** Programmation impérative
+- décrit les opérations en séquences d'instructions exécutées par l'ordinateur pour modifier l'état du programme
+-on décrit le COMMENT, c'est-à-dire la structure de contrôle correspondant à la solution
+-plusieurs formes :
+    -Programmation structurée
+    -Programmation procédurale
+
+
+*** Programmation orientée objet
+-définition et assemblage de briques logicielles appelées objets
+-plusieurs formes :
+    -Programmation orientée prototype
+    -Programmation orientée classe
+    -Programmation orientée composant
+
+*** Programmation réactive
+-propager les modifications d'une source réactive (variable, entrée utilisateur...) aux éléments dépendants de cette source
