@@ -1,1 +1,12 @@
-- gérer les effets de bords
+-gérer les effets de bords, déclencher des effets
+-définir des sagas qui seront déclenchés sur des actions données et qui pourront effectuer des traitements
+-intégration au store avec un middleware
+-basé sur les générateurs
+
+
+*** générateur
+= fonction qui renvoit un itérateur
+-itérateur = objet sur lequel on peut :
+    -connaitre la valeur courante
+    -se déplacer à la valeur suivante
+    -savoir si on a atteint la fin de l'itérateur

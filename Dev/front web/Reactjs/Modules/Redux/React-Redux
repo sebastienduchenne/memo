@@ -2,13 +2,13 @@
 
 *** API
 -<Provider>             : composant qui a une référence au store et qui fournit des data aux composants qu'il contient
--connect(...)(comp)     : lier un composant à un store
+-connect(...)(comp)     : permet de mapper un state et un dispatch aux props d'un composant
     -mapStateToProps    : fonction qui mappe le state et les props d'un composant, appelée à chaque update du store, des données du state sont passées aux props d'un composant
     -mapDispatchToProps : parcours les actions à dispatcher
     -mergeProps
     -options
--useSelector            : hook
--useDispatch            : hook
+-useSelector()          : hook
+-useDispatch()          : hook
 -useStore()             : hook
 
 
@@ -22,9 +22,8 @@ events vue -> envoie actions -> interception par reducers -> update store -> upd
 
 
 *** 2 types de composant
--presentational component = n'utilise pas redux, n'interviennent pas avec le state
+-presentational component = n'utilise pas redux, n'intervient pas avec le state
 -containers ou "smart components" ou "stateful components" = components qui communiquent directement avec la partie Redux du code : connect(mapS, mapD)(comp), dispatch des actions, gestion de l'UI
-
 
 
 *** code
@@ -59,31 +58,23 @@ function reducer1 (state, action) {
     let nextState                           // nouveau state
     switch(action.type) {
         case 'ACTION_1':
-            // ...
-            nextState = {
-                ...state,
-                value: action.value
-            }
+            nextState = { ...state, value: action.value }
             return nextState
         default: 
             return state
     }
 }
 
-------------------- Reducers/index.js -------------------
-import { combineReducers } from 'redux'
+------------------- App.js -------------------
 
-// import des reducers
+const App = () => (
+  <div>
+    <Comp />
+    <Container1 />
+  </div>
+)
 
-const rootReducer = combineReducers({
-	todos,
-	visibilityFilter,
-})
-
-export default rootReducer
-
-
-------------------- Containers/Container1.js - connexion du store à un component -------------------
+------------------- Containers/Container1.js - connexion du state aux props d'un component -------------------
 
 import { connect } from 'react-redux'
 
@@ -91,13 +82,32 @@ const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators(TodoActions, dispatch) 
 })
 
-const mapStateToProps = (state) => ({     // pour que le composant soit informé du changement
-    return {
-        x : state.x
-    }
-})
+const mapStateToProps = (state) => (     // pour que le composant soit informé du changement
+    { x : state.x }
+)
 
 export default connect(
     mapStateToProps, 
     mapDispatchToProps
-)(Component1)               // liaison d'un reducer au component afin de update ses props
+)(Component1)               // connexion du state aux props d'un component
+
+------------------- Component/Component1 -  -------------------
+
+const TodoList = ({ todos, toggleTodo }) => (
+  <ul>
+    {todos.map(todo =>
+      <Todo
+        key={todo.id}
+        {...todo}
+        onClick={() => toggleTodo(todo.id)}
+      />
+    )}
+  </ul>
+)
+
+
+App
+    Comp
+    Container1 -------------------------- Component1
+                  connect(mapS, mapD)(Component1)
+===========================================================================

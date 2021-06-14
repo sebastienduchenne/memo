@@ -1,6 +1,6 @@
 = Framework/libraire JS qui centralise les states des composants
--basée sur Flux mais qui gère un state global et n'a pas de dispatcher
--conteneur à état prévisible
+-se décrit comme un conteneur d'état prévisible ou predictable state container
+-basé sur Flux mais qui gère un state global et n'a pas de dispatcher
 -indépendant de React
 
 -sans Redux :
@@ -23,6 +23,7 @@
     -architecture de 5 à 6 niveaux minimum dans l'arbre de composants
     -communication entre les composants
     -intention de monter en échelle
+    -on peut combiner Redux et state local selon l'utilisation d'une donnée
 
 
 *** 5 objets
