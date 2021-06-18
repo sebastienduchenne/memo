@@ -1,8 +1,9 @@
-`
--installer react-router : $ npm install react-router
+-react-router : core de react-router
+-react-router-dom : pour utiliser react-router dans un browser
+-react-router-native : pour utiliser react-router dans une app react-native
+
 
 *** API
-
 -Hooks
    useHistory     : accéder à l'historique
    useLocation    : retourne la location
@@ -25,60 +26,3 @@ location          : objet qui représente un "lieu"
 match             : objet qui contient des informations sur la correspondance entre une URL et une <Route path>
 matchPath
 withRouter        : HOC
-
-
------------------ main.js -----------------
-`
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
-
-class App extends React.Component {
-   render() {
-      return (
-         <div>
-            <ul>
-               <li>Home</li>
-               <li>About</li>
-            </ul>
-            {this.props.children}
-         </div>
-      )
-   }
-}
-export default App;
-
-class Home extends React.Component {
-   render() {
-      return (
-         <div>
-            <h1>Home</h1>
-         </div>
-      )
-   }
-}
-export default Home;
-
-class About extends React.Component {
-   render() {
-      return (
-         <div>
-            <h1>About...</h1>
-         </div>
-      )
-   }
-}
-export default About;
-
-
-
-ReactDOM.render((
-   <Router history = {browserHistory}>
-      <Route path = "/" component = {App}>
-         <IndexRoute component = {Home} />
-         <Route path = "home" component = {Home} />
-         <Route path = "about" component = {About} />
-      </Route>
-   </Router>
-), document.getElementById('app'))
