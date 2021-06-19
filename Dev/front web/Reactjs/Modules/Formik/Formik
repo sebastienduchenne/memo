@@ -1,0 +1,21 @@
+= créer des formulaires
+-utilisable en composant, hooks et HOC
+-Yup pour la validation des champs
+
+
+*** API
+
+-component
+  <Formik />          : construire des formulaires
+  <Form />            : équivalent du <form> HTML
+  <Field />           : équivalent du <input> HTML
+  <ErrorMessage />    : afficher un message d'erreur associé à un <Field />
+  <FastField />       : version optimisée de <Field />
+  <FieldArray />      : gérer des tableaux et listes
+-hooks
+  -useFormik()
+  -useField()
+  -useFormikContext() : retourne un state et helpers Formik via un Context
+-HOC
+  -withFormik(EnhancedForm)(Form)
+  -connect()

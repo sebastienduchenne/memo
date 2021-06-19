@@ -1,12 +1,14 @@
 -composant d’ordre supérieur (HOC, Higher order components)
 = fonction pure qui ajoute des fonctionnalités aux composants existants
--le HOC ne doit pas modifier le composant enrobé mais doit utiliser la composition, cad en enrobant lecomposant initial dans un composant conteneur
+-le HOC ne doit pas modifier le composant enrobé mais doit utiliser la composition, cad en enrobant le composant initial dans un composant conteneur
+-parfois retourné par des fonctions avec des ()() et dont le nom commence par 'with' (withFormik())
 
 
 *** conventions
 -transmetre les props annexes au composant enrobé
 -maximiser la composabilité
 -enrober le displayName pour faciliter le débogage
+
 
 *** limitations
 -pas de HOC à l’intérieur de la méthode de rendu

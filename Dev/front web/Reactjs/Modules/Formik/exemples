@@ -1,24 +1,3 @@
-=créer des formulaires
--utilisable en composant, hooks et HOC
--component
-    <ErrorMessage />
-    <FastField />
-    <Field />
-    <FieldArray />
-    <Form />
-    <Formik />
--hooks
-    -useFormik()
-    -useField()
-    -useFormikContext()
--HOC
-    -withFormik()
-    -connect()
--Yup pour la validation des champs
-
-
-*** exemple
-
 ------------------------- avec composant React
 
 import { Formik, Field, Form } from 'formik';

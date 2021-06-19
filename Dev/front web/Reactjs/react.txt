@@ -117,10 +117,16 @@ Prop de rendu : partager du code entre des composants React en utilisant une pro
 
 
 *** modules complémentaires
+
 -Redux = ajouter un state global
--Redux-Thunk
+-Redux-Thunk = asynchronisme
 -Redux-saga = gérer les effets de bords
 -formik = créer des formulaires
 -downshift
 -React Router = routage
 -Relay = building data-driven React applications
+-React-Motion = animation
+-React-Spring = animation
+-React-table = tableau
+-React-Toastify = notifications
+-React-Popper = tooltips et popovers
