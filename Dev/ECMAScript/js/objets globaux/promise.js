@@ -10,6 +10,7 @@
 -composition = chainage des promesses : suite de then, catch et finally. Cela est possible car ces méthodes renvoient un objet Promise
 -HOF (Higher Order Function)
 -si échec et mais pas de catch, alors la promise ne sera jamais résolue
+-résolue = tenue ou rompue
 
 
 *** constructeur
@@ -33,6 +34,7 @@
 -Promise.race(iterable) : Renvoie une promesse qui est tenue ou rompue dès que l'une des promesses de l'itérable est tenue ou rompue avec la valeur ou la raison correspondante
 -Promise.reject() : renvoie un objet Promise qui est rejeté
 -Promise.resolve() : renvoie un objet Promise qui est résolu avec la valeur donnée
+-Promise.any() : prend des promesses en paramètres et renvoit une promesse avec la valeur de la 1ère promesse tenue (réussie)
 
 
 *** Méthode promise.prototype
@@ -65,8 +67,9 @@ promise1.then(
 .then(/* */)
 
 
-/*** Promise​.all(iterable)
+`Promise​.all(iterable)`
 
+/*
 -renvoie une promesse tenue lorsque toutes les promesses de l'argument itérable sont tenues, ou une promesse rompue dès qu'une promesse de l'argument itérable est rompue avec la raison de la première promesse qui échoue au sein de l'itérable
 */
 
@@ -82,8 +85,9 @@ Promise.all([promise1, promise2, promise3]).then(function(values) {
 // expected output: Array [3, 42, "foo"]
 
 
-/*** Promise.allSettled(iterable)
+`Promise.allSettled(iterable)`
 
+/*
 -renvoie une promesse qui est résolue une fois que l'ensemble des promesses de l'itérable passée en argument sont acquittées (réussies ou rejetées). La valeur de résolution de cette promesse est un tableau d'objets dont chacun est le résultat de chaque promesse de l'itérable.
 */
 const promise1 = Promise.resolve(3);
@@ -98,8 +102,9 @@ Promise.allSettled(promises).
 // "rejected"
 
 
-/*** Promise.race(iterable)
+`Promise.race(iterable)`
 
+/*
 -renvoie une promesse qui est résolue ou rejetée dès qu'une des promesses de l'itérable passé en argument est résolue ou rejetée
 */
 const promise1 = new Promise(function(resolve, reject) {

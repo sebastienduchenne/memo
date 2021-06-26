@@ -4,7 +4,7 @@
     .nav : fetch(), querySelector(), addEventListener(), document, API DOM pour page web
     .node : require()
 -transcompilateur = permet de convertir une version de ES en une plus ancienne (ex : Babel.js)
--ECMA : organisation qui gère la standardisation dans le domaine informatique. Concrètement elle va imposer des standards pour des technologies, des formats de fichiers ou des langages de programmation
+-ECMA : organisation qui gère la standardisation dans le domaine informatique. Elle impose des standards pour des technologies, des formats de fichiers ou des langages de programmation
 -ECMAScript est géré par le comité appelé TC39
 
 
@@ -79,3 +79,10 @@ ES2020 :
     Nullish Coalescing Operator '??'
     String.prototype.matchAll()
     Ordre de parcours du for-in standardisé
+ES2021 :
+    Promise.any() : prend des promesses en paramètres et renvoit une promesse avec la valeur de la 1ère promesse tenue
+    String.prototype.replaceAll() : remplacer toutes les occurences d'une chaine
+    WeakRefs (weakness references ou référence faible) : référence faible vers un objet
+    FinalizationRegistry
+    Logical Assignment Operators (opérateurs d'affection logique) : combinaison de &&, ||, ?? avec '=' => &&=, ||=, ??=
+    Séparateurs numériques
