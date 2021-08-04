@@ -25,3 +25,20 @@ Angular app
         -B1
         -B2
         -B3
+
+
+
+*** notions
+
+-directives : attribut ajouté à la vue ; ngIf ..., <template>
+-binding : passage d'information ( (),[],[()],{} )
+-pipes : transformer des données, avec {{ xx | xx }}
+-service et observables
+-module : ensemble de composants angular
+-décorateur avec @Input, @Output, @ViewChild et @ViewChildren ...
+-CLI : interface en ligne de commande
+-event binding, $event
+-formulaire et FormControls, NgModel, Template-driven Forms
+-Injection de dépendances
+-composant, cycle de vie, lifecycle hook et View Encapsulation 
+-routage, outlet

@@ -1,4 +1,28 @@
+Attribute 
+Component
+ContentChild 
+ContentChildren 
+Directive
+Host 
+HostBinding 
+HostListener 
+Inject : variable
+Injectable
+Input
+NgModule : app.module.ts
+Optional 
+Output 
+Pipe
+Self 
+SkipSelf 
+ViewChild 
+ViewChildren
+
+
+
+
 *** Input
+
 = Recevoir des données du composant parent
 -@Input()
 
@@ -12,6 +36,7 @@ export class MeteoComponent {
 
 
 *** Output
+
 = Transmettre des données ou un évènement au composant parent
 -@Output()
 
@@ -33,4 +58,3 @@ export class MeteoComponent {
 
 // à la réception de l'évènement 'alerteCanicule', appel à boireBeaucoup() en lui envoyant la donnée de température
 <meteo (alerteCanicule)="boireBeaucoup($event)"></meteo>
-

@@ -1,7 +1,7 @@
 = Framework/libraire JS qui centralise les states des composants
 -se décrit comme un conteneur d'état prévisible ou predictable state container
 -basé sur Flux mais qui gère un state global et n'a pas de dispatcher
--indépendant de React
+-peut être utilisé sans React
 
 -sans Redux :
     -l'état de l'application est décentralisé à travers tous les components de l'application
@@ -49,13 +49,13 @@ events vue -> envoie actions -> interception par reducers -> update store -> upd
 
 
 *** API
--store                  : objet qui est un arbre de state
-    getState()
-    dispatch(action)    : fonction qui envoie une action à un reducer, appelée par un container
-    subscribe(listener) : s'inscrire au state du store
-    replaceReducer(nextReducer)
--createStore(reducer,)  : créer un store
--combineReducers(...)   : regrouper plusieurs reducers dans un reducer global
--bindActionCreators()   : lier le component React aux actions et à dispatch
--compose(...functions)
--applyMiddleware(...middleware) : ajouter un middleware au store
+-store                                  : objet qui est un arbre de state
+    store.getState()                    : récupérer le state tree de l'app
+    store.dispatch(action)              : fonction qui envoie une action à un reducer, appelée par un container
+    store.subscribe(listener)           : s'inscrire au state du store
+    store.replaceReducer(nextReducer)   : remplacer le reducer actuel par un autre
+-createStore(reducer,)                  : créer un store
+-combineReducers(...)                   : regrouper plusieurs reducers dans un reducer global
+-bindActionCreators()                   : lier le component React aux actions et à dispatch
+-compose(...functions)                  : composer des fonctions, de droite à gauche
+-applyMiddleware(...middleware)         : ajouter un middleware au store

@@ -1,0 +1,39 @@
+= rendre l'appli responsive
+
+
+*** avec hooks
+
+useMediaQuery
+-query : avec tiret ou camel case
+    -min-device-width: 1824px
+    -max-width: 1224px
+    -orientation: portrait
+    -min-resolution: 2dppx
+
+
+-exemple
+    import { useMediaQuery } from 'react-responsive'
+    
+    const App = () => {
+        const isDesktopOrLaptop = useMediaQuery({ query: '(min-device-width: 1224px)' })
+        const isTabletOrMobileDevice = useMediaQuery({ query: '(max-device-width: 1224px)' })
+
+        return (
+            <div>
+            <h1>Device Test!</h1>
+            {isDesktopOrLaptop && <>
+                <p>You are a desktop or laptop</p>
+            </>}
+            {isTabletOrMobileDevice && <p>You are a tablet or mobile phone</p>}
+            </div>
+        )
+    }
+
+
+*** avec component
+
+<MediaQuery>
+-attributs
+    minDeviceWidth={1224}
+    device={{ deviceWidth: 1600 }}
+    minResolution='2dppx'

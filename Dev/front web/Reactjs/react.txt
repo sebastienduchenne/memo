@@ -130,3 +130,4 @@ Prop de rendu : partager du code entre des composants React en utilisant une pro
 -React-table = tableau
 -React-Toastify = notifications
 -React-Popper = tooltips et popovers
+-React-responsive = rendre l'appli responsive

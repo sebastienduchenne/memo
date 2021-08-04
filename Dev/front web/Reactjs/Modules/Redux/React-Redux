@@ -2,7 +2,7 @@
 
 *** API
 -<Provider>             : composant qui a une référence au store et qui fournit des data aux composants qu'il contient
--connect(...)(comp)     : permet de mapper un state et un dispatch aux props d'un composant
+-connect(...)(comp)     : retourne un wrapper component auquel ont été mappé (injecté) un state et un dispatch aux props
     -mapStateToProps    : fonction qui mappe le state et les props d'un composant, appelée à chaque update du store, des données du state sont passées aux props d'un composant
     -mapDispatchToProps : parcours les actions à dispatcher
     -mergeProps

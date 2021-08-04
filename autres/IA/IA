@@ -43,3 +43,51 @@
 -chaine de markov = processus de Markov à temps discret
 -processus stochastique ou processus aléatoire = représente une évolution, discrète ou à temps continu, d'une variable aléatoire
 -propriété de Markov = un processus stochastique vérifie la propriété de Markov si la probabilité des états futurs ne dépend que de l'état présent et non pas des états passés (absence de "mémoire")
+
+---------------------------------------------------------------------------
+
+CNN convolutional neural network / réseau de neurones convolutifs 
+    = type de réseau de neurones artificiels acycliques, dans lequel le motif de connexion entre les neurones est inspiré par le cortex visuel des animaux
+    -très utilisé dans la reconnaissance d'images
+    -empilage multicouche de perceptrons, dont le but est de prétraiter de petites quantités d'informations
+    -2 types de neurones
+        -les neurones de traitement, qui traitent une portion limitée de l'image au travers d'une fonction de convolution
+        -les neurones de mise en commun des sorties dits de pooling
+    -les données d'entrée passent à travers plusieurs couches de calcul avant de produire une sortie. Les résultats d'une couche servent d'entrée au calcul de la couche suivante
+    -les 1ères couches permettent d'extraire les caractéristiques simples (contours), que les couches suivantes combineront pour former des concepts de plus en plus complexe et abstrait (contour < motif < parti d'objet < objet)
+
+
+segmentation = diviser les images grâce à un premier réseaux de neurones (le segmenteur) puis classer chaque petite images (tâche de classification "classique")
+
+
+Tensorflow = plate-forme Open Source de bout en bout dédiée au machine learning.
+
+
+Yolo (You only look once) = outils de détection d'objet temps réel
+
+
+Keras = bibliothèque permettant d'interagir avec les algorithmes de réseaux de neurones profonds et d'apprentissage automatique
+
+
+NLP (traitement du langage naturel) = domaine multidisciplinaire impliquant la linguistique, l'informatique et l'IA, qui vise à créer des outils de traitement de la langue naturelle pour diverses applications
+
+
+Machine learning / apprentissage automatique
+    -approches mathématiques et statistiques pour donner aux ordinateurs la capacité d'« apprendre » à partir de données : rechercher des corrélations entre des variables spécifiques
+    -volume de données : faible, plafonnent souvent après le traitement d'une certaine quantité d'informations
+    -résultat : numérique
+
+
+Deep learning
+    -adopte une approche de réseau neuronal pour rechercher des modèles et des corrélations 
+    -volume de données : se chiffre en millions, s'améliorer de façon exponentielle lorsqu'on leur donne plus de données pour "s'entraîner" puis à analyser
+    -résultat : peuvent être n'importe quoi : du texte, du son, une image ...
+
+
+GPU
+    processeur composé de nombreux cœurs plus petits et plus spécialisés
+    -conçu pour le calcul parallèle
+    -utilisé pour le rendu graphique, l'IA
+
+
+computer vision ou vision par ordinateur = techniques d'IA permettant d'analyser des images ou de vidéos

@@ -2,10 +2,27 @@ public/
     -index.html
     -favicon.ico
     -manifest.json
+scripts/
 src/
-    -index.js
-    -index.css
-    -app.js
-    -app.test.js
-    -app.css
-    -serviceWorker.js
+    actions/
+    assets/
+    components/
+    containers/
+    context/
+    hocs/
+    hooks/
+    interfaces/
+    models/
+    polyfills/
+    reducers/
+    selectors/
+    services/
+    types/
+    utils/
+    wording/
+    App.js
+    App.test.js
+    App.css
+    index.js
+    index.css
+    serviceWorker.js
