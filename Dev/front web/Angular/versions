@@ -39,3 +39,24 @@ Angular 10
     -Le type de Urlmatcher peut toujours retourner null
     -ajout d’informations sur les dépendances et les sélecteurs ng-content aux métadonnées
     -un opérateur logique pourra être ajouté à la migration des classes non décorées
+
+Angular 11
+    -Prise en charge de TypeScript 4.0
+    -affichage d'erreurs de codage
+    -amélioration d'i18n
+    -Router
+    -Service Workers
+    -Trusted Types
+    -Automatic font inlining
+    -Experimental webpack 5 Support
+    -waitForAsync
+    -suppression de ViewEncapsulation
+    -changement de pipes
+    -changement de forms
+
+Angular 12
+    -Mise à jour de l’API Sass
+    -opérateur de coallescence des nuls
+    -nouveau format canonique pour les ID de messages
+    -Améliorations du compilateur
+    -Mise à jour de l’API Sass

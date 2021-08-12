@@ -1,0 +1,187 @@
+-Cascading Style Sheet
+-préprocesseurs CSS = outil permettant de générer dynamiquement des fichiers CSS
+    -Sass
+    -LESS
+    -PostCSS
+    -Stylus
+
+
+***
+-position
+-display
+    -inline-block
+    -inline
+    -flex
+-float
+-var()
+
+
+----------------------------------------------------------------
+
+pseudo-classe : ":", div:hover
+pseudo-élément : "::", p::first-line
+Règles @ : "@", @import
+Sélecteur
+    Sélecteurs de classe : "." .li.classe
+    Sélecteurs d'attribut : "[]", a[title]
+    Sélecteurs enfant : ">", ul.mon-truc>li
+    Sélecteurs descendant : " ", ul.mon-truc li
+    Sélecteurs de voisins généraux : "~", img ~ p
+    Sélecteurs d'ID : "#", #identifiant
+    Liste de sélecteurs : ",", span,div
+    Sélecteurs de type : a
+    Sélecteurs universels : "*", élément de n'importe quel type.
+Module : regroupe des propriétés
+propriété : { propriété : valeur; }
+Types CSS : les différents types de données CSS
+--------------------------------
+
+width: calc(100% - 50px);
+--------------------------------
+flex = l'élément va à modifier ses dimensions afin de remplir l'espace disponible de son conteneur
+
+#flex-container {
+	display: flex;
+	flex-direction: row;
+}
+
+#flex-container > .flex-item {
+	flex: auto;
+}
+
+#flex-container > .raw-item {
+	width: 5rem;
+}
+
+
+---------------------------------
+
+position
+    absolute : positionnement est relatif à l'élément parent positionné le plus proche
+    relative : comme static auquel on peut ajouter top, right, bottom et left
+    fixed : positionné par rapport a la fenêtre du navigateur
+    flex
+    static : positionné d'aucune manière spéciale
+    sticky
+
+display
+    inline
+    none
+    inline-block
+    block
+
+---------------------------------
+
+        pseudo-classe
+
+input[type="text"]:disabled {
+  background: #ccc;
+}
+
+div:hover {
+  background-color: #F89B4D;
+}
+
+= mot-clé qui peut être ajouté à un sélecteur afin d'indiquer l'état spécifique dans lequel l'élément doit être pour être ciblé par la déclaration
+
+active
+enabled
+focus
+visited
+checked
+disabled
+hover : survole avec le pointeur
+
+---------------------------------
+
+        pseudo-élément
+
+= mot-clé ajouté à un sélecteur qui permet de mettre en forme certaines parties de l'élément ciblé par la règle
+
+p::first-line {
+  color: blue;
+  text-transform: uppercase;
+}
+
+
+::after (:after)
+::backdrop
+::before (:before)
+::cue-region
+::cue
+::first-letter (:first-letter)
+::first-line (:first-line)
+::grammar-error
+::marker
+::part()
+::placeholder
+::selection
+::slotted()
+::spelling-error
+::target-text
+
+---------------------------------
+
+        Sélecteurs de classe
+
+= permet de cibler des éléments d'un document en fonction du contenu de l'attribut class de chaque élément
+
+
+/* Cible tous les éléments ayant la classe "spacious" */
+.spacious {
+  margin: 2em;
+}
+
+/* Cible tous les éléments <li> ayant la classe "spacious" */
+li.spacious {
+  margin: 2em;
+}
+
+/* Cible tous les éléments <li> ayant une classe qui */
+/* contient à la fois "spacious" et "elegant"        */
+li.spacious.elegant {
+  margin: 2em;
+}
+
+
+
+.classA.classB refers to an element that has both classes A and B (class="classA classB")
+<p class="classA classB">asdf</p>
+
+.classA .classB refers to an element with class="classB" descended from an element with class="classA"
+
+<div class="classA">
+  <p class="classB">asdf</p>
+</div>
+
+-----------------------------------------------------------
+
+        Règles @
+
+
+= expression CSS commençant par le symbole '@', suivi d'un identifiant et qui contient tout ce qui se trouve jusqu'au prochain point-virgule, ';', ou jusqu'au prochain bloc CSS trouvé en premier
+
+@charset : jeu de caractères utilisé par la feuille de style.
+@color-profile (en-US)
+@counter-style
+@document
+@font-face
+@font-feature-values
+@import : inclure une feuille de style externe.
+@keyframes
+@media : applique son contenu si l'appareil utilisé respecte les critères définis dans la « requête média » 
+@namespace
+@page
+@property
+@supports
+@viewport
+
+
+*** Sass
+-extension .scss
+-variable qui commence par '$'
+-sélecteur '&'
+-directive @extend
+-%placeholder
+-mixin
+-interpolation de variables

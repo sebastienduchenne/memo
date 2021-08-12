@@ -6,12 +6,17 @@
 -node_modules/
 -src/
     -app/
+        components/
+            comp/
+                comp.component.html, scss, ts, spec.ts
+        services/
+            api.service.ts
         -app.component.css
         -app.component.html
         -app.component.spec.ts : TU pour le component
         -app.component.ts
         -app.module.ts : composants, directives, pipes et services en lien avec l'appli
-        -app-routing.module.ts : routes
+        -app-routing.module.ts : routes pour le routage
     -assets/ : images, scripts
     -environments/
         -environment.prod.ts

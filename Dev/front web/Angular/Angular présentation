@@ -42,3 +42,4 @@ Angular app
 -Injection de dépendances
 -composant, cycle de vie, lifecycle hook et View Encapsulation 
 -routage, outlet
+-template reference variable : référence #xxx dans un composant
