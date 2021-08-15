@@ -1,0 +1,104 @@
+
+================   Envoyer des données à un enfant   ===================
+
+---------------- child ------------------
+
+<p>
+  Message : {{msg}}
+</p>
+
+import { Component, Input } from '@angular/core';
+
+export class MessageComponent {
+  @Input() msg = '';
+}
+
+---------------- parent ------------------
+
+<app-message [msg]="message"></app-message>
+
+export class AppComponent {
+  message = 'Hello world';
+}
+
+================   Envoyer des données à un parent   ===================
+
+---------------- child ------------------
+
+<button (click)="sendMessage("Hello world")">Send message</button>
+
+***
+
+import { Output, EventEmitter } from '@angular/core';
+
+export class ItemOutputComponent {
+
+  @Output() newMessageEvent = new EventEmitter<string>();
+
+  sendMessage(value: string) {
+    this.newMessageEvent.emit(value);
+  }
+}
+
+
+---------------- parent ------------------
+
+<app-item-output (newMessageEvent)="getMessage($event)"></app-item-output>
+
+***
+
+export class AppComponent {
+  message : string
+
+  getMessage(msg: string) {
+    this.message = msg
+  }
+}
+
+
+================   Envoyer des données entre composants non liés    ===================
+
+---------------- service ------------------
+
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+ 
+@Injectable({
+    providedIn: 'root'
+})
+export class AppService {
+
+    counter = 1;
+    count : BehaviorSubject<number>;
+
+    constructor() {
+        // on store "counter"
+        this.count = new BehaviorSubject(this.counter);
+    }
+    
+    // méthode qui permet de modifier la donnée et donc sera transmise au observateur
+    nextCount() {
+        this.count.next(++this.counter);
+    }
+}
+
+
+---------------- composant ------------------
+
+export class Component1 implements OnInit {
+ 
+    count : number;
+
+    constructor(private appservice: AppService) { }
+
+    ngOnInit() {
+        // on s'inscrit au service
+        this.appservice.count.subscribe(c => {
+            this.count = c;
+        });
+    }
+
+    nextCount() {
+        this.appsevice.nextCount();
+    }
+}

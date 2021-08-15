@@ -1,0 +1,41 @@
+= directive permettant d'accéder à un composant enfant / à une directive / à un élément DOM, afin d'accéder à ses données, de le modifier ou d'appeler ses méthodes
+-renvoie le 1er élément qui correspond à un sélecteur de référence de directive, de composant ou de modèle donné
+
+
+
+--------    Utilisation de ViewChild avec les éléments DOM
+
+--------   child   ------------------
+
+
+export class ChildComponent {
+
+    message() {
+        alert("Hello world)
+    }
+}
+
+
+--------   parent   ------------------
+
+<input #refInput>
+<button (click)="callChildren()">xxx</button>
+<app-child #refApp></app-child>
+
+
+import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+
+export class AppComponent implements AfterViewInit {
+
+    @ViewChild("refInput", {static: true}) someInput: ElementRef;
+    @ViewChild(ChildComponent, {static: true}) child: ChildComponent;
+
+    ngAfterViewInit() {
+        this.someInput.nativeElement.value = 'Whale!';
+    }
+
+    callChildren(){
+        this.child.message()
+    }
+}
+
