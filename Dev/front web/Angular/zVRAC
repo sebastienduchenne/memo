@@ -4,7 +4,6 @@
 -Bazel : build Angular apps (pas considéré comme stable)
 -ng-conf et Angular Connect = conférences
 -utilise webpack : outil pour construire les bundles JS
--Rx-Scavenger = garbage collector de subscription RxJS pour Angular
 
 
 *** couches
@@ -25,6 +24,11 @@ npm install ng2-charts
 npm install chart.js
 npm install bootstrap
 
+
+*** modules supplémentaires
+-Rx-Scavenger = garbage collector de subscription RxJS pour Angular
+-RxJS
+
 -------------------------------------------------------------
 
 règle : le modèle ne doit pas avoir connaissance de la vue, cad il ne faut jamais manipuler directement le DOM ( = l'abstraction)
@@ -37,14 +41,4 @@ règle : le modèle ne doit pas avoir connaissance de la vue, cad il ne faut jam
 -Element reference
 
 -------------------------------------------------------------
-
-lifecycle hooks
-ngOnChanges() : quand un input est défini ou modifié
-ngOnInit() : après le 1er ngOnChanges seulement
-ngDoCheck() : après chaque détection de changement
-ngAfterContentInit() : après que le contenu externe soit projeté dans le composant
-ngAfterContentChecked() : après vérification du contenu externe projeté dans le composant
-ngAfterViewInit() : une fois les vues initialisés
-ngAfterViewChecked() : après chaque vérification des vues du comp et des enfants
-ngonDestroy() : juste avant destruction 
 

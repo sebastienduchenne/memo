@@ -1,0 +1,12 @@
+-lifecycle hooks = ensemble de méthodes appelées à un moment précis du cycle de vie d'un composant
+-disponibles pour les directives et les composants
+
+-dans l'ordre : 
+    ngOnChanges() : quand un input est défini ou modifié
+    ngOnInit() : après le 1er ngOnChanges seulement
+    ngDoCheck() : après chaque détection de changement
+    ngAfterContentInit() : après que le contenu externe soit projeté dans le composant
+    ngAfterContentChecked() : après vérification du contenu externe projeté dans le composant
+    ngAfterViewInit() : une fois les vues initialisés
+    ngAfterViewChecked() : après chaque vérification des vues du comp et des enfants
+    ngOnDestroy() : juste avant destruction 
