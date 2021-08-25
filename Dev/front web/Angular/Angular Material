@@ -1,0 +1,60 @@
+-module pour faire une interface utilisateur responsive
+-basé sur Material Design
+
+-components : UI components
+    Autocomplete : écrire du texte au dessus d'une liste
+    Badge : descripteur
+    Bottom Sheet : créer un panel apparaissant en bas de l'écran, surtout utilisé pour les smartphones
+    Button : ajouter du style à des <button> ou des <a>
+    Button toggle : comme des boutons radio
+    Card : un conteneur
+    Checkbox : ajouter du style au checkbox
+    Chips : list d'élément
+    Core : fournit des composants et des services
+    Datepicker : afficher un calendrier pour choisir une date
+    Dialog : afficher une boite de dialogue
+    Divider : afficher une barre de séparation
+    Expansion Panel : section expansible
+    Form field : composant qui enveloppe d'autres composants
+    Grid list : disposer des cellules en 2D
+    Icon : fournit des icones vectoriels
+    Input : directive qui permet aux éléments <input> et <textarea> de travailler avec <mat-form-field>
+    List : conteneur d'une liste
+    Menu : panel flottant contenant une liste d'options
+    Paginator : permet de naviguer entre des pages, notamment utilisé avec des tableaux
+    Progress bar : barre de progression
+    Progress spinner : loader
+    Radio button : augmenter le style aux boutons radio
+    Ripples : ajouter des ondulations à un élément pour montrer qu'on a intéragit avec
+    Select : ajouter un champs de sélection
+    Sidenav : permettre de collapser du contenu sur le coté
+    Slide toggle : toggle
+    Slider : sélectionner une valeur sur un range
+    Snackbar : notification à l'écran
+    Sort header : tableau qui tri les entrées
+    Stepper : étapes
+    Table
+    Tabs : onglets
+    Toolbar
+    Tooltip : texte qui s'affiche à coté d'un élément quand on intéragit avec
+    Tree : affiche un contenu arborescent
+
+-CDK : Component Dev Kit
+    Accessibility : accessiblité
+    Accordion : section expansible
+    Bidirectionality
+    Clipboard : presse-papier
+    Coercion
+    Collections : gérer des collections
+    Drag and Drop
+    Layout : gérer les changements de taille d'écran
+    Observers
+    Overlay : créer des panels flottants
+    Platform : avoir des info sur la plateforme courante
+    Portal
+    Scrolling : réagir à des évènements de scroll
+    Stepper : créer un contenu composé d'étapes
+    Table : créer un data-table
+    Component Harnesses : tester des composants Angular
+    Text field : travailler avec des <input> et <textarea>
+    Tree : gérer du contenu arborescent
