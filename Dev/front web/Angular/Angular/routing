@@ -18,15 +18,56 @@
 = résoudre les données selon les besoins d'un composant / d'une page / d'un écran donné
 
 
+*** méthodes
+   this.router.navigate(['/xxx'])
 
-// app.module.ts
-import { AppRoutingModule , RoutingComponent} from './app-routing.module'; 
 
-declarations[...,RoutingComponent]
+----   exemple   --------------------------------------------------------------------------
 
-// html
-<nav> 
-   <a routerLink = "/home">Home</a> 
-   <a routerLink = "/contactus">Contact Us </a> 
-</nav> 
-<router-outlet></router-outlet>
+*** app.module.ts
+
+   import { AppRoutingModule , RoutingComponent} from './app-routing.module'; 
+
+   declarations[...,RoutingComponent]
+
+
+*** app-routing.module.ts
+
+   const routes: Routes = [
+      { path: 'product-details/:id', component: ProductDetails }
+   ];
+
+   @NgModule({
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+   })
+   export class AppRoutingModule { }
+
+
+*** HTML
+
+   <button [routerLink]="['/product-details', 1]">xxx</button>
+   <router-outlet></router-outlet>
+
+
+*** component
+
+   import { ActivatedRoute } from '@angular/router';
+
+
+   export class LoanDetailsPage implements OnInit, OnDestroy {
+      id: number;
+      private sub: any;
+
+      constructor(private route: ActivatedRoute) {}
+
+      ngOnInit() {
+         this.sub = this.route.params.subscribe(params => {
+               this.id = +params['id']; // (+) converts string 'id' to a number
+         });
+      }
+
+      ngOnDestroy() {
+         this.sub.unsubscribe();
+      }
+   }

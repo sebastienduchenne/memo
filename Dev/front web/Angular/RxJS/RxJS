@@ -1,8 +1,7 @@
 -RxJS = Reactive extensions for JavaScript
--fournie avec Angular
 -librairie pour faire de la programmation réactive à base d'observables
 -programmation réactive = paradigme de programmation consistant à propager les modifications d'une source réactive (variable, entrée utilisateur...) aux éléments dépendants de cette source
--on définit des observables et des observateurs. Les observables vont émettre des évènements qui seront interceptés par les observateurs
+-on définit des observables et des observateurs qui y souscrivent. Les observables vont émettre des évènements qui seront interceptés par les observateurs
 -Angular fournit généralement des "wrappers" à base d'Observables pour la plupart des sources de données asynchrones
 
 

@@ -1,0 +1,29 @@
+-relier la valeur d'un élément de formulaire à une propriété d'un composant
+
+[ngModel]="overRideRate" : property binding, permet de mettre à jour overRideRate dans le HTML
+(ngModelChange)="overRideRate = $event" : event binding, permet de mettre à jour overRideRate dans le TS
+
+[(ngModel)]="overRideRate" est le sucre de : 
+[ngModel]="overRideRate"
+(ngModelChange)="overRideRate = $event"
+
+-création d'un FormControl, attache une directive ngForm à une balise <form>
+
+
+*** exemple
+
+// HTML
+
+    <label for="modele">Modèle</label>
+    <input [(ngModel)]="SelectedModel" />
+
+
+// component.ts
+
+    export class DefineScenarioComponent {
+
+        constructor() {}
+
+        public SelectedModel : string;
+
+    }

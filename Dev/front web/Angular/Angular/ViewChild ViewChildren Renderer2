@@ -1,0 +1,84 @@
+ViewChild 
+    = directive permettant d'accéder à un composant enfant / à une directive / à un élément DOM, afin d'accéder à ses données, de le modifier ou d'appeler ses méthodes
+    -renvoie le 1er élément qui correspond à un sélecteur de référence de directive, de composant ou de modèle donné
+
+ViewChildren
+    = récupérer plusieurs références
+
+Renderer2 = outil pour manipuler le DOM
+
+ElementRef = emballage d'un élément natif dans la vue
+
+
+--------   ViewChild
+
+// child
+
+    export class ChildComponent {
+        message() {
+            alert("Hello world);
+        }
+    }
+
+
+// html parent
+
+    <input #refInput>
+    <button (click)="callChildren()">Call</button>
+    <app-child #refApp></app-child>
+
+
+// composant parent
+
+    import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+
+    export class AppComponent implements AfterViewInit {
+
+        @ViewChild("refInput", {static: true}) someInput: ElementRef;
+        @ViewChild(ChildComponent, {static: true}) child: ChildComponent; // app-child
+
+        constructor( ) {}
+
+        ngAfterViewInit() {
+            this.someInput.nativeElement.value = 'Hello!';
+        }
+
+        callChildren(){
+            this.child.message()
+        }
+    }
+
+
+------------------   ViewChildren et Renderer2   ------------------
+
+
+// app.component.html
+
+    <h2 (click)="toggle($event)">item 1</h2>
+    <div #accordeon class="hidden">
+        <p>TEST</p>
+    </div>
+
+
+// composant
+
+    import { Component, Renderer2, ViewChildren, QueryList, ElementRef } from '@angular/core';
+
+    @Component({
+        selector: 'my-app',
+        templateUrl: './app.component.html',
+        styleUrls: [ './app.component.css' ]
+    })
+    export class AppComponent {
+        @ViewChildren('accordeon') accordeons: QueryList<ElementRef<HTMLElement>>;
+
+        constructor(
+            private _renderer: Renderer2
+        ) {}
+
+        toggle($event) {
+            this.accordeons.forEach((acc) => {
+                this._renderer.addClass(acc.nativeElement, 'hidden');
+            })
+        }
+    }

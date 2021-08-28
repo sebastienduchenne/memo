@@ -1,4 +1,4 @@
--utilise la programmation réactive
+-formulaire qui utilise la programmation réactive
 -séparation de la logique du formulaire et de la vue
 -génération dynamique de formulaires
 -le formulaire est créé dans l'objet Typescript et le template
@@ -10,41 +10,9 @@
     -Validators.pattern("[^ @]*@[^ @]*")
 -outils
   -FormControl : un élément d'un formulaire (email, ...)
-  -FormGroup : formulaire réactif
+  -FormGroup : formulaire réactif qui regroupe des FormControl
   -FormArray
-  -FormBuilder : créer des objet FormGroup
-
-
-
-//composant
-userForm: FormGroup;
-
-constructor(private formBuilder: FormBuilder) { }
-
-ngOnInit() {
-  this.initForm();
-}
-
-initForm() {
-  this.userForm = this.formBuilder.group({
-    email: ['', [Validators.required, Validators.email]], // FormControl
-  });
-}
-
-onSubmitForm() {
-  const formValue = this.userForm.value; // get valeurs du formulaire
-  const email = formValue['email'];
-}
-
-
-//HTML
-<form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
-    <div class="form-group">
-        <label for="id_email">Adresse e-mail</label>
-        <input type="text" id="id_email" formControlName="email">
-    </div>
-    <button type="submit" [disabled]="userForm.invalid">Soumettre</button>
-</form>
+  -FormBuilder : créer des objets FormGroup
 
 
 -balise form
@@ -52,3 +20,60 @@ onSubmitForm() {
   -ngSubmit : évènement qui exécute 'onSubmitForm()'
 -input : 'formControlName' relié au control 'email' dans l'objet TypeScript
 -button : type submit, déclenche l'évènement ngSubmit
+
+
+*** exemple
+
+// HTML
+
+  <div>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+      <div class="form-group">
+        <label for="firstName">Prénom</label>
+        <input type="text" class="form-control" formControlName="firstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input type="text" class="form-control" formControlName="lastName">
+      </div>
+      <button type="submit">Soumettre</button>
+    </form>
+  </div>
+
+
+// composant
+
+  import { Component, OnInit } from '@angular/core';
+  import { FormBuilder, FormGroup } from '@angular/forms';
+
+  @Component({
+    selector: 'app-new-user',
+    templateUrl: './new-user.component.html',
+    styleUrls: ['./new-user.component.scss']
+  })
+  export class NewUserComponent implements OnInit {
+
+    userForm: FormGroup;    // relier à [formGroup]="userForm"
+
+    constructor(private formBuilder: FormBuilder) { }
+
+    ngOnInit() {
+      this.initForm();
+    }
+
+    initForm() {
+      this.userForm = this.formBuilder.group({
+        firstName: '',
+        lastName: '',
+      });
+    }
+
+    onSubmitForm() {
+      const formValue = this.userForm.value;    // récupération 
+      const newUser = new User(
+        formValue['firstName'],
+        formValue['lastName'],
+      );
+    }
+
+  }

@@ -2,11 +2,11 @@
 -NgModel
 
 
--structural directive = manipuler le DOM en ajoutant ou en retirant des éléments
+-directive structurelle  = manipuler le DOM en ajoutant ou en retirant des éléments
     -ngFor : boucle
     -ngIf : condition
     -ngSwitchCase : switch case
--attribute directive = modifier l'apparence ou le comportement d'un élément DOM
+-directive d'attribut = modifier l'apparence ou le comportement d'un élément DOM
     -ngStyle : ajouter du style CSS
     -ngClass : ajouter une classe CSS
 
