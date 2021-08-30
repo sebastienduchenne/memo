@@ -24,6 +24,7 @@ commandes de plomberie
     fsck
     count-objects
     update-ref : mettre à jour une référence
+    verify-pack : voir ce qui a été compacté
 
 
 --------------------------------------------------------------------------------
@@ -85,18 +86,24 @@ first commit
 
 -référence = clé ou empreinte SHA-1
 -on trouve les fichiers contenant des empreintes SHA-1 dans refs/
-
+-3 types de références
+    -références distantes
+    -étiquette
 
 HEAD = fichier qui contient une référence symbolique à la branche courante
 
 
-*** étiquette
+*** étiquette / tag
 
-contient
+= pointe en général vers un commit plutôt qu’un arbre, mais elle pointe toujours vers le même commit
+
+contient :
     -un étiqueteur
     -une date
     -un message
     -un pointeur vers un commit
+
+on créé un étiquette avec la commande git update-ref
 
 
 *** Références distantes / remotes
@@ -107,6 +114,21 @@ contient
 
 =====   Fichiers groupés   =====
 
+-Git compresse le contenu de ces fichiers avec zlib
+-si on fait un commit un fichier, il sera enregistré dans un blob. Si on le modifie et qu'on le recommit, il sera enregistré dans un autre blob
+-Le format initial dans lequel Git enregistre les objets est appelé le format brut (loose object)
+-Git compacte plusieurs de ces objets en un seul fichier binaire appelé packfile (fichier groupé) suand :
+    -quand il y a trop d’objets au format brut
+    -si l’on exécute manuellement "git gc"
+    -quand on pousse vers un serveur distant
+
+-le groupement crée :
+    -un fichier unique, rassemblant le contenu de tous les objets venant d’être supprimés du système de fichier, 
+    -et un index : contenant les emplacements dans le fichier groupé
+
+-Quand Git compacte des objets, il recherche les fichiers qui ont des noms et des tailles similaires, puis enregistre seulement les deltas entre une version du fichier et la suivante
+
+git verify-pack : voir ce qui a été compacté
 
 --------------------------------------------------------------------------------
 =====   refspec   =====
