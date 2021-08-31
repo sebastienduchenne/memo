@@ -1,5 +1,5 @@
 commandes de "plomberie" (plumbing) : tâches bas niveau
-commande de "porcelaine" (porcelain) : conviviales
+commandes de "porcelaine" (porcelain) : commandes "conviviales"
 
 
 git init créé un dossier .git contenant :
@@ -23,9 +23,12 @@ commandes de plomberie
     reflog
     fsck
     count-objects
-    update-ref : mettre à jour une référence
+    update-ref : créer une étiquette légère
+    tag : créer un tag annoté
     verify-pack : voir ce qui a été compacté
-
+    symbolic-ref : éditer le fichier .git/HEAD
+    rev-list : trouver un objet
+    filter-branch
 
 --------------------------------------------------------------------------------
 
@@ -49,7 +52,7 @@ objets :
 .git/objects/1a/410efbd13591db07496601ebc7a059dd55cfe9 # commit
 
 
-*** arbre
+*** arbre / tree
 
 -enregistrer un groupe de fichiers ensemble
 -contient une clé d’un blob ou un sous-arbre
@@ -69,7 +72,7 @@ $ git cat-file -p master^{tree}
     -le validateur
     -une ligne vide
     -le message de validation
--créée avec commit-tree
+-créée avec la commande "git commit-tree"
 
 
 $ git cat-file -p fdf4fc3
@@ -84,18 +87,42 @@ first commit
 
 =====   Références Git   =====
 
--référence = clé ou empreinte SHA-1
--on trouve les fichiers contenant des empreintes SHA-1 dans refs/
+-référence = fichier qui contient une empreinte SHA-1
+-dans .git/refs/
 -3 types de références
-    -références distantes
-    -étiquette
+    -branche, cad fichier pointant vers le commit en tête de branche, dans .git/refs/head
+    -étiquette, dans .git/refs/tags
+    -références distantes, dans .git/refs/remote
 
-HEAD = fichier qui contient une référence symbolique à la branche courante
+-on met à jour une référence avec la commande "git update-ref"
+
+-une branche est une référence sur le dernier état d’une suite de travaux, cad sur le dernier commit
+
+refs/head/master --> commit 3 --> arbre 3
+                        |
+                        v
+refs/head/test  ---> commit 2 --> arbre 2
+                        |
+                        v
+                     commit 1 --> arbre 1
+
+
+*** la branche HEAD
+
+.git/HEAD = fichier qui contient une référence symbolique à la branche courante, il contient un pointeur vers une autre référence
+
+
+$ cat .git/HEAD
+ref: refs/heads/master
+
+-commande "git symbolic-ref" pour éditer ce fichier
 
 
 *** étiquette / tag
 
 = pointe en général vers un commit plutôt qu’un arbre, mais elle pointe toujours vers le même commit
+-est un objet git
+-dans .git/refs/tags/
 
 contient :
     -un étiqueteur
@@ -104,10 +131,14 @@ contient :
     -un pointeur vers un commit
 
 on créé un étiquette avec la commande git update-ref
+-> .git/refs/tags/v1.1
 
 
 *** Références distantes / remotes
 
+= références vers les dépots distants
+-présentes dans /refs/remotes
+-origin master : refs/remotes/origin/master
 
 
 --------------------------------------------------------------------------------
@@ -133,18 +164,45 @@ git verify-pack : voir ce qui a été compacté
 --------------------------------------------------------------------------------
 =====   refspec   =====
 
+= configurer les transferts de références distantes et locales avec le dépots distant
+-dans .git/config
+-format : +<src>:<dst>
 
+
+pousser des refspec : $ git push origin master:refs/heads/xxx/master
+supprimer des références sur le serveur distant : $ git push origin --delete topic
 --------------------------------------------------------------------------------
 
 =====   protocoles de transfert   =====
 
-stupide
-intelligent
+-transférer des données entre deux dépôts avec le protocole stupide ou le protocole intelligent
 
+*** protocole stupide
+= ne nécessite aucun code spécifique à Git côté serveur durant le transfert
+-> déconseillé
+
+
+*** protocole intelligent
+
+= nécessite l’exécution sur le serveur d’un processus qui connaît Git, il peut lire les données locales et déterminer ce que le client a ou ce dont il a besoin pour générer un fichier groupé personnalisé pour lui
 
 --------------------------------------------------------------------------------
 
 =====   Maintenance et récupération de données   =====
+
+*** Maintenance
+
+quand trop d’objets bruts ou trop de fichiers groupés => lancement de git gc, cela :
+    -rassemble plusieurs objets bruts et les place dans des fichiers groupés, 
+    -rassemble des fichiers groupés en un gros fichier groupé,
+    -supprime des objets qui ne sont plus accessibles depuis aucun commit et qui sont vieux de plusieurs mois
+
+
+*** récupération de données
+
+
+*** Suppression d’objets
+
 
 
 --------------------------------------------------------------------------------
