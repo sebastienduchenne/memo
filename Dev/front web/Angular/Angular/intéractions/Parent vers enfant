@@ -1,0 +1,19 @@
+---------------- child ------------------
+
+<p>
+  Message : {{msg}}
+</p>
+
+import { Component, Input } from '@angular/core';
+
+export class MessageComponent {
+  @Input() msg = '';
+}
+
+---------------- parent ------------------
+
+<app-message [msg]="message"></app-message>
+
+export class AppComponent {
+  message = 'Hello world';
+}

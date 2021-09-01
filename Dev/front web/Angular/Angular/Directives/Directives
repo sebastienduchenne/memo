@@ -3,8 +3,8 @@
 
 
 -directive structurelle  = manipuler le DOM en ajoutant ou en retirant des éléments
-    -ngFor : boucle
     -ngIf : condition
+    -ngFor : boucle
     -ngSwitchCase : switch case
 -directive d'attribut = modifier l'apparence ou le comportement d'un élément DOM
     -ngStyle : ajouter du style CSS
@@ -13,34 +13,10 @@
 (les composants sont des directives avec un template)
 
 
-*** directive d'attribut
+*** créer une directive
 
--créer une classe et lui ajouter un décorateur @Directive contenant un sélecteur
--ne pas oublier d'intégrer la directive dans le app.module dans "declarations"
--on importe :
-    ElementRef : classe qui représente un élément HTML
-    Renderer : 
-
-
-<p appHighlight>Highlight me!</p>
-
-
-import { Directive, ElementRef } from '@angular/core';
-
-@Directive({
-  selector: '[appHighlight]'
-})
-export class HighlightDirective {
-    constructor(el: ElementRef) {
-       el.nativeElement.style.backgroundColor = 'yellow';
-    }
-}
-
-
-*** directive structurelle
-
--précédée d'un * pour appliquer une balise <template>
-
--créer une directive structurelle
-    importer TemplateRef : référence au template
-    importer ViewContainerRef : référence vers un conteneur de vue
+-commande : ng g directive name
+-2 fichiers créés
+    name.directive.spec.ts
+    name.directive.ts
+-ajout de NameDirective dans 'declaration' de app.module.ts

@@ -1,0 +1,33 @@
+*** ngStyle
+
+
+
+*** ngClass
+
+-ajouter une classe dynamiquement
+
+
+
+*** directive d'attribut personnalisé
+
+-créer une classe et lui ajouter un décorateur @Directive contenant un sélecteur
+-ne pas oublier d'intégrer la directive dans le app.module dans "declarations"
+-on importe :
+    ElementRef : classe qui représente un élément HTML
+
+-exemple
+
+    <p appHighlight>Highlight me!</p>
+
+
+    import { Directive, ElementRef } from '@angular/core';
+
+    @Directive({
+        selector: '[appHighlight]'
+    })
+    export class HighlightDirective {
+        constructor(el: ElementRef) {
+            el.nativeElement.style.backgroundColor = 'yellow';
+            el.nativeElement.innerText = "Hello world";
+        }
+    }

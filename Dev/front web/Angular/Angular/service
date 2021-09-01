@@ -4,14 +4,33 @@
     src/app/myservice.service.spec.ts
 
 
+*** injection de dépendance
+
+= déléguer l'instanciation et la gestion de la durée de vie des dépendances à un élément externe. Une instance est passée au constructeur de l'élément utilisant le service
+-enregistrement global : retourne la même instance, singleton
+-enregistrement dans un composant : le composant est ses enfants utilisent la même instance, précisé dans provider
+-il faut ajouter @Injectable à une classe pour qu'elle soit instanciée en utilisant l'ID, et aussi pour résoudre les dépendances de cette classe
+-@Component, @Pipe et @Directive héritent de @Injectable, ce qui leur permet d'être résolus par l'ID
+
+-provider de classe
+    -UseClass : fournir une version alternative de l'implémentation d'une classe
+    -UseExisting
+    -UseFactory
+    -UseValue
+
+@Optional : éviter l'erreur de dépendance manquante
+
+
+*** exemple de service
+
 // myservice.service.ts
 export class MyserviceService { 
-   serviceproperty = "Service Created"; 
-   constructor() { } 
-   showTodayDate() { 
-      let ndate = new Date(); 
-      return ndate; 
-   } 
+    serviceproperty = "Service Created"; 
+    constructor() { } 
+    showTodayDate() { 
+        let ndate = new Date(); 
+        return ndate; 
+    } 
 }
 
 

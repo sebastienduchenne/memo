@@ -1,0 +1,56 @@
+-précédée d'un * pour appliquer une balise <template>
+
+-créer une directive structurelle
+    importer TemplateRef : référence au template
+    importer ViewContainerRef : référence vers un conteneur de vue
+
+
+*** condition avec NgIf
+
+// dans app.component.ts
+isavailable = true;
+
+// if
+<span *ngIf = "isavailable">Condition is valid.</span>
+
+// if else
+<div>
+   <span *ngIf = "isavailable; else condition1">Condition is valid.</span>
+   <ng-template #condition1>Condition is invalid</ng-template>
+</div>
+
+// if else 2
+<div> 
+   <span *ngIf = "isavailable; then condition1 else condition2">
+      Condition is valid.
+   </span> 
+   <ng-template #condition1>Condition is valid</ng-template> 
+   <ng-template #condition2>Condition is invalid</ng-template> 
+</div>
+
+
+    -> si la variable isavailable change (par un clic), les changements dans le html sont automatiques
+
+
+*** boucle avec NgForOf
+
+// dans app.component.ts
+
+months = ["January", "February", "March", "April", "May", "June", "July", 
+      "August", "September", "October", "November", "December"];
+
+// dans app.component.html
+
+<select>
+    <option *ngFor = "let i of months">{{i}}</option>
+</select>
+
+
+*** ngSwitchCase
+
+<div [ngSwitch]="hero?.emotion">
+  <app-happy-hero    *ngSwitchCase="'happy'"    [hero]="hero"></app-happy-hero>
+  <app-sad-hero      *ngSwitchCase="'sad'"      [hero]="hero"></app-sad-hero>
+  <app-confused-hero *ngSwitchCase="'confused'" [hero]="hero"></app-confused-hero>
+  <app-unknown-hero  *ngSwitchDefault           [hero]="hero"></app-unknown-hero>
+</div>

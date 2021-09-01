@@ -1,0 +1,31 @@
+---------------- child ------------------
+
+<button (click)="sendMessage("Hello world")">Send message</button>
+
+***
+
+import { Output, EventEmitter } from '@angular/core';
+
+export class ItemOutputComponent {
+
+  @Output() newMessageEvent = new EventEmitter<string>();
+
+  sendMessage(value: string) {
+    this.newMessageEvent.emit(value);
+  }
+}
+
+
+---------------- parent ------------------
+
+<app-item-output (newMessageEvent)="getMessage($event)"></app-item-output>
+
+***
+
+export class AppComponent {
+  message : string
+
+  getMessage(msg: string) {
+    this.message = msg
+  }
+}

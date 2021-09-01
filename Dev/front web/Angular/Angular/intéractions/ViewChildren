@@ -1,0 +1,38 @@
+ViewChildren
+    = récupérer plusieurs références
+
+Renderer2 = outil pour manipuler le DOM
+
+ElementRef = emballage d'un élément natif dans la vue
+
+
+// app.component.html
+
+    <h2 (click)="toggle($event)">item 1</h2>
+    <div #accordeon class="hidden">
+        <p>TEST</p>
+    </div>
+
+
+// composant
+
+    import { Component, Renderer2, ViewChildren, QueryList, ElementRef } from '@angular/core';
+
+    @Component({
+        selector: 'my-app',
+        templateUrl: './app.component.html',
+        styleUrls: [ './app.component.css' ]
+    })
+    export class AppComponent {
+        @ViewChildren('accordeon') accordeons: QueryList<ElementRef<HTMLElement>>;
+
+        constructor(
+            private _renderer: Renderer2
+        ) {}
+
+        toggle($event) {
+            this.accordeons.forEach((acc) => {
+                this._renderer.addClass(acc.nativeElement, 'hidden');
+            })
+        }
+    }

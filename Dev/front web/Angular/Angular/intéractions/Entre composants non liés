@@ -1,0 +1,44 @@
+---------------- service ------------------
+
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+ 
+@Injectable({
+    providedIn: 'root'
+})
+export class AppService {
+
+    counter = 1;
+    count : BehaviorSubject<number>;
+
+    constructor() {
+        // on store "counter"
+        this.count = new BehaviorSubject(this.counter);
+    }
+    
+    // méthode qui permet de modifier la donnée et donc sera transmise au observateur
+    nextCount() {
+        this.count.next(++this.counter);
+    }
+}
+
+
+---------------- composant ------------------
+
+export class Component1 implements OnInit {
+ 
+    count : number;
+
+    constructor(private appservice: AppService) { }
+
+    ngOnInit() {
+        // on s'inscrit au service
+        this.appservice.count.subscribe(c => {
+            this.count = c;
+        });
+    }
+
+    nextCount() {
+        this.appsevice.nextCount();
+    }
+}
