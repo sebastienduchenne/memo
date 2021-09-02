@@ -1,0 +1,4 @@
+-lancer un pipeline > settings > pages > cliquer sur lien créé
+    -si erreur 404 : la page web n'a pas été poussé sur public/
+    -si erreur 401 : pas de permission, aller dans settings > general > visibility > mettre "Project visibility" à "internal" et "Pages access control" à "Everyone"
+    -------> il se peut qu'il faille attendre quelques minutes pour pousser les fichiers sur public

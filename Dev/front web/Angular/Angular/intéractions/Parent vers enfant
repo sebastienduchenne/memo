@@ -1,19 +1,43 @@
----------------- child ------------------
+// child
 
-<p>
-  Message : {{msg}}
-</p>
+  <p>
+    Message : {{msg}}
+  </p>
 
-import { Component, Input } from '@angular/core';
+  import { Component, Input } from '@angular/core';
 
-export class MessageComponent {
-  @Input() msg = '';
-}
+  export class MessageComponent {
+    @Input() msg = '';
+  }
 
----------------- parent ------------------
+// parent
 
-<app-message [msg]="message"></app-message>
+  <app-message [msg]="message"></app-message>
 
-export class AppComponent {
-  message = 'Hello world';
-}
+  export class AppComponent {
+    message = 'Hello world';
+  }
+
+
+-------------------------------------------------------
+
+*** intercepter un changement de valeur d'une propriété avec un setter
+
+// html parent
+
+  <app-children [name]="text"><app-children>
+
+// composant fils
+
+  <p>{{name}}</p>
+
+  private _name: string;                // une propriété privée
+
+  @Input() set name(value: string) {    // setter qui permet d'effectuer des opérations quand la valeur change
+    this._name = value;
+    //faire qqch avec this._name
+  }
+
+  get name(): string {                  // un getteur
+    return this._name;
+  }

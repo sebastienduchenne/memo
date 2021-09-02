@@ -21,46 +21,23 @@
 
 
 *** Configurer git
--fichier de conf global .gitconfig à la racine du home, contient les alias, le code couleur et les données utilisateur
+
+dans 3 endroits différents :
+    /etc/gitconfig : pour tous les utilisateurs et tous les dépôts du système
+    ~/.gitconfig : spécifique à votre utilisateur
+    .git/config : spécifique au seul dépôt en cours, contient les alias, le code couleur et les données utilisateur
+
+-> chaque niveau surcharge le niveau précédent
 
 éditer email : git config --global user.email "email@exemple.com"
 éditer nom   : git config --global user.name "name"
+éditer éditeur : git config --global core.editor emacs
 
-
-*** Workflow
-Créer/récupérer projet
-    Projet inexistant : git init, git ignore
-    Projet existant : git clone url, cd nomProjet
-Checkout « branche »
-modif
-status
-Add
-Commit 1
-Add
-Commit 2
-Pull origin master ?
-Push origin « branche »
-Créer une pull request
-Accepter/refuser la PR
-
-
-*** Les différents types de branches : 
--master
--develop
--feature
--fix
--release
-
-
-*** Gitlab Pages
--lancer un pipeline > settings > pages > cliquer sur lien créé
-    -si erreur 404 : la page web n'a pas été poussé sur public/
-    -si erreur 401 : pas de permission, aller dans settings > general > visibility > mettre "Project visibility" à "internal" et "Pages access control" à "Everyone"
-    -------> il se peut qu'il faille attendre quelques minutes pour pousser les fichiers sur public
+lister : git config --list
 
 
 *** résumé
-git status
+git status : voir l'état des fichiers
 git commit
 git merge
 git push
@@ -81,7 +58,33 @@ git reset
 git stash
 git show
 git rebase
-git add
+git add : ajouter des fichiers pour la prochaine validation
 alias
 index
 remise
+
+-----------------------------------------------------------
+-systèmes de gestion de version distribués, les clients dupliquent tout le dépot
+-Git pense ses données plus comme un instantané d’un mini système de fichiers
+-À chaque fois que l'on enregistre l’état du projet, Git prend un instantané du contenu de l'espace de travail à ce moment et enregistre une référence à cet instantané. Les fichiers qui n'ont pas changé ne sont pas stockés à nouveau mais référencés
+
+    -> flux d’instantanés
+
+-on peut connaitre toutes les modifications d'un fichier
+-empreinte SHA-1 = chaîne de 40 caractères hexadécimaux 
+-Git ne fait qu’ajouter des données
+-un fichier a 3 états
+    modifié : modifié mais non indexé et non validé en base
+    indexé : le fichier modifié a été marqué dans sa version actuelle pour qu’il fasse partie du prochain instantané du projet
+    validé : les données sont stockées dans la base de données locale
+
+3 sections principales d’un projet Git : 
+    -le répertoire Git : endroit où Git stocke les méta-données et la base de données des objets du projet
+    -le répertoire de travail : une extraction unique d’une version du projet
+    -la zone d’index ou zone de préparation : un simple fichier qui stocke les informations concernant ce qui fera partie du prochain instantané
+
+2 états d'un fichier : 
+    -sous suivi de version : fichiers qui appartenaient déjà au dernier instantané
+    -non suivi : tout fichier de la copie de travail qui n’appartenait pas au dernier instantané et n’a pas été indexé
+
+

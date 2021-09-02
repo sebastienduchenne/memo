@@ -1,6 +1,5 @@
-ViewChild 
-    = directive permettant d'accéder à un composant enfant / à une directive / à un élément DOM, afin d'accéder à ses données, de le modifier ou d'appeler ses méthodes
-    -renvoie le 1er élément qui correspond à un sélecteur de référence de directive, de composant ou de modèle donné
+= directive permettant d'accéder à un composant enfant / à une directive / à un élément DOM, afin d'accéder à ses données, de le modifier ou d'appeler ses méthodes
+-renvoie le 1er élément qui correspond à un sélecteur de référence de directive, de composant ou de modèle donné
 
 
 // child

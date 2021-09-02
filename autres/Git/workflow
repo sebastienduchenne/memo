@@ -1,0 +1,23 @@
+*** Workflow
+Créer/récupérer projet
+    Projet inexistant : git init, git ignore
+    Projet existant : git clone url, cd nomProjet
+Checkout « branche »
+modif
+status
+Add
+Commit 1
+Add
+Commit 2
+Pull origin master ?
+Push origin « branche »
+Créer une pull request
+Accepter/refuser la PR
+
+
+*** Les différents types de branches : 
+-master
+-develop
+-feature
+-fix
+-release
