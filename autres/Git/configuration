@@ -1,0 +1,15 @@
+dans 3 endroits différents :
+    /etc/gitconfig : pour tous les utilisateurs et tous les dépôts du système
+    ~/.gitconfig : spécifique à votre utilisateur
+    .git/config : spécifique au seul dépôt en cours, contient les alias, le code couleur et les données utilisateur
+
+-> chaque niveau surcharge le niveau précédent
+
+éditer email : git config --global user.email "email@exemple.com"
+éditer nom   : git config --global user.name "name"
+éditer éditeur : git config --global core.editor emacs
+
+lister : git config --list
+
+-alias
+    git config --global alias.ci commit => git ci

@@ -1,0 +1,25 @@
+git status : voir l'état des fichiers
+git commit : valider les modifications
+git merge
+git push
+git diff : inspecter le modifications
+git log
+git config
+git tag
+git blame
+git checkout
+git remote
+git revert
+git fetch
+git pull
+git branch
+git init
+git clone
+git reset
+git stash
+git show
+git rebase
+git add : ajouter des fichiers pour la prochaine validation
+alias
+index
+remise

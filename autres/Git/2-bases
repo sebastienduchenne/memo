@@ -1,0 +1,40 @@
+ignorer des fichiers avec un fichier .gitignore
+
+visualiser les modifications indexées
+    git diff --staged
+
+Valider les modifications avec édition du message dans un éditeur :
+    git commit
+
+valider les modifications sans taper "git add"
+    git commit -a -m "xxx"
+
+Effacer des fichiers
+    git rm file : supprimer le fichier de la suivi de version et du workspace
+    git rm -f file : forcer la suppression si indexé
+    git rm --cached file : abandonner le suivi de version sans supprimer du workspace
+
+Déplacer /renommer des fichiers
+    git mv file1 file2 : une seule commande git fait "mv file1 file2" puis "git rm file1" puis "git add file2"
+
+Visualiser l’historique des validations
+    git log
+    git log -p -2 : différences introduites entre chaque validation limité aux 2 derniers commits
+    git log --stat : visualiser des statistiques
+    git log --pretty=oneline : sur une ligne
+    git log --pretty=format:"%h - %an, %ar : %s"
+    git log --pretty=format:"%h %s" --graph : graphique
+    git log -S file : commits où ils y a l'ajout / suppression de file
+    git log -- chemin/vers/le/fichier : commits qui ont modifié le fichier
+
+Annuler des actions
+    git commit --amend : valider les fichiers indexés (oubliés) après une validation
+    git commit --amend -m "xxx" : modifier le message du dernier commit
+
+Désindexer un fichier déjà indexé
+    git reset HEAD file
+    git restore --staged file : depuis git 2.25
+
+Réinitialiser un fichier modifié
+    git checkout -- file
+    git restore --staged file : depuis git 2.25

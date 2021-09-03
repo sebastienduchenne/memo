@@ -2,3 +2,13 @@
     -si erreur 404 : la page web n'a pas été poussé sur public/
     -si erreur 401 : pas de permission, aller dans settings > general > visibility > mettre "Project visibility" à "internal" et "Pages access control" à "Everyone"
     -------> il se peut qu'il faille attendre quelques minutes pour pousser les fichiers sur public
+
+tags : is used to select specific Runners from the list of all Runners that are allowed to run this project.
+
+
+artifacts
+paths
+
+when
+job
+script
