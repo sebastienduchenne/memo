@@ -1,12 +1,10 @@
-= Gestionnaire de version (VCS) décentralisé
 -5 espaces :
     remise
     espace de travail
     index
     dépôt local dans le .git
     dépôt distant sur le serveur
--Origin : racine du dépôt distant sur laquelle se trouve les différentes branches
--Master : branche principal sur le dépôt distant
+-origin : nom par défaut du dépot distant à partir duquel on a cloné le projet
 -quand on est sur la branche de travail, tirer la develop (source de vérité ultime) régulièrement pour éviter les conflits et d'avoir à rebase quand on push
 -un linter dans le pipeline check les fichiers et fail si problème de linter
 -linter :  

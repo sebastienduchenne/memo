@@ -1,8 +1,8 @@
 = systèmes de gestion de version distribués, les clients dupliquent tout le dépot
--Git pense ses données plus comme un instantané d’un mini système de fichiers
--À chaque fois que l'on enregistre l’état du projet, Git prend un instantané du contenu de l'espace de travail à ce moment et enregistre une référence à cet instantané. Les fichiers qui n'ont pas changé ne sont pas stockés à nouveau mais référencés
+-Git pense ses données comme un instantané d’un mini système de fichiers
+-À chaque fois que l'on enregistre l’état du projet, Git prend un instantané du contenu de l'espace de travail à ce moment et enregistre une référence à cet instantané. Il ne stocke pas des différences successives. Les fichiers qui n'ont pas changé ne sont pas stockés à nouveau mais référencés
 
-    -> flux d’instantanés
+    -> flux d’instantanés (snapshots)
 
 -on peut connaitre toutes les modifications d'un fichier
 -empreinte SHA-1 = chaîne de 40 caractères hexadécimaux 
@@ -18,7 +18,7 @@
 3 sections principales d’un projet Git : 
     -le répertoire Git : endroit où Git stocke les méta-données et la base de données des objets du projet
     -le répertoire de travail : une extraction unique d’une version du projet
-    -la zone d’index ou zone de préparation : un fichier qui stocke les informations concernant ce qui fera partie du prochain instantané
+    -la zone d’index ou zone de préparation (staging area) : contient un instantané du contenu de la copie de travail et qui sera utilisé comme contenu du prochain commit. Un fichier stocke les informations concernant ce qui fera partie du prochain instantané
 
 
 2 états d'un fichier : 

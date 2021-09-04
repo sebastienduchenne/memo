@@ -1,25 +1,73 @@
-git status : voir l'état des fichiers
-git commit : valider les modifications
-git merge
-git push
-git diff : inspecter le modifications
-git log
-git config
-git tag
-git blame
-git checkout
-git remote
-git revert
-git fetch
-git pull
-git branch
 git init
+    = créer un projet
+    -crée un répertoire .git/
+
 git clone
-git reset
-git stash
-git show
+    = récupérer un projet d'un dépot distant
+
+git status
+    = affiche les modifications entre HEAD et l’index
+
+git add
+    = ajouter des fichiers pour la prochaine validation
+    => l’indexation des fichiers calcule une empreinte (checksum) pour chacun, stocke cette version du fichier dans le dépôt Git (sous forme de blobs) et ajoute cette empreinte à la zone d’index
+
+git commit
+    = valider les modifications indexées
+
+    1. calcul de l’empreinte de chaque sous-répertoire
+    2. stockage des objets dans .git/objects/ : 
+        -les blobs correspants aux fichiers, 
+        -un arbre qui liste le contenu du répertoire et spécifie quels noms de fichiers sont attachés à quels blobs, 
+        -et un objet commit contenant la clé de l'arbre de la racine, la clé du commit précédent, l'auteur et le committer
+    3. mise à jour du pointeur de la branche
+
+git fetch
+    = récupérer les nouvelles données du dépot distant
+
+git pull
+    = récupérer les nouvelles données du dépot distant et les merger avec la zone de travail
+
+git merge
+    -si pas de divergence : fast-forward, le pointeur de HEAD est avancé sur la tête de la nouvelle branche
+    -si divergence : création d'un commit de fusion contenant les modifications de la nouvelle branche et qui a pour parents les commits de têtes des 2 branches
+
+git push
+    = envoyer les modifications validées
+
 git rebase
-git add : ajouter des fichiers pour la prochaine validation
-alias
-index
-remise
+    déplacer les commits de la nouvelle branche et de les déplacer à la suite du dernier commit de la branche d'origine
+
+git diff
+    = inspecter le modifications indexées et non indexées
+
+git log
+    = visualiser l’historique des validations
+
+git config
+    = configurer git
+
+git tag
+    = créer une étiquette
+
+git blame
+
+git checkout
+
+git remote
+    = gérer le dépot distant
+
+git revert
+
+git branch
+
+git reset
+
+git stash
+
+git show
+
+git switch
+
+git restore
+    désindexer un fichier ou réinitialiser ses modifications

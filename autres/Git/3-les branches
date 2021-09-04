@@ -1,0 +1,110 @@
+*** Les branches en bref
+
+-branche master = nom par défaut de la branche créée par "git init" et peux être renommé
+
+
+Créer une nouvelle branche
+    git branch [nom-branche]
+
+    -> créée un fichier dans .git/refs/ contenant un pointeur vers le dernier commit
+
+Basculer entre les branches
+    git checkout [nom-branche]
+    git checkout -b [nouvelle-branche] : créer et basculer sur la nouvelle branche
+    git switch [nom-branche] : depuis Git 2.23
+    git switch -c [nouvelle-branche] : créer et basculer sur la nouvelle branche
+
+    -> change aussi le pointeur de HEAD sur la branche spécifiée
+    -> si on commit sur cette branche, puis qu'on revient sur la master, le HEAD pointera sur le dernier commit de la master et l'espace de travail sera changé
+
+
+*** Branches et fusions : les bases
+
+Fusion de branche
+    git merge [nom-branche] : ramène nom-branche
+
+si correctif à faire : 
+    git checkout -b correctif
+    git commit -a -m "correction de l'adresse email incorrecte"
+    git checkout master
+    git merge correctif : merger la branche
+
+    -> fast-forward car pas de divergence, donc le pointeur de HEAD a été avancé sur le correctif
+
+Supprimer une branche
+    git branch -d [nom-branche]
+
+Fusion à 3 sources (three-way merge)
+    = quand il y a un nouveau commit sur la branche d'origine, qui n'est donc pas un ancètre de la nouvelle branche => divergence => fusion par création d'un nouveau commit, appelé commit de fusion, qui contient les modifications de la nouvelle branche et qui a pour parents les commits de têtes des 2 branches
+
+Conflits de fusions (Merge conflicts)
+    = quand on veut fusionner le même fichier mais que les 2 branches ont des modifications dans la même partie du fichier
+    -dans git status : section unmerged
+    -il faut résoudre le conflit manuellement
+    -git add permet de marquer le conflit comme résolu
+    -puis fait un git commit
+
+
+*** Gestion des branches
+
+Liste des branches courantes
+    git branch
+    git branch --all : branches locales et remote
+    git branch -v : liste du dernier commit de chaque branche
+    git branch --no-merged : branches qui contiennent des travaux qui n’ont pas encore été fusionnés
+
+supprimer une branche
+    git branch -d [nom-branche] : affiche une erreur si la branche n'a pas été mergé
+    git branch -D [nom-branche] : force la suppression d'une branche non mergée
+
+Renommer une branche
+    git branch --move [nom-actuel] [nouveau-nom]
+    git push --set-upstream origin [nouveau-nom] : ajouter le nouveau nom sur le dépot distant
+    git push origin --delete [ancien-nom] : supprimer l'ancienne branche, plutot le pointeur car les données ne seront supprimées qu'après passage du garbage collector
+
+
+*** Travailler avec les branches
+
+plusieurs branches ouvertes
+    -master
+    -develop
+    -feature1
+    -fix
+    -test
+
+
+*** Branches de suivi à distance
+
+= sont des références (des pointeurs) vers l’état des branches sur le dépôt distant
+
+Récupèrer toutes les nouvelles données du dépot distant
+    git fetch [depot-distant]
+    git merge origin/xxx : fusionner avec son travail
+
+    => met à jour la bd locale et déplace le pointeur origin/master
+
+Pousser les branches
+    git push origin [nom-branche]
+
+    => développé en refs/heads/xxx:refs/heads/xxx
+
+
+Suivre les branches
+    branche de suivi = branche locale en relation directe avec une branche distante
+
+Tirer une branche
+    git pull : git fetch suivi d'un git merge de la branche
+
+
+*** Rebasing
+
+-en cas de divergence, il y a une autre solution que la fusion à 3 sources qui est le rebasing
+-cela consiste à déplacer les commits de la nouvelle branche et de les déplacer à la suite du dernier commit de la branche d'origine
+-procédé : 
+    git checkout experience
+    git rebase master
+    git checkout master
+    git merge experiment : fusion en avance rapide (fast-forward merge)
+
+
+

@@ -1,0 +1,127 @@
+*** Enregistrer des modifications dans le dépôt
+
+Vérifier l’état des fichiers
+    git status : affiche les modifications entre HEAD et l’index
+
+Indexer des fichiers
+    git add [nom-fichier] : met à jour l’index en y ajoutant le contenu des chemins existants
+
+    => l’indexation des fichiers calcule une empreinte (checksum) pour chacun, stocke cette version du fichier dans le dépôt Git (sous forme de blobs) et ajoute cette empreinte à la zone d’index
+
+Ignorer des fichiers
+    avec un fichier .gitignore
+
+Inspecter les modifications indexées et non indexées
+    git diff --staged
+
+Valider les modifications avec édition du message dans un éditeur
+    git commit
+    git commit -a -m "xxx" : valider les modifications sans taper "git add"
+
+    1. calcul de l’empreinte de chaque sous-répertoire
+    2. stockage des objets dans .git/objects/ : 
+        -les blobs correspants aux fichiers, 
+        -un arbre qui liste le contenu du répertoire et spécifie quels noms de fichiers sont attachés à quels blobs, 
+        -et un objet commit contenant la clé de l'arbre de la racine, la clé du commit précédent, l'auteur et le committer
+    3. mise à jour du pointeur de la branche
+
+Effacer des fichiers
+    git rm file : supprimer le fichier de la suivi de version et du workspace
+    git rm -f file : forcer la suppression si indexé
+    git rm --cached file : abandonner le suivi de version sans supprimer du workspace
+
+Déplacer / renommer des fichiers
+    git mv file1 file2 : une seule commande git fait "mv file1 file2" puis "git rm file1" puis "git add file2"
+
+
+*** Visualiser l’historique des validations
+    git log
+    git log -p -2 : différences introduites entre chaque validation limité aux 2 derniers commits
+    git log --stat : visualiser des statistiques
+    git log --pretty=oneline : sur une ligne
+    git log --pretty=format:"%h - %an, %ar : %s"
+    git log --pretty=format:"%h %s" --graph : graphique
+    git log -S file : commits où ils y a l'ajout / suppression de file
+    git log -- chemin/vers/le/fichier : commits qui ont modifié le fichier
+
+
+*** Annuler des actions
+
+modifier un commit
+    git commit --amend : valider les fichiers indexés (oubliés) après une validation
+    git commit --amend -m "xxx" : modifier le message du dernier commit
+
+Désindexer un fichier déjà indexé
+    git reset HEAD file
+    git restore --staged file : depuis git 2.25
+
+Réinitialiser un fichier modifié
+    git checkout -- file
+    git restore --staged file : depuis git 2.25
+
+
+*** Travailler avec des dépôts distants
+
+Afficher les dépôts distants
+    git remote
+    git remote -v : avec l'URL
+
+Ajouter des dépôts distants
+    git remote add pb https://github.com/xxx/yyy
+
+Récupérer et tirer depuis des dépôts distants
+    git fetch [remote-name] : récupère toutes les références et objets d'un dépôt sans fusion
+
+Pousser son travail sur un dépôt distant
+    git push <nom-distant> <nom-de-branche>
+
+Inspecter un dépôt distant
+    git remote show [nom-distant]
+
+Renommer un dépôt distant
+    git remote rename [nom-actuel] [nouveau-nom]
+
+Retirer un dépôt distant
+    git remote rm [nom] : toutes les branches de suivi à distance et les réglages de configuration associés à ce dépôt distant sont aussi effacés
+
+
+*** Étiquetage
+
+= possibilité d’étiqueter un certain état dans l’historique comme important
+
+-étiquette légère = pointeur sur un commit spécifique
+-étiquette annotée = un objet git, contient le nom et l'e-mail du créateur, la date, et un message
+
+-l'étiquette créée sera liée au dernier commit
+
+
+Lister les étiquettes
+    git tag
+
+Créer une étiquette annotée
+    git tag -a v1.4 -m 'ma version 1.4'
+
+Créer une étiquette légère
+    git tag v1.4-lg
+
+Voir les info sur une étiquette
+    git show [nom-d-etiquette]
+
+Étiqueter un commit plus ancien
+    git tag -a v1.2 9fceb02
+
+Partager les étiquettes vers les serveurs distants
+    git push origin [nom-du-tag] : car git push ne pousse pas les tags
+    git push origin --tags : push tous les tags
+
+Supprimer les étiquettes
+    git tag -d [nom-d-etiquette] : supprimer sur le dépot local
+    git push origin --delete [nom-d-etiquette] : sur le dépot distant
+
+
+*** Les alias Git
+
+= raccourcie
+
+Créer un alias
+    git config --global alias.st status : ensuite on tape "git st"
