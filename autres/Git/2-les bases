@@ -1,3 +1,16 @@
+*** Démarrer un dépôt Git
+
+Initialisation d’un dépôt Git dans un répertoire existant
+    git init
+
+    => crée un nouveau sous-répertoire nommé .git
+
+Cloner un dépôt existant
+    git clone [URL]
+
+    => crée un répertoire avec le nom du projet, initialise un répertoire .git à l’intérieur, récupère toutes les données de ce dépôt, et extrait une copie de travail de la dernière version
+
+
 *** Enregistrer des modifications dans le dépôt
 
 Vérifier l’état des fichiers

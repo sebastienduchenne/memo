@@ -1,16 +1,58 @@
+zones :
+    -espace de travail
+    -remise
+    -index = fichier binaire (généralement dans .git/index) qui contient une liste ordonnée de chemins de fichiers, chacun avec les permissions et le SHA1 de l'objet blob
+    -dépot local
+    -dépot distant
+
+fichiers
+    non suivi : non indexés
+    suivi : indexés
+
+git init créé un dossier .git contenant :
+    .git/HEAD : pointeur vers la branche en cours dans le répertoire de travail 
+    .git/config* : options de configuration spécifiques au projet
+    .git/description : programme GitWeb
+    .git/hooks/ : scripts de procédures automatiques
+    .git/info/ : fichier d’exclusions
+    .git/index : zone d'index contenant ce qui sera validé au prochain commit
+    .git/objects/ : contenu de la base de données (arbre, blob, commit)
+    .git/refs/ : pointeurs vers les objets commit des objects (branches)
+
+objets :
+    -arbre / tree = contient des clés de blobs et d'arbre avec leur nom
+    -blob = type de donnée permettant le stockage de données binaires (image, texte, video, son)
+    -commit = clé de l'arbre, auteur, commiteur, commit parent, message
+    -tag / étiquette
+
+-------------------------------------------------------------------------------------
+
 git init
-    = créer un projet
-    -crée un répertoire .git/
+    = créer un projet git
+    -> crée un nouveau sous-répertoire nommé .git qui contient tous les fichiers nécessaires au dépôt
 
 git clone
     = récupérer un projet d'un dépot distant
+    -> crée un répertoire avec le nom du projet, initialise un répertoire .git à l’intérieur, récupère toutes les données de ce dépôt, et extrait une copie de travail de la dernière version
+
+git config
+    = configurer git
 
 git status
     = affiche les modifications entre HEAD et l’index
 
+git log
+    = visualiser l’historique des validations
+
+git stash
+    = gérer la remise
+
 git add
-    = ajouter des fichiers pour la prochaine validation
-    => l’indexation des fichiers calcule une empreinte (checksum) pour chacun, stocke cette version du fichier dans le dépôt Git (sous forme de blobs) et ajoute cette empreinte à la zone d’index
+    = ajouter des fichiers à l'index pour la prochaine validation
+    -> l’indexation des fichiers calcule une empreinte (checksum) pour chacun, stocke cette version du fichier dans le dépôt Git (sous forme de blobs) et ajoute cette empreinte à la zone d’index
+
+git diff
+    = inspecter le modifications indexées et non indexées
 
 git commit
     = valider les modifications indexées
@@ -23,51 +65,50 @@ git commit
     3. mise à jour du pointeur de la branche
 
 git fetch
-    = récupérer les nouvelles données du dépot distant
-
-git pull
-    = récupérer les nouvelles données du dépot distant et les merger avec la zone de travail
+    = récupérer les nouvelles données du dépot distant : références et objets
 
 git merge
-    -si pas de divergence : fast-forward, le pointeur de HEAD est avancé sur la tête de la nouvelle branche
+    = fusionner 2 branches
+    -si pas de divergence : fast-forward = le pointeur de HEAD est avancé sur la tête de la nouvelle branche
     -si divergence : création d'un commit de fusion contenant les modifications de la nouvelle branche et qui a pour parents les commits de têtes des 2 branches
 
-git push
-    = envoyer les modifications validées
-
 git rebase
-    déplacer les commits de la nouvelle branche et de les déplacer à la suite du dernier commit de la branche d'origine
+    = déplacer les commits de la nouvelle branche et les déplacer à la suite du dernier commit de la branche courante
 
-git diff
-    = inspecter le modifications indexées et non indexées
+git pull
+    = récupérer les nouvelles données du dépot distant de la branche courante et les merger avec la zone de travail
 
-git log
-    = visualiser l’historique des validations
-
-git config
-    = configurer git
+git push
+    = envoyer sur le dépot distant les modifications validées
 
 git tag
     = créer une étiquette
 
-git blame
-
 git checkout
+    = bascule sur une autre branche ou restaure des fichiers de l’arbre de travail
+    -> déplace les pointeurs de réf HEAD et les branches vers un commit spécifié
+    -> utiliser plutot "git switch" ou "git restore"
 
 git remote
     = gérer le dépot distant
 
 git revert
+    = annule des modifications
+    -> ajoute un nouveau commit qui annule les modifications validées
 
 git branch
+    = travailler sur une branche
 
 git reset
-
-git stash
+    = réinitialise le HEAD actuel à l’état spécifié, opposé de git add
+    -> déplace les pointeurs de réf HEAD et les branches vers un commit spécifié
 
 git show
+    = afficher un objet : message, contenu, log
 
 git switch
+    = changer de branche courante
+    -> l'espace de travail est modifié
 
 git restore
-    désindexer un fichier ou réinitialiser ses modifications
+    = désindexer un fichier ou réinitialiser ses modifications

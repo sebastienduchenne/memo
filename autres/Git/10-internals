@@ -55,7 +55,7 @@ objets :
 *** arbre / tree
 
 -enregistrer un groupe de fichiers ensemble
--contient une clé d’un blob ou un sous-arbre
+-contient des clés de blobs ou de sous-arbres
 
 
 $ git cat-file -p master^{tree}
