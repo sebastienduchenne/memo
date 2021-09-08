@@ -1,0 +1,17 @@
+*** méthodes de requête HTTP
+
+GET : récupérer des données
+HEAD : requête GET sans le body
+POST : envoyer qqch sur un serveur
+PUT : modifier un contenu
+DELETE : supprimer la ressource
+CONNECT : établir un tunnel vers le serveur
+OPTIONS : décrire les options de communications avec la ressource visée
+TRACE : réaliser un message de test aller/retour en suivant le chemin de la ressource visée
+PATCH : appliquer des modifications partielles à une ressource
+
+
+
+*** En-têtes HTTP
+
+= transmettre des informations supplémentaires avec la requête ou la réponse
