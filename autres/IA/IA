@@ -91,3 +91,31 @@ GPU
 
 
 computer vision ou vision par ordinateur = techniques d'IA permettant d'analyser des images ou de vidéos
+
+
+Taches
+    Classification binaire
+    Classification multiclasse
+    Régression : prédire la valeur de l’étiquette d’un ensemble de fonctionnalités connexes
+    Clustering
+    Détection d’anomalie
+    Classement
+    Recommandation
+    Prévisions
+    Classification d’image
+    Détection d’objets
+
+
+Algorithmes
+    Algorithmes linéaires
+    Algorithmes d’arbre de décision
+    Factorisation de matrice
+    Méta-algorithmes
+    K-Means
+    Principal Component Analysis (PCA)
+    Naive Bayes
+    Prior Trainer
+    Machines à vecteurs de support
+    Moindres carrés ordinaires
+
+

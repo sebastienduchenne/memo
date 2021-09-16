@@ -1,8 +1,3 @@
 -export NODE_ENV=production : indiquer à node que l'app est lancée en production
 -toute ce qui est créée est par défaut local au module et non global comme en JS
-
-NPM
-test
-    Sinon.js
-    Mocha
-    Chai
+-éviter de bloquer le thread par opération synchrone ou des boucle infini

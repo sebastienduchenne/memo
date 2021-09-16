@@ -1,13 +1,24 @@
 -assert : test
--fs : système de fichier
--path : chemin
--url : URL
+-fs : manipuler le système de fichiers
+-path : manipuler des chemins de fichiers
+-url :  manipuler des URL
 -event : gestion d'évènements
--util : utilities
--http : créer un serveur HTTP
+-util : transformer des fonctions de rappel en promesses
+-http : créer et interroger des ressources via le protocole HTTP
 -os : capacité de la machine
 -child_process : appeler un exécutable système
 -process : info sur le processus en cours
--stream : flux de données
+-stream : manipuler des flux de données
 -console : afficher des logs
 -buffer : stocker des données binaires provenant d'un fichier ou du réseau
+events : programmer des événements
+-cluster : Gère la distribution d’une application sur plusieurs CPU d’un même ordinateur
+-crypto : Fonctions cryptographiques pour chiffrer, signer et vérifier des données
+-dgram : Création et consommation de ressources UDP
+-dns : Résolution et lecture d’enregistrements DNS
+-net : Création et consommation de ressources TCP. Les modules http, https et http2 se basent dessus
+-readline : Manipulation ligne par ligne d’un flux
+-tty : Gestion d’interface de terminal en mode texte. Le module readline se base dessus
+-v8 : Lecture et écriture d’instructions de la machine virtuelle V8 dans le processus actuel
+-vm : Création de nouveaux contextes d’interprétation de la machine virtuelle V8
+-zlib : Compression et décompression de données (Gzip, Inflate/Deflate). Ces formats sont utilisés pour la compression de requêtes HTTP

@@ -1,0 +1,49 @@
+= protocole qui permet de récupérer des ressources
+-protocole de type client-serveur : requêtes sont initiées par le destinataire
+-protocole de la couche application dont les données transitent via TCP
+-serveur web = ensemble de serveurs se répartissant la charge (load balancing) ou d'une architecture logicielle qui interroge d'autres serveurs (un cache, un serveur de base de données, un serveur d'e-commerce…)
+-proxys = programme / machine qui joue le rôle d'intermédiaire en se plaçant entre 2 hôtes
+
+
+*** communication
+
+-le client ouvre une connexion TCP
+-le client envoie d'un message HTTP
+-le serveur envoie une réponse
+-le client ferme la connexion ou la réutilise
+
+
+*** requête HTTP
+
+-Une méthode HTTP
+-Le chemin de la ressource à extraire
+-La version du protocole HTTP
+-Les en-têtes optionnels 
+-Ou un corps
+
+
+*** réponse HTTP
+
+-La version du protocole HTTP
+-Un code de statut
+-Un message de statut qui décrit le code de statut
+-Les en-têtes HTTP
+-Éventuellement un corps contenant la ressource récupérée
+
+
+*** méthodes de requête HTTP
+
+GET : récupérer des données
+HEAD : requête GET sans le body
+POST : envoyer qqch sur un serveur
+PUT : modifier un contenu
+DELETE : supprimer la ressource
+CONNECT : établir un tunnel vers le serveur
+OPTIONS : décrire les options de communications avec la ressource visée
+TRACE : réaliser un message de test aller/retour en suivant le chemin de la ressource visée
+PATCH : appliquer des modifications partielles à une ressource
+
+
+*** En-têtes HTTP
+
+= transmettre des informations supplémentaires avec la requête ou la réponse
