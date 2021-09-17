@@ -1,0 +1,39 @@
+assert : test
+buffer : stocker des données binaires provenant d'un fichier ou du réseau
+child_process : appeler un exécutable système
+cluster : Gère la distribution d’une application sur plusieurs CPU d’un même ordinateur
+CLI
+console : afficher des logs
+crypto : Fonctions cryptographiques pour chiffrer, signer et vérifier des données
+Debugger : outil de debugging
+dns : Résolution et lecture d’enregistrements DNS
+events : programmer des événements
+fs : manipuler le système de fichiers
+Globals
+http : créer et interroger des ressources via le protocole HTTP
+https : http avec TLS/SSL
+Internationalization
+Modules: CommonJS modules
+Modules: ECMAScript modules
+Modules: module API
+Modules: Packages
+net : Création et consommation de ressources TCP. Les modules http, https et http2 se basent dessus
+os : capacité de la machine
+path : manipuler des chemins de fichiers
+perf_hooks : collecter des mesures de performance de l'instance nodejs courante
+process : info sur le processus en cours
+readline : Manipulation ligne par ligne d’un flux
+REPL : terminal
+Report : log
+stream : manipuler des flux de données
+String decoder : décoder objet buffer
+Timers : programmer des appels de fonctions
+tls : utiliser les protocoles TLS et SSL
+tty : Gestion d’interface de terminal en mode texte. Le module readline se base dessus
+dgram : Création et consommation de ressources UDP
+url : manipuler des URL
+util : transformer des fonctions de rappel en promesses
+v8 : Lecture et écriture d’instructions de la machine virtuelle V8 dans le processus actuel
+vm : Création de nouveaux contextes d’interprétation de la V8
+Worker threads : exécuter du code JS en parallèle
+zlib : Compression et décompression de données. Ces formats sont utilisés pour la compression de requêtes HTTP

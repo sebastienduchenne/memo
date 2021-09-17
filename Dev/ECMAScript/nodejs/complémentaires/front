@@ -1,0 +1,70 @@
+-jQuery
+-moment.js : date
+-bootstrap : CSS
+-select2 : saisie dans une liste
+-kalendae : date picker
+-highcharts : charting library based on SVG, also contains Highstock, the financial charting package, and Highmaps for geo maps
+-highstock
+-highmaps
+-lawnchair, localforage : stockage lourd
+-webshim ; polyfills
+-chart.js : JavaScript charting
+-google chart
+
+-Angular
+    -Angular Maps (X-Map) : a set of components and services to provide map functionality in angular 2+ apps
+    -angular-font-awesome : manage Font Awesome icons
+    -angular-highcharts-chart : a Highcharts directive for Angular
+    -angular-notifier : notification library
+    -ng2-charts : Beautiful charts for Angular2 based on Chart.js
+    -bn-ng-idle : a pretty simple user idle / session timout detector for Angular
+
+
+-ember : application web monopage MVC coté client
+-backbone : librairie pour faire des single-page app
+-ionic : framework pour dev des app mobile cross-plateform en html, css et js
+-knockout : librairie pour faire de l'UI avec le pattern MVVM
+-electron : framework pour dev d'app desktop cross-plateform avec html, css et js
+-Vue.js
+
+
+-React.js
+    -Next.js : framework permettant d’effectuer le rendu des applications web React
+    -flux : 
+    -formik : formulaires
+    -react-a11y : 
+    -react-app-polyfill : 
+    -react-color: 
+    -react-dnd-html5-backend : 
+    -react-dnd-touch-backend : 
+    -react-dnd : 
+    -react-dom : 
+    -react-image-file-resizer : 
+    -react-json-view : 
+    -react-resize-detector : 
+    -react-responsive : 
+    -react-router : routage
+    -react-router-dom: 
+    -react-router-last-location : 
+    -react-scripts : 
+    -react-test-renderer : 
+    -react-virtualized-auto-sizer : 
+    -react-window : 
+    -@types/react : 
+    -@types/react-color : 
+    -@types/react-dom : 
+    -@types/react-redux : 
+    -@types/react-resize-detector : 
+    -@types/react-responsive :
+    -@types/react-router-dom : 
+    -enzyme-adapter-react-16 : 
+    -Redux
+        -react-redux : 
+        -redux-devtools : 
+        -redux-logger : 
+        -redux-mock-store : 
+        -redux-responsive : 
+        -redux-thunk : 
+        -raven-for-redux : 
+        -enzyme-redux : 
+        -connected-react-router

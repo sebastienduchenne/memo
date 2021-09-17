@@ -1,0 +1,20 @@
+-tape
+-nyc
+-protractor
+-mocha
+-chai
+-chai-as-promised
+-blanket
+-cypress : test end-to-end
+-jest
+-karma
+-jasmine : TU en js
+-jasmine-allure-reporter : 
+-mojito : mocking
+-sinon : Standalone test spies, stubs and mocks
+-Frisby : REST API
+-Enzyme
+-Istanbul : a JavaScript test coverage tool
+-supertest
+-chai-as-promised : 
+-chai-string : 

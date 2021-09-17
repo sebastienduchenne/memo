@@ -1,0 +1,32 @@
+-code js : app JS
+-API nodejs : http, fs, buffer, ...
+-Bindings and C++ add-ons
+-V8 : 
+    = moteur JS qui exécute le JS
+    -écrit en C++
+    -JIT compiler : switche entre compiler et run le code
+    -contient la callback stack
+    -alternative : Chakra, SpiderMonkey, javascriptCore
+-libuv : (Unicorn Velociraptor Library)
+    -contient la event loop
+    -contient la event queue
+    -worker thread
+    -écrit en C++
+    -librairie qui permet le support de l'asynchronisme I/O avec une boucle d'évènements
+-c-ares
+-HTTP-parser
+-openssl
+-zlib
+-OS : OS API
+
+
+*** V8, call stack, event loop
+
+-call stack : pile d'appel
+-The Message Queue : callback (keyboard events, fetch responses, DOM events)
+-ES6 Job Queue : fonction des promises ; It's a way to execute the result of an async function as soon as possible ; Promises that resolve before the current function ends will be executed right after the current function.
+
+
+-la event loop check en permanence s'il y a une fonction à exécuter dans la call stack
+-les callback sont ajoutées dans la message queue. Ces fonctions sont ajouté dans la call stack une fois la call stack vidé des fonctions non callback
+-les fonctions executor des promesses sont exécutées immédiatement

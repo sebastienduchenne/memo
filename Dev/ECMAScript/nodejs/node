@@ -6,17 +6,7 @@
 -utilise le système de module CommonJS
 -NPM : gestionnaire de paquets officiel de Node.js
 -l'utilisation de V8 évite les incompatibilités entre navigateurs et ne nécessite donc plus de polyfills
-
-
-*** mode REPL (Read-Eval-Print-Loop)
--taper du code JS dans un terminal
--commande 'node' pour l'utiliser :
-
-$ node
->
-
--Exploring JavaScript objects
--Explore global objects
+-mode REPL (Read-Eval-Print-Loop) =  taper du code JS dans un terminal
 
 
 *** usages
@@ -26,44 +16,28 @@ $ node
 -applications de bureau (éditeur Atom)
 
 
-*** briques
--code js : app JS
--API nodejs : http, fs, buffer, ...
--Bindings and C++ add-ons
--V8 : 
-    = moteur JS qui exécute le JS
-    -écrit en C++
-    -JIT compiler : switche entre compiler et run le code
-    -contient la callback stack
-    -alternative : Chakra, SpiderMonkey, javascriptCore
--libuv : (Unicorn Velociraptor Library)
-    -contient la event loop
-    -contient la event queue
-    -worker thread
-    -écrit en C++
-    -librairie qui permet le support de l'asynchronisme I/O avec une boucle d'évènements
--c-ares
--HTTP-parser
--openssl
--zlib
--OS : OS API
+*** notions
 
-
-*** V8, call stack, event loop
-
--call stack : pile d'appel
--The Message Queue : callback (keyboard events, fetch responses, DOM events)
--ES6 Job Queue : fonction des promises ; It's a way to execute the result of an async function as soon as possible ; Promises that resolve before the current function ends will be executed right after the current function.
-
-
--la event loop check en permanence s'il y a une fonction à exécuter dans la call stack
--les callback sont ajoutées dans la message queue. Ces fonctions sont ajouté dans la call stack une fois la call stack vidé des fonctions non callback
--les fonctions executor des promesses sont exécutées immédiatement
-
-
-***
-V8 et call stack
-libuv et event-loop
-setImmediate & process.nextTick
-REPL
-API nodejs
+-V8 et call stack
+-libuv et event-loop
+-REPL
+-module
+    module.exports
+    exports
+-assert : test
+-fs : manipuler le système de fichiers
+-path : manipuler des chemins de fichiers
+-url :  manipuler des URL
+-events : programmer des événements
+-util : transformer des fonctions de rappel en promesses
+-http : créer et interroger des ressources via le protocole HTTP
+-os : capacité de la machine
+-child_process : appeler un exécutable système
+-process : info sur le processus en cours
+    process.argv
+    process.nextTick
+-stream : manipuler des flux de données
+-console : afficher des logs
+-buffer : stocker des données binaires provenant d'un fichier ou du réseau
+-timers
+    setImmediate
