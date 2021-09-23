@@ -11,14 +11,19 @@ django-admin startproject eboutique
 
 *** structure d'un projet
 /home/compte/eboutique
+
 ├── eboutique
 │   ├── __init__.py     -> indique que le projet est un package
 │   ├── settings.py     -> fichier de config : déclarer les variables d'env (BD, app à ajouter, ...)
 │   ├── urls.py         -> table de routage : rediriger une URL vers une fonction
-│   └── wsgi.py         -> plate-forme principale de déploiement Django
+│   ├── wsgi.py         -> plate-forme principale de déploiement Django
+├── backoffice
+│   ├── admin.py
+│   ├── __init__.py
+│   ├── models.py       -> ORM
+│   ├── tests.py
+│   └── views.py        -> vue, renvoit de l'HTML
 └── manage.py           -> point d'entrée de commande de management du projet
-
-
 
 *** Lancer le serveur de développement 
 python ./manage.py runserver

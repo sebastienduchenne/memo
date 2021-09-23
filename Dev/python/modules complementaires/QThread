@@ -1,0 +1,33 @@
+class Record(QThread):
+
+	recording_data = Signal(int, String)
+
+	def __init__(self):
+		QThread.__init__(self, parent)
+
+    def run(self):
+        self.recording_data.emit(3, "toto"))
+
+
+class MyWindow( QMainWindow ):
+    
+    def __init__ ( self ) :
+        QMainWindow.__init__( self )
+
+		self._thread = Record() # thread to record audio
+		self._thread.recording_data.connect(self._update_record)
+
+    @Slot(int, String)
+    def _update_record(self, nb, s):
+        print(nb + " - " +s)
+        pass
+
+
+if __name__ == "__main__":
+    app = QApplication( sys.argv )
+
+    myWindow = MyWindow()
+    myWindow.show()
+    
+    sys.exit( app.exec_() )
+

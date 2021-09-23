@@ -33,6 +33,17 @@
     -pip freeze                         # lib installées et leur version
 
 
+*** installer pip3 sur linux
+update                      sudo apt update
+installer python3-pip       sudo apt install python3-pip
+tester                      pip3 --version
+
+
+python2 => lance python v2
+python3 => lance python v3
+pip3    => lance pip v3
+
+
 *** usages
 -web : avec le framework Django
 -système : tâches répétitives
