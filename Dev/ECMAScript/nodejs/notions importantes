@@ -1,0 +1,65 @@
+REPL
+module.exports et exports
+V8 et call stack
+libuv et event-loop
+API
+    fs : manipuler le système de fichiers
+        write(), read()
+    process : info sur le processus en cours
+        argv, nextTick()
+    os : capacité de la machine
+        cpus()
+    events : programmer des événements
+        addListener(), emit(), on(), once()
+    stream : manipuler des flux de données
+    child_process : appeler un exécutable système
+        fork(), exec(), spawn(), execFile()
+    cluster : fork()
+    timers : setImmediate(), setInterval(), setTimeout()
+    http : créer et interroger des ressources via le protocole HTTP
+        listen()
+    buffer : stocker des données binaires provenant d'un fichier ou du réseau
+        alloc()
+    path : manipuler des chemins de fichiers
+        dirname()
+    console : afficher
+        log()
+    net : createServer()
+    assert : test
+    url : manipuler des URL
+    util : transformer des fonctions de rappel en promesses
+NPM
+EventEmitter
+globals
+    __dirname
+    __filename
+    console
+    require()
+    setImmediate()
+    setInterval()
+    setTimeout()
+    exports
+    module
+    Buffer
+
+----------------------------------------------------------------
+
+nodemon
+mongoose
+Forever
+pm2
+Express
+fs-extra
+Node-Inspector
+
+Outils de développement
+    Gulpjs
+    JSHint
+    node-dev
+    Browserify
+    eslint
+
+Test
+    sinon
+    mocha
+    chai
