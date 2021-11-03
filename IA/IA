@@ -5,7 +5,6 @@
 -outils : tensorflow, darknet yolo
 -déduction,
 -induction : déduire des lois par généralisation des observations
--la machine apprends mais ne comprends pas ce qu'elle fait
 -plus une IA est polyvalente, moins elle est performante
 -automatisation de certains métiers ou automatisation de certaines tâches
 -fichier h5 : modèle entrainé avec tensorflow, contient couche du réseau et poid
@@ -16,7 +15,30 @@
 -Pickling, marshal = modules de sérialisation
 -sérialisation ou pickling = processus par lequel une hiérarchie d'objets Python est convertie en un flux d'octets
 -pickle = format de sérialisation binaire
--Scikit-learn : librairie de machine learning, model fitting, data preprocessing, model selection and evaluation
+paradoxe de Polanyi
+librairies : NumPy, Pandas, Matplotlib, Seaborn, Scikit learn
+modèles : VGG19, VGG16, Xception, MobileNetV2
+GPU : Tesla T4, P100, K80
+Kaggle
+Natural Language Understanding
+Data scientist
+computer vision
+Natural Language Processing
+logique floue : fuzzification
+métaheuristique
+DialogFlow
+provider : google colab, keras
+
+
+intelligence artificielle
+    prolog
+    système expert
+    algorithme génétique
+    système multi-agent
+        Algorithmes de meutes
+    Optimisation par colonie de fourmis
+    Systèmes immunitaires artificiels
+    Automates cellulaires
 
 
 *** Machine learning, apprentissage machine
@@ -26,19 +48,6 @@
 -par transfert
 
 
-*** Algorithme
--génétique
--Réseau de neurones RBF, MLP
-
-
-*** Réseau de neurones
--bayésien
--Limite : besoin de cas concrets, d'autant plus si le problème est complexe
--opacité sur la façon de calculer du réseau
--Succession de couches de plusieurs neurones. Chacune prends ses entrées sur les sorties de la précédente. A chaque synapse est associé un poids
--fonction de combinaison, fonction d'activation
-
-
 *** Markov
 -chaine de markov = processus de Markov à temps discret
 -processus stochastique ou processus aléatoire = représente une évolution, discrète ou à temps continu, d'une variable aléatoire
@@ -46,42 +55,10 @@
 
 ---------------------------------------------------------------------------
 
-CNN convolutional neural network / réseau de neurones convolutifs 
-    = type de réseau de neurones artificiels acycliques, dans lequel le motif de connexion entre les neurones est inspiré par le cortex visuel des animaux
-    -très utilisé dans la reconnaissance d'images
-    -empilage multicouche de perceptrons, dont le but est de prétraiter de petites quantités d'informations
-    -2 types de neurones
-        -les neurones de traitement, qui traitent une portion limitée de l'image au travers d'une fonction de convolution
-        -les neurones de mise en commun des sorties dits de pooling
-    -les données d'entrée passent à travers plusieurs couches de calcul avant de produire une sortie. Les résultats d'une couche servent d'entrée au calcul de la couche suivante
-    -les 1ères couches permettent d'extraire les caractéristiques simples (contours), que les couches suivantes combineront pour former des concepts de plus en plus complexe et abstrait (contour < motif < parti d'objet < objet)
-
-
 segmentation = diviser les images grâce à un premier réseaux de neurones (le segmenteur) puis classer chaque petite images (tâche de classification "classique")
 
 
-Tensorflow = plate-forme Open Source de bout en bout dédiée au machine learning.
-
-
-Yolo (You only look once) = outils de détection d'objet temps réel
-
-
-Keras = bibliothèque permettant d'interagir avec les algorithmes de réseaux de neurones profonds et d'apprentissage automatique
-
-
 NLP (traitement du langage naturel) = domaine multidisciplinaire impliquant la linguistique, l'informatique et l'IA, qui vise à créer des outils de traitement de la langue naturelle pour diverses applications
-
-
-Machine learning / apprentissage automatique
-    -approches mathématiques et statistiques pour donner aux ordinateurs la capacité d'« apprendre » à partir de données : rechercher des corrélations entre des variables spécifiques
-    -volume de données : faible, plafonnent souvent après le traitement d'une certaine quantité d'informations
-    -résultat : numérique
-
-
-Deep learning
-    -adopte une approche de réseau neuronal pour rechercher des modèles et des corrélations 
-    -volume de données : se chiffre en millions, s'améliorer de façon exponentielle lorsqu'on leur donne plus de données pour "s'entraîner" puis à analyser
-    -résultat : peuvent être n'importe quoi : du texte, du son, une image ...
 
 
 GPU
@@ -117,5 +94,4 @@ Algorithmes
     Prior Trainer
     Machines à vecteurs de support
     Moindres carrés ordinaires
-
 
