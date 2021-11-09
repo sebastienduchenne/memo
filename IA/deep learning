@@ -5,6 +5,7 @@ surapprentissage, tenseur
 quantization
 	modèle de séquences : RNN, modèle LTSM
 	set d’apprentissage, dev set, test set
+generative model
 
 
 Deep learning

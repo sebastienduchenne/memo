@@ -31,6 +31,7 @@ Data center         IaaS
 
 
 *** fournisseurs
+
 -Cloud Foundry (PaaS)
     -architecture basée sur les conteneurs
     -prend en charge n'importe quel langage
@@ -39,10 +40,33 @@ Data center         IaaS
 
 -AWS = Amazon Web Service
     -Amazon S3 = Amazon Simple Storage Service
-    -SimpleDB
+    -Amazon SimpleDB
+    -Amazon Simple Storage Service (S3)
+    -Elastic Compute Cloud (EC2)
+    -Amazon Virtual Private Cloud (VPC)
 
 -Microsoft Azure
     -Azure Cosmos DB
 
--Google
+-Google colab
     -Firebase = plateforme mobile de Google qui permet d'héberger des applications pour mobile et pour le web
+    -Google Cloud Platform (GCP)
+    -bigtable
+
+-OpenShift par Red Hat
+
+-Orange Business Services
+
+
+-> comparaison des services cloud computing :
+
+    GCP 	                AWS 	                M. Azure 	            Oracle Cloud
+G. Compute Engine 	    A. EC2 	                A. Virtual Machines 	O. Cloud Infra OCI
+G. App Engine 	        AWS Elastic Beanstalk 	A. App Services 	    O. Application Container
+G. Kubernetes Engine 	A. Elastic K. Service 	A. Kubernetes Service 	O. Kubernetes Service
+G. Cloud Bigtable 	    A. DynamoDB 	        A. Cosmos DB 	        O. NoSQL Database
+G. BigQuery 	        A. Redshift 	        A. Synapse Analytics 	O. Autonomous Data Warehouse
+G. Cloud Functions 	    AWS Lambda 	            A. Functions 	        O. Cloud Fn
+G. Cloud Datastore 	    A. DynamoDB 	        A. Cosmos DB 	        O. NoSQL Database
+G. Cloud Storage 	    A. S3 	                A. Blob Storage 	    O. Cloud Storage OCI 
+

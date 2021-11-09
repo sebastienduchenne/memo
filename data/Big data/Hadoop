@@ -1,0 +1,6 @@
+-hadoop = framework destiné à faciliter la création d'applications distribuées (au niveau du stockage des données et de leur traitement) et échelonnables permettant aux applications de travailler avec des milliers de nœuds et des pétaoctets de données
+-chaque nœud est constitué de machines standard regroupées en grappe
+-écrit en Java
+-open source
+-MapReduce = patron d'architecture de développement informatique dans lequel sont effectués des calculs parallèles, et souvent distribués, de données potentiellement très volumineuses
+-spark = framework de calcul distribué, permet d'écrire des applications distribuées et proposant des bibliothèques de traitement classique

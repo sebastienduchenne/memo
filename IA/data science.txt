@@ -1,0 +1,49 @@
+
+
+*** data science
+
+= extraction de connaissance d'ensembles de données
+-s'appuie sur la fouille de données, les statistiques, le traitement du signal, diverses méthodes de référencement, apprentissage automatique et la visualisation de données
+-interdisciplinarité
+
+Techniques
+
+    -régression linéaire
+    -régression logistique
+    -arbre de décision : used as prediction models for classification and data fitting. The decision tree structure can be used to generate rules able to classify or predict target/class/label variable based on the observation attributes
+    -Support Vector Machine (SVM)
+    -Clustering is a technique used to group data together
+    -Dimensionality reduction is used to reduce the complexity of data computation so that it can be performed more quickly
+    -Machine learning is a technique used to perform tasks by inferencing patterns from data
+
+Langages
+
+    -Python, libraries : numpy, pandas, scipy
+    -R : for statisticians and data mining and is optimized for computation
+    -Julia : a high-level, high-performance, dynamic programming language well-suited for numerical analysis and computational science
+
+Frameworks
+
+    -TensorFlow = framework pour créer des modèles de machine learning
+    -Pytorch = framework de machine learning
+    -Jupyter Notebook = interface web pour Python
+    -Apache Hadoop = framework utilisé pour gérer des données sur de vastes systèmes distribués
+
+Visualization Tools
+
+    -Plotly : provides a rich set of interactive scientific graphing libraries
+    -Tableau makes a variety of software that is used for data visualization
+    -PowerBI : a business analytics service by Microsoft
+    -Qlik : produces software such as QlikView and Qlik Sense used for data visualization and business intelligence
+    -AnyChart : provides JavaScript libraries and other tools for data visualization in charts and dashboards
+    -Google Charts : a JavaScript-based web service made and supported by Google for creating graphical charts
+    -Sisense provides a front-end for building data visualizations including dashboards and reports
+    Webix is a UI toolkit that includes dedicated tools for information visualization
+
+Platforms
+
+    -RapidMiner : plateforme de data science
+    -Dataiku : logiciel pour big data
+    -Anaconda : développer en Python et R
+    -MATLAB
+    -Databricks : plateforme cloud pour données massives

@@ -1,3 +1,4 @@
+= désigne les ressources d’informations dont les caractéristiques en termes de volume, de vélocité et de variété imposent l’utilisation de technologies et de méthodes analytiques particulières pour générer de la valeur
 -Data lake = dépôt de données brutes accessible en lecture seule
 -datanode = un serveur d'un réseau
 -namenode = serveur central. route et administre les nodes, distribue les chunks, ne fait pas de traitements. Il est rack-aware

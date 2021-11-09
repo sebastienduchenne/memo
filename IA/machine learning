@@ -9,6 +9,13 @@ apprentissage non-supervisé
 apprentissage par renforcement : processus de décision markoviens
 -Scikit-learn : librairie de machine learning, model fitting, data preprocessing, model selection and evaluation
 
+
+Machine learning / apprentissage automatique
+    -champ d'étude de l'IA qui se fonde sur des approches mathématiques et statistiques pour donner aux ordinateurs la capacité d'« apprendre » à partir de données : rechercher des corrélations entre des variables spécifiques
+    -volume de données : faible, plafonnent souvent après le traitement d'une certaine quantité d'informations
+    -résultat : numérique
+
+
 Algorithmes
     naive Bayes classifier
     K-means clustering
@@ -22,10 +29,3 @@ Algorithmes
     arbre de décision
     k nearest neighbors
     analyse en composantes principales
-
-
-
-Machine learning / apprentissage automatique
-    -approches mathématiques et statistiques pour donner aux ordinateurs la capacité d'« apprendre » à partir de données : rechercher des corrélations entre des variables spécifiques
-    -volume de données : faible, plafonnent souvent après le traitement d'une certaine quantité d'informations
-    -résultat : numérique
