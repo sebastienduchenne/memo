@@ -30,6 +30,13 @@ DialogFlow
 provider : google colab, keras
 
 
+usages
+    maintenance prédictive
+    gestion de l'énergie
+    classification
+    détection dans des images
+
+
 intelligence artificielle
     prolog
     système expert

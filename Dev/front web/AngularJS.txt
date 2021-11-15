@@ -1,0 +1,158 @@
+module : defines an application
+controller : control the data
+service : une fonction
+directives : HTML attributes with an ng prefix
+
+
+*** directives
+
+AngularJS directives are HTML attributes with an ng prefix
+
+ng-init : initializes a variable
+ng-app : defines an AngularJS application
+ng-model : binds the value of HTML controls (input, select, textarea) to application data
+ng-bind : binds application data to the HTML view
+ng-controller : control the data
+ng-repeat : boucle
+ng-options : options d'une liste
+ng-disabled : enable / disable HTML element
+ng-show : shows or hides an HTML element
+ng-hide : hides or shows an HTML element
+ng-mousedown ... : évènements de souris
+ng-include : include HTML content
+ng-click : appeler une fonction
+
+
+*** controller
+
+$scope : object with the available properties and methods in HTML
+$rootScope : the scope created on the HTML element that contains the ng-app directive. available in the entire application.
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name: <input type="text" ng-model="lastName"><br>
+    <br>
+    Full Name: {{firstName + " " + lastName}}
+    <p ng-bind="lastName"></p>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.firstName= "John";
+        $scope.lastName= "Doe";
+    });
+</script> 
+
+
+*** filter |
+
+
+currency Format a number to a currency format.
+date Format a date to a specified format.
+filter Select a subset of items from an array.
+json Format an object to a JSON string.
+limitTo Limits an array/string, into a specified number of elements/characters.
+lowercase Format a string to lower case.
+number Format a number to a string.
+orderBy Orders an array by an expression.
+uppercase Format a string to upper case.
+
+
+
+<p>The name is {{ lastName | uppercase }}</p>
+
+
+
+// custom filter
+app.filter('myFormat', function() {
+  return function(x) {
+      ...
+  };
+});
+
+
+*** services
+
+30 built-in service
+
+$http : service pour faire des requêtes
+$location : return information about the location of the current web page:
+$timeout : window.setTimeout function
+$interval : window.setInterval function
+
+
+// own service
+app.service('hexafy', function() {
+  this.myFunc = function (x) {
+    return x.toString(16);
+  }
+});
+
+// il faut rajouter le service dans le controller
+app.controller('myCtrl', function($scope, hexafy) {
+  $scope.hex = hexafy.myFunc(255);
+});
+
+
+*** formulaire
+
+$touched
+
+<input name="myName" ng-model="myName" required>
+<span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span> 
+
+
+*** AngularJS Global API
+
+The AngularJS Global API is a set of global JavaScript functions
+
+
+angular.lowercase() 	Converts a string to lowercase
+angular.uppercase() 	Converts a string to uppercase
+angular.isString() 	    Returns true if the reference is a string
+angular.isNumber() 	    Returns true if the reference is a number
+
+
+*** routing
+
+app.config(function($routeProvider) {
+  $routeProvider
+  .when("/", {
+    templateUrl : "main.htm"
+  })
+  .when("/red", {
+    templateUrl : "red.htm"
+  })
+  .when("/green", {
+    templateUrl : "green.htm"
+  })
+});
+
+
+
+*** http
+
+The AngularJS $http service makes a request to the server, and returns a response.
+
+
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <p>Today's welcome message is:</p>
+    <h1>{{myWelcome}}</h1>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http) {
+        $http.get("welcome.htm")
+        .then(function(response) {
+            $scope.myWelcome = response.data;
+        });
+    });
+</script>
+
+
+
