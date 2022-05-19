@@ -5,14 +5,17 @@ token ERC20
 le SC sur le L1 vérifie ce que le L2 lui envoie
 Les L2 vont se brancher sur les shards
 eth doit pouvoir évoluer vers du quantum resistant
+se veut être une plateforme mondiale
+se veut très évolutive
+
 
 
 gas 
     = unité virtuelle permettant d'organiser le paiement des frais de transaction
-    Dépend de la complexité de l’opération
+    dépend de la complexité de l’opération
     mesuré en Gwei, 1 Gwei = 0,000000001 ETH
 
-langages : solidity, Vyper, Yul, Yul+ (C et Rust devrait être pris en charge à l’avenir)
+langages de SC : solidity, Vyper, Yul, Yul+ (C et Rust devrait être pris en charge à l’avenir)
 
 EVM : 
     VM qui tourne sur chacun des noeud du réseaux
@@ -20,10 +23,7 @@ EVM :
 
 couche de layer 2 : polygon, LRC
 
-EIP 1559 (london) : rendre eth déflationniste par brûlage d’une partie des frais de transactions lorsque le minage cessera
-zk rollup
-optimistic rollup
-arbre de merkle
+EIP 1559 (london) : rendre ETH déflationniste par brûlage d’une partie des frais de transactions
 Casper = algo de POS, permet la scalabilité
 Serenity = mise à niveau comprenant Casper, Sharding et eWASM
 Plasma = un réseau de sidechains pour Ethereum, collection de contrat autonome, augmente la scalabilité
@@ -34,13 +34,12 @@ risque de centralisation du réseau
 L2 pour décongestionner la L1
 execution layer = couche exécutant les smart contract
 consensus layer = beacon chain permettant le POS
-se veut être une plateforme mondiale
-se veut très évolutive
 promet jusqu’à 100 000 transactions par seconde 
 le POS est plus adapté que le POW pour répondre à une forte demande
 EIP = Ethereum Improvement Proposals
 rollup = consiste à regrouper plusieurs transactions en une hors chaine, et de fournir à la chaîne principale une preuve cryptographique de l’ensemble des transactions
-
+    zk rollup
+    optimistic rollup
 
 Architecture
     1 chaîne principale
@@ -50,25 +49,21 @@ Architecture
     des validateurs
 
 
-
 beacon chain
-consensus layer
-coordonner les shards
-valide les blocs de la chaîne principale
+    consensus layer
+    coordonner les shards
+    valide les blocs de la chaîne principale
 
 
 architecture en shard 
-    sharding = répartir la charge du réseau sur plusieurs chaînes, appelées shard, pour permettre la scalabilité, cad augmenter le nombre de transaction / sec
+    sharding = répartir la charge du réseau sur plusieurs chaînes, des shards, pour permettre la scalabilité, cad augmenter le nombre de transactions/sec
     64 shards en tout (capacité jusqu'à 1024)
-    Le point fort est principalement sa nature décentralisée permettant à plus de participants utilisateurs de sécuriser le réseau. Lorsqu’il y a plus de nœuds sur un réseau, cela se traduit généralement par un réseau blockchain plus sûr
+    point fort : sa nature décentralisée permettant à plus de participants de sécuriser le réseau, ce qui rend la blockchain plus sûre
     les validateurs n’ont besoin que des données d’un shard
     fonctionne avec les rollups
     sharding + rollup => jusqu’à 100 000 transactions par seconde
     sharding version 1 : augmenter le nb de transactions grâce aux rollups sans traiter les transactions et les smart contract
     sharding version 2 : prendre en charge les smart contract, encore en discussion
-
-
-
 
 
 Etapes
@@ -79,17 +74,15 @@ Etapes
     d’autres phases viendront pour répondre à la demande des utilisateurs
 
 
+--- Polygon ---------------------------
 
-
-________________________________________________________________________
-
-—-- Polygon —---------------------------
 layer 2
 Sidechain
 Polygone zéro : solution de ZK rollup
 
-—-- Lens Protocol —---------------------------
-plateforme décentralisés de réseaux sociaux sur laquelle on construit des applications : réseau social, plateforme d'analyse de données, solution pour les DAO
+--- Lens Protocol ----------------------------
+
+plateforme décentralisé de réseaux sociaux sur laquelle on construit des applications : réseau social, plateforme d'analyse de données, solution pour les DAO
 pensée pour le web 3.0
 sur Polygon
 une adresse peut avoir un à plusieurs profils
