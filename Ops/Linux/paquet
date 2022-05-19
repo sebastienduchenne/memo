@@ -5,6 +5,8 @@ extension paquet téléchargé
     .jar
     .tar.gz
 
+index des packages à /etc/apt/sources.list et /etc/apt/sources.list.d
+
 
 *** commandes
 
