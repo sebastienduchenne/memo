@@ -1,3 +1,18 @@
+emprunter sans passer par un intermédiaire
+aave, SNX, 1inch, compound, MakerDAO, uniswap
+Flash loan / prêt flash = emprunter sans garanti
+APY = annual percentage yield ou pourcentage annuel de rendement ou revenu annuel
+pool de liquidité, pool de staking
+
+staking
+    placer ses crypto dans des réserves de liquidité (liquidity pool) pour valider les transactions et obtenir des récompenses en revenu passif    
+    risque de perte des fonds si le validateur ne respecte pas les règles
+
+yield farming
+    on dépose des fonds sur des plateformes de la DeFi pour les prêter
+    revenu passif
+    plus risqué à cause du piratage
+
 
 Aave
     Protocole de la DEFI
