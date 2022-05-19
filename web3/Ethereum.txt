@@ -7,8 +7,15 @@ Les L2 vont se brancher sur les shards
 eth doit pouvoir évoluer vers du quantum resistant
 se veut être une plateforme mondiale
 se veut très évolutive
+web3.js
+ethereum.js
 
 
+network :
+    Main
+    Kovan
+    Ropsten
+    Rinkeby
 
 gas 
     = unité virtuelle permettant d'organiser le paiement des frais de transaction
@@ -68,9 +75,8 @@ architecture en shard
 
 Etapes
     phase 0 : mise en place de la Beacon chain
-    phase 1 : architecture en shard chains
-    phase 1.5 : connexion entre la chaîne principale et la beacon chain
-    phase 2 / Serenity : EVM remplacée par eWASM. Casper
+    phase 1 : The Merge = connexion entre le Mainnet et la beacon chain, qui met fin au POW
+    phase 2 : Serenity = EVM remplacée par eWASM. Casper
     d’autres phases viendront pour répondre à la demande des utilisateurs
 
 
