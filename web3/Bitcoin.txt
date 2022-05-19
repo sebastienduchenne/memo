@@ -1,0 +1,45 @@
+controler ses données personnelles
+anonymat
+cypherpunk
+halving
+liberté
+décentralisation
+blockchain = base de données infalsifiable sur laquelle sont inscrites l’ensemble des échanges depuis sa création
+absence d’organe central de contrôle qui se traduit concrètement par un fonctionnement en pair-à-pair
+Le premier caractère de cette technologie de stockage nouvelle est la transparence : chacun doit pouvoir consulter l’ensemble des échanges et transactions constatées sur la blockchain depuis sa création
+Cette technologie présente ainsi l’avantage de se passer des tiers de confiance que sont le plus souvent l’État, le notaire, ou encore les banques institutionnelles, au profit d’un système totalement décentralisé sans aucune forme d’autorité centrale
+mise à jour taproot
+
+philosophie
+transparence
+se passer des tiers de confiance, décentralisation, libertarianisme, lberté individuelle
+
+
+
+Len Sassaman
+Hal Finney
+David Chaum
+
+« L’architecture de Bitcoin est très similaire à celle des remailers, ses nœuds transmettent simplement des données de transaction à la place de messages. »
+
+
+taproot : plus de confidentialité, smart contract
+lightning network :
+   permet plus de transactions par seconde à très faible frais
+   n'ajoute pas les transactions intermédiaires à la blockchain
+   canaux de paiement
+évite la double dépense
+minage
+cipherpunk : protéger la vie privée et liberté
+7 transactions pas sec et jusqu'a 65000 pour visa
+permet de se passer des banques
+-séparation de l'argent et de l'état
+-inconfiscable
+-utilisé dans les pays ou hyperinflation
+
+argent controlé par gouv, banque commercial, banque centrale ; mais abuse en imprimant de la monnaie qui fini par perdre de la valeur avec le temps ; et l'injection d'argent dans l'économie n'est pas équitable (effet cantillon)
+bitcoin :nouvelle infrastructure monéaire qui permet de sortir de ce système injuste
+chiffrement des clés privé avec avec la techno ECDSA
+
+
+lightening network = surcouche de bitcoin qui permet de faire beaucoup de transaction par seconde
