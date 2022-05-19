@@ -1,0 +1,102 @@
+= protocole d'échanges décentralisés permettant la création par les utilisateurs de smart contract
+Ces contrats intelligents sont basés sur un protocole informatique permettant de vérifier ou de mettre en application un contrat mutuel
+utilise une unité de compte dénommée Ether comme moyen de paiement de ces contrats
+token ERC20
+le SC sur le L1 vérifie ce que le L2 lui envoie
+Les L2 vont se brancher sur les shards
+eth doit pouvoir évoluer vers du quantum resistant
+
+
+gas 
+    = unité virtuelle permettant d'organiser le paiement des frais de transaction
+    Dépend de la complexité de l’opération
+    mesuré en Gwei, 1 Gwei = 0,000000001 ETH
+
+langages : solidity, Vyper, Yul, Yul+ (C et Rust devrait être pris en charge à l’avenir)
+
+EVM : 
+    VM qui tourne sur chacun des noeud du réseaux
+    quasi turing complete
+
+couche de layer 2 : polygon, LRC
+
+EIP 1559 (london) : rendre eth déflationniste par brûlage d’une partie des frais de transactions lorsque le minage cessera
+zk rollup
+optimistic rollup
+arbre de merkle
+Casper = algo de POS, permet la scalabilité
+Serenity = mise à niveau comprenant Casper, Sharding et eWASM
+Plasma = un réseau de sidechains pour Ethereum, collection de contrat autonome, augmente la scalabilité
+trilemme des chaînes de bloc : choisir 2 parmi décentralisation, scalabilité, sécurité
+starknet
+EWASM = Ethereum WebAssembly
+risque de centralisation du réseau
+L2 pour décongestionner la L1
+execution layer = couche exécutant les smart contract
+consensus layer = beacon chain permettant le POS
+se veut être une plateforme mondiale
+se veut très évolutive
+promet jusqu’à 100 000 transactions par seconde 
+le POS est plus adapté que le POW pour répondre à une forte demande
+EIP = Ethereum Improvement Proposals
+rollup = consiste à regrouper plusieurs transactions en une hors chaine, et de fournir à la chaîne principale une preuve cryptographique de l’ensemble des transactions
+
+
+Architecture
+    1 chaîne principale
+    1 beacon chain
+    n shards
+    n eWASM
+    des validateurs
+
+
+
+beacon chain
+consensus layer
+coordonner les shards
+valide les blocs de la chaîne principale
+
+
+architecture en shard 
+    sharding = répartir la charge du réseau sur plusieurs chaînes, appelées shard, pour permettre la scalabilité, cad augmenter le nombre de transaction / sec
+    64 shards en tout (capacité jusqu'à 1024)
+    Le point fort est principalement sa nature décentralisée permettant à plus de participants utilisateurs de sécuriser le réseau. Lorsqu’il y a plus de nœuds sur un réseau, cela se traduit généralement par un réseau blockchain plus sûr
+    les validateurs n’ont besoin que des données d’un shard
+    fonctionne avec les rollups
+    sharding + rollup => jusqu’à 100 000 transactions par seconde
+    sharding version 1 : augmenter le nb de transactions grâce aux rollups sans traiter les transactions et les smart contract
+    sharding version 2 : prendre en charge les smart contract, encore en discussion
+
+
+
+
+
+Etapes
+    phase 0 : mise en place de la Beacon chain
+    phase 1 : architecture en shard chains
+    phase 1.5 : connexion entre la chaîne principale et la beacon chain
+    phase 2 / Serenity : EVM remplacée par eWASM. Casper
+    d’autres phases viendront pour répondre à la demande des utilisateurs
+
+
+
+
+________________________________________________________________________
+
+—-- Polygon —---------------------------
+layer 2
+Sidechain
+Polygone zéro : solution de ZK rollup
+
+—-- Lens Protocol —---------------------------
+plateforme décentralisés de réseaux sociaux sur laquelle on construit des applications : réseau social, plateforme d'analyse de données, solution pour les DAO
+pensée pour le web 3.0
+sur Polygon
+une adresse peut avoir un à plusieurs profils
+un profil est un NFT qui est stocké sur le portefeuille et qui contient l’historique des messages, commentaires, contenus créés, retweets
+NFT de suivi quand on follow qqun.
+le follower peut accéder au contenu de la personne qui décide qui peut récupérer, les frais …
+miroir : retweet
+le profil peut être une DAO
+graphe social
+
