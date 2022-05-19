@@ -1,0 +1,5 @@
+DAO ou Dencentralized autonomous organisation
+    le smart contrat définit les règles de l'organisation et détient la trésorerie du groupe
+    les membres possèdent des jetons de gouvernance
+    si on veut changer les règles, on fait voter les membres
+    activités transparentes et publiques
