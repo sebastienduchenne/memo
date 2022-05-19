@@ -1,0 +1,47 @@
+blockchaine d’infrastructure
+IPFS : système de stockage décentralisé
+_______________________________
+    USAGES
+avatar NFT
+    revendre données personnelles
+    connexion à un site
+traçabilité des produits
+connexion avec son wallet crypto
+tokenisation immobilier
+play to earn
+NFT pour avoir des accès privilégiés
+_______________________________
+    APPLICATIONS
+voyage
+réseau social
+photos
+vidéos
+
+décentralisation et la blockchain => réseau de confiance => consensus et intégrité des données => confiance et donc on peut se passer d'intermédiaire de confiance ; propriété digitale
+résistance à la censure
+trilemme des blockchain : décentralisation, sécurité, scalabilité
+dapps
+defi
+   aave, compound, curve
+   préter / emprunter de l'argent sans passer pas une banque
+asset en collatéral (sur aave)
+permet au créateur de se passer d'un intermédiaire (spotify, deezer) et d'être mieux rémunéré
+validateur (stacking)
+sidechain = blockchain qui tourne en parallèle d'une autre blockchain
+token de gouvernance = donne à ses détenteurs un droit de vote sur les modifications apportées aux contrats intelligents des protocoles qui les émettent
+yield farming
+layer 2, optimistic rollup
+
+
+
+--------------------------------------------------------------
+
+Perte de valeur du dollars, inflation à cause de l’impression monétaire
+la chine a pour objectif ultime de créer un nouveau système monétaire qui remplace le dollars en tant que monnaie de réserve mondiale. Son DCEP (Yuan numérique) est le squelette de cette techno
+cryptobanque : bitpanda, crypto.com
+
+
+
+MNBC / CDBC
+   = monnaie numérique de banque centrale
+
