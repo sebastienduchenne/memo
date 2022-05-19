@@ -1,0 +1,138 @@
+POW 
+    = proof of work
+    effectuer des calculs pour valider les transactions
+    tokens en récompense = minage
+POS
+    = méthode de validation des chaînes de block basé sur le blocage de jeton par des validateurs 
+    token en récompense = minage
+    par rapport au POW : augmente la vitesse et l’efficacité, frais réduit
+slashing = punition si un validateur ne respecte pas les règles. Dénonciation et confiscation des tokens
+Dapp : application construite sur un réseau décentralisé qui combine un contrat intelligent et une interface utilisateur en frontend. code backend qui s'exécute sur un réseau décentralisé
+smart contract = contrat intelligent, programme dans une blockchain qui s’exécute lorsque les conditions contractuelles se vérifient
+    contrat = règles d’un accord entre plusieurs parti
+    tous égaux
+    transparent
+oracle = récupère des informations du monde physique à un smart contract
+non-custodial wallet : la plateforme ne détient pas la clé privée
+staking
+    verrouiller des tokens en POS pour vélider les transactions et obtenir des récompenses en revenu passif
+    risque de perte des fonds si le validateur ne respecte pas les règles
+yield farming
+    on dépose des fonds sur des plateformes de la DeFi pour les prêter
+    revenu passif
+    plus risqué à cause du piratage
+APY = annual percentage yield ou pourcentage annuel de rendement ou revenu annuel
+pool de liquidité, pool de staking
+sidechain = chaine alternative à une chaine parente
+TVL = total de liquidité verrouillées
+token de gouvernance
+launchpad = plateforme pour lancer des projets
+faucet = service qui récompense en tokens les utilisateurs pour le temps passé sur le service
+swap
+AMM
+impermanent loss
+arbre de merkle ou arbre de hachage = arbre dont les feuilles contiennent un hash des données et les noeuds contiennent le hash de la combinaison des hash des noeuds enfants
+approche monolithique, cad faire exécution, consensus, validité des données et settlement, impossible sur la même couche à l’échelle d’internet. On fait donc de la modularité en déportant ces fonctions sur d’autres couches
+optimistic rollup = on fait confiance, on ne vérifie pas les info envoyées ; période tampon de qq jours
+ZK rollup = la L2 donne à la L1 une preuve mathématique que le calcul a été effectué correctement qui vérifie cette preuve. on peut vérifier que la personne le secret sans que celui ci ne le divulgue
+layer 0 : réunir toutes les chaînes
+starkware
+    entreprise qui a fait starknet
+    a créé les starks = zk rollup décentralisé sans permissions
+zero knowledge proof = protocoles permettant à un acteur de prouver qu'une situation est réelle sans avoir à révéler les informations relatives à cette dernière
+
+
+
+DAO ou Dencentralized autonomous organisation
+    le smart contrat définit les règles de l'organisation et détient la trésorerie du groupe
+    les membres possèdent des jetons de gouvernance
+    si on veut changer les règles, on fait voter les membres
+    activités transparentes et publiques
+
+
+NFT_____________________________________________
+= token non fongible, titre de propriété sur un objet numérique
+-non fongible token = 2 tokens sont différents
+-rarible, opensea, sorare
+-domaines : art, immobilier, tokeniser des objets du monde réel, gaming
+-tokenisation = matérialiser et valoriser des objets existants du monde physique vers le monde numérique. Moyen de créer des actions de n’importe quel objet présent dans le monde réel => économie des tokens
+
+= titre de propriété, cad une inscription dans la blockchain qui dit a qui appartient tel objet
+permet de créer de la rareté numérique
+internet de la propriété, on détient ce que l’on créée et nos données perso que l’on peut revendre
+NFT Paris
+
+
+-art
+-objet dans un jeu vidéo
+-carte à collectionner
+-parcelle de terrain
+-parcelle d’un bien immobilier
+-nom de domaine
+
+
+usages
+    badge pour avoir accès à des privilèges et éventuellement financer un projet
+    parcelle de terrain dans un metaverse
+    objet dans un metaverse
+    avatar / profil
+    signature d’un contrat
+    facture
+    mettre un NFT en collatéral pour générer des intérêts
+    tokenisation d’un objet du monde réel
+
+
+Projets
+    Aurory project
+    decentraland
+    the sandbox
+    theTreeverse
+    playembersword
+    the winkyverse
+    Mars4
+
+
+
+emprunter sans passer par un intermédiaire tel que les banques
+aave, SNX, 1inch, compound, MakerDAO, uniswap
+Yield Farming =
+lending =
+staking = placer ses crypto dans des réserves de liquidité (liquidity pool) pour générer des intérêts
+Flash loan / prêt flash = emprunter sans garanti
+
+
+decentraland
+sandbox
+disney
+facebook
+MVI metaverse index
+enjin
+ultra UOS
+OVR
+
+METAVERSE________________
+= monde virtuel où l’on peut avoir des interactions virtuelles aussi riches que dans la vie réelle
+échange de NFT
+nous aurons un avatar qui sera un NFT
+il n’y aura plus de silot comme dans le web 2.0 avec amazon/facebook/google, tout sera interconnecté (social, travail, gaming)
+peut-être décentralisé
+
+
+projets
+    Mana Decentraland
+    The Sandbox
+    Meta de Facebook
+
+
+usages
+    être au bureau
+    assister à un concert / évènement
+    se réunir entre amis
+    acheter des biens virtuels et les utiliser partout
+    faire du sport
+    jouer
+    concours
+    éducation, aller en cours
+    visiter des musées
+
+
