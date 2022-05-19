@@ -1,3 +1,6 @@
+blockchain = base de données qui stocke toutes les transactions qui ont eu lieu
+genesis block = 1er block
+
 POW 
     = proof of work
     effectuer des calculs pour valider les transactions
@@ -8,12 +11,14 @@ POS
     token en récompense = minage
     par rapport au POW : augmente la vitesse et l’efficacité, frais réduit
     slashing = punition si un validateur ne respecte pas les règles. Dénonciation et confiscation des tokens
+    risque : beaucoup de propriétaires de cryptomonnaies choisissent de stocker leurs actifs auprès de grands dépositaires
 
 Dapp = application construite sur un réseau décentralisé qui combine un contrat intelligent et une interface utilisateur en frontend
 
 smart contract = contrat intelligent, programme dans une blockchain qui s’exécute lorsque les conditions contractuelles se vérifient
     contrat = règles d’un accord entre plusieurs parti
     transparent
+    un compte controlé par le code
 
 oracle = récupère des informations du monde physique à un smart contract
 non-custodial wallet : la plateforme ne détient pas la clé privée
