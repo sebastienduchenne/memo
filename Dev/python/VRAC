@@ -2,6 +2,8 @@ __name__ = __main__
 __main__ : name of the top-level environment of the program
 écriture scientifique : 1e6 -> 1 000 000
 puissance **
+typage dynamique
+langage interprété
 
 if __name__ == '__main__':
     sys.exit(main())  # next section explains the use of sys.exit
