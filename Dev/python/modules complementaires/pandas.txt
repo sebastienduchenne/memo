@@ -1,0 +1,2 @@
+travailler sur des tableaux tabulaires (avec des noms aux colonnes et lignes)
+dataframe
