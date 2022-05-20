@@ -9,9 +9,5 @@
 -commentaire en anglais
 '''
 #espaces
-name = 'Batman' # oui c'est propre
-name='name' #non c'est moche
-batmobile ['color'] = 'black' # non
-batmobile['color'] = 'black' # oui
-
+nommage : ma_variable, fonction_test_27(), mon_module, MaClasse, MA_CONSTANTE
 
