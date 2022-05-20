@@ -1,0 +1,35 @@
+module os
+module random
+module sys
+module re
+module numpy
+module matplotlib
+module pandas
+module math
+module collections
+module scipy
+module Biopython
+module threading
+module subprocess
+module socket
+lire un fichier
+f-strings
+listes
+anaconda
+PEP8 bonnes pratiques
+tuples
+sets
+frozensets
+class
+jupyter
+tkinter : GUI
+cx_Freeze : exécutable
+virtualenv
+itérateur
+décorateur
+regex
+fonctions natives
+Django
+threading
+PIP
+exception
