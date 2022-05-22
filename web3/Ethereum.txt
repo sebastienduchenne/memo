@@ -51,7 +51,7 @@ rollup = consiste à regrouper plusieurs transactions en une hors chaine, et de 
 Architecture
     1 chaîne principale
     1 beacon chain
-    n shards
+    n shards chain
     n eWASM
     des validateurs
 
@@ -60,6 +60,7 @@ beacon chain
     consensus layer
     coordonner les shards
     valide les blocs de la chaîne principale
+    implémente le POS
 
 
 architecture en shard 
@@ -74,9 +75,9 @@ architecture en shard
 
 
 Etapes
-    phase 0 : mise en place de la Beacon chain
-    phase 1 : The Merge = connexion entre le Mainnet et la beacon chain, qui met fin au POW
-    phase 2 : Serenity = EVM remplacée par eWASM. Casper
+    Serenity phase 0 : mise en place de la Beacon chain
+    Serenity phase 1 : The Merge = connexion entre le Mainnet et la beacon chain, qui met fin au POW
+    Serenity phase 2 : lancement des shards chain, EVM remplacée par eWASM. Casper
     d’autres phases viendront pour répondre à la demande des utilisateurs
 
 
@@ -98,4 +99,3 @@ le follower peut accéder au contenu de la personne qui décide qui peut récup�
 miroir : retweet
 le profil peut être une DAO
 graphe social
-
