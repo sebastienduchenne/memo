@@ -5,3 +5,58 @@
     -des services distribués de serveur de noms de domaine
 -attaque DDoS (Distributed Denial of Service attack) = attaque par déni de service, a pour but de rendre indisponible un service
 -réseau de distribution de contenu (CDN, content delivery network) = réseau de machine qui propose du contenu (streaming, téléchargement)
+-adresse IP = un numéro d’identification attribué à chaque périphérique d’un réseau
+-carte réseau
+-ethernet = protocole de réseau local à commutation de paquet; adresse physique sur 6 octets (3 par IEEE, + 3 par le constructeur)
+-adresse MAC (Media Access Control address) = un identifiant physique stocké dans une carte réseau ou une interface réseau et utilisé pour attribuer mondialement une adresse unique
+-routeur NAT (Network address Translation) : relier un réseau local privé à internet
+-routeur = machine ayant plusieurs interfaces réseaux
+-carte ethernet
+-internet protocol = une famille de protocoles de communication
+-OSI et couches
+-DHCP
+-NAS
+-DNS
+-TCP/IP
+-routage
+-interface réseau
+
+
+*** port réseau ***
+
+= comme une porte à laquelle une application d’un équipement se connecte à un autre équipement distant par le réseau
+associé à une adresse IP
+associé à un protocole (TCP ou UDP)
+65536 par machine
+port ouvert : l’application écoute
+port fermé : l’application n’écoute pas
+80 : HTTP
+443 : HTTPS
+
+
+*** interface réseau ***
+
+= matériel (composant / carte réseau) qui relie la machine à un réseau
+driver qui correspond à la couche Liaison
+préparer les données à transmettre, les envoyer et interpréter celles reçues
+une adresse IP par interface
+liste des interfaces dans le fichier /etc/network/interfaces
+ex : ppp0, ppp1, eth0, eth1, eth2, lo
+
+
+lo - Interface de boucle locale
+–Utilisée pour tester le fonctionnement des couches TCP/IP et applications
+–Obligatoire sur toutes les machines
+ethn - Carte Ethernet numéro n
+
+
+*** commandes ***
+    ifconfig : configurer une interface réseau IP
+    ip addr
+    netstat : info sur les connexions réseaux
+    ping
+
+
+
+
+
