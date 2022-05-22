@@ -5,6 +5,58 @@
 -redondance des chunks
 -secondary namenode = prend le relais si le namenode tombe en panne
 -élasticité = capacité d'un système à s'adapter en fonction du nombre de serveurs et de la quantité de données à répartir
+hadoop 
+    = stockage et traitement de large volume de données
+    HDFS et MapReduce
+spark
+HDFS (NameNode, DataNode)
+MapReduce
+base de données distribuées
+données structurées / non structurées
+Google File System
+CEPH
+RDD
+NoSQL
+Cassandra
+HBase
+Graphe
+Teradata
+SQL
+R
+Apache Spark
+Yet Another Resource Negotiator (YARN)
+Data Warehouses
+Data lake
+cluster computing
+moteur de requête Presto
+kafka
+HPDA (High Performance Data Analytics)
+ACID / BASE
+business intelligence = analyse des données et de présentation d'informations pour aider les dirigeants, managers et autres utilisateurs finaux de l'entreprise à prendre des décisions business éclairées
+data mining = analyse des données brutes pour en tirer des tendances
+
+_____________________________________________________________________
+
+big data = représente les collections de données caractérisées par un volume, une vélocité et une variété si grands que leur transformation en valeur utilisable requiert l’utilisation de technologies et de méthodes analytiques spécifiques
+
+Volume = pas d'échantillonnage, on observe et mesure tout 
+Vélocité = les données et les résultats sont souvent disponibles en temps réel 
+Variété = puise dans les données textuelles, les photos, audio / vidéo et complète généralement les pièces manquantes en fusionnant plusieurs sources
+
+=> nouvelles techniques d’analyse (mapreduce, hadoop, google file system)
+
+Applications
+    génomique
+    algo de recommandation (Netflix, …)
+    détection de fraude
+    sciences
+    santé
+
+
+compétences
+    Affiner la qualité des données
+    en réduire le volume
+    développer des méthodes de navigation, d’analyse et de visualisation des grandes quantités de données, et des méthodes d’évaluation pour mesurer l’efficacité et l’utilisabilité de ces visualisations
 
 
 *** sharding
