@@ -1,4 +1,4 @@
-blockchain = base de données qui stocke toutes les transactions qui ont eu lieu
+blockchain = base de données qui est partagée entre plusieurs ordinateurs d'un réseau
 genesis block = 1er block
 
 POW 
@@ -12,10 +12,15 @@ POS
     par rapport au POW : augmente la vitesse et l’efficacité, frais réduit
     slashing = punition si un validateur ne respecte pas les règles. Dénonciation et confiscation des tokens
     risque : beaucoup de propriétaires de cryptomonnaies choisissent de stocker leurs actifs auprès de grands dépositaires
+    le POS est plus adapté que le POW pour répondre à une forte demande
 
-Dapp = application construite sur un réseau décentralisé qui combine un contrat intelligent et une interface utilisateur en frontend
+node = machine
 
-smart contract = contrat intelligent, programme dans une blockchain qui s’exécute lorsque les conditions contractuelles se vérifient
+dApp = application construite sur un réseau décentralisé qui combine un contrat intelligent et une interface utilisateur en frontend
+
+smart contract 
+    = contrat intelligent, programme dans une blockchain qui s’exécute lorsque les conditions contractuelles se vérifient
+    Ces contrats intelligents sont basés sur un protocole informatique permettant de vérifier ou de mettre en application un contrat mutuel
     contrat = règles d’un accord entre plusieurs parti
     transparent
     un compte controlé par le code
@@ -29,54 +34,55 @@ launchpad = plateforme pour lancer des projets
 faucet = service qui récompense en tokens les utilisateurs pour le temps passé sur le service
 swap
 AMM
-impermanent loss
 arbre de Merkle ou arbre de hachage = arbre dont les feuilles contiennent un hash des données et les noeuds contiennent le hash de la combinaison des hash des noeuds enfants
-approche monolithique, cad faire exécution, consensus, validité des données et settlement, impossible sur la même couche à l’échelle d’internet. On fait donc de la modularité en déportant ces fonctions sur d’autres couches
-optimistic rollup = on fait confiance, on ne vérifie pas les info envoyées ; période tampon de qq jours
-ZK rollup = la L2 donne à la L1 une preuve mathématique que le calcul a été effectué correctement qui vérifie cette preuve. on peut vérifier que la personne le secret sans que celui ci ne le divulgue
+l'approche monolithique, cad faire exécution, consensus, validité des données et settlement, est impossible sur la même couche à l’échelle d’internet. On fait donc de la modularité en déportant ces fonctions sur d’autres couches
+trilemme des chaînes de bloc : choisir 2 parmi décentralisation, scalabilité, sécurité
+
+
+*** layers
+
+rollup = consiste à regrouper plusieurs transactions en une hors chaine, et de fournir à la chaîne principale une preuve cryptographique de l’ensemble des transactions. 2 types :
+    zk rollup = la L2 donne à la L1 une preuve mathématique que le calcul a été effectué correctement qui vérifie cette preuve. on peut vérifier que la personne garde le secret sans que celui ci ne le divulgue
+    optimistic rollup = on fait confiance, on ne vérifie pas les info envoyées ; période tampon de qq jours
+zero knowledge proof = protocoles permettant à un acteur de prouver qu'une situation est réelle sans avoir à révéler les informations relatives à cette dernière
+
 starkware
     entreprise qui a fait starknet
     a créé les starks = zk rollup décentralisé sans permissions
-zero knowledge proof = protocoles permettant à un acteur de prouver qu'une situation est réelle sans avoir à révéler les informations relatives à cette dernière
+
+layer 0 : réunir les blockchaînes et le réseau traditionnel
+layer 1 : blockchain principale
+    Bitcoin, Ethereum, Solana
+layer 2 : réduire la charge de travail d'une blockchain principale, permet notamment d'augmenter la vitesse des transactions
+    Polygon, Arbitrum
+layer 3 : faire communiquer 2 blockchaines différentes
 
 
-layer 0 : réunir toutes les chaînes
-layer 1 : blockchain
-layer 2 : blockchain qui renvoit des infos à une autre
-
-
-*** NFT
-
-= token non fongible, titre de propriété sur un objet numérique
--non fongible token = 2 tokens sont différents
--rarible, opensea, sorare
--domaines : art, immobilier, tokeniser des objets du monde réel, gaming
--tokenisation = matérialiser et valoriser des objets existants du monde physique vers le monde numérique. Moyen de créer des actions de n’importe quel objet présent dans le monde réel => économie des tokens
+*** NFT, Non Fongible Token
 
 = titre de propriété, cad une inscription dans la blockchain qui dit a qui appartient tel objet
-permet de créer de la rareté numérique
-internet de la propriété, on détient ce que l’on créée et nos données perso que l’on peut revendre
+-2 tokens sont différents
+-rarible, opensea, sorare
+-tokenisation = matérialiser et valoriser des objets existants du monde physique vers le monde numérique. Moyen de créer des actions de n’importe quel objet présent dans le monde réel => économie des tokens
+-permet de créer de la rareté numérique
+-internet de la propriété, on détient ce que l’on créée et nos données perso que l’on peut revendre
 NFT Paris
 
 
--art
--objet dans un jeu vidéo
--carte à collectionner
--parcelle de terrain
--parcelle d’un bien immobilier
--nom de domaine
-
-
 usages
-    badge pour avoir accès à des privilèges et éventuellement financer un projet
-    parcelle de terrain dans un metaverse
-    objet dans un metaverse
-    avatar / profil
-    signature d’un contrat
-    facture
-    mettre un NFT en collatéral pour générer des intérêts
-    tokenisation d’un objet du monde réel
+    -badge pour avoir accès à des privilèges et éventuellement financer un projet
+    -parcelle de terrain dans un metaverse
+    -objet dans un metaverse / jeu
+    -avatar / profil
+    -signature d’un contrat
+    -facture
+    -mettre un NFT en collatéral pour générer des intérêts
+    -tokenisation d’un objet du monde réel
+    -art
+    -carte à collectionner
+    -parcelle d’un bien immobilier physique
+    -nom de domaine
+    -gaming
 
 
-
-
+*** DAO, Decentralised Autonomous Organisation
