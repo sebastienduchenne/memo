@@ -1,0 +1,15 @@
+execution context = concept abstrait pour classifier et différentier différents types de code exécutable
+global context : bas de la pile
+active context
+plusieurs execution context forment une stack
+
+
+*** type de code exécutable
+
+La stack est augmentée chaque fois que nous entrons dans une fonction
+
+Code global
+    s'exécute au niveau Programme
+Code de fonction
+Code d'évaluation intégrée
+Code de module
