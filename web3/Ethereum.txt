@@ -1,18 +1,28 @@
 = protocole d'échanges décentralisés permettant la création par les utilisateurs de smart contract
-Ces contrats intelligents sont basés sur un protocole informatique permettant de vérifier ou de mettre en application un contrat mutuel
-utilise une unité de compte dénommée Ether comme moyen de paiement de ces contrats
+utilise une unité de compte dénommée Ether comme moyen de paiement des smart contracts
 token ERC20
-le SC sur le L1 vérifie ce que le L2 lui envoie
-Les L2 vont se brancher sur les shards
-eth doit pouvoir évoluer vers du quantum resistant
+Ethereum doit pouvoir évoluer vers du quantum resistant
 se veut être une plateforme mondiale
 se veut très évolutive
-web3.js
-ethereum.js
+modules js : web3.js, ethereum.js
+starknet
+risque de centralisation du réseau
+account = stocke de l'ether
+EIP = Ethereum Improvement Proposals
+    EIP 1559 (london) : rendre Ethereum déflationniste par brûlage d’une partie des frais de transactions
 
+langages de SC sur Ethereum : solidity, Vyper, Yul, Yul+ (C et Rust devrait être pris en charge à l’avenir)
 
-network :
-    Main
+layer 2
+    L2 pour décongestionner la L1
+    couche de layer 2 : polygon, LRC
+    le SC sur le L1 vérifie ce que le L2 lui envoie
+    Les L2 vont se brancher sur les shards
+
+networks :
+    Mainnet
+    Sepolia
+    Gorli
     Kovan
     Ropsten
     Rinkeby
@@ -22,36 +32,19 @@ gas
     dépend de la complexité de l’opération
     mesuré en Gwei, 1 Gwei = 0,000000001 ETH
 
-langages de SC : solidity, Vyper, Yul, Yul+ (C et Rust devrait être pris en charge à l’avenir)
 
-EVM : 
-    VM qui tourne sur chacun des noeud du réseaux
-    quasi turing complete
+virtual machine
+    EVM : 
+        VM qui tourne sur chacun des noeud du réseaux
+        quasi turing complete
+    EWASM = Ethereum WebAssembly
+        futur version de la VM
 
-couche de layer 2 : polygon, LRC
-
-EIP 1559 (london) : rendre ETH déflationniste par brûlage d’une partie des frais de transactions
-Casper = algo de POS, permet la scalabilité
-Serenity = mise à niveau comprenant Casper, Sharding et eWASM
-Plasma = un réseau de sidechains pour Ethereum, collection de contrat autonome, augmente la scalabilité
-trilemme des chaînes de bloc : choisir 2 parmi décentralisation, scalabilité, sécurité
-starknet
-EWASM = Ethereum WebAssembly
-risque de centralisation du réseau
-L2 pour décongestionner la L1
-execution layer = couche exécutant les smart contract
-consensus layer = beacon chain permettant le POS
-promet jusqu’à 100 000 transactions par seconde 
-le POS est plus adapté que le POW pour répondre à une forte demande
-EIP = Ethereum Improvement Proposals
-rollup = consiste à regrouper plusieurs transactions en une hors chaine, et de fournir à la chaîne principale une preuve cryptographique de l’ensemble des transactions
-    zk rollup
-    optimistic rollup
 
 Architecture
-    1 chaîne principale
-    1 beacon chain
-    n shards
+    1 chaîne principale = execution layer = couche exécutant les smart contract
+    1 beacon chain = consensus layer = beacon chain permettant le POS
+    n shards chain
     n eWASM
     des validateurs
 
@@ -62,6 +55,8 @@ beacon chain
     valide les blocs de la chaîne principale
 
 
+*** Solutions en développement
+
 architecture en shard 
     sharding = répartir la charge du réseau sur plusieurs chaînes, des shards, pour permettre la scalabilité, cad augmenter le nombre de transactions/sec
     64 shards en tout (capacité jusqu'à 1024)
@@ -71,6 +66,13 @@ architecture en shard
     sharding + rollup => jusqu’à 100 000 transactions par seconde
     sharding version 1 : augmenter le nb de transactions grâce aux rollups sans traiter les transactions et les smart contract
     sharding version 2 : prendre en charge les smart contract, encore en discussion
+
+
+Plasma = un réseau de sidechains pour Ethereum, collection de contrat autonome, augmente la scalabilité
+
+Ethereum Casper = protocole de POS.
+    2 implémentations en cours de développement : Casper FFG et Casper CBC
+
 
 
 Etapes
@@ -85,6 +87,7 @@ Etapes
 layer 2
 Sidechain
 Polygone zéro : solution de ZK rollup
+
 
 --- Lens Protocol ----------------------------
 
