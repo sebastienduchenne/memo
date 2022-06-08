@@ -7,14 +7,6 @@
 -induction : déduire des lois par généralisation des observations
 -plus une IA est polyvalente, moins elle est performante
 -automatisation de certains métiers ou automatisation de certaines tâches
--fichier h5 : modèle entrainé avec tensorflow, contient couche du réseau et poid
--fichier pbmm : modèle de transcription, contient couche du réseau et poid
--fichier pkl : pickle, fichier binaire qui stocke le scaler
--scaler = une IA prend des données d'entrée en vecteur, or différence entre données et les IA n'aiment pas donc on pseudo normalise entre 0 et 1, calcul moyenne et écart type. Le scaler contient les paramètres qui permettent de pseudo-normaliser les données
--CMUSphinx = outil de speech recognition
--Pickling, marshal = modules de sérialisation
--sérialisation ou pickling = processus par lequel une hiérarchie d'objets Python est convertie en un flux d'octets
--pickle = format de sérialisation binaire
 paradoxe de Polanyi
 librairies : NumPy, Pandas, Matplotlib, Seaborn, Scikit learn
 modèles : VGG19, VGG16, Xception, MobileNetV2
@@ -43,16 +35,9 @@ intelligence artificielle
     algorithme génétique
     système multi-agent
         Algorithmes de meutes
-    Optimisation par colonie de fourmis
-    Systèmes immunitaires artificiels
-    Automates cellulaires
-
-
-*** Machine learning, apprentissage machine
--supervisé : étiquette avec les données
--par renforcement : récompense
--non supervisé : déterminer la structure des données
--par transfert
+        Optimisation par colonie de fourmis
+        Systèmes immunitaires artificiels
+        Automates cellulaires
 
 
 *** Markov
@@ -64,9 +49,7 @@ intelligence artificielle
 
 segmentation = diviser les images grâce à un premier réseaux de neurones (le segmenteur) puis classer chaque petite images (tâche de classification "classique")
 
-
 NLP (traitement du langage naturel) = domaine multidisciplinaire impliquant la linguistique, l'informatique et l'IA, qui vise à créer des outils de traitement de la langue naturelle pour diverses applications
-
 
 GPU
     processeur composé de nombreux cœurs plus petits et plus spécialisés
@@ -75,7 +58,6 @@ GPU
 
 
 computer vision ou vision par ordinateur = techniques d'IA permettant d'analyser des images ou de vidéos
-
 
 Taches
     Classification binaire
@@ -101,4 +83,3 @@ Algorithmes
     Prior Trainer
     Machines à vecteurs de support
     Moindres carrés ordinaires
-
