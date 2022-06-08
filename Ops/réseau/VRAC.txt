@@ -5,20 +5,36 @@ load balancing
 modèle OSI
 routeur
 port logiciel
-couche transport TCP
 adresse IP
 adresse MAC
 virtualisation
 LAN
-carte réseau
-ethernet
 outil : arp, ping, tracert/traceroute, ipconfig/ifconfig, netstat, nbtstat, nslookup
 par-feu
 proxy
-DHCP
 TCP/IP
 protocole HTTP : HTTP/1.0, HTTP/1.1, HTTP/2
-DNS
+-Cloudflare = entreprise qui propose 
+    -réseau de distribution de contenu
+    -des services de sécurité (attaque DDoS, pare-feu)
+    -des services distribués de serveur de noms de domaine
+-attaque DDoS (Distributed Denial of Service attack) = attaque par déni de service, a pour but de rendre indisponible un service
+-réseau de distribution de contenu (CDN, content delivery network) = réseau de machine qui propose du contenu (streaming, téléchargement)
+-adresse IP = un numéro d’identification attribué à chaque périphérique d’un réseau
+-carte réseau
+-ethernet = protocole de réseau local à commutation de paquet; adresse physique sur 6 octets (3 par IEEE, + 3 par le constructeur)
+-adresse MAC (Media Access Control address) = un identifiant physique stocké dans une carte réseau ou une interface réseau et utilisé pour attribuer mondialement une adresse unique
+-routeur NAT (Network address Translation) : relier un réseau local privé à internet
+-routeur = machine ayant plusieurs interfaces réseaux
+-carte ethernet
+-internet protocol = une famille de protocoles de communication
+-OSI et couches
+-DHCP
+-NAS
+-DNS
+-TCP/IP
+-routage
+-interface réseau
 
 -------------------------------------------
 
@@ -29,7 +45,17 @@ socket ou interface de connexion
 couche transport TCP
 distingué par son numéro
 sert localement à identifier un processus
-comme des portes donnant accès au système d'exploitation 
+comme des portes donnant accès au système d'exploitation
+
+= comme une porte à laquelle une application d’un équipement se connecte à un autre équipement distant par le réseau
+associé à une adresse IP
+associé à un protocole (TCP ou UDP)
+65536 par machine
+port ouvert : l’application écoute
+port fermé : l’application n’écoute pas
+80 : HTTP
+443 : HTTPS
+
 
 Un numéro de port est codé sur 16 bits, ce qui fait qu'il existe un maximum de 2^6,soit 65 536 ports distincts par machine. 
 
@@ -48,3 +74,26 @@ Un port spécifique est identifié par :
     son numéro de port,
     l'adresse IP à laquelle il est associé,
     le protocole utilisé pour la communication (TCP ou UDP)
+
+
+*** interface réseau ***
+
+= matériel (composant / carte réseau) qui relie la machine à un réseau
+driver qui correspond à la couche Liaison
+préparer les données à transmettre, les envoyer et interpréter celles reçues
+une adresse IP par interface
+liste des interfaces dans le fichier /etc/network/interfaces
+ex : ppp0, ppp1, eth0, eth1, eth2, lo
+
+
+lo - Interface de boucle locale
+–Utilisée pour tester le fonctionnement des couches TCP/IP et applications
+–Obligatoire sur toutes les machines
+ethn - Carte Ethernet numéro n
+
+
+*** commandes ***
+    ifconfig : configurer une interface réseau IP
+    ip addr
+    netstat : info sur les connexions réseaux
+    ping
