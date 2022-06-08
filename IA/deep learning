@@ -6,7 +6,13 @@ quantization
 	modèle de séquences : RNN, modèle LTSM
 	set d’apprentissage, dev set, test set
 generative model
-
+neural network, GAN, CNN,
+données structurées ou non
+logiciel : openCV, yolo, tensorflow,
+surapprentissage, tenseur
+quantization
+modèle de séquences : RNN, modèle LTSM
+set d’apprentissage, dev set, test set
 
 Deep learning
     -adopte une approche de réseau neuronal pour rechercher des modèles et des corrélations 
