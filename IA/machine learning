@@ -5,9 +5,13 @@ speech recognition
 RMS prop
 apprentissage supervisé
 fonction ou unité ReLU Rectified Linear Unit
-apprentissage non-supervisé
+apprentissage non-supervisé : Regrouper des données similaires, mais sans annotation
+tâche de classification
+tâche régression
+inférence bayésienne
+analyse discriminante
 apprentissage par renforcement : processus de décision markoviens
--Scikit-learn : librairie de machine learning, model fitting, data preprocessing, model selection and evaluation
+Scikit-learn : librairie de machine learning, model fitting, data preprocessing, model selection and evaluation
 
 
 Machine learning / apprentissage automatique
