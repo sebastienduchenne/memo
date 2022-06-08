@@ -9,8 +9,6 @@ hadoop
     = stockage et traitement de large volume de données
     HDFS et MapReduce
 spark
-HDFS (NameNode, DataNode)
-MapReduce
 base de données distribuées
 données structurées / non structurées
 Google File System
@@ -29,11 +27,23 @@ Data Warehouses
 Data lake
 cluster computing
 moteur de requête Presto
-kafka
+Kafka
 HPDA (High Performance Data Analytics)
 ACID / BASE
 business intelligence = analyse des données et de présentation d'informations pour aider les dirigeants, managers et autres utilisateurs finaux de l'entreprise à prendre des décisions business éclairées
 data mining = analyse des données brutes pour en tirer des tendances
+Data engineer
+Data analyst
+Data mining
+HPDA (High Performance Data Analytics)
+Hadoop Distributed File System (HDFS)
+Map reduce
+Data Warehouses
+Data lake
+cluster computing
+moteur de requête Presto
+kafka
+data vizualisation : matplotlib, seaborn, cartopy, bokeh
 
 _____________________________________________________________________
 
