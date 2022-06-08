@@ -11,65 +11,15 @@ métaheuristique
 DialogFlow
 provider : google colab, keras
 
-
-*** intelligence artificielle
-
-prolog
-système expert
-algorithme génétique
-système multi-agent
-    Algorithmes de meutes
-    Optimisation par colonie de fourmis
-    Systèmes immunitaires artificiels
-    Automates cellulaires
-
-
-*** machine learning
-
-= champ d’étude de l’IA qui se fonde sur des approches statistiques pour donner aux ordinateurs la capacité d’apprendre à partir de données
-classification
-hyperparamètre
-algo d’optimisation d’Adam
-speech recognition
-RMS prop
-apprentissage supervisé
-fonction ou unité ReLU Rectified Linear Unit
-apprentissage non-supervisé : Regrouper des données similaires, mais sans annotation
-tâche de classification
-tâche régression
-inférence bayésienne
-analyse discriminante
-apprentissage par renforcement : processus de décision markoviens
-Algorithmes
-    naive Bayes classifier
-    K-means clustering
-    support vector machine
-    algorithme Apriori
-    régression linéaire
-    régression logistique
-    régression polynomiale
-    neural networks
-    random forests
-    arbre de décision
-    k nearest neighbors
-    analyse en composantes principales
-
-
-*** deep learning
-
-neural network, GAN, CNN,
-données structurées ou non
-logiciel : openCV, yolo, tensorflow,
-surapprentissage, tenseur
-quantization
-modèle de séquences : RNN, modèle LTSM
-set d’apprentissage, dev set, test set
-
-
-*** Data science
-
-= étude de l’extraction généralisable de connaissances à partir de données
-
+-fichier h5 : modèle entrainé avec tensorflow, contient couche du réseau et poid
+-fichier pbmm : modèle de transcription, contient couche du réseau et poid
+-fichier pkl : pickle, fichier binaire qui stocke le scaler
+-scaler = une IA prend des données d'entrée en vecteur, or différence entre données et les IA n'aiment pas donc on pseudo normalise entre 0 et 1, calcul moyenne et écart type. Le scaler contient les paramètres qui permettent de pseudo-normaliser les données
+-CMUSphinx = outil de speech recognition
+-Pickling, marshal = modules de sérialisation
+-sérialisation ou pickling = processus par lequel une hiérarchie d'objets Python est convertie en un flux d'octets
+-pickle = format de sérialisation binaire
+-Scikit-learn : librairie de machine learning, model fitting, data preprocessing, model selection and evaluation
 
 
 *** Applications
@@ -78,4 +28,3 @@ algorithme de recommandation
 analyse d’émotion
 marketing personnalisé
 générer des images / vidéos
-
