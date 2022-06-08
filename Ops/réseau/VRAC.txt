@@ -1,0 +1,85 @@
+infrastructure réseau
+cloud computing
+load balancing
+port logiciel
+adresse IP
+adresse MAC
+virtualisation
+LAN
+outil : arp, ping, tracert/traceroute, ipconfig/ifconfig, netstat, nbtstat, nslookup
+par-feu
+proxy
+protocole HTTP : HTTP/1.0, HTTP/1.1, HTTP/2
+-Cloudflare = entreprise qui propose 
+    -CDN
+    -des services de sécurité (attaque DDoS, pare-feu)
+    -des services distribués de serveur de noms de domaine
+-attaque DDoS (Distributed Denial of Service attack) = attaque par déni de service, a pour but de rendre indisponible un service
+-CDN, content delivery network = service diffusant du contenu et situé à des emplacements stratégiques pour délivrer le plus rapidement possible à un utilisateur
+-adresse IP = un numéro d’identification attribué à chaque périphérique d’un réseau
+-carte réseau
+-ethernet = protocole de réseau local à commutation de paquet; adresse physique sur 6 octets (3 par IEEE, + 3 par le constructeur)
+-adresse MAC (Media Access Control address) = un identifiant physique stocké dans une carte réseau ou une interface réseau et utilisé pour attribuer mondialement une adresse unique
+-routeur NAT (Network address Translation) = relier un réseau local privé à internet
+-routeur = machine ayant plusieurs interfaces réseaux
+-carte ethernet
+-internet protocol = une famille de protocoles de communication
+-modèle OSI et couches
+-DHCP
+-NAS
+-DNS
+-TCP/IP
+-routage
+-interface réseau
+
+-------------------------------------------
+
+*** port logiciel
+
+= comme une porte à laquelle l'application d'un équipement se connecte à un autre équipement distant par le réseau, comme des portes donnant accès au système d'exploitation
+socket ou interface de connexion
+couche transport TCP
+sert localement à identifier un processus
+port ouvert : l’application écoute
+port fermé : l’application n’écoute pas
+80 : HTTP
+443 : HTTPS
+
+codé sur 16 bits, ce qui fait qu'il existe un maximum de 2^6,soit 65 536 ports distincts par machine
+
+Ces ports sont classés en 3 catégories en fonction de leur numéro : 
+    de 0 à 1 023 : ports "bien-connus" (well-known ports), utilisés pour les services réseaux les plus courants.
+    de 1 024 à 49 151 : ports enregistrés (registered ports), assignés par l'IANA
+    de 49 152 à 65 535 : ports dynamiques, utilisables pour tout type de requêtes TCP ou UDP autres que celle citées précédemment.
+
+Lorsqu'un équipement se connecte à un autre distant :
+    1. il ouvre un port réseau sur la machine, on parle de port local
+    2. il se connecte au port d'un équipement distant, on parle alors de port distant
+
+Un port spécifique est identifié par :
+    son numéro de port
+    l'adresse IP à laquelle il est associé
+    le protocole utilisé pour la communication (TCP ou UDP)
+
+
+*** interface réseau ***
+
+= matériel (composant / carte réseau) qui relie la machine à un réseau
+driver qui correspond à la couche Liaison
+préparer les données à transmettre, les envoyer et interpréter celles reçues
+une adresse IP par interface
+liste des interfaces dans le fichier /etc/network/interfaces
+ex : ppp0, ppp1, eth0, eth1, eth2, lo
+
+
+lo - Interface de boucle locale
+–Utilisée pour tester le fonctionnement des couches TCP/IP et applications
+–Obligatoire sur toutes les machines
+ethn - Carte Ethernet numéro n
+
+
+*** commandes ***
+    ifconfig : configurer une interface réseau IP
+    ip addr
+    netstat : info sur les connexions réseaux
+    ping

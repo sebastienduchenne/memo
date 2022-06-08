@@ -1,8 +1,9 @@
 emprunter sans passer par un intermédiaire
-aave, SNX, 1inch, compound, MakerDAO, uniswap
+protocoles : aave, SNX, 1inch, compound, MakerDAO, uniswap
 Flash loan / prêt flash = emprunter sans garanti
 APY = annual percentage yield ou pourcentage annuel de rendement ou revenu annuel
 pool de liquidité, pool de staking
+impermanent loss
 
 staking
     placer ses crypto dans des réserves de liquidité (liquidity pool) pour valider les transactions et obtenir des récompenses en revenu passif    
@@ -14,14 +15,15 @@ yield farming
     plus risqué à cause du piratage
 
 
-Aave
-    Protocole de la DEFI
-    protocole de liquidité non-custodial
-    prêter ou emprunter des actifs
-    pools de liquidités
-    flash loan prêt sans collatéral effectif le temps d'une transaction
-    Déployé sur ethereum, polygone et avalanche
-    déposer
-    stacker
-    les liquidités sont sécurisées via un Smart Contract non-custodial
+*** Aave
+
+Protocole de la DEFI
+protocole de liquidité non-custodial
+prêter ou emprunter des actifs
+pools de liquidités
+flash loan prêt sans collatéral effectif le temps d'une transaction
+Déployé sur ethereum, polygone et avalanche
+déposer
+stacker
+les liquidités sont sécurisées via un Smart Contract non-custodial
 

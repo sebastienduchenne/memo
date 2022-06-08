@@ -7,7 +7,7 @@
 -un conteneur est appelé service
 -les services démarrent dans l'ordre de dépendance
 -possibilité d'étendre un fichier compose
-
+-par défaut, Compose créée un réseau
 
 *** exemples
 -application avec BD + log + app + serveur -> mettre chaque élément dans un conteneur différent

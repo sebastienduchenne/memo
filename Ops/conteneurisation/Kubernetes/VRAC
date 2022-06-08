@@ -22,7 +22,23 @@
 -volumes
 -namespace et ResourceQuotas
 -Vagrant et Ansible
+minikube : implémentation kub légère
+cluster
+    manager : point d’entré des tâches admin, 1 ou plusieurs
+        scheduler : distribuer les tâches
+        etcd : magasin clé-valeur distribué
+        controller manager
+        API server
+    worker : 
+        n pods : ensemble de conteneurs
+        kubelet service : relaie information
+kube-proxy
+cluster - node - pod - conteneur
+scaling par augmentation du nombre de réplicas
+load balancing sur les différents pod
+rolling update : update app
 
+------------------------------------------------------------------
 
 *** master node / K control panel
 

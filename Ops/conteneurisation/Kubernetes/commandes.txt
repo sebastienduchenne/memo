@@ -1,0 +1,43 @@
+alpha        List the available commands that correspond to alpha features, which are not enabled in Kubernetes clusters by default.
+annotate        Add or update the annotations of one or more resources.
+api-resources    List the API resources that are available.
+api-versions    List the API versions that are available.
+apply        Apply a configuration change to a resource from a file or stdin.
+attach        Attach to a running container either to view the output stream or interact with the container (stdin)
+auth        Inspect authorization.
+autoscale    Automatically scale the set of pods that are managed by a replication controller.
+certificate    Modify certificate resources.
+cluster-info    Display endpoint information about the master and services in the cluster.
+completion    Output shell completion code for the specified shell (bash or zsh).
+config        Modifies kubeconfig files. See the individual subcommands for details.
+convert        Convert config files between different API versions. Both YAML and JSON formats are accepted. Note - requires kubectl-convert plugin to be installed.
+cordon        Mark node as unschedulable.
+cp        Copy files and directories to and from containers.
+create        Create one or more resources from a file or stdin.
+delete        Delete resources either from a file, stdin, or specifying label selectors, names, resource selectors, or resources.
+describe        Display the detailed state of one or more resources.
+diff        Diff file or stdin against live configuration.
+drain        Drain node in preparation for maintenance.
+edit        Edit and update the definition of one or more resources on the server by using the default editor
+exec        Execute a command against a container in a pod.
+explain        Get documentation of various resources. For instance pods, nodes, services, etc.
+expose        Expose a replication controller, service, or pod as a new Kubernetes service.
+get        List one or more resources.
+kustomize    List a set of API resources generated from instructions in a kustomization.yaml file. The argument must be the path to the directory containing the file, or a git repository URL with a path suffix specifying same with respect to the repository root.
+label        Add or update the labels of one or more resources.
+logs        Print the logs for a container in a pod.
+options        List of global command-line options, which apply to all commands.
+patch        Update one or more fields of a resource by using the strategic merge patch process.
+plugin        Provides utilities for interacting with plugins.
+port-forward    Forward one or more local ports to a pod.
+proxy        Run a proxy to the Kubernetes API server.
+replace        Replace a resource from a file or stdin.
+rollout        Manage the rollout of a resource. Valid resource types include: deployments, daemonsets and statefulsets
+run        Run a specified image on the cluster.
+scale        Update the size of the specified replication controller.
+set        Configure application resources.
+taint        Update the taints on one or more nodes.
+top        Display Resource (CPU/Memory/Storage) usage.
+uncordon    Mark node as schedulable.
+version        Display the Kubernetes version running on the client and server.
+wait        Experimental: Wait for a specific condition on one or many resources.

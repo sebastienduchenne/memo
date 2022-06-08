@@ -7,7 +7,7 @@
 -FROM <img_src>
     partir d'une image source
 
--MAINTAINER <name>
+-MAINTAINER <name> deprecated
     définir l'auteur
 
 -WORKDIR <app path>
@@ -26,7 +26,9 @@
     créer une variable utilisable dans le dockerfile. Utiliser avec ${<nom>}
 
 -CMD <cmd>
-    exécuter une commande au démarrage du conteneur en définissant les commandes et/ou paramètres par défaut de ENTRYPOINT. La commande au démarrage peut être surchargée à la fin du 'docker run'. Un seul CMD par dockerfile
+    exécuter une commande au démarrage du conteneur en définissant les commandes et/ou paramètres par défaut de ENTRYPOINT.
+    La commande au démarrage peut être surchargée à la fin du 'docker run'.
+    Un seul CMD par dockerfile
 
 -VOLUMES
     créer un point de montage qui permettra de persister les données
@@ -38,15 +40,29 @@
     ajouter des paires clé-valeur en guise de méta-données. Info visible avec docker inspect <name>
 
 -ADD <src> <dest>
-    ajouter un fichier dans l'image (sources du projet ou fichiers de conf). On peut mettre une URL en tant que src, contrairement à COPY, et dézippe si besoin. Utiliser COPY si src n'est pas une URL
+    ajouter un fichier dans l'image (sources du projet ou fichiers de conf).
+    On peut mettre une URL en tant que src, contrairement à COPY, et dézippe si besoin. 
+    Utiliser COPY si src n'est pas une URL
 
 -ENTRYPOINT <cmd>
     exécuter une commande au démarrage du conteneur
 
 -USER
-    désigner l'utilisateur qui lancera les prochaines instructions RUN, CMD ou ENTRYPOINT (root par défaut)
+    désigner l'UID et le GID qui lancera les prochaines instructions RUN, CMD ou ENTRYPOINT (root par défaut)
 
 -STOPSIGNAL
+
+-SHELL
+    overrider le shell utilisé
+ 
+ -WORKDIR
+    sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile
+
+-ONBUILD
+    adds to the image a trigger instruction to be executed at a later time
+
+-STOPSIGNAL
+    signal a envoyé pour terminer le conteneur
 
 
 *** ordre
@@ -64,3 +80,49 @@ EXPOSE
 ENTRYPOINT
 [CMD]
 WORKDIR
+
+
+
+
+mode exec : ENTRYPOINT ["binary", "--param", "--another-param"]
+mode shell : ENTRYPOINT binary --param --another-param
+
+le mode shell donne accès aux variables d’env définit par le shell mais interdit l’utilisation de CMD et l’ajout d’argument en ligne de commande
+une image est une collection de layer qui sont des images. chaque layer ajoute des données à l’image sur laquelle elle est basée
+créer un dockerfile court
+2 RUN créée une image plus grande que 1 RUN qui réunit les 2
+RUN apt-get -qq update && apt-get -qq install some-package => une seule image
+=> Utiliser apt-get update seul dans une instruction RUN entraîne des problèmes de mise en cache et, par la suite, les instructions d' apt-get install peuvent échouer. Supposons que vous modifiez ultérieurement apt-get install en ajoutant des paquets supplémentaires, puis que docker interprète les instructions initiales et modifiées comme étant identiques et réutilise le cache des étapes précédentes. En conséquence, la commande apt-get update n'est pas exécutée car sa version en cache est utilisée lors de la génération
+
+multi-stage builds / compilation multi-étage : alléger les images
+plusieurs FROM avec un alias AS xxx
+
+
+
+
+# syntax=docker/dockerfile:1
+FROM golang:1.16 AS builder
+WORKDIR /go/src/github.com/alexellis/href-counter/
+RUN go get -d -v golang.org/x/net/html  
+COPY app.go    ./
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+
+FROM alpine:latest  
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY --from=builder /go/src/github.com/alexellis/href-counter/app ./
+CMD ["./app"] 
+
+—---------------------------------------------------------------
+
+# --- Base Node ---
+
+FROM alpine:3.13 AS base
+
+# --- Dependency Node ---
+
+FROM base AS dependencies
+
+—---------------------------------------------------------------
+pour chaque RUN, un conteneur temporaire est créé depuis l’image de base ; ce qui qui créé une image intermédiaire
+lancement conteneur > RUN dans le conteneur > commit > suppression conteneur

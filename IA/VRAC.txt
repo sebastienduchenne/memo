@@ -1,0 +1,81 @@
+paradoxe de Polanyi
+librairies : NumPy, Pandas, Matplotlib, Seaborn, Scikit learn
+modèles : VGG19, VGG16, Xception, MobileNetV2
+GPU : Tesla T4, P100, K80
+Kaggle
+Natural Language Understanding
+computer vision
+Natural Language Processing
+logique floue : fuzzification
+métaheuristique
+DialogFlow
+provider : google colab, keras
+
+
+*** intelligence artificielle
+
+prolog
+système expert
+algorithme génétique
+système multi-agent
+    Algorithmes de meutes
+    Optimisation par colonie de fourmis
+    Systèmes immunitaires artificiels
+    Automates cellulaires
+
+
+*** machine learning
+
+= champ d’étude de l’IA qui se fonde sur des approches statistiques pour donner aux ordinateurs la capacité d’apprendre à partir de données
+classification
+hyperparamètre
+algo d’optimisation d’Adam
+speech recognition
+RMS prop
+apprentissage supervisé
+fonction ou unité ReLU Rectified Linear Unit
+apprentissage non-supervisé : Regrouper des données similaires, mais sans annotation
+tâche de classification
+tâche régression
+inférence bayésienne
+analyse discriminante
+apprentissage par renforcement : processus de décision markoviens
+Algorithmes
+    naive Bayes classifier
+    K-means clustering
+    support vector machine
+    algorithme Apriori
+    régression linéaire
+    régression logistique
+    régression polynomiale
+    neural networks
+    random forests
+    arbre de décision
+    k nearest neighbors
+    analyse en composantes principales
+
+
+*** deep learning
+
+neural network, GAN, CNN,
+données structurées ou non
+logiciel : openCV, yolo, tensorflow,
+surapprentissage, tenseur
+quantization
+modèle de séquences : RNN, modèle LTSM
+set d’apprentissage, dev set, test set
+
+
+*** Data science
+
+= étude de l’extraction généralisable de connaissances à partir de données
+
+
+
+*** Applications
+
+algorithme de recommandation
+analyse d’émotion
+marketing personnalisé
+générer des images / vidéos
+

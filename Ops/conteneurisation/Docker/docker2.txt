@@ -1,0 +1,157 @@
+Here are 12 things I wish I learned a lot earlier about Docker and containers in general:
+    Containers are about portability and resource utilization.
+    Containers were not designed as a security containment mechanism from the start, and it shows.
+    Containers don’t exist as a first-class object - Linux namespaces and cgroups work together to create “containers”.
+    Multiple processes can run in the same “container”, this only means the processes share the same namespaces and cgroup.
+    Docker is just one tool of many which you can use to work with containers.
+    Docker works three main jobs: packaging apps into images, distributing images and running containers from images.
+    Image layers exist to reuse work, transfer less data and save bandwidth.
+    Docker is easy to get started with, but the images are too permissive and not correct by default.
+    Lots of people use containers badly, and don’t even know it.
+    It’s okay to use docker-compose for production workloads running on a single machine.
+    Container orchestration, security and building good images take effort and experience. They are complex topics by themselves.
+    Sometimes it’s okay to not-use Docker even though you could.
+
+
+— présentation —
+
+2 techniques pour faire du cloisonnement entre des environnements :
+
+les VM
+    virtualisation des ressources et d'un OS sur un OS hôte
+    cloisonnement entre les VM
+    duplication des fonctionnalités systèmes
+    démarre en qq dizaines de secondes
+    utilise un hyperviseur
+    => ce qui consomme beaucoup de ressources (CPU, mémoire)
+
+docker
+    utilisation des fonctionnalités de l'OS hôte, donc pas de la virtualisation
+    cloisonnement des applications
+    conteneurs démarrent en qq centaines de millisecondes
+    tests unitaires plus rapides à lancer que en VM => gain de temps
+    logiciel client serveur utilisant des fonctionnalités bas niveau du noyau linux
+    un conteneur peut être exécutée sur n'importe quelle machine disposant de docker
+    le conteneur contient tous les paramétrages, livrables et ressources
+    2 éditions : Community Edition et Enterprise Edition
+
+
+Docker hub : registre publique
+docker registry : stocke des images docker
+
+microservices plutôt que app monolithique
+
+
+
+
+avantages
+    lancer une app facilement et rapidement pour la tester, adapté aux déploiements récurrents
+    créer de multiple environnement : tests, dev, proche de la prod
+    scalabilité
+    garder propre l’OS sous jacent
+    limite la contagion virale
+    adapté à DevOps
+    sandbox pour navigateur
+
+alternatives à Docker
+    rkt
+    kata container
+
+
+— internal —
+
+produits de docker
+    Docker Desktop = Docker Engine + Docker CLI client + Docker Compose + Docker Content Trust + Kubernetes + Credential Helper
+    docker engine : dockerd + CLI + API
+    docker daemon / dockerd : service qui réceptionne les requêtes du client et gère les objets docker
+    Docker Buildx : CLI qui étend les commandes docker
+    Docker Context : command pour importer et exporter un contexte
+    Docker Scan : commande pour détecter des vulnérabilités dans les images
+    Docker client : envoie les commandes à dockerd
+
+
+librairies utilisées par docker
+    libcontainer : utiliser les namespaces qqsoit l'OS, remplace LXC depuis la 0.9
+    LXC : Linux Container, remplacé par libcontainer dans les versions récentes de docker
+    containerd : daemon qui gère le cycle de vie des conteneurs, utilisé depuis docker 1.11, implémente la spec CRI, utilise runC
+    runC
+
+
+fonctionnalités du noyau linux utilisés par docker
+    namespace : partitionne les ressources du noyau (process IDs, hostnames, user IDs, file names, network access) tel que les différents processus ne voient pas les mêmes ressources. Fournit une couche d’isolation
+    cgroups : ne voir que certaines ressources extérieurs, comme le CPU, la mémoire, les accès disques (cmd cgcreate et cgexec) et l’accès réseau
+    Chroot : changer le répertoire racine vers un nouvel emplacement
+    AppArmor : module de sécurité qui restreint les possibilités des programmes
+    SELinux : alternative à AppArmor
+    capabilities
+
+
+
+
+— image et container —
+
+image = snapshot d’un conteneur
+image en lecture seule
+Docker définit par défaut le point d’entrée sur /bin/sh -c
+principe : un conteneur = un processus / une application
+chaque conteneur fait partie d'un réseau et à sa propre adresse IP
+conteneur : instance d’une image ; pas un objet mais une abstraction de plusieurs fonctionnalités linux
+une image peut avoir un tag : latest …
+
+
+
+— network —
+
+bridge
+    = par défaut, les conteneurs sont invisibles de l’extérieur et ne voient pas les autres conteneurs, -p pour être visible
+    pas de résolution DNS, to communication par IP
+    réseau par défaut si aucun driver spécifié
+    le daemon établit une couche d’indirection, appelée docker0, entre l’interface réseau de l'hôte et celle des containers
+    les paquets peuvent passer des containers au réseau de l'hôte
+    les conteneurs ont une adresse IP sur docker0
+
+none
+    pas de réseau, donc étanche
+    en cas d’utilisation d’un réseau personnalisé
+
+host
+    le conteneur est visible de l’extérieur, donc pas d’isolation
+
+overlay
+    multihost
+
+MACVLAN
+    mise en commun de la couche réseau
+    docker assigne une adresse MAC à chaque conteneur
+
+
+à l’installation, 3 réseaux sont créés : bridge, host, none
+
+
+monter un volume
+
+les conteneurs sont en lecture seule, les modifs sont ajoutées dans une couche supplémentaire. On peut utiliser commit pour créer une nouvelle image contenant ces modif
+volume : modification dans un répertoire situé sur le disque dur de l'hôte
+partager un volume entre plusieurs conteneurs
+pose des problèmes de sécurité, créer des utilisateurs dans les conteneurs
+
+manage app data : 
+    bind mount : dependent on the directory structure and OS of the host machine
+    volume : completely managed by Docker
+    tmpfs mount : no persistence if container stop
+
+— installation —
+
+docker.io : debian
+    sudo apt-get install -y docker.io
+
+docker-ce : par docker inc
+
+
+
+— non-root user —
+
+Manage Docker as a non-root user :
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    newgrp docker
