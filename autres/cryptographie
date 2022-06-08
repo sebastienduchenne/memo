@@ -1,0 +1,9 @@
+-chiffrement
+-chiffrement symétrique
+-fonction de hachage
+    -MD Message Digest
+    -SHA Secure Hash Algorithm
+-clé privée, clé publique
+-algorithme de chiffrement symétrique
+    -AES Advanced Encryption Standard
+    -DES Data Encryption Standard
