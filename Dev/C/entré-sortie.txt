@@ -1,0 +1,96 @@
+Inode
+    index node
+    structure de données contenant des informations sur un seul fichier (métadonnées)  : type de fichier, propriétaire, droits d’accès, adresse, taille
+    un fichier est associé à un inode
+    la quantité d’inode indique le nombre maximum de fichier que le système peut contenir
+    un fichier peut avoir plusieurs noms / liens qui pointent vers le même inode
+
+
+Liens
+    physique = permet de donner plusieurs noms/chemin d'accès, à un même fichier en pointant sur un numéro de fichier
+    symbolique = permet d’attribuer un autre chemin d’accès à un fichier en pointant sur un nom de fichier. Fic1 lié à un inode, pointe vers fic2 qui est lié à un autre inode
+    un fichier est supprimé s’il n’y a plus de liens physiques vers lui
+
+
+Manipulation des fichiers
+    flag : comment ouvrir un fichier
+    tout processus a une table des descripteurs / fichiers ouverts qui  décrit le mode, l'offset et le pointeur sur l'inode donc sur un fichier
+    descripteur de fichier = clé pour accéder à un fichier
+
+
+Include
+    fcntl.h
+
+
+Méthodes
+    stat : get informations sur un fichier
+    fstat : 
+    access : test des droits d'accès d'un processus sur un fichier
+    link : créer un lien physique sur un fichier
+    unlike : supprimer fichier
+    rename : renommer répertoire
+    chmod : attribution des droits d’accès à un fichier, avec chemin
+    fchmod : ________________________________, avec descripteur
+    chown : changer propriétaire et groupe d’un fichier, avec chemin
+    fchown : _________________________________, avec descripteur
+    open : ouverture fichier
+    close : fermeture fichier
+    creat : création fichier
+    read : lecture dans un fichier
+    readv : lire dans plusieurs tampons
+    pread : lire à partir d’une position donnée dans un fichier
+    write : écriture dans un fichier
+    writev : lire dans plusieurs tampons
+    pwrite : écrire à partir d’une position donnée dans un fichier
+    lseek : modifier l’offset
+    dup : dupliquer une entrée dans la table des descripteurs de fichiers
+        dup : le nouveau fd est le plus petit numéro non utilisé
+        dup2 : transforme newfd en une copie de oldfd
+    -lien symbolique :
+        symlink : créer un lien symbolique sur un fichier
+        lstat
+        readlink : récupère à l'adresse tampon la valeur du lien symbolique
+        lchmod
+        lchown
+    fopen : ouvrir fichier, get pointeur
+    freopen : nouvelle ouverture d'un fichier
+    fileno : get descripteur fichier
+    fdopen : get objet file à partir du descripteur
+    feof : test de fin de fichier
+    ferror : test d'erreur
+    fclose : fermer fichier
+    setvbif : associer un nouveau tampon
+    fflush : tous les fichiers ouverts en écriture sont vidés
+    fgetc : lire un seule caractère
+    fgets : lire une chaine de caractère d'une taille précisée
+    fread : lire un tableau d'objet
+    fscanf : lecture formatée
+    fputc : écrire un caractère
+    fputs : écrire une chaine de caractère
+    fwrite : écrire un tableau d'objets
+    printf : 
+    fprintf : écriture formatée
+    manipuler offset 
+    fseek : set offset
+    rewind : = fseek(pFile, 0L, SEEK_SET)
+    ftell : get offset file
+
+    -répertoire :
+    opendir : ouvrir répertoire
+    readdir : lecture d’une entrée
+    rewinddir : repositionne le pointeur des entrées sur la 1ère entrée dans le répertoire
+    closedir : fermer le répertoire
+    mkdir : créer répertoire
+    rmdir : supprimer répertoire
+    fcntl : modifier les attributs associés à un descripteur : mode ouverture, duplication descripteur, verrouillage des zones du fichier
+
+
+
+table des processus : une seule
+    état, PID, PPID, UID
+table des descripteurs de fichiers : une par processus
+    clé, pointeur sur la tfo
+table des fichiers ouverts : une seule, 3 lignes minimum : STDIN, STDOUT, STDERR
+    clé, nb d’ouverture, mode, offset, pointeur i-node
+table des inodes : une seule
+    clé, nombre d’ouverture
