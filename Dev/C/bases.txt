@@ -1,0 +1,89 @@
+
+1. Norme POSIX
+    standardisation des API destinés à fonctionner sur UNIX (spécifie les interfaces utilisateurs et logicielles)
+    un ensemble de standart/de définition d’interface
+    écrit par IEEE
+
+
+2. Compilation, makefile
+    en C, les arguments sont récupérés dans argv[ ]
+
+
+3. Processus
+    = exécution d’un programme binaire
+    programme = suite d’instruction, notion statique. Processus : notion dynamique car modification de la mémoire au cours de son exécution
+    indépendant : pas de partage de la pile ni des variables
+    identifié par son pid unique
+    à son répertoire courant
+    lié à son utilisateur et son groupe
+    l’espace d’adressage (= l’ensemble des adresses mémoires dans laquelle le processus peut écrire) à 3 segments :
+        texte = code
+        pile des variables
+        données = variables, étendu lors d’une allocation dynamique
+    4 états possibles :
+        prêt : sommeil
+        élu : en cours d’exécution
+        bloqué : par un signal
+        terminé : zombie
+    2 modes
+        noyau : accès total à la machine (mémoire, instructions). Lorsqu’un processus utilisateur fait un appel de fonction noyau, il demande au noyau de l’exécuter en son nom. Le noyau vérifie les droits du demandeur et la validité de la requête
+        utilisateur : accès restreint à la mémoire et certaines instructions dangeureuses sont interdites (reboot)
+    un fils devient zombie à la fin de son exécution jusqu’à ce que son père l’attende (wait). En zombie, la pile est détruite, la valeur de retour reste. Si le père n’a pas fait de wait, le info du fils reste dans la table des processus. Le processus init, d’indice 1, fait de temps en temps des wait pour supprimer les zombies
+    swapper : processus d’indice 0, le premier créé
+
+
+
+méthode fork() : créer un nouveau processus fils
+    créer un nouveau processus fils dynamiquement qui s’exécute de façon concurrente avec le père (la pile et les données ont les mêmes valeur lors du fork, le code est référencé)
+    père et fils indépendants
+    un retour dans chaque processus : 0 pour le fils, le pid du fils pour le père, -1 si échec
+
+
+méthode wait() : synchronisation père/fils
+    wait : suspend l'exécution du processus appelant jusqu'à ce que l'un de ses fils se termine, bloquant jusqu’à ce que le fils des termine
+    wait prend en argument un pointeur vers un entier
+    si un wait n'est pas effectué, le fils qui s'est terminé reste dans l'état de « zombie »
+    waitpid : suspend l'exécution du processus appelant jusqu'à ce que le fils spécifié change d’état
+    changement d'état
+        fils terminé
+        fils interrompu par un signal
+        un fils a été relancé par un signal
+
+
+méthodes
+    getpid : get pid processus
+    getppid : get pid processus père
+    fork : création d’un processus fils
+    wait
+        wait : synchronisation père/fils
+        waitpid : synchronisation père/fils
+        waitid : idem, fournit un contrôle plus précis sur les changements d'états des fils que l'on attend
+    exit : terminer le processus, équivalent à return val
+    exec : exécuter un nouveau programme
+        argv sous forme de liste : execl, execlp, execle
+        argv sous forme de tableau : execv, execvp, execve
+
+
+autres
+    errno : code la dernière erreur
+    getppid() : récupérer le pid du père du processus appelant
+    exit(EXIT_SUCCESS) : termine le processus en disant que tout c'est bien passé
+    exit(EXIT_FAILURE) : termine le processus en disant qu'il y a eu un problème
+    perror('xxx') : affiche le message d'erreur système 'xxx'
+    sleep(x) : pause pendant x secondes
+
+
+
+
+processus zombie = processus terminé et que le père n'a pas pris connaissance
+return/exit envoie une valeur au père ce qui permet au père de prendre connaissance de la terminaison du fils
+getenv : get variable d'environnement
+setenv
+
+
+ -----------------------------------------------------------------------------------------------------------------------
+
+multitache = l’exécution des processus est pseudo-parallèle sur un processeur. Un ordonnanceur gère les allocations du processeur et la gestion de la mémoire
+    préemptif : l’OS gère l’exécution
+    coopératif : les applications gèrent leur exécution (W95)
+démon = processus constamment en activité et qui fournit des services aux systèmes
