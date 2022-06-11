@@ -1,7 +1,7 @@
 produits de docker
     Docker Desktop = Docker Engine + Docker CLI client + Docker Compose + Docker Content Trust + Kubernetes + Credential Helper
-    docker engine : dockerd + CLI + API
-    docker daemon / dockerd : service qui réceptionne les requêtes du client et gère les objets docker
+    Docker engine : dockerd + CLI + API
+    Docker daemon / dockerd : service qui réceptionne les requêtes du client et gère les objets docker
     Docker Buildx : CLI qui étend les commandes docker
     Docker Context : command pour importer et exporter un contexte
     Docker Scan : commande pour détecter des vulnérabilités dans les images
@@ -22,3 +22,11 @@ fonctionnalités du noyau linux utilisés par docker
     AppArmor : module de sécurité qui restreint les possibilités des programmes
     SELinux : alternative à AppArmor
     capabilities
+
+
+-libcontainer = driver qui remplace les LXC de linux, et qui permet au daemon docker d'utiliser des fonctionnalités de linux :
+    -namespace : limiter ce que peut voir l’application de l'environnement
+    -cgroups : limiter l’accès aux ressources
+    -capabilities : gérer les privilèges d'un processus
+    -interfaces réseaux
+    -règles de firewall
