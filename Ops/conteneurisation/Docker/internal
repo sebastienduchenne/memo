@@ -1,0 +1,24 @@
+produits de docker
+    Docker Desktop = Docker Engine + Docker CLI client + Docker Compose + Docker Content Trust + Kubernetes + Credential Helper
+    docker engine : dockerd + CLI + API
+    docker daemon / dockerd : service qui réceptionne les requêtes du client et gère les objets docker
+    Docker Buildx : CLI qui étend les commandes docker
+    Docker Context : command pour importer et exporter un contexte
+    Docker Scan : commande pour détecter des vulnérabilités dans les images
+    Docker client : envoie les commandes à dockerd
+
+
+librairies utilisées par docker
+    libcontainer : utiliser les namespaces qqsoit l'OS, remplace LXC depuis la 0.9
+    LXC : Linux Container, remplacé par libcontainer dans les versions récentes de docker
+    containerd : daemon qui gère le cycle de vie des conteneurs, utilisé depuis docker 1.11, implémente la spec CRI, utilise runC
+    runC
+
+
+fonctionnalités du noyau linux utilisés par docker
+    namespace : partitionne les ressources du noyau (process IDs, hostnames, user IDs, file names, network access) tel que les différents processus ne voient pas les mêmes ressources. Fournit une couche d’isolation
+    cgroups : ne voir que certaines ressources extérieurs, comme le CPU, la mémoire, les accès disques (cmd cgcreate et cgexec) et l’accès réseau
+    Chroot : changer le répertoire racine vers un nouvel emplacement
+    AppArmor : module de sécurité qui restreint les possibilités des programmes
+    SELinux : alternative à AppArmor
+    capabilities
