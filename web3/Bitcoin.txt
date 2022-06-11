@@ -1,1 +1,54 @@
+bitcoin = base de données distribuée
 
+
+philosophie
+    système de paiement électronique pair à pair
+    preuve cryptographique au lieu d’un tier de confiance
+    confidentialité de la vie privée
+    décentralisé
+    transparence
+
+
+fonctionnement
+    évite la double dépense
+    serveur d’horodatage
+    proof of work
+    smart contract
+    hashrate = puissance de calcul nécessaire au minage de nouvelles unités de crypto-monnaies
+    blockchain
+    minage
+    halving
+    arbre de Merkle
+    adresse multisignature = compte dont le contrôle est partagé entre plusieurs entités
+    signature de Schnorr
+    chaque transaction possède un identifiant (txid) qui est le résultat de l'application d'une fonction de hachage à cette transaction. Il dépend des éléments présents dans la transaction (entrées, sorties, ...)
+
+
+lightning network
+    surcouche de bitcoin qui est un réseau de canaux de paiements bidirectionnels
+    résoudre les problèmes de scalabilité
+    transaction rapide
+    faible frais
+    se base sur des canaux de paiement bidirectionnels. Ces derniers utilisent des smart contracts programmés grâce au langage de script de Bitcoin
+    mettre des fonds sous séquestre à l'aide d'un contrat multisignature
+    les fonds passe d’un participant à un autre = routage
+    frais minuscule
+    transactions quasi-instantanées
+    transactions plus confidentielles que sur la chaîne principale
+
+
+SegWit
+    Segregated Witness
+    soft fork
+    2017
+    les scripts de signature (le témoin ou witness) ne sont plus dans les blocs traditionnelles mais sont sont mises dans une BD séparée (segregated)
+    corrige la malléabilité des transactions
+    augmentation de la capacité transactionnelle
+
+
+mise à niveau taproot
+    2021
+    schéma de signature Schnorr en remplacement de ECDSA
+    plus petite et plus rapide
+    transactions complexes indifférenciables des autres
+    mise en place des smarts contract plus rapide et plus flexible
