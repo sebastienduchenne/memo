@@ -1,6 +1,18 @@
 blockchaine d’infrastructure
-IPFS : système de stockage décentralisé
-_______________________________
+
+décentralisation et la blockchain => réseau de confiance => consensus et intégrité des données => confiance et donc on peut se passer d'intermédiaire de confiance ; propriété digitale
+résistance à la censure
+trilemme des blockchain : décentralisation, sécurité, scalabilité
+
+asset en collatéral (sur aave)
+permet au créateur de se passer d'un intermédiaire (spotify, deezer) et d'être mieux rémunéré
+sidechain = blockchain qui tourne en parallèle d'une autre blockchain
+token de gouvernance = donne à ses détenteurs un droit de vote sur les modifications apportées aux contrats intelligents des protocoles qui les émettent
+cryptobanque : bitpanda, crypto.com
+MNBC / CDBC = monnaie numérique de banque centrale
+la chine a pour objectif ultime de créer un nouveau système monétaire qui remplace le dollars en tant que monnaie de réserve mondiale. Son DCEP (Yuan numérique) est le squelette de cette techno
+
+
     USAGES
 avatar NFT
     revendre données personnelles
@@ -10,38 +22,27 @@ connexion avec son wallet crypto
 tokenisation immobilier
 play to earn
 NFT pour avoir des accès privilégiés
-_______________________________
-    APPLICATIONS
-voyage
-réseau social
-photos
-vidéos
-
-décentralisation et la blockchain => réseau de confiance => consensus et intégrité des données => confiance et donc on peut se passer d'intermédiaire de confiance ; propriété digitale
-résistance à la censure
-trilemme des blockchain : décentralisation, sécurité, scalabilité
-dapps
-defi
-   aave, compound, curve
-   préter / emprunter de l'argent sans passer pas une banque
-asset en collatéral (sur aave)
-permet au créateur de se passer d'un intermédiaire (spotify, deezer) et d'être mieux rémunéré
-validateur (stacking)
-sidechain = blockchain qui tourne en parallèle d'une autre blockchain
-token de gouvernance = donne à ses détenteurs un droit de vote sur les modifications apportées aux contrats intelligents des protocoles qui les émettent
-yield farming
-layer 2, optimistic rollup
-
-
 
 --------------------------------------------------------------
 
-Perte de valeur du dollars, inflation à cause de l’impression monétaire
-la chine a pour objectif ultime de créer un nouveau système monétaire qui remplace le dollars en tant que monnaie de réserve mondiale. Son DCEP (Yuan numérique) est le squelette de cette techno
-cryptobanque : bitpanda, crypto.com
+IPFS
+    InterPlanetary File System
+    protocole pair à pair de distribution de contenu adressable par hypermédia
+    système distribué de fichiers pair à pair qui ne dépend pas de serveurs centralisés
+    graphe orienté acyclique de Merkle généralisé
+    Les fichiers sont identifiés grâce à leur hash
+    utilise son propre système de noms de domaine appelé IPNS
+    combine la table de hachage distribuée, (THD ou DHT) Kademlia, Git et le système de fichier auto-certifiant
 
 
+StarkWare
+    scalabilité, confidentialité
+    StarkNet = solution de seconde couche sur Ethereum
+        ZK rollup décentralisé sans permissions
+        déploiement de dApps
+        instance
+    StarkEx = moteur dédié à la scalabilité
+    Cairo = language de programmation, Turing complet
+    STARK = preuve
 
-MNBC / CDBC
-   = monnaie numérique de banque centrale
 
