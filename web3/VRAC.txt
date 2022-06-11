@@ -33,3 +33,16 @@ IPFS
     Les fichiers sont identifiés grâce à leur hash
     utilise son propre système de noms de domaine appelé IPNS
     combine la table de hachage distribuée, (THD ou DHT) Kademlia, Git et le système de fichier auto-certifiant
+
+
+StarkWare
+    scalabilité, confidentialité
+    StarkNet = solution de seconde couche sur Ethereum
+        ZK rollup décentralisé sans permissions
+        déploiement de dApps
+        instance
+    StarkEx = moteur dédié à la scalabilité
+    Cairo = language de programmation, Turing complet
+    STARK = preuve
+
+
