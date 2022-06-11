@@ -3,6 +3,47 @@ fsck : réparer en cas de crash disque
 htop : utilisation ressources
 chroot
 TTY : affiche sur la sortie standard le nom du fichier connecté sur l'entrée standard
+GRUB
+BIOS
+UEFI
+init system V
+systemd
+système de fichier
+partitionnement
+swap
+dpkg
+aptitude
+Gestion des utilisateurs
+Gestion des groupes
+systèmes de fichiers : exFAT, EXT4, XFS, NTFS
+arborescence : /, /usr /var /home /tmp, /etc
+partition, SWAP
+gestion des utilisateurs : /etc/passwd, /etc/group, /etc/shadow
+gestion de paquet : apt-get, apt
+apt-cache
+Fichier /etc/hosts
+MBR
+bootloader
+OpenSSH
+POSIX
+FTP
+montage
+signaux
+processus
+tubes
+System V
+langage de programmation awk
+crontab
+samba
+puppet
+SSH
+Variables d'environnement
+load average
+systemctl
+mémoire virtuelle
+
+shell : bash, sed
+OS : debian, GNU, linux, solaris, unix, FreeBSD, OpenBSD
 
 
 *** variable PATH
@@ -49,3 +90,40 @@ journalisation
     -The Journal
     -commande : journalctl
     -dans "/var/log/journal/"
+
+-----------------------------------------------------------------------------------
+
+load average = désigne, sous les systèmes UNIX, une moyenne de la charge système, une mesure de la quantité de travail que fait le système durant la période considérée
+-représentent le nombre moyen de processus dans la file d'attente des processus ready for running pour, respectivement, la dernière minute, les 5 dernières minutes et les 15 dernières minutes
+/proc/loadavg
+-utilitaire uptime
+
+   ---
+
+-compilation du noyau : compilation de fichier en parallèle
+= nombre moyen de processus qui sont dans l'état ready for running dans le système durant les 1, 5 et 15 dernières minutes
+-mesure qqch de précis
+-file d'attente et processus qui veulent run
+-état ready
+-le load average compte combien sont en ready for running
+-un taux supérieur à 3.00 est un assez mauvais signe
+
+ls /proc | wc -l
+
+processus
+   contenu du fichier exécutable
+   biblio dynamique
+   contexte d'exécution du ps : buffer spécifique au ps, var d'env, code source, mémoire des calculs
+
+limite de mémoire
+
+shell à echo en commande interne, echo est aussi un binaire linux qui fait la même chose
+
+mémoire mutualisée entre plusieurs ps
+
+copy-on-write
+
+communication interprocess
+   signal
+   pipe
+   IPC : espace mémoire dispo pour les ps, mais il faut que les ps qui écrivent en même temps, => sémaphore
