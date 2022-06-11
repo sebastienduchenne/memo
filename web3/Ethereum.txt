@@ -1,4 +1,5 @@
 = protocole d'échanges décentralisés permettant la création par les utilisateurs de smart contract
+ces contrats intelligents sont basés sur un protocole informatique permettant de vérifier ou de mettre en application un contrat mutuel
 utilise une unité de compte dénommée Ether comme moyen de paiement des smart contracts
 token ERC20
 Ethereum doit pouvoir évoluer vers du quantum resistant
@@ -8,6 +9,8 @@ modules js : web3.js, ethereum.js
 starknet
 risque de centralisation du réseau
 account = stocke de l'ether
+se veut être une plateforme mondiale
+se veut très évolutive
 EIP = Ethereum Improvement Proposals
     EIP 1559 (london) : rendre Ethereum déflationniste par brûlage d’une partie des frais de transactions
 
@@ -67,18 +70,19 @@ architecture en shard
     sharding + rollup => jusqu’à 100 000 transactions par seconde
     sharding version 1 : augmenter le nb de transactions grâce aux rollups sans traiter les transactions et les smart contract
     sharding version 2 : prendre en charge les smart contract, encore en discussion
+    -> augmente la centralisation et impose de faire confiance aux autres participants. Ethereum va gagner en performances par amélioration en scalabilité, mais au détriment de la sécurité et de la décentralisation
 
 
 Plasma = un réseau de sidechains pour Ethereum, collection de contrat autonome, augmente la scalabilité
 
-Ethereum Casper = protocole de POS.
-    2 implémentations en cours de développement : Casper FFG et Casper CBC
 
+Ethereum Casper = protocole de POS
+    2 implémentations en cours de développement : Casper FFG et Casper CBC
 
 
 Etapes
     Serenity phase 0 : mise en place de la Beacon chain
-    Serenity phase 1 : The Merge = connexion entre le Mainnet et la beacon chain, qui met fin au POW
+    Serenity phase 1 : The Merge = connexion entre la couche consensus de la beacon chain avec la couche d’exécution, qui met fin au POW
     Serenity phase 2 : lancement des shards chain, EVM remplacée par eWASM. Casper
     d’autres phases viendront pour répondre à la demande des utilisateurs
 
