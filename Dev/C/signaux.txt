@@ -1,0 +1,67 @@
+-Signal = information transmise à un programme durant son exécution
+-tout processus peut envoyer un signal à un autre processus s’il en a le droit
+-signal pendant = signal qui a été envoyé à un processus mais qui n’a pas encore été pris en compte
+-délivrance = un signal est délivré à un processus lorsque le processus le prend en compte et réalise l’action qui lui est associé
+-signal masqué = signal bloqué = délivrance reportée
+-un signal qui existe déjà et pendant est perdu
+-sigaction : structure qui décrit le nouveau comportement à avoir lors de la délivrance d’un signal, changement par installation d’un handler (une fonction)
+
+---
+
+quand le fils se termine : SIGCHLD envoyé au père, mais l'ignore par défaut
+Le fils hérite du masque des signaux
+temporisateur : alarm et setitimer pour interrompre le processus au terme d’un délai
+
+
+*** méthodes
+
+kill : tuer un processus
+manipulation des ensembles de signaux
+    sigemptyset : vider l’ensemble de signaux fourni pas set
+    sigfillset : remplir totalement l’ensemble de signaux fourni par set
+    sigaddset : ajouter un signal à l’ensemble set
+    sigdelset : supprimer un signal à l’ensemble set
+    sigismember : tester si un signal est membre d’un ensemble set
+sigpending : lister signaux pendants bloqués
+sigprocmask : masquer un signal, how :
+    SIG_BLOCK : bloquer en plus les signaux positionnés dans set
+    SIG_UNBLOCK : démasquer
+    SIG_SETMASK : bloquer les signaux dans set
+sigaction : installer un handler pour un signal donné = changer le comportement par défaut d’un signal lors de sa réception
+attente d’un signal
+    pause : 
+    sigsuspend : bloque le processus, réveillé par les signaux non présent dans le masque passé en paramètre
+interrompre processus avec un temporisateur
+    alarm : interrompre un processus au terme d’un délai (send SIGALRM)
+    setitimer : interrompre un processus au terme d’un délai, 3 types
+
+
+*** Liste des signaux
+
+    TERMINAISON
+SIGINT      ctrl-C                                      terminaison
+SIGQUIT     <QUIT> ctrl-\                               terminaison + core
+SIGKILL     Tuer un processus                           terminaison
+SIGTERM     Signal de terminaison                       terminaison
+SIGCHLD     Terminaison ou arrêt d'un processus fils    ignoré
+SIGABRT     Terminaison anormale                        terminaison + core
+SIGHUP      Déconnexion terminal                        terminaison
+
+    SUSPENSION / REPRISE
+SIGSTOP     Suspension de l'exécution                   suspension
+SIGTSTP     Suspension de l'exécution (ctrl-Z)          suspension
+SIGCONT     Continuation du processus arrêté            reprise
+
+    FAUTES
+SIGFPE      erreur arithmétique                         terminaison + core
+SIGBUS      erreur sur le bus                           terminaison + core
+SIGILL      instruction illégale                        terminaison + core
+SIGSEGV     violation protection mémoire                terminaison + core
+SIGPIPE     Erreur écriture sur un tube sans lecteur    terminaison
+
+    AUTRES
+SIGALRM     Fin de temporisation                        terminaison
+SIGUSR1     Réservé à l'utilisateur                     terminaison
+SIGUSR2     Réservé à l'utilisateur                     terminaison
+SIGTRAP     Trace/breakpoint trap                       terminaison + core
+SIGIO E/S   asynchrone                                  terminaison
