@@ -1,0 +1,120 @@
+    • Thread = processus léger = fil d'exécution
+    • Processus lourd = un espace d'adressage et un thread de contrôle : le thread principal
+    • création et communication thread plus rapide que pour processus
+    • partage du même espace d'adressage donc toutes les variables
+    • fork => créer un nouveau processus lourd
+    • thread
+        ◦ partage de données : fichiers ouverts, mémoire virtuelle
+        ◦ pile propre
+        ◦ id unique
+        ◦ propre masque de signaux et signaux pendant
+
+    • des attributs sont passés lors de la création du thread
+
+
+    • thread utilisateur : non connu du noyau
+    • thread noyau
+    • fonction réentrante : peut être appelé par plusieurs thread simultanément
+    • fonction multithread-safe
+
+
+2 types de thread
+    • joignable = renvoit des ressources à la fin de l’exécution du thread
+    • détaché = libération des ressources lors de la fin de l’exécution du thread, 2 façons : méthode pthread_detach OU lors de sa création
+
+
+mutex = exclusion mutuelle
+    • = sémaphore binaire : verrouillé / libre
+    • = objet qui sert de verrou
+    • pour protéger l’accès aux variables, synchroniser des thread
+    • seulement un thread peut obtenir le mutex, les autres doivent attendre qu'il se libère
+
+
+condition
+    • suspension de l’exécution jusqu’à ce qu’une condition sur des données partagées soient vérifiée
+    • condition associée à un mutex pour éviter la concurrence
+
+
+autres
+    • un thread peut en annuler un autre
+    • un thread peut posséder des données privées
+
+
+
+Include
+<pthread.h>
+<signal.h>
+<semaphore.h>
+<process.h>
+
+type
+    • pthread_t : identifiant d'une thread
+    • pthread_attr_t : attribut d'une thread
+    • pthread_mutex_t : mutex (exclusion mutuelle)
+    • pthread_mutexattr_t : attribut d'un mutex
+    • pthread_cond_t : variable de condition
+    • pthread_condattr_t : attribut d'une variable de condition
+    • pthread_key_t : clé pour accès à une donnée globale réservée
+    • pthread_once_t : initialisation unique
+
+
+méthodes
+    • attribut : get et set
+        ◦ pthread_attr_init : création d’un pthread_attr_t
+        ◦ pthread_attr_destroy : destruction d’un pthread_attr_t
+        ◦ pthread_attr_getscope : thread natif ou pas
+        ◦ pthread_attr_getstacksize : taille de la pile de la thread
+        ◦ pthread_attr_getstackaddr : adresse de la pile
+        ◦ pthread_attr_getdetachstate : détachement/joignabilité d’un thread
+        ◦ pthread_attr_getshedpolicy : politique d’ordonnancement
+        ◦ pthread_attr_getshedparam : paramètre pour l’ordonnanceur
+        ◦ pthread_attr_inheritsched : ordonnancement hérité ou pas
+    • thread
+        ◦ pthread_create : créer un thread, utiliser une structure pour envoyer plusieurs arguments
+        ◦ pthread_self : get identificateur thread
+        ◦ pthread_equal : tester si 2 thread sont identiques
+        ◦ pthread_exit : terminaison du thread courant
+        ◦ sched_yield : demande de relachement du processeur, thread courant mis dans la liste des thread prêts
+        ◦ pthread_detach : placer le thread à l’état détaché
+        ◦ pthread_join : attendre la fin du thread joignable spécifié
+    • mutex
+        ◦ pthread_mutex_init : créer un mutex
+        ◦ pthread_mutex_destroy : détruire mutex
+        ◦ pthread_mutex_lock : verrouiller le mutex
+        ◦ pthread_mutex_trylock : 
+        ◦ pthread_mutex_unlock : déverrouiller le mutex
+    • condition
+        ◦ pthread_cond_init : initialiser une variable condition
+        ◦ pthread_cond_signal : réveil d’un thread (on ne sait pas lequel) en attente sur une condition
+        ◦ pthread_cond_broadcast : réveil de tous les thread en attente sur condition
+        ◦ pthread_cond_wait : attenre qu’une condition soit signalée et déverrouille le mutex
+        ◦ pthread_cond_timedwait : comme wait mais borné temporellement. Si la condition n’a pas été signalé après un temps spécifié, le mutex est reverrouillé et une erreur est émise
+        ◦ pthread_cond_destroy : détruire une variable condition
+    • pthread_getconcurrency :
+    • pthread_setconcurrency :
+    • pthread_cancel : demande d’annulation d’un thread
+    • pthread_setcancelstate : interdire demande d’annulation
+    • pthread_setcanceltype : 
+    • pthread_testcancel : tester si une requête d’annulation lui a été adressé
+    • pthread_cleanup_push : enregistrer une routine de libération dans une pile de nettoyage
+    • pthread_cleanup_pop : libérer une ressource
+    • pthread_sigmask : 
+    • pthread_kill : envoie d’un signal à un thread
+    • sigwait : attente d’un signal
+    • sémaphore POSIX
+        ◦ sem_init : créer
+        ◦ sem_destroy : détruire
+        ◦ sem_wait :
+        ◦ sem_post : 
+        ◦ sem_trywait : 
+        ◦ sem_getvalue : 
+    • pthread_atfork : 
+    • pthread_key_create : créer une clé
+    • pthread_getspecific : get donnée privée
+    • pthread_setspecific : set donnée privée 
+
+--------------------------------------------------------
+
+    • erreur de segmentation = application qui a tenté d’accéder à un emplacement mémoire qui ne lui était pas alloué
+    • se demander : chaque thread a sa propre copie OU ALORS variable partagée
+    • terminaison thread : les variables sont détruites donc si on veut réutiliser la valeur alors faire un malloc et renvoyer l’adresse
