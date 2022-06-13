@@ -1,0 +1,28 @@
+    • Une socket = un point de communication. 
+        ◦ Bidirectionnelle
+        ◦ a un nom
+    • protocoles
+        ◦ UDP : mode non connecté, on ne vérifie pas si le message est arrivé à destination
+        ◦ TCP : mode connecté, on vérifie que le message est arrivé à destination
+
+
+*** Méthode
+
+-Commun
+    • socket : créer socket
+    • bind : (SERVEUR) associer des informations de configuration à une socket
+    • close : fermer socket
+
+
+-UDP
+    • sendto : (CLIENT) envoyer un message
+    • recvfrom : (SERVEUR) recevoir un message
+
+
+-TCP
+    • listen : (SERVEUR) une socket d’un serveur se branche sur un port
+    • accept : (SERVEUR) une socket attend qu’un client se connecte, BLOQUANT
+    • connect : (CLIENT) une socket d’un client se connecte sur une socket d’un serveur
+    • shutdown : (SERVEUR) fermer la transmission de données entre le client et le serveur
+    • send : (CLIENT) envoyer un message
+    • recv : (SERVEUR) recevoir un message
