@@ -1,0 +1,43 @@
+    • Tube : 
+        ◦ mécanisme de communication du système de fichier
+        ◦ peut être représenté comme un tube dans lequel circule, de manière unidirectionnelle, des informations / un flux de données
+        ◦ est en réalité un fichier de type S_IFIFO, sur lequel est écrit et lu du texte
+        ◦ sert à faire communiquer des processus entre eux
+        ◦ mode FIFO : le 1er caractère a être écrit sera le 1er à être lu
+        ◦ 2 extrémités : une accessible en écriture et l’autre en lecture, chacune associé à un fd. Ainsi, avec un seul tube, un processus ne peut que lire et un autre ne peut que écrire. Pour qu'ils communiquent de manière birirectionnelle, il faut ouvrir 2 tubes où chaque processus lit sur un tube et écrit sur l'autre.
+        ◦ Les extrémités sont associés à un fd et donc vu comme des fichiers
+    • Tube anonyme
+        ◦ pas de nom, donc impossible pour un processus d’ouvrir un pipe anonyme en utilisant open
+        ◦ utilisé par des processus ayant un lien de parenté
+    • tube nommé : 
+        ◦ permettre à des processus sans lien de parenté de communiquer, il faut juste connaître le nom du fichier à ouvrir
+        ◦ O_NONBLOCK lors de la création => open non bloquant
+    • pour chaque processus, 3 fd sont ouverts par défaut STDIN, STDOUT et STDERR. On utilise dup2 pour y accéder : dup2(fd[1], STDOUT_FILENO)
+
+
+conseils
+    • pas de lecteur : pas d’écriture + SIGPIPE
+    • pas d’écrivain et tube vide : EOF au lecteur
+    • fd[0] : œil = lit, fd[1] : stylo = écrit
+    • tube A : faire un pipe AVANT un fork, car le tube n’est créé que dans un seul processus
+    • tube A : faire close entre pipe et read/write, si pas fait : EOF ne sera jamais retourné
+        ◦ Si père → fils : père close fd0 et fils close fd1
+        ◦ Si fils → père : père close fd1 et fils close fd0
+
+
+include
+    • Unistd.h
+    • sys/stat.h
+
+
+méthode
+    • pipe : créer un tube anonyme, se fait dans un tableau de int de 2 cases où la 1ère case représente la sortie donc la lecture, et la 2ème case l'entrée donc l'écriture
+    • close : ferme le tube anonyme, à faire entre pipe et read/write
+    • open : lecture, bloquant
+    • read : lire dans un tube
+    • write : écrire dans un tube
+    • fcntl : rendre read et write non bloquant
+    • fdopen : obtenir un pointeur sur un type FILE
+    • close : fermer fichier
+    • dup, dup2
+    • mkfifo : créer un tube nommé
