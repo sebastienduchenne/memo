@@ -1,0 +1,98 @@
+    • Interprocess Communication = ensemble de mécanisme permettant à des processus concurrents de communiquer entre eux. 
+    • IPC POSIX différent de IPC System V
+        ◦ IPC POSIX : standart, thread-safe
+        ◦ IPC System V : 
+    • 3 mécanismes permettant de communiquer/synchroniser :
+        ◦ message queue ou file de message
+        ◦ sémaphore
+        ◦ mémoire partagée
+
+
+*** Message queue
+
+    • liste chainée de messages
+    • message ordonné par priorité, accès FIFO pour ceux de même priorité
+    • les messages les plus prioritaires et les plus anciens sont lus en 1er
+    • limites : nb max de msgs (MSGMAX), taille totale en nb de bytes (MSBMNB)
+
+
+-méthodes
+    • mq_open : créer une mq ou en rechercher une déjà existante
+    • mq_close : fermer l’accès à une mq
+    • mq_unlink : détruire la mq et son contenu
+    • mq_send : déposer un message, O_NONBLOCK non bloquant
+    • mq_receive : retirer un message, 
+    • mq_notify : demander à être prévenu de l’arrivé d’un message
+    • mq_getattr : get attrubut de la file
+    • mq_setattr : set mode d’accès
+
+
+-Blocage
+    • mq_send : si mq pleine
+    • mq_receive : si mq vide
+
+
+*** Sémaphore
+
+    • mécanisme de synchronisation, gérer les accès concurrents à une ressource partagée
+    • structure
+        ◦ compteur
+        ◦ file d’attente : pcs bloqués en attente d’un accès
+    • méthodes
+        ◦ P : demande d’accès, compteur – –. Si compteur < 0 : pcs bloqué et inséré dans la file
+        ◦ V : fin d’accès, compteur++. Si compteur ≤ 0, alors déblocage d'un pcs de la file
+    • sémaphore 
+        ◦ nommé : utilisable par tous les pcs
+        ◦ anonyme : utilisable par les thread
+    • problèmes
+        ◦ interblocage entre 2 pcs
+        ◦ famine : un pcs est bloqué en attente d’une fin d’accès qui n’arrivera jamais
+
+
+sémaphore avec taille de 3
+    • pc1 et pc2 font wait (c=2 puis c=1) et sont mis dans la file d’attente
+    • pc3 fait wait (c=0) et pc1 sort de la file
+
+
+    • sem_open : créer un sémaphore nommé
+    • sem_init : créer et initialiser un sémaphore anonyme
+    • sem_wait : opération P, attendre que le compteur soit > 0 et le décrémenter avant de revenir
+    • sem_post : opération V, compteur ++ et un processus/thread en attente est libéré
+    • sem_trywait : eq sem_wait mais non bloquant
+    • sem_getvalue : get compteur
+    • sem_close : fermer sémaphore nommé
+    • sem_unlink : détruire sémaphore nommé
+    • sem_destroy : détruire sémaphore anonyme 
+
+
+*** Mémoire partagée
+
+    • zone mémoire attachée à un processus mais accessible pour d’autres processus. Permet de faire passer des données entre différents programmes
+    • cette zone est un fichier en mémoire
+    • en 1er on créer un segment et on récupère un fd. Puis on alloue une taille au segment. Puis on mappe le segment à l’espace du processus. shm_open(), ftruncate(), mmap(), accès segment, munmap(), shm_unlink()
+
+
+    • shm_open : créer ou ouvrir un segment
+    • shm_unlink : détruire un segment
+    • mmap : attacher un segment dans l’espace du processus
+    • munmap : déttacher le segment
+    • mprotect : set mode de protection d’un segment
+    • ftruncate : allouer une taille à un segment
+    • msync : update le segment
+
+
+*** include
+
+    • mq : mqueue.h
+    • sémaphore : semaphore.h
+    • mémoire partagée : sys/mman.h
+
+
+*** Autre
+
+    • gcc : -lrt
+
+
+*** Remarques
+    • les files de messages et les segments créés à chaque exécution doivent impérativement être détruits en fin de programme sinon des comportements incohérents s’ensuivront, liés à des variables dont les valeurs sont restées en mémoire après la terminaison du programme précédent
+    • -lrt
