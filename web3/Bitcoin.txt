@@ -52,3 +52,10 @@ mise à niveau taproot
     plus petite et plus rapide
     transactions complexes indifférenciables des autres
     mise en place des smarts contract plus rapide et plus flexible
+
+
+bitcoin nodes
+    -full node : contient toute la blockchain et vérifie les transactions
+    -lightweight node : contient le header des blocs et vérifie certaines données
+    -noeud de minage : miner qui effectue des calculs mathématiques et ajoute des blocs
+    -lightning node : un noeud du réseau lightning network, vérifie seulement les transactions qui passent par le noeud

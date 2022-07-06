@@ -68,6 +68,7 @@ layer 3 : faire communiquer 2 blockchaines différentes
 -internet de la propriété, on détient ce que l’on créée et nos données perso que l’on peut revendre
 NFT Paris
 
+-SBT Soulbound Tokens = NFT non transférable
 
 usages
     -badge pour avoir accès à des privilèges et éventuellement financer un projet
