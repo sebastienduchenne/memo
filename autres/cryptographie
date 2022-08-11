@@ -1,9 +1,47 @@
--chiffrement
--chiffrement symétrique
--fonction de hachage
-    -MD Message Digest
-    -SHA Secure Hash Algorithm
--clé privée, clé publique
 -algorithme de chiffrement symétrique
     -AES Advanced Encryption Standard
     -DES Data Encryption Standard
+-SSL et TLS = protocoles de communication
+-openssl = outil de chiffrement
+-chiffrement symétrique et asymétrique
+-fonction de hachage = fonction qui signe une donnée en entrée
+    -MD Message Digest
+    -SHA Secure Hash Algorithm
+-personal access token PAT = une alternative aux mots de passe pour s'authentifier sur github
+-SSH secure shell = protocole crypté utilisé pour administrer et communiquer avec des serveurs
+-création de paire RSA 2048 avec ssh-keygen
+-OpenSSH = un ensemble d'outil pour créer des communications sécurisées
+-force brute
+
+
+*** chiffrement asymétrique / Public-key cryptography
+
+asymétrique car 2 clés différentes :
+    clé publique = clé de chiffrement, publique
+    clé privé = clé de déchiffrement, on ne la communique pas
+
+usages : certificat, authentification
+
+algo / protocoles
+    RSA
+    TLS
+    SSH
+
+Etapes
+    -créer un couple de clé publique, que l'on transmet / clé privé, que l'on garde
+    -une personne qui veut lui envoyer un message utilise la clé publique pour le chiffrer et lui envoyer
+    -le destinataire déchiffre le message avec la clé privée
+
+
+*** certificat SSL
+
+Public key certificate / certificate = document numérique prouvant la validité d'une clé publique. il contient :
+    -la clé publique
+    -des informations sur son propriétaire : nom, localisation, email ...
+    -et une signature numérique of an entity that has verified the certificate's contents
+comme une carte d’identité numérique
+certificat SSL pour un site web
+signé par un tier de confiance : une autorité de certification
+identifier le signataire
+vérification que le document est non falsifié : on déchiffre avec la clé publique du signataire puis on compare avec les données hachées
+self-signed certificate ou CA signed certificate (autorité de certification)
