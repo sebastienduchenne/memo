@@ -4,40 +4,44 @@
 -SSL et TLS = protocoles de communication
 -openssl = outil de chiffrement
 -chiffrement symétrique et asymétrique
--RSA = algo de chiffrement
 -fonction de hachage = fonction qui signe une donnée en entrée
     -MD Message Digest
     -SHA Secure Hash Algorithm
--personal access token PAT = an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line
+-personal access token PAT = une alternative aux mots de passe pour s'authentifier sur github
 -SSH secure shell = protocole crypté utilisé pour administrer et communiquer avec des serveurs
--une clé publique stockée sur le serveur et qui sert à chiffrer les messages et une clé privé que l’on garde avec soi et qui sert à déchiffrer les messages
 -création de paire RSA 2048 avec ssh-keygen
--certificats SSL 
-    -Self-signed certificate ou CA signed certificate (autorité de certification)
-    -permet de faire du HTTPS avec plus de confiance
+-OpenSSH = un ensemble d'outil pour créer des communications sécurisées
+-force brute
 
 
-*** chiffrement asymétrique
+*** chiffrement asymétrique / Public-key cryptography
 
-asymétrique car 2 clés différentes
-clé publique = clé de chiffrement
-clé privé = clé de déchiffrement
+asymétrique car 2 clés différentes :
+    clé publique = clé de chiffrement, publique
+    clé privé = clé de déchiffrement, on ne la communique pas
 
--créer un couple de clé publique, que l'on transmet / clé privé, que l'on garde
--une personne qui veut lui envoyer un message utilise la clé publique pour le chiffrer et lui envoyer
--le destinataire déchiffre le message avec la clé privée
+usages : certificat, authentification
+
+algo / protocoles
+    RSA
+    TLS
+    SSH
+
+Etapes
+    -créer un couple de clé publique, que l'on transmet / clé privé, que l'on garde
+    -une personne qui veut lui envoyer un message utilise la clé publique pour le chiffrer et lui envoyer
+    -le destinataire déchiffre le message avec la clé privée
 
 
-*** certificat
+*** certificat SSL
 
-Public key certificate / certificate = electronic document used to prove the validity of a public key. The certificate includes information about :
-    -the public key
-    -the identity of its owner (called the subject) : name, location, email
-    -and the digital signature of an entity that has verified the certificate's contents (called the issuer)
-carte d’identité numérique
+Public key certificate / certificate = document numérique prouvant la validité d'une clé publique. il contient :
+    -la clé publique
+    -des informations sur son propriétaire : nom, localisation, email ...
+    -et une signature numérique of an entity that has verified the certificate's contents
+comme une carte d’identité numérique
 certificat SSL pour un site web
-signé par un tier de confiance
-signature
+signé par un tier de confiance : une autorité de certification
 identifier le signataire
-document non falsifié
-vérification : on déchiffre avec la clé publique du signataire puis on compare avec les données hachées
+vérification que le document est non falsifié : on déchiffre avec la clé publique du signataire puis on compare avec les données hachées
+self-signed certificate ou CA signed certificate (autorité de certification)
