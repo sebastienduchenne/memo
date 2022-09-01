@@ -1,8 +1,8 @@
 supprimer les nouveaux FICHIERS non add : git clean -f
 supprimer les nouveaux DOSSIERS non add : git clean -d
-effacer modif de 1 fichier non add : git checkout <fichier>
+effacer modif de 1 fichier non add : git restore <fichier>
 effacer toutes les modif non add / non commit : git reset --hard
-supprimer le dernier commit : git reset HEAD^
+supprimer le dernier commit non push : git reset HEAD^
 
 -----------------------------------------------------------------------
 
