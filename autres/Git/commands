@@ -128,6 +128,7 @@ Patching
 
     git prune : supprimer tout ce qui est inatteignable
 
+    git commit --amend : modifier le message du dernier commit
 
 Debugging
 
