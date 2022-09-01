@@ -32,7 +32,8 @@ git checkout -b nomBranch : créer une branche et s'y placer
 
 git rebase branche1 branche2 : modifier une validation loin dans l’historique
 
-git switch : switcher de branche
+git switch branch : aller sur la branche branch
+git switch -c branch : créer une branche branch et y aller
 
 
 *** share
