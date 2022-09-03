@@ -1,82 +1,152 @@
 supprimer les nouveaux FICHIERS non add : git clean -f
 supprimer les nouveaux DOSSIERS non add : git clean -d
-effacer modif de 1 fichier non add : git checkout <fichier>
+effacer modif de 1 fichier non add : git restore <fichier>
 effacer toutes les modif non add / non commit : git reset --hard
-supprimer le dernier commit : git reset HEAD^
+supprimer le dernier commit non push : git reset HEAD^
+
+-----------------------------------------------------------------------
+
+Setup and Config
+
+    git config : Get and set repository or global options
+    git help : Display help information about Git
+    git bugreport : Collect information for user to file a bug report
 
 
-*** créer projet
-git init : création d’un .git contenant l’historique du projet et la configuration
-git clone : ramener le contenu du dépôt distant sur sa machine
-git ignore : créer un .gitignore pour mettre les fichiers à ignorer
+Getting and Creating Projects
+
+    git init : Créer un dépôt Git vide ou réinitialiser un existant
+    git clone : Cloner un dépôt dans un nouveau répertoire
+    git ignore : créer un .gitignore pour mettre les fichiers à ignorer
 
 
-*** snapshot
-git status : info des fichiers modifiés sur la branche active
-git add file : ajoute "file" dans l'index
-git commit -m "xxx" : stocker dans le .git l’ensemble des modifications effectuées sur le code
-git commit --amend : modifier le message du dernier commit
-git diff : voir les modifications dans la branche courante
-git diff --stat : fichiers et nombres de lignes modifiés
+Basic Snapshotting
+
+    git-add : Ajouter le contenu de fichiers dans l'index
+    git add . : Stage all files
+    git add file : Ajouter file dans l'index
+    git add -p : Interactively stage hunks of changes
+    
+    git switch branch : aller sur la branche branch
+    git switch -c branch : créer une branche branch et y aller
+
+    git status : Afficher l'état de la copie de travail
+    
+    git-commit : Enregistrer les modifications dans le dépôt
+    git commit -m "xxx" : stocker dans le .git l’ensemble des modifications effectuées sur le code
+    git commit --amend : modifier le message du dernier commit
+
+    git notes : Add or inspect object notes
+    git restore : Restaurer les fichiers de l'arbre de travail
+
+    git-reset : Réinitialiser la HEAD courante à l'état spécifié
+    git reset HEAD^ : annule le dernier commit
+    git reset HEAD~2 : annule les 2 derniers commits
+    git reset 5qs4 : annule les commits jusqu’à celui précisé
+    git reset --hard HEAD^ : annule le dernier commit et les changements
+    git reset --hard HEAD nomFichier : retirer « nomFichier » ajouter dans un add
+    git reset --hard : supprimer toutes les modif non add / non commit
+
+    git-rm : Supprimer des fichiers de la copie de travail et de l'index
+    git-mv : Déplacer ou renommer un fichier, un répertoire, ou un lien symbolique
 
 
-*** Gérer les branches
-git branch : liste les branches en local
-git branch nomBranche : créer une branche
-git branch -d nom : supprimer branche nom
-git branch -m old_name new_name : renommer
-git branch -a : lister les branches distantes
+Branching and Merging
 
-git checkout nomBranche : se placer dans nomBranche
-git checkout -b nomBranch : créer une branche et s'y placer
+    git-branch : Lister, créer ou supprimer des branches
+    git branch : liste les branches en local
+    git branch nomBranche : créer une branche
+    git branch -d nom : supprimer branche nom
+    git branch -m old_name new_name : renommer
+    git branch -a : lister les branches distantes
 
-git rebase branche1 branche2 : modifier une validation loin dans l’historique
+    git-checkout : Switch branches or restore working tree files
+    git checkout nomBranche : se placer dans nomBranche
+    git checkout -b nomBranch : créer une branche et s'y placer
+    git checkout nomFichier : récupère « nomFichier » du dernier commit (annule les changements)
 
-git switch branch : aller sur la branche branch
-git switch -c branch : créer une branche branch et y aller
+    git-merge : Fusionner deux ou plusieurs historiques de développement ensemble
+    git merge branche : fusionner les commits de « branche » dans la branche courante
 
+    git mergetool : Run merge conflict resolution tools to resolve merge conflicts
 
-*** share
-git remote add origin URL : ajouter un dépôt distant dans origin à « URL »
+    git stash       : placer les changements dans une remise dans la branche en cours
+    git stash list  : liste les différentes remises
+    git stash pop   : récupérer son travail et supprimer la sauvegarde
+    git stash apply : récupérer son travail sans supprimer la sauvegarde
 
-git fetch origin master : importer les nouveaux commit en distant et les mettre dans le dépot local
-git fetch --all : récupérer toutes les données du repository remote
-
-git merge branche : fusionner les commits de « branche » dans la branche courante
-
-git pull origin branche : mettre à jour la branche courante et le workspace (pull = fetch puis merge)
-
-git push origin branche : envoyer en distant les commit non pushés dans « branche »
-
-git submodule xxx : télécharger un sous-module git
+    git tag : Créer, lister, supprimer ou vérifier un objet d'étiquette signé avec GPG
+    git worktree : Manage multiple working trees
 
 
-*** inspection
-git log         : voir l’historique des commits du projet (q pour quitter)
-git log -p      : détails de chaque commits
-git log --stat  : résumé court de chaque commit
+Sharing and Updating Projects
 
-git show object
+    git fetch : Télécharger les objets et références depuis un autre dépôt
+    git fetch origin master : importer les nouveaux commit en distant et les mettre dans le dépot local
+    git fetch --all : récupérer toutes les données du repository remote
 
-*** Supprimer
-git checkout nomFichier : récupère « nomFichier » du dernier commit (annule les changements)
-git reset HEAD^ : annule le dernier commit
-git reset HEAD~2 : annule les 2 derniers commits
-git reset fsdf5df4sd4f34d35f4s3d5 : annule les commits jusqu’à celui précisé
-git reset --hard HEAD^ : annule le dernier commit et les changements
-git reset --hard HEAD nomFichier : retirer « nomFichier » ajouter dans un add
-git reset --hard : supprimer toutes les modif non add / non commit
-git clean -f : effacer les nouveaux fichiers non ajoutés à l’index
-git clean -d : effacer les nouveaux dossiers non ajoutés à l’index
-git revert 5qs4… : créer un commit inverse jusqu’au commit spécifié
-git revert HEAD^ : inverse le dernier commit parent
-git revert HEAD = supprimer le dernier commit sur dépot distant
-git prune : supprimer tout ce qui est inatteignable
-git remote prune origin : supprimer du repository local toutes les branches remote qui n’existent plus
+    git pull : Rapatrier et intégrer un autre dépôt ou une branche locale
+    git pull origin branche : mettre à jour la branche courante et le workspace (pull = fetch puis merge)
+    
+    git push : Mettre à jour les références distantes ainsi que les objets associés
+    git push origin branche : envoyer en distant les commit non pushés dans « branche »
+
+    git-remote : Manage set of tracked repositories
+    git remote add origin URL : ajouter un dépôt distant dans origin à « URL »
+    git remote prune origin : supprimer du repository local toutes les branches remote qui n’existent plus
 
 
-*** Sauvegarder son travail dans une remise
-git stash       : créer une remise (sauvegarde) dans la branche en cours
-git stash list  : liste les différentes remises
-git stash pop   : récupérer son travail et supprimer la sauvegarde
-git stash apply : récupérer son travail sans supprimer la sauvegarde
+Inspection and Comparison
+
+    git show : Afficher différents types d'objets
+
+    git log : Afficher l'historique des validations
+    git log -p : détails de chaque commits
+    git log --stat : résumé court de chaque commit
+
+    git diff : Afficher les changements entre les validations, entre validation et copie de travail
+    git diff --stat : fichiers et nombres de lignes modifiés
+
+    git difftool : Show changes using common diff tools
+    git range-diff : Compare two commit ranges
+    git shortlog : Summarize git log output
+    git describe : Give an object a human readable name based on an available ref
+
+
+Patching
+
+    git apply : Apply a patch to files and/or to the index
+    git cherry-pick : Apply the changes introduced by some existing commits
+
+    git-rebase : Réapplication des commits sur le sommet de l'autre base
+    git rebase branche1 branche2 : modifier une validation loin dans l’historique
+
+    git revert : Revert some existing commits
+    git revert 5qs4 : créer un commit inverse jusqu’au commit spécifié
+    git revert HEAD^ : inverse le dernier commit parent
+    git revert HEAD : inverse le dernier commit sur dépot distant
+
+    git prune : supprimer tout ce qui est inatteignable
+
+    git commit --amend : modifier le message du dernier commit
+
+Debugging
+
+    git bisect : Trouver par recherche binaire la modification qui a introduit un bogue
+    git blame : voir qui a écrit tel ligne
+    git grep : Afficher les lignes correspondant à un motif
+
+
+Administration
+
+    git clean : Remove untracked files from the working tree
+    git clean -f : effacer les nouveaux fichiers non ajoutés à l’index
+    git clean -d : effacer les nouveaux dossiers non ajoutés à l’index
+
+    git gc : Cleanup unnecessary files and optimize the local repository
+    git fsck : Verifies the connectivity and validity of the objects in the database
+    git reflog : Manage reflog information
+    git filter-branch : Rewrite branches
+    git instaweb : Instantly browse your working repository in gitweb
+    git archive : Create an archive of files from a named tree
+    git bundle : Move objects and refs by archive
