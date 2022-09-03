@@ -26,6 +26,9 @@ Basic Snapshotting
     git add . : Stage all files
     git add file : Ajouter file dans l'index
     git add -p : Interactively stage hunks of changes
+    
+    git switch branch : aller sur la branche branch
+    git switch -c branch : créer une branche branch et y aller
 
     git status : Afficher l'état de la copie de travail
     
@@ -61,9 +64,6 @@ Branching and Merging
     git checkout nomBranche : se placer dans nomBranche
     git checkout -b nomBranch : créer une branche et s'y placer
     git checkout nomFichier : récupère « nomFichier » du dernier commit (annule les changements)
-
-    git-switch : Basculer de branche
-    git switch -c branch : créer et se placer dessus
 
     git-merge : Fusionner deux ou plusieurs historiques de développement ensemble
     git merge branche : fusionner les commits de « branche » dans la branche courante
